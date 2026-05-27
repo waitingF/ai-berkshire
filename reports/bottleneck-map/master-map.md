@@ -264,6 +264,12 @@
 
 **催化剂**：L3Harris Missile Solutions IPO（S-1已提交，2026H2目标上市，DoD $10亿股权投资）
 
+**2026-05-27 15:10 新增——私人资本垂直整合信号**：
+- Mach Industries 以 $50M 收购 Exquadrum（2026-05-19），更名 Mach Energetics；客户 USAF/MDA/DARPA；70,000 sqft 工厂+推进试验场
+- 战略逻辑：SRM 双寡头（Aerojet/Northrop）产能无法吸收无人机战争带来的新需求，私人资本绕过大 Prime 自建垂直整合链
+- 此前已记录：Anduril $43.7M DoD DPA（2026-02）；Mach 是第二个验证案例，资金来源为私人而非政府
+- 来源：[TechCrunch](https://techcrunch.com/2026/05/19/mach-industries-just-spent-50m-to-solve-a-major-defense-tech-problem/) \| [Aviation Week](https://aviationweek.com/defense/missile-defense-weapons/mach-industries-acquires-rocket-motor-designer-exquadrum)
+
 **2026-05-26 09:09 新增——Chemring Nobel Sole-Source确认**：
 - Chemring Nobel是Nammo AS 155mm高级弹药生产的**唯一合格MCX供应商**（合同文本确认）
 - Diehl Defence + Nammo AS合作为德国联邦军/NATO生产155mm炮弹，完全依赖Chemring Nobel的MCX材料
@@ -479,3 +485,4 @@
 | 2026-05-27 午后 | **第十九轮扫描（午后综合扫描）— 6项重要更新** | ①**NF3/WF6（3b条目）WF6库存临界时间线明确**：TrendForce原文"现有库存仅维持至2026年中"= **6-7月，距今1-2个月**，信号从"H2 2026潜在风险"升级为"近期临界催化剂"；②**Nittobo（ABF/T-glass，6条目）FY2026业绩确认**：净利¥38B（+3x YoY实际兑现），P/E修正为24.2x（绿灯基于实际数字），股息¥127，中期目标上调，股票拆分记录日6月29日；③**光纤预制棒（11c条目）价格数据强化**：欧洲G.652D Q1整体+136%（vs之前仅有1月单月+75%数据）；军民竞争角度：乌克兰无人机光纤价格涨8倍；④**钨（0c条目）价格分化**：中国国内APT 5/19已从峰值下跌55.3%（至RMB 680,000/吨），但欧洲国际APT仍$3,000-3,280/MTU（+241% from Jan 2026）；Trump-Xi峰会无具体钨出口管制放松协议；国际价格与Almonty销售价格相关，国内价格领先下跌是中期警示；⑤**Aixtron（MOCVD，8条目）Q2拐点确认**：Q2 2026指引收入€110M（Q1 €59M，+85%环比），光电子订单65%+，H2执行置信度提升；⑥**新监控事项**：Gallium/Germanium 11/27截止日升级监控优先级（无Trump-Xi延期承诺）；Centrus DOE Phase III 6/30到期需关注续约 |
 | 2026-05-27 13:11 | **第二十二轮扫描 — 2项状态修正，1项背景信号解除** | ①**CHG.L Chemring半年财报日期修正**：此前所有记录"June 9"为错误，实际日期**June 2, 2026**（今日起仅6天），来源：Chemring官方financial calendar交叉确认；"June 9三重催化剂"应拆分为"June 2 CHG财报 + June 9 AII Phase 2投票"；②**三星50,000工人芯片厂罢工今日（5/27）解除**：劳资达成协议（6.2%涨薪），73.7%工会批准；计划5/21起18天罢工未发生；HBM4供应链近期最大操作风险消除；③**NVIDIA-Corning光纤合作（5/6）**：美国光纤产能+50%，光互联+10x，确认B级光纤预制棒瓶颈供给侧响应，Corning市值过大非标的；④**Almonty (AII.TO) 分析师共识低于现价**：C$26.97 vs 平均目标C$20.46，强化无安全边际判断；所有S/A/B级瓶颈评级不变 |
 | 2026-05-27 晚 | **第二十三轮扫描 — 3项小状态更新，无新标的，无报告文件** | ①**WF6（3b条目）Central Glass第二独立来源确认**：Central Glass已直接通知Samsung "5-6月库存可维持，H2不确定"；Samsung比SK Hynix更暴露（对日本WF6依赖度更高）；TrendForce+Central Glass双源交叉确认"5-6月临界"，信号可信度升至高；A级评级不变；②**UAMY产能微调**：Q1 2026财报电话会确认Thompson Falls产能目标为400-500 t/月（前次记录300-400 t/月，小幅上调）；时间线：Q1收到OEM零件，爬坡中；③**Centrus DOE续约**：搜索未找到新合约公告；Phase III $110M到期日6/30/2026（约34天），DOE持有后续8年期权但尚未宣布行使；紧迫性不变；④Chemring June 2财报确认（无预告）；Almonty June 9催化剂维持；Gallium/Ge 11/27截止无新信息；InP/EML/NF3/钨等所有已跟踪瓶颈状态不变 |
+| 2026-05-27 15:10 | **第二十四轮扫描 — 1项新信号，无新标的** | ⚡ **Mach Industries 以 $50M 收购 Exquadrum（2026-05-19）**：固体火箭发动机领域私人资本自费垂直整合；Exquadrum更名为Mach Energetics（85人+70,000平方英尺工厂+推进试验场）；客户USAF/MDA/DARPA；与Anduril $43.7M DoD DPA资助（2026-02）共同验证SRM双寡头产能不足已驱动独立资本入场；Mach私有，间接关注Axyz IPO（H2 2026）。来源：TechCrunch/Aviation Week/TechTimes 2026-05-19至25 |
