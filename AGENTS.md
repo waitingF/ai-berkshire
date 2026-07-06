@@ -1,7 +1,7 @@
 # AI Berkshire Codex Guide
 
 This repository contains investment research workflows, reports, and shared
-validation tools. Keep compatibility with both Claude Code and Codex users.
+validation tools. Keep compatibility with Claude Code, Codex, and Cursor users.
 
 ## Project Layout
 
@@ -11,6 +11,8 @@ validation tools. Keep compatibility with both Claude Code and Codex users.
   marked and no same-named `skills/*.md` source exists.
 - `codex-prompts/*.md`: generated Codex custom prompts for slash-command
   style entry points. These are a compatibility layer; skills remain preferred.
+- `cursor-skills/*/SKILL.md`: Cursor skill packages generated from
+  `skills/*.md`.
 - `tools/*.py`: shared financial validation and data tools used by both systems.
 - `reports/`: research outputs. Do not rewrite unrelated reports while changing
   tooling or skills.
@@ -21,16 +23,23 @@ validation tools. Keep compatibility with both Claude Code and Codex users.
   installs generated Codex slash prompts locally.
 - `scripts/install-claude-commands.sh` / `scripts/install-claude-commands.bat`:
   installs Claude Code commands locally.
+- `scripts/sync-cursor-skills.py`: regenerates Cursor skills from `skills/*.md`.
+- `scripts/install-cursor-skills.sh` / `scripts/install-cursor-skills.bat`:
+  installs Cursor skills locally (`~/.cursor/skills` or `.cursor/skills`).
 
 ## Compatibility Rules
 
 - Treat `skills/*.md` as the canonical workflow source.
 - After changing any file in `skills/`, run:
   `python3 scripts/sync-codex-skills.py`
+  and `python3 scripts/sync-cursor-skills.py`
 - If slash prompt compatibility is needed, also run:
   `python3 scripts/sync-codex-prompts.py`
-- Do not manually edit generated `codex-skills/*/SKILL.md` unless also updating
-  the corresponding source in `skills/`.
+- Do not manually edit generated `codex-skills/*/SKILL.md` or
+  `cursor-skills/*/SKILL.md` unless also updating the corresponding source in
+  `skills/`.
+- Do not install generated skills into `~/.cursor/skills-cursor`; that
+  directory is reserved by Cursor.
 - For Codex-only hand-written packages under `codex-skills/`, keep them clearly
   marked as Codex-only and do not create a same-named `skills/*.md` file unless
   intentionally adopting the workflow for Claude Code too.
@@ -63,7 +72,10 @@ validation tools. Keep compatibility with both Claude Code and Codex users.
 - Before finishing a skill/tool change, run the relevant syntax or generation
   check. For compatibility changes, run:
   `python3 scripts/sync-codex-skills.py`
-- To verify generated Codex artifacts are current without rewriting files, run:
+  and `python3 scripts/sync-cursor-skills.py`
+- To verify generated Codex/Cursor artifacts are current without rewriting
+  files, run:
   `python3 scripts/sync-codex-skills.py --check`
+  `python3 scripts/sync-cursor-skills.py --check`
   and, when slash prompts are relevant:
   `python3 scripts/sync-codex-prompts.py --check`

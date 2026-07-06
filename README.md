@@ -213,6 +213,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 | Skill | 用途 | 适合场景 |
 |-------|------|---------|
 | [`/dyp-ask`](skills/dyp-ask.md) | 段永平问答 | 以段永平的方式思考任何问题——商业、投资、人生 |
+| [`/changzong-ask`](skills/changzong-ask.md) | 常总问答 | 以常士杉的方式思考——分配/周期/人性、五步交易法、3221阵型 |
 | [`/financial-data`](skills/financial-data.md) | 财务数据获取与交叉验证规范 | 确保关键数据来自2个独立来源，误差>1%告警 |
 | [`/wechat-article`](skills/wechat-article.md) | 微信公众号文章 | 作者、编辑、读者三Agent协作，产出可发布文章 |
 
@@ -230,7 +231,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 
 ### 1. 安装 AI 客户端
 
-本仓库保留同一套 canonical workflow，并分别提供 Claude Code commands 与 Codex skills。按你使用的客户端安装即可。
+本仓库保留同一套 canonical workflow，并分别提供 Claude Code commands、Codex skills 与 Cursor skills。按你使用的客户端安装即可。
 
 Claude Code 用户：
 
@@ -317,7 +318,32 @@ REM 可选：安装 Codex slash prompts
 .\scripts\install-codex-prompts.bat
 ```
 
-仓库同时维护三套入口：`skills/*.md` 是 Claude Code command 源文件；`codex-skills/*/SKILL.md` 是 Codex skill 包，由 `scripts/sync-codex-skills.py` 从 `skills/*.md` 生成；`codex-prompts/*.md` 是可选的 Codex slash prompt 兼容层。
+Cursor 用户安装（macOS / Linux）：
+
+```bash
+# 克隆仓库
+git clone https://github.com/xbtlin/ai-berkshire.git
+
+# 生成并安装 Cursor skills 到 ~/.cursor/skills
+cd ai-berkshire
+./scripts/install-cursor-skills.sh
+
+# 可选：仅安装到当前仓库 .cursor/skills
+./scripts/install-cursor-skills.sh --project
+```
+
+Cursor 用户安装（Windows PowerShell / Command Prompt）：
+
+```bat
+git clone https://github.com/xbtlin/ai-berkshire.git
+cd ai-berkshire
+.\scripts\install-cursor-skills.bat
+
+REM 可选：仅安装到当前仓库 .cursor/skills
+.\scripts\install-cursor-skills.bat --project
+```
+
+仓库同时维护四套入口：`skills/*.md` 是 Claude Code command 源文件；`codex-skills/*/SKILL.md` 是 Codex skill 包，由 `scripts/sync-codex-skills.py` 从 `skills/*.md` 生成；`codex-prompts/*.md` 是可选的 Codex slash prompt 兼容层；`cursor-skills/*/SKILL.md` 是 Cursor skill 包，由 `scripts/sync-cursor-skills.py` 从 `skills/*.md` 生成。
 
 ### 3. 使用
 
@@ -350,6 +376,7 @@ REM 可选：安装 Codex slash prompts
 
 # 思维工具
 /dyp-ask 拼多多的护城河到底在哪里？
+/changzong-ask 现在美股高位该不该减仓？
 /wechat-article 美团
 ```
 
@@ -369,6 +396,16 @@ REM 可选：安装 Codex slash prompts
 ```text
 /prompts:investment-research 腾讯
 ```
+
+在 Cursor 中安装后，新开一个 Agent 对话即可使用。直接描述任务，例如：
+
+```text
+使用 investment-research 研究腾讯
+使用 investment-checklist 筛选茅台、英伟达、苹果
+使用 news-pulse 分析拼多多最近跌12%的原因
+```
+
+Cursor 会根据 skill 的 `description` 自动匹配；也可以明确点名 skill 名称。修改 `skills/*.md` 后，重新运行 `./scripts/install-cursor-skills.sh` 同步更新。
 
 ---
 
