@@ -53,23 +53,41 @@ def render_markdown(markdown_text: str) -> str:
     return renderer.convert(markdown_text)
 
 
-def render_page(title: str, body_html: str, root_prefix: str) -> str:
+def render_page(title: str, body_html: str, root_prefix: str, page_class: str = "") -> str:
     escaped_title = html.escape(title)
+    content_class = "content"
+    if page_class:
+        content_class = f"{content_class} {page_class}"
     return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI Berkshire 投资研究报告静态索引。">
   <title>{escaped_title}</title>
+  <link rel="icon" href="{root_prefix}assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{root_prefix}assets/site.css">
+  <script defer src="{root_prefix}assets/site.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">跳到正文</a>
   <header class="site-header">
-    <a class="site-title" href="{root_prefix}index.html">AI Berkshire Reports</a>
+    <div class="site-header-inner">
+      <a class="site-title" href="{root_prefix}index.html" aria-label="AI Berkshire Reports 首页">
+        <span class="site-mark" aria-hidden="true">AI</span>
+        <span>AI Berkshire Reports</span>
+      </a>
+      <nav class="site-nav" aria-label="站点导航">
+        <a href="{root_prefix}index.html">研究库</a>
+      </nav>
+    </div>
   </header>
-  <main class="content">
+  <main id="main-content" class="{content_class}">
 {body_html}
   </main>
+  <footer class="site-footer">
+    <p>仅用于学习和研究，不构成投资建议。</p>
+  </footer>
 </body>
 </html>
 """
@@ -78,10 +96,15 @@ def render_page(title: str, body_html: str, root_prefix: str) -> str:
 def render_report(markdown_path: Path, output_path: Path, reports_dir: Path, output_dir: Path) -> None:
     markdown_text = markdown_path.read_text(encoding="utf-8")
     title = title_from_markdown(markdown_text, markdown_path.stem)
-    body_html = render_markdown(markdown_text)
+    source_relative = markdown_path.relative_to(reports_dir)
     root_prefix = "../" * (len(output_path.relative_to(output_dir).parents) - 1)
+    breadcrumb_html = render_breadcrumb(source_relative.parent, root_prefix, title)
+    body_html = f"""    {breadcrumb_html}
+    <article class="report-article">
+{render_markdown(markdown_text)}
+    </article>"""
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(render_page(title, body_html, root_prefix), encoding="utf-8")
+    output_path.write_text(render_page(title, body_html, root_prefix, "report-page"), encoding="utf-8")
 
 
 def copy_static_assets(reports_dir: Path, output_reports_dir: Path) -> None:
@@ -104,13 +127,37 @@ def render_navigation_list(items: list[tuple[str, Path, str]]) -> str:
     rows = []
     for label, href, item_type in items:
         rows.append(
-            f'        <li class="{item_type}"><a href="{encoded_href(href)}">{html.escape(label)}</a></li>'
+            f'        <li class="{item_type}" data-search-item>'
+            f'<a href="{encoded_href(href)}">'
+            f'<span class="item-label">{html.escape(label)}</span>'
+            f"</a></li>"
         )
     return "\n".join(rows)
 
 
 def output_root_prefix(output_path: Path, output_dir: Path) -> str:
     return "../" * (len(output_path.relative_to(output_dir).parents) - 1)
+
+
+def render_breadcrumb(source_relative_dir: Path, root_prefix: str, current_label: str | None = None) -> str:
+    if source_relative_dir == Path(".") and current_label is None:
+        return ""
+
+    parts = [f'<a href="{root_prefix}index.html">研究库</a>']
+    accumulated = Path()
+    for directory_name in source_relative_dir.parts:
+        accumulated = accumulated / directory_name
+        href = f'{root_prefix}{encoded_href(Path("reports") / accumulated / "index.html")}'
+        parts.append(f'<a href="{href}">{html.escape(directory_name)}</a>')
+
+    if current_label is not None:
+        parts.append(f'<span aria-current="page">{html.escape(current_label)}</span>')
+    elif source_relative_dir != Path("."):
+        current = parts.pop()
+        label = html.escape(source_relative_dir.parts[-1])
+        parts.append(current.replace(f">{label}</a>", f' aria-current="page">{label}</a>'))
+
+    return f'<nav class="breadcrumb" aria-label="面包屑">{"<span>/</span>".join(parts)}</nav>'
 
 
 def render_directory_index(
@@ -152,32 +199,63 @@ def render_directory_index(
 
     if source_relative_dir == Path("."):
         title = "AI Berkshire Reports"
-        subtitle = f"{total_reports} reports generated from <code>reports/</code>."
-        breadcrumb_html = ""
+        subtitle = "从 <code>reports/</code> 自动生成的投资研究索引。"
+        eyebrow = "研究库"
     else:
         title = source_relative_dir.as_posix()
-        subtitle = f"{len(report_items)} reports in this folder."
-        breadcrumb_html = f'      <p class="breadcrumb"><a href="{output_root_prefix(output_path, output_dir)}index.html">Reports</a> / {html.escape(title)}</p>\n'
+        subtitle = "当前目录下的研究报告与子目录。"
+        eyebrow = "目录"
+    breadcrumb_html = render_breadcrumb(source_relative_dir, output_root_prefix(output_path, output_dir))
+    visible_items = len(directory_items) + len(report_items)
 
     body_html = f"""    <section class="index-hero">
-{breadcrumb_html}      <h1>{html.escape(title)}</h1>
+      {breadcrumb_html}
+      <p class="hero-eyebrow">{eyebrow}</p>
+      <h1>{html.escape(title)}</h1>
       <p>{subtitle}</p>
+      <dl class="hero-stats" aria-label="索引统计">
+        <div>
+          <dt>全部报告</dt>
+          <dd>{total_reports}</dd>
+        </div>
+        <div>
+          <dt>当前目录报告</dt>
+          <dd>{len(report_items)}</dd>
+        </div>
+        <div>
+          <dt>子目录</dt>
+          <dd>{len(directory_items)}</dd>
+        </div>
+      </dl>
     </section>
-    <section class="report-list">
-      <h2>Folders</h2>
-      <ul>
+    <section class="index-tools" aria-labelledby="filter-title">
+      <div>
+        <h2 id="filter-title">筛选当前页</h2>
+        <p id="filter-status" class="filter-status" data-filter-status aria-live="polite">共 {visible_items} 个条目</p>
+      </div>
+      <div class="filter-field">
+        <label class="filter-label" for="report-filter">关键词</label>
+        <input id="report-filter" data-report-filter type="search" autocomplete="off" aria-describedby="filter-status">
+      </div>
+    </section>
+    <p class="filter-empty" data-filter-empty hidden>没有匹配的条目。</p>
+    <div class="index-sections">
+      <section class="report-list" aria-labelledby="folders-title">
+        <h2 id="folders-title">目录 <span>{len(directory_items)}</span></h2>
+        <ul data-filter-list>
 {render_navigation_list(directory_items)}
-      </ul>
-    </section>
-    <section class="report-list">
-      <h2>Reports</h2>
-      <ul>
+        </ul>
+      </section>
+      <section class="report-list" aria-labelledby="reports-title">
+        <h2 id="reports-title">报告 <span>{len(report_items)}</span></h2>
+        <ul data-filter-list>
 {render_navigation_list(report_items)}
-      </ul>
-    </section>"""
+        </ul>
+      </section>
+    </div>"""
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        render_page(title, body_html, output_root_prefix(output_path, output_dir)),
+        render_page(title, body_html, output_root_prefix(output_path, output_dir), "index-page"),
         encoding="utf-8",
     )
 
@@ -214,22 +292,32 @@ def write_styles(output_dir: Path) -> None:
 
 :root {
   color-scheme: light;
-  --bg: #f8f7f4;
-  --panel: #ffffff;
-  --text: #1c1c1c;
-  --muted: #626262;
-  --line: #dedbd2;
-  --accent: #0f766e;
-  --accent-strong: #0b5f59;
+  --bg: #f6f7f3;
+  --surface: #fffefa;
+  --surface-subtle: #eef2ea;
+  --text: #1d221d;
+  --muted: #5d665f;
+  --line: #d9dfd4;
+  --line-strong: #b9c2b4;
+  --accent: #315f52;
+  --accent-strong: #21483e;
+  --accent-warm: #815c2d;
+  --code-bg: #e9ede4;
+  --shadow: 0 16px 36px rgba(31, 42, 31, 0.08);
+}
+
+html {
+  scroll-padding-top: 76px;
 }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 17px;
-  line-height: 1.72;
+  line-height: 1.74;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -242,50 +330,162 @@ a:hover {
   color: var(--accent-strong);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(49, 95, 82, 0.32);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 12px;
+  z-index: 100;
+  transform: translateY(-150%);
+  border-radius: 6px;
+  background: var(--text);
+  padding: 8px 12px;
+  color: var(--surface);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
   border-bottom: 1px solid var(--line);
-  background: rgba(248, 247, 244, 0.94);
-  backdrop-filter: blur(8px);
+  background: rgba(246, 247, 243, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  gap: 16px;
 }
 
 .site-title {
-  display: block;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 14px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   color: var(--text);
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
 }
 
+.site-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--accent-strong);
+}
+
 .content {
-  max-width: 980px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 36px 24px 72px;
+  padding: 40px 24px 76px;
 }
 
 .index-hero {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 20px;
+  padding-bottom: 28px;
+}
+
+.hero-eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent-warm);
+  font-size: 13px;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .index-hero h1,
 .content h1 {
-  margin: 0 0 16px;
-  font-size: 34px;
-  line-height: 1.2;
+  max-width: 920px;
+  margin: 0 0 14px;
+  font-size: 40px;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.index-hero > p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 28px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--line);
+}
+
+.hero-stats div {
+  background: var(--surface);
+  padding: 16px;
+}
+
+.hero-stats dt {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero-stats dd {
+  margin: 4px 0 0;
+  color: var(--text);
+  font-size: 28px;
+  font-weight: 780;
+  line-height: 1.15;
 }
 
 .content h2 {
-  margin-top: 42px;
+  margin-top: 44px;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 8px;
-  font-size: 25px;
+  padding-bottom: 10px;
+  font-size: 24px;
   line-height: 1.3;
 }
 
@@ -304,9 +504,90 @@ a:hover {
   margin-bottom: 18px;
 }
 
+.index-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 420px);
+  align-items: end;
+  gap: 16px;
+  margin: 28px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.index-tools h2 {
+  margin: 0 0 4px;
+  border: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.filter-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.filter-field {
+  min-width: 0;
+}
+
+.filter-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 720;
+}
+
+[data-report-filter] {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 10px 12px;
+  color: var(--text);
+  font: inherit;
+}
+
+.filter-empty {
+  border: 1px dashed var(--line-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 18px;
+  color: var(--muted);
+}
+
+.index-sections {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.report-list {
+  min-width: 0;
+}
+
+.report-list h2 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.report-list h2 span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
+}
+
 .report-list ul {
   margin: 0;
-  margin-bottom: 24px;
   padding: 0;
   list-style: none;
 }
@@ -318,23 +599,24 @@ a:hover {
 .report-list a {
   display: block;
   padding: 12px 0;
+  color: var(--text);
+  text-decoration: none;
   overflow-wrap: anywhere;
 }
 
-.report-list li.directory a {
-  font-weight: 700;
+.report-list a:hover .item-label {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
 }
 
-.report-list li.directory a::before {
-  content: "目录 ";
-  color: var(--muted);
-  font-weight: 600;
+.item-label {
+  min-width: 0;
 }
 
-.report-list li.report a::before {
-  content: "报告 ";
-  color: var(--muted);
-  font-weight: 600;
+.report-list li.directory .item-label {
+  font-weight: 720;
 }
 
 .report-list li.empty {
@@ -343,14 +625,52 @@ a:hover {
 }
 
 .breadcrumb {
-  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.report-page {
+  max-width: 920px;
+}
+
+.report-article {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+
+.report-article > h1:first-child {
+  margin-top: 0;
+}
+
+.content hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 32px 0;
 }
 
 code {
   border-radius: 4px;
-  background: #ece8de;
+  background: var(--code-bg);
   padding: 0.12em 0.32em;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.92em;
@@ -360,7 +680,7 @@ pre {
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #202124;
+  background: #1f2724;
   padding: 16px;
   color: #f5f5f5;
 }
@@ -374,9 +694,9 @@ pre code {
 blockquote {
   margin-left: 0;
   border-left: 4px solid var(--accent);
-  background: rgba(15, 118, 110, 0.07);
-  padding: 12px 18px;
-  color: #333333;
+  background: rgba(49, 95, 82, 0.08);
+  padding: 14px 18px;
+  color: #2c332d;
 }
 
 table {
@@ -389,17 +709,31 @@ table {
 th,
 td {
   border: 1px solid var(--line);
-  padding: 8px 10px;
+  padding: 9px 11px;
   vertical-align: top;
 }
 
 th {
-  background: #ece8de;
+  background: var(--surface-subtle);
+  font-weight: 750;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 6px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-footer p {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 18px 24px 28px;
 }
 
 @media (max-width: 640px) {
@@ -407,7 +741,7 @@ img {
     font-size: 16px;
   }
 
-  .site-title,
+  .site-header-inner,
   .content {
     padding-left: 16px;
     padding-right: 16px;
@@ -419,9 +753,79 @@ img {
 
   .index-hero h1,
   .content h1 {
-    font-size: 28px;
+    font-size: 30px;
+  }
+
+  .hero-stats,
+  .index-tools,
+  .index-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    margin-top: 22px;
+  }
+
+  .site-footer p {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
+""",
+        encoding="utf-8",
+    )
+    (assets_dir / "favicon.svg").write_text(
+        """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#fffefa"/>
+  <path d="M14 48 28 16h8l14 32h-8l-3-8H25l-3 8h-8Zm14-15h8l-4-11-4 11Z" fill="#315f52"/>
+</svg>
+""",
+        encoding="utf-8",
+    )
+
+
+def write_scripts(output_dir: Path) -> None:
+    assets_dir = output_dir / "assets"
+    assets_dir.mkdir(parents=True, exist_ok=True)
+    (assets_dir / "site.js").write_text(
+        """(() => {
+  const input = document.querySelector("[data-report-filter]");
+  if (!input) {
+    return;
+  }
+
+  const items = Array.from(document.querySelectorAll("[data-search-item]"));
+  const status = document.querySelector("[data-filter-status]");
+  const empty = document.querySelector("[data-filter-empty]");
+  const total = items.length;
+
+  const normalize = (value) => value.trim().toLocaleLowerCase("zh-CN");
+
+  const update = () => {
+    const query = normalize(input.value);
+    let visible = 0;
+
+    for (const item of items) {
+      const text = normalize(item.textContent || "");
+      const matched = query === "" || text.includes(query);
+      item.hidden = !matched;
+      if (matched) {
+        visible += 1;
+      }
+    }
+
+    if (status) {
+      status.textContent = query === "" ? `共 ${total} 个条目` : `显示 ${visible} / ${total} 个结果`;
+    }
+
+    if (empty) {
+      empty.hidden = visible !== 0;
+    }
+  };
+
+  input.addEventListener("input", update);
+  update();
+})();
 """,
         encoding="utf-8",
     )
@@ -450,6 +854,7 @@ def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:
 
     copy_static_assets(reports_dir, output_reports_dir)
     write_styles(output_dir)
+    write_scripts(output_dir)
     render_indexes(report_links, output_dir)
 
 
