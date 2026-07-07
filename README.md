@@ -407,6 +407,27 @@ REM 可选：仅安装到当前仓库 .cursor/skills
 
 Cursor 会根据 skill 的 `description` 自动匹配；也可以明确点名 skill 名称。修改 `skills/*.md` 后，重新运行 `./scripts/install-cursor-skills.sh` 同步更新。
 
+### 4. 发布报告站点
+
+仓库内置 GitHub Pages 构建流程，可以把 `reports/` 下的 Markdown 报告渲染成静态 HTML 站点。
+
+本地预览构建：
+
+```bash
+python3 -m pip install -r requirements-pages.txt
+python3 scripts/build-github-pages.py
+```
+
+构建输出位于 `site/`，其中 `site/index.html` 是目录式报告索引页。首页只展示一级目录和根级报告，进入目录后再查看该目录下的子目录和报告。`site/` 是本地生成物，不提交到仓库。
+
+在 GitHub 仓库中启用：
+
+1. 进入 `Settings` -> `Pages`
+2. 在 `Build and deployment` 中将 `Source` 设为 `GitHub Actions`
+3. 推送到 `main` 后，`.github/workflows/pages.yml` 会自动构建并部署报告站点
+
+GitHub Pages 会公开发布站点内容，推送前请确认 `reports/` 中没有不希望公开的资料。
+
 ---
 
 ## 各 Skill 详细介绍
