@@ -64,6 +64,10 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn("腾讯最终报告", report_html)
             self.assertIn("<table>", report_html)
             self.assertIn('src="chart.png"', report_html)
+            self.assertIn('data-back-to-top', index_html)
+            self.assertIn('data-back-to-top', report_html)
+            self.assertIn('.back-to-top', (output_dir / "assets" / "site.css").read_text(encoding="utf-8"))
+            self.assertIn('initBackToTop', (output_dir / "assets" / "site.js").read_text(encoding="utf-8"))
             self.assertEqual((output_dir / "reports" / "腾讯" / "chart.png").read_bytes(), b"fake image")
 
 

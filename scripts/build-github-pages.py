@@ -88,6 +88,9 @@ def render_page(title: str, body_html: str, root_prefix: str, page_class: str = 
   <footer class="site-footer">
     <p>仅用于学习和研究，不构成投资建议。</p>
   </footer>
+  <button type="button" class="back-to-top" data-back-to-top aria-label="返回顶部" title="返回顶部" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
 </body>
 </html>
 """
@@ -736,6 +739,36 @@ img {
   padding: 18px 24px 28px;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-top:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--surface);
+}
+
+.back-to-top:active {
+  transform: translateY(1px);
+}
+
 @media (max-width: 640px) {
   body {
     font-size: 16px;
@@ -770,6 +803,17 @@ img {
     padding-left: 16px;
     padding-right: 16px;
   }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
 }
 """,
         encoding="utf-8",
@@ -789,42 +833,71 @@ def write_scripts(output_dir: Path) -> None:
     assets_dir.mkdir(parents=True, exist_ok=True)
     (assets_dir / "site.js").write_text(
         """(() => {
-  const input = document.querySelector("[data-report-filter]");
-  if (!input) {
-    return;
-  }
+  const initReportFilter = () => {
+    const input = document.querySelector("[data-report-filter]");
+    if (!input) {
+      return;
+    }
 
-  const items = Array.from(document.querySelectorAll("[data-search-item]"));
-  const status = document.querySelector("[data-filter-status]");
-  const empty = document.querySelector("[data-filter-empty]");
-  const total = items.length;
+    const items = Array.from(document.querySelectorAll("[data-search-item]"));
+    const status = document.querySelector("[data-filter-status]");
+    const empty = document.querySelector("[data-filter-empty]");
+    const total = items.length;
 
-  const normalize = (value) => value.trim().toLocaleLowerCase("zh-CN");
+    const normalize = (value) => value.trim().toLocaleLowerCase("zh-CN");
 
-  const update = () => {
-    const query = normalize(input.value);
-    let visible = 0;
+    const update = () => {
+      const query = normalize(input.value);
+      let visible = 0;
 
-    for (const item of items) {
-      const text = normalize(item.textContent || "");
-      const matched = query === "" || text.includes(query);
-      item.hidden = !matched;
-      if (matched) {
-        visible += 1;
+      for (const item of items) {
+        const text = normalize(item.textContent || "");
+        const matched = query === "" || text.includes(query);
+        item.hidden = !matched;
+        if (matched) {
+          visible += 1;
+        }
       }
-    }
 
-    if (status) {
-      status.textContent = query === "" ? `共 ${total} 个条目` : `显示 ${visible} / ${total} 个结果`;
-    }
+      if (status) {
+        status.textContent = query === "" ? `共 ${total} 个条目` : `显示 ${visible} / ${total} 个结果`;
+      }
 
-    if (empty) {
-      empty.hidden = visible !== 0;
-    }
+      if (empty) {
+        empty.hidden = visible !== 0;
+      }
+    };
+
+    input.addEventListener("input", update);
+    update();
   };
 
-  input.addEventListener("input", update);
-  update();
+  const initBackToTop = () => {
+    const button = document.querySelector("[data-back-to-top]");
+    if (!button) {
+      return;
+    }
+
+    const threshold = 320;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const toggleVisibility = () => {
+      button.hidden = window.scrollY < threshold;
+    };
+
+    button.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+    });
+
+    toggleVisibility();
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+  };
+
+  initReportFilter();
+  initBackToTop();
 })();
 """,
         encoding="utf-8",
