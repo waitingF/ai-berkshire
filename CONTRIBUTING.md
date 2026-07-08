@@ -29,7 +29,11 @@
 
 ## 提交 Issue
 
-- **Bug 报告**：写清楚使用的工具（Claude Code / Codex）及版本、调用的 skill、复现步骤、实际输出与预期输出。
+请从三个 Issue 模板中选择对应类型提交（已关闭空白 issue）。**核心要求：任何观点都要附具体、可复现的例子**，否则无法核实，会被要求补充或直接关闭。
+
+- **🐞 Skill 报错**：注明调用的 skill（确保标题与正文一致）、完整命令、报错信息、**使用的模型和客户端版本**。
+- **📉 数据错误**（股价/市值/财务数据）：给出具体标的、错误数值、**你认为的正确值和来源链接**，并说明是否涉及复权/送转/增发/汇率等口径。
+- **💡 改进建议**：给出**具体出处**（哪份报告、哪张表）和**期望的改进对比**（当前长这样 → 期望长这样），不接受只有抽象描述的建议。
 - **研究请求**（"帮我分析某某公司"）：本项目不接单。这套框架的意义就是让你自己跑出专业级研究——照着 README 的快速开始，用你自己的 AI 工具运行即可。
 
 ## 安全问题
@@ -73,7 +77,12 @@ Thanks for your interest in AI Berkshire. This project grew out of my personal i
 
 ## Issues
 
-- **Bug reports**: include the tool (Claude Code / Codex) and version, the skill invoked, reproduction steps, and actual vs. expected output.
+Please pick the matching Issue template (blank issues are disabled). **Core rule: every claim must come with a concrete, reproducible example**, otherwise it cannot be verified and will be asked for more detail or closed.
+
+- **🐞 Skill error**: state the skill invoked (make sure the title matches the body), the full command, the error message, and **the model and client version used**.
+- **📉 Data error** (price/market cap/financials): give the specific ticker, the wrong value, and **the value you believe is correct plus a source link**; note whether it involves split/bonus-issue/dilution/FX adjustments.
+- **💡 Suggestion**: give a **concrete location** (which report, which table) and a **before/after expectation**; abstract-only suggestions are not accepted.
+- **💬 Discussion / new skill proposal / other**: non-problem topics go here (no reproduction info required).
 - **Research requests** ("please analyze company X"): not accepted — the whole point of this framework is that you can run professional-grade research yourself. Follow the Quick Start in the README.
 
 ## Security
