@@ -373,7 +373,7 @@ REM 可选：仅安装到当前仓库 .cursor/skills
 # 持仓管理
 /portfolio-review 腾讯30%, 美团20%, 茅台20%, 现金30%
 /thesis-tracker 拼多多
-/thesis-drift 拼多多 reports/拼多多-thesis-2025Q4.md reports/拼多多-thesis-2026Q1.md
+/thesis-drift 拼多多 reports/拼多多/拼多多-thesis-2025Q4.md reports/拼多多/拼多多-thesis-2026Q1.md
 /news-pulse 腾讯
 
 # 思维工具

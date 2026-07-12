@@ -81,6 +81,7 @@ This skill is generated from `skills/industry-research.md` so Claude Code, Codex
 行业研究中，AI数据偏见会以独特方式放大：
 
 **行业级偏见**：
+
 | 偏见类型 | 表现 | 应对 |
 |---------|------|------|
 | 成熟行业偏好 | 传统行业（银行/能源/消费）资料极多，AI分析看起来"更确定" | 确定性来自商业模式，不来自研报数量 |

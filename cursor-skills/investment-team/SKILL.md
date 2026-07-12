@@ -36,6 +36,7 @@ This skill is generated from `skills/investment-team.md` so Claude Code, Codex, 
 在创建团队前，先向用户展示该公司的"AI可研究性"评估：
 
 **信息丰富度评级**（决定研究策略）：
+
 | 等级 | 特征 | 研究策略调整 |
 |------|------|------------|
 | A级（信息充裕） | 上市多年、券商覆盖广 | 团队重点放在**反面检验**和**非共识视角**，避免输出与市场一致的"正确的废话" |
@@ -45,6 +46,21 @@ This skill is generated from `skills/investment-team.md` so Claude Code, Codex, 
 **关键提醒**：资料多≠确定性高，资料少≠确定性低。AI能输出的置信度 ≠ 投资的真实确定性。确定性来自商业模式本身，不来自资料数量。
 
 将评级结果告知每个Agent，影响其研究方式。
+
+### 第一步¾：WebSearch 权限预检（关键 · 避免 Agent 静默退化）
+
+在创建团队、启动任何后台 Agent **之前**，必须先确认 WebSearch 权限已放行。
+
+**为什么必须预检**：本 skill 用 `run_in_background: true` 启动 4 个后台子 Agent，而**后台 Agent 无法向用户弹出交互式权限确认**。若 `WebSearch` 未在 `.claude/settings.local.json` 的 `permissions.allow` 白名单中，子 Agent 的联网搜索会被**静默拦截**，导致其退化为仅凭训练知识（有知识截止日期）作答，却仍按框架输出一份"看起来完整、实则未联网"的伪研究——这是本 skill 最危险的失败模式（见 issue #58）。
+
+**预检步骤**：
+1. 用 Bash 检查白名单是否含 WebSearch：
+   ```bash
+   grep -l '"WebSearch"' .claude/settings.local.json ~/.claude/settings.local.json 2>/dev/null
+   ```
+2. 若两处都未命中（即未放行）→ **停下来，不要启动 Agent**，提示用户：
+   > ⚠️ 检测到 WebSearch 未在权限白名单中。后台研究 Agent 无法联网，会退化成仅凭训练知识作答。请先在 `.claude/settings.local.json` 的 `permissions.allow` 加入 `"WebSearch"`（或运行 `/permissions` 勾选），再重跑本命令。
+3. 命中 → 正常继续。
 
 ### 第二步：创建团队
 
@@ -131,6 +147,7 @@ This skill is generated from `skills/investment-team.md` so Claude Code, Codex, 
 - **财务数据必须来自两个独立来源**，按 `skills/financial-data.md` 规范执行（美股：macrotrends+stockanalysis；港股：aastocks+macrotrends；A股：东方财富+巨潮资讯），两源误差>1%须标记
 - 确保数据准确，关键数据标注来源
 - 分析要深入，不流于表面
+- **联网失败禁止伪装**：若 WebSearch 被拦截/不可用，禁止用训练知识冒充联网结果。必须在报告顶部醒目标注「⚠️ 本报告未能联网，基于训练知识（截止日期 X），置信度降级」，并如实告知 team-lead，由其决定是否中止研究
 
 **输出要求**：
 - 报告要详尽，使用Markdown表格呈现关键数据
@@ -193,7 +210,19 @@ This skill is generated from `skills/investment-team.md` so Claude Code, Codex, 
 
 ### 第八步：保存报告
 
-将完整最终报告写入 `~/{公司名}投资研究报告_{日期}.md`（日期格式 YYYYMMDD）。
+将全部产出写入 `reports/{公司名}/`（目录不存在则创建）。**文件名保持不变**：
+
+```
+reports/{公司名}/
+├── README.md                         — 研究框架概览+核心结论
+├── 01-商业模式分析-段永平视角.md
+├── 02-财务估值分析-巴菲特视角.md
+├── 03-行业竞争分析-芒格视角.md
+├── 04-风险管理层评估-李录视角.md
+└── 最终报告.md                       — Team Lead 综合报告
+```
+
+4 份子 Agent 报告分别写入对应视角文件；综合研判写入 `最终报告.md`；`README.md` 写框架概览与核心结论。
 
 ### 第九步：数据抽检（准出流程）
 

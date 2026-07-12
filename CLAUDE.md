@@ -31,8 +31,8 @@ reports/
 ├── 拼多多/                  — 拼多多所有研究报告
 ├── 泡泡玛特/                — 泡泡玛特所有研究报告
 ├── 核电-industry-20260409.md — 行业报告放根目录
-├── AI算力-funnel-20260509.md  — 漏斗筛选报告放根目录
-├── AI-轮动判断-20260509.md    — 主题级综合判断报告放根目录
+├── AI产业研究/AI算力-funnel-20260509.md — AI 主题漏斗可归入 AI产业研究/
+├── AI产业研究/AI-轮动判断-20260509.md — AI 主题综合判断可归入 AI产业研究/
 ├── portfolio-latest.md       — 组合报告放根目录
 └── 多公司对比-checklist-20260408.md — 多公司报告放根目录
 ```
@@ -41,17 +41,17 @@ reports/
 
 | Skill | 文件命名格式 | 示例 |
 |------|---------|------|
-| /investment-team | `{公司名}/` 目录内含4个视角+最终报告 | `reports/拼多多/最终报告.md` |
-| /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `reports/腾讯/腾讯-research-20260408.md` |
-| /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `reports/腾讯/腾讯-checklist-20260408.md` |
+| /investment-team | `reports/{公司名}/` 内含4个视角+最终报告 | `reports/拼多多/最终报告.md` |
+| /investment-research | `reports/{公司名}/{公司名}-research-{YYYYMMDD}.md` | `reports/腾讯/腾讯-research-20260408.md` |
+| /investment-checklist | 单公司：`reports/{公司名}/{公司名}-checklist-{YYYYMMDD}.md`；多公司对比放根目录 | `reports/腾讯/腾讯-checklist-20260408.md` |
 | /industry-research | `{行业名}-industry-{YYYYMMDD}.md`（根目录） | `reports/核电-industry-20260409.md` |
-| /industry-funnel | `{行业名}-funnel-{YYYYMMDD}.md`（根目录） | `reports/AI算力-funnel-20260509.md` |
-| /private-company-research | `{公司名}-private-{YYYYMMDD}.md` | `reports/字节跳动/字节跳动-private-20260408.md` |
-| /earnings-review | `{公司名}-earnings-{期间}.md` | `reports/腾讯/腾讯-earnings-2025Q4.md` |
-| /earnings-team | `{公司名}/` 目录内含4个大师视角+研究底稿+公众号文章+读者评审 | `reports/腾讯/腾讯-earnings-2025Q4.md`（公众号定稿） |
-| /thesis-tracker | `{公司名}-thesis.md`（长期维护） | `reports/腾讯/腾讯-thesis.md` |
+| /industry-funnel | `{行业名}-funnel-{YYYYMMDD}.md`（行业/主题报告；AI 类可放 `AI产业研究/`） | `reports/AI产业研究/AI算力-funnel-20260509.md` |
+| /private-company-research | `reports/{公司名}/{公司名}-private-{YYYYMMDD}.md` | `reports/字节跳动/字节跳动-private-20260408.md` |
+| /earnings-review | `reports/{公司名}/{公司名}-earnings-{期间}.md` | `reports/腾讯/腾讯-earnings-2025Q4.md` |
+| /earnings-team | `reports/{公司名}/` 内含4个大师视角+研究底稿+公众号文章+读者评审 | `reports/腾讯/腾讯-earnings-2025Q4.md`（公众号定稿） |
+| /thesis-tracker | `reports/{公司名}/{公司名}-thesis.md`（长期维护） | `reports/腾讯/腾讯-thesis.md` |
 | /portfolio-review | `portfolio-latest.md`（根目录，持续更新） | `reports/portfolio-latest.md` |
-| /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `reports/腾讯/腾讯-management-20260409.md` |
+| /management-deep-dive | `reports/{公司名}/{公司名}-management-{YYYYMMDD}.md` | `reports/腾讯/腾讯-management-20260409.md` |
 
 ## /investment-team 文件结构
 
