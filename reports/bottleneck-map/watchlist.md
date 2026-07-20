@@ -12,8 +12,8 @@
 ## 重点关注（信号强度★★★★+）
 
 ### 1. Nittobo（3110.T，东京证券交易所）★★★★ 【2026-05-26午后 新增】
-**瓶颈环节**：T-glass玻纤布（ABF基板L3原材料，S级，90-100%市占率）  
-**市值**：¥921.4B ≈ $5.9B USD（目标区间 ✅）  
+**瓶颈环节**：T-glass玻纤布（ABF基板L3原材料，S级，90-100%市占率）
+**市值**：¥921.4B ≈ $5.9B USD（目标区间 ✅）
 **⚠️ 估值重大修正（2026-05-30午后——原"绿灯"是计算错误）**：
 - 股价：¥25,890（从ATH ¥32,900回调约21%）
 - **经常性P/E：~121x** ❌ 红灯——FY2025净利¥41.8B含¥34.2B一次性固定资产出售收益，经常性净利仅¥7.6B；原"P/E 24.8x绿灯"错误
@@ -22,7 +22,7 @@
 - P/S：**约7.7x** 🟡 中性
 - 分析师：5/5 Buy；平均目标价¥27,641（+6.76%）；最高目标¥33,000
 - **真实安全边际入场区间：¥7,700-10,500（5:1拆分后¥1,540-2,100）**；10年25xPE退出需CAGR 18.8%（制造业几乎不可能）
-**瓶颈核心逻辑**：T-glass（低膨胀系数玻纤布）是防止AI GPU/ASIC先进封装翘曲的关键材料；Nittobo是全球唯一能稳定量产该材料的公司（90-100%市占率）；下游客户Apple、Nvidia、Google、Amazon齐来争夺产能；Nan Ya Plastics计划2027年起提供约20%替代——即2027年前Nittobo是单一来源。  
+**瓶颈核心逻辑**：T-glass（低膨胀系数玻纤布）是防止AI GPU/ASIC先进封装翘曲的关键材料；Nittobo是全球唯一能稳定量产该材料的公司（90-100%市占率）；下游客户Apple、Nvidia、Google、Amazon齐来争夺产能；Nan Ya Plastics计划2027年起提供约20%替代——即2027年前Nittobo是单一来源。
 **信号验证**：
 - ✅ 2025年8月涨价20%，2026年4月再涨20-30%（定价权确认）
 - ✅ H2 2026 T-glass供应缺口预计>40%（Morgan Stanley）；TrendForce量化台湾IC基板厂2026缺口10-20%
@@ -40,27 +40,27 @@
 - ⚠️ Nan Ya 2027年替代路径存在（20%），长期垄断将部分弱化
 - ⚠️ 日元汇率影响汇算收益
 
-**估值安全边际（2026-05-30午后 重大修正）**：  
-⚠️ **之前记录"P/E 24.2x绿灯"是错误的**——使用了含¥34.2B一次性收益的净利润。  
-修正后：经常性净利¥7.6B，经常性P/E=121x（❌红灯）。  
-以¥25,890买入，10年25xPE退出，年化10%回报需净利润CAGR 18.8%——对制造业公司几乎不可能（历史5年收入CAGR仅4%）。  
-**安全边际入场区间（修正后）**：  
-- 内在价值区间：¥11,000-15,000（DCF基准-乐观）  
-- 安全边际7折买入：**¥7,700-10,500**（5:1拆分后 **¥1,540-2,100**）  
-- 当前¥25,890仍高估 **70-135%**，5月20日低点¥21,090也高估100-174%  
+**估值安全边际（2026-05-30午后 重大修正）**：
+⚠️ **之前记录"P/E 24.2x绿灯"是错误的**——使用了含¥34.2B一次性收益的净利润。
+修正后：经常性净利¥7.6B，经常性P/E=121x（❌红灯）。
+以¥25,890买入，10年25xPE退出，年化10%回报需净利润CAGR 18.8%——对制造业公司几乎不可能（历史5年收入CAGR仅4%）。
+**安全边际入场区间（修正后）**：
+- 内在价值区间：¥11,000-15,000（DCF基准-乐观）
+- 安全边际7折买入：**¥7,700-10,500**（5:1拆分后 **¥1,540-2,100**）
+- 当前¥25,890仍高估 **70-135%**，5月20日低点¥21,090也高估100-174%
 
-**催化剂**：**股票拆分记录日2026-06-29**（30天后，拆分提升流动性但不改变估值）；FY2027 Q1业绩（约2026-08-05，是验证经常性盈利路径最重要节点）  
-**建议动作（修正后）**：**不追高；真实入场需等日经大跌或AI退潮带来的深度回调（¥7,700-10,500拆前 / ¥1,540-2,100拆后）；5:1拆分后June 29可能短期上涨（散户门槛降低），届时若超过¥7,500（拆前¥37,500）反而是更贵的买点**  
-**加入日期**：2026-05-26  
+**催化剂**：**股票拆分记录日2026-06-29**（30天后，拆分提升流动性但不改变估值）；FY2027 Q1业绩（约2026-08-05，是验证经常性盈利路径最重要节点）
+**建议动作（修正后）**：**不追高；真实入场需等日经大跌或AI退潮带来的深度回调（¥7,700-10,500拆前 / ¥1,540-2,100拆后）；5:1拆分后June 29可能短期上涨（散户门槛降低），届时若超过¥7,500（拆前¥37,500）反而是更贵的买点**
+**加入日期**：2026-05-26
 **来源**：[Yahoo Finance 3110.T](https://finance.yahoo.com/quote/3110.T/) | [Tom's Hardware](https://www.tomshardware.com/tech-industry/shortages-of-crucial-chip-packaging-material-threatens-ai-accelerator-supply-chains-nittobos-fukushima-plant-is-tripling-capacity-but-itll-take-years-before-market) | [SmartKarma估值](https://www.smartkarma.com/insights/nittobo-3110-jp-scarcity-premium-in-ai-substrates-with-strong-earnings-visibility) | [Global Tech Research](https://globaltechresearch.substack.com/p/nittobo-3110-jp-the-king-of-electronic) | [Globe and Mail 股票拆分](https://www.theglobeandmail.com/investing/markets/markets-news/Tipranks/2122978/nittobo-announces-five-for-one-stock-split-and-boosts-authorized-shares/)
 
 ---
 
 ### 2. Aixtron (AIXA，法兰克福交易所) ★★★★ ⚠️H2执行高度后置 ⚠️市值修正：实际€6.09B
-**瓶颈环节**：InP MOCVD外延设备（A级）  
-**市值**：**€6.09B（实际，2026-05-25）**（前期估算€2-3B严重偏低）  
-**估值（更新）**：P/S = **10.9x**（€6.09B ÷ €560M指引），P/E = **101.58x**；当前价 €53.66，52周高 €55.28；Berenberg目标价 €42（较现价低22%，已触发下调）  
-**瓶颈核心逻辑**：全球InP/光子MOCVD设备70-90%市场份额；设备材料专用不可替代；交期12-24个月。任何InP晶圆扩产都必须先排队等Aixtron。这是整条InP供应链扩产速度的物理上限。  
+**瓶颈环节**：InP MOCVD外延设备（A级）
+**市值**：**€6.09B（实际，2026-05-25）**（前期估算€2-3B严重偏低）
+**估值（更新）**：P/S = **10.9x**（€6.09B ÷ €560M指引），P/E = **101.58x**；当前价 €53.66，52周高 €55.28；Berenberg目标价 €42（较现价低22%，已触发下调）
+**瓶颈核心逻辑**：全球InP/光子MOCVD设备70-90%市场份额；设备材料专用不可替代；交期12-24个月。任何InP晶圆扩产都必须先排队等Aixtron。这是整条InP供应链扩产速度的物理上限。
 **信号验证**：
 - ✅ Lumentum 2026-05-19下单多台G10-AsP系统（行业需求真实）
 - ✅ Q1 2026订单量€171M（+30% YoY），光子学订单占约70%
@@ -73,10 +73,10 @@
 - ❌ Q1 毛利率18%；EBIT亏损€22M — **系一次性人员措施（mid-single-digit EUR million）叠加GaN低迷所致**
 - ⚠️ 全年€560M中Q1仅€59M → H2需完成~€420M，H2/H1比例约3.2:1，执行风险高
 - ⚠️ CPO规模化长期存在替代路线风险
-**估值状态**：P/S约4-5x（合理区间），绿灯  
+**估值状态**：P/S约4-5x（合理区间），绿灯
 **升级理由**：早间降级依据之一"guidance cut"经确认为误读——April 14公告为正式上调指引（€520M→€560M）；另一依据Q1亏损属周期性低点（GaN低迷+一次性费用），订单积压和光电子订单质量均强。订单书支撑H2强复苏逻辑。
-**关键验证点**：H2 2026财务交付（尤其Q3营收是否如期大幅跳升）  
-**行动**：候选深入研究；等Q2营收开始体现光电子订单收入后重新评估是否执行 `/investment-team`  
+**关键验证点**：H2 2026财务交付（尤其Q3营收是否如期大幅跳升）
+**行动**：候选深入研究；等Q2营收开始体现光电子订单收入后重新评估是否执行 `/investment-team`
 **估值安全边际（更新）**：以€6.09B市值，10年25xPE退出，年化10%回报需净利润€632M（对应收入€3.16B）；从€560M到€3.16B需CAGR 19%/年，门槛显著高于前期估算。结论：**当前价格无强安全边际，不追高**。
 
 **来源**：[Aixtron指引上调 — Finanzwire](https://www.finanzwire.com/press-release/aixtron-se-etr-aixa-aixtron-se-increases-fy-2026-guidance-and-reports-preliminary-q12026-figures-xdNX74Isy8R) | [CompoundSemiconductor指引上调](https://compoundsemiconductor.net/article/123997/AIXTRON_SE_increases_FY_2026_guidance) | [Aixtron Q1 营收](https://www.semiconductor-today.com/news_items/2026/may/aixtron-040526.shtml) | [Lumentum订单5月19日](https://www.semiconductor-today.com/news_items/2026/may/aixtron-200526.shtml) | [Berenberg下调Hold](https://www.investing.com/news/stock-market-news/berenberg-downgrades-aixtron-on-valuation-concerns-93CH-4663059) | [Stockopedia市值数据](https://www.stockopedia.com/share-prices/aixtron-se-ETR:AIXA/)
@@ -84,9 +84,9 @@
 ---
 
 ### 2. Chemring Group (CHG.L，伦敦交易所) ★★★★ 【2026-05-25新增 | 2026-05-26强化 | 2026-05-26 09:09 Sole-Source确认，候选升★★★★★】
-**瓶颈环节**：能量材料/固体推进剂（国防弹药链，A级）  
-**市值**：约£1.3B（约$1.6B），FTSE 250成分股  
-**瓶颈核心逻辑**：固体推进剂+高能炸药（HMX/RDX）+烟火技术是精确制导弹药的物理上游，是NATO盟国独立能量材料供应商中少数可投资的上市公司；挪威基地规划**275%扩产**，签订12-15年长期合同，是NATO供应链重建最主要受益商之一。  
+**瓶颈环节**：能量材料/固体推进剂（国防弹药链，A级）
+**市值**：约£1.3B（约$1.6B），FTSE 250成分股
+**瓶颈核心逻辑**：固体推进剂+高能炸药（HMX/RDX）+烟火技术是精确制导弹药的物理上游，是NATO盟国独立能量材料供应商中少数可投资的上市公司；挪威基地规划**275%扩产**，签订12-15年长期合同，是NATO供应链重建最主要受益商之一。
 **信号验证**：
 - ✅ 2025财年收入£497.5M；能量材料占65%收入
 - ✅ 订单簿£13.45亿，**订单覆盖率从76%升至85%（FY26）** — 2026-05-26新确认↑
@@ -103,12 +103,12 @@
 - ⚠️ 英国财政压力可能影响国内订单
 - ⚠️ 公司体量相对小，单一客户依赖需核实
 - ⚠️ **【2026-05-26 16:12 新增风险项】BAE Systems无NC/NG推进剂技术"预计2026年底达工业成熟"**——若成立，Chemring Nobel的NC护城河有长期时间线风险；但BAE目前仍处pilot阶段，2026年底是BAE自我表述，历史上此类技术突破普遍延期；短期（June 9财报）不影响；中长期（2027+）需监控
-**估值状态**：便宜（P/S~2.6x），估值绿灯  
-**【2026-06-02 H1 FY2026财报发布（催化剂触发）】**：  
-- ✅ **收入£263.2M**（vs 分析师估值£257.9M，超2.1%）  
-- ✅ **净利润£27.8M**（vs H1 FY2025 £20.4M，**+36% YoY**）  
-- ✅ **EPS 0.13p**（vs 估值0.12p，超+1.60%）  
-- ⚠️ 数据来源：第三方财报聚合数据库（investing.com），待Chemring官方RNS确认具体数字  
+**估值状态**：便宜（P/S~2.6x），估值绿灯
+**【2026-06-02 H1 FY2026财报发布（催化剂触发）】**：
+- ✅ **收入£263.2M**（vs 分析师估值£257.9M，超2.1%）
+- ✅ **净利润£27.8M**（vs H1 FY2025 £20.4M，**+36% YoY**）
+- ✅ **EPS 0.13p**（vs 估值0.12p，超+1.60%）
+- ⚠️ 数据来源：第三方财报聚合数据库（investing.com），待Chemring官方RNS确认具体数字
 - **意义**：净利润+36%远超收入+2.1%，NC/能量材料涨价已进入利润表，利润率扩张已出现；所有看多逻辑中最关键的"利润率拐点"信号确认
 
 **【2026-05-31 第七十三轮 EU ASAP €66.7M资助Chemring Nobel（补录）】**：
@@ -117,50 +117,50 @@
 - 意义：政府级战略背书——不只是商业订单，NATO将Chemring Nobel定性为战略级能量材料供应商；与12-15年商业框架合同形成双重锁定；June 2财报将反映此背书带来的订单簿和利润率改善
 - 来源：[EU ASAP Chemring Nobel](https://defence-industry.eu/eu-highlights-progress-in-expanding-ammunition-production-capacity-at-chemring-nobel-in-norway/)
 
-**近期催化剂**：🔴 **June 2, 2026 半年财报明日发布**——触发watchlist关键验证催化剂（EU ASAP资助+NC涨价利润率+净利润+36%验证）  
-**待验证**：官方RNS公告确认具体数字；利润率分部细节；EU ASAP资助是否在资本开支或收入中体现；分析师目标价是否上调；BAE propellant技术进展  
-**建议动作**：**明日June 2财报发布后立即执行 `/investment-team` 深入研究**（EU ASAP资助+NC涨价双重催化剂确认）  
+**近期催化剂**：🔴 **June 2, 2026 半年财报明日发布**——触发watchlist关键验证催化剂（EU ASAP资助+NC涨价利润率+净利润+36%验证）
+**待验证**：官方RNS公告确认具体数字；利润率分部细节；EU ASAP资助是否在资本开支或收入中体现；分析师目标价是否上调；BAE propellant技术进展
+**建议动作**：**明日June 2财报发布后立即执行 `/investment-team` 深入研究**（EU ASAP资助+NC涨价双重催化剂确认）
 **来源**：[Chemring 2025年报](https://www.chemring.com/~/media/Files/C/Chemring-V3/docs/chemring-annual-report-and-accounts-2025-v1.pdf) | [Chemring AGM更新](https://www.chemring.com/media/press-releases/2026/20-02-2026) | [Kyiv Independent 275%扩产](https://kyivindependent.com/like-any-technology-its-a-race-uks-largest-ammo-maker-rebooting-chemistry-to-break-natos-dependence-on-explosive-imports/) | [Rheinmetall抢购NC](https://www.defensenews.com/global/europe/2025/04/07/rheinmetall-secures-nitrocellulose-supply-amid-european-ammo-scramble/)
 
 ---
 
 ### 3. AXT Inc (AXTI，纳斯达克) ★★★★ ⚠️估值警告
-**瓶颈环节**：InP衬底（S级）  
-**核心逻辑**：全球InP衬底前五供应商之一，子公司Tongmei是最大的中国InP生产商；InP积压$100M+；2027年底产能目标$65-70M/季（现$27M/季）  
-**市值**：**$6.88-9.21B（已确认，与早间$7-10亿估计严重偏差）**  
-**估值状态**：**极度高估 — P/S 84x，分析师平均目标价$22.80（暗示80%+下行）**  
+**瓶颈环节**：InP衬底（S级）
+**核心逻辑**：全球InP衬底前五供应商之一，子公司Tongmei是最大的中国InP生产商；InP积压$100M+；2027年底产能目标$65-70M/季（现$27M/季）
+**市值**：**$6.88-9.21B（已确认，与早间$7-10亿估计严重偏差）**
+**估值状态**：**极度高估 — P/S 84x，分析师平均目标价$22.80（暗示80%+下行）**
 **关键风险**：
 - ❌ P/S 84x，远超任何合理估值模型
 - ❌ 美国出口许可证"最终审核中"，批准时间未知
 - ❌ 关税70%，北美收入从8%跌至2%
 - ❌ 内部人卖出$43.3M，零买入
 - ❌ 股价YTD +611%，已充分反映瓶颈叙事
-**正向数据**：Q1 2026收入+39% YoY；硅光子需要InP（不取代）；Tongmei中国内产能可服务中国市场  
+**正向数据**：Q1 2026收入+39% YoY；硅光子需要InP（不取代）；Tongmei中国内产能可服务中国市场
 **【2026-05-31 第七十三轮 AXT $550M公开发行（2026-04-21补录）】**：
 - AXT公开发行856万股，每股$64.25，融资约$550M，用于北京Tongmei InP晶体技术产能扩张
 - H2 2026产能翻倍目标资金到位，可信度提升；但出口许可证仍在"最终审核"
 - P/S 84x仍是估值陷阱：$550M融资意味每新发行1美元收入需30%以上新股稀释（按当前PS）
 - 来源：[AXT $550M Offering](https://finance.yahoo.com/markets/stocks/articles/axt-doubles-indium-phosphide-capacity-140718065.html)
 
-**建议**：瓶颈真实，但当前是估值陷阱。不在买入区间。设$30-40/股（P/S约10x）回调目标  
-**状态**：🟡 持续跟踪，等出口许可证落地+估值回调再重评  
+**建议**：瓶颈真实，但当前是估值陷阱。不在买入区间。设$30-40/股（P/S约10x）回调目标
+**状态**：🟡 持续跟踪，等出口许可证落地+估值回调再重评
 **来源**：[AXT Q1 2026](https://www.marketbeat.com/instant-alerts/axt-q1-earnings-call-highlights-2026-04-30/) | [AXT出口许可](https://www.semiconductor-today.com/news_items/2026/may/axt-050526.shtml) | [AXT估值分析](https://www.gurufocus.com/news/8790736/is-axt-inc-axti-overvalued-after-3-5-rally-gf-value-says-overvalued) | [AXT $550M融资](https://finance.yahoo.com/markets/stocks/articles/axt-doubles-indium-phosphide-capacity-140718065.html)
 
 ---
 
 ### 4. FormFactor (FORM，纳斯达克) ★★★★ ⚠️估值警告
-**瓶颈环节**：晶圆级探针卡（A级）  
-**核心逻辑**：HBM4复杂度和CoWoS高层数封装大幅推高测试需求；Q1 2026收入$226M（+32% YoY，从上年2.8%大幅加速）；DRAM收入+70%；管理层称HBM4是"重大拐点"  
-**市值**：约$4.0B（股价~$155，近52周高位）  
-**估值状态**：**高估 — P/E 208x（历史中位数39x的5倍）**  
+**瓶颈环节**：晶圆级探针卡（A级）
+**核心逻辑**：HBM4复杂度和CoWoS高层数封装大幅推高测试需求；Q1 2026收入$226M（+32% YoY，从上年2.8%大幅加速）；DRAM收入+70%；管理层称HBM4是"重大拐点"
+**市值**：约$4.0B（股价~$155，近52周高位）
+**估值状态**：**高估 — P/E 208x（历史中位数39x的5倍）**
 **关键风险**：
 - ❌ P/E 208x，严重高估
 - ❌ Technoprobe赢得TSMC 2nm 30%份额，市场份额受压
 - ❌ Craig Hallum降级（2026-04-30）
 - ❌ 内部人卖$6.6M，零买入
-**正向数据**：Q1执行超预期；HBM4迁移确实提升测试需求；产能满载是真实数据  
-**建议**：等估值回落至P/E 50-60x（约$35-45/股）再认真考虑  
-**状态**：🟡 持续跟踪，等估值合理，暂不追高  
+**正向数据**：Q1执行超预期；HBM4迁移确实提升测试需求；产能满载是真实数据
+**建议**：等估值回落至P/E 50-60x（约$35-45/股）再认真考虑
+**状态**：🟡 持续跟踪，等估值合理，暂不追高
 **来源**：[FORM Q1 2026](https://www.stocktitan.net/news/FORM/form-factor-inc-reports-2026-first-quarter-ptznafssjeh9.html) | [HBM4分析](https://seekingalpha.com/article/4876247-formfactor-dont-fear-the-valuation-the-hbm4-earnings-inflection-is-here)
 
 ---
@@ -168,11 +168,11 @@
 ## 持续跟踪（信号强度★★★）
 
 ### 4b. Kanto Denka Kogyo（TSE: 4047.T）★★★★ ⚡FY2027指引¥95B+45%，前向估值双绿灯 【2026-05-26 初步识别 | 2026-05-27 20:00 重大升级】
-**瓶颈环节**：NF3/WF6半导体特种气体（A级，见master-map 3b条目）  
+**瓶颈环节**：NF3/WF6半导体特种气体（A级，见master-map 3b条目）
 
-**市值（更新，2026-05-30午后）**：¥208.6B ≈ **$1.35B USD**（股价¥3,625，+42%自¥2,550watchlist初始价；原市值¥135.7B/$872M已过时）  
+**市值（更新，2026-05-30午后）**：¥208.6B ≈ **$1.35B USD**（股价¥3,625，+42%自¥2,550watchlist初始价；原市值¥135.7B/$872M已过时）
 
-**【2026-05-27 20:00 重大估值更新（第二十五轮新发现）】**：  
+**【2026-05-27 20:00 重大估值更新（第二十五轮新发现）】**：
 FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 - **FY2027收入指引：¥95B**（vs FY2026实际¥65.4B = **+45.3% YoY**）
 - **FY2027营业利润指引：¥10B**（vs FY2026实际¥5.48B = **+82.5% YoY**）
@@ -252,36 +252,36 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 3. **WF6中断催化剂（推迟至7月）**：三星罢工推迟临界点；若WF6供应中断新闻出现（7月更可能），可考虑即时入场而非等待回调；但当前¥3,625仍高估60-90%，不主动追高
 4. **FY2027 Q1财报（约2026年8月）**：验证收入爬坡节奏，是最关键验证点
 
-**加入日期**：2026-05-26  
+**加入日期**：2026-05-26
 **来源**：[TipRanks Kanto Denka FY2027指引](https://www.tipranks.com/news/company-announcements/kanto-denka-kogyo-lifts-profit-and-dividend-projects-strong-fy2027-growth) | [Kanto Denka +24% - Meyka](https://meyka.com/blog/kanto-denka-kogyo-surges-24-as-chemical-demand-accelerates-1805/) | [TrendForce WF6供应中断](https://www.trendforce.com/news/2026/04/08/news-potential-supply-disruptions-of-tungsten-hexafluoride-from-japan-implications-for-the-semiconductor-industry/) | [The Elec Central Glass Samsung暴露](https://www.thelec.net/news/articleView.html?idxno=5468) | [Kanto Denka火灾 TrendForce](https://www.trendforce.com/news/2025/08/14/news-japans-kanto-denka-kogyo-fire-threatens-nf%E2%82%83-supply-alerts-chipmakers-like-tsmc-and-rapidus/)
 
 ---
 
 ### 5. 金盘科技 (688676.SH，上交所科创板) ★★★ 【2026-05-25新增】
-**市值**：约¥150亿（约$20亿美元）  
-**瓶颈环节**：数据中心变压器+固态变压器（SST）技术（S级受益）  
-**简评**：AIDC（AI数据中心）业务收入+337% YoY（2025前三季度），已向AWS/微软北美项目供货，是少数同时具备传统变压器产能+SST新技术的A股标的，市值合适。但需深研2025年报，核实利润率可持续性和海外订单结构。  
-**加入日期**：2026-05-25  
+**市值**：约¥150亿（约$20亿美元）
+**瓶颈环节**：数据中心变压器+固态变压器（SST）技术（S级受益）
+**简评**：AIDC（AI数据中心）业务收入+337% YoY（2025前三季度），已向AWS/微软北美项目供货，是少数同时具备传统变压器产能+SST新技术的A股标的，市值合适。但需深研2025年报，核实利润率可持续性和海外订单结构。
+**加入日期**：2026-05-25
 **来源**：[搜狐证券金盘科技AIDC+278%](https://q.stock.sohu.com/cn/news.html?textId=1007234688&type=120&tab=200&code=cn_601878&date=2026%2F0502)
 
 ---
 
 ### 6. Veeco Instruments (VECO，纳斯达克) ⚠️合并待完成，暂停独立评估 【2026-05-26 08:10更新】
-**状态**：Axcelis（ACLS）以全股票形式收购VECO，合并估值$44亿。VECO作为独立投资逻辑已实质终止——持有VECO = 等待以ACLS股份（约41.6%合并后持仓）兑现的并购套利。  
+**状态**：Axcelis（ACLS）以全股票形式收购VECO，合并估值$44亿。VECO作为独立投资逻辑已实质终止——持有VECO = 等待以ACLS股份（约41.6%合并后持仓）兑现的并购套利。
 **合并关键里程碑**：
 - ✅ Axcelis股东特别会议批准（2026-02-06）
 - ✅ VECO股东同意
 - **⏳ 等待：中国SAMR（国家市场监管总局）审批——唯一剩余监管障碍**
 - 预计完成：H2 2026
-**核心风险**：SAMR拒绝/附条件批准的可能性（中美科技战背景）→ 若失败，VECO恢复独立标的但股价可能大幅回调  
-**不再独立评估原因**：并购逻辑替代了瓶颈逻辑；具体MOCVD/InP敞口需通过合并后的ACLS获取  
+**核心风险**：SAMR拒绝/附条件批准的可能性（中美科技战背景）→ 若失败，VECO恢复独立标的但股价可能大幅回调
+**不再独立评估原因**：并购逻辑替代了瓶颈逻辑；具体MOCVD/InP敞口需通过合并后的ACLS获取
 **来源**：[Axcelis股东批准合并](https://www.prnewswire.com/news-releases/axcelis-stockholders-approve-merger-with-veeco-302680838.html) | [合并详情](https://marklapedus.substack.com/p/axcelis-to-acquire-veeco-for-44-billion)
 
 ---
 
 ### 6b. Axcelis Technologies (ACLS，纳斯达克) ★★★ 【2026-05-26 08:10 新增：VECO合并后载体】
-**瓶颈环节**：合并后覆盖 MOCVD外延设备（A级）+ 离子注入（半导体再工业化受益）  
-**市值**：$4.83B（股价$155.38，2026-05-26）  
+**瓶颈环节**：合并后覆盖 MOCVD外延设备（A级）+ 离子注入（半导体再工业化受益）
+**市值**：$4.83B（股价$155.38，2026-05-26）
 **合并后估值估算**：
 - 合并后年收入：ACLS ~$800M + VECO ~$770M ≈ $1.47B
 - 当前ACLS市值 / 合并后收入 → P/S **~3.3x**（合理）
@@ -295,14 +295,14 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 - ⚠️ 分析师共识目标价$101.50，较现价$155.38**低35%**
 - ⚠️ 独立估值模型：公允价值约$92，较现价低41%
 - ❌ ACLS Q1 2026 FY指引：营收2026基本持平2025（~$800M），增长动力来自VECO合并后协同
-**估值安全边际（合并后）**：以$4.83B买入ACLS，10年25xPE退出，需净利润$500M（假设10%回报），对应收入约$2.5B。从$1.47B到$2.5B，10年CAGR约5%。技术上可达，但当前价格无充足安全边际（分析师目标价支持更低入场点）。  
-**建议**：等SAMR审批结果；若获批且股价回调至分析师目标区间（$100-110），则评估是否执行 `/investment-team`；当前价格不追高。  
+**估值安全边际（合并后）**：以$4.83B买入ACLS，10年25xPE退出，需净利润$500M（假设10%回报），对应收入约$2.5B。从$1.47B到$2.5B，10年CAGR约5%。技术上可达，但当前价格无充足安全边际（分析师目标价支持更低入场点）。
+**建议**：等SAMR审批结果；若获批且股价回调至分析师目标区间（$100-110），则评估是否执行 `/investment-team`；当前价格不追高。
 **来源**：[ACLS Q1 2026 SEC Filing](https://www.sec.gov/Archives/edgar/data/0001113232/000110465926057147/tm2613844d1_ex99-1.htm) | [合并联合声明](https://investor.axcelis.com/news-releases/news-release-details/axcelis-technologies-and-veeco-instruments-combine-creating)
 
 ---
 
 ### 7. Lumentum (LITE，纳斯达克) ★★★
-**瓶颈环节**：EML激光器（S级）  
+**瓶颈环节**：EML激光器（S级）
 **核心逻辑**：Nvidia 2026-03-02宣布向Lumentum投资$20亿美元+多年采购协议，产能已锁定至2027年+；2026-05-19刚下单购买多台Aixtron MOCVD系统扩产
 
 **⚠️ 【2026-05-30 第六十七轮 市值重大错误修正】**：
@@ -314,20 +314,20 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 - **2028全产能分配（2026-05-30新增）**：InP激光产能全额分配至未来32个月（~2028年12月）；非Nvidia客户交期>60周
 - EML S级备注更新：原"2027年可能降至A级"（LightCounting）与Lumentum"2028满分配"形成张力；解释共存：Nvidia锁定（Lumentum角度）vs 非Nvidia市场边际缓解（LightCounting角度）；新备注：**2027H2-2028可能降至A级，但2026-2027仍维持S级**
 
-**估值状态**：P/S 16.7x黄灯，无安全边际，不追高  
-**注意**：已被大幅定价（$67B市值），EML瓶颈持续性强且2028全分配；多年采购协议锁定收入确定性高但估值透支  
-**状态**：🟡 跟踪，优先级低于纯小市值标的；不追高  
-**加入日期**：2026-05-25  
-**估值更正日期**：2026-05-30  
+**估值状态**：P/S 16.7x黄灯，无安全边际，不追高
+**注意**：已被大幅定价（$67B市值），EML瓶颈持续性强且2028全分配；多年采购协议锁定收入确定性高但估值透支
+**状态**：🟡 跟踪，优先级低于纯小市值标的；不追高
+**加入日期**：2026-05-25
+**估值更正日期**：2026-05-30
 **来源**：[MacroTrends LITE市值](https://www.macrotrends.net/stocks/charts/LITE/lumentum-holdings/market-cap) | [FinancialContent 2028 backlog](https://www.financialcontent.com/article/marketminute-2026-4-10-optical-dominance-lumentum-shares-surge-as-ai-infrastructure-backlog-stretches-to-2028) | [Lumentum Q3 FY2026](https://www.sec.gov/Archives/edgar/data/0001633978/000162828026030530/lite_ex991xq3fy26.htm)
 
 ---
 
 ### 8. Centrus Energy (LEU，纽交所) ★★★ 【2026-05-26 新增】
-**瓶颈环节**：HALEU 核燃料（SMR 链，B+级，2027+可能升A级）  
-**市值**：~$3.53B（2026-05-25，股价$179）  
-**估值**：P/S ~7.4x（绿灯），P/E ~45x（TTM 净利$78M，黄灯）  
-**瓶颈核心逻辑**：唯一西方商业规模 HALEU 富集商（Piketon, Ohio）；DOE $2.7B 任务指令背书；2030 年 HALEU 需求 40,000 kg/年+（是当前 Centrus 产能 12 MT 的 3.3 倍）；新竞争者进入需 10-15 年。  
+**瓶颈环节**：HALEU 核燃料（SMR 链，B+级，2027+可能升A级）
+**市值**：~$3.53B（2026-05-25，股价$179）
+**估值**：P/S ~7.4x（绿灯），P/E ~45x（TTM 净利$78M，黄灯）
+**瓶颈核心逻辑**：唯一西方商业规模 HALEU 富集商（Piketon, Ohio）；DOE $2.7B 任务指令背书；2030 年 HALEU 需求 40,000 kg/年+（是当前 Centrus 产能 12 MT 的 3.3 倍）；新竞争者进入需 10-15 年。
 **信号验证**：
 - ✅ DOE 任务指令 $900M HALEU（2026-01-05确认，固定价格任务订单，Piketon Ohio扩产） + $2.3B 商业 LEU 积压（收入可见度高）
 - ✅ Piketon 设施已投产（2025-12），12 MT/年产能
@@ -340,17 +340,17 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 - ⚠️ SMR 商业化时间线多次延迟（NuScale UAMPS 项目已取消）
 - ❌ 尚无大型商业客户签约（TerraPower、Kairos 等仍在建设阶段）
 - ⚠️ **【2026-05-27 新增】ASP Isotopes (ASPI) 竞争者进入**：子公司QLE于5月11日与欧洲核技术公司签非约束性HALEU供应MOU，2028年开始交付；ASPI市值~$664M，Q1 2026收入仅$4.2M（核医学为主，无HALEU商业收入），P/S~28x，仍属开发阶段。Centrus为唯一当前具备商业HALEU生产的西方公司，近期垄断地位不受实质影响；2028年后竞争格局有所变化，需持续监控。
-**催化剂**：SMR 项目商业化时间确认；Centrus Q2 2026 财报；Oklo JV 签约；DOE 制度性 HALEU 库存政策  
-**建议行动**：持续跟踪，等 SMR 里程碑后评估执行 `/investment-team`；重点关注Q2净利润是否恢复  
+**催化剂**：SMR 项目商业化时间确认；Centrus Q2 2026 财报；Oklo JV 签约；DOE 制度性 HALEU 库存政策
+**建议行动**：持续跟踪，等 SMR 里程碑后评估执行 `/investment-team`；重点关注Q2净利润是否恢复
 **来源**：[Centrus Q1 2026](https://www.prnewswire.com/news-releases/centrus-reports-first-quarter-2026-results-302763250.html) | [HALEU Nuclear Fuel Deals](https://neutronbytes.com/2026/03/15/nuclear-fuel-deals-take-center-stage-for-smrs/) | [Centrus Oak Ridge扩产 — NEI Magazine](https://www.neimagazine.com/news/centrus-expands-oak-ridge-facility/) | [DOE $900M任务订单](https://investors.centrusenergy.com/news-releases/news-release-details/centrus-awarded-900-million-expand-uranium-enrichment-ohio)
 
 ---
 
 ### 9. United States Antimony Corporation (UAMY，NYSE) ★★★ 【2026-05-26 10:10 新增 | 2026-05-26 11:10 操作更新 | 2026-05-26 13:14 CFO黄灯】
-**瓶颈环节**：锑（Antimony）供应（国防弹药链，A级，新加入）  
-**市值**：~$1.25B（股价约$8.42，2026-05-25）  
-**瓶颈核心逻辑**：美国唯一运营中的国内锑冶炼商（Thompson Falls, Montana）；全球锑缺口40,000 MT/年；中国出口管制断供后美国100%依赖进口；DoD/DLA $248M五年合同（锑金属锭，国防战略储备，其中~$85M为2026年已确认订单）  
-**财务快照**：FY2025收入$39.3M（+163% YoY）；毛利率25%；净亏损$4.34M；2026年收入指引$125M（合同积压$354M）；**Q1 2026 miss**：收入$6.8M，净亏$11.3M，毛利率16%  
+**瓶颈环节**：锑（Antimony）供应（国防弹药链，A级，新加入）
+**市值**：~$1.25B（股价约$8.42，2026-05-25）
+**瓶颈核心逻辑**：美国唯一运营中的国内锑冶炼商（Thompson Falls, Montana）；全球锑缺口40,000 MT/年；中国出口管制断供后美国100%依赖进口；DoD/DLA $248M五年合同（锑金属锭，国防战略储备，其中~$85M为2026年已确认订单）
+**财务快照**：FY2025收入$39.3M（+163% YoY）；毛利率25%；净亏损$4.34M；2026年收入指引$125M（合同积压$354M）；**Q1 2026 miss**：收入$6.8M，净亏$11.3M，毛利率16%
 **2026-05-26 11:10 操作更新（重要）**：
 - ✅ Thompson Falls冶炼厂扩产**已于2026年4月完成**（早于7月预测），nameplate产能翻3倍至300-400 t/月；**【2026-05-27 第23轮 Q1财报电话会修正】现代化资金支持目标约400-500 t/月成品（高于早期nameplate 300-400 t/月）**；7月中旬目标是新炉灶80%负荷爬坡
 - ✅ **【2026-05-28 第三十六轮 补录】Stibnite Hill矿山采矿重启（2026-04-02，早于预期）**：Thompson Falls矿产地Stibnite Hill露天采矿因冬季较暖比原计划提前重启；已移运800+吨锑矿石至加工线；新增GPS基站优化矿脉勘探。矿山采矿提前启动 = 冶炼扩产侧有矿石供应保障，配套冶炼厂满负荷爬坡计划。来源：[StockTitan 2026-04-27](https://www.stocktitan.net/news/UAMY/united-states-antimony-announces-restart-of-mining-operations-on-4k5cfz5l8zna.html)
@@ -380,18 +380,18 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 - 对UAMY的影响：①短期（2026-2028）：无竞争，UAMY仍是唯一运营中美国锑精炼商；②中期（2029+）：竞争压力出现，但UAMY DoD $248M合同锁定至2031年；③2026年4月宣布时导致UAMY单日跌11%
 - **评级维持★★★**：Korea Zinc是真实的长期竞争者，但2029年前UAMY护城河不受实质影响；Q2 2026财报（8月）仍是最关键验证点
 
-**估值状态**：P/S forward 10x（若$125M指引实现）；黄灯（亏损+forward PS偏高）；最高★★★；10年25xPE退出年化约6%，当前价格无安全边际  
-**信号验证**：✅ DoD $248M五年合同（$85M 2026确认）；✅ 全球锑结构性缺口；✅ 扩产比预期提前；⚠️ Q1严重miss；⚠️ CFO临时离职；⚠️ Korea Zinc 2029年竞争；❌ 尚无盈利  
+**估值状态**：P/S forward 10x（若$125M指引实现）；黄灯（亏损+forward PS偏高）；最高★★★；10年25xPE退出年化约6%，当前价格无安全边际
+**信号验证**：✅ DoD $248M五年合同（$85M 2026确认）；✅ 全球锑结构性缺口；✅ 扩产比预期提前；⚠️ Q1严重miss；⚠️ CFO临时离职；⚠️ Korea Zinc 2029年竞争；❌ 尚无盈利
 **【2026-05-28 第三十八轮 商业锑价格承压 — 反向信号入库】**：Fastmarkets 2026年锑市场展望："ample supply"（供应充足），东南亚（塔吉克斯坦、越南等）新产能积极涌入，竞争价格低于欧洲库存持有者；商业锑价从2025年7月历史峰值$59,750/吨回落至2026年3月中旬约$49,100/吨（约-18%）；国际-中国价格差距收窄。**含义**：DoD $248M固定价格合同逻辑不受影响（政府战略储备采购，不跟商品价格挂钩）；但UAMY $125M年度收入指引可能隐含过于乐观的商业锑均价假设，非DoD商业合同定价空间受压。**评级维持★★★**，新增商业价格承压黄灯。来源：[Fastmarkets](https://www.fastmarkets.com/insights/antimony-2026-ample-supply-strategic-demand-to-guide-geopolitical-oversight/)
 
 **【2026-05-29 第四十六轮 商业锑承压根因补录：中国暂停令】**：
 - "ample supply"的根本原因是**中国2025年11月9日（Trump-Xi首尔峰会后）暂停对美锑绝对出口禁令**，有效期至**2026年11月27日**（仍需逐笔申请许可证；对美军事用户禁令持续）
 - 此前扫描记录了价格承压现象，但未明确记录暂停令这一政策根因
 - **时间窗口意识**：①2026年11月27日暂停令到期 = 若中美关系恶化或无续期，锑禁令可能恢复，UAMY商业逻辑反转；②暂停令到期前后是UAMY商业定价逻辑最重要的再评估节点
-- 来源：[Reuters China Antimony Suspension](https://www.investing.com/news/economic-indicators/china-suspends-ban-on-exports-of-gallium-germanium-antimony-to-us-4344344)  
-**催化剂**：Q2 2026财报（8月）为关键验证点；新炉灶7月80%爬坡；锑价走势；DOE $44M资助批复；CFO是否复职  
-**建议动作**：持续跟踪；等Q2财报验证；Q2收入>$25M+毛利率>20%则升级至★★★★  
-**加入日期**：2026-05-26  
+- 来源：[Reuters China Antimony Suspension](https://www.investing.com/news/economic-indicators/china-suspends-ban-on-exports-of-gallium-germanium-antimony-to-us-4344344)
+**催化剂**：Q2 2026财报（8月）为关键验证点；新炉灶7月80%爬坡；锑价走势；DOE $44M资助批复；CFO是否复职
+**建议动作**：持续跟踪；等Q2财报验证；Q2收入>$25M+毛利率>20%则升级至★★★★
+**加入日期**：2026-05-26
 **来源**：[UAMY FY2025](https://www.accessnewswire.com/newsroom/en/metals-and-mining/united-states-antimony-corporation-reports-fiscal-year-2025-financial-and-operati-1149817) | [UAMY Q1 2026](https://www.stocktitan.net/news/UAMY/united-states-antimony-corporation-reports-first-quarter-2026-7w2rb5fb8cwd.html) | [Thompson Falls扩产完成](https://nationaltoday.com/us/mt/thompson-falls/news/2026/04/07/united-states-antimony-secures-248m-defense-contract-expands-antimony-production/) | [水冶设施申请](https://www.stocktitan.net/news/UAMY/united-states-antimony-corporation-announces-new-hydromet-processing-axnl5tzm5xx0.html) | [UAMY临时CFO](https://www.stocktitan.net/news/UAMY/united-states-antimony-announces-shawn-winkler-appointed-as-interim-icdy0i7dmxdm.html) | [Korea Zinc $74亿田纳西冶炼厂](https://www.upi.com/Top_News/World-News/2026/04/02/skporea-korea-zinc-smelter-tennessee-strategic-materials/4361775134902/)
 
 ---
@@ -399,9 +399,9 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 ## 观察中（信号强度★★）
 
 ### 10. Almonty Industries（TSX:AII / OTC:ALM）★★★ 【2026-05-26午后 新增 | 2026-06-02 升级★★→★★★（SeAH M&S钼矿独家offtake）】
-**代码**：AII.TO（TSX）/ ALM（OTC）  
-**瓶颈环节**：西方钨矿供应（S级跨趋势瓶颈——AI+国防+工业）  
-**市值**：C$5.22B（约$3.8B USD）  
+**代码**：AII.TO（TSX）/ ALM（OTC）
+**瓶颈环节**：西方钨矿供应（S级跨趋势瓶颈——AI+国防+工业）
+**市值**：C$5.22B（约$3.8B USD）
 
 **2026-05-26 13:14 新确认事实（重大叙事升级）**：
 - ✅ **Tungsten Parts Wyoming (TPW) 绑定offtake协议**：每月最低40吨WO3，覆盖90%+ Sangdong Phase 1产出，**专用于美国国防应用（导弹、无人机、弹药）**，合同期15年
@@ -469,15 +469,15 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 - 10年25xPE退出分析不变：仍无安全边际（CAGR需38.9%）
 - **建议**：June 8 Phase 2投票通过后若出现回调，关注C$20-22区间是否出现更佳入场点；若Phase 2未通过则直接等C$15-18重评
 
-**加入日期**：2026-05-26  
+**加入日期**：2026-05-26
 **来源**：[InvestingNews Q1](https://investingnews.com/almonty-industries-reports-first-quarter-2026-financial-results/) | [StockAnalysis AII](https://stockanalysis.com/quote/tsx/AII/) | [Almonty TPW offtake](https://almonty.com/binding-offtake-agreement-to-supply-tungsten-oxide-solely-for-us-defense-applications/) | [Almonty Montana HQ](https://www.businesswire.com/news/home/20260413261619/en/Almonty-Industries-Establishes-U.S.-Corporate-Headquarters-Reinforcing-Role-as-Americas-Tungsten-Supplier) | [NBC Montana](https://nbcmontana.com/news/local/almonty-industries-moves-headquarters-to-montana-as-tungsten-push-intensifies)
 
 ---
 
 ### 10b. Soitec（Euronext Paris: SOI）★★ 预备跟踪 【2026-05-29 第五十七轮 新增】
-**瓶颈环节**：光子级SOI晶圆——SiPho代工链L3上游材料（section 11b upstream）  
-**市值**：约€4-5B（2026年4月€78/股，约56M股，后续价格待确认）  
-**初步估值**：P/S约4-5x（FY2025收入约€1B），P/E数据不足  
+**瓶颈环节**：光子级SOI晶圆——SiPho代工链L3上游材料（section 11b upstream）
+**市值**：约€4-5B（2026年4月€78/股，约56M股，后续价格待确认）
+**初步估值**：P/S约4-5x（FY2025收入约€1B），P/E数据不足
 
 **为什么关注**：
 - **95%光子级SOI市场份额**（Bank of America 2026年3月光互联报告）——占绝对主导
@@ -517,31 +517,31 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 2. 汽车/工业SOI需求崩塌导致总公司收入下滑，FY2026可能仍是过渡年
 3. 光子SOI实际占总收入比例不明，纯正度存疑
 
-**建议**：维持★★预备跟踪，**不升级**。FY2026已证明：纯正度不足（~16%）+亏损，两项硬门槛均不满足。下一个重新评估节点：FY2027财报（2027年5月）。届时若Photonics-SOI占比>30%+恢复盈利+10年25xPE年化>10%，才考虑升★★★。在此之前不建议跟进买入。  
-**加入日期**：2026-05-29  
+**建议**：维持★★预备跟踪，**不升级**。FY2026已证明：纯正度不足（~16%）+亏损，两项硬门槛均不满足。下一个重新评估节点：FY2027财报（2027年5月）。届时若Photonics-SOI占比>30%+恢复盈利+10年25xPE年化>10%，才考虑升★★★。在此之前不建议跟进买入。
+**加入日期**：2026-05-29
 **来源**：[Soitec AI 2026报告](https://quartr.com/events/soitec-s-a-soi-ai-2026-presentation_3eIyCv6N) | [Photoncap深度分析](https://photoncap.net/p/the-wafer-that-used-to-roll-around) | [Soitec研究系列1](https://www.jasonschips.ai/p/the-soitec-series-part-17-introduction) | [SiPho where it begins](https://www.convequity.com/soitec-where-silicon-photonics-begins/) | [GlobalWafers退出分析](https://asymmetricalbets.substack.com/p/this-2b-photonics-monopoly-down-75)
 
 ---
 
 ### 11. L3Harris "Axyz" Missile Solutions（即将IPO） 【2026-05-27 名称确认】
-**代码**：待定（AXYV，来自LHX分拆，将保留~80%股权）  
-**瓶颈环节**：固体火箭发动机（A级）  
-**2026-05-27 状态更新**：S-1已于2026-04-29提交SEC（此前记录为"已提交"，现确认具体日期）；品牌名称确认为"Axyz"；DoD $10亿优先股已完成交割（可转换为IPO股权）；H2 2026目标上市；待验证：IPO估值区间（发布S-1公开版本时披露）；稀释条款细节；LHX保留~80%股权后的战略自主性  
+**代码**：待定（AXYV，来自LHX分拆，将保留~80%股权）
+**瓶颈环节**：固体火箭发动机（A级）
+**2026-05-27 状态更新**：S-1已于2026-04-29提交SEC（此前记录为"已提交"，现确认具体日期）；品牌名称确认为"Axyz"；DoD $10亿优先股已完成交割（可转换为IPO股权）；H2 2026目标上市；待验证：IPO估值区间（发布S-1公开版本时披露）；稀释条款细节；LHX保留~80%股权后的战略自主性
 **加入日期**：2026-05-25
 
 ---
 
 ### 12. 三变科技 (002112.SZ)
-**代码**：002112.SZ  
-**瓶颈环节**：数据中心大容量变压器（S级受益）  
-**待验证**：关税70%对出口的实际冲击；xAI订单可持续性；A股估值  
+**代码**：002112.SZ
+**瓶颈环节**：数据中心大容量变压器（S级受益）
+**待验证**：关税70%对出口的实际冲击；xAI订单可持续性；A股估值
 **加入日期**：2026-05-25
 
 ---
 
 ### 13. Soitec（EPA: SOI / OTC: SOIT）★★ 【2026-05-29 新增预备跟踪 | 2026-05-30 FY2026完整估值检验完成】
-**瓶颈环节**：光子级SOI晶圆（CW/SiPh代工L3层），B+级（上游于SiPh代工链）  
-**市值**：**€6.51B**（2026-05-28，股价€186.05，+14%单日）  
+**瓶颈环节**：光子级SOI晶圆（CW/SiPh代工L3层），B+级（上游于SiPh代工链）
+**市值**：**€6.51B**（2026-05-28，股价€186.05，+14%单日）
 
 **瓶颈核心逻辑**：
 - **光子级SOI晶圆全球市场份额约95%**（Bank of America 2026年3月独立确认）
@@ -602,9 +602,9 @@ FY2026全年业绩（2026-05-15发布）同时披露FY2027经营指引：
 - 中期：GlobalWafers 2027年完全退出 → 独占地位正式生效
 - 中期：SiPh代工扩产落地（Tower 2027，Intel 2028）→ Photonics-SOI规模验证
 
-**评级**：★★（维持）  
-**理由**：FY2026结果确认技术叙事，但估值已接近/触及红灯（TAM条件、10年退出、PEG）。从"预备跟踪"升为正式watchlist条目，但不追高。  
-**加入日期**：2026-05-29（预备）/ 2026-05-30（正式估值完成）  
+**评级**：★★（维持）
+**理由**：FY2026结果确认技术叙事，但估值已接近/触及红灯（TAM条件、10年退出、PEG）。从"预备跟踪"升为正式watchlist条目，但不追高。
+**加入日期**：2026-05-29（预备）/ 2026-05-30（正式估值完成）
 **来源**：[Soitec FY2026 GlobeNewswire](https://www.globenewswire.com/news-release/2026/05/27/3302215/0/en/Soitec-Reports-Fourth-Quarter-Revenue-and-Full-Year-Results-of-Fiscal-Year-2026.html) | [Soitec +14% Investing.com](https://www.investing.com/news/earnings/soitec-shares-surge-14-on-fy26-cash-flow-beat-and-ai-photonics-growth-4713703) | [Power Semiconductors Weekly 2026-05-28](https://www.powersemiconductorsweekly.com/2026/05/28/soitec-navigates-rf-soi-downturn-while-ai-driven-photonics-business-surges/)
 
 ---
