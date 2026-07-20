@@ -34,6 +34,7 @@ reports/
 ├── AI产业研究/AI算力-funnel-20260509.md — AI 主题漏斗可归入 AI产业研究/
 ├── AI产业研究/AI-轮动判断-20260509.md — AI 主题综合判断可归入 AI产业研究/
 ├── 重点标的看板.md            — thesis/指定标的一页总览（活文档）
+├── 建议跟踪台账.md            — 全部买卖建议的条件监控+复盘（活文档）
 ├── portfolio-latest.md       — 组合报告放根目录
 └── 多公司对比-checklist-20260408.md — 多公司报告放根目录
 ```
@@ -52,6 +53,7 @@ reports/
 | /earnings-team | `reports/{公司名}/` 内含4个大师视角+研究底稿+公众号文章+读者评审 | `reports/腾讯/腾讯-earnings-2025Q4.md`（公众号定稿） |
 | /thesis-tracker | `reports/{公司名}/{公司名}-thesis.md`（长期维护） | `reports/腾讯/腾讯-thesis.md` |
 | 重点标的看板 | `reports/重点标的看板.md`（活文档；收录全部 thesis + 指定标的） | `reports/重点标的看板.md` |
+| 建议跟踪台账 | `reports/建议跟踪台账.md`（活文档；全部有买卖建议的事件行） | `reports/建议跟踪台账.md` |
 | /portfolio-review | `portfolio-latest.md`（根目录，持续更新） | `reports/portfolio-latest.md` |
 | /management-deep-dive | `reports/{公司名}/{公司名}-management-{YYYYMMDD}.md` | `reports/腾讯/腾讯-management-20260409.md` |
 
