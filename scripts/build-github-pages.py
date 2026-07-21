@@ -7,9 +7,11 @@ import argparse
 import html
 import shutil
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit, urlunsplit
 
 import markdown
+from markdown.extensions import Extension
+from markdown.treeprocessors import Treeprocessor
 
 
 MARKDOWN_EXTENSIONS = [
@@ -32,6 +34,31 @@ STATIC_SUFFIX_ALLOWLIST = {
     ".webp",
 }
 
+# Root-level living docs pinned on the homepage and site nav.
+HOME_PINNED_REPORTS = (
+    {
+        "filename": "重点标的看板.md",
+        "title": "重点标的看板",
+        "nav_label": "看板",
+        "eyebrow": "Thesis 总览",
+        "description": "thesis / 指定标的一页总览：阶段、健康度、本周关注与下次动作。",
+    },
+    {
+        "filename": "建议跟踪台账.md",
+        "title": "建议跟踪台账",
+        "nav_label": "台账",
+        "eyebrow": "买卖建议",
+        "description": "全部买卖建议的条件监控与复盘命中率。",
+    },
+    {
+        "filename": "portfolio-latest.md",
+        "title": "组合最新报告",
+        "nav_label": "组合",
+        "eyebrow": "组合检视",
+        "description": "组合持仓与检视结论的持续更新入口。",
+    },
+)
+
 
 def title_from_markdown(markdown_text: str, fallback: str) -> str:
     for line in markdown_text.splitlines():
@@ -45,15 +72,116 @@ def encoded_href(path: Path) -> str:
     return quote(path.as_posix(), safe="/-._~")
 
 
+def rewrite_markdown_href(href: str) -> str:
+    """Rewrite relative *.md links to *.html; leave absolute URLs and anchors alone."""
+    scheme, netloc, path, query, fragment = urlsplit(href)
+    if scheme or netloc or not path:
+        return href
+    if path.lower().endswith(".md"):
+        path = f"{path[:-3]}.html"
+    return urlunsplit((scheme, netloc, path, query, fragment))
+
+
+class MarkdownLinkRewriter(Treeprocessor):
+    def run(self, root):
+        for element in root.iter("a"):
+            href = element.get("href")
+            if href:
+                rewritten = rewrite_markdown_href(href)
+                if rewritten != href:
+                    element.set("href", rewritten)
+        return root
+
+
+class MarkdownLinkRewriteExtension(Extension):
+    def extendMarkdown(self, md):
+        md.treeprocessors.register(MarkdownLinkRewriter(md), "md_link_rewrite", 0)
+
+
 def render_markdown(markdown_text: str) -> str:
     renderer = markdown.Markdown(
-        extensions=MARKDOWN_EXTENSIONS,
+        extensions=[*MARKDOWN_EXTENSIONS, MarkdownLinkRewriteExtension()],
         output_format="html5",
     )
     return renderer.convert(markdown_text)
 
 
-def render_page(title: str, body_html: str, root_prefix: str, page_class: str = "") -> str:
+def render_site_nav(
+    root_prefix: str,
+    available_pinned: set[str] | None = None,
+    current_nav: str | None = None,
+) -> str:
+    links: list[tuple[str, Path, str]] = []
+    for pinned in HOME_PINNED_REPORTS:
+        if available_pinned is not None and pinned["filename"] not in available_pinned:
+            continue
+        links.append(
+            (
+                pinned["nav_label"],
+                Path("reports") / Path(pinned["filename"]).with_suffix(".html"),
+                pinned["filename"],
+            )
+        )
+    links.append(("研究库", Path("index.html"), "index"))
+    items = []
+    for label, href, nav_key in links:
+        current_attr = ' aria-current="page"' if current_nav == nav_key else ""
+        items.append(
+            f'<a href="{root_prefix}{encoded_href(href)}"{current_attr}>{html.escape(label)}</a>'
+        )
+    return "\n        ".join(items)
+
+
+def root_pinned_filenames(report_links: list[tuple[Path, Path]]) -> set[str]:
+    pinned_names = {item["filename"] for item in HOME_PINNED_REPORTS}
+    return {
+        source_relative.name
+        for source_relative, _ in report_links
+        if source_relative.parent == Path(".") and source_relative.name in pinned_names
+    }
+
+
+def render_home_pinned_section(report_links: list[tuple[Path, Path]]) -> str:
+    href_by_name = {
+        source_relative.name: html_relative
+        for source_relative, html_relative in report_links
+        if source_relative.parent == Path(".")
+    }
+    cards = []
+    for pinned in HOME_PINNED_REPORTS:
+        href = href_by_name.get(pinned["filename"])
+        if href is None:
+            continue
+        cards.append(
+            "        <li>"
+            f'<a class="pinned-card" href="{encoded_href(href)}">'
+            f'<span class="pinned-eyebrow">{html.escape(pinned["eyebrow"])}</span>'
+            f'<span class="pinned-title">{html.escape(pinned["title"])}</span>'
+            f'<span class="pinned-desc">{html.escape(pinned["description"])}</span>'
+            f"</a></li>"
+        )
+    if not cards:
+        return ""
+    return f"""    <section class="pinned-home" aria-labelledby="pinned-title">
+      <div class="pinned-home-header">
+        <h2 id="pinned-title">常用入口</h2>
+        <p>跨公司汇总活文档，优先从这里跳转。</p>
+      </div>
+      <ul class="pinned-grid" role="list">
+{chr(10).join(cards)}
+      </ul>
+    </section>
+"""
+
+
+def render_page(
+    title: str,
+    body_html: str,
+    root_prefix: str,
+    page_class: str = "",
+    available_pinned: set[str] | None = None,
+    current_nav: str | None = None,
+) -> str:
     escaped_title = html.escape(title)
     content_class = "content"
     if page_class:
@@ -75,10 +203,10 @@ def render_page(title: str, body_html: str, root_prefix: str, page_class: str = 
     <div class="site-header-inner">
       <a class="site-title" href="{root_prefix}index.html" aria-label="AI Berkshire Reports 首页">
         <span class="site-mark" aria-hidden="true">AI</span>
-        <span>AI Berkshire Reports</span>
+        <span class="site-title-text">AI Berkshire Reports</span>
       </a>
       <nav class="site-nav" aria-label="站点导航">
-        <a href="{root_prefix}index.html">研究库</a>
+        {render_site_nav(root_prefix, available_pinned, current_nav)}
       </nav>
     </div>
   </header>
@@ -96,7 +224,13 @@ def render_page(title: str, body_html: str, root_prefix: str, page_class: str = 
 """
 
 
-def render_report(markdown_path: Path, output_path: Path, reports_dir: Path, output_dir: Path) -> None:
+def render_report(
+    markdown_path: Path,
+    output_path: Path,
+    reports_dir: Path,
+    output_dir: Path,
+    available_pinned: set[str] | None = None,
+) -> None:
     markdown_text = markdown_path.read_text(encoding="utf-8")
     title = title_from_markdown(markdown_text, markdown_path.stem)
     source_relative = markdown_path.relative_to(reports_dir)
@@ -106,8 +240,19 @@ def render_report(markdown_path: Path, output_path: Path, reports_dir: Path, out
     <article class="report-article">
 {render_markdown(markdown_text)}
     </article>"""
+    current_nav = source_relative.name if source_relative.parent == Path(".") else None
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(render_page(title, body_html, root_prefix, "report-page"), encoding="utf-8")
+    output_path.write_text(
+        render_page(
+            title,
+            body_html,
+            root_prefix,
+            "report-page",
+            available_pinned,
+            current_nav,
+        ),
+        encoding="utf-8",
+    )
 
 
 def copy_static_assets(reports_dir: Path, output_reports_dir: Path) -> None:
@@ -210,6 +355,9 @@ def render_directory_index(
         eyebrow = "目录"
     breadcrumb_html = render_breadcrumb(source_relative_dir, output_root_prefix(output_path, output_dir))
     visible_items = len(directory_items) + len(report_items)
+    pinned_section = (
+        render_home_pinned_section(report_links) if source_relative_dir == Path(".") else ""
+    )
 
     body_html = f"""    <section class="index-hero">
       {breadcrumb_html}
@@ -231,7 +379,7 @@ def render_directory_index(
         </div>
       </dl>
     </section>
-    <section class="index-tools" aria-labelledby="filter-title">
+{pinned_section}    <section class="index-tools" aria-labelledby="filter-title">
       <div>
         <h2 id="filter-title">筛选当前页</h2>
         <p id="filter-status" class="filter-status" data-filter-status aria-live="polite">共 {visible_items} 个条目</p>
@@ -257,8 +405,16 @@ def render_directory_index(
       </section>
     </div>"""
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    current_nav = "index" if source_relative_dir == Path(".") else None
     output_path.write_text(
-        render_page(title, body_html, output_root_prefix(output_path, output_dir), "index-page"),
+        render_page(
+            title,
+            body_html,
+            output_root_prefix(output_path, output_dir),
+            "index-page",
+            root_pinned_filenames(report_links),
+            current_nav,
+        ),
         encoding="utf-8",
     )
 
@@ -305,8 +461,10 @@ def write_styles(output_dir: Path) -> None:
   --accent: #315f52;
   --accent-strong: #21483e;
   --accent-warm: #815c2d;
+  --accent-soft: rgba(49, 95, 82, 0.08);
   --code-bg: #e9ede4;
   --shadow: 0 16px 36px rgba(31, 42, 31, 0.08);
+  --page-gutter: clamp(16px, 3vw, 48px);
 }
 
 html {
@@ -372,20 +530,27 @@ input:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1160px;
+  width: 100%;
   margin: 0 auto;
-  padding: 12px 24px;
-  gap: 16px;
+  padding: 12px var(--page-gutter);
+  gap: 12px 16px;
 }
 
 .site-title {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
   color: var(--text);
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.site-title-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .site-mark {
@@ -403,8 +568,10 @@ input:focus-visible {
 
 .site-nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: 8px 12px;
   font-size: 14px;
   font-weight: 650;
 }
@@ -412,16 +579,22 @@ input:focus-visible {
 .site-nav a {
   color: var(--muted);
   text-decoration: none;
+  padding: 6px 2px;
 }
 
 .site-nav a:hover {
   color: var(--accent-strong);
 }
 
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
 .content {
-  max-width: 1160px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 40px 24px 76px;
+  padding: 40px var(--page-gutter) 76px;
 }
 
 .index-hero {
@@ -441,7 +614,6 @@ input:focus-visible {
 
 .index-hero h1,
 .content h1 {
-  max-width: 920px;
   margin: 0 0 14px;
   font-size: 40px;
   line-height: 1.16;
@@ -449,7 +621,7 @@ input:focus-visible {
 }
 
 .index-hero > p {
-  max-width: 720px;
+  max-width: 72ch;
   margin: 0;
   color: var(--muted);
 }
@@ -482,6 +654,80 @@ input:focus-visible {
   font-size: 28px;
   font-weight: 780;
   line-height: 1.15;
+}
+
+.pinned-home {
+  margin: 28px 0;
+}
+
+.pinned-home-header {
+  margin-bottom: 14px;
+}
+
+.pinned-home-header h2 {
+  margin: 0 0 4px;
+  border: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.pinned-home-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.pinned-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pinned-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 16px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.pinned-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.pinned-card:focus-visible {
+  outline: 3px solid rgba(49, 95, 82, 0.32);
+  outline-offset: 3px;
+}
+
+.pinned-eyebrow {
+  color: var(--accent-warm);
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+}
+
+.pinned-title {
+  font-size: 18px;
+  font-weight: 760;
+  line-height: 1.3;
+}
+
+.pinned-desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .content h2 {
@@ -564,6 +810,70 @@ input:focus-visible {
   color: var(--muted);
 }
 
+.action-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 0 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 12px 14px;
+}
+
+.action-filter-label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 720;
+}
+
+.action-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.action-filter-button {
+  min-height: 36px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 6px 12px;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.action-filter-button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.action-filter-button[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--surface);
+}
+
+.action-filter-status {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.action-filter-empty {
+  margin: 0 0 14px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 14px 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .index-sections {
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
@@ -601,7 +911,7 @@ input:focus-visible {
 
 .report-list a {
   display: block;
-  padding: 12px 0;
+  padding: 14px 0;
   color: var(--text);
   text-decoration: none;
   overflow-wrap: anywhere;
@@ -653,7 +963,7 @@ input:focus-visible {
 }
 
 .report-page {
-  max-width: 920px;
+  max-width: none;
 }
 
 .report-article {
@@ -663,6 +973,13 @@ input:focus-visible {
 
 .report-article > h1:first-child {
   margin-top: 0;
+}
+
+.report-article > p,
+.report-article > ul,
+.report-article > ol,
+.report-article > blockquote {
+  max-width: 80ch;
 }
 
 .content hr {
@@ -705,7 +1022,9 @@ blockquote {
 table {
   display: block;
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-collapse: collapse;
 }
 
@@ -734,9 +1053,10 @@ img {
 }
 
 .site-footer p {
-  max-width: 1160px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 18px 24px 28px;
+  padding: 18px var(--page-gutter) 28px;
 }
 
 .back-to-top {
@@ -769,39 +1089,59 @@ img {
   transform: translateY(1px);
 }
 
+@media (max-width: 900px) {
+  .index-tools,
+  .index-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   body {
     font-size: 16px;
   }
 
-  .site-header-inner,
-  .content {
-    padding-left: 16px;
-    padding-right: 16px;
+  .site-header-inner {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .site-title {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .site-nav {
+    flex: 1 1 100%;
+    justify-content: flex-start;
   }
 
   .content {
     padding-top: 26px;
+    padding-bottom: 64px;
   }
 
   .index-hero h1,
   .content h1 {
-    font-size: 30px;
-  }
-
-  .hero-stats,
-  .index-tools,
-  .index-sections {
-    grid-template-columns: 1fr;
+    font-size: clamp(26px, 8vw, 30px);
   }
 
   .hero-stats {
+    grid-template-columns: 1fr;
     margin-top: 22px;
   }
 
-  .site-footer p {
-    padding-left: 16px;
-    padding-right: 16px;
+  .hero-stats dd {
+    font-size: 24px;
+  }
+
+  .pinned-card {
+    padding: 14px;
+  }
+
+  .action-filter-status {
+    margin-left: 0;
+    width: 100%;
   }
 
   .back-to-top {
@@ -810,7 +1150,14 @@ img {
   }
 }
 
+@media (max-width: 380px) {
+  .site-title-text {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .pinned-card,
   .back-to-top {
     transition: none;
   }
@@ -872,6 +1219,147 @@ def write_scripts(output_dir: Path) -> None:
     update();
   };
 
+  const ACTION_ORDER = ["买入", "分批", "观望", "回避"];
+
+  const initActionColumnFilter = () => {
+    const tables = Array.from(document.querySelectorAll(".report-article table"));
+
+    for (const table of tables) {
+      const headerCells = Array.from(table.querySelectorAll("thead th"));
+      if (!headerCells.length) {
+        continue;
+      }
+
+      const actionIndex = headerCells.findIndex((cell) => (cell.textContent || "").trim() === "动作");
+      if (actionIndex < 0) {
+        continue;
+      }
+
+      const rows = Array.from(table.querySelectorAll("tbody tr"));
+      if (!rows.length) {
+        continue;
+      }
+
+      const actionCounts = new Map();
+      for (const row of rows) {
+        const cell = row.children[actionIndex];
+        const action = (cell?.textContent || "").trim();
+        row.dataset.action = action;
+        if (!action) {
+          continue;
+        }
+        actionCounts.set(action, (actionCounts.get(action) || 0) + 1);
+      }
+
+      const actions = Array.from(actionCounts.keys()).sort((left, right) => {
+        const leftRank = ACTION_ORDER.indexOf(left);
+        const rightRank = ACTION_ORDER.indexOf(right);
+        const leftScore = leftRank === -1 ? ACTION_ORDER.length : leftRank;
+        const rightScore = rightRank === -1 ? ACTION_ORDER.length : rightRank;
+        if (leftScore !== rightScore) {
+          return leftScore - rightScore;
+        }
+        return left.localeCompare(right, "zh-CN");
+      });
+
+      if (!actions.length) {
+        continue;
+      }
+
+      const bar = document.createElement("div");
+      bar.className = "action-filter";
+      bar.setAttribute("role", "group");
+      bar.setAttribute("aria-label", "按动作筛选");
+
+      const label = document.createElement("span");
+      label.className = "action-filter-label";
+      label.textContent = "动作筛选";
+      bar.appendChild(label);
+
+      const buttons = document.createElement("div");
+      buttons.className = "action-filter-buttons";
+
+      const makeButton = (value, text) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "action-filter-button";
+        button.dataset.actionFilter = value;
+        button.setAttribute("aria-pressed", "false");
+        button.textContent = text;
+        buttons.appendChild(button);
+        return button;
+      };
+
+      makeButton("", `全部 (${rows.length})`);
+      for (const action of actions) {
+        makeButton(action, `${action} (${actionCounts.get(action)})`);
+      }
+      bar.appendChild(buttons);
+
+      const status = document.createElement("span");
+      status.className = "action-filter-status";
+      status.setAttribute("aria-live", "polite");
+      bar.appendChild(status);
+
+      const empty = document.createElement("p");
+      empty.className = "action-filter-empty";
+      empty.hidden = true;
+      empty.textContent = "没有匹配该动作的标的。";
+
+      table.parentNode?.insertBefore(bar, table);
+      table.parentNode?.insertBefore(empty, table);
+
+      const syncUrl = (action) => {
+        const url = new URL(window.location.href);
+        if (action) {
+          url.searchParams.set("action", action);
+        } else {
+          url.searchParams.delete("action");
+        }
+        window.history.replaceState(null, "", url);
+      };
+
+      const applyFilter = (action, updateUrl = true) => {
+        let visible = 0;
+        for (const row of rows) {
+          const matched = action === "" || row.dataset.action === action;
+          row.hidden = !matched;
+          if (matched) {
+            visible += 1;
+          }
+        }
+
+        for (const button of buttons.querySelectorAll("[data-action-filter]")) {
+          button.setAttribute("aria-pressed", button.dataset.actionFilter === action ? "true" : "false");
+        }
+
+        status.textContent =
+          action === "" ? `共 ${rows.length} 条` : `显示 ${visible} / ${rows.length} 条 · ${action}`;
+        empty.hidden = visible !== 0;
+
+        if (updateUrl) {
+          syncUrl(action);
+        }
+      };
+
+      buttons.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) {
+          return;
+        }
+        const button = target.closest("[data-action-filter]");
+        if (!(button instanceof HTMLElement)) {
+          return;
+        }
+        applyFilter(button.dataset.actionFilter || "");
+      });
+
+      const initial = new URLSearchParams(window.location.search).get("action") || "";
+      const initialAction = actions.includes(initial) ? initial : "";
+      applyFilter(initialAction, false);
+    }
+  };
+
   const initBackToTop = () => {
     const button = document.querySelector("[data-back-to-top]");
     if (!button) {
@@ -897,6 +1385,7 @@ def write_scripts(output_dir: Path) -> None:
   };
 
   initReportFilter();
+  initActionColumnFilter();
   initBackToTop();
 })();
 """,
@@ -918,12 +1407,21 @@ def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:
     (output_dir / ".nojekyll").write_text("", encoding="utf-8")
 
     report_links: list[tuple[Path, Path]] = []
-    for markdown_path in sorted(reports_dir.rglob("*.md")):
+    markdown_paths = sorted(reports_dir.rglob("*.md"))
+    for markdown_path in markdown_paths:
         source_relative = markdown_path.relative_to(reports_dir)
         output_relative = Path("reports") / source_relative.with_suffix(".html")
-        output_path = output_dir / output_relative
-        render_report(markdown_path, output_path, reports_dir, output_dir)
         report_links.append((source_relative, output_relative))
+
+    available_pinned = root_pinned_filenames(report_links)
+    for markdown_path, (_, output_relative) in zip(markdown_paths, report_links):
+        render_report(
+            markdown_path,
+            output_dir / output_relative,
+            reports_dir,
+            output_dir,
+            available_pinned,
+        )
 
     copy_static_assets(reports_dir, output_reports_dir)
     write_styles(output_dir)

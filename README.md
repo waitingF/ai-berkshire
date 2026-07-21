@@ -422,7 +422,7 @@ python3 -m pip install -r requirements-pages.txt
 python3 scripts/build-github-pages.py
 ```
 
-构建输出位于 `site/`，其中 `site/index.html` 是目录式报告索引页。首页只展示一级目录和根级报告，进入目录后再查看该目录下的子目录和报告。`site/` 是本地生成物，不提交到仓库。
+构建输出位于 `site/`，其中 `site/index.html` 是目录式报告索引页。首页顶部「常用入口」会置顶 `重点标的看板.md`、`建议跟踪台账.md` 与 `portfolio-latest.md`；顶栏导航也可直接跳转。报告正文里的相对 `.md` 链接会改写为对应 `.html`，站内互链可点击；外链与纯锚点不变。首页其余部分只展示一级目录和根级报告，进入目录后再查看该目录下的子目录和报告。`site/` 是本地生成物，不提交到仓库。
 
 在 GitHub 仓库中启用：
 
