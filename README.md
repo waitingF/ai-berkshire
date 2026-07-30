@@ -14,7 +14,7 @@
 
 > 📮 **仓库是全量框架，公众号是精选。** 真正值得深研的公司，加上报告之外我自己的判断与取舍，都在微信公众号「**复利炼丹炉**」——[扫码关注 ↓](#精选研究首发于公众号)
 
-[实盘业绩](#real-track-record) · [为什么不能直接问AI](#为什么不能直接问-ai) · [Skills 一览](#skills-一览20个) · [快速开始](#快速开始) · [实战报告](#实战研究报告) · [设计理念](#设计理念) · [公众号](#精选研究首发于公众号)
+[实盘业绩](#real-track-record) · [为什么不能直接问AI](#为什么不能直接问-ai) · [Skills 一览](#skills-一览21个) · [快速开始](#快速开始) · [实战报告](#实战研究报告) · [设计理念](#设计理念) · [公众号](#精选研究首发于公众号)
 
 ---
 
@@ -172,7 +172,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 
 ---
 
-## Skills 一览（20个）
+## Skills 一览（21个）
 
 ### 🔬 深度研究类
 
@@ -208,6 +208,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 | [`/income-investment`](skills/income-investment.md) | 收益型股票分析 | 区分可持续收益、机会型高息与收益率陷阱 |
 | [`/portfolio-review`](skills/portfolio-review.md) | 组合管理与优化 | 从"研究公司"升级到"管理组合"——仓位、集中度、再平衡 |
 | [`/thesis-tracker`](skills/thesis-tracker.md) | 投资论文追踪 | 买入后的纪律系统：持续跟踪论文是否被证伪 |
+| [`/weekly-review`](skills/weekly-review.md) | 重点优先周检 | 只读联网分诊：重点标的全查、台账只查到期/触发项，输出 P0/P1/P2 待办 |
 | [`/thesis-drift`](skills/thesis-drift.md) | 投资论文漂移检测 | 对比两份论文/报告，区分事实变化、估值变化与措辞变化 |
 | [`/news-pulse`](skills/news-pulse.md) | 股价异动快速归因 | 股价大涨/大跌时10分钟搞清"发生了什么" |
 
@@ -375,6 +376,7 @@ REM 可选：仅安装到当前仓库 .cursor/skills
 /income-investment Verizon mode=existing role=core-income quantity=100 cost_basis=39.50 tax_residence=France horizon=5y
 /portfolio-review 腾讯30%, 美团20%, 茅台20%, 现金30%
 /thesis-tracker 拼多多
+/weekly-review
 /thesis-drift 拼多多 reports/拼多多/拼多多-thesis-2025Q4.md reports/拼多多/拼多多-thesis-2026Q1.md
 /news-pulse 腾讯
 
@@ -664,6 +666,7 @@ GitHub Pages 会公开发布站点内容，推送前请确认 `reports/` 中没�
 | 完整投研（小时级） | `/investment-team` 或 `/investment-research` |
 | 财报深读 | `/earnings-review` |
 | 长期论文跟踪 | `/thesis-tracker` |
+| **每周检查重点标的与待处理建议** | **`/weekly-review`** |
 | **股价异动 10 分钟归因** | **`/news-pulse`** |
 
 **输出示例摘录**（腾讯 4/17-5/01 实测，14 天 -10.47%）：

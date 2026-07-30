@@ -25,6 +25,16 @@ class WeeklyReviewSkillContractTest(unittest.TestCase):
     def test_price_is_not_a_fundamental_change(self):
         self.assertIn("价格变化不能单独改变论文健康度", self.text)
 
+    def test_generated_adapters_and_readme_expose_the_skill(self):
+        codex = ROOT / "codex-skills" / "weekly-review" / "SKILL.md"
+        cursor = ROOT / "cursor-skills" / "weekly-review" / "SKILL.md"
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertTrue(codex.exists())
+        self.assertTrue(cursor.exists())
+        self.assertIn("skills/weekly-review.md", codex.read_text(encoding="utf-8"))
+        self.assertIn("skills/weekly-review.md", cursor.read_text(encoding="utf-8"))
+        self.assertIn("[`/weekly-review`](skills/weekly-review.md)", readme)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
