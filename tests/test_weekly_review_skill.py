@@ -26,6 +26,13 @@ class WeeklyReviewSkillContractTest(unittest.TestCase):
     def test_price_is_not_a_fundamental_change(self):
         self.assertIn("价格变化不能单独改变论文健康度", self.text)
 
+    def test_company_names_link_to_local_reports_in_weekly_output(self):
+        self.assertIn("标的名称必须写成指向主报告的 Markdown 链接", self.text)
+        self.assertIn("从 `reports/weekly-check/` 出发的相对路径", self.text)
+        self.assertIn("重点标的优先链接 thesis", self.text)
+        self.assertIn("写入前验证每个本地链接目标存在", self.text)
+        self.assertIn("报告链接待人工确认", self.text)
+
     def test_generated_adapters_and_readme_expose_the_skill(self):
         codex = ROOT / "codex-skills" / "weekly-review" / "SKILL.md"
         cursor = ROOT / "cursor-skills" / "weekly-review" / "SKILL.md"
