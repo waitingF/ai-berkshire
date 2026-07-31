@@ -34,7 +34,7 @@ STATIC_SUFFIX_ALLOWLIST = {
     ".webp",
 }
 
-# Root-level living docs pinned on the homepage and site nav.
+# Living docs pinned on the homepage and site nav.
 HOME_PINNED_REPORTS = (
     {
         "filename": "重点标的看板.md",
@@ -49,6 +49,13 @@ HOME_PINNED_REPORTS = (
         "nav_label": "买卖建议",
         "eyebrow": "买卖建议",
         "description": "研究报告里的买卖/观望建议：条件是否触发、事后对不对。",
+    },
+    {
+        "filename": "weekly-check/weekly-check-latest.md",
+        "title": "最新周检",
+        "nav_label": "周检",
+        "eyebrow": "本周待办",
+        "description": "按优先级汇总本周需要决策、核验或深读的投资研究事项。",
     },
     {
         "filename": "portfolio-latest.md",
@@ -132,20 +139,19 @@ def render_site_nav(
     return "\n        ".join(items)
 
 
-def root_pinned_filenames(report_links: list[tuple[Path, Path]]) -> set[str]:
+def available_pinned_filenames(report_links: list[tuple[Path, Path]]) -> set[str]:
     pinned_names = {item["filename"] for item in HOME_PINNED_REPORTS}
     return {
-        source_relative.name
+        source_relative.as_posix()
         for source_relative, _ in report_links
-        if source_relative.parent == Path(".") and source_relative.name in pinned_names
+        if source_relative.as_posix() in pinned_names
     }
 
 
 def render_home_pinned_section(report_links: list[tuple[Path, Path]]) -> str:
     href_by_name = {
-        source_relative.name: html_relative
+        source_relative.as_posix(): html_relative
         for source_relative, html_relative in report_links
-        if source_relative.parent == Path(".")
     }
     cards = []
     for pinned in HOME_PINNED_REPORTS:
@@ -240,7 +246,7 @@ def render_report(
     <article class="report-article">
 {render_markdown(markdown_text)}
     </article>"""
-    current_nav = source_relative.name if source_relative.parent == Path(".") else None
+    current_nav = source_relative.as_posix()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         render_page(
@@ -412,7 +418,7 @@ def render_directory_index(
             body_html,
             output_root_prefix(output_path, output_dir),
             "index-page",
-            root_pinned_filenames(report_links),
+            available_pinned_filenames(report_links),
             current_nav,
         ),
         encoding="utf-8",
@@ -1413,7 +1419,7 @@ def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:
         output_relative = Path("reports") / source_relative.with_suffix(".html")
         report_links.append((source_relative, output_relative))
 
-    available_pinned = root_pinned_filenames(report_links)
+    available_pinned = available_pinned_filenames(report_links)
     for markdown_path, (_, output_relative) in zip(markdown_paths, report_links):
         render_report(
             markdown_path,

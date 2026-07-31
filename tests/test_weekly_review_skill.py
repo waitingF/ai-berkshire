@@ -10,12 +10,13 @@ class WeeklyReviewSkillContractTest(unittest.TestCase):
     def setUp(self):
         self.text = SOURCE.read_text(encoding="utf-8")
 
-    def test_default_scope_and_read_only_boundary_are_explicit(self):
+    def test_default_scope_and_write_boundary_are_explicit(self):
         self.assertIn("重点标的看板", self.text)
         self.assertIn("买卖建议跟踪表", self.text)
         self.assertIn("未来 14 天", self.text)
-        self.assertIn("不写入", self.text)
-        self.assertIn("不修改", self.text)
+        self.assertIn("reports/weekly-check/weekly-check-{YYYYMMDD}.md", self.text)
+        self.assertIn("reports/weekly-check/weekly-check-latest.md", self.text)
+        self.assertIn("不修改任何看板、台账、thesis 或组合文件", self.text)
 
     def test_priority_and_output_contract_are_explicit(self):
         for label in ("P0", "P1", "P2", "本周待办队列", "建议分流"):

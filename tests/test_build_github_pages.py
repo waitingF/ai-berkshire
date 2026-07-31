@@ -54,6 +54,17 @@ class BuildGitHubPagesTest(unittest.TestCase):
                 encoding="utf-8",
             )
             (reports_dir / "portfolio-latest.md").write_text("# 组合最新报告\n\n组合。\n", encoding="utf-8")
+            weekly_dir = reports_dir / "weekly-check"
+            weekly_dir.mkdir()
+            (weekly_dir / "weekly-check-20260731.md").write_text(
+                "# 周检待办清单\n\n本周待办。\n",
+                encoding="utf-8",
+            )
+            (weekly_dir / "weekly-check-latest.md").write_text(
+                "# 最新周检\n\n"
+                "当前报告：[weekly-check-20260731.md](weekly-check-20260731.md)。\n",
+                encoding="utf-8",
+            )
 
             builder.build_site(reports_dir, output_dir)
 
@@ -66,6 +77,9 @@ class BuildGitHubPagesTest(unittest.TestCase):
             report_html = report_html_path.read_text(encoding="utf-8")
             board_html = (output_dir / "reports" / "重点标的看板.html").read_text(encoding="utf-8")
             ledger_html = (output_dir / "reports" / "买卖建议跟踪表.html").read_text(encoding="utf-8")
+            weekly_latest_html = (
+                output_dir / "reports" / "weekly-check" / "weekly-check-latest.html"
+            ).read_text(encoding="utf-8")
             site_js = (output_dir / "assets" / "site.js").read_text(encoding="utf-8")
             site_css = (output_dir / "assets" / "site.css").read_text(encoding="utf-8")
 
@@ -96,19 +110,25 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn("常用入口", index_html)
             self.assertIn("重点标的看板", index_html)
             self.assertIn("买卖建议跟踪表", index_html)
+            self.assertIn("最新周检", index_html)
             self.assertIn("组合最新报告", index_html)
             self.assertIn("看板", index_html)
             self.assertIn("买卖建议", index_html)
+            self.assertIn("周检", index_html)
             self.assertIn("组合", index_html)
             self.assertIn('class="pinned-home"', index_html)
             self.assertIn('aria-current="page"', index_html)
             self.assertIn("reports/%E9%87%8D%E7%82%B9%E6%A0%87%E7%9A%84%E7%9C%8B%E6%9D%BF.html", index_html)
             self.assertIn("reports/%E4%B9%B0%E5%8D%96%E5%BB%BA%E8%AE%AE%E8%B7%9F%E8%B8%AA%E8%A1%A8.html", index_html)
+            self.assertIn("reports/weekly-check/weekly-check-latest.html", index_html)
             self.assertIn("reports/portfolio-latest.html", index_html)
             self.assertNotIn('class="pinned-home"', directory_html)
             self.assertIn("看板", report_html)
             self.assertIn("买卖建议", report_html)
+            self.assertIn("周检", report_html)
             self.assertIn("组合", report_html)
+            self.assertIn('aria-current="page"', weekly_latest_html)
+            self.assertIn('href="weekly-check-20260731.html"', weekly_latest_html)
             self.assertIn("腾讯", index_html)
             self.assertIn("reports/%E8%85%BE%E8%AE%AF/index.html", index_html)
             self.assertNotIn("腾讯/最终报告.md", index_html)
