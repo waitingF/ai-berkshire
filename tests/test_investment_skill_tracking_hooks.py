@@ -12,7 +12,7 @@ class InvestmentSkillTrackingHooksTest(unittest.TestCase):
         text = RESEARCH.read_text(encoding="utf-8")
 
         for requirement in (
-            "reports/买卖建议跟踪表.md",
+            "reports/标的跟踪表.md",
             "每个已完成研究的标的",
             "重点标的看板",
             "禁止重复新增",
@@ -29,7 +29,7 @@ class InvestmentSkillTrackingHooksTest(unittest.TestCase):
             "reports/重点标的看板.md",
             "每个执行 Checklist 的标的",
             "无论 Checklist 结论",
-            "reports/买卖建议跟踪表.md",
+            "reports/标的跟踪表.md",
             "移除该标的的旧事件行",
             "禁止重复新增",
             "重点标的更新失败",

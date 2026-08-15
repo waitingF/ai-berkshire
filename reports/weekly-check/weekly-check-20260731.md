@@ -53,7 +53,7 @@
 ## 主要证据
 
 - [重点标的看板](../重点标的看板.md)
-- [买卖建议跟踪表](../买卖建议跟踪表.md)
+- [标的跟踪表](../标的跟踪表.md)
 - [Accenture thesis](../Accenture/Accenture-thesis.md)
 - [拼多多 thesis](../拼多多/拼多多-thesis.md)
 - [Progressive Q2 财报精读](../Progressive/Progressive-earnings-2026Q2.md)

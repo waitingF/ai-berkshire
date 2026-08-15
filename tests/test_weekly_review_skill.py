@@ -12,7 +12,7 @@ class WeeklyReviewSkillContractTest(unittest.TestCase):
 
     def test_default_scope_and_write_boundary_are_explicit(self):
         self.assertIn("重点标的看板", self.text)
-        self.assertIn("买卖建议跟踪表", self.text)
+        self.assertIn("标的跟踪表", self.text)
         self.assertIn("未来 14 天", self.text)
         self.assertIn("reports/weekly-check/weekly-check-{YYYYMMDD}.md", self.text)
         self.assertIn("reports/weekly-check/weekly-check-latest.md", self.text)

@@ -44,10 +44,10 @@ HOME_PINNED_REPORTS = (
         "description": "thesis / 指定标的一页总览：阶段、健康度、本周关注与下次动作。",
     },
     {
-        "filename": "买卖建议跟踪表.md",
-        "title": "买卖建议跟踪表",
-        "nav_label": "买卖建议",
-        "eyebrow": "买卖建议",
+        "filename": "标的跟踪表.md",
+        "title": "标的跟踪表",
+        "nav_label": "标的跟踪",
+        "eyebrow": "标的跟踪",
         "description": "研究报告里的买卖/观望建议：条件是否触发、事后对不对。",
     },
     {
