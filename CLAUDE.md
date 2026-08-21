@@ -36,9 +36,18 @@ reports/
 ├── 重点标的看板.md            — thesis/指定标的一页总览（活文档）
 ├── 标的跟踪表.md          — 全部买卖建议的条件监控+复盘（活文档）
 ├── weekly-check/              — 日期化周检快照 + latest 入口
+├── trigger-scan/              — 标的触发监控日报（每日自动扫描，见 tools/trigger_scanner.py）
 ├── portfolio-latest.md       — 组合报告放根目录
 └── 多公司对比-checklist-20260408.md — 多公司报告放根目录
 ```
+
+## 触发监控（关键价位 + 事件提醒）
+
+- **数据源**：`data/triggers.json`（结构化触发区间 + 事件），设计见 `docs/2026-08-21-标的触发监控-design.md`
+- **扫描**：`python3 tools/trigger_scanner.py`（腾讯行情 API，零依赖；`--watch` 定点扫描）
+- **自动任务**：GitHub Actions `.github/workflows/trigger-scan.yml` 工作日 18:00 扫描 + Server酱微信推送（Secret：`SERVERCHAN_SENDKEY`）
+- **报告**：`reports/trigger-scan/trigger-scan-{YYYYMMDD}.md`
+- **登记规则**：研究报告产出**明确买卖/观望建议价位带或复检节点**时，必须登记到 `data/triggers.json`（新报告用 `/trigger-monitor` skill 协助登记：新增 zone/event 或新建 target），并更新 `updated` 字段；复检完成的事件标 `"done": true`。**没有登记 = 该触发点不在监控内**。改完先跑 `bash scripts/prepush-check.sh` 本地验证（零通知），确认后再提交。
 
 ## 报告命名规范
 

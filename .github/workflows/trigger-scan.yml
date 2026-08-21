@@ -1,0 +1,41 @@
+name: 标的触发监控
+
+# 每个工作日 18:00（中国时间，UTC+8）自动扫描一次；
+# 也可在 Actions 页面手动 Run workflow 触发。
+on:
+  schedule:
+    - cron: "0 10 * * 1-5"   # 10:00 UTC = 18:00 CST，周一至周五
+  workflow_dispatch: {}       # 手动触发
+
+permissions:
+  contents: write             # 允许把日报回写仓库
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 运行触发扫描（写日报 + 输出 JSON）
+        run: |
+          python3 tools/trigger_scanner.py --json > scan.json
+          echo "--- scan.json ---"
+          cat scan.json
+
+      - name: Server酱微信通知
+        env:
+          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY }}
+        run: |
+          if [ -z "$SERVERCHAN_SENDKEY" ]; then
+            echo "未配置 SERVERCHAN_SENDKEY，跳过微信推送（扫描仍正常）"
+          else
+            python3 .github/scripts/notify_serverchan.py scan.json
+          fi
+
+      - name: 提交日报回仓库
+        run: |
+          git config user.name "trigger-scan-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/trigger-scan/
+          git diff --cached --quiet || git commit -m "触发监控日报 $(date +%F)"
+          git push

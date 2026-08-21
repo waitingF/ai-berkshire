@@ -73,6 +73,20 @@ DeepSeek Harness users.
 - Clearly label low-confidence conclusions, incomplete data, and source gaps.
 - This project is for learning and research, not investment advice.
 
+## Trigger Monitoring Rules (标的触发监控)
+
+- Any research report containing an explicit buy/wait/avoid price band or a
+  review/earnings checkpoint must register it in `data/triggers.json`
+  (zones/events; see `skills/trigger-monitor.md`). **Not registered = not
+  monitored.**
+- After updating `data/triggers.json`, bump the `updated` field and run
+  `python3 tools/trigger_scanner.py --check`.
+- Before pushing any change touching `data/triggers.json` or
+  `tools/trigger_scanner.py`, run `bash scripts/prepush-check.sh` (local
+  validation, no notifications) and get explicit user confirmation to commit.
+- Daily scan: `python3 tools/trigger_scanner.py` (writes report, no notify).
+  GitHub Actions `.github/workflows/trigger-scan.yml` runs weekdays 18:00 CST.
+
 ## Editing Rules
 
 - Preserve existing report files unless the task specifically asks to change
