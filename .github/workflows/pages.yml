@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - "reports/**"
+      - "data/triggers.json"
+      - "tools/trigger_scanner.py"
       - "scripts/build-github-pages.py"
       - "requirements-pages.txt"
       - ".github/workflows/pages.yml"
@@ -38,6 +40,13 @@ jobs:
 
       - name: Install page build dependencies
         run: python -m pip install -r requirements-pages.txt
+
+      - name: 重新生成触发监控日报（零通知，Pages 使用最新 triggers.json）
+        run: |
+          # 只重生成日报 md，不调用 notify_serverchan，故绝不触发微信通知。
+          # 失败时回退到仓库内已提交的日报，避免行情接口抖动拖垮 Pages 部署。
+          python3 tools/trigger_scanner.py \
+            || echo "⚠️ 触发监控日报生成失败，将使用仓库内已提交版本继续构建"
 
       - name: Build reports site
         run: python scripts/build-github-pages.py

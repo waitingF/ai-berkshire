@@ -51,10 +51,10 @@ for r in rows:
                 gap = f"下方{(low/pr - 1)*100:.1f}%"
             else:
                 gap = f"上方{(pr/high - 1)*100:.1f}%"
-    flag = {"TRIGGERED":"🔴","NEAR":"🟡","FAR":"  ","NO_DATA":"⚪"}[st]
+    flag = {"TRIGGERED":"🔴","WARN":"🟠","NEAR":"🟡","FAR":"  ","NO_DATA":"⚪"}.get(st, "  ")
     print(f"  | {r['name']} | {r['market']} | {r['zone']} | {fmt_num(pr)} | {flag}{st:<9} | {band:<12} | {gap:<8} | {r['action']} | {r['note'][:20]}")
 
-print("\n  ▲ 状态：已触发🔴 / 接近🟡(3%内) / 未触发 / 无行情⚪；距触发：负=已在带内下方，正=还差百分之几")
+print("\n  ▲ 状态：已触发🔴 / 警戒🟠 / 接近🟡(3%内) / 未触发 / 无行情⚪；距触发：负=已在带内下方，正=还差百分之几")
 EOF
 
 echo
