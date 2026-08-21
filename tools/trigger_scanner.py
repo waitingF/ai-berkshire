@@ -242,15 +242,18 @@ def cmd_check():
 # ---------------------------------------------------------------------------
 
 def write_report(targets, rows, event_rows, triggered, warned, near, today):
-    """写日报文件 reports/trigger-scan/trigger-scan-{YYYYMMDD}.md，返回路径。"""
+    """写日报：日期版 + latest 稳定入口（内容相同）。返回 (日期路径, latest 路径)。"""
     os.makedirs(REPORT_DIR, exist_ok=True)
-    fname = os.path.join(REPORT_DIR, f"trigger-scan-{today:%Y%m%d}.md")
+    dated = os.path.join(REPORT_DIR, f"trigger-scan-{today:%Y%m%d}.md")
+    latest = os.path.join(REPORT_DIR, "trigger-scan-latest.md")
     lines = [
         "# 标的触发监控日报",
         "",
         f"**扫描日期**：{today}",
         f"**数据源**：[`data/triggers.json`](../../data/triggers.json)（{len(targets)} 标的 / {len(rows)} 区间 / {len(event_rows)} 到期事件）",
         f"**行情源**：腾讯行情 API（qt.gtimg.cn）",
+        "",
+        f"> 本页为最新日报（`trigger-scan-latest.md`）；历史日报见同目录 [`trigger-scan/`](.) 下的 `trigger-scan-YYYYMMDD.md`。",
         "",
         "---",
         "",
@@ -304,13 +307,15 @@ def write_report(targets, rows, event_rows, triggered, warned, near, today):
         "- 价位/事件来自 [`data/triggers.json`](../../data/triggers.json)，由研究结论登记，不由本脚本猜测。",
         "- 触发只表示价位到达，**不代表买入信号**：是否建仓以对应 thesis / 研究报告的红线与条件为准。",
         "- 行情为腾讯 API 快照，A股/港股为当日最新，美股/韩股/日股为最近收盘。",
-        "- 历史报告见同目录 `trigger-scan-*.md`。",
         "",
         "*本扫描用于学习研究跟踪，不构成投资建议。*",
     ]
-    with open(fname, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
-    return fname
+    content = "\n".join(lines) + "\n"
+    with open(dated, "w", encoding="utf-8") as f:
+        f.write(content)
+    with open(latest, "w", encoding="utf-8") as f:
+        f.write(content)
+    return dated, latest
 
 
 def main():
@@ -399,7 +404,8 @@ def main():
     # ---- 报告文件（两种模式都写，除非 --no-report）----
     report_path = None
     if not args.no_report:
-        report_path = write_report(targets, rows, event_rows, triggered, warned, near, today)
+        dated_path, latest_path = write_report(targets, rows, event_rows, triggered, warned, near, today)
+        report_path = dated_path
 
     # ---- 终端输出 ----
     if args.json:

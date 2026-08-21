@@ -58,6 +58,13 @@ HOME_PINNED_REPORTS = (
         "description": "按优先级汇总本周需要决策、核验或深读的投资研究事项。",
     },
     {
+        "filename": "trigger-scan/trigger-scan-latest.md",
+        "title": "触发监控日报",
+        "nav_label": "触发监控",
+        "eyebrow": "每日扫描",
+        "description": "标的触发监控每日日报：价位触发、接近触发、警戒与事件提醒。",
+    },
+    {
         "filename": "portfolio-latest.md",
         "title": "组合最新报告",
         "nav_label": "组合",
