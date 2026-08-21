@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-08-21",
+  "updated": "2026-08-22",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -404,7 +404,8 @@
         {"label": "安全边际带", "dir": "range", "low": 50, "high": 65, "market": "US", "action": "评估建仓", "note": "须增长未恶化"}
       ],
       "events": [
-        {"date": "2026-08-03", "type": "财报", "label": "2026Q2业绩（8/3已发）", "note": "核US商业TCV/客户、SBC与指引", "market": "US"}
+        {"date": "2026-08-03", "type": "财报", "label": "2026Q2业绩（8/3已发）", "note": "核US商业TCV/客户、SBC与指引", "market": "US", "done": true},
+        {"date": "2026-11-03", "type": "财报", "label": "2026Q3业绩（约11月初）", "note": "核TCV/客户是否维持+150%量级、Karp 18个月≥149%增速承诺、毛利率云托管影响、SBC占收入是否回落", "market": "US"}
       ]
     },
     {
