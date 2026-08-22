@@ -372,7 +372,11 @@ def load_weekly_snapshot(reports_dir: Path) -> tuple[str, str]:
     return body, extract_history_table(latest_text)
 
 
-def render_composed_page(reports_dir: Path, output_dir: Path) -> None:
+def render_composed_page(
+    reports_dir: Path,
+    output_dir: Path,
+    available_pinned: set[str] | None = None,
+) -> None:
     """把「每日触发监控」与「每周周检」两个 latest 源组合成单一入口页。"""
     entry = next(item for item in HOME_PINNED_REPORTS if item.get("composed"))
     parts: list[str] = [f"# {entry['title']}", "", "每日触发监控（自动扫描）与每周研究待办分诊（人工核验）的合并入口；数据层保持分离：完整日报见 [`trigger-scan/`](../trigger-scan/)，完整周检见 [`weekly-check/`](../weekly-check/)。", ""]
@@ -417,7 +421,7 @@ def render_composed_page(reports_dir: Path, output_dir: Path) -> None:
             body_html,
             root_prefix,
             "report-page",
-            None,
+            available_pinned,
             entry["output"],
         ),
         encoding="utf-8",
@@ -1596,7 +1600,7 @@ def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:
     write_styles(output_dir)
     write_scripts(output_dir)
     render_indexes(report_links, output_dir)
-    render_composed_page(reports_dir, output_dir)
+    render_composed_page(reports_dir, output_dir, available_pinned)
 
 
 def parse_args() -> argparse.Namespace:
