@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write             # 允许把日报回写仓库
+  actions: write              # 允许 gh workflow run 触发 Pages 重建
 
 jobs:
   scan:
@@ -33,9 +34,26 @@ jobs:
           fi
 
       - name: 提交日报回仓库
+        id: commit_daily
         run: |
           git config user.name "trigger-scan-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports/trigger-scan/
-          git diff --cached --quiet || git commit -m "触发监控日报 $(date +%F)"
+          if git diff --cached --quiet; then
+            echo "ℹ️ 日报无变化，无新提交"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "触发监控日报 $(date +%F)"
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
           git push
+
+      - name: 触发 Pages 重建（让"触发监控"页面同步最新日报）
+        # 每日定时扫描后，除 push 日报外，显式触发 pages.yml 重建站点。
+        # GitHub 限制：workflow 内 push 不会触发另一个 workflow 的 on.push，
+        # 故用 gh workflow run（workflow_dispatch 入口）显式触发 pages.yml。
+        # pages.yml 构建前会重跑 trigger_scanner.py（零通知），故页面始终反映最新 triggers.json。
+        if: steps.commit_daily.outputs.committed == 'true'
+        run: |
+          gh workflow run pages.yml --ref main
+          echo "✅ 已触发 pages.yml 重建"
