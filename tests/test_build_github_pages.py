@@ -62,7 +62,21 @@ class BuildGitHubPagesTest(unittest.TestCase):
             )
             (weekly_dir / "weekly-check-latest.md").write_text(
                 "# 最新周检\n\n"
-                "当前报告：[weekly-check-20260731.md](weekly-check-20260731.md)。\n",
+                "**当前报告：** [2026-07-31 周检待办清单](../weekly-check/weekly-check-20260731.md)\n\n"
+                "## 历史周检\n\n"
+                "| 数据截止日 | 报告 |\n"
+                "| --- | --- |\n"
+                "| 2026-07-31 | [周检待办清单](../weekly-check/weekly-check-20260731.md) |\n",
+                encoding="utf-8",
+            )
+            scan_dir = reports_dir / "trigger-scan"
+            scan_dir.mkdir()
+            (scan_dir / "trigger-scan-latest.md").write_text(
+                "# 标的触发监控日报\n\n"
+                "## 一、已触发价位区间\n\n"
+                "| 标的 | 现价 |\n"
+                "| --- | --- |\n"
+                "| 腾讯 | 457.00 |\n",
                 encoding="utf-8",
             )
 
@@ -79,6 +93,9 @@ class BuildGitHubPagesTest(unittest.TestCase):
             ledger_html = (output_dir / "reports" / "标的跟踪表.html").read_text(encoding="utf-8")
             weekly_latest_html = (
                 output_dir / "reports" / "weekly-check" / "weekly-check-latest.html"
+            ).read_text(encoding="utf-8")
+            composed_html = (
+                output_dir / "reports" / "监控与周检" / "index.html"
             ).read_text(encoding="utf-8")
             site_js = (output_dir / "assets" / "site.js").read_text(encoding="utf-8")
             site_css = (output_dir / "assets" / "site.css").read_text(encoding="utf-8")
@@ -110,7 +127,7 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn("常用入口", index_html)
             self.assertIn("重点标的看板", index_html)
             self.assertIn("标的跟踪表", index_html)
-            self.assertIn("最新周检", index_html)
+            self.assertIn("监控与周检", index_html)
             self.assertIn("组合最新报告", index_html)
             self.assertIn("看板", index_html)
             self.assertIn("标的跟踪", index_html)
@@ -120,15 +137,26 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn('aria-current="page"', index_html)
             self.assertIn("reports/%E9%87%8D%E7%82%B9%E6%A0%87%E7%9A%84%E7%9C%8B%E6%9D%BF.html", index_html)
             self.assertIn("reports/%E6%A0%87%E7%9A%84%E8%B7%9F%E8%B8%AA%E8%A1%A8.html", index_html)
-            self.assertIn("reports/weekly-check/weekly-check-latest.html", index_html)
+            self.assertIn("reports/%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%91%A8%E6%A3%80/index.html", index_html)
             self.assertIn("reports/portfolio-latest.html", index_html)
+            self.assertNotIn("reports/weekly-check/weekly-check-latest.html", index_html)
+            self.assertNotIn("reports/trigger-scan/trigger-scan-latest.html", index_html)
             self.assertNotIn('class="pinned-home"', directory_html)
             self.assertIn("看板", report_html)
             self.assertIn("标的跟踪", report_html)
             self.assertIn("周检", report_html)
             self.assertIn("组合", report_html)
             self.assertIn('aria-current="page"', weekly_latest_html)
-            self.assertIn('href="weekly-check-20260731.html"', weekly_latest_html)
+            self.assertIn('href="../weekly-check/weekly-check-20260731.html"', weekly_latest_html)
+            # 组合页：两个 latest 源内容被嵌入（扫描源 + 周检快照正文），标题降级
+            self.assertIn("每日触发监控（自动扫描）", composed_html)
+            self.assertIn("每周研究待办分诊（人工周检）", composed_html)
+            self.assertIn("457.00", composed_html)
+            self.assertIn("本周待办", composed_html)
+            self.assertIn("历史周检", composed_html)
+            self.assertIn("<th>数据截止日</th>", composed_html)
+            self.assertIn('href="../weekly-check/weekly-check-20260731.html"', composed_html)
+            self.assertIn("reports/%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%91%A8%E6%A3%80/index.html", composed_html)
             self.assertIn("腾讯", index_html)
             self.assertIn("reports/%E8%85%BE%E8%AE%AF/index.html", index_html)
             self.assertNotIn("腾讯/最终报告.md", index_html)

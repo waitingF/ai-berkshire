@@ -35,8 +35,8 @@ reports/
 ├── AI产业研究/AI-轮动判断-20260509.md — AI 主题综合判断可归入 AI产业研究/
 ├── 重点标的看板.md            — thesis/指定标的一页总览（活文档）
 ├── 标的跟踪表.md          — 全部买卖建议的条件监控+复盘（活文档）
-├── weekly-check/              — 日期化周检快照 + latest 入口
-├── trigger-scan/              — 标的触发监控日报（每日自动扫描，见 tools/trigger_scanner.py）
+├── weekly-check/              — 日期化周检快照 + latest 入口（Pages 入口与 trigger-scan 合并为「监控与周检」，构建时组合）
+├── trigger-scan/              — 标的触发监控日报（每日自动扫描，见 tools/trigger_scanner.py；Pages 上与 weekly-check 合并入口）
 ├── portfolio-latest.md       — 组合报告放根目录
 └── 多公司对比-checklist-20260408.md — 多公司报告放根目录
 ```

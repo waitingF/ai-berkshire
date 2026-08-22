@@ -18,7 +18,10 @@ DeepSeek Harness users.
   `skills/*.md`.
 - `tools/*.py`: shared financial validation and data tools used by both systems.
 - `reports/`: research outputs. Do not rewrite unrelated reports while changing
-  tooling or skills.
+  tooling or skills. `reports/weekly-check/` holds dated weekly-check snapshots
+  and `reports/trigger-scan/` holds daily trigger-scan reports; the Pages home
+  entry "监控与周检" merges both at build time (see
+  `scripts/build-github-pages.py`).
 - `scripts/sync-codex-skills.py`: regenerates Codex skills from `skills/*.md`.
 - `scripts/install-codex-skills.sh` / `scripts/install-codex-skills.bat`:
   installs Codex skills locally.
@@ -86,6 +89,12 @@ DeepSeek Harness users.
   validation, no notifications) and get explicit user confirmation to commit.
 - Daily scan: `python3 tools/trigger_scanner.py` (writes report, no notify).
   GitHub Actions `.github/workflows/trigger-scan.yml` runs weekdays 18:00 CST.
+- Pages entry: the weekly check and the daily trigger scan share one home entry
+  "监控与周检", composed at build time by `scripts/build-github-pages.py` from
+  `trigger-scan/trigger-scan-latest.md` + `weekly-check/weekly-check-latest.md`.
+  Weekly checks reference the scan for price/event facts and do not re-list
+  them (see `skills/weekly-review.md`); scan data layer and dated archives
+  stay separate.
 
 ## Editing Rules
 

@@ -4,7 +4,7 @@
 **数据源**：[`data/triggers.json`](../../data/triggers.json)（64 标的 / 75 区间 / 12 到期事件）
 **行情源**：腾讯行情 API（qt.gtimg.cn）
 
-> 本页为最新日报（`trigger-scan-latest.md`）；历史日报见同目录 [`trigger-scan/`](.) 下的 `trigger-scan-YYYYMMDD.md`。
+> 本页为最新日报（`trigger-scan-latest.md`）；历史日报见同目录 [`trigger-scan/`](../trigger-scan/) 下的 `trigger-scan-YYYYMMDD.md`。
 
 ---
 

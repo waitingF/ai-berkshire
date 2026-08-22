@@ -253,7 +253,7 @@ def write_report(targets, rows, event_rows, triggered, warned, near, today):
         f"**数据源**：[`data/triggers.json`](../../data/triggers.json)（{len(targets)} 标的 / {len(rows)} 区间 / {len(event_rows)} 到期事件）",
         f"**行情源**：腾讯行情 API（qt.gtimg.cn）",
         "",
-        f"> 本页为最新日报（`trigger-scan-latest.md`）；历史日报见同目录 [`trigger-scan/`](.) 下的 `trigger-scan-YYYYMMDD.md`。",
+        f"> 本页为最新日报（`trigger-scan-latest.md`）；历史日报见同目录 [`trigger-scan/`](../trigger-scan/) 下的 `trigger-scan-YYYYMMDD.md`。",
         "",
         "---",
         "",
