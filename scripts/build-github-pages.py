@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import re
 import shutil
 from pathlib import Path
 from urllib.parse import quote, urlsplit, urlunsplit
@@ -51,11 +52,14 @@ HOME_PINNED_REPORTS = (
         "description": "研究报告里的买卖/观望建议：条件是否触发、事后对不对。",
     },
     {
-        "filename": "weekly-check/weekly-check-latest.md",
-        "title": "最新周检",
-        "nav_label": "周检",
-        "eyebrow": "本周待办",
-        "description": "按优先级汇总本周需要决策、核验或深读的投资研究事项。",
+        # 周检（人工周检）+ 触发监控（每日自动扫描）合并为单一入口页，
+        # 由 render_composed_page() 在构建时组合两个 latest 源生成。
+        "composed": True,
+        "output": "reports/监控与周检/index.html",
+        "title": "监控与周检",
+        "nav_label": "监控与周检",
+        "eyebrow": "监控 + 分诊",
+        "description": "每日触发监控（价位/事件，自动扫描）与每周研究待办分诊（人工核验）的合并入口。",
     },
     {
         "filename": "portfolio-latest.md",
@@ -120,6 +124,10 @@ def render_site_nav(
 ) -> str:
     links: list[tuple[str, Path, str]] = []
     for pinned in HOME_PINNED_REPORTS:
+        if pinned.get("composed"):
+            # 构建时组合生成的入口页：不依赖源 .md，始终展示。
+            links.append((pinned["nav_label"], Path(pinned["output"]), pinned["output"]))
+            continue
         if available_pinned is not None and pinned["filename"] not in available_pinned:
             continue
         links.append(
@@ -140,7 +148,9 @@ def render_site_nav(
 
 
 def available_pinned_filenames(report_links: list[tuple[Path, Path]]) -> set[str]:
-    pinned_names = {item["filename"] for item in HOME_PINNED_REPORTS}
+    pinned_names = {
+        item["filename"] for item in HOME_PINNED_REPORTS if not item.get("composed")
+    }
     return {
         source_relative.as_posix()
         for source_relative, _ in report_links
@@ -155,9 +165,12 @@ def render_home_pinned_section(report_links: list[tuple[Path, Path]]) -> str:
     }
     cards = []
     for pinned in HOME_PINNED_REPORTS:
-        href = href_by_name.get(pinned["filename"])
-        if href is None:
-            continue
+        if pinned.get("composed"):
+            href = Path(pinned["output"])
+        else:
+            href = href_by_name.get(pinned["filename"])
+            if href is None:
+                continue
         cards.append(
             "        <li>"
             f'<a class="pinned-card" href="{encoded_href(href)}">'
@@ -256,6 +269,160 @@ def render_report(
             "report-page",
             available_pinned,
             current_nav,
+        ),
+        encoding="utf-8",
+    )
+
+
+def strip_title_and_demote_headings(markdown_text: str) -> str:
+    """去掉源文件首个一级标题（页面自身标题），并把其余标题整体降一级。
+
+    用于把多个 latest 源拼进组合页：组合页用自己的 H1/H2 分区，
+    源文件内容从 H2 起步，避免多级 H1 与标题层级错乱。
+    """
+    lines = markdown_text.splitlines()
+    for index, line in enumerate(lines):
+        if line.startswith("# ") and not line.startswith("## "):
+            lines.pop(index)
+            break
+    demoted: list[str] = []
+    for line in lines:
+        if line.startswith("### "):
+            demoted.append("#### " + line[4:])
+        elif line.startswith("## "):
+            demoted.append("### " + line[3:])
+        elif line.startswith("# "):
+            demoted.append("## " + line[2:])
+        else:
+            demoted.append(line)
+    return "\n".join(demoted)
+
+
+# 组合页（首页置顶「监控与周检」）的分区：顺序即页面顺序。
+COMPOSED_SECTIONS = (
+    {
+        "kind": "latest-file",
+        "source": "trigger-scan/trigger-scan-latest.md",
+        "heading": "一、每日触发监控（自动扫描）",
+        "intro": (
+            "价位带、现价、判定与事件状态由 `tools/trigger_scanner.py` 每个工作日 18:00 "
+            "自动生成并写入 `reports/trigger-scan/`；完整日报见 [`trigger-scan/`](../trigger-scan/)。"
+        ),
+    },
+    {
+        "kind": "weekly",
+        "heading": "二、每周研究待办分诊（人工周检）",
+        "intro": (
+            "由 `/weekly-review` 每周联网核验生成快照，写入 `reports/weekly-check/`；"
+            "价位带状态引用当日触发扫描，不复述机器事实；完整周检见 [`weekly-check/`](../weekly-check/)。"
+        ),
+    },
+)
+
+
+def prefix_same_dir_links(markdown_text: str, prefix: str) -> str:
+    """把未以 ../、/、http、# 开头的相对链接补上前缀。
+
+    用于把 reports/weekly-check/ 下的快照正文嵌入 reports/监控与周检/ 组合页时，
+    让同一目录内的相对链接（如 weekly-check-20260815.md）在新位置仍能解析。
+    """
+
+    def repl(match: re.Match) -> str:
+        target = match.group(1)
+        if target.startswith(("../", "http", "#", "/")) or "://" in target:
+            return match.group(0)
+        return f"]({prefix}{target})"
+
+    return re.sub(r"\]\(([^)]+)\)", repl, markdown_text)
+
+
+def extract_history_table(markdown_text: str) -> str:
+    """从 weekly-check-latest.md 提取「历史周检」表格（含表头行）的连续 markdown 行。"""
+    lines = markdown_text.splitlines()
+    start = None
+    for index, line in enumerate(lines):
+        if line.startswith("|") and "数据截止日" in line:
+            start = index
+            break
+    if start is None:
+        return ""
+    rows = []
+    for line in lines[start:]:
+        if line.startswith("|"):
+            rows.append(line)
+        else:
+            break
+    return "\n".join(rows)
+
+
+def load_weekly_snapshot(reports_dir: Path) -> tuple[str, str]:
+    """读取最新周检快照正文（跟随 weekly-check-latest.md 的「当前报告」链接）与历史表。"""
+    latest_path = reports_dir / "weekly-check" / "weekly-check-latest.md"
+    if not latest_path.is_file():
+        return "", ""
+    latest_text = latest_path.read_text(encoding="utf-8")
+    match = re.search(r"(weekly-check-\d{8}\.md)", latest_text)
+    if not match:
+        return "", ""
+    snapshot_path = reports_dir / "weekly-check" / match.group(1)
+    if not snapshot_path.is_file():
+        return "", ""
+    body = strip_title_and_demote_headings(snapshot_path.read_text(encoding="utf-8"))
+    body = prefix_same_dir_links(body, "../weekly-check/")
+    return body, extract_history_table(latest_text)
+
+
+def render_composed_page(
+    reports_dir: Path,
+    output_dir: Path,
+    available_pinned: set[str] | None = None,
+) -> None:
+    """把「每日触发监控」与「每周周检」两个 latest 源组合成单一入口页。"""
+    entry = next(item for item in HOME_PINNED_REPORTS if item.get("composed"))
+    parts: list[str] = [f"# {entry['title']}", "", "每日触发监控（自动扫描）与每周研究待办分诊（人工核验）的合并入口；数据层保持分离：完整日报见 [`trigger-scan/`](../trigger-scan/)，完整周检见 [`weekly-check/`](../weekly-check/)。", ""]
+    for section in COMPOSED_SECTIONS:
+        parts.append(f"## {section['heading']}")
+        parts.append("")
+        parts.append(section["intro"])
+        parts.append("")
+        if section.get("kind") == "weekly":
+            body, history = load_weekly_snapshot(reports_dir)
+            if body:
+                parts.append(body)
+                if history:
+                    parts.extend(["", "### 历史周检", "", history])
+            else:
+                parts.append("> 周检快照缺失（待生成）。")
+        else:
+            source_path = reports_dir / section["source"]
+            if source_path.is_file():
+                parts.append(strip_title_and_demote_headings(source_path.read_text(encoding="utf-8")))
+            else:
+                parts.append(f"> 来源缺失：`{section['source']}`（待生成）。")
+        parts.append("")
+        parts.append("---")
+        parts.append("")
+    composed_markdown = "\n".join(parts).rstrip() + "\n"
+
+    output_path = output_dir / entry["output"]
+    root_prefix = output_root_prefix(output_path, output_dir)
+    source_relative_dir = Path(entry["output"]).parent.relative_to("reports")
+    breadcrumb_html = render_breadcrumb(source_relative_dir, root_prefix, entry["title"])
+    body_html = (
+        f"    {breadcrumb_html}\n"
+        f'    <article class="report-article composed-page">\n'
+        f"{render_markdown(composed_markdown)}\n"
+        f"    </article>"
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        render_page(
+            entry["title"],
+            body_html,
+            root_prefix,
+            "report-page",
+            available_pinned,
+            entry["output"],
         ),
         encoding="utf-8",
     )
@@ -1433,6 +1600,7 @@ def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:
     write_styles(output_dir)
     write_scripts(output_dir)
     render_indexes(report_links, output_dir)
+    render_composed_page(reports_dir, output_dir, available_pinned)
 
 
 def parse_args() -> argparse.Namespace:

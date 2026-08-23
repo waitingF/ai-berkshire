@@ -1,7 +1,8 @@
 # AI Berkshire Codex Guide
 
 This repository contains investment research workflows, reports, and shared
-validation tools. Keep compatibility with Claude Code, Codex, and Cursor users.
+validation tools. Keep compatibility with Claude Code, Codex, Cursor, and
+DeepSeek Harness users.
 
 ## Project Layout
 
@@ -13,9 +14,14 @@ validation tools. Keep compatibility with Claude Code, Codex, and Cursor users.
   style entry points. These are a compatibility layer; skills remain preferred.
 - `cursor-skills/*/SKILL.md`: Cursor skill packages generated from
   `skills/*.md`.
+- `dsh-skills/*/SKILL.md`: DeepSeek Harness skill packages generated from
+  `skills/*.md`.
 - `tools/*.py`: shared financial validation and data tools used by both systems.
 - `reports/`: research outputs. Do not rewrite unrelated reports while changing
-  tooling or skills.
+  tooling or skills. `reports/weekly-check/` holds dated weekly-check snapshots
+  and `reports/trigger-scan/` holds daily trigger-scan reports; the Pages home
+  entry "监控与周检" merges both at build time (see
+  `scripts/build-github-pages.py`).
 - `scripts/sync-codex-skills.py`: regenerates Codex skills from `skills/*.md`.
 - `scripts/install-codex-skills.sh` / `scripts/install-codex-skills.bat`:
   installs Codex skills locally.
@@ -26,18 +32,24 @@ validation tools. Keep compatibility with Claude Code, Codex, and Cursor users.
 - `scripts/sync-cursor-skills.py`: regenerates Cursor skills from `skills/*.md`.
 - `scripts/install-cursor-skills.sh` / `scripts/install-cursor-skills.bat`:
   installs Cursor skills locally (`~/.cursor/skills` or `.cursor/skills`).
+- `scripts/generate-dsh-skills.py`: regenerates DeepSeek Harness skills from
+  `skills/*.md` (supports `--check`).
+- `scripts/install-dsh-skills.sh` / `scripts/install-dsh-skills.bat`:
+  installs DeepSeek Harness skills locally (`<repo>/.dsh/skills` project root
+  or `$DSH_HOME/skills` user root).
 
 ## Compatibility Rules
 
 - Treat `skills/*.md` as the canonical workflow source.
 - After changing any file in `skills/`, run:
   `python3 scripts/sync-codex-skills.py`
-  and `python3 scripts/sync-cursor-skills.py`
+  `python3 scripts/sync-cursor-skills.py`
+  and `python3 scripts/generate-dsh-skills.py`
 - If slash prompt compatibility is needed, also run:
   `python3 scripts/sync-codex-prompts.py`
-- Do not manually edit generated `codex-skills/*/SKILL.md` or
-  `cursor-skills/*/SKILL.md` unless also updating the corresponding source in
-  `skills/`.
+- Do not manually edit generated `codex-skills/*/SKILL.md`,
+  `cursor-skills/*/SKILL.md`, or `dsh-skills/*/SKILL.md` unless also updating
+  the corresponding source in `skills/`.
 - Do not install generated skills into `~/.cursor/skills-cursor`; that
   directory is reserved by Cursor.
 - For Codex-only hand-written packages under `codex-skills/`, keep them clearly
@@ -64,6 +76,26 @@ validation tools. Keep compatibility with Claude Code, Codex, and Cursor users.
 - Clearly label low-confidence conclusions, incomplete data, and source gaps.
 - This project is for learning and research, not investment advice.
 
+## Trigger Monitoring Rules (标的触发监控)
+
+- Any research report containing an explicit buy/wait/avoid price band or a
+  review/earnings checkpoint must register it in `data/triggers.json`
+  (zones/events; see `skills/trigger-monitor.md`). **Not registered = not
+  monitored.**
+- After updating `data/triggers.json`, bump the `updated` field and run
+  `python3 tools/trigger_scanner.py --check`.
+- Before pushing any change touching `data/triggers.json` or
+  `tools/trigger_scanner.py`, run `bash scripts/prepush-check.sh` (local
+  validation, no notifications) and get explicit user confirmation to commit.
+- Daily scan: `python3 tools/trigger_scanner.py` (writes report, no notify).
+  GitHub Actions `.github/workflows/trigger-scan.yml` runs weekdays 18:00 CST.
+- Pages entry: the weekly check and the daily trigger scan share one home entry
+  "监控与周检", composed at build time by `scripts/build-github-pages.py` from
+  `trigger-scan/trigger-scan-latest.md` + `weekly-check/weekly-check-latest.md`.
+  Weekly checks reference the scan for price/event facts and do not re-list
+  them (see `skills/weekly-review.md`); scan data layer and dated archives
+  stay separate.
+
 ## Editing Rules
 
 - Preserve existing report files unless the task specifically asks to change
@@ -72,10 +104,12 @@ validation tools. Keep compatibility with Claude Code, Codex, and Cursor users.
 - Before finishing a skill/tool change, run the relevant syntax or generation
   check. For compatibility changes, run:
   `python3 scripts/sync-codex-skills.py`
-  and `python3 scripts/sync-cursor-skills.py`
+  `python3 scripts/sync-cursor-skills.py`
+  and `python3 scripts/generate-dsh-skills.py`
 - To verify generated Codex/Cursor artifacts are current without rewriting
   files, run:
   `python3 scripts/sync-codex-skills.py --check`
   `python3 scripts/sync-cursor-skills.py --check`
+  `python3 scripts/generate-dsh-skills.py --check`
   and, when slash prompts are relevant:
   `python3 scripts/sync-codex-prompts.py --check`

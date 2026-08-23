@@ -1,0 +1,1975 @@
+{
+  "schema": 1,
+  "updated": "2026-08-22",
+  "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
+  "targets": [
+    {
+      "id": "腾讯",
+      "name": "腾讯控股",
+      "group": "重点",
+      "codes": {
+        "H": "hk00700"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/腾讯/腾讯-thesis.md"
+      ],
+      "zones": [
+        {
+          "label": "加仓带",
+          "dir": "range",
+          "low": 400,
+          "high": 430,
+          "market": "H",
+          "action": "评估加仓",
+          "note": "仅当红线未触或Q3证实FCF转正+AI回收"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30",
+          "type": "财报",
+          "label": "2026Q3财报",
+          "note": "盯Q3 FCF转正、AI预付款回收、国际游戏、回购",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "拼多多",
+      "name": "PDD Holdings",
+      "group": "重点",
+      "codes": {
+        "US": "usPDD"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/拼多多/拼多多-thesis.md"
+      ],
+      "zones": [
+        {
+          "label": "加码带",
+          "dir": "below",
+          "low": null,
+          "high": 75,
+          "market": "US",
+          "action": "评估加码",
+          "note": "且红线未触；单票建议上限5–8%内，小仓试探"
+        },
+        {
+          "label": "观望区",
+          "dir": "range",
+          "low": 75,
+          "high": 86,
+          "market": "US",
+          "action": "小仓试探",
+          "note": "Q2净利率连续<15%且主站广告稳健时再考虑"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-24",
+          "type": "财报",
+          "label": "2026Q2财报（约8/24–25）",
+          "note": "核Non-GAAP净利率是否连续破15%、主站广告、股东回报",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "美团",
+      "name": "美团-W",
+      "group": "重点",
+      "codes": {
+        "H": "hk03690"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/美团/美团-thesis.md"
+      ],
+      "zones": [
+        {
+          "label": "舒适加仓带",
+          "dir": "below",
+          "low": null,
+          "high": 70,
+          "market": "H",
+          "action": "评估加仓",
+          "note": "或中报确认UE/补贴收窄后按新证据重估"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-27",
+          "type": "财报",
+          "label": "2026中报",
+          "note": "核Q2/H1减亏斜率、份额硬数据、销售费用率",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "泡泡玛特",
+      "name": "泡泡玛特",
+      "group": "重点",
+      "codes": {
+        "H": "hk09992"
+      },
+      "source": "重点标的看板 2026-08-22（中报后）",
+      "links": [
+        "reports/泡泡玛特/泡泡玛特-thesis.md",
+        "reports/泡泡玛特/泡泡玛特-earnings-2026H1.md"
+      ],
+      "zones": [
+        {
+          "label": "加仓带",
+          "dir": "range",
+          "low": 120,
+          "high": 140,
+          "market": "H",
+          "action": "评估加仓",
+          "note": "中报后（8/20）修订：需Q3收入止跌+存货周转不再恶化，且现价回此带才评估加仓；JPM目标价120"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-19",
+          "type": "财报",
+          "label": "2026中报（约8/19）",
+          "note": "已核（8/20发布）：海外-11.1%、指引放弃、Q2隐含-11%、存货周转123→201天；结论持有不加仓",
+          "market": "H",
+          "done": true
+        },
+        {
+          "date": "2026-11-10",
+          "type": "财报",
+          "label": "2026Q3经营数据（预计，以披露易为准）",
+          "note": "核Q3收入是否连续第2季负增长（红线1判定核心）、存货周转、LABUBU 4.0动销、20–50亿回购执行",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "微软",
+      "name": "Microsoft",
+      "group": "重点",
+      "codes": {
+        "US": "usMSFT"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/微软/微软-thesis.md"
+      ],
+      "zones": [
+        {
+          "label": "不追高线",
+          "dir": "above",
+          "low": 440,
+          "high": null,
+          "market": "US",
+          "action": "持有不追高",
+          "note": "FY27 Q1验证Azure约+45%、云毛利与FCF后再评估"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-20",
+          "type": "财报",
+          "label": "FY2027Q1财报",
+          "note": "核Azure增速、云毛利、>$50B CapEx后的FCF",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "SK海力士",
+      "name": "SK hynix",
+      "group": "重点",
+      "codes": {
+        "KR": "kr000660"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/SK海力士/SK海力士-thesis-20260713.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-10-20",
+          "type": "财报",
+          "label": "3Q26财报",
+          "note": "核HBM4/HBM4E认证与份额、DRAM/NAND价格、扩产现金回报",
+          "market": "KR"
+        }
+      ]
+    },
+    {
+      "id": "Accenture",
+      "name": "Accenture",
+      "group": "重点",
+      "codes": {
+        "US": "usACN"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/Accenture/Accenture-thesis.md"
+      ],
+      "zones": [
+        {
+          "label": "分批带",
+          "dir": "below",
+          "low": null,
+          "high": 150,
+          "market": "US",
+          "action": "分批2–3%（上限3–5%）",
+          "note": "FY26全年与Investor Day后复核"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-30",
+          "type": "财报",
+          "label": "FY26 Q4/全年财报（约9月）",
+          "note": "核全年本币增速、利润率、AI可审计指标",
+          "market": "US"
+        },
+        {
+          "date": "2026-10-14",
+          "type": "投资者日",
+          "label": "Investor Day",
+          "note": "核增长战略、并购整合、AI承诺",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "中国平安",
+      "name": "中国平安",
+      "group": "重点",
+      "codes": {
+        "A": "sh601318",
+        "H": "hk02318"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/中国平安/中国平安-thesis.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-08-21",
+          "type": "财报",
+          "label": "2026中报（8/21）",
+          "note": "重做利差损监测表：净投资收益率、偿付能力、NBV价值率、个险止跌",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "上海复旦",
+      "name": "上海复旦",
+      "group": "重点",
+      "codes": {
+        "A": "sh688385",
+        "H": "hk01385"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/上海复旦/上海复旦-research-20260802.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1业绩",
+          "note": "核扣除约4.7亿公允价值收益后的经营利润、库存减值、管理层资本配置",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "中芯国际",
+      "name": "中芯国际",
+      "group": "重点",
+      "codes": {
+        "A": "sh688981",
+        "H": "hk00981"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/中芯国际/中芯国际-research-20260731.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-08-14",
+          "type": "财报",
+          "label": "2026Q2业绩（8/14已过）",
+          "note": "核毛利率、利用率、资本开支与FCF；A股观望、H股等待安全边际",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "AppLovin",
+      "name": "AppLovin",
+      "group": "重点",
+      "codes": {
+        "US": "usAPP"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/AppLovin/AppLovin-checklist-20260807.md"
+      ],
+      "zones": [
+        {
+          "label": "分批复核带",
+          "dir": "range",
+          "low": 300,
+          "high": 330,
+          "market": "US",
+          "action": "分批复核",
+          "note": "且Q3经营证据不破坏独立ROAS/留存；总仓≤组合5%"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-25",
+          "type": "财报",
+          "label": "2026Q3财报",
+          "note": "核Q3指引兑现、FCF、独立ROAS/留存与平台政策",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "标普500",
+      "name": "标普500指数（VOO）",
+      "group": "重点",
+      "codes": {
+        "US": "usVOO"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/标普纳指定投-checklist-20260809.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-12-31",
+          "type": "复检",
+          "label": "半年比例检查/年度再平衡",
+          "note": "核W-8BEN、资产结构；保持VOO核心80%",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "纳指100",
+      "name": "纳斯达克100指数（QQQM）",
+      "group": "重点",
+      "codes": {
+        "US": "usQQQM"
+      },
+      "source": "重点标的看板 2026-08-12",
+      "links": [
+        "reports/标普纳指定投-checklist-20260809.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-12-31",
+          "type": "复检",
+          "label": "半年比例检查",
+          "note": "与标普重叠与集中度；权重不超25%",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "兆易创新",
+      "name": "兆易创新",
+      "group": "台账",
+      "codes": {
+        "A": "sh603986",
+        "H": "hk03986"
+      },
+      "source": "标的跟踪表 20260818",
+      "links": [
+        "reports/兆易创新/兆易创新-research-20260818.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "below",
+          "low": null,
+          "high": 180,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "须中报后连续两季验证扣非/现金流/库存/关联交易改善；单纯低PE不触发"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1正式中报",
+          "note": "核扣非、经营现金流、库存、关联交易",
+          "market": "A"
+        }
+      ]
+    },
+    {
+      "id": "晶合集成",
+      "name": "晶合集成",
+      "group": "台账",
+      "codes": {
+        "A": "sh688249",
+        "H": "hk02249"
+      },
+      "source": "标的跟踪表 20260821",
+      "links": [
+        "reports/晶合集成/晶合集成-research-20260821.md"
+      ],
+      "zones": [
+        {
+          "label": "观察带",
+          "dir": "range",
+          "low": 12,
+          "high": 20,
+          "market": "A",
+          "action": "研究性观察"
+        },
+        {
+          "label": "高安全边际带",
+          "dir": "range",
+          "low": 8,
+          "high": 12,
+          "market": "A",
+          "action": "核心评估建仓",
+          "note": "须连续两季扣非转正、毛利率≥26%、OCF覆盖维护资本开支"
+        },
+        {
+          "label": "观察带",
+          "dir": "range",
+          "low": 14,
+          "high": 23,
+          "market": "H",
+          "action": "研究性观察"
+        },
+        {
+          "label": "高安全边际带",
+          "dir": "range",
+          "low": 9,
+          "high": 14,
+          "market": "H",
+          "action": "核心评估建仓"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1正式报告",
+          "note": "证28nm/90nm BCD客户认证与稳定量产收入",
+          "market": "A"
+        }
+      ]
+    },
+    {
+      "id": "北京君正",
+      "name": "北京君正",
+      "group": "台账",
+      "codes": {
+        "A": "sz300223",
+        "H": "hk03223"
+      },
+      "source": "标的跟踪表 20260817",
+      "links": [
+        "reports/北京君正/北京君正-research-20260817.md"
+      ],
+      "zones": [
+        {
+          "label": "H上限触发",
+          "dir": "below",
+          "low": null,
+          "high": 102.8,
+          "market": "H",
+          "action": "现金一手评估",
+          "note": "最终价≤102.80港元且无异常条款、不融资"
+        },
+        {
+          "label": "A股复核带",
+          "dir": "range",
+          "low": 90,
+          "high": 115,
+          "market": "A",
+          "action": "复核",
+          "note": "库存、毛利、现金流未恶化"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-24",
+          "type": "公告",
+          "label": "8/24配售结果及8/25上市",
+          "note": "核最终定价、稀释与首日表现",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "华虹宏力",
+      "name": "华虹半导体",
+      "group": "台账",
+      "codes": {
+        "A": "sh688347",
+        "H": "hk01347"
+      },
+      "source": "标的跟踪表 20260814",
+      "links": [
+        "reports/华虹宏力/华虹宏力-research-20260814.md"
+      ],
+      "zones": [
+        {
+          "label": "A股评估带",
+          "dir": "range",
+          "low": 70,
+          "high": 100,
+          "market": "A",
+          "action": "研究性评估",
+          "note": "须连续两季特色工艺毛利/FCF/资本回报改善"
+        },
+        {
+          "label": "H股小仓复核带",
+          "dir": "range",
+          "low": 80,
+          "high": 105,
+          "market": "H",
+          "action": "小仓复核"
+        },
+        {
+          "label": "H股核心建仓带",
+          "dir": "range",
+          "low": 60,
+          "high": 80,
+          "market": "H",
+          "action": "核心建仓评估"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1披露",
+          "note": "核华力微交割/融资条款与Fab9回报",
+          "market": "A"
+        }
+      ]
+    },
+    {
+      "id": "京东",
+      "name": "京东集团",
+      "group": "台账",
+      "codes": {
+        "US": "usJD",
+        "H": "hk09618"
+      },
+      "source": "标的跟踪表 20260811",
+      "links": [
+        "reports/京东集团/京东集团-research-20260811.md"
+      ],
+      "zones": [
+        {
+          "label": "买入带",
+          "dir": "range",
+          "low": 16.5,
+          "high": 20.6,
+          "market": "US",
+          "action": "评估建仓",
+          "note": "约人民币120–150元/ADS；且核心零售未恶化、新业务连续两季减亏；单纯跌价不触发"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-13",
+          "type": "财报",
+          "label": "2026Q2/中期业绩（8/13已过）",
+          "note": "核新业务减亏、零售利润率、FCF",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "多氟多",
+      "name": "多氟多",
+      "group": "台账",
+      "codes": {
+        "A": "sz002407"
+      },
+      "source": "标的跟踪表 20260810",
+      "links": [
+        "reports/多氟多/多氟多-research-20260810.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 26,
+          "high": 30,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "须正式中报/随后一季确认锂盐毛利稳健、CFO改善、净债务不再上升"
+        },
+        {
+          "label": "加强评估带",
+          "dir": "range",
+          "low": 20,
+          "high": 25,
+          "market": "A",
+          "action": "提高评估强度"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1正式报告",
+          "note": "核锂盐毛利、OCF、净债务",
+          "market": "A"
+        }
+      ]
+    },
+    {
+      "id": "ADP",
+      "name": "ADP",
+      "group": "台账",
+      "codes": {
+        "US": "usADP"
+      },
+      "source": "标的跟踪表 20260516",
+      "links": [
+        "reports/ADP/ADP-earnings-FY2026Q4.md"
+      ],
+      "zones": [
+        {
+          "label": "加仓带",
+          "dir": "below",
+          "low": null,
+          "high": 190,
+          "market": "US",
+          "action": "加仓",
+          "note": "现价可建仓；~$190（约17x PE）加仓"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-31",
+          "type": "财报",
+          "label": "FY2027Q1财报后复检",
+          "note": "核FY27指引兑现",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "AMD",
+      "name": "AMD",
+      "group": "台账",
+      "codes": {
+        "US": "usAMD"
+      },
+      "source": "标的跟踪表 20260804",
+      "links": [
+        "reports/AMD/AMD-research-20260804.md"
+      ],
+      "zones": [
+        {
+          "label": "分批评估带",
+          "dir": "range",
+          "low": 220,
+          "high": 300,
+          "market": "US",
+          "action": "分批评估",
+          "note": "且基本面未恶化；或连续两季AI GPU增长/毛利/FCF/稀释EPS同时改善"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-04",
+          "type": "财报",
+          "label": "2026Q2业绩（8/4已发）",
+          "note": "核10-Q的AI GPU、毛利、FCF、稀释EPS与权证影响",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Archrock",
+      "name": "Archrock",
+      "group": "台账",
+      "codes": {
+        "US": "usAROC"
+      },
+      "source": "标的跟踪表 20260805",
+      "links": [
+        "reports/Archrock/Archrock-research-20260805.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 22.2,
+          "high": 25.9,
+          "market": "US",
+          "action": "分批评估",
+          "note": "且下一季确认FCF、利用率、EBITDA指引稳定；继任计划清晰"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-05",
+          "type": "财报",
+          "label": "Q2业绩已发，10-Q后复检",
+          "note": "核10-Q的现金、净债务、CapEx、利用率、继任与指引",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "SLDP",
+      "name": "Solid Power",
+      "group": "台账",
+      "codes": {
+        "US": "usSLDP"
+      },
+      "source": "标的跟踪表 20260805",
+      "links": [
+        "reports/SLDP/SLDP-research-20260805.md"
+      ],
+      "zones": [
+        {
+          "label": "期权评估带",
+          "dir": "range",
+          "low": 1.5,
+          "high": 2.0,
+          "market": "US",
+          "action": "现金托底期权评估",
+          "note": "须验证BMW/SK On/Ford付费开发、长期协议或可复核材料/许可收入"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-05",
+          "type": "财报",
+          "label": "2026Q3 10-Q后复检",
+          "note": "核流动性、OEM合作或融资公告",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Google",
+      "name": "Alphabet/Google",
+      "group": "台账",
+      "codes": {
+        "US": "usGOOGL"
+      },
+      "source": "标的跟踪表 20260718",
+      "links": [
+        "reports/Google/Google-earnings-2026Q2.md"
+      ],
+      "zones": [
+        {
+          "label": "未持有买入带",
+          "dir": "range",
+          "low": 250,
+          "high": 300,
+          "market": "US",
+          "action": "评估建仓",
+          "note": "FCF Yield约3%或质量调整PE回至低-20x；已有仓持有"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-20",
+          "type": "财报",
+          "label": "2026Q3/10-Q后复检",
+          "note": "核CapEx、FCF、云增速",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Keyence",
+      "name": "Keyence",
+      "group": "台账",
+      "codes": {
+        "JP": "jp6861"
+      },
+      "source": "标的跟踪表 20260720",
+      "links": [
+        "reports/Keyence/Keyence-FY2026Q1.md"
+      ],
+      "zones": [
+        {
+          "label": "加仓带",
+          "dir": "below",
+          "low": null,
+          "high": 64200,
+          "market": "JP",
+          "action": "加仓",
+          "note": "约PE~35x；更优¥55,100（PE~30x）"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-31",
+          "type": "财报",
+          "label": "FY2026Q2后复检",
+          "note": "核汇率贡献与销售增速",
+          "market": "JP"
+        }
+      ]
+    },
+    {
+      "id": "Mastercard",
+      "name": "Mastercard",
+      "group": "台账",
+      "codes": {
+        "US": "usMA"
+      },
+      "source": "标的跟踪表 20260516",
+      "links": [
+        "reports/Mastercard/Mastercard-earnings-2026Q2.md"
+      ],
+      "zones": [
+        {
+          "label": "分批带",
+          "dir": "range",
+          "low": 380,
+          "high": 500,
+          "market": "US",
+          "action": "小仓分批",
+          "note": "估值触发以PE为准：~25x加大、≤22x大胆加（当前约PE29x）"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-25",
+          "type": "财报",
+          "label": "2026Q3财报后复检",
+          "note": "核收入增速、跨境、VAS",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Meta",
+      "name": "Meta",
+      "group": "台账",
+      "codes": {
+        "US": "usMETA"
+      },
+      "source": "标的跟踪表 20260501",
+      "links": [
+        "reports/Meta/Meta-earnings-2026Q2.md"
+      ],
+      "zones": [
+        {
+          "label": "回调建仓带",
+          "dir": "below",
+          "low": null,
+          "high": 480,
+          "market": "US",
+          "action": "逢回调评估建仓",
+          "note": "仓位≤组合5–8%；盯AI capex ROI"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-25",
+          "type": "财报",
+          "label": "2026Q3/10-Q后复检",
+          "note": "核CapEx+83%后FCF、回购恢复、AI ROI",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "NovoNordisk",
+      "name": "Novo Nordisk",
+      "group": "台账",
+      "codes": {
+        "US": "usNVO"
+      },
+      "source": "标的跟踪表 20260516",
+      "links": [
+        "reports/Novo Nordisk/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "观察仓带",
+          "dir": "range",
+          "low": 44,
+          "high": 46,
+          "market": "US",
+          "action": "建2–3%观察仓",
+          "note": "加仓需CagriSema获批+2027正增长指引"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-12-31",
+          "type": "公告",
+          "label": "CagriSema/下一代管线节点",
+          "note": "核获批进展与2027指引",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Palantir",
+      "name": "Palantir",
+      "group": "台账",
+      "codes": {
+        "US": "usPLTR"
+      },
+      "source": "标的跟踪表 20260801",
+      "links": [
+        "reports/Palantir/Palantir-research-20260801.md"
+      ],
+      "zones": [
+        {
+          "label": "重估带",
+          "dir": "range",
+          "low": 70,
+          "high": 85,
+          "market": "US",
+          "action": "重新评估"
+        },
+        {
+          "label": "安全边际带",
+          "dir": "range",
+          "low": 50,
+          "high": 65,
+          "market": "US",
+          "action": "评估建仓",
+          "note": "须增长未恶化"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-03",
+          "type": "财报",
+          "label": "2026Q2业绩（8/3已发）",
+          "note": "核US商业TCV/客户、SBC与指引",
+          "market": "US",
+          "done": true
+        },
+        {
+          "date": "2026-11-03",
+          "type": "财报",
+          "label": "2026Q3业绩（约11月初）",
+          "note": "核TCV/客户是否维持+150%量级、Karp 18个月≥149%增速承诺、毛利率云托管影响、SBC占收入是否回落",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Qualcomm",
+      "name": "Qualcomm",
+      "group": "台账",
+      "codes": {
+        "US": "usQCOM"
+      },
+      "source": "标的跟踪表 20260516",
+      "links": [
+        "reports/Qualcomm/Qualcomm-earnings-FY2026Q3.md"
+      ],
+      "zones": [
+        {
+          "label": "理想买入带",
+          "dir": "below",
+          "low": null,
+          "high": 160,
+          "market": "US",
+          "action": "评估买入",
+          "note": "PE≤15x约$160或恐慌下跌"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-11-15",
+          "type": "财报",
+          "label": "FY2026Q4财报后复检",
+          "note": "核手机/汽车/物联网增速与指引",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Reddit",
+      "name": "Reddit",
+      "group": "台账",
+      "codes": {
+        "US": "usRDDT"
+      },
+      "source": "标的跟踪表 20260731",
+      "links": [
+        "reports/Reddit/Reddit-research-20260731.md"
+      ],
+      "zones": [
+        {
+          "label": "小仓跟踪带",
+          "dir": "range",
+          "low": 145,
+          "high": 165,
+          "market": "US",
+          "action": "小仓跟踪"
+        },
+        {
+          "label": "分批建仓带",
+          "dir": "range",
+          "low": 115,
+          "high": 135,
+          "market": "US",
+          "action": "分批建仓",
+          "note": "基本面未恶化"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-25",
+          "type": "财报",
+          "label": "2026Q3/10-Q后复检",
+          "note": "核广告变现、毛利率与现金流",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "lululemon",
+      "name": "lululemon",
+      "group": "台账",
+      "codes": {
+        "US": "usLULU"
+      },
+      "source": "标的跟踪表 20260516",
+      "links": [
+        "reports/lululemon/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "观察仓带",
+          "dir": "below",
+          "low": null,
+          "high": 119,
+          "market": "US",
+          "action": "建1–2%观察仓分批",
+          "note": "盯管理层过渡与品牌年轻化"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-09-10",
+          "type": "财报",
+          "label": "下季报后复检",
+          "note": "核北美同店与库存",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "中国广核",
+      "name": "中国广核",
+      "group": "台账",
+      "codes": {
+        "A": "sz003816",
+        "H": "hk01816"
+      },
+      "source": "标的跟踪表 20260624",
+      "links": [
+        "reports/中国广核/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "舒适买点带",
+          "dir": "range",
+          "low": 3.2,
+          "high": 3.5,
+          "market": "A",
+          "action": "评估买入",
+          "note": "H股可重点观察"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "厦门钨业",
+      "name": "厦门钨业",
+      "group": "台账",
+      "codes": {
+        "A": "sh600549"
+      },
+      "source": "标的跟踪表 20260720",
+      "links": [
+        "reports/厦门钨业/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 35,
+          "high": 42,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "存货环比降或单季OCF转正；PE≤20x更舒适"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "合盛硅业",
+      "name": "合盛硅业",
+      "group": "台账",
+      "codes": {
+        "A": "sh603260"
+      },
+      "source": "标的跟踪表 20260719",
+      "links": [
+        "reports/合盛硅业/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "评估区",
+          "dir": "range",
+          "low": 22,
+          "high": 28,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "扣非连续转正+定增条款清晰"
+        },
+        {
+          "label": "长期带",
+          "dir": "below",
+          "low": null,
+          "high": 20,
+          "market": "A",
+          "action": "长期再议",
+          "note": "杠杆改善"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "国电南瑞",
+      "name": "国电南瑞",
+      "group": "台账",
+      "codes": {
+        "A": "sh600406"
+      },
+      "source": "标的跟踪表 20260719",
+      "links": [
+        "reports/国电南瑞/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "舒适带",
+          "dir": "range",
+          "low": 18,
+          "high": 20,
+          "market": "A",
+          "action": "评估加仓",
+          "note": "现价仅试探仓"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "东方电气",
+      "name": "东方电气",
+      "group": "台账",
+      "codes": {
+        "A": "sh600875",
+        "H": "hk01072"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/东方电气/东方电气-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "分批评估带",
+          "dir": "range",
+          "low": 15,
+          "high": 18,
+          "market": "A",
+          "action": "分批评估",
+          "note": "或风电毛利率稳定>5%、OCF/营运资金连续改善"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "立讯精密",
+      "name": "立讯精密",
+      "group": "台账",
+      "codes": {
+        "A": "sz002475",
+        "H": "hk02475"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/立讯精密/立讯精密-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "A股分批带",
+          "dir": "below",
+          "low": null,
+          "high": 43,
+          "market": "A",
+          "action": "分批评估",
+          "note": "或通信/汽车毛利不下滑、OCF覆盖利润、大客户占比下降"
+        },
+        {
+          "label": "H股分批带",
+          "dir": "below",
+          "low": null,
+          "high": 44,
+          "market": "H",
+          "action": "分批评估"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-28",
+          "type": "财报",
+          "label": "2026H1报告（预计8/28）",
+          "note": "核通信/汽车毛利、OCF覆盖、大客户占比",
+          "market": "A"
+        }
+      ]
+    },
+    {
+      "id": "极视角",
+      "name": "极视角",
+      "group": "台账",
+      "codes": {
+        "H": "hk06636"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/极视角/极视角-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "重估带",
+          "dir": "range",
+          "low": 20,
+          "high": 40,
+          "market": "H",
+          "action": "重估评估",
+          "note": "连续两期IFRS盈利、OCF改善、应收增速<收入"
+        },
+        {
+          "label": "小仓研究带",
+          "dir": "range",
+          "low": 10,
+          "high": 20,
+          "market": "H",
+          "action": "小仓研究性配置"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1中报（预计8月下旬）",
+          "note": "核盈利、回款与现金流",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "三环集团",
+      "name": "三环集团",
+      "group": "台账",
+      "codes": {
+        "A": "sz300408",
+        "H": "hk06951"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/三环集团/三环集团-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "below",
+          "low": null,
+          "high": 85,
+          "market": "A",
+          "action": "分批研究/建仓评估",
+          "note": "或连续两季高端产品毛利率与FCF证实增长质量"
+        },
+        {
+          "label": "高确定性带",
+          "dir": "range",
+          "low": 70,
+          "high": 85,
+          "market": "A",
+          "action": "分批研究"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "中兴通讯",
+      "name": "中兴通讯",
+      "group": "台账",
+      "codes": {
+        "A": "sz000063"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/中兴通讯/中兴通讯-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 22,
+          "high": 28,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "或至少两季确认算力增量毛利、OCF转正、运营商网络止跌"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "剑桥科技",
+      "name": "剑桥科技",
+      "group": "台账",
+      "codes": {
+        "A": "sh603083"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/剑桥科技/剑桥科技-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 80,
+          "high": 100,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "或新财报证明盈利/OCF显著上修、客户集中度下降"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "哔哩哔哩",
+      "name": "哔哩哔哩",
+      "group": "台账",
+      "codes": {
+        "US": "usBILI"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/哔哩哔哩/哔哩哔哩-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批带",
+          "dir": "range",
+          "low": 12,
+          "high": 16,
+          "market": "US",
+          "action": "研究性分批",
+          "note": "广告连续两季>15%、游戏止跌、毛利率≥36%"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "圣邦股份",
+      "name": "圣邦股份",
+      "group": "台账",
+      "codes": {
+        "A": "sz300661",
+        "H": "hk03661"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/圣邦股份/圣邦股份-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "below",
+          "low": null,
+          "high": 70,
+          "market": "A",
+          "action": "分批评估",
+          "note": "或连续两季扣非/CFO/存货周转共同改善"
+        },
+        {
+          "label": "确认带",
+          "dir": "range",
+          "low": 55,
+          "high": 70,
+          "market": "A",
+          "action": "基本面确认后分批"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "天齐锂业",
+      "name": "天齐锂业",
+      "group": "台账",
+      "codes": {
+        "A": "sz002466"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/天齐锂业/天齐锂业-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 30,
+          "high": 35,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "或连续两季验证利润/现金流非锂价短期高点"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "group": "台账",
+      "codes": {
+        "A": "sz002460",
+        "H": "hk01772"
+      },
+      "source": "标的跟踪表 20260805",
+      "links": [
+        "reports/赣锋锂业/赣锋锂业-research-20260805.md"
+      ],
+      "zones": [
+        {
+          "label": "A股评估带",
+          "dir": "range",
+          "low": 30,
+          "high": 38,
+          "market": "A",
+          "action": "重新评估"
+        },
+        {
+          "label": "H股小仓带",
+          "dir": "range",
+          "low": 34.6,
+          "high": 43.8,
+          "market": "H",
+          "action": "小仓分批",
+          "note": "提高仓位需连续两季扣非盈利、OCF覆盖资本开支、净负债下降"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "安克创新",
+      "name": "安克创新",
+      "group": "台账",
+      "codes": {
+        "A": "sz300866"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/安克创新/安克创新-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 87,
+          "high": 105,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "库存与CFO改善；或H/A溢价收敛并完成可交易性/税务/流动性复核"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "快手",
+      "name": "快手",
+      "group": "台账",
+      "codes": {
+        "H": "hk01024"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/快手/快手-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 35,
+          "high": 40,
+          "market": "H",
+          "action": "评估建仓",
+          "note": "验证Q2毛利率/FCF压力可控；加仓需连续两季广告/电商双位数、毛利率≥53%、FCF转正"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1中报后复检",
+          "note": "核主站减速、AI资本强度与可灵单位经济",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "蓝思科技",
+      "name": "蓝思科技",
+      "group": "台账",
+      "codes": {
+        "A": "sz300433",
+        "H": "hk06613"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/蓝思科技/蓝思科技-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 18,
+          "high": 24,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "中报显示主业恢复、FCF不再恶化"
+        },
+        {
+          "label": "小仓评估带",
+          "dir": "range",
+          "low": 24,
+          "high": 28,
+          "market": "A",
+          "action": "小仓评估",
+          "note": "新业务收入/毛利披露、主业毛利不低于2025"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-22",
+          "type": "财报",
+          "label": "2026H1披露（8/22）",
+          "note": "核主业利润、FCF、客户集中与新业务披露",
+          "market": "A"
+        }
+      ]
+    },
+    {
+      "id": "迅策",
+      "name": "迅策科技",
+      "group": "台账",
+      "codes": {
+        "H": "hk03317"
+      },
+      "source": "标的跟踪表 20260803",
+      "links": [
+        "reports/迅策/迅策-research-20260803.md"
+      ],
+      "zones": [
+        {
+          "label": "评估带",
+          "dir": "range",
+          "low": 60,
+          "high": 85,
+          "market": "H",
+          "action": "分批研究评估",
+          "note": "中报确认盈利、CFO改善、应收/收入下降"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1中报后复检",
+          "note": "核经常性收入、毛利、现金流",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "小米",
+      "name": "小米集团",
+      "group": "台账",
+      "codes": {
+        "H": "hk01810"
+      },
+      "source": "标的跟踪表 20260623",
+      "links": [
+        "reports/小米/小米-news-20260729.md"
+      ],
+      "zones": [
+        {
+          "label": "考虑带",
+          "dir": "range",
+          "low": 18,
+          "high": 20,
+          "market": "H",
+          "action": "评估建仓",
+          "note": "待中期业绩检验汽车亏损、交付与现金流"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-18",
+          "type": "财报",
+          "label": "2026中期业绩（8/18已过）",
+          "note": "核手机/IoT、汽车亏损、交付与现金流",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "拓荆科技",
+      "name": "拓荆科技",
+      "group": "台账",
+      "codes": {
+        "A": "sh688072"
+      },
+      "source": "标的跟踪表 20260720",
+      "links": [
+        "reports/拓荆科技/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "加仓带",
+          "dir": "below",
+          "low": null,
+          "high": 420,
+          "market": "A",
+          "action": "谈加仓",
+          "note": "主题期权仓上限极严"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "搜狐",
+      "name": "搜狐",
+      "group": "台账",
+      "codes": {
+        "US": "usSOHU"
+      },
+      "source": "标的跟踪表 20260426",
+      "links": [
+        "reports/搜狐/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "考虑带",
+          "dir": "below",
+          "low": null,
+          "high": 12,
+          "market": "US",
+          "action": "事件驱动卫星仓评估",
+          "note": "仅事件驱动逻辑"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-12-31",
+          "type": "公告",
+          "label": "私有化/股东回报节点",
+          "note": "核私有化进展",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "杭叉集团",
+      "name": "杭叉集团",
+      "group": "台账",
+      "codes": {
+        "A": "sh603298"
+      },
+      "source": "标的跟踪表 20260425",
+      "links": [
+        "reports/杭叉集团-deepseek分析/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "等待带",
+          "dir": "range",
+          "low": 20,
+          "high": 23,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "PE12–13x"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "永新股份",
+      "name": "永新股份",
+      "group": "台账",
+      "codes": {
+        "A": "sz002014"
+      },
+      "source": "标的跟踪表 20260425",
+      "links": [
+        "reports/永新股份-deepseek分析/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "等待带",
+          "dir": "below",
+          "low": null,
+          "high": 10,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "PE<14x；更理想9–10元"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "汇川技术",
+      "name": "汇川技术",
+      "group": "台账",
+      "codes": {
+        "A": "sz300124"
+      },
+      "source": "标的跟踪表 20260720",
+      "links": [
+        "reports/汇川技术/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "理想买点带",
+          "dir": "range",
+          "low": 45,
+          "high": 52,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "或车毛利连续两季改善"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "海尔智家",
+      "name": "海尔智家",
+      "group": "台账",
+      "codes": {
+        "A": "sh600690",
+        "H": "hk06690"
+      },
+      "source": "标的跟踪表 20260419",
+      "links": [
+        "reports/海尔智家-deepseek分析/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "等待带",
+          "dir": "range",
+          "low": 16,
+          "high": 18,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "约20%+安全边际"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "海康威视",
+      "name": "海康威视",
+      "group": "台账",
+      "codes": {
+        "A": "sz002415"
+      },
+      "source": "标的跟踪表 20260707",
+      "links": [
+        "reports/海康威视/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "等待带",
+          "dir": "range",
+          "low": 26,
+          "high": 29,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "PE20–22x或PBG触底信号"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "深演智能",
+      "name": "深演智能",
+      "group": "台账",
+      "codes": {
+        "H": "hk02723"
+      },
+      "source": "标的跟踪表 20260706",
+      "links": [
+        "reports/深演智能/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "可关注带",
+          "dir": "below",
+          "low": null,
+          "high": 80,
+          "market": "H",
+          "action": "评估关注",
+          "note": "+Deep Agent验证"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "腾讯音乐",
+      "name": "腾讯音乐",
+      "group": "台账",
+      "codes": {
+        "US": "usTME"
+      },
+      "source": "标的跟踪表 20260620",
+      "links": [
+        "reports/腾讯音乐/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "买入带",
+          "dir": "range",
+          "low": 7.5,
+          "high": 8.5,
+          "market": "US",
+          "action": "评估买入",
+          "note": "等用户数据改善再介入"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "茅台",
+      "name": "贵州茅台",
+      "group": "台账",
+      "codes": {
+        "A": "sh600519"
+      },
+      "source": "标的跟踪表 20260409",
+      "links": [
+        "reports/茅台/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "建仓参考带",
+          "dir": "range",
+          "low": 1100,
+          "high": 1250,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "等行业触底信号明确"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "赛轮轮胎",
+      "name": "赛轮轮胎",
+      "group": "台账",
+      "codes": {
+        "A": "sh601058"
+      },
+      "source": "标的跟踪表 20260428",
+      "links": [
+        "reports/赛轮轮胎-deepseek分析/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "参考带",
+          "dir": "range",
+          "low": 10,
+          "high": 12,
+          "market": "A",
+          "action": "评估建仓",
+          "note": "等原材料周期高点或贸易摩擦错杀"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "长光辰芯",
+      "name": "长光辰芯",
+      "group": "台账",
+      "codes": {
+        "H": "hk03277"
+      },
+      "source": "标的跟踪表 20260409",
+      "links": [
+        "reports/长光辰芯/长光辰芯-team-20260409/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "理想买入带",
+          "dir": "below",
+          "low": null,
+          "high": 30,
+          "market": "H",
+          "action": "评估买入",
+          "note": "报告：28–32合理，22–28理想"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "雅克科技",
+      "name": "雅克科技",
+      "group": "台账",
+      "codes": {
+        "A": "sz002409"
+      },
+      "source": "标的跟踪表 20260720",
+      "links": [
+        "reports/雅克科技/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "卫星仓带",
+          "dir": "range",
+          "low": 90,
+          "high": 110,
+          "market": "A",
+          "action": "建卫星仓",
+          "note": "主题内"
+        }
+      ],
+      "events": []
+    }
+  ]
+}

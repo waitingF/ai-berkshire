@@ -62,7 +62,21 @@ class BuildGitHubPagesTest(unittest.TestCase):
             )
             (weekly_dir / "weekly-check-latest.md").write_text(
                 "# 最新周检\n\n"
-                "当前报告：[weekly-check-20260731.md](weekly-check-20260731.md)。\n",
+                "**当前报告：** [2026-07-31 周检待办清单](../weekly-check/weekly-check-20260731.md)\n\n"
+                "## 历史周检\n\n"
+                "| 数据截止日 | 报告 |\n"
+                "| --- | --- |\n"
+                "| 2026-07-31 | [周检待办清单](../weekly-check/weekly-check-20260731.md) |\n",
+                encoding="utf-8",
+            )
+            scan_dir = reports_dir / "trigger-scan"
+            scan_dir.mkdir()
+            (scan_dir / "trigger-scan-latest.md").write_text(
+                "# 标的触发监控日报\n\n"
+                "## 一、已触发价位区间\n\n"
+                "| 标的 | 现价 |\n"
+                "| --- | --- |\n"
+                "| 腾讯 | 457.00 |\n",
                 encoding="utf-8",
             )
 
@@ -79,6 +93,9 @@ class BuildGitHubPagesTest(unittest.TestCase):
             ledger_html = (output_dir / "reports" / "标的跟踪表.html").read_text(encoding="utf-8")
             weekly_latest_html = (
                 output_dir / "reports" / "weekly-check" / "weekly-check-latest.html"
+            ).read_text(encoding="utf-8")
+            composed_html = (
+                output_dir / "reports" / "监控与周检" / "index.html"
             ).read_text(encoding="utf-8")
             site_js = (output_dir / "assets" / "site.js").read_text(encoding="utf-8")
             site_css = (output_dir / "assets" / "site.css").read_text(encoding="utf-8")
@@ -110,7 +127,7 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn("常用入口", index_html)
             self.assertIn("重点标的看板", index_html)
             self.assertIn("标的跟踪表", index_html)
-            self.assertIn("最新周检", index_html)
+            self.assertIn("监控与周检", index_html)
             self.assertIn("组合最新报告", index_html)
             self.assertIn("看板", index_html)
             self.assertIn("标的跟踪", index_html)
@@ -120,15 +137,28 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn('aria-current="page"', index_html)
             self.assertIn("reports/%E9%87%8D%E7%82%B9%E6%A0%87%E7%9A%84%E7%9C%8B%E6%9D%BF.html", index_html)
             self.assertIn("reports/%E6%A0%87%E7%9A%84%E8%B7%9F%E8%B8%AA%E8%A1%A8.html", index_html)
-            self.assertIn("reports/weekly-check/weekly-check-latest.html", index_html)
+            self.assertIn("reports/%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%91%A8%E6%A3%80/index.html", index_html)
             self.assertIn("reports/portfolio-latest.html", index_html)
+            self.assertNotIn("reports/weekly-check/weekly-check-latest.html", index_html)
+            self.assertNotIn("reports/trigger-scan/trigger-scan-latest.html", index_html)
             self.assertNotIn('class="pinned-home"', directory_html)
             self.assertIn("看板", report_html)
             self.assertIn("标的跟踪", report_html)
             self.assertIn("周检", report_html)
             self.assertIn("组合", report_html)
             self.assertIn('aria-current="page"', weekly_latest_html)
-            self.assertIn('href="weekly-check-20260731.html"', weekly_latest_html)
+            self.assertIn('href="../weekly-check/weekly-check-20260731.html"', weekly_latest_html)
+            # 组合页：两个 latest 源内容被嵌入（扫描源 + 周检快照正文），标题降级
+            self.assertIn("每日触发监控（自动扫描）", composed_html)
+            self.assertIn("每周研究待办分诊（人工周检）", composed_html)
+            self.assertIn("457.00", composed_html)
+            self.assertIn("本周待办", composed_html)
+            self.assertIn("历史周检", composed_html)
+            self.assertIn("<th>数据截止日</th>", composed_html)
+            self.assertIn('href="../weekly-check/weekly-check-20260731.html"', composed_html)
+            self.assertIn("reports/%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%91%A8%E6%A3%80/index.html", composed_html)
+            # fixture 含 portfolio-latest.md → 组合页导航保留「组合」入口
+            self.assertIn("reports/portfolio-latest.html", composed_html)
             self.assertIn("腾讯", index_html)
             self.assertIn("reports/%E8%85%BE%E8%AE%AF/index.html", index_html)
             self.assertNotIn("腾讯/最终报告.md", index_html)
@@ -149,6 +179,47 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn('.back-to-top', site_css)
             self.assertIn('initBackToTop', site_js)
             self.assertEqual((output_dir / "reports" / "腾讯" / "chart.png").read_bytes(), b"fake image")
+
+    def test_nav_hides_missing_pinned_files_on_home_and_composed(self):
+        """置顶入口文件缺失时（如组合报告仅存本地），首页与组合页导航都应隐藏对应链接。"""
+        builder = load_builder_module()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            reports_dir = root / "reports"
+            output_dir = root / "site"
+            weekly_dir = reports_dir / "weekly-check"
+            weekly_dir.mkdir(parents=True)
+            (weekly_dir / "weekly-check-20260101.md").write_text(
+                "# 周检待办清单\n\n本周待办。\n",
+                encoding="utf-8",
+            )
+            (weekly_dir / "weekly-check-latest.md").write_text(
+                "# 最新周检\n\n"
+                "**当前报告：** [2026-01-01 周检待办清单](../weekly-check/weekly-check-20260101.md)\n",
+                encoding="utf-8",
+            )
+            scan_dir = reports_dir / "trigger-scan"
+            scan_dir.mkdir()
+            (scan_dir / "trigger-scan-latest.md").write_text(
+                "# 标的触发监控日报\n\n无。\n",
+                encoding="utf-8",
+            )
+            # 刻意不创建 portfolio-latest.md 与看板/台账，验证导航过滤
+
+            builder.build_site(reports_dir, output_dir)
+
+            home_html = (output_dir / "index.html").read_text(encoding="utf-8")
+            composed_html = (
+                output_dir / "reports" / "监控与周检" / "index.html"
+            ).read_text(encoding="utf-8")
+            for page_html in (home_html, composed_html):
+                self.assertNotIn("reports/portfolio-latest.html", page_html)
+                self.assertNotIn("reports/%E9%87%8D%E7%82%B9%E6%A0%87%E7%9A%84%E7%9C%8B%E6%9D%BF.html", page_html)
+                self.assertNotIn("reports/%E6%A0%87%E7%9A%84%E8%B7%9F%E8%B8%AA%E8%A1%A8.html", page_html)
+            # 组合入口（构建生成）与「研究库」始终显示
+            self.assertIn("reports/%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%91%A8%E6%A3%80/index.html", home_html)
+            self.assertIn("reports/%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%91%A8%E6%A3%80/index.html", composed_html)
 
 
 if __name__ == "__main__":
