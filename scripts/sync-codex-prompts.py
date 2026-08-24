@@ -66,8 +66,23 @@ def main() -> None:
     if not check:
         CODEX_PROMPTS.mkdir(exist_ok=True)
 
-    count = 0
     stale: list[str] = []
+    canonical_names = {source.stem for source in CLAUDE_SKILLS.glob("*.md")}
+    generated_files = {
+        path
+        for path in CODEX_PROMPTS.glob("*.md")
+        if "Use the installed AI Berkshire Codex skill" in path.read_text(encoding="utf-8")
+    }
+    stale_files = sorted(
+        path for path in generated_files if path.stem not in canonical_names
+    )
+    if check:
+        stale.extend(str(path.relative_to(ROOT)) for path in stale_files)
+    else:
+        for path in stale_files:
+            path.unlink()
+
+    count = 0
     for source in sorted(CLAUDE_SKILLS.glob("*.md")):
         target = CODEX_PROMPTS / source.name
         content = prompt_for(source)

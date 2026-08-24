@@ -18,10 +18,9 @@ DeepSeek Harness users.
   `skills/*.md`.
 - `tools/*.py`: shared financial validation and data tools used by both systems.
 - `reports/`: research outputs. Do not rewrite unrelated reports while changing
-  tooling or skills. `reports/weekly-check/` holds dated weekly-check snapshots
-  and `reports/trigger-scan/` holds daily trigger-scan reports; the Pages home
-  entry "监控与周检" merges both at build time (see
-  `scripts/build-github-pages.py`).
+  tooling or skills. `reports/daily-monitor/` holds the active unified weekday
+  monitor. `reports/weekly-check/` and `reports/trigger-scan/` are historical
+  archives and are not updated or composed into the active Pages entry.
 - `scripts/sync-codex-skills.py`: regenerates Codex skills from `skills/*.md`.
 - `scripts/install-codex-skills.sh` / `scripts/install-codex-skills.bat`:
   installs Codex skills locally.
@@ -87,14 +86,18 @@ DeepSeek Harness users.
 - Before pushing any change touching `data/triggers.json` or
   `tools/trigger_scanner.py`, run `bash scripts/prepush-check.sh` (local
   validation, no notifications) and get explicit user confirmation to commit.
-- Daily scan: `python3 tools/trigger_scanner.py` (writes report, no notify).
-  GitHub Actions `.github/workflows/trigger-scan.yml` runs weekdays 18:00 CST.
-- Pages entry: the weekly check and the daily trigger scan share one home entry
-  "监控与周检", composed at build time by `scripts/build-github-pages.py` from
-  `trigger-scan/trigger-scan-latest.md` + `weekly-check/weekly-check-latest.md`.
-  Weekly checks reference the scan for price/event facts and do not re-list
-  them (see `skills/weekly-review.md`); scan data layer and dated archives
-  stay separate.
+- Daily monitor: `python3 tools/daily_monitor.py` writes the exact three sections
+  `价格监控`, `财报与正式披露监控`, and `其他监控`. GitHub Actions
+  `.github/workflows/daily-monitor.yml` runs weekdays at 17:30 Asia/Shanghai.
+- Official disclosure scope is CNINFO, HKEXnews, and SEC EDGAR. AKShare is
+  fallback-only; do not add general web search to this runtime pipeline.
+- `data/triggers.json` remains human-authored configuration while
+  `data/monitoring-state.json` is machine-authored runtime state. Do not merge
+  them. Do not commit downloaded PDFs, full announcement text, extracted text,
+  complete model prompts, or secrets.
+- Pages pins `reports/daily-monitor/daily-monitor-latest.md` as "每日监控".
+  Historical weekly-check and trigger-scan files remain browsable only as
+  archives.
 
 ## Editing Rules
 

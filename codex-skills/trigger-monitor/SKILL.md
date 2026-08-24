@@ -1,6 +1,6 @@
 ---
 name: trigger-monitor
-description: 标的触发监控：研究报告产出的买卖价位带/复检节点需登记到 data/triggers.json，每日扫描比对价位是否触发、事件是否到期。本 Skill 定义何时登记、如何登记、如何本地预检，适用于全部研究产出流程（investment-research / investment-team / earnings-review / thesis-tracker / weekly-review 等）。
+description: Use when a research report contains an explicit price band, review date, earnings checkpoint, or other trigger that must be registered and validated for daily monitoring.
 ---
 
 ## Codex adapter note
@@ -25,7 +25,7 @@ This skill is generated from `skills/trigger-monitor.md` so Claude Code and Code
 |------|------|
 | 研究报告产出时 | 含**明确买卖/观望价位带**或**复检节点** → 立即登记 |
 | 复检/财报完成后 | 对应事件加 `"done": true`（保留留档，不再提醒） |
-| 周检对账 | 跑 `--json` 与看板/台账交叉核对，补漏登记 |
+| 每日完整性检查 | 查看每日监控“其他监控”的覆盖缺口，人工核验后补漏登记 |
 | 价位带修正 | 直接改 JSON 后跑 `--check` |
 
 **不登记的场景**：只有分析、无明确价位/节点建议的报告；估值类触发（PE/PS 线依赖财务数据，仅在 note 注明，不设 zone）。
@@ -68,13 +68,20 @@ This skill is generated from `skills/trigger-monitor.md` so Claude Code and Code
 ### 改完必做
 
 1. 更新文件顶部 `"updated": "YYYY-MM-DD"`
-2. `python3 tools/trigger_scanner.py --check` 确认数据结构合法
-3. `python3 tools/trigger_scanner.py --watch 标的名` 定点扫一遍验证
+2. `python3 tools/daily_monitor.py --check` 确认配置与机器状态合法
+3. 用临时状态与报告目录定点验证，避免污染正式运行状态：
+
+```bash
+runtime_dir=$(mktemp -d)
+python3 tools/daily_monitor.py --no-ai --watch 标的名 \
+  --state-file "$runtime_dir/state.json" \
+  --report-dir "$runtime_dir/reports"
+```
 
 ## 每日扫描与提醒
 
-- **扫描**：`python3 tools/trigger_scanner.py`（腾讯行情 API，零依赖，写日报到 `reports/trigger-scan/`；默认不发任何通知）
-- **GitHub Actions**：`.github/workflows/trigger-scan.yml` 工作日 18:00 自动扫描 + Server酱微信推送（Secret：`SERVERCHAN_SENDKEY`）；未配置 Secret 则不推送
+- **扫描**：`python3 tools/daily_monitor.py`（写入统一 `reports/daily-monitor/` 报告；价格只是三个业务部分之一）
+- **GitHub Actions**：`.github/workflows/daily-monitor.yml` 工作日 17:30（Asia/Shanghai）运行；只通知状态变化，未配置 `SERVERCHAN_SENDKEY` 则跳过通知
 
 ## 提交前本地预检
 
@@ -84,7 +91,7 @@ This skill is generated from `skills/trigger-monitor.md` so Claude Code and Code
 bash scripts/prepush-check.sh
 ```
 
-流程：`--check` 数据校验 → 全量扫描（写日报，零通知）→ `--json` 输出校验（列出触发/接近明细与建议动作）。任一步失败即终止。**预检通过 ≠ 已提交**，需用户确认后再 commit + push（先 `git pull --rebase origin main`）。
+流程保留旧扫描器结构校验，并验证统一每日监控的价格状态兼容性。任一步失败即终止。**预检通过 ≠ 已提交**，需用户确认后再 commit + push（先 `git pull --rebase origin main`）。
 
 ## 边界
 

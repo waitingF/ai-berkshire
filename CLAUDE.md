@@ -35,18 +35,22 @@ reports/
 ├── AI产业研究/AI-轮动判断-20260509.md — AI 主题综合判断可归入 AI产业研究/
 ├── 重点标的看板.md            — thesis/指定标的一页总览（活文档）
 ├── 标的跟踪表.md          — 全部买卖建议的条件监控+复盘（活文档）
-├── weekly-check/              — 日期化周检快照 + latest 入口（Pages 入口与 trigger-scan 合并为「监控与周检」，构建时组合）
-├── trigger-scan/              — 标的触发监控日报（每日自动扫描，见 tools/trigger_scanner.py；Pages 上与 weekly-check 合并入口）
+├── daily-monitor/             — 当前统一每日监控（价格 / 正式披露 / 其他）
+├── weekly-check/              — 历史周检归档（不再更新、不再作为 Pages 活动入口）
+├── trigger-scan/              — 历史触发扫描归档（不再更新、不再作为 Pages 活动入口）
 ├── portfolio-latest.md       — 组合报告放根目录
 └── 多公司对比-checklist-20260408.md — 多公司报告放根目录
 ```
 
-## 触发监控（关键价位 + 事件提醒）
+## 每日监控（价格 + 正式披露 + 其他）
 
 - **数据源**：`data/triggers.json`（结构化触发区间 + 事件），设计见 `docs/2026-08-21-标的触发监控-design.md`
-- **扫描**：`python3 tools/trigger_scanner.py`（腾讯行情 API，零依赖；`--watch` 定点扫描）
-- **自动任务**：GitHub Actions `.github/workflows/trigger-scan.yml` 工作日 18:00 扫描 + Server酱微信推送（Secret：`SERVERCHAN_SENDKEY`）
-- **报告**：`reports/trigger-scan/trigger-scan-{YYYYMMDD}.md`
+- **扫描**：`python3 tools/daily_monitor.py`；`--watch` 定点扫描，`--check` 只读校验
+- **正式披露**：A 股巨潮、港股 HKEXnews、美股 SEC EDGAR；AKShare 仅备用，不做一般网络搜索
+- **自动任务**：GitHub Actions `.github/workflows/daily-monitor.yml` 工作日 17:30（Asia/Shanghai）运行
+- **Secrets/变量**：`DEEPSEEK_API_KEY`、`EDGAR_IDENTITY`、可选变量 `DEEPSEEK_MODEL`；Server酱仍使用 `SERVERCHAN_SENDKEY`
+- **报告**：`reports/daily-monitor/daily-monitor-{YYYYMMDD}.md` + latest Markdown/JSON
+- **状态**：`data/monitoring-state.json` 为机器状态，与人工配置 `data/triggers.json` 分离
 - **登记规则**：研究报告产出**明确买卖/观望建议价位带或复检节点**时，必须登记到 `data/triggers.json`（新报告用 `/trigger-monitor` skill 协助登记：新增 zone/event 或新建 target），并更新 `updated` 字段；复检完成的事件标 `"done": true`。**没有登记 = 该触发点不在监控内**。改完先跑 `bash scripts/prepush-check.sh` 本地验证（零通知），确认后再提交。
 
 ## 报告命名规范
@@ -64,7 +68,7 @@ reports/
 | /thesis-tracker | `reports/{公司名}/{公司名}-thesis.md`（长期维护） | `reports/腾讯/腾讯-thesis.md` |
 | 重点标的看板 | `reports/重点标的看板.md`（活文档；收录全部 thesis + 指定标的） | `reports/重点标的看板.md` |
 | 标的跟踪表 | `reports/标的跟踪表.md`（活文档；全部有买卖建议的事件行） | `reports/标的跟踪表.md` |
-| /weekly-review | `reports/weekly-check/weekly-check-{YYYYMMDD}.md`（日期快照）+ `weekly-check-latest.md`（Pages 稳定入口） | `reports/weekly-check/weekly-check-20260731.md` |
+| /daily-monitor | `reports/daily-monitor/daily-monitor-{YYYYMMDD}.md` + latest Markdown/JSON | `reports/daily-monitor/daily-monitor-20260825.md` |
 | /portfolio-review | `portfolio-latest.md`（根目录，持续更新） | `reports/portfolio-latest.md` |
 | /management-deep-dive | `reports/{公司名}/{公司名}-management-{YYYYMMDD}.md` | `reports/腾讯/腾讯-management-20260409.md` |
 
