@@ -91,6 +91,30 @@ class SecCollectorTest(unittest.TestCase):
 
         self.assertFalse(any(call[1].endswith("company_tickers.json") for call in http.calls))
 
+    def test_missing_optional_recent_columns_do_not_break_later_rows(self):
+        class MinimalSecHttp:
+            def get_json(self, url, *, source, params=None, headers=None):
+                return {
+                    "filings": {
+                        "recent": {
+                            "accessionNumber": ["0000000001-26-000001", "0000000001-26-000002"],
+                            "filingDate": ["2026-08-23", "2026-08-24"],
+                            "form": ["10-Q", "10-Q"],
+                        }
+                    }
+                }
+
+        documents = sec.collect(
+            "样例",
+            {"cik": "1", "forms": ["10-Q"]},
+            since=date(2026, 8, 20),
+            until=date(2026, 8, 24),
+            http=MinimalSecHttp(),
+        )
+
+        self.assertEqual(len(documents), 2)
+        self.assertTrue(documents[1].official_url.endswith("-index.html"))
+
 
 class CninfoCollectorTest(unittest.TestCase):
     def test_resolves_orgid_and_normalizes_announcement(self):

@@ -14,6 +14,13 @@ SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
 DEFAULT_FORMS = frozenset({"10-K", "10-Q", "8-K", "20-F", "6-K", "40-F"})
 
 
+def _optional_column(recent: dict[str, Any], name: str, index: int) -> Any:
+    values = recent.get(name)
+    if not isinstance(values, list) or index >= len(values):
+        return ""
+    return values[index]
+
+
 def _normalize_cik(value: Any) -> str:
     digits = str(value).strip()
     if not digits.isdigit() or len(digits) > 10:
@@ -60,7 +67,7 @@ def collect(
             raise SourceError("sec", "submissions recent 列结构异常") from exc
         if filing_date < since or filing_date > until or form not in forms:
             continue
-        primary_document = str(recent.get("primaryDocument", [""])[index] or "")
+        primary_document = str(_optional_column(recent, "primaryDocument", index) or "")
         accession_compact = str(accession).replace("-", "")
         cik_compact = str(int(cik))
         filename = primary_document or f"{str(accession).replace('-', '')}-index.html"
@@ -69,8 +76,8 @@ def collect(
             f"{accession_compact}/{filename}"
         )
         validate_official_url(official_url, "sec")
-        accepted = (recent.get("acceptanceDateTime") or [""])[index]
-        description = (recent.get("primaryDocDescription") or [""])[index]
+        accepted = _optional_column(recent, "acceptanceDateTime", index)
+        description = _optional_column(recent, "primaryDocDescription", index)
         documents.append(
             Disclosure(
                 target_id=target_id,
@@ -84,4 +91,3 @@ def collect(
             )
         )
     return documents
-
