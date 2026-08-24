@@ -292,4 +292,3 @@ def event_item(
         notify=changed,
         metadata=metadata,
     )
-

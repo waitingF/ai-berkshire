@@ -132,4 +132,3 @@ def collect(
         if not payload.get("hasMore"):
             break
     return documents
-

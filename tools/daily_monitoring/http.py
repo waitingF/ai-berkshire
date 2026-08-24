@@ -188,4 +188,3 @@ class HttpClient:
         return self._request(
             "GET", url, source=source, max_bytes=max_bytes
         )
-

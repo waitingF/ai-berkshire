@@ -50,4 +50,3 @@ def deduplicate(disclosures: Iterable[Disclosure]) -> list[Disclosure]:
         for key in keys:
             key_to_index[key] = index
     return result
-

@@ -148,4 +148,3 @@ def collect(
             )
         )
     return documents
-

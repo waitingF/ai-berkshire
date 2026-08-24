@@ -71,4 +71,3 @@ def collect_fallback(
             )
         )
     return clues
-

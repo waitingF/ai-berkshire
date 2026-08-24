@@ -88,4 +88,3 @@ class RunResult:
     source_health: tuple[SourceHealth, ...]
     next_state: dict[str, Any]
     report_paths: ReportPaths | None
-

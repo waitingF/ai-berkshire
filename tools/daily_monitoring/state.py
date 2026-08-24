@@ -75,4 +75,3 @@ def save_state_atomic(path: str | Path, state: dict[str, Any]) -> None:
     finally:
         if temporary.exists():
             temporary.unlink()
-

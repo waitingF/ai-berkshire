@@ -101,4 +101,3 @@ def load_targets(path: str | Path) -> list[dict[str, Any]]:
         seen.add(target_id)
         infer_sources(target)
     return targets
-
