@@ -98,8 +98,6 @@ def _offline_services(fixtures: Path) -> MonitorServices:
 
     class FixtureHttp:
         def get_json(self, url, *, source, params=None, headers=None):
-            if "topSearch" in url:
-                return fixtures_by_name["cninfo-org-search.json"]
             if "activestock" in url:
                 return fixtures_by_name["hkex-active-stocks.json"]
             if "titleSearchServlet" in url:
@@ -111,6 +109,8 @@ def _offline_services(fixtures: Path) -> MonitorServices:
             raise AssertionError(f"离线模式拒绝未登记请求: {source} {url}")
 
         def post_form_json(self, url, form, *, source, headers=None):
+            if "topSearch" in url:
+                return fixtures_by_name["cninfo-org-search.json"]
             if "hisAnnouncement" in url:
                 return fixtures_by_name["cninfo-response.json"]
             raise AssertionError(f"离线模式拒绝未登记请求: {source} {url}")

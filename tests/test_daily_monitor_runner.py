@@ -1,13 +1,20 @@
 import json
 import tempfile
 import unittest
+from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
 from tools.daily_monitoring.deepseek import DeepSeekAnalysis
 from tools.daily_monitoring.documents import ExtractedDocument
 from tools.daily_monitoring.models import Disclosure, FallbackClue, VerifiedFact
-from tools.daily_monitoring.runner import MonitorOptions, MonitorServices, run_monitor
+from tools.daily_monitoring.runner import (
+    MonitorOptions,
+    MonitorServices,
+    _watched,
+    run_monitor,
+)
+from tools.daily_monitoring.state import empty_state
 
 
 OFFICIAL_URL = (
@@ -113,6 +120,64 @@ def options(root, triggers):
 
 
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_watch_matches_exact_identity_not_substring(self):
+        target = {
+            "id": "腾讯音乐",
+            "name": "Tencent Music Entertainment",
+            "codes": {"US": "usTME"},
+        }
+
+        self.assertFalse(_watched(target, ("腾讯",)))
+        self.assertTrue(_watched(target, ("腾讯音乐",)))
+        self.assertTrue(_watched(target, ("usTME",)))
+
+    def test_watch_mode_excludes_unrelated_global_gaps(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root)
+            reports = root / "reports"
+            reports.mkdir()
+            (reports / "标的跟踪表.md").write_text(
+                "| ID | 标的 | 复检日 | 状态 |\n"
+                "| --- | --- | --- | --- |\n"
+                "| unrelated | 无关公司 | 2026-01-01 | 待触发 |\n",
+                encoding="utf-8",
+            )
+            run_options = replace(options(root, triggers), watch=("样例公司",))
+
+            result = run_monitor(
+                run_options,
+                services(FakeAI(ai_result()), collector=lambda *args, **kwargs: []),
+            )
+
+            self.assertFalse(any(item.target_id == "unrelated" for item in result.items))
+
+    def test_watch_mode_preserves_unrelated_gap_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root)
+            run_options = replace(options(root, triggers), watch=("样例公司",))
+            state = empty_state()
+            state["completeness"]["unrelated-gap"] = {
+                "target_id": "unrelated",
+                "name": "无关公司",
+                "title": "旧缺口",
+                "priority": "P0",
+                "updated_at": "2026-08-24",
+            }
+            run_options.state_file.parent.mkdir(parents=True)
+            run_options.state_file.write_text(
+                json.dumps(state, ensure_ascii=False), encoding="utf-8"
+            )
+
+            result = run_monitor(
+                run_options,
+                services(FakeAI(ai_result()), collector=lambda *args, **kwargs: []),
+            )
+
+            self.assertIn("unrelated-gap", result.next_state["completeness"])
+            self.assertFalse(any(item.target_id == "unrelated" for item in result.items))
+
     def test_ai_failure_writes_report_and_keeps_document_pending(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

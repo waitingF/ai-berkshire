@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import json
+import ssl
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
 from typing import Any
+
+import truststore
 
 
 OFFICIAL_HOSTS = {
@@ -58,6 +61,7 @@ class HttpClient:
         self.retries = retries
         self._sleep = sleep
         self._last_sec_request = 0.0
+        self._ssl_context = truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 
     def _headers(self, source: str, extra: dict[str, str] | None) -> dict[str, str]:
         headers = {
@@ -67,6 +71,13 @@ class HttpClient:
         if source == "sec":
             if not self.edgar_identity:
                 raise SourceError("sec", "未配置 EDGAR_IDENTITY")
+            try:
+                self.edgar_identity.encode("ascii")
+            except UnicodeEncodeError as exc:
+                raise SourceError(
+                    "sec",
+                    "EDGAR_IDENTITY 必须使用 ASCII（英文姓名 + 邮箱）",
+                ) from exc
             headers["User-Agent"] = self.edgar_identity
         if extra:
             headers.update(extra)
@@ -110,7 +121,11 @@ class HttpClient:
                 url, data=data, headers=request_headers, method=method
             )
             try:
-                with urllib.request.urlopen(request, timeout=self.timeout) as response:
+                with urllib.request.urlopen(
+                    request,
+                    timeout=self.timeout,
+                    context=self._ssl_context,
+                ) as response:
                     validate_official_url(response.geturl(), source)
                     content_length = response.headers.get("Content-Length")
                     if content_length and int(content_length) > max_bytes:
@@ -126,7 +141,16 @@ class HttpClient:
                     raise SourceError(
                         source, f"HTTP {exc.code}", retryable=retryable
                     ) from exc
-            except (urllib.error.URLError, TimeoutError) as exc:
+            except urllib.error.URLError as exc:
+                final_error = exc
+                if isinstance(exc.reason, ssl.SSLCertVerificationError):
+                    raise SourceError(
+                        source,
+                        "TLS 证书校验失败；请检查系统代理证书和 truststore 依赖",
+                    ) from exc
+                if attempt == self.retries:
+                    raise SourceError(source, "连接失败或超时", retryable=True) from exc
+            except TimeoutError as exc:
                 final_error = exc
                 if attempt == self.retries:
                     raise SourceError(source, "连接失败或超时", retryable=True) from exc

@@ -45,10 +45,10 @@ def _resolve_org_id(stock_code: str, config: dict[str, Any], http: Any) -> str:
     explicit = config.get("org_id") or config.get("orgId")
     if explicit:
         return str(explicit)
-    payload = http.get_json(
+    payload = http.post_form_json(
         ORG_SEARCH_URL,
+        {"keyWord": stock_code, "maxNum": 10},
         source="cninfo",
-        params={"keyWord": stock_code, "maxNum": 10},
         headers={"Referer": "https://www.cninfo.com.cn/"},
     )
     for row in _org_rows(payload):

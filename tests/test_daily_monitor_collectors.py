@@ -3,11 +3,17 @@ import unittest
 from dataclasses import replace
 from datetime import date
 from pathlib import Path
+from unittest.mock import MagicMock, patch
 
 from tools.daily_monitoring import Disclosure
 from tools.daily_monitoring.collectors import akshare, cninfo, hkex, sec
 from tools.daily_monitoring.disclosures import deduplicate
-from tools.daily_monitoring.http import UnsafeUrlError, validate_official_url
+from tools.daily_monitoring.http import (
+    HttpClient,
+    SourceError,
+    UnsafeUrlError,
+    validate_official_url,
+)
 
 
 FIXTURES = Path(__file__).parent / "fixtures" / "daily-monitor"
@@ -27,8 +33,6 @@ class FixtureHttp:
             return load_fixture("sec-company-tickers.json")
         if "submissions/CIK" in url:
             return load_fixture("sec-submissions.json")
-        if "topSearch" in url:
-            return load_fixture("cninfo-org-search.json")
         if "activestock" in url:
             return load_fixture("hkex-active-stocks.json")
         if "titleSearchServlet" in url:
@@ -37,6 +41,8 @@ class FixtureHttp:
 
     def post_form_json(self, url, form, *, source, headers=None):
         self.calls.append(("POST", url, source, form))
+        if "topSearch" in url:
+            return load_fixture("cninfo-org-search.json")
         if "hisAnnouncement/query" in url:
             return load_fixture("cninfo-response.json")
         raise AssertionError(f"unexpected POST {url}")
@@ -56,6 +62,34 @@ class OfficialUrlTest(unittest.TestCase):
     def test_rejects_http_even_on_official_host(self):
         with self.assertRaises(UnsafeUrlError):
             validate_official_url("http://www.cninfo.com.cn/file.pdf", source="cninfo")
+
+    @patch("tools.daily_monitoring.http.urllib.request.urlopen")
+    def test_official_request_uses_system_trust_context(self, urlopen):
+        response = MagicMock()
+        response.geturl.return_value = "https://data.sec.gov/submissions/CIK1.json"
+        response.headers.get.return_value = None
+        response.read.return_value = b"{}"
+        urlopen.return_value.__enter__.return_value = response
+
+        HttpClient(edgar_identity="Test User test@example.com").get_json(
+            "https://data.sec.gov/submissions/CIK1.json",
+            source="sec",
+        )
+
+        context = urlopen.call_args.kwargs["context"]
+        self.assertTrue(context.__class__.__module__.startswith("truststore"))
+
+    def test_sec_identity_requires_ascii_name_and_email(self):
+        client = HttpClient(edgar_identity="测试用户 test@example.com")
+
+        with self.assertRaises(SourceError) as caught:
+            client.get_json(
+                "https://data.sec.gov/submissions/CIK1.json",
+                source="sec",
+            )
+
+        self.assertIn("ASCII", caught.exception.safe_message)
+        self.assertIn("英文姓名", caught.exception.safe_message)
 
 
 class SecCollectorTest(unittest.TestCase):
@@ -134,7 +168,9 @@ class CninfoCollectorTest(unittest.TestCase):
             documents[0].download_url,
             "https://static.cninfo.com.cn/finalpage/2026-08-24/1224500001.PDF",
         )
-        query = next(call for call in http.calls if call[0] == "POST")
+        org_search = next(call for call in http.calls if "topSearch" in call[1])
+        self.assertEqual(org_search[0], "POST")
+        query = next(call for call in http.calls if "hisAnnouncement/query" in call[1])
         self.assertEqual(query[3]["stock"], "600519,gssh0600519")
 
 

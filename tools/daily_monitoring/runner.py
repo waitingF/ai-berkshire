@@ -105,11 +105,15 @@ def production_services(
 def _watched(target: dict[str, Any], patterns: tuple[str, ...]) -> bool:
     if not patterns:
         return True
-    haystack = " ".join(
-        [str(target.get("id") or ""), str(target.get("name") or "")]
-        + [str(code) for code in (target.get("codes") or {}).values()]
-    ).casefold()
-    return any(pattern.casefold() in haystack for pattern in patterns)
+    identities = {
+        value.strip().casefold()
+        for value in (
+            [str(target.get("id") or ""), str(target.get("name") or "")]
+            + [str(code) for code in (target.get("codes") or {}).values()]
+        )
+        if value.strip()
+    }
+    return any(pattern.strip().casefold() in identities for pattern in patterns)
 
 
 def _safe_failure(source: str, exc: Exception) -> str:
@@ -563,9 +567,26 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
         )
 
     previous_gaps = state["completeness"]
+    if options.watch:
+        scoped_previous_gaps = {
+            fingerprint: gap
+            for fingerprint, gap in previous_gaps.items()
+            if str(gap.get("target_id") or "") in target_ids
+        }
+        preserved_gaps = {
+            fingerprint: gap
+            for fingerprint, gap in previous_gaps.items()
+            if fingerprint not in scoped_previous_gaps
+        }
+    else:
+        scoped_previous_gaps = previous_gaps
+        preserved_gaps = {}
     current_gaps: dict[str, dict[str, Any]] = {}
-    for gap in find_completeness_gaps(options.root, targets, today=options.today):
-        is_new = gap.fingerprint not in previous_gaps
+    detected_gaps = find_completeness_gaps(options.root, targets, today=options.today)
+    if options.watch:
+        detected_gaps = [gap for gap in detected_gaps if gap.target_id in target_ids]
+    for gap in detected_gaps:
+        is_new = gap.fingerprint not in scoped_previous_gaps
         items.append(replace(gap, notify=is_new))
         current_gaps[gap.fingerprint] = {
             "target_id": gap.target_id,
@@ -574,7 +595,7 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
             "priority": gap.priority,
             "updated_at": options.today.isoformat(),
         }
-    for fingerprint, old_gap in previous_gaps.items():
+    for fingerprint, old_gap in scoped_previous_gaps.items():
         if fingerprint in current_gaps:
             continue
         items.append(
@@ -591,7 +612,7 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
                 resolved=True,
             )
         )
-    state["completeness"] = current_gaps
+    state["completeness"] = {**preserved_gaps, **current_gaps}
 
     notifications = tuple(item for item in items if item.notify)
     provisional = RunResult(
