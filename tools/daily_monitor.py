@@ -18,7 +18,9 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from tools.daily_monitoring.config import load_targets
+from tools.daily_monitoring.collectors import cninfo, hkex, sec
 from tools.daily_monitoring.deepseek import DeepSeekClient
+from tools.daily_monitoring.documents import ExtractedDocument
 from tools.daily_monitoring.runner import (
     MonitorOptions,
     MonitorServices,
@@ -71,8 +73,11 @@ def _offline_services(fixtures: Path) -> MonitorServices:
     if not fixtures.is_dir():
         raise ValueError(f"离线夹具目录不存在: {fixtures}")
     required = (
+        "cninfo-org-search.json",
         "cninfo-response.json",
+        "hkex-active-stocks.json",
         "hkex-response.json",
+        "sec-company-tickers.json",
         "sec-submissions.json",
         "deepseek-valid.json",
     )
@@ -86,21 +91,74 @@ def _offline_services(fixtures: Path) -> MonitorServices:
         # Stable positive values establish a non-notifying baseline on an empty state.
         return {code: {"price": 1.0, "time": "OFFLINE"} for code in codes}
 
-    def empty_collector(target_id, config, *, since, until, http):
-        return []
+    fixtures_by_name = {
+        name: json.loads((fixtures / name).read_text(encoding="utf-8"))
+        for name in required
+    }
 
-    def forbidden_extractor(disclosure, target, http):
-        raise AssertionError("离线空披露场景不应下载正文")
+    class FixtureHttp:
+        def get_json(self, url, *, source, params=None, headers=None):
+            if "topSearch" in url:
+                return fixtures_by_name["cninfo-org-search.json"]
+            if "activestock" in url:
+                return fixtures_by_name["hkex-active-stocks.json"]
+            if "titleSearchServlet" in url:
+                return fixtures_by_name["hkex-response.json"]
+            if "company_tickers" in url:
+                return fixtures_by_name["sec-company-tickers.json"]
+            if "submissions" in url:
+                return fixtures_by_name["sec-submissions.json"]
+            raise AssertionError(f"离线模式拒绝未登记请求: {source} {url}")
+
+        def post_form_json(self, url, form, *, source, headers=None):
+            if "hisAnnouncement" in url:
+                return fixtures_by_name["cninfo-response.json"]
+            raise AssertionError(f"离线模式拒绝未登记请求: {source} {url}")
+
+        def get_bytes(self, *args, **kwargs):
+            raise AssertionError("离线模式禁止下载公告正文")
+
+    fixture_http = FixtureHttp()
+
+    def cninfo_fixture(target_id, config, *, since, until, http):
+        if config.get("stock_code") != "600519":
+            return []
+        return cninfo.collect(
+            target_id, config, since=since, until=until, http=fixture_http
+        )
+
+    def hkex_fixture(target_id, config, *, since, until, http):
+        if config.get("stock_code") != "00700":
+            return []
+        return hkex.collect(
+            target_id, config, since=since, until=until, http=fixture_http
+        )
+
+    def sec_fixture(target_id, config, *, since, until, http):
+        if config.get("ticker") != "PDD":
+            return []
+        return sec.collect(
+            target_id, config, since=since, until=until, http=fixture_http
+        )
+
+    def fixture_extractor(disclosure, target, http):
+        return ExtractedDocument(
+            status="EXTRACTED",
+            sha256=(disclosure.document_id.encode("utf-8").hex() + "0" * 64)[:64],
+            pages_used=(1,),
+            chunks=(f"[PAGE 1]\nOFFLINE FIXTURE: {disclosure.title}",),
+            limitation="离线夹具仅含清洗后的最小样本文本",
+        )
 
     return MonitorServices(
         quote_provider=quote_provider,
         collectors={
-            "cninfo": empty_collector,
-            "hkex": empty_collector,
-            "sec": empty_collector,
+            "cninfo": cninfo_fixture,
+            "hkex": hkex_fixture,
+            "sec": sec_fixture,
         },
-        http=None,
-        document_extractor=forbidden_extractor,
+        http=fixture_http,
+        document_extractor=fixture_extractor,
         deepseek=None,
     )
 

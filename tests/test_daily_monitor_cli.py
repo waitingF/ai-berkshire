@@ -47,6 +47,27 @@ class DailyMonitorCliTest(unittest.TestCase):
             payload = json.loads(completed.stdout)
             self.assertEqual(payload["status"], "OK")
             self.assertTrue((reports / "daily-monitor-latest.md").exists())
+            report_payload = json.loads(
+                (reports / "daily-monitor-latest.json").read_text(encoding="utf-8")
+            )
+            disclosure_titles = {
+                item["title"]
+                for item in report_payload["items"]
+                if item["section"] == "disclosures"
+                and item["status"] == "PENDING_AI"
+            }
+            self.assertIn("2026年半年度报告", disclosure_titles)
+            self.assertTrue(
+                any("INTERIM RESULTS" in title for title in disclosure_titles)
+            )
+            self.assertTrue(
+                any(
+                    "SEC" in title
+                    or "Quarterly" in title
+                    or "foreign private issuer" in title
+                    for title in disclosure_titles
+                )
+            )
             self.assertTrue(state.exists())
             self.assertEqual(
                 (REPO / "data" / "monitoring-state.json").read_text(encoding="utf-8"),
