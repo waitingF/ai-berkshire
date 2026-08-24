@@ -4,12 +4,15 @@ from __future__ import annotations
 
 import json
 import os
+import ssl
 import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from typing import Any, Callable, Mapping
 from urllib.parse import urlparse
+
+import truststore
 
 from .context import ResearchContext
 from .http import OFFICIAL_HOSTS
@@ -250,6 +253,7 @@ class DeepSeekClient:
         self.model = (model or os.environ.get("DEEPSEEK_MODEL") or DEFAULT_MODEL).strip()
         self.timeout = timeout
         self._sleep = sleep
+        self._ssl_context = truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
         self._transport = transport or self._post
 
     def _post(self, payload: dict[str, Any]) -> Any:
@@ -268,14 +272,25 @@ class DeepSeekClient:
             },
         )
         try:
-            with urllib.request.urlopen(request, timeout=self.timeout) as response:
+            with urllib.request.urlopen(
+                request,
+                timeout=self.timeout,
+                context=self._ssl_context,
+            ) as response:
                 return json.loads(response.read().decode("utf-8"))
         except urllib.error.HTTPError as exc:
             retryable = exc.code == 429 or 500 <= exc.code < 600
             raise DeepSeekRequestError(
                 f"DeepSeek HTTP {exc.code}", retryable=retryable
             ) from exc
-        except (urllib.error.URLError, TimeoutError) as exc:
+        except urllib.error.URLError as exc:
+            if isinstance(exc.reason, ssl.SSLCertVerificationError):
+                raise DeepSeekRequestError(
+                    "DeepSeek TLS 证书校验失败；请检查系统代理证书和 truststore 依赖",
+                    retryable=False,
+                ) from exc
+            raise DeepSeekRequestError("DeepSeek 连接失败或超时", retryable=True) from exc
+        except TimeoutError as exc:
             raise DeepSeekRequestError("DeepSeek 连接失败或超时", retryable=True) from exc
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:
             raise DeepSeekRequestError("DeepSeek API 响应不是有效 JSON", retryable=True) from exc

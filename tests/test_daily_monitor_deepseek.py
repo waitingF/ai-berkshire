@@ -1,11 +1,15 @@
 import json
+import ssl
 import unittest
 from pathlib import Path
+from unittest.mock import MagicMock, patch
+import urllib.error
 
 from tools.daily_monitoring.context import ResearchContext
 from tools.daily_monitoring.deepseek import (
     AnalysisRequest,
     DeepSeekClient,
+    DeepSeekRequestError,
     InvalidModelOutput,
     parse_analysis,
 )
@@ -104,6 +108,33 @@ class DeepSeekSchemaTest(unittest.TestCase):
 
 
 class DeepSeekClientTest(unittest.TestCase):
+    @patch("tools.daily_monitoring.deepseek.urllib.request.urlopen")
+    def test_production_request_uses_system_trust_context(self, urlopen):
+        response = MagicMock()
+        response.read.return_value = b"{}"
+        urlopen.return_value.__enter__.return_value = response
+        client = DeepSeekClient(api_key="test-key")
+
+        client._post({"model": "synthetic"})
+
+        context = urlopen.call_args.kwargs["context"]
+        self.assertTrue(context.__class__.__module__.startswith("truststore"))
+
+    @patch("tools.daily_monitoring.deepseek.urllib.request.urlopen")
+    def test_certificate_failure_is_not_reported_as_timeout(self, urlopen):
+        certificate_error = ssl.SSLCertVerificationError(
+            1, "self-signed certificate in certificate chain"
+        )
+        urlopen.side_effect = urllib.error.URLError(certificate_error)
+        client = DeepSeekClient(api_key="test-key")
+
+        with self.assertRaises(DeepSeekRequestError) as caught:
+            client._post({"model": "synthetic"})
+
+        self.assertIn("TLS", caught.exception.safe_message)
+        self.assertIn("证书", caught.exception.safe_message)
+        self.assertFalse(caught.exception.retryable)
+
     def test_request_uses_json_mode_and_does_not_send_repository_paths(self):
         transport = SequenceTransport([envelope(valid_payload())])
 
