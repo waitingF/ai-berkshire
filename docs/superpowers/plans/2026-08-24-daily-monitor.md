@@ -421,7 +421,7 @@ Expected: collector imports or assertions fail.
 
 - [ ] **Step 5: Implement the three adapters against current official response shapes**
 
-SEC uses `https://www.sec.gov/files/company_tickers.json` for ticker-to-CIK resolution and `https://data.sec.gov/submissions/CIK##########.json` for recent filings. Unless a target overrides `forms`, the SEC form allowlist is `10-K`, `10-Q`, `8-K`, `20-F`, `6-K`, and `40-F`. CNINFO posts a bounded date range to its official announcement query with browser-compatible `Referer` and maps `announcementId`, `announcementTitle`, `announcementTime`, and `adjunctUrl`. HKEX posts a bounded stock/date search to the official title-search endpoint and maps the returned release time, headline, document ID, and official file URL. Each adapter raises a typed `SourceError` containing source, retryability, and a safe message without response bodies. The AKShare adapter is invoked only after its corresponding official collector fails; it is optional at import time, converts returned rows to unverified `FallbackClue` objects, and may produce a verified disclosure only when the row resolves to a URL that passes the same official-domain validator.
+SEC uses `https://www.sec.gov/files/company_tickers.json` for ticker-to-CIK resolution and `https://data.sec.gov/submissions/CIK##########.json` for recent filings. Unless a target overrides `forms`, the SEC form allowlist is `10-K`, `10-Q`, `8-K`, `20-F`, `6-K`, and `40-F`. CNINFO resolves `secCode → orgId` through the official top-search response, then posts a bounded date range to `https://www.cninfo.com.cn/new/hisAnnouncement/query` with a browser-compatible `Referer` and maps `announcementId`, `announcementTitle`, `announcementTime`, and `adjunctUrl`. HKEX loads the official active-stock JSON to resolve public stock code to internal `stockId`, prefers the structured title-search response, and accepts the official title-search HTML shape as a fallback before mapping release time, headline, document ID, and official file URL. Each adapter raises a typed `SourceError` containing source, retryability, and a safe message without response bodies. The AKShare adapter is invoked only after its corresponding official collector fails; it is optional at import time, converts returned rows to unverified `FallbackClue` objects, and may produce a verified disclosure only when the row resolves to a URL that passes the same official-domain validator.
 
 - [ ] **Step 6: Write failing conservative deduplication tests**
 
@@ -494,7 +494,7 @@ Expected: import failure for `documents`.
 
 - [ ] **Step 3: Add PyMuPDF and implement bounded extraction**
 
-`requirements-monitoring.txt` contains `PyMuPDF>=1.24,<2` and `akshare>=1.16,<2`. Extraction limits are explicit constants: maximum 25 MiB download, maximum 250 pages opened, maximum 12 selected pages, and maximum 24,000 extracted characters sent onward. Page selection scores case-insensitive title/thesis keywords and always includes the first two text pages when available.
+`requirements-monitoring.txt` contains `PyMuPDF>=1.24,<2`, `akshare>=1.16,<2`, and `PyYAML>=6,<7`. Extraction limits are explicit constants: maximum 25 MiB download, maximum 250 pages opened, maximum 12 selected pages, and maximum 24,000 extracted characters sent onward. Page selection scores case-insensitive title/thesis keywords and always includes the first two text pages when available.
 
 ```python
 @dataclass(frozen=True)
@@ -795,7 +795,6 @@ git commit -m "feat: generate unified daily monitor reports"
 - Create: `.github/scripts/notify_daily_monitor.py`
 - Create: `.github/workflows/daily-monitor.yml`
 - Delete: `.github/workflows/trigger-scan.yml`
-- Test: `tests/test_daily_monitor_workflow.py`
 - Test: `tests/test_daily_monitor_notification.py`
 
 **Interfaces:**
@@ -822,36 +821,48 @@ Run: `python3 -m unittest tests.test_daily_monitor_notification -v`
 
 Expected before implementation: import failure. Expected after implementation: all tests pass.
 
-- [ ] **Step 3: Write failing workflow contract tests**
-
-```python
-def test_schedule_is_weekdays_at_1730_shanghai(self):
-    self.assertIn('cron: "30 17 * * 1-5"', self.workflow)
-    self.assertIn('timezone: "Asia/Shanghai"', self.workflow)
-
-def test_workflow_has_concurrency_manual_safety_and_required_secrets(self):
-    for text in ("concurrency:", "timeout-minutes:", "DEEPSEEK_API_KEY", "EDGAR_IDENTITY", "commit:", "notify:"):
-        self.assertIn(text, self.workflow)
-
-def test_commit_allowlist_excludes_triggers_and_documents(self):
-    self.assertIn("git add reports/daily-monitor/ data/monitoring-state.json", self.workflow)
-    self.assertNotIn("git add data/triggers.json", self.workflow)
-```
-
-- [ ] **Step 4: Implement workflow ordering**
+- [ ] **Step 3: Implement workflow ordering**
 
 The job installs `requirements-monitoring.txt`, runs `daily_monitor.py --check`, runs the monitor while capturing exit code 2 as degraded, notifies only when enabled, commits the report/state allowlist only when `commit=true`, triggers Pages when a commit occurs, and performs the final health gate after Pages dispatch. Scheduled runs default both booleans to true; manual inputs default false for safe verification.
 
-- [ ] **Step 5: Verify workflow and full tests**
+- [ ] **Step 4: Verify the executable workflow structure and full tests**
 
-Run: `python3 -m unittest tests.test_daily_monitor_workflow tests.test_daily_monitor_notification -v && python3 -m unittest discover -s tests -v`
+Run:
+
+```bash
+python3 -m unittest tests.test_daily_monitor_notification -v
+python3 - <<'PY'
+from pathlib import Path
+import yaml
+
+workflow = yaml.load(
+    Path('.github/workflows/daily-monitor.yml').read_text(encoding='utf-8'),
+    Loader=yaml.BaseLoader,
+)
+schedule = workflow['on']['schedule'][0]
+assert schedule == {'cron': '30 17 * * 1-5', 'timezone': 'Asia/Shanghai'}
+manual = workflow['on']['workflow_dispatch']['inputs']
+assert set(manual) == {'commit', 'notify'}
+job = workflow['jobs']['monitor']
+assert 'concurrency' in workflow
+assert int(job['timeout-minutes']) > 0
+steps = job['steps']
+commit_step = next(step for step in steps if step.get('id') == 'commit_daily')
+assert 'git add reports/daily-monitor/ data/monitoring-state.json' in commit_step['run']
+assert 'data/triggers.json' not in commit_step['run']
+pages_index = next(i for i, step in enumerate(steps) if step.get('id') == 'rebuild_pages')
+health_index = next(i for i, step in enumerate(steps) if step.get('id') == 'health_gate')
+assert pages_index < health_index
+PY
+python3 -m unittest discover -s tests -v
+```
 
 Expected: all tests pass.
 
-- [ ] **Step 6: Commit automation migration**
+- [ ] **Step 5: Commit automation migration**
 
 ```bash
-git add .github/workflows/daily-monitor.yml .github/workflows/trigger-scan.yml .github/scripts/notify_daily_monitor.py tests/test_daily_monitor_workflow.py tests/test_daily_monitor_notification.py
+git add .github/workflows/daily-monitor.yml .github/workflows/trigger-scan.yml .github/scripts/notify_daily_monitor.py tests/test_daily_monitor_notification.py
 git commit -m "ci: run daily monitor on weekdays"
 ```
 
@@ -934,36 +945,37 @@ git commit -m "feat: publish one daily monitor page"
 - Modify: `README_EN.md`
 - Modify: `README_JA.md`
 - Regenerate: `codex-skills/`, `cursor-skills/`, `dsh-skills/`, `codex-prompts/`
-- Replace: `tests/test_weekly_review_skill.py` with `tests/test_daily_monitor_skill.py`
+- Replace: `tests/test_weekly_review_skill.py` with `tests/test_skill_generation.py`
 - Modify: `tests/test_investment_skill_tracking_hooks.py`
 
 **Interfaces:**
 - Consumes: implemented CLI/workflow/report contract.
 - Produces: one canonical `/daily-monitor` workflow exposed consistently to Claude Code, Codex, Cursor, and DeepSeek Harness.
 
-- [ ] **Step 1: Write failing skill contract tests**
+- [ ] **Step 1: Write a failing generator-set behavior test**
 
 ```python
-def test_daily_monitor_contract_names_three_sections_and_write_boundary(self):
-    for text in ("价格监控", "财报与正式披露监控", "其他监控", "reports/daily-monitor/"):
-        self.assertIn(text, self.source)
-    self.assertIn("不自动", self.source)
-    self.assertIn("买入", self.source)
-
-def test_weekly_review_is_no_longer_generated(self):
-    self.assertFalse((ROOT / "skills" / "weekly-review.md").exists())
-    self.assertFalse((ROOT / "codex-prompts" / "weekly-review.md").exists())
+def test_generated_skill_sets_exactly_match_canonical_sources(self):
+    canonical = {path.stem for path in (ROOT / "skills").glob("*.md")}
+    codex = {path.parent.name for path in (ROOT / "codex-skills").glob("*/SKILL.md") if path.parent.name != "investment-memo-craft"}
+    cursor = {path.parent.name for path in (ROOT / "cursor-skills").glob("*/SKILL.md")}
+    dsh = {path.parent.name for path in (ROOT / "dsh-skills").glob("*/SKILL.md")}
+    prompts = {path.stem for path in (ROOT / "codex-prompts").glob("*.md")}
+    self.assertEqual(codex, canonical)
+    self.assertEqual(cursor, canonical)
+    self.assertEqual(dsh, canonical)
+    self.assertEqual(prompts, canonical)
 ```
 
 - [ ] **Step 2: Run and verify RED**
 
-Run: `python3 -m unittest tests.test_daily_monitor_skill -v`
+Run: `python3 -m unittest tests.test_skill_generation -v`
 
-Expected: daily skill missing and weekly skill still active.
+Expected: failure after the canonical source is renamed because stale generated weekly-review artifacts remain.
 
 - [ ] **Step 3: Write the canonical skill and retire the old skill**
 
-The skill instructs users to run `date`, validate local config, execute `python3 tools/daily_monitor.py`, interpret the exact three sections, preserve official citations, keep price and thesis conclusions separate, and avoid changing portfolio/research state automatically. It documents local commands for offline fixtures and `--check-ai`.
+Before editing the skill, load and follow `superpowers:writing-skills`. The skill instructs users to run `date`, validate local config, execute `python3 tools/daily_monitor.py`, interpret the exact three sections, preserve official citations, keep price and thesis conclusions separate, and avoid changing portfolio/research state automatically. It documents local commands for offline fixtures and `--check-ai`.
 
 - [ ] **Step 4: Update repository documentation and trigger-monitor references**
 
@@ -987,7 +999,7 @@ The generators must also remove stale generated `weekly-review` artifacts when t
 Run:
 
 ```bash
-python3 -m unittest tests.test_daily_monitor_skill tests.test_investment_skill_tracking_hooks -v
+python3 -m unittest tests.test_skill_generation tests.test_investment_skill_tracking_hooks -v
 python3 scripts/sync-codex-skills.py --check
 python3 scripts/sync-cursor-skills.py --check
 python3 scripts/generate-dsh-skills.py --check
