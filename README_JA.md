@@ -14,7 +14,7 @@
 
 1人 + Claude Code / Codex = 投資リサーチチーム丸ごと。
 
-[実績](#実績) · [なぜAIに直接聞いてはいけないのか](#なぜaiに直接聞いてはいけないのか) · [Skill一覧](#skill一覧20スキル) · [クイックスタート](#クイックスタート) · [レポート](#実際のリサーチレポート) · [設計思想](#設計思想)
+[実績](#実績) · [なぜAIに直接聞いてはいけないのか](#なぜaiに直接聞いてはいけないのか) · [Skill一覧](#skill一覧21スキル) · [クイックスタート](#クイックスタート) · [レポート](#実際のリサーチレポート) · [設計思想](#設計思想)
 
 ---
 
@@ -164,7 +164,7 @@ AIに直接聞けばコンテキストウィンドウは1つです。4つの並�
 
 ---
 
-## Skill一覧（20スキル）
+## Skill一覧（21スキル）
 
 ### 🔬 深掘りリサーチ
 
@@ -200,8 +200,11 @@ AIに直接聞けばコンテキストウィンドウは1つです。4つの並�
 | [`/income-investment`](skills/income-investment.md) | インカム中心の株式分析 | 持続的収益、機会的高利回り、利回りの罠を区別 |
 | [`/portfolio-review`](skills/portfolio-review.md) | ポートフォリオレビュー＆最適化 | 「企業をリサーチする」から「ポートフォリオを管理する」へ——ポジションサイジング、集中度、リバランス |
 | [`/thesis-tracker`](skills/thesis-tracker.md) | 投資テーゼトラッカー | 購入後の規律システム：投資テーゼが否定されていないかを継続的に追跡 |
+| [`/daily-monitor`](skills/daily-monitor.md) | 日次増分モニター | 平日の価格、A/H/米国公式開示、イベント、リサーチ欠落を統合監視 |
 | [`/thesis-drift`](skills/thesis-drift.md) | 投資テーゼのドリフト検出 | 2つのテーゼ／レポートを比較し、事実の変化・バリュエーションの変化・表現の変化を区別 |
 | [`/news-pulse`](skills/news-pulse.md) | 株価変動の迅速な要因分析 | 株が急騰・急落したとき——10分で「何が起きたか」を解明 |
+
+平日の自動処理は Asia/Shanghai の17:30に実行され、`reports/daily-monitor/` に3部構成のレポートを生成します。第1期の公式開示元は CNINFO、HKEXnews、SEC EDGAR に限定し、AKShare は予備のみ、一般ウェブ検索は行いません。`DEEPSEEK_API_KEY`、正確な連絡先を含む `EDGAR_IDENTITY`、必要に応じて `DEEPSEEK_MODEL` を設定します。PDFと抽出全文は一時処理のみでコミットしません。
 
 ### 🧠 思考ツール
 
@@ -341,6 +344,7 @@ Claude Codeで直接呼び出す：
 /income-investment Verizon mode=existing role=core-income quantity=100 cost_basis=39.50 tax_residence=France horizon=5y
 /portfolio-review テンセント30%、美団20%、茅台20%、現金30%
 /thesis-tracker 拼多多
+/daily-monitor
 /thesis-drift 拼多多 reports/拼多多-thesis-2025Q4.md reports/拼多多-thesis-2026Q1.md
 /news-pulse テンセント
 

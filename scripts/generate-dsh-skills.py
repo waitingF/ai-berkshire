@@ -16,6 +16,7 @@ note. Run `--check` to verify generated artifacts are current without writing.
 from __future__ import annotations
 
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -115,8 +116,23 @@ def main() -> None:
     if not check:
         DSH_SKILLS.mkdir(exist_ok=True)
 
-    count = 0
     stale: list[str] = []
+    canonical_names = {source.stem for source in CLAUDE_SKILLS.glob("*.md")}
+    generated_dirs = {
+        path.parent
+        for path in DSH_SKILLS.glob("*/SKILL.md")
+        if "generated from `skills/" in path.read_text(encoding="utf-8")
+    }
+    stale_dirs = sorted(
+        directory for directory in generated_dirs if directory.name not in canonical_names
+    )
+    if check:
+        stale.extend(str(path.relative_to(ROOT)) for path in stale_dirs)
+    else:
+        for path in stale_dirs:
+            shutil.rmtree(path)
+
+    count = 0
     for source in sorted(CLAUDE_SKILLS.glob("*.md")):
         name = source.stem
         source_text = source.read_text(encoding="utf-8")

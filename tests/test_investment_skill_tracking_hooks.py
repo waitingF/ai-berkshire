@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RESEARCH = ROOT / "skills" / "investment-research.md"
 CHECKLIST = ROOT / "skills" / "investment-checklist.md"
+TRIGGER_MONITOR = ROOT / "skills" / "trigger-monitor.md"
 
 
 class InvestmentSkillTrackingHooksTest(unittest.TestCase):
@@ -36,6 +37,14 @@ class InvestmentSkillTrackingHooksTest(unittest.TestCase):
         ):
             with self.subTest(requirement=requirement):
                 self.assertIn(requirement, text)
+
+    def test_trigger_registration_routes_validation_to_daily_monitor(self):
+        text = TRIGGER_MONITOR.read_text(encoding="utf-8")
+
+        self.assertIn("python3 tools/daily_monitor.py --check", text)
+        self.assertIn("--state-file", text)
+        self.assertIn("--report-dir", text)
+        self.assertNotIn("weekly-review", text)
 
 
 if __name__ == "__main__":

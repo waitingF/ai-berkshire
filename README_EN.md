@@ -162,7 +162,7 @@ Ask AI directly, and you have one context window. Four parallel Agents means 4×
 
 ---
 
-## Skills Overview (20 Skills)
+## Skills Overview (21 Skills)
 
 ### 🔬 Deep Research
 
@@ -198,8 +198,11 @@ Ask AI directly, and you have one context window. Four parallel Agents means 4×
 | [`/income-investment`](skills/income-investment.md) | Income-centered equity analysis | Distinguish durable income, opportunistic yield, and yield traps |
 | [`/portfolio-review`](skills/portfolio-review.md) | Portfolio review & optimization | Graduate from "researching companies" to "managing a portfolio" — sizing, concentration, rebalancing |
 | [`/thesis-tracker`](skills/thesis-tracker.md) | Investment thesis tracker | Post-buy discipline system: continuously track whether your thesis has been falsified |
+| [`/daily-monitor`](skills/daily-monitor.md) | Daily incremental monitor | Weekday price, official A/H/US disclosure, event, and research-gap monitoring |
 | [`/thesis-drift`](skills/thesis-drift.md) | Investment thesis drift detection | Compare two theses/reports — separate factual, valuation, and wording changes |
 | [`/news-pulse`](skills/news-pulse.md) | Price-move rapid attribution | When a stock surges or drops — figure out "what happened" in 10 minutes |
+
+The weekday automation runs at 17:30 Asia/Shanghai and writes one three-section report under `reports/daily-monitor/`. Phase one uses CNINFO, HKEXnews, and SEC EDGAR official disclosures; AKShare is fallback-only and there is no general web search. Configure `DEEPSEEK_API_KEY`, a truthful `EDGAR_IDENTITY`, and optionally `DEEPSEEK_MODEL`. PDFs and full extracted text are temporary and are never committed.
 
 ### 🧠 Thinking Tools
 
@@ -339,6 +342,7 @@ Invoke directly in Claude Code:
 /income-investment Verizon mode=existing role=core-income quantity=100 cost_basis=39.50 tax_residence=France horizon=5y
 /portfolio-review Tencent 30%, Meituan 20%, Moutai 20%, Cash 30%
 /thesis-tracker Pinduoduo
+/daily-monitor
 /thesis-drift Pinduoduo reports/PDD-thesis-2025Q4.md reports/PDD-thesis-2026Q1.md
 /news-pulse Tencent
 

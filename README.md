@@ -208,7 +208,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 | [`/income-investment`](skills/income-investment.md) | 收益型股票分析 | 区分可持续收益、机会型高息与收益率陷阱 |
 | [`/portfolio-review`](skills/portfolio-review.md) | 组合管理与优化 | 从"研究公司"升级到"管理组合"——仓位、集中度、再平衡 |
 | [`/thesis-tracker`](skills/thesis-tracker.md) | 投资论文追踪 | 买入后的纪律系统：持续跟踪论文是否被证伪 |
-| [`/weekly-review`](skills/weekly-review.md) | 重点优先周检 | 只读联网分诊：重点标的全查、台账只查到期/触发项，输出 P0/P1/P2 待办 |
+| [`/daily-monitor`](skills/daily-monitor.md) | 每日增量监控 | 工作日统一检查价格、A/H/美正式披露和研究完整性，输出 P0/P1/P2 待办 |
 | [`/thesis-drift`](skills/thesis-drift.md) | 投资论文漂移检测 | 对比两份论文/报告，区分事实变化、估值变化与措辞变化 |
 | [`/news-pulse`](skills/news-pulse.md) | 股价异动快速归因 | 股价大涨/大跌时10分钟搞清"发生了什么" |
 
@@ -382,7 +382,7 @@ REM 可选：仅安装到当前仓库 .cursor/skills
 /income-investment Verizon mode=existing role=core-income quantity=100 cost_basis=39.50 tax_residence=France horizon=5y
 /portfolio-review 腾讯30%, 美团20%, 茅台20%, 现金30%
 /thesis-tracker 拼多多
-/weekly-review
+/daily-monitor
 /thesis-drift 拼多多 reports/拼多多/拼多多-thesis-2025Q4.md reports/拼多多/拼多多-thesis-2026Q1.md
 /news-pulse 腾讯
 
@@ -419,6 +419,23 @@ REM 可选：仅安装到当前仓库 .cursor/skills
 
 Cursor 会根据 skill 的 `description` 自动匹配；也可以明确点名 skill 名称。修改 `skills/*.md` 后，重新运行 `./scripts/install-cursor-skills.sh` 同步更新。
 
+### 每日监控自动化
+
+`python3 tools/daily_monitor.py` 在一份报告中输出“价格监控 / 财报与正式披露监控 / 其他监控”。正式披露一期只接入 A 股巨潮、港股 HKEXnews 和美股 SEC EDGAR；AKShare 仅作备用线索，不做一般网络搜索。PDF 和完整正文只在运行时临时处理，不写入仓库。
+
+GitHub Actions `.github/workflows/daily-monitor.yml` 每个工作日 17:30（Asia/Shanghai）运行。仓库 Secrets 配置 `DEEPSEEK_API_KEY`、`EDGAR_IDENTITY`（SEC 免费且无 API Key，这里填写真实姓名和联系邮箱）和可选的 `SERVERCHAN_SENDKEY`；仓库变量 `DEEPSEEK_MODEL` 可覆盖默认 `deepseek-v4-flash`。DeepSeek 只做增量研究分流，不自动给出买卖或仓位结论。
+
+安全本地验证：
+
+```bash
+python3 tools/daily_monitor.py --check
+runtime_dir=$(mktemp -d)
+python3 tools/daily_monitor.py --offline-fixtures tests/fixtures/daily-monitor \
+  --state-file "$runtime_dir/state.json" --report-dir "$runtime_dir/reports" --json
+# 用户在本地 export DEEPSEEK_API_KEY 后：
+python3 tools/daily_monitor.py --check-ai
+```
+
 ### 4. 发布报告站点
 
 仓库内置 GitHub Pages 构建流程，可以把 `reports/` 下的 Markdown 报告渲染成静态 HTML 站点。
@@ -430,7 +447,7 @@ python3 -m pip install -r requirements-pages.txt
 python3 scripts/build-github-pages.py
 ```
 
-构建输出位于 `site/`，其中 `site/index.html` 是目录式报告索引页。首页顶部「常用入口」会置顶 `重点标的看板.md`、`标的跟踪表.md`、`weekly-check/weekly-check-latest.md` 与 `portfolio-latest.md`；顶栏导航也可直接跳转。报告正文里的相对 `.md` 链接会改写为对应 `.html`，站内互链可点击；外链与纯锚点不变。首页其余部分只展示一级目录和根级报告，进入目录后再查看该目录下的子目录和报告。`site/` 是本地生成物，不提交到仓库。
+构建输出位于 `site/`，其中 `site/index.html` 是目录式报告索引页。首页顶部「常用入口」会置顶 `重点标的看板.md`、`标的跟踪表.md`、`daily-monitor/daily-monitor-latest.md` 与 `portfolio-latest.md`；顶栏导航也可直接跳转。历史 `weekly-check/` 与 `trigger-scan/` 仍可在研究库中回看，但不再合并或置顶。报告正文里的相对 `.md` 链接会改写为对应 `.html`，站内互链可点击；外链与纯锚点不变。首页其余部分只展示一级目录和根级报告，进入目录后再查看该目录下的子目录和报告。`site/` 是本地生成物，不提交到仓库。
 
 在 GitHub 仓库中启用：
 
@@ -672,7 +689,7 @@ GitHub Pages 会公开发布站点内容，推送前请确认 `reports/` 中没�
 | 完整投研（小时级） | `/investment-team` 或 `/investment-research` |
 | 财报深读 | `/earnings-review` |
 | 长期论文跟踪 | `/thesis-tracker` |
-| **每周检查重点标的与待处理建议** | **`/weekly-review`** |
+| **每日检查价格、正式披露与研究缺口** | **`/daily-monitor`** |
 | **股价异动 10 分钟归因** | **`/news-pulse`** |
 
 **输出示例摘录**（腾讯 4/17-5/01 实测，14 天 -10.47%）：

@@ -1,0 +1,100 @@
+name: 每日监控
+
+on:
+  schedule:
+    - cron: "30 17 * * 1-5"
+      timezone: "Asia/Shanghai"
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "提交报告和机器状态"
+        required: true
+        default: false
+        type: boolean
+      notify:
+        description: "发送增量通知"
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: daily-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-monitoring.txt
+
+      - name: 安装监控依赖
+        run: python -m pip install -r requirements-monitoring.txt
+
+      - name: 只读校验配置
+        run: python3 tools/daily_monitor.py --check
+
+      - name: 运行每日监控
+        id: run_monitor
+        env:
+          EDGAR_IDENTITY: ${{ secrets.EDGAR_IDENTITY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
+        run: |
+          set +e
+          python3 tools/daily_monitor.py --json > daily-monitor-run.json
+          monitor_exit=$?
+          set -e
+          cat daily-monitor-run.json
+          if [ "$monitor_exit" -ne 0 ] && [ "$monitor_exit" -ne 2 ]; then
+            echo "每日监控未能生成报告，退出码 $monitor_exit" >&2
+            exit "$monitor_exit"
+          fi
+          echo "exit_code=$monitor_exit" >> "$GITHUB_OUTPUT"
+
+      - name: 发送状态变化通知
+        if: github.event_name == 'schedule' || inputs.notify == true
+        env:
+          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY }}
+        run: python3 .github/scripts/notify_daily_monitor.py reports/daily-monitor/daily-monitor-latest.json
+
+      - name: 提交日报与机器状态
+        id: commit_daily
+        if: github.event_name == 'schedule' || inputs.commit == true
+        run: |
+          git config user.name "daily-monitor-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/daily-monitor/ data/monitoring-state.json
+          if git diff --cached --quiet; then
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "每日监控 $(date +%F)"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 触发 Pages 重建
+        id: rebuild_pages
+        if: steps.commit_daily.outputs.committed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
+
+      - name: 最终健康门禁
+        id: health_gate
+        if: always() && steps.run_monitor.outcome == 'success'
+        run: |
+          if [ "${{ steps.run_monitor.outputs.exit_code }}" = "2" ]; then
+            echo "每日监控已生成降级报告；请检查数据源或 AI 状态。" >&2
+            exit 1
+          fi

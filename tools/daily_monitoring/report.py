@@ -1,0 +1,197 @@
+"""Render and atomically persist the unified three-section daily monitor."""
+
+from __future__ import annotations
+
+import json
+import os
+from dataclasses import asdict
+from datetime import date
+from pathlib import Path
+from typing import Any, Iterable
+
+from .models import MonitorItem, ReportPaths, RunResult
+from .transitions import PRIORITY_RANK
+
+
+SECTION_HEADINGS = (
+    ("price", "## 一、价格监控"),
+    ("disclosures", "## 二、财报与正式披露监控"),
+    ("other", "## 三、其他监控"),
+)
+SECTION_ORDER = {name: index for index, (name, _) in enumerate(SECTION_HEADINGS)}
+
+
+def _sorted_items(items: Iterable[MonitorItem]) -> list[MonitorItem]:
+    return sorted(
+        items,
+        key=lambda item: (
+            -PRIORITY_RANK.get(item.priority, -1),
+            item.name.casefold(),
+            item.title.casefold(),
+            item.fingerprint,
+        ),
+    )
+
+
+def _workflow_owners(items: Iterable[MonitorItem]) -> set[str]:
+    owners: set[str] = set()
+    selected: dict[str, MonitorItem] = {}
+    for item in items:
+        if not item.next_workflow:
+            continue
+        current = selected.get(item.target_id)
+        candidate_key = (
+            PRIORITY_RANK.get(item.priority, -1),
+            -SECTION_ORDER.get(item.section, 99),
+        )
+        current_key = (
+            PRIORITY_RANK.get(current.priority, -1),
+            -SECTION_ORDER.get(current.section, 99),
+        ) if current else (-1, -99)
+        if current is None or candidate_key > current_key:
+            selected[item.target_id] = item
+    owners.update(item.fingerprint for item in selected.values())
+    return owners
+
+
+def _summary(result: RunResult) -> str:
+    changed = [item for item in result.items if item.notify and not item.resolved]
+    p0 = sum(item.priority == "P0" for item in changed)
+    p1 = sum(item.priority == "P1" for item in changed)
+    prices = sum(item.section == "price" for item in changed)
+    disclosures = sum(item.section == "disclosures" for item in changed)
+    errors = sum(health.status not in {"OK", "RECOVERED"} for health in result.source_health)
+    return f"P0 {p0} · P1 {p1} · 新增价格 {prices} · 新增披露 {disclosures} · 异常 {errors}"
+
+
+def _render_item(item: MonitorItem, *, show_workflow: bool) -> list[str]:
+    flags = []
+    if item.resolved:
+        flags.append("已解除")
+    if item.needs_human_review:
+        flags.append("待人工确认")
+    suffix = f"（{'；'.join(flags)}）" if flags else ""
+    lines = [
+        f"### [{item.priority}] {item.name}｜{item.title}{suffix}",
+        "",
+        f"- 当前状态：`{item.status}`",
+        f"- 为什么现在：{item.why_now}",
+    ]
+    if item.verified_facts:
+        lines.append("- 已核验事实：")
+        for fact in item.verified_facts:
+            page = f"，第 {fact.page} 页" if fact.page else ""
+            lines.append(
+                f"  - {fact.fact}（{fact.confidence}{page}；[正式来源]({fact.official_url})）"
+            )
+    elif item.source_urls:
+        links = "、".join(
+            f"[正式来源{index if len(item.source_urls) > 1 else ''}]({url})"
+            for index, url in enumerate(item.source_urls, start=1)
+        )
+        lines.append(f"- 来源：{links}")
+    if item.limitations:
+        lines.append(f"- 限制：{'；'.join(item.limitations)}")
+    if show_workflow and item.next_workflow:
+        lines.append(f"- 下一研究流程：`{item.next_workflow} {item.target_id}`")
+    lines.append("")
+    return lines
+
+
+def render_markdown(result: RunResult, *, run_date: date | None = None) -> str:
+    day = run_date or date.today()
+    workflow_owners = _workflow_owners(result.items)
+    health = "、".join(
+        f"{row.source}={row.status}" + (f"（{row.safe_message}）" if row.safe_message else "")
+        for row in result.source_health
+    ) or "无外部数据源"
+    lines = [
+        "# 每日监控",
+        "",
+        f"**数据截止日**：{day.isoformat()}（Asia/Shanghai）",
+        f"**运行状态**：{result.status}",
+        f"**摘要**：{_summary(result)}",
+        f"**数据源状态**：{health}",
+        "",
+        "> 价格条件、正式披露与其他研究缺口在同一份报告中展示；优先级表示研究处理顺序，不代表交易信号。",
+        "",
+    ]
+    for section, heading in SECTION_HEADINGS:
+        lines.extend([heading, ""])
+        rows = _sorted_items(item for item in result.items if item.section == section)
+        if not rows:
+            lines.extend(["无新增或持续事项。", ""])
+            continue
+        for item in rows:
+            lines.extend(
+                _render_item(item, show_workflow=item.fingerprint in workflow_owners)
+            )
+    lines.extend(
+        [
+            "---",
+            "",
+            "价格达到条件只触发研究复核；正式披露的模型判断也只用于研究分流。",
+            "本报告用于学习和研究，不构成投资建议，也不会自动作出买卖或仓位结论。",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _json_value(value: Any) -> Any:
+    if isinstance(value, Path):
+        return str(value)
+    if isinstance(value, tuple):
+        return [_json_value(item) for item in value]
+    if isinstance(value, list):
+        return [_json_value(item) for item in value]
+    if isinstance(value, dict):
+        return {key: _json_value(item) for key, item in value.items()}
+    return value
+
+
+def report_payload(result: RunResult, *, run_date: date) -> dict[str, Any]:
+    return {
+        "schema": 1,
+        "date": run_date.isoformat(),
+        "timezone": "Asia/Shanghai",
+        "status": result.status,
+        "summary": _summary(result),
+        "items": [_json_value(asdict(item)) for item in _sorted_items(result.items)],
+        "notification_items": [item.fingerprint for item in result.notification_items],
+        "source_health": [_json_value(asdict(row)) for row in result.source_health],
+    }
+
+
+def _write_atomic(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    try:
+        with temporary.open("w", encoding="utf-8") as handle:
+            handle.write(content)
+            handle.flush()
+            os.fsync(handle.fileno())
+        temporary.replace(path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
+
+def write_reports(
+    result: RunResult, report_dir: str | Path, *, run_date: date | None = None
+) -> ReportPaths:
+    day = run_date or date.today()
+    directory = Path(report_dir)
+    paths = ReportPaths(
+        dated=directory / f"daily-monitor-{day:%Y%m%d}.md",
+        latest=directory / "daily-monitor-latest.md",
+        latest_json=directory / "daily-monitor-latest.json",
+    )
+    markdown = render_markdown(result, run_date=day)
+    payload = json.dumps(
+        report_payload(result, run_date=day), ensure_ascii=False, indent=2
+    ) + "\n"
+    _write_atomic(paths.dated, markdown)
+    _write_atomic(paths.latest, markdown)
+    _write_atomic(paths.latest_json, payload)
+    return paths
