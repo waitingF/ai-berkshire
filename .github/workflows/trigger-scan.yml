@@ -1,10 +1,10 @@
 name: 标的触发监控
 
-# 每个工作日 18:30（中国时间，UTC+8）自动扫描一次；
+# 每个工作日 19:05（中国时间，UTC+8）自动扫描一次；
 # 也可在 Actions 页面手动 Run workflow 触发。
 on:
   schedule:
-    - cron: "30 18 * * 1-5"
+    - cron: "5 19 * * 1-5"
       timezone: "Asia/Shanghai"  # 中国时间 UTC+8，周一至周五
   workflow_dispatch: {}       # 手动触发
 
