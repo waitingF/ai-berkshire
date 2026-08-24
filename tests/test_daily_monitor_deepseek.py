@@ -160,6 +160,19 @@ class DeepSeekClientTest(unittest.TestCase):
         self.assertEqual(result.status, "DEGRADED")
         self.assertTrue(result.needs_retry)
 
+    def test_invalid_output_reports_safe_contract_reason(self):
+        payload = valid_payload(buy_action="买入")
+        transport = SequenceTransport([envelope(payload), envelope(payload)])
+
+        result = DeepSeekClient(api_key="test-key", transport=transport).analyze(request())
+
+        self.assertEqual(result.status, "DEGRADED")
+        self.assertEqual(
+            result.limitations,
+            ("DeepSeek 输出校验失败: 未知字段 ['buy_action']",),
+        )
+        self.assertNotIn("买入", result.limitations[0])
+
     def test_retries_invalid_json_once(self):
         transport = SequenceTransport(
             [

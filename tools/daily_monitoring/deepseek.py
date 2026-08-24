@@ -325,8 +325,10 @@ class DeepSeekClient:
                 last_message = exc.safe_message
                 if not exc.retryable:
                     break
-            except (InvalidModelOutput, TimeoutError) as exc:
-                last_message = f"DeepSeek 输出校验失败: {type(exc).__name__}"
+            except InvalidModelOutput as exc:
+                last_message = f"DeepSeek 输出校验失败: {exc}"
+            except TimeoutError:
+                last_message = "DeepSeek 连接失败或超时"
             except Exception as exc:
                 code = getattr(exc, "code", None)
                 if code is not None and code != 429 and not 500 <= code < 600:
