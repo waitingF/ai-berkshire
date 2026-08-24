@@ -10,14 +10,14 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Any, Callable, Mapping
 
-from .collectors import cninfo, hkex, sec
+from .collectors import akshare, cninfo, hkex, sec
 from .config import infer_sources, load_targets
 from .context import build_context, find_completeness_gaps
 from .deepseek import AnalysisRequest, DeepSeekClient
 from .disclosures import deduplicate
 from .documents import ExtractedDocument, extract_document, prepare_prompt_chunks, temporary_document
 from .http import HttpClient, SourceError
-from .models import Disclosure, MonitorItem, RunResult, SourceHealth
+from .models import Disclosure, FallbackClue, MonitorItem, RunResult, SourceHealth
 from .report import write_reports
 from .state import load_state, save_state_atomic
 from .transitions import (
@@ -51,6 +51,7 @@ class MonitorServices:
     http: Any
     document_extractor: DocumentExtractor
     deepseek: Any | None
+    fallback_provider: Callable[..., list[FallbackClue]] | None = None
 
 
 FINANCIAL_DISCLOSURE_TYPES = frozenset(
@@ -97,6 +98,7 @@ def production_services(
         http=http,
         document_extractor=_production_extractor,
         deepseek=None if no_ai else DeepSeekClient(api_key=deepseek_api_key, model=deepseek_model),
+        fallback_provider=akshare.collect_fallback,
     )
 
 
@@ -141,6 +143,32 @@ def _service_item(
 
 def _document_key(disclosure: Disclosure) -> str:
     return f"{disclosure.source}:{disclosure.document_id}"
+
+
+def _fallback_fingerprint(clue: FallbackClue) -> str:
+    payload = f"fallback\0{clue.target_id}\0{clue.title}\0{clue.published_at}"
+    return hashlib.sha256(payload.encode()).hexdigest()
+
+
+def _fallback_item(clue: FallbackClue, *, notify: bool) -> MonitorItem:
+    return MonitorItem(
+        fingerprint=_fallback_fingerprint(clue),
+        section="disclosures",
+        priority="P1",
+        target_id=clue.target_id,
+        name=clue.target_id,
+        title=f"备用源线索：{clue.title}",
+        why_now=(
+            "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；"
+            "不得据此形成已验证事实或投资结论。"
+        ),
+        status="FALLBACK_CLUE",
+        source_urls=(clue.url,) if clue.verified and clue.url else (),
+        needs_human_review=True,
+        limitations=("AKShare 不是一期正式披露依据",),
+        notify=notify,
+        metadata={"fallback": True, "published_at": clue.published_at},
+    )
 
 
 def _document_record(disclosure: Disclosure) -> dict[str, Any]:
@@ -332,12 +360,14 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
                 source_targets.setdefault(source, []).append((target, config))
 
     all_collected: list[Disclosure] = []
+    fallback_state = state["services"].setdefault("akshare_clues", {})
     for source, configured_targets in sorted(source_targets.items()):
         source_state = state["sources"].setdefault(source, {})
         since = _cursor_start(source_state, options.today)
         collected: list[Disclosure] = []
         source_failed = False
         safe_message = None
+        failed_targets: list[tuple[dict[str, Any], dict[str, Any]]] = []
         for target, source_config in configured_targets:
             try:
                 collected.extend(
@@ -352,6 +382,7 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
             except Exception as exc:
                 source_failed = True
                 safe_message = _safe_failure(source, exc)
+                failed_targets.append((target, source_config))
         previous_status = source_state.get("status")
         if source_failed:
             degraded = True
@@ -371,6 +402,28 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
                     message=safe_message or f"{source} 披露采集失败",
                 )
             )
+            if source == "cninfo" and services.fallback_provider is not None:
+                for target, source_config in failed_targets:
+                    try:
+                        clues = services.fallback_provider(
+                            str(target["id"]),
+                            source_config,
+                            since=since,
+                            until=options.today,
+                        )
+                    except Exception:
+                        clues = []
+                    for clue in clues:
+                        fingerprint = _fallback_fingerprint(clue)
+                        items.append(
+                            _fallback_item(clue, notify=fingerprint not in fallback_state)
+                        )
+                        fallback_state[fingerprint] = {
+                            "target_id": clue.target_id,
+                            "title": clue.title,
+                            "published_at": clue.published_at,
+                            "updated_at": options.today.isoformat(),
+                        }
         else:
             status = "RECOVERED" if previous_status == "FAILED" else "OK"
             source_health.append(SourceHealth(source, status))

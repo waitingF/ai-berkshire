@@ -6,7 +6,7 @@ from pathlib import Path
 
 from tools.daily_monitoring.deepseek import DeepSeekAnalysis
 from tools.daily_monitoring.documents import ExtractedDocument
-from tools.daily_monitoring.models import Disclosure, VerifiedFact
+from tools.daily_monitoring.models import Disclosure, FallbackClue, VerifiedFact
 from tools.daily_monitoring.runner import MonitorOptions, MonitorServices, run_monitor
 
 
@@ -185,6 +185,67 @@ class DailyMonitorRunnerTest(unittest.TestCase):
             self.assertEqual(ai.calls, 0)
             disclosure_item = next(row for row in result.items if row.section == "disclosures")
             self.assertTrue(disclosure_item.needs_human_review)
+
+    def test_cninfo_failure_uses_akshare_only_as_unverified_clue(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = root / "data" / "triggers.json"
+            triggers.parent.mkdir(parents=True)
+            triggers.write_text(
+                json.dumps(
+                    {
+                        "schema": 1,
+                        "targets": [
+                            {
+                                "id": "样例A股",
+                                "name": "样例A股",
+                                "group": "重点",
+                                "codes": {"A": "sh600000"},
+                                "zones": [],
+                                "events": [],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            def failing_collector(*args, **kwargs):
+                raise RuntimeError("cninfo unavailable")
+
+            fallback_calls = []
+
+            def fallback(target_id, config, *, since, until):
+                fallback_calls.append(target_id)
+                return [
+                    FallbackClue(
+                        target_id=target_id,
+                        source="akshare",
+                        title="疑似业绩公告",
+                        published_at="2026-08-25",
+                        url="https://example.com/unverified",
+                        verified=False,
+                        needs_human_review=True,
+                    )
+                ]
+
+            runtime_services = MonitorServices(
+                quote_provider=lambda codes: {},
+                collectors={"cninfo": failing_collector},
+                http=object(),
+                document_extractor=lambda *args: None,
+                deepseek=FakeAI(ai_result()),
+                fallback_provider=fallback,
+            )
+
+            result = run_monitor(options(root, triggers), runtime_services)
+
+            clue = next(row for row in result.items if row.metadata.get("fallback"))
+            self.assertEqual(fallback_calls, ["样例A股"])
+            self.assertEqual(clue.section, "disclosures")
+            self.assertEqual(clue.verified_facts, ())
+            self.assertEqual(clue.source_urls, ())
+            self.assertTrue(clue.needs_human_review)
 
 
 if __name__ == "__main__":
