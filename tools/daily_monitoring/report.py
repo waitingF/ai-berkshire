@@ -98,6 +98,95 @@ def _render_item(item: MonitorItem, *, show_workflow: bool) -> list[str]:
     return lines
 
 
+def _as_number(value: Any) -> float | None:
+    if isinstance(value, bool):
+        return None
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return None
+    return number if number == number else None
+
+
+def _format_price(value: Any) -> str:
+    number = _as_number(value)
+    return f"{number:.2f}" if number is not None else "-"
+
+
+def _price_condition(metadata: dict[str, Any]) -> str:
+    low = _as_number(metadata.get("low"))
+    high = _as_number(metadata.get("high"))
+    direction = metadata.get("direction", "range")
+    if direction == "below" and high is not None:
+        return f"≤ {high:.2f}"
+    if direction == "above" and low is not None:
+        return f"≥ {low:.2f}"
+    if low is not None and high is not None:
+        return f"[{low:.2f}, {high:.2f}]"
+    if low is not None:
+        return f"≥ {low:.2f}"
+    if high is not None:
+        return f"≤ {high:.2f}"
+    return "-"
+
+
+def _price_gap(item: MonitorItem) -> str:
+    if item.status in {"TRIGGERED", "WARN"}:
+        return "区间内"
+    price = _as_number(item.metadata.get("price"))
+    low = _as_number(item.metadata.get("low"))
+    high = _as_number(item.metadata.get("high"))
+    direction = item.metadata.get("direction", "range")
+    boundary = None
+    if direction == "below":
+        boundary = high
+    elif direction == "above":
+        boundary = low
+    elif price is not None:
+        if low is not None and price < low:
+            boundary = low
+        elif high is not None and price > high:
+            boundary = high
+        else:
+            boundary = low if high is None else high
+    if price is None or boundary is None or boundary <= 0:
+        return "-"
+    return f"{abs(price - boundary) / boundary:.1%}"
+
+
+def _markdown_cell(value: Any) -> str:
+    return str(value).replace("|", "\\|").replace("\n", " ")
+
+
+def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
+    lines = [
+        "> 价格优先级：P0=区间内；P1=区间外且距边界≤5%；P2=距边界>5%。优先级只表示价格距离，不代表交易信号。",
+        "",
+        "| 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |",
+        "|---|---|---|---|---:|---:|---:|---|",
+    ]
+    for item in items:
+        metadata = item.metadata
+        status = item.status
+        if item.resolved:
+            status += "（已解除）"
+        elif item.needs_human_review:
+            status += "（待人工确认）"
+        cells = (
+            item.priority,
+            item.name,
+            metadata.get("market") or "-",
+            metadata.get("zone_label") or item.title,
+            _price_condition(metadata),
+            _format_price(metadata.get("price")),
+            _price_gap(item),
+            status,
+        )
+        lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
+    lines.append("")
+    return lines
+
+
 def render_markdown(result: RunResult, *, run_date: date | None = None) -> str:
     day = run_date or date.today()
     workflow_owners = _workflow_owners(result.items)
@@ -121,6 +210,9 @@ def render_markdown(result: RunResult, *, run_date: date | None = None) -> str:
         rows = _sorted_items(item for item in result.items if item.section == section)
         if not rows:
             lines.extend(["无新增或持续事项。", ""])
+            continue
+        if section == "price":
+            lines.extend(_render_price_table(rows))
             continue
         for item in rows:
             lines.extend(

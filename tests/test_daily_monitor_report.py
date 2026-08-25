@@ -19,6 +19,8 @@ def item(
     workflow=None,
     notify=False,
     resolved=False,
+    status="NEW",
+    metadata=None,
 ):
     return MonitorItem(
         fingerprint=fingerprint,
@@ -28,13 +30,14 @@ def item(
         name=name,
         title=title,
         why_now="出现了需要研究核验的增量，不构成买卖结论。",
-        status="NEW",
+        status=status,
         source_urls=(
             "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/example.pdf",
         ) if section == "disclosures" else (),
         next_workflow=workflow,
         notify=notify,
         resolved=resolved,
+        metadata=metadata or {},
     )
 
 
@@ -51,6 +54,65 @@ def result(items):
 
 
 class DailyMonitorReportTest(unittest.TestCase):
+    def test_price_section_renders_all_items_as_one_table(self):
+        markdown = render_markdown(
+            result(
+                [
+                    item(
+                        "p0",
+                        "price",
+                        "P0",
+                        title="加仓带：TRIGGERED",
+                        status="TRIGGERED",
+                        metadata={
+                            "market": "H",
+                            "zone_label": "加仓带",
+                            "low": 400,
+                            "high": 430,
+                            "direction": "range",
+                            "price": 410,
+                        },
+                    ),
+                    item(
+                        "p1",
+                        "price",
+                        "P1",
+                        target_id="样例公司",
+                        name="Example Co",
+                        title="复核线：NEAR",
+                        status="NEAR",
+                        metadata={
+                            "market": "US",
+                            "zone_label": "复核线",
+                            "low": None,
+                            "high": 100,
+                            "direction": "below",
+                            "price": 104,
+                        },
+                    ),
+                ]
+            ),
+            run_date=date(2026, 8, 25),
+        )
+
+        self.assertIn(
+            "| 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |",
+            markdown,
+        )
+        self.assertIn(
+            "P0=区间内；P1=区间外且距边界≤5%；P2=距边界>5%",
+            markdown,
+        )
+        self.assertIn(
+            "| P0 | 腾讯控股 | H | 加仓带 | [400.00, 430.00] | 410.00 | 区间内 | TRIGGERED |",
+            markdown,
+        )
+        self.assertIn(
+            "| P1 | Example Co | US | 复核线 | ≤ 100.00 | 104.00 | 4.0% | NEAR |",
+            markdown,
+        )
+        self.assertNotIn("### [P0] 腾讯控股", markdown)
+
     def test_report_has_exactly_three_business_sections(self):
         markdown = render_markdown(
             result(
