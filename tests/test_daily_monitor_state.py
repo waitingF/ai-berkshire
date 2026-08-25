@@ -49,6 +49,17 @@ class DisclosureSourceConfigTest(unittest.TestCase):
             },
         )
 
+    def test_explicitly_disabled_source_removes_market_inference(self):
+        target = {
+            "id": "纳指100",
+            "codes": {"US": "usQQQM"},
+            "disclosure_sources": {"sec": {"enabled": False}},
+        }
+
+        sources = config.infer_sources(target)
+
+        self.assertNotIn("sec", sources)
+
     def test_rejects_unknown_disclosure_source(self):
         target = {
             "id": "腾讯",

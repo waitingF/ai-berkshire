@@ -469,12 +469,15 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
         try:
             extracted = services.document_extractor(disclosure, target, services.http)
         except Exception as exc:
+            failure = (
+                exc.safe_message if isinstance(exc, SourceError) else type(exc).__name__
+            )
             extracted = ExtractedDocument(
                 status="EXTRACTION_FAILED",
                 sha256="",
                 pages_used=(),
                 chunks=(),
-                limitation=f"正文提取失败（{type(exc).__name__}）",
+                limitation=f"正文提取失败（{failure}）",
             )
 
         record["sha256"] = extracted.sha256 or None

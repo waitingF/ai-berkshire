@@ -44,7 +44,16 @@ def infer_sources(target: dict[str, Any]) -> dict[str, dict[str, Any]]:
     for source, override in overrides.items():
         if not isinstance(override, dict):
             raise ConfigError(f"{target.get('id')} 的 {source} 配置必须是对象")
-        inferred[source] = {**inferred.get(source, {}), **override}
+        enabled = override.get("enabled", True)
+        if not isinstance(enabled, bool):
+            raise ConfigError(f"{target.get('id')} 的 {source}.enabled 必须是布尔值")
+        if not enabled:
+            inferred.pop(source, None)
+            continue
+        inferred[source] = {
+            **inferred.get(source, {}),
+            **{key: value for key, value in override.items() if key != "enabled"},
+        }
 
     if hkex := inferred.get("hkex"):
         stock_code = str(hkex.get("stock_code", "")).strip()

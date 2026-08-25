@@ -8,6 +8,7 @@ from pathlib import Path
 from tools.daily_monitoring.deepseek import DeepSeekAnalysis
 from tools.daily_monitoring.documents import ExtractedDocument
 from tools.daily_monitoring.models import Disclosure, FallbackClue, VerifiedFact
+from tools.daily_monitoring.http import SourceError
 from tools.daily_monitoring.runner import (
     MonitorOptions,
     MonitorServices,
@@ -250,6 +251,29 @@ class DailyMonitorRunnerTest(unittest.TestCase):
             self.assertEqual(ai.calls, 0)
             disclosure_item = next(row for row in result.items if row.section == "disclosures")
             self.assertTrue(disclosure_item.needs_human_review)
+
+    def test_extraction_source_error_keeps_safe_failure_reason(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root)
+            runtime_services = services(FakeAI(ai_result()))
+
+            def failing_extractor(*args, **kwargs):
+                raise SourceError(
+                    "sec", "连接中断或响应不完整", retryable=True
+                )
+
+            runtime_services.document_extractor = failing_extractor
+
+            result = run_monitor(options(root, triggers), runtime_services)
+
+            disclosure_item = next(
+                row for row in result.items if row.section == "disclosures"
+            )
+            self.assertEqual(
+                disclosure_item.limitations,
+                ("正文提取失败（连接中断或响应不完整）",),
+            )
 
     def test_cninfo_failure_uses_akshare_only_as_unverified_clue(self):
         with tempfile.TemporaryDirectory() as tmp:

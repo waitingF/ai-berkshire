@@ -143,7 +143,10 @@ class DeepSeekClientTest(unittest.TestCase):
         sent = transport.requests[0]
         self.assertEqual(result.status, "OK")
         self.assertEqual(sent["response_format"], {"type": "json_object"})
+        self.assertEqual(sent["thinking"], {"type": "disabled"})
+        self.assertNotIn("max_tokens", sent)
         self.assertIn("JSON", sent["messages"][0]["content"])
+        self.assertIn('"verified_facts": []', sent["messages"][0]["content"])
         serialized = json.dumps(sent, ensure_ascii=False)
         self.assertNotIn("reports/腾讯/thesis.md", serialized)
         self.assertNotIn("test-key", serialized)
@@ -185,6 +188,18 @@ class DeepSeekClientTest(unittest.TestCase):
 
         self.assertEqual(result.status, "OK")
         self.assertEqual(transport.calls, 2)
+        self.assertNotEqual(
+            transport.requests[0]["messages"],
+            transport.requests[1]["messages"],
+        )
+        self.assertIn(
+            "上一次输出未通过校验",
+            transport.requests[1]["messages"][-1]["content"],
+        )
+        repair_prompt = transport.requests[1]["messages"][-1]["content"]
+        self.assertIn("page 只能是正整数或 null", repair_prompt)
+        self.assertIn("confidence 只能是 high/medium/low", repair_prompt)
+        self.assertIn("next_workflow 只能是允许的命令或 null", repair_prompt)
 
     def test_second_timeout_returns_degraded_and_retryable(self):
         transport = SequenceTransport([TimeoutError(), TimeoutError()])
@@ -205,6 +220,44 @@ class DeepSeekClientTest(unittest.TestCase):
 
         self.assertEqual(result.status, "OK")
         self.assertEqual(transport.calls, 2)
+
+    def test_repeated_empty_response_reports_safe_finish_reason(self):
+        empty = {
+            "choices": [
+                {
+                    "message": {"content": ""},
+                    "finish_reason": "insufficient_system_resource",
+                }
+            ]
+        }
+        transport = SequenceTransport([empty, empty])
+
+        result = DeepSeekClient(api_key="test-key", transport=transport).analyze(
+            request()
+        )
+
+        self.assertEqual(
+            result.limitations,
+            (
+                "DeepSeek 输出校验失败: 模型返回空内容"
+                "（finish_reason=insufficient_system_resource）",
+            ),
+        )
+
+    def test_malformed_finish_reason_is_not_exposed_as_internal_error(self):
+        empty = {
+            "choices": [{"message": {"content": ""}, "finish_reason": []}]
+        }
+        transport = SequenceTransport([empty, empty])
+
+        result = DeepSeekClient(api_key="test-key", transport=transport).analyze(
+            request()
+        )
+
+        self.assertEqual(
+            result.limitations,
+            ("DeepSeek 输出校验失败: 模型返回空内容",),
+        )
 
     def test_rate_limit_retries_once(self):
         transport = SequenceTransport([HttpFailure(429), envelope(valid_payload())])

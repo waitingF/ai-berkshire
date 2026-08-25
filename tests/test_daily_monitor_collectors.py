@@ -1,3 +1,4 @@
+import http.client
 import json
 import unittest
 from dataclasses import replace
@@ -90,6 +91,26 @@ class OfficialUrlTest(unittest.TestCase):
 
         self.assertIn("ASCII", caught.exception.safe_message)
         self.assertIn("英文姓名", caught.exception.safe_message)
+
+    @patch("tools.daily_monitoring.http.urllib.request.urlopen")
+    def test_remote_disconnect_is_retried_before_download_fails(self, urlopen):
+        response = MagicMock()
+        response.geturl.return_value = "https://www1.hkexnews.hk/report.pdf"
+        response.headers.get.return_value = None
+        response.read.return_value = b"pdf-bytes"
+        response.__enter__.return_value = response
+        urlopen.side_effect = [
+            http.client.RemoteDisconnected("remote closed connection"),
+            response,
+        ]
+
+        payload = HttpClient(retries=1, sleep=lambda _: None).get_bytes(
+            "https://www1.hkexnews.hk/report.pdf",
+            source="hkex",
+            max_bytes=1024,
+        )
+
+        self.assertEqual(payload, b"pdf-bytes")
 
 
 class SecCollectorTest(unittest.TestCase):

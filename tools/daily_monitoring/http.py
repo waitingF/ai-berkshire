@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import http.client
 import json
 import ssl
 import time
@@ -154,6 +155,12 @@ class HttpClient:
                 final_error = exc
                 if attempt == self.retries:
                     raise SourceError(source, "连接失败或超时", retryable=True) from exc
+            except (ConnectionError, http.client.HTTPException) as exc:
+                final_error = exc
+                if attempt == self.retries:
+                    raise SourceError(
+                        source, "连接中断或响应不完整", retryable=True
+                    ) from exc
             if attempt < self.retries:
                 self._sleep(min(2**attempt, 4))
         raise SourceError(source, f"请求失败: {type(final_error).__name__}")
