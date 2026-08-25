@@ -1,0 +1,3511 @@
+{
+  "schema": 1,
+  "date": "2026-08-25",
+  "timezone": "Asia/Shanghai",
+  "status": "DEGRADED",
+  "summary": "P0 26 · P1 90 · 新增价格 0 · 新增披露 107 · 异常 1",
+  "items": [
+    {
+      "fingerprint": "28165036d4da5687ea5176d5a2d2ecb936b6089d061c86c22bc6dfa4a67f199a",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "AMD",
+      "name": "AMD",
+      "title": "2026Q2业绩（8/4已发）：已逾期",
+      "why_now": "登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。",
+      "status": "OVERDUE",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "OVERDUE",
+        "date": "2026-08-04",
+        "days": -21,
+        "event_type": "财报",
+        "note": "核10-Q的AI GPU、毛利、FCF、稀释EPS与权证影响"
+      }
+    },
+    {
+      "fingerprint": "bbee108ff050accd82c6b31520727765a1c7089aa8b434b6905ed374f1a72048",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "Archrock",
+      "name": "Archrock",
+      "title": "Q2业绩已发，10-Q后复检：已逾期",
+      "why_now": "登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。",
+      "status": "OVERDUE",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "OVERDUE",
+        "date": "2026-08-05",
+        "days": -20,
+        "event_type": "财报",
+        "note": "核10-Q的现金、净债务、CapEx、利用率、继任与指引"
+      }
+    },
+    {
+      "fingerprint": "935f4ab703b8b1c3974bbbcc3dc2dc6a00b3e8bd86ccca139d8b903bddd9f8d6",
+      "section": "other",
+      "priority": "P0",
+      "target_id": "20260801-PLTR",
+      "name": "Palantir（NASDAQ:PLTR）",
+      "title": "台账复检日已过但状态未关闭",
+      "why_now": "复检日 2026-08-03，当前状态：待触发。",
+      "status": "GAP",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "gap_type": "overdue_ledger",
+        "evidence_path": "reports/标的跟踪表.md#20260801-PLTR"
+      }
+    },
+    {
+      "fingerprint": "5f29863419198f96bb4bc93d5462b8b0f32bc4d26938f8ae7d3473118673f370",
+      "section": "other",
+      "priority": "P0",
+      "target_id": "20260721-Progressive",
+      "name": "Progressive（NYSE:PGR）",
+      "title": "台账复检日已过但状态未关闭",
+      "why_now": "复检日 2026-08-03，当前状态：待触发。",
+      "status": "GAP",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "gap_type": "overdue_ledger",
+        "evidence_path": "reports/标的跟踪表.md#20260721-Progressive"
+      }
+    },
+    {
+      "fingerprint": "92a7282f2b4ebd83a355253ecdddd8eb11a3a0152972daa7b2d47e80987e2c6a",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "SLDP",
+      "name": "Solid Power",
+      "title": "2026Q3 10-Q后复检：已逾期",
+      "why_now": "登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。",
+      "status": "OVERDUE",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "OVERDUE",
+        "date": "2026-08-05",
+        "days": -20,
+        "event_type": "财报",
+        "note": "核流动性、OEM合作或融资公告"
+      }
+    },
+    {
+      "fingerprint": "94a344cd5a3ab323f4b371732df1ed3bed91284f9cbf1c0421bc261e94e8a91a",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "中兴通讯",
+      "name": "中兴通讯",
+      "title": "2026年半年度报告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490139.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "8e53f3de8983354f6b07e8c23bc666238317895983bc39dccc802fc08b0ef1d2",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "中兴通讯",
+      "name": "中兴通讯",
+      "title": "2026年半年度报告摘要",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490138.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "7de041909974ed718737de45bc14d00cc8a7aecedef8ad3c592c15e291427817",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "中国平安",
+      "name": "中国平安",
+      "title": "2026中报（8/21）：已逾期",
+      "why_now": "登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。",
+      "status": "OVERDUE",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "OVERDUE",
+        "date": "2026-08-21",
+        "days": -4,
+        "event_type": "财报",
+        "note": "重做利差损监测表：净投资收益率、偿付能力、NBV价值率、个险止跌"
+      }
+    },
+    {
+      "fingerprint": "037efeb11896ed0e5592e31638056668d6e471e92a9aa16ab936b4e7d54853f7",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "京东",
+      "name": "京东集团",
+      "title": "2026Q2/中期业绩（8/13已过）：已逾期",
+      "why_now": "登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。",
+      "status": "OVERDUE",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "OVERDUE",
+        "date": "2026-08-13",
+        "days": -12,
+        "event_type": "财报",
+        "note": "核新业务减亏、零售利润率、FCF"
+      }
+    },
+    {
+      "fingerprint": "827cd227155f17ec0e095c56228279adc51af2f99ec4389ea3fb33fb51c9a657",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "剑桥科技",
+      "name": "剑桥科技",
+      "title": "2026年半年度报告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225496844.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型内容不是有效 JSON"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "f9e6767533e159dbb6b43162943fa64f4ff9f2047aef9454bd3e922830d7e6b3",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "剑桥科技",
+      "name": "剑桥科技",
+      "title": "2026年半年度报告摘要",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497025.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "826a3bfec0fc6a3f3d6d814acf45186c835316b5c15518691d6ad82d9d534bee",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "8/24配售结果及8/25上市：已逾期",
+      "why_now": "登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。",
+      "status": "OVERDUE",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "OVERDUE",
+        "date": "2026-08-24",
+        "days": -1,
+        "event_type": "公告",
+        "note": "核最终定价、稀释与首日表现"
+      }
+    },
+    {
+      "fingerprint": "48d57d01302bad4bc25045b5522352cf90b430a94d0d51e7b3bd74fa8c628153",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "ANNOUNCEMENT OF FINAL OFFER PRICE AND ALLOTMENT RESULTS",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401907.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "24/08/2026 22:29",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "7895404de6ae6da87590361ff41561158a6ced34ba704ffb568ff04ea91b6e2d",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "INTERIM RESULTS ANNOUNCEMENT\nFOR THE SIX MONTHS ENDED JUNE 30, 2026",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401367.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "24/08/2026 20:10",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "4ea11c09387def43b6ed0d55efbfb6d33e75b322045c49611ea06c2729bac887",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成2026年半年度报告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498332.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型内容不是有效 JSON"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "06d124ac903988dfd3e49bd2fdeeaec2a2c934394c9be9b2387195faaeb1acc8",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成2026年半年度报告摘要",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498312.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "ade62d1bd4033ab786fec2ffa35128bad19bbf3f7247041b449433eace29a775",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "汇川技术",
+      "name": "汇川技术",
+      "title": "2026年半年度业绩快报",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-24/1225498831.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "业绩预告",
+        "published_at": "2026-08-24T19:10:10+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "de5a9cb374b69cb50da4fc41009e19ab2e7e353b127d12081eb0d6827ab71ffb",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "2026年半年度报告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500221.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "cd756471b149e2b85e0c5ad5804a1cae74f1c59c4414a4865ef1560a298d4fe4",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "2026年半年度报告摘要",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500220.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型内容不是有效 JSON"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "600699b333d3d1f6f3e00b230db97ebb896da14882b0bf81a26e1783890b752c",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "2026年半年度财务报告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500232.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "5f6148f9122d15505dc2823b59f5d4f69870779891da52aee97836c601f50139",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "Interim Report 2026",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082402021.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "24/08/2026 22:51",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "249d9074abf136d82b495fa6d653f02f22e523d98d6ab6266e2d9675506dc164",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "INTERIM RESULTS ANNOUNCEMENT FOR THE SIX MONTHS ENDED 30 JUNE 2026",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082402005.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "24/08/2026 22:48",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "f156978bb6b0023127bd2961aa062c5d550a375cd3590a683bd0176232e5b75f",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "立讯精密工业股份有限公司2026年第三季度业绩预告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500281.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "业绩预告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "5cfc31fc928b74364fbb8c8c8f5fc5600dc4543f0299a276335dc755ded70884",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "2026H1披露（8/22）：已逾期",
+      "why_now": "登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。",
+      "status": "OVERDUE",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "OVERDUE",
+        "date": "2026-08-22",
+        "days": -3,
+        "event_type": "财报",
+        "note": "核主业利润、FCF、客户集中与新业务披露"
+      }
+    },
+    {
+      "fingerprint": "e40f1b57013e1cd6df2ac266fdfbd5f780334cb03ed448d2aba7e96838f9eed5",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "2026年半年度报告",
+      "why_now": "2026年半年度报告已正式披露（2026-08-22），核心财务数据显示公司2026H1营收与归母净利润显著下滑，但Q2环比改善、毛利率提升。此报告直接触发预定的中报后研究节点，且归母净利润同比降幅近50%，需立即更新标的研究与跟踪表。",
+      "status": "DONE",
+      "verified_facts": [
+        {
+          "fact": "2026年上半年，公司实现营业总收入288.66亿元，同比下降12.42%；整体毛利率16.43%，同比提升2.21个百分点；实现归属于上市公司股东的净利润5.77亿元，同比下降49.52%。",
+          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491665.PDF",
+          "page": 11,
+          "confidence": "high"
+        },
+        {
+          "fact": "2026年第二季度，公司收入147.27亿元，同比下降7.36%；归属于上市公司股东的净利润7.26亿元，同比增长1.77%，环比扭亏为盈；整体毛利率18.2%，同比提升2.47个百分点。",
+          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491665.PDF",
+          "page": 11,
+          "confidence": "high"
+        },
+        {
+          "fact": "报告期内财务费用中汇兑损益为-4.92亿元，系人民币兑美元汇率单边快速升值所致。",
+          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491665.PDF",
+          "page": 11,
+          "confidence": "high"
+        },
+        {
+          "fact": "报告期内研发投入14.90亿元，研发资源重点向高端新材料、AI算力和AI端侧等核心前沿领域倾斜。",
+          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491665.PDF",
+          "page": 11,
+          "confidence": "high"
+        },
+        {
+          "fact": "消费电子：报告期内智能手机与电脑类业务实现营业收入223.82亿元，同比下降17.67%，占公司总体营收比例77.54%；板块毛利率16.17%，同比提升2.99个百分点。",
+          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491665.PDF",
+          "page": 11,
+          "confidence": "high"
+        },
+        {
+          "fact": "公司2026年中期利润分配方案为：以实施利润分配股权登记日登记的总股本扣除公司回购专用账户中的回购股份为基数，向全体股东每10股派发现金红利人民币1.00元（含税），不送红股，不进行公积金转增股本；现金分红总额（含其他方式）811,330,908.84元。",
+          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491665.PDF",
+          "page": 30,
+          "confidence": "high"
+        },
+        {
+          "fact": "截至2026年6月30日，公司应收账款余额前五名客户占比63.78%（2025年12月31日：72.44%）。",
+          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491665.PDF",
+          "page": 152,
+          "confidence": "high"
+        }
+      ],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491665.PDF"
+      ],
+      "next_workflow": "/earnings-review",
+      "needs_human_review": true,
+      "limitations": [
+        "仅依据单份半年报公告片段，未核验完整财务报表附注及审计意见。",
+        "新业务（AI眼镜、具身智能、AI服务器等）未见独立收入/毛利/利润披露，无法评估估值期权。",
+        "未交叉验证第三方数据平台（如东方财富、新浪财经）的同期财务数据。",
+        "衍生品期末投资金额占净资产14.45%，但套保效果与净敞口信息有限。",
+        "本输出不构成任何投资建议，仅用于事实核验与流程判断。"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": [
+          "业绩验证：2026H1归母净利润5.77亿元，同比下降49.52%，显著弱于2025年报趋势，直接验证了原报告'2026 Q1已出现收入下滑、亏损'的担忧，且利润降幅扩大。",
+          "环比改善：Q2归母净利润7.26亿元（同比+1.77%，环比扭亏为盈），毛利率提升至18.2%，显示主业盈利能力出现恢复迹象，符合原报告'中报显示主业恢复'的观察条件之一。",
+          "业务结构：智能手机/电脑业务收入占比77.54%，仍为绝对主力，但同比下降17.67%；新业务（AI眼镜、具身智能、AI服务器结构件等）虽提及'核心卡位'，但未披露独立收入与利润数据，期权价值仍未获财务验证。",
+          "汇率影响：汇兑损益-4.92亿元显著拖累利润，印证了原报告对汇率敏感性的判断；公司通过衍生品对冲，期末衍生品投资金额占净资产14.45%，需关注对冲有效性。",
+          "客户集中度：前五大客户应收账款占比从72.44%降至63.78%，集中度有所下降，属轻微正面信号。",
+          "分红：中期每10股派1.00元，加上其他方式现金分红总额8.11亿元，体现股东回报意愿，但相对当前市值规模（约1667亿元）比例有限。",
+          "资本开支与FCF：报告未直接披露资本开支与FCF数据，但现金流量表显示投资活动净流出持续高位（-47.86亿元），需在后续研究中核验FCF是否继续恶化。"
+        ]
+      }
+    },
+    {
+      "fingerprint": "f3ec78b040a91c6f5bca8ce04530e4776868ce580efd57c80e508f31f5b4af3a",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "2026年半年度报告摘要",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491664.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "财报",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "9906f586dd6d5e564f0407f01a8ef7f06f8ac7fb63a9e1fda093f6bac68e666a",
+      "section": "other",
+      "priority": "P1",
+      "target_id": "Keyence",
+      "name": "Keyence",
+      "title": "本地研究链接失效",
+      "why_now": "配置链接不存在：reports/Keyence/Keyence-FY2026Q1.md",
+      "status": "GAP",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "gap_type": "broken_link",
+        "evidence_path": "reports/Keyence/Keyence-FY2026Q1.md"
+      }
+    },
+    {
+      "fingerprint": "4d10d3eda8684cf144db863f6496b2d8480bd2137f51f90f5be7bb56cb6bfc36",
+      "section": "other",
+      "priority": "P1",
+      "target_id": "微软",
+      "name": "Microsoft",
+      "title": "thesis 缺少下次检查节点",
+      "why_now": "论文没有可识别的下次检查或复检字段。",
+      "status": "GAP",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "gap_type": "missing_next_check",
+        "evidence_path": "reports/微软/微软-thesis.md"
+      }
+    },
+    {
+      "fingerprint": "ddbdc36d5f7decce383a8ead372f9d3afbb06c424f75dbccd1df1c2c8f010293",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "NovoNordisk",
+      "name": "NovoNordisk",
+      "title": "FORM 6-K",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/353278/000117184326005715/f6k_082426.htm"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "6-K",
+        "published_at": "2026-08-24T10:49:41.000Z",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "acbc104bb52fa6d0269b33a65d2e8f5ca5f6f5d67cca7e38daa53c78238987f2",
+      "section": "other",
+      "priority": "P1",
+      "target_id": "sec",
+      "name": "SEC",
+      "title": "数据源异常",
+      "why_now": "SEC ticker 未映射到 CIK: QQQM",
+      "status": "FAILED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "service": "sec"
+      }
+    },
+    {
+      "fingerprint": "14b58661868908d86479ce079069f9811d58e9c0ee45df1f2f892daa1aec3c71",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "上海复旦",
+      "name": "上海复旦",
+      "title": "2026H1业绩：6 天后到期",
+      "why_now": "登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-31",
+        "days": 6,
+        "event_type": "财报",
+        "note": "核扣除约4.7亿公允价值收益后的经营利润、库存减值、管理层资本配置"
+      }
+    },
+    {
+      "fingerprint": "d44adba42bc3f930a432cb50732794692abd7ce1f7194271850703123bf8e41d",
+      "section": "other",
+      "priority": "P1",
+      "target_id": "上海复旦",
+      "name": "上海复旦",
+      "title": "报告含明确价格区间但未登记监控",
+      "why_now": "需要人工确认并按触发规则登记，未登记即不会自动监控。",
+      "status": "GAP",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "gap_type": "unregistered_price",
+        "evidence_path": "reports/上海复旦/上海复旦-research-20260802.md"
+      }
+    },
+    {
+      "fingerprint": "4dc180aa96c41272e8e67d6803fb5b382b2f7f82167f56d86c5e55b47170e990",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "中兴通讯",
+      "name": "中兴通讯",
+      "title": "2026年半年度非经营性资金占用及其他关联资金往来情况的专项说明",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490140.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "4f46b84fff775fe934aa2b54f1477a583ea59a73fc498f6bac8f91e8d6fa6e45",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "中兴通讯",
+      "name": "中兴通讯",
+      "title": "公司信用类债券信息披露管理制度",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490143.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "2dc0a317d71d1cd3ffa6f6c3c8e6bda40b0ae335d7f18e2e2ba2b996023734d7",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "中兴通讯",
+      "name": "中兴通讯",
+      "title": "关于“质量回报双提升”行动方案的进展公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490142.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "d6ce965cfa40e1ae3c5b4e2fd980d044a42dfe5f99357cf4f972733e208cce30",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "中兴通讯",
+      "name": "中兴通讯",
+      "title": "第十届董事会第三十三次会议决议公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490141.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "0d2d7e03beaec41a55eb48279de6aca2b66e578fe66ffe2b62e37e600f69fcd6",
+      "section": "other",
+      "priority": "P1",
+      "target_id": "中国平安",
+      "name": "中国平安",
+      "title": "报告含明确价格区间但未登记监控",
+      "why_now": "需要人工确认并按触发规则登记，未登记即不会自动监控。",
+      "status": "GAP",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "gap_type": "unregistered_price",
+        "evidence_path": "reports/中国平安/中国平安-thesis.md"
+      }
+    },
+    {
+      "fingerprint": "ff583edce22044c37b55b6b6d133a15b6f5c74cdc39e2948634ea8c608da59b5",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "中国广核",
+      "name": "中国广核",
+      "title": "关于公司2026年度第三期及第四期中期票据发行完成的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225490137.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "3baa2009cd84b6490f4918071c315d0dcfcc99872e77f139191dfb5b02cb3c39",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "中芯国际",
+      "name": "中芯国际",
+      "title": "2026年中期业绩董事会：2 天后到期",
+      "why_now": "登记事件状态为2 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-27",
+        "days": 2,
+        "event_type": "财报",
+        "note": "确认正式中期业绩是否带来Q2公告以外的新事实；重点核库存、应收、债务、资本开支和现金流量表"
+      }
+    },
+    {
+      "fingerprint": "6528b320ee72fb2c9d338d8eadf869e7b1f3f6197fe8dfaa3f47942ad61bab9e",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "兆易创新",
+      "name": "兆易创新",
+      "title": "2026H1正式中报：6 天后到期",
+      "why_now": "登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-31",
+        "days": 6,
+        "event_type": "财报",
+        "note": "核扣非、经营现金流、库存、关联交易"
+      }
+    },
+    {
+      "fingerprint": "a3c050098bf58b04fb4e8effa8953aeed9aaaa8c86a7c2b6b66c061e3995cd53",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "兆易创新",
+      "name": "兆易创新",
+      "title": "H股公告-翌日披露报表",
+      "why_now": "正式披露未提取到可用文本，一期不执行 OCR，需要人工核验。",
+      "status": "OCR_REQUIRED",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498717.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "PDF 未提取到可用文本，一期不执行 OCR"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "7a3e163dc4b436f12ae42889bc6cddeb36cd14c112be237a7dc95884a278f178",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "兆易创新",
+      "name": "兆易创新",
+      "title": "Next Day Disclosure Return",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401087.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 连接失败或超时"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 18:47",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "657bc36ac221aab41658fb151e989c6513f39995cccae302354c2a7285a9e7a4",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "兆易创新",
+      "name": "兆易创新",
+      "title": "兆易创新关于以集中竞价交易方式首次回购A股股份的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225489724.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "d2f485b4d278e1e1c68a2c0b4455ea1b6109f26b707f3aff39cf74c687d835e7",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "剑桥科技",
+      "name": "剑桥科技",
+      "title": "2026年半年度利润分配方案公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497187.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "b5288fae59928b2860cea566603ab88428f71256db2ade49298206c9db771e4b",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "剑桥科技",
+      "name": "剑桥科技",
+      "title": "第五届董事会审计委员会第十六会议决议",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497490.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "e98947c76cc76a016309a1825b2c8cdd99ea808c1a02b810b9638b6303bed800",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "剑桥科技",
+      "name": "剑桥科技",
+      "title": "第五届董事会第三十四次会议决议公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497060.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "9b099da7da533795d82b80adae68ae51daa64d56f79f4309ff1b5363b893d229",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "剑桥科技",
+      "name": "剑桥科技",
+      "title": "第五届董事会薪酬与考核委员会第九次会议决议",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225497104.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型内容不是有效 JSON"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "6f2a5483be24ba3d607f344eba3c773378430432afd4b913a9d8e256402e1348",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "ARTICLES OF ASSOCIATION",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082400007.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 06:06",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "adeb9e150a05f2ff13700b80c9291ad0a932fa1652e41e5f83625605bdbeb71b",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "H股公告-董事会会议通告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-24/1225498989.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型内容不是有效 JSON"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-24T19:14:11+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "4b65f969b82262007e55edda80136d72e05abfd21e2f225a718f24ea1839db44",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "LIST OF DIRECTORS AND THEIR ROLE AND FUNCTION",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082400029.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 06:42",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "e22c4a8b4c38f92f234825c48367f1e3708f931c37bb73c0aee3540c7595d72b",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "NOTICE OF BOARD MEETING",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082400993.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 18:14",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "ee8517f4e0e3a128fcd076d7bf3cea3b2fad7542e9080ba9fab73705792cc752",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "TERMS OF REFERENCE FOR THE AUDIT COMMITTEE OF THE BOARD OF DIRECTORS",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082400015.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 06:15",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "f84ee2cb777b2531653f642fe2fa907898c71f5381fd69c258530db8e975b905",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "TERMS OF REFERENCE FOR THE NOMINATION AND REMUNERATION COMMITTEE OF THE BOARD OF DIRECTORS",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082400025.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082400023.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 06:32",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "7d3a7eeef8d551cb3061a98a84894bf87847cd2dcf896a7e2e6bd56c163e6be9",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "TERMS OF REFERENCE FOR THE STRATEGY AND ESG COMMITTEE OF THE BOARD OF DIRECTORS",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082400027.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 06:38",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "5081ad854bf5786a33c0a14870a0c74de5159aa518352c7f6e607d371d7f20ca",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "华虹宏力",
+      "name": "华虹半导体",
+      "title": "2026H1披露：6 天后到期",
+      "why_now": "登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-31",
+        "days": 6,
+        "event_type": "财报",
+        "note": "核华力微交割/融资条款与Fab9回报"
+      }
+    },
+    {
+      "fingerprint": "88e440988abe3b500ac9a841e9e39e50562fed69d1abaa269ce696af9cc75483",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "国电南瑞",
+      "name": "国电南瑞",
+      "title": "国电南瑞关于召开2026年半年度业绩说明会的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225494046.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: limitations 必须是字符串数组"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "9017c6dd9eda7b204f7c1314f84dc0ea1a0d5b66dd90a6f8882e551e0a90a954",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "多氟多",
+      "name": "多氟多",
+      "title": "2026H1正式报告：6 天后到期",
+      "why_now": "登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-31",
+        "days": 6,
+        "event_type": "财报",
+        "note": "核锂盐毛利、OCF、净债务"
+      }
+    },
+    {
+      "fingerprint": "47614c423681c9126fa8e95bcdbf885da97945a00f5a8a4a0d7445809406ab1a",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "天齐锂业",
+      "name": "天齐锂业",
+      "title": "关于举行2026年半年度业绩说明会的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225496657.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "283084d06e47264e1c8d065c776eb36c0cefc3a9e3d00e2eca7ea105d3bf5a8e",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "快手",
+      "name": "快手",
+      "title": "2026H1中报后复检：6 天后到期",
+      "why_now": "登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-31",
+        "days": 6,
+        "event_type": "财报",
+        "note": "核主站减速、AI资本强度与可灵单位经济"
+      }
+    },
+    {
+      "fingerprint": "91f2e4071e7abd42068ff26160e90082fad21fcd8500bfbbf1ba9fa6628b84d6",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "2026H1正式报告：6 天后到期",
+      "why_now": "登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-31",
+        "days": 6,
+        "event_type": "财报",
+        "note": "证28nm/90nm BCD客户认证与稳定量产收入"
+      }
+    },
+    {
+      "fingerprint": "f4654f3a0915b18eb5c3d33dd1cdd1175919e1956e192d697d4582a54fcff8bb",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "AMENDMENTS TO THE ARTICLES OF ASSOCIATION",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401361.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 20:09",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "94803802147ecd45eb9b844ed5e8950425143753f1975b6f3dbf9e1c2c4dbdcf",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401710.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401702.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401692.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401606.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401594.htm"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 21:53",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "a487fa6d6357a9828096028e20301c89396ba04b698cb5ed31a370505904ed93",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "Articles of Association",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401363.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（SourceError）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 20:09",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "4359106d8270991ca904d3f7ce0a132e32e31873ff66b1c959a439e75b7a424e",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "CHANGE OF DIRECTORS",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401365.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 20:09",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "a9f52428800f0fe1f6d2b27f1be0196e72fd5be4e1ac72253e4a5d709da66e67",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "H股公告-截至2026年6月30日止六个月中期业绩公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500240.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "bf03e1cfbcf6b97bafe838c99fb115f7e15db52297bd2f0384c42e665ee1ee37",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "北京市金杜律师事务所上海分所关于合肥晶合集成电路股份有限公司2023年限制性股票激励计划预留授予部分第一期归属条件成就及部分限制性股票作废相关事项的法律意见书",
+      "why_now": "正式披露未提取到可用文本，一期不执行 OCR，需要人工核验。",
+      "status": "OCR_REQUIRED",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498303.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "PDF 未提取到可用文本，一期不执行 OCR"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "c6dea4f185a6908d85f69e3f486132bc033a8df62a34955bb8d1b220b044c148",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "合肥晶合集成电路股份有限公司章程",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498306.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "7a65ee80dc2f89fb764c6a1e7472fba4a755382b9698113810def8cd8999d4c1",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成2026年半年度募集资金存放、管理与实际使用情况的专项报告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498305.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "beaf129f5bcae1009ddd418f39dfd3a96ba456c18514ecfbe0bfee819609497d",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成2026年度提质增效重回报专项行动方案的半年度评估报告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498328.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "f8c70e14b8c0e0c1cdf94f3e4b1e44e46a4dba956469efa35966e1467b3dfe68",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成关于2023年限制性股票激励计划预留授予部分第一个归属期归属条件成就的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498324.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "623fdc626c68b7553ec9c073d1f5e76b0df1e893c1f82f0b14b4bbbf56dbfd26",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成关于作废2023年限制性股票激励计划部分已授予尚未归属的限制性股票的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498313.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "4878c1c342d629fe650132ec2dc2c974a4be6acc23ef4261840562dd320658ae",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成关于变更公司注册资本、修订《公司章程》并办理工商登记的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498320.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "df84b348fea5e5640cfc4e5d17b3c7c4d3e4f6dc9c6d919ae24858636131436a",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成关于聘任高级管理人员的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498311.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "a10249ff288c197f701e5a9a4328143c0a89300da313531981bf7783a255bae9",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成关于补选董事及独立董事、调整董事会专门委员会组成的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498300.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "1c12ffeabed18f27af2829a7ec77ab23dacd0a26b343ac009313adaea874b66a",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成独立董事候选人声明与承诺（盛明泉）",
+      "why_now": "正式披露未提取到可用文本，一期不执行 OCR，需要人工核验。",
+      "status": "OCR_REQUIRED",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498308.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "PDF 未提取到可用文本，一期不执行 OCR"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "3096a54066e9e6346354b284364f8fc1363130cd99741bec536a821e775950a3",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成独立董事提名人声明与承诺（盛明泉）",
+      "why_now": "正式披露未提取到可用文本，一期不执行 OCR，需要人工核验。",
+      "status": "OCR_REQUIRED",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498317.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "PDF 未提取到可用文本，一期不执行 OCR"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "a5a03aba30751293b0ced9bb5d7cf6d20a9f677fd2736fc6f5335ab350874f00",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成第二届董事会第三十七次会议决议公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498299.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "8f680b9d5e2dde839e919ca511a881efd1cef5e752dd6a54a5afae805747d7f7",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成董事会提名委员会关于第二届董事会董事候选人的审查意见",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498310.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "6941035ef1b7a547aa68997e11e138fe18c214e481c0fa9e485b76e26ad9b580",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "晶合集成董事会薪酬与考核委员会关于2023年限制性股票激励计划预留授予部分第一个归属期归属名单的核查意见",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225498325.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型内容不是有效 JSON"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "0add57794e4fd1707ca1cdf81e943e82b30acf9f6253464f83d699956f0e90a7",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "极视角",
+      "name": "极视角",
+      "title": "2026H1中报（预计8月下旬）：6 天后到期",
+      "why_now": "登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-31",
+        "days": 6,
+        "event_type": "财报",
+        "note": "核盈利、回款与现金流"
+      }
+    },
+    {
+      "fingerprint": "fbfc408106dc7f57096db849a56b0ad0925966ff5c9a1b7ba99f5e00e0e4687c",
+      "section": "other",
+      "priority": "P1",
+      "target_id": "标普500",
+      "name": "标普500指数（VOO）",
+      "title": "报告含明确价格区间但未登记监控",
+      "why_now": "需要人工确认并按触发规则登记，未登记即不会自动监控。",
+      "status": "GAP",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "gap_type": "unregistered_price",
+        "evidence_path": "reports/标普纳指定投-checklist-20260809.md"
+      }
+    },
+    {
+      "fingerprint": "9a8c12a91b9006e195e0f1e34ab24c067d5f646cb1a8332c08cb37ec62f50083",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "泡泡玛特",
+      "name": "泡泡玛特",
+      "title": "GRANT OF AWARDS PURSUANT TO THE POST-IPO\nSHARE AWARD SCHEME",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401217.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（SourceError）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 19:22",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "079a5a8e0d3ef833dfd2583dbd92dcfebd5c3f00704f6d586fe201c4f3c15ea5",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "深演智能",
+      "name": "深演智能",
+      "title": "Letter to Non-registered Shareholders - Arrangement of Electronic Dissemination of Corporate Communications and Reply Form",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401305.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（SourceError）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 19:51",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "5136075721d976b956d753de221319a50b1747745b0a7f0a5351361e4db1133f",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "深演智能",
+      "name": "深演智能",
+      "title": "Letter to Registered Shareholders - Arrangement of Electronic Dissemination of Corporate Communications and Reply Form",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401317.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 19:53",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "cd0888634c1d7617b5ffb908e0a8e4b636a4f96f0690018c2c27610605432a88",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "2026H1报告（预计8/28）：3 天后到期",
+      "why_now": "登记事件状态为3 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-28",
+        "days": 3,
+        "event_type": "财报",
+        "note": "核通信/汽车毛利、OCF覆盖、大客户占比"
+      }
+    },
+    {
+      "fingerprint": "9dbd63f7cf646dc86e2c6d300a1094e83521efe45a3295207dd567e67734fcec",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "2026年半年度财务报表",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500231.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "f9050d8ef385936ecfd0175776955bd13aea968c54160f03ad9a3a0e5fd39acd",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401910.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401900.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401876.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401866.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401852.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401726.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401720.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401714.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401706.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401700.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401694.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401614.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401608.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401598.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401584.htm"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 22:30",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "556be4a6d42b9547ec8456b06be035c3261062547f4454886bb903f743b0de58",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "NOTICE OF EXTRAORDINARY GENERAL MEETING",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401977.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 22:43",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "ed07981eb6b3453afb4d3d5066bb20d1907fd4da175773d87740f765f4b1ffdc",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "PROPOSED AMENDMENTS TO THE ARTICLES OF ASSOCIATION",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401921.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 22:35",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "0e5a822deb0cf7f595036c5a2840df8951cf968fef338eba77ab915967ca4ede",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "PROPOSED AMENDMENTS TO THE ARTICLES OF ASSOCIATION&#x3b;\nPROPOSED AMENDMENTS TO THE RULES FOR\nMANAGEMENT OF RELATED TRANSACTIONS&#x3b;\nPROPOSED REGISTRATION AND ISSUANCE OF BONDS&#x3b;\nAND\nNOTICE OF EXTRAORDINARY GENERAL MEETING",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401931.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 22:39",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "84f9c983c7e99b1add24bb54ea1ba7d6435dc6a2260c6d365e206d7c85fa588c",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "PROXY FORM FOR USE AT THE EXTRAORDINARY GENERAL MEETING\nTO BE HELD ON 16 SEPTEMBER 2026",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401991.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（SourceError）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 22:46",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "a5f5edbf46f7036e32aa873ccb577725c9b3875dc2fb88b8e0016d52e0555dfc",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "公司章程（2026年8月）",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500227.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "827c1bc0c27ed7fe6ad8f52fe146ffef9afda5d9a586e3fcb3daa3082f506acd",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "关于2026年半年度利润分配方案的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500282.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "3fe33960407acffa962f06a3dee5165a2168185bf935606bf48f2600db272079",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "关于“质量回报双提升”行动方案的进展公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500226.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "2b7b3cedcd4616d047063a5bc6fe5584e7a3b124f71169327c02b4c49cfc64bf",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "关于变更注册资本并修改《公司章程》的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500230.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "902ec28b12630833d5464f6cbea2691f50f1f7a0d34bd10d0245c8a6089a4092",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "关于拟注册发行债券的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500225.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "937fc331161ada871dfd6c2cc1468a34548b4cd53601f558d7a3331b77220be0",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "关联交易管理办法（2026年8月）",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500228.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "baf0b85ff5e51a1699864a7af39d7ca223c3c2bedc435cff52ffa19c861bcd5f",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "投资者关系管理制度（2026年8月）",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500229.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "abddb5866198ddac01bb9e024a88df21888f329b6b3d91f9532df44f96c45769",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "立讯精密工业股份有限公司关于召开2026年第一次临时股东会的通知",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500224.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "e6e321d1dff94e6fc4f8bb0aa1d98ec29f414d6ae1a7b87652f4487d3a1c2cd0",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "第六届董事会第二十八次会议决议公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500223.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "c3dc66e7d09d1dabd304c2bd4d3ac19516d5bd0bcb26e4e1cfbc4909eac5c244",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
+      "title": "非经营性资金占用及其他关联资金往来情况汇总表",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225500222.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "a3af0328a2211be676851119f8078c03ef00ecdba7a2a7de3c2cb80916544a13",
+      "section": "other",
+      "priority": "P1",
+      "target_id": "纳指100",
+      "name": "纳斯达克100指数（QQQM）",
+      "title": "报告含明确价格区间但未登记监控",
+      "why_now": "需要人工确认并按触发规则登记，未登记即不会自动监控。",
+      "status": "GAP",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "gap_type": "unregistered_price",
+        "evidence_path": "reports/标普纳指定投-checklist-20260809.md"
+      }
+    },
+    {
+      "fingerprint": "932e3be41929fc9a356bc965a4d085ca94124105de6a4d89fe2377399856e54f",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "美团",
+      "name": "美团-W",
+      "title": "2026中报：2 天后到期",
+      "why_now": "登记事件状态为2 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-27",
+        "days": 2,
+        "event_type": "财报",
+        "note": "核Q2/H1减亏斜率、份额硬数据、销售费用率"
+      }
+    },
+    {
+      "fingerprint": "a0c9a6076426e18c6381f92afca1d313985415440d9b5008b4df56b431b162c7",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "2026年半年度募集资金存放、管理与使用情况专项报告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491667.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "d044029b7ee019dceada39de1fcd1ee1ccd4223d8605bfb8b227ab2befef2a6a",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "关于2026年中期利润分配方案的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491663.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "c3b03fcb531d928dcb41005a941500a0b44169139fa8efdd4cd084a3e94dbf42",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "关于2026年前二季度计提减值准备及核销资产的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491669.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "3bf0df039c0857ba2e8ab57b95f818abeadc15b4512f6f69616df13920a2853e",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "第五届董事会第十七次会议决议公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491668.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "0ec80309a68b6f073f6e2564d4d1cab7be5af65bd0f33647c0bad010a6e05ea7",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "非经营性资金占用及其他关联资金往来情况汇总表",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491666.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-22T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "623b5252cdeee6e88be7eecb95cb6a12380138a050ffe1a56bb2c81eb5146125",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401500.htm"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 20:57",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "1fbd736784b14ae991975fd7926720c48029aa0613265511041d7eefa1963764",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "DISCLOSEABLE AND CONNECTED TRANSACTIONS - SUBSCRIPTION FOR CONVERTIBLE DEBENTURE OF LAR BY GFL INTERNATIONAL",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082402097.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 22:55",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "e28fa77ecd725bb662c755ef71fc132422a3a4cec6ead1e5905e1633108f3a78",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "PROGRESS UPDATE ANNOUNCEMENT - DISCLOSEABLE AND CONNECTED TRANSACTIONS - IN RELATION TO FORMATION OF JOINT VENTURE AND ACQUISITION THROUGH ASSETS INJECTION BY JOINT VENTURE PARTNER",
+      "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+      "status": "PENDING_EXTRACTION",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082401427.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "正文提取失败（RemoteDisconnected）"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "24/08/2026 20:43",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "f0d63ac02ca116082af198bb143dcbac57ea82a709b5c88bcc1c3990202e80e5",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "关于为控股子公司提供担保的进展公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499477.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "476fe2dc3d94df74a084280d6e7e295714f6971a7d26238db965e41b80293a73",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "关于赣锋国际与LAR共同整合合资公司的进展公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499476.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "54e343063363003f18458fb38b5e1cfc227c09250527619c96a58f83b23899f8",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "关于赣锋国际认购LAR可转换债券的公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499475.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "43c9455fa5d91534ded944b8beb4f1a6b01e941cf97676b33938affd56b4fd2a",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "第六届董事会第十九次会议决议公告",
+      "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+      "status": "PENDING_AI",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225499474.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [
+        "DeepSeek 输出校验失败: 模型返回空内容"
+      ],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "document_type": "正式公告",
+        "published_at": "2026-08-25T00:00:00+08:00",
+        "thesis_impacts": []
+      }
+    },
+    {
+      "fingerprint": "bc9c01d81c9a9359a3642f854a418f8d65ceb418a8743378b4a545e72c566e77",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "迅策",
+      "name": "迅策科技",
+      "title": "2026H1中报后复检：6 天后到期",
+      "why_now": "登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-31",
+        "days": 6,
+        "event_type": "财报",
+        "note": "核经常性收入、毛利、现金流"
+      }
+    },
+    {
+      "fingerprint": "0c85a9f3d7ac0b149d52585f0e459afb9a582abebeb710068e9863ca3782aa2d",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "AppLovin",
+      "name": "AppLovin",
+      "title": "分批复核带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "NEAR",
+        "price": 299.35,
+        "market": "US",
+        "zone_label": "分批复核带",
+        "low": 300,
+        "high": 330,
+        "direction": "range",
+        "note": "且Q3经营证据不破坏独立ROAS/留存；总仓≤组合5%"
+      }
+    },
+    {
+      "fingerprint": "29265db7ada22d61c61f389981567690f7c4586c31c365ee82539ed6fbde2f45",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "lululemon",
+      "name": "lululemon",
+      "title": "观察仓带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "NEAR",
+        "price": 121.07,
+        "market": "US",
+        "zone_label": "观察仓带",
+        "low": null,
+        "high": 119,
+        "direction": "below",
+        "note": "盯管理层过渡与品牌年轻化"
+      }
+    },
+    {
+      "fingerprint": "f48832c9e20a299affb29d7f9b78d43f04c7c236559569e4d3bd9bd63ff691ec",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "微软",
+      "name": "Microsoft",
+      "title": "不追高线：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "WARN",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "WARN",
+        "price": 487.9,
+        "market": "US",
+        "zone_label": "不追高线",
+        "low": 440,
+        "high": null,
+        "direction": "above",
+        "note": "FY27 Q1验证Azure约+45%、云毛利与FCF后再评估"
+      }
+    },
+    {
+      "fingerprint": "f3d5be05aafbba059de07e82b8729262192d4514ac89cb71731b88f3a4cc311a",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "NovoNordisk",
+      "name": "Novo Nordisk",
+      "title": "观察仓带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "NEAR",
+        "price": 46.79,
+        "market": "US",
+        "zone_label": "观察仓带",
+        "low": 44,
+        "high": 46,
+        "direction": "range",
+        "note": "加仓需CagriSema获批+2027正增长指引"
+      }
+    },
+    {
+      "fingerprint": "59c75c2a969ff4a325dba44ba1ae42d7c3602fc896b2bf71ffbb54c63ce44f65",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "拼多多",
+      "name": "PDD Holdings",
+      "title": "观望区：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "NEAR",
+        "price": 87.37,
+        "market": "US",
+        "zone_label": "观望区",
+        "low": 75,
+        "high": 86,
+        "direction": "range",
+        "note": "Q2红线未触，但收入仅+8%；仅在Q3利润率维持>15%、增长与资本回报证据改善时再评估"
+      }
+    },
+    {
+      "fingerprint": "3b1b0b1d213241dba3cba1647bee76a9a64a7a6df6a224239c02fe31c2538912",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "Qualcomm",
+      "name": "Qualcomm",
+      "title": "理想买入带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "TRIGGERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "TRIGGERED",
+        "price": 158.53,
+        "market": "US",
+        "zone_label": "理想买入带",
+        "low": null,
+        "high": 160,
+        "direction": "below",
+        "note": "PE≤15x约$160或恐慌下跌"
+      }
+    },
+    {
+      "fingerprint": "6cfc9d9e01e44f90a4312583f0afaad81e848ee3ddb622559ec47ec364d7b876",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "Reddit",
+      "name": "Reddit",
+      "title": "小仓跟踪带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "TRIGGERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "TRIGGERED",
+        "price": 151.27,
+        "market": "US",
+        "zone_label": "小仓跟踪带",
+        "low": 145,
+        "high": 165,
+        "direction": "range",
+        "note": ""
+      }
+    },
+    {
+      "fingerprint": "19df4a9246e51c0bcc0f60a5b6f9bd0759c57fcc95b30b9a3e73125f2312925b",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "中芯国际",
+      "name": "中芯国际",
+      "title": "A股估值风险带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "WARN",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "WARN",
+        "price": 120.58,
+        "market": "A",
+        "zone_label": "A股估值风险带",
+        "low": 100,
+        "high": null,
+        "direction": "above",
+        "note": "经营改善未消除高估值；须以Q3 FCF质量与毛利率验证，不把单季转正FCF外推"
+      }
+    },
+    {
+      "fingerprint": "27258687b62b72bb1b79b20018fd02eeda0af0b9ba1c34f588e3dc6fa492ec9e",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "H上限触发：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "TRIGGERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "TRIGGERED",
+        "price": 100.0,
+        "market": "H",
+        "zone_label": "H上限触发",
+        "low": null,
+        "high": 102.8,
+        "direction": "below",
+        "note": "最终价≤102.80港元且无异常条款、不融资"
+      }
+    },
+    {
+      "fingerprint": "29f7a66b271fd0a543a01cda0471db7aceb4945a82a266c6492a5bd37dd13820",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "腾讯",
+      "name": "腾讯控股",
+      "title": "加仓带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "NEAR",
+        "price": 440.0,
+        "market": "H",
+        "zone_label": "加仓带",
+        "low": 400,
+        "high": 430,
+        "direction": "range",
+        "note": "仅当红线未触或Q3证实FCF转正+AI回收"
+      }
+    },
+    {
+      "fingerprint": "79a7c7848ace7ca39f4b30728e9521e40cfd7f0e6b87536aa164caf29f18f8a1",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "腾讯音乐",
+      "name": "腾讯音乐",
+      "title": "买入带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "NEAR",
+        "price": 8.65,
+        "market": "US",
+        "zone_label": "买入带",
+        "low": 7.5,
+        "high": 8.5,
+        "direction": "range",
+        "note": "等用户数据改善再介入"
+      }
+    },
+    {
+      "fingerprint": "70449e33e4ca8034d9e1ec4ed2f2677cb5806c2c8cfa7008c8ebb31ab518e524",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "H股小仓带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "TRIGGERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "TRIGGERED",
+        "price": 42.58,
+        "market": "H",
+        "zone_label": "H股小仓带",
+        "low": 34.6,
+        "high": 43.8,
+        "direction": "range",
+        "note": "提高仓位需连续两季扣非盈利、OCF覆盖资本开支、净负债下降"
+      }
+    }
+  ],
+  "notification_items": [
+    "932e3be41929fc9a356bc965a4d085ca94124105de6a4d89fe2377399856e54f",
+    "7de041909974ed718737de45bc14d00cc8a7aecedef8ad3c592c15e291427817",
+    "14b58661868908d86479ce079069f9811d58e9c0ee45df1f2f892daa1aec3c71",
+    "3baa2009cd84b6490f4918071c315d0dcfcc99872e77f139191dfb5b02cb3c39",
+    "6528b320ee72fb2c9d338d8eadf869e7b1f3f6197fe8dfaa3f47942ad61bab9e",
+    "91f2e4071e7abd42068ff26160e90082fad21fcd8500bfbbf1ba9fa6628b84d6",
+    "826a3bfec0fc6a3f3d6d814acf45186c835316b5c15518691d6ad82d9d534bee",
+    "5081ad854bf5786a33c0a14870a0c74de5159aa518352c7f6e607d371d7f20ca",
+    "037efeb11896ed0e5592e31638056668d6e471e92a9aa16ab936b4e7d54853f7",
+    "9017c6dd9eda7b204f7c1314f84dc0ea1a0d5b66dd90a6f8882e551e0a90a954",
+    "28165036d4da5687ea5176d5a2d2ecb936b6089d061c86c22bc6dfa4a67f199a",
+    "bbee108ff050accd82c6b31520727765a1c7089aa8b434b6905ed374f1a72048",
+    "92a7282f2b4ebd83a355253ecdddd8eb11a3a0152972daa7b2d47e80987e2c6a",
+    "cd0888634c1d7617b5ffb908e0a8e4b636a4f96f0690018c2c27610605432a88",
+    "0add57794e4fd1707ca1cdf81e943e82b30acf9f6253464f83d699956f0e90a7",
+    "283084d06e47264e1c8d065c776eb36c0cefc3a9e3d00e2eca7ea105d3bf5a8e",
+    "5cfc31fc928b74364fbb8c8c8f5fc5600dc4543f0299a276335dc755ded70884",
+    "bc9c01d81c9a9359a3642f854a418f8d65ceb418a8743378b4a545e72c566e77",
+    "acbc104bb52fa6d0269b33a65d2e8f5ca5f6f5d67cca7e38daa53c78238987f2",
+    "657bc36ac221aab41658fb151e989c6513f39995cccae302354c2a7285a9e7a4",
+    "ff583edce22044c37b55b6b6d133a15b6f5c74cdc39e2948634ea8c608da59b5",
+    "8e53f3de8983354f6b07e8c23bc666238317895983bc39dccc802fc08b0ef1d2",
+    "94a344cd5a3ab323f4b371732df1ed3bed91284f9cbf1c0421bc261e94e8a91a",
+    "4dc180aa96c41272e8e67d6803fb5b382b2f7f82167f56d86c5e55b47170e990",
+    "d6ce965cfa40e1ae3c5b4e2fd980d044a42dfe5f99357cf4f972733e208cce30",
+    "2dc0a317d71d1cd3ffa6f6c3c8e6bda40b0ae335d7f18e2e2ba2b996023734d7",
+    "4f46b84fff775fe934aa2b54f1477a583ea59a73fc498f6bac8f91e8d6fa6e45",
+    "d044029b7ee019dceada39de1fcd1ee1ccd4223d8605bfb8b227ab2befef2a6a",
+    "f3ec78b040a91c6f5bca8ce04530e4776868ce580efd57c80e508f31f5b4af3a",
+    "e40f1b57013e1cd6df2ac266fdfbd5f780334cb03ed448d2aba7e96838f9eed5",
+    "0ec80309a68b6f073f6e2564d4d1cab7be5af65bd0f33647c0bad010a6e05ea7",
+    "a0c9a6076426e18c6381f92afca1d313985415440d9b5008b4df56b431b162c7",
+    "3bf0df039c0857ba2e8ab57b95f818abeadc15b4512f6f69616df13920a2853e",
+    "c3b03fcb531d928dcb41005a941500a0b44169139fa8efdd4cd084a3e94dbf42",
+    "88e440988abe3b500ac9a841e9e39e50562fed69d1abaa269ce696af9cc75483",
+    "47614c423681c9126fa8e95bcdbf885da97945a00f5a8a4a0d7445809406ab1a",
+    "827cd227155f17ec0e095c56228279adc51af2f99ec4389ea3fb33fb51c9a657",
+    "f9e6767533e159dbb6b43162943fa64f4ff9f2047aef9454bd3e922830d7e6b3",
+    "e98947c76cc76a016309a1825b2c8cdd99ea808c1a02b810b9638b6303bed800",
+    "9b099da7da533795d82b80adae68ae51daa64d56f79f4309ff1b5363b893d229",
+    "d2f485b4d278e1e1c68a2c0b4455ea1b6109f26b707f3aff39cf74c687d835e7",
+    "b5288fae59928b2860cea566603ab88428f71256db2ade49298206c9db771e4b",
+    "a5a03aba30751293b0ced9bb5d7cf6d20a9f677fd2736fc6f5335ab350874f00",
+    "a10249ff288c197f701e5a9a4328143c0a89300da313531981bf7783a255bae9",
+    "bf03e1cfbcf6b97bafe838c99fb115f7e15db52297bd2f0384c42e665ee1ee37",
+    "7a65ee80dc2f89fb764c6a1e7472fba4a755382b9698113810def8cd8999d4c1",
+    "c6dea4f185a6908d85f69e3f486132bc033a8df62a34955bb8d1b220b044c148",
+    "1c12ffeabed18f27af2829a7ec77ab23dacd0a26b343ac009313adaea874b66a",
+    "8f680b9d5e2dde839e919ca511a881efd1cef5e752dd6a54a5afae805747d7f7",
+    "df84b348fea5e5640cfc4e5d17b3c7c4d3e4f6dc9c6d919ae24858636131436a",
+    "06d124ac903988dfd3e49bd2fdeeaec2a2c934394c9be9b2387195faaeb1acc8",
+    "623fdc626c68b7553ec9c073d1f5e76b0df1e893c1f82f0b14b4bbbf56dbfd26",
+    "3096a54066e9e6346354b284364f8fc1363130cd99741bec536a821e775950a3",
+    "4878c1c342d629fe650132ec2dc2c974a4be6acc23ef4261840562dd320658ae",
+    "f8c70e14b8c0e0c1cdf94f3e4b1e44e46a4dba956469efa35966e1467b3dfe68",
+    "6941035ef1b7a547aa68997e11e138fe18c214e481c0fa9e485b76e26ad9b580",
+    "beaf129f5bcae1009ddd418f39dfd3a96ba456c18514ecfbe0bfee819609497d",
+    "4ea11c09387def43b6ed0d55efbfb6d33e75b322045c49611ea06c2729bac887",
+    "a3c050098bf58b04fb4e8effa8953aeed9aaaa8c86a7c2b6b66c061e3995cd53",
+    "ade62d1bd4033ab786fec2ffa35128bad19bbf3f7247041b449433eace29a775",
+    "adeb9e150a05f2ff13700b80c9291ad0a932fa1652e41e5f83625605bdbeb71b",
+    "43c9455fa5d91534ded944b8beb4f1a6b01e941cf97676b33938affd56b4fd2a",
+    "54e343063363003f18458fb38b5e1cfc227c09250527619c96a58f83b23899f8",
+    "476fe2dc3d94df74a084280d6e7e295714f6971a7d26238db965e41b80293a73",
+    "f0d63ac02ca116082af198bb143dcbac57ea82a709b5c88bcc1c3990202e80e5",
+    "cd756471b149e2b85e0c5ad5804a1cae74f1c59c4414a4865ef1560a298d4fe4",
+    "de5a9cb374b69cb50da4fc41009e19ab2e7e353b127d12081eb0d6827ab71ffb",
+    "c3dc66e7d09d1dabd304c2bd4d3ac19516d5bd0bcb26e4e1cfbc4909eac5c244",
+    "e6e321d1dff94e6fc4f8bb0aa1d98ec29f414d6ae1a7b87652f4487d3a1c2cd0",
+    "abddb5866198ddac01bb9e024a88df21888f329b6b3d91f9532df44f96c45769",
+    "902ec28b12630833d5464f6cbea2691f50f1f7a0d34bd10d0245c8a6089a4092",
+    "3fe33960407acffa962f06a3dee5165a2168185bf935606bf48f2600db272079",
+    "a5f5edbf46f7036e32aa873ccb577725c9b3875dc2fb88b8e0016d52e0555dfc",
+    "937fc331161ada871dfd6c2cc1468a34548b4cd53601f558d7a3331b77220be0",
+    "baf0b85ff5e51a1699864a7af39d7ca223c3c2bedc435cff52ffa19c861bcd5f",
+    "2b7b3cedcd4616d047063a5bc6fe5584e7a3b124f71169327c02b4c49cfc64bf",
+    "9dbd63f7cf646dc86e2c6d300a1094e83521efe45a3295207dd567e67734fcec",
+    "600699b333d3d1f6f3e00b230db97ebb896da14882b0bf81a26e1783890b752c",
+    "a9f52428800f0fe1f6d2b27f1be0196e72fd5be4e1ac72253e4a5d709da66e67",
+    "f156978bb6b0023127bd2961aa062c5d550a375cd3590a683bd0176232e5b75f",
+    "827c1bc0c27ed7fe6ad8f52fe146ffef9afda5d9a586e3fcb3daa3082f506acd",
+    "6f2a5483be24ba3d607f344eba3c773378430432afd4b913a9d8e256402e1348",
+    "ee8517f4e0e3a128fcd076d7bf3cea3b2fad7542e9080ba9fab73705792cc752",
+    "f84ee2cb777b2531653f642fe2fa907898c71f5381fd69c258530db8e975b905",
+    "7d3a7eeef8d551cb3061a98a84894bf87847cd2dcf896a7e2e6bd56c163e6be9",
+    "4b65f969b82262007e55edda80136d72e05abfd21e2f225a718f24ea1839db44",
+    "e22c4a8b4c38f92f234825c48367f1e3708f931c37bb73c0aee3540c7595d72b",
+    "7a3e163dc4b436f12ae42889bc6cddeb36cd14c112be237a7dc95884a278f178",
+    "9a8c12a91b9006e195e0f1e34ab24c067d5f646cb1a8332c08cb37ec62f50083",
+    "079a5a8e0d3ef833dfd2583dbd92dcfebd5c3f00704f6d586fe201c4f3c15ea5",
+    "5136075721d976b956d753de221319a50b1747745b0a7f0a5351361e4db1133f",
+    "f4654f3a0915b18eb5c3d33dd1cdd1175919e1956e192d697d4582a54fcff8bb",
+    "a487fa6d6357a9828096028e20301c89396ba04b698cb5ed31a370505904ed93",
+    "4359106d8270991ca904d3f7ce0a132e32e31873ff66b1c959a439e75b7a424e",
+    "7895404de6ae6da87590361ff41561158a6ced34ba704ffb568ff04ea91b6e2d",
+    "e28fa77ecd725bb662c755ef71fc132422a3a4cec6ead1e5905e1633108f3a78",
+    "623b5252cdeee6e88be7eecb95cb6a12380138a050ffe1a56bb2c81eb5146125",
+    "94803802147ecd45eb9b844ed5e8950425143753f1975b6f3dbf9e1c2c4dbdcf",
+    "48d57d01302bad4bc25045b5522352cf90b430a94d0d51e7b3bd74fa8c628153",
+    "f9050d8ef385936ecfd0175776955bd13aea968c54160f03ad9a3a0e5fd39acd",
+    "ed07981eb6b3453afb4d3d5066bb20d1907fd4da175773d87740f765f4b1ffdc",
+    "0e5a822deb0cf7f595036c5a2840df8951cf968fef338eba77ab915967ca4ede",
+    "556be4a6d42b9547ec8456b06be035c3261062547f4454886bb903f743b0de58",
+    "84f9c983c7e99b1add24bb54ea1ba7d6435dc6a2260c6d365e206d7c85fa588c",
+    "249d9074abf136d82b495fa6d653f02f22e523d98d6ab6266e2d9675506dc164",
+    "5f6148f9122d15505dc2823b59f5d4f69870779891da52aee97836c601f50139",
+    "1fbd736784b14ae991975fd7926720c48029aa0613265511041d7eefa1963764",
+    "ddbdc36d5f7decce383a8ead372f9d3afbb06c424f75dbccd1df1c2c8f010293",
+    "935f4ab703b8b1c3974bbbcc3dc2dc6a00b3e8bd86ccca139d8b903bddd9f8d6",
+    "5f29863419198f96bb4bc93d5462b8b0f32bc4d26938f8ae7d3473118673f370",
+    "9906f586dd6d5e564f0407f01a8ef7f06f8ac7fb63a9e1fda093f6bac68e666a",
+    "4d10d3eda8684cf144db863f6496b2d8480bd2137f51f90f5be7bb56cb6bfc36",
+    "d44adba42bc3f930a432cb50732794692abd7ce1f7194271850703123bf8e41d",
+    "0d2d7e03beaec41a55eb48279de6aca2b66e578fe66ffe2b62e37e600f69fcd6",
+    "fbfc408106dc7f57096db849a56b0ad0925966ff5c9a1b7ba99f5e00e0e4687c",
+    "a3af0328a2211be676851119f8078c03ef00ecdba7a2a7de3c2cb80916544a13"
+  ],
+  "source_health": [
+    {
+      "source": "quotes",
+      "status": "OK",
+      "safe_message": null
+    },
+    {
+      "source": "cninfo",
+      "status": "OK",
+      "safe_message": null
+    },
+    {
+      "source": "hkex",
+      "status": "OK",
+      "safe_message": null
+    },
+    {
+      "source": "sec",
+      "status": "FAILED",
+      "safe_message": "SEC ticker 未映射到 CIK: QQQM"
+    }
+  ]
+}
