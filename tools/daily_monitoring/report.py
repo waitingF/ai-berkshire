@@ -64,40 +64,6 @@ def _summary(result: RunResult) -> str:
     return f"P0 {p0} · P1 {p1} · 新增价格 {prices} · 新增披露 {disclosures} · 异常 {errors}"
 
 
-def _render_item(item: MonitorItem, *, show_workflow: bool) -> list[str]:
-    flags = []
-    if item.resolved:
-        flags.append("已解除")
-    if item.needs_human_review:
-        flags.append("待人工确认")
-    suffix = f"（{'；'.join(flags)}）" if flags else ""
-    lines = [
-        f"### [{item.priority}] {item.name}｜{item.title}{suffix}",
-        "",
-        f"- 当前状态：`{item.status}`",
-        f"- 为什么现在：{item.why_now}",
-    ]
-    if item.verified_facts:
-        lines.append("- 已核验事实：")
-        for fact in item.verified_facts:
-            page = f"，第 {fact.page} 页" if fact.page else ""
-            lines.append(
-                f"  - {fact.fact}（{fact.confidence}{page}；[正式来源]({fact.official_url})）"
-            )
-    elif item.source_urls:
-        links = "、".join(
-            f"[正式来源{index if len(item.source_urls) > 1 else ''}]({url})"
-            for index, url in enumerate(item.source_urls, start=1)
-        )
-        lines.append(f"- 来源：{links}")
-    if item.limitations:
-        lines.append(f"- 限制：{'；'.join(item.limitations)}")
-    if show_workflow and item.next_workflow:
-        lines.append(f"- 下一研究流程：`{item.next_workflow} {item.target_id}`")
-    lines.append("")
-    return lines
-
-
 def _as_number(value: Any) -> float | None:
     if isinstance(value, bool):
         return None
@@ -132,6 +98,17 @@ def _price_condition(metadata: dict[str, Any]) -> str:
 
 def _price_gap(item: MonitorItem) -> str:
     if item.status in {"TRIGGERED", "WARN"}:
+        price = _as_number(item.metadata.get("price"))
+        low = _as_number(item.metadata.get("low"))
+        direction = item.metadata.get("direction", "range")
+        if (
+            direction == "range"
+            and price is not None
+            and low is not None
+            and low > 0
+            and price < low
+        ):
+            return f"低于下界 {(low - price) / low:.1%}"
         return "区间内"
     price = _as_number(item.metadata.get("price"))
     low = _as_number(item.metadata.get("low"))
@@ -155,17 +132,25 @@ def _price_gap(item: MonitorItem) -> str:
 
 
 def _markdown_cell(value: Any) -> str:
-    return str(value).replace("|", "\\|").replace("\n", " ")
+    return str(value).replace("|", "\\|").replace("\n", "<br>")
 
 
 def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
+    visible = [item for item in items if item.priority != "P2"]
     lines = [
-        "> 价格优先级：P0=区间内；P1=区间外且距边界≤5%；P2=距边界>5%。优先级只表示价格距离，不代表交易信号。",
+        "> 价格优先级：P0=区间内或低于区间；P1=高于区间上界且距上界≤5%；P2 不展示。`above` 风险警戒线保留原方向语义。优先级只表示价格距离，不代表交易信号。",
         "",
-        "| 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |",
-        "|---|---|---|---|---:|---:|---:|---|",
     ]
-    for item in items:
+    if not visible:
+        lines.extend(["无 P0/P1 价格事项（P2 已隐藏）。", ""])
+        return lines
+    lines.extend(
+        [
+            "| 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |",
+            "|---|---|---|---|---:|---:|---:|---|",
+        ]
+    )
+    for item in visible:
         metadata = item.metadata
         status = item.status
         if item.resolved:
@@ -181,6 +166,93 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
             _format_price(metadata.get("price")),
             _price_gap(item),
             status,
+        )
+        lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
+    lines.append("")
+    return lines
+
+
+def _item_date(item: MonitorItem) -> str:
+    return str(item.metadata.get("published_at") or item.metadata.get("date") or "-")
+
+
+def _item_evidence(item: MonitorItem) -> str:
+    if item.verified_facts:
+        rows = []
+        for fact in item.verified_facts:
+            page = f"，第 {fact.page} 页" if fact.page else ""
+            rows.append(
+                f"{fact.fact}（{fact.confidence}{page}；[正式来源]({fact.official_url})）"
+            )
+        return "<br>".join(rows)
+    if item.source_urls:
+        return "<br>".join(
+            f"[正式来源{index if len(item.source_urls) > 1 else ''}]({url})"
+            for index, url in enumerate(item.source_urls, start=1)
+        )
+    return "-"
+
+
+def _item_workflow(item: MonitorItem, *, show_workflow: bool) -> str:
+    if not show_workflow or not item.next_workflow:
+        return "-"
+    return f"`{item.next_workflow} {item.target_id}`"
+
+
+def _item_notes(item: MonitorItem) -> str:
+    notes = []
+    metadata_note = str(item.metadata.get("note") or "").strip()
+    if metadata_note:
+        notes.append(metadata_note)
+    notes.extend(item.limitations)
+    if item.resolved:
+        notes.append("已解除")
+    if item.needs_human_review:
+        notes.append("待人工确认")
+    return "<br>".join(notes) or "-"
+
+
+def _render_disclosure_table(
+    items: Iterable[MonitorItem], *, workflow_owners: set[str]
+) -> list[str]:
+    lines = [
+        "| 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |",
+        "|---|---|---|---|---|---|---|---|---|",
+    ]
+    for item in items:
+        cells = (
+            item.priority,
+            item.name,
+            item.title,
+            _item_date(item),
+            item.status,
+            item.why_now,
+            _item_evidence(item),
+            _item_workflow(item, show_workflow=item.fingerprint in workflow_owners),
+            _item_notes(item),
+        )
+        lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
+    lines.append("")
+    return lines
+
+
+def _render_other_table(
+    items: Iterable[MonitorItem], *, workflow_owners: set[str]
+) -> list[str]:
+    lines = [
+        "| 优先级 | 标的/数据源 | 事项 | 日期 | 状态 | 为什么现在 | 下一流程 | 备注 |",
+        "|---|---|---|---|---|---|---|---|",
+    ]
+    for item in items:
+        cells = (
+            item.priority,
+            item.name,
+            item.title,
+            _item_date(item),
+            item.status,
+            item.why_now,
+            _item_workflow(item, show_workflow=item.fingerprint in workflow_owners),
+            _item_notes(item),
         )
         lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
     lines.append("")
@@ -214,10 +286,10 @@ def render_markdown(result: RunResult, *, run_date: date | None = None) -> str:
         if section == "price":
             lines.extend(_render_price_table(rows))
             continue
-        for item in rows:
-            lines.extend(
-                _render_item(item, show_workflow=item.fingerprint in workflow_owners)
-            )
+        if section == "disclosures":
+            lines.extend(_render_disclosure_table(rows, workflow_owners=workflow_owners))
+            continue
+        lines.extend(_render_other_table(rows, workflow_owners=workflow_owners))
     lines.extend(
         [
             "---",

@@ -99,17 +99,15 @@ def judge_zone(price, zone, *, near_ratio=0.03):
         if price >= low * (1 - near_ratio):
             return "NEAR", f"现价 {price:.2f}，距警戒线 {low:.2f} {near_ratio:.0%} 内"
         return "FAR", f"现价 {price:.2f}，警戒线 {low:.2f}"
-    # range：low ≤ price ≤ high 触发；区间外按距最近边界的比例判定接近
+    # range：价格不高于上界即触发；只对高于上界的价格计算接近程度。
     if low is None and high is None:
         return "FAR", "无价格区间"
     if low is not None and high is not None:
-        if low <= price <= high:
-            return "TRIGGERED", f"现价 {price:.2f} ∈ [{low:.2f}, {high:.2f}]"
-        if price < low:
-            gap = (low - price) / low
-            if gap <= near_ratio:
-                return "NEAR", f"现价 {price:.2f}，距下沿 {low:.2f} {near_ratio:.0%} 内"
-            return "FAR", f"现价 {price:.2f}，区间 [{low:.2f}, {high:.2f}]"
+        if price <= high:
+            return (
+                "TRIGGERED",
+                f"现价 {price:.2f} ≤ 区间上界 {high:.2f}（区间内或以下）",
+            )
         gap = (price - high) / high
         if gap <= near_ratio:
             return "NEAR", f"现价 {price:.2f}，距上沿 {high:.2f} {near_ratio:.0%} 内"

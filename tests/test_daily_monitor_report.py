@@ -4,7 +4,7 @@ import unittest
 from datetime import date
 from pathlib import Path
 
-from tools.daily_monitoring.models import MonitorItem, RunResult, SourceHealth
+from tools.daily_monitoring.models import MonitorItem, RunResult, SourceHealth, VerifiedFact
 from tools.daily_monitoring.report import render_markdown, write_reports
 
 
@@ -21,6 +21,10 @@ def item(
     resolved=False,
     status="NEW",
     metadata=None,
+    verified_facts=(),
+    source_urls=None,
+    limitations=(),
+    needs_human_review=False,
 ):
     return MonitorItem(
         fingerprint=fingerprint,
@@ -31,10 +35,13 @@ def item(
         title=title,
         why_now="出现了需要研究核验的增量，不构成买卖结论。",
         status=status,
-        source_urls=(
+        verified_facts=verified_facts,
+        source_urls=source_urls if source_urls is not None else ((
             "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/example.pdf",
-        ) if section == "disclosures" else (),
+        ) if section == "disclosures" else ()),
         next_workflow=workflow,
+        limitations=limitations,
+        needs_human_review=needs_human_review,
         notify=notify,
         resolved=resolved,
         metadata=metadata or {},
@@ -90,6 +97,23 @@ class DailyMonitorReportTest(unittest.TestCase):
                             "price": 104,
                         },
                     ),
+                    item(
+                        "p2",
+                        "price",
+                        "P2",
+                        target_id="远端样例",
+                        name="Far Away Co",
+                        title="等待带：FAR",
+                        status="FAR",
+                        metadata={
+                            "market": "US",
+                            "zone_label": "等待带",
+                            "low": 80,
+                            "high": 100,
+                            "direction": "range",
+                            "price": 120,
+                        },
+                    ),
                 ]
             ),
             run_date=date(2026, 8, 25),
@@ -100,7 +124,7 @@ class DailyMonitorReportTest(unittest.TestCase):
             markdown,
         )
         self.assertIn(
-            "P0=区间内；P1=区间外且距边界≤5%；P2=距边界>5%",
+            "P0=区间内或低于区间；P1=高于区间上界且距上界≤5%；P2 不展示",
             markdown,
         )
         self.assertIn(
@@ -112,6 +136,77 @@ class DailyMonitorReportTest(unittest.TestCase):
             markdown,
         )
         self.assertNotIn("### [P0] 腾讯控股", markdown)
+        self.assertNotIn("Far Away Co", markdown)
+
+    def test_disclosure_section_renders_table_and_preserves_details(self):
+        markdown = render_markdown(
+            result(
+                [
+                    item(
+                        "d",
+                        "disclosures",
+                        "P0",
+                        title="2026Q2业绩公告",
+                        status="VERIFIED",
+                        workflow="/earnings-review",
+                        verified_facts=(
+                            VerifiedFact(
+                                fact="收入同比增长 12%",
+                                official_url="https://www1.hkexnews.hk/example.pdf",
+                                page=3,
+                                confidence="高",
+                            ),
+                        ),
+                        limitations=("现金流附注待复核",),
+                        needs_human_review=True,
+                        metadata={
+                            "published_at": "2026-08-25",
+                            "note": "核验利润率",
+                        },
+                    )
+                ]
+            ),
+            run_date=date(2026, 8, 25),
+        )
+
+        self.assertIn(
+            "| 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |",
+            markdown,
+        )
+        self.assertIn("收入同比增长 12%（高，第 3 页；[正式来源]", markdown)
+        self.assertIn("`/earnings-review 腾讯`", markdown)
+        self.assertIn("待人工确认", markdown)
+        self.assertIn("现金流附注待复核", markdown)
+        self.assertIn("核验利润率", markdown)
+        self.assertNotIn("### [P0] 腾讯控股｜2026Q2业绩公告", markdown)
+
+    def test_other_section_renders_table(self):
+        markdown = render_markdown(
+            result(
+                [
+                    item(
+                        "o",
+                        "other",
+                        "P1",
+                        title="论文复检",
+                        status="UPCOMING_7D",
+                        workflow="/thesis-tracker",
+                        needs_human_review=True,
+                        metadata={"date": "2026-08-30", "note": "复核竞争格局"},
+                    )
+                ]
+            ),
+            run_date=date(2026, 8, 25),
+        )
+
+        self.assertIn(
+            "| 优先级 | 标的/数据源 | 事项 | 日期 | 状态 | 为什么现在 | 下一流程 | 备注 |",
+            markdown,
+        )
+        self.assertIn("| P1 | 腾讯控股 | 论文复检 | 2026-08-30 | UPCOMING_7D |", markdown)
+        self.assertIn("`/thesis-tracker 腾讯`", markdown)
+        self.assertIn("复核竞争格局", markdown)
+        self.assertNotIn("### [P1] 腾讯控股｜论文复检", markdown)
 
     def test_report_has_exactly_three_business_sections(self):
         markdown = render_markdown(
