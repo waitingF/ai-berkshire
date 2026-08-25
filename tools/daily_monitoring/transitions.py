@@ -27,6 +27,14 @@ ACTIVE_PRICE_STATES = frozenset({"TRIGGERED", "WARN", "NEAR"})
 ACTIVE_EVENT_STATES = frozenset({"OVERDUE", "TODAY", "UPCOMING_7D", "UPCOMING_14D", "OPEN"})
 
 
+def _price_priority(status: str) -> str:
+    if status in {"TRIGGERED", "WARN"}:
+        return "P0"
+    if status in {"NEAR", "NO_DATA"}:
+        return "P1"
+    return "P2"
+
+
 def _fingerprint(*parts: Any) -> str:
     encoded = json.dumps(parts, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
@@ -81,8 +89,6 @@ def price_item(
     }
 
     if previous is None:
-        if current == "FAR":
-            return None
         if current == "NO_DATA":
             return MonitorItem(
                 fingerprint=fingerprint,
@@ -100,7 +106,7 @@ def price_item(
         return MonitorItem(
             fingerprint=fingerprint,
             section="price",
-            priority="P2",
+            priority=_price_priority(current),
             target_id=target_id,
             name=name,
             title=f"{label}：初始基线",
@@ -114,7 +120,7 @@ def price_item(
         return MonitorItem(
             fingerprint=fingerprint,
             section="price",
-            priority="P1" if previous != "NO_DATA" else "P2",
+            priority="P1",
             target_id=target_id,
             name=name,
             title=f"{label}：行情不可用",
@@ -156,18 +162,29 @@ def price_item(
                 resolved=True,
                 metadata=metadata,
             )
-        return None
+        return MonitorItem(
+            fingerprint=fingerprint,
+            section="price",
+            priority="P2",
+            target_id=target_id,
+            name=name,
+            title=f"{label}：{current}",
+            why_now=message or "价格距监控区间超过 5%。",
+            status=current,
+            notify=False,
+            metadata=metadata,
+        )
 
     changed = previous != current
     if current == "TRIGGERED":
-        priority = "P0" if changed else "P2"
+        priority = "P0"
         why_now = (
             "价格条件本次达到；仍需核验经营条件与 thesis 红线，不构成买卖结论。"
             if changed
             else "价格条件持续满足；经营条件与 thesis 红线仍需独立核验。"
         )
     elif current in {"WARN", "NEAR"}:
-        priority = "P1" if changed else "P2"
+        priority = "P0" if current == "WARN" else "P1"
         condition = "警示线" if current == "WARN" else "边界"
         why_now = (
             f"价格本次进入{condition}监控状态；仍需独立核验经营事实。"

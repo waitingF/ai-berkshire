@@ -31,13 +31,20 @@ class PriceTransitionTest(unittest.TestCase):
         self.assertIn("价格条件", item.why_now)
         self.assertNotIn("建议买入", item.why_now)
 
-    def test_unchanged_trigger_is_p2_without_notification(self):
+    def test_unchanged_trigger_stays_p0_without_notification(self):
         item = transitions.price_item(
             target(), zone(), previous="TRIGGERED", current="TRIGGERED", price=410
         )
 
-        self.assertEqual((item.priority, item.notify), ("P2", False))
+        self.assertEqual((item.priority, item.notify), ("P0", False))
         self.assertEqual(item.status, "TRIGGERED")
+
+    def test_unchanged_near_stays_p1_without_notification(self):
+        item = transitions.price_item(
+            target(), zone(), previous="NEAR", current="NEAR", price=390
+        )
+
+        self.assertEqual((item.priority, item.notify), ("P1", False))
 
     def test_leaving_band_emits_one_resolved_item(self):
         item = transitions.price_item(
@@ -48,20 +55,21 @@ class PriceTransitionTest(unittest.TestCase):
         self.assertTrue(item.notify)
         self.assertEqual(item.priority, "P2")
 
-    def test_first_run_baselines_price_without_claiming_first_entry(self):
+    def test_first_run_uses_current_priority_without_notifying(self):
         item = transitions.price_item(
             target(), zone(), previous=None, current="TRIGGERED", price=410
         )
 
-        self.assertEqual((item.priority, item.notify), ("P2", False))
+        self.assertEqual((item.priority, item.notify), ("P0", False))
         self.assertIn("初始基线", item.why_now)
 
-    def test_far_price_without_transition_is_hidden(self):
-        self.assertIsNone(
-            transitions.price_item(
-                target(), zone(), previous="FAR", current="FAR", price=500
-            )
+    def test_far_price_is_visible_as_p2_without_notification(self):
+        item = transitions.price_item(
+            target(), zone(), previous="FAR", current="FAR", price=500
         )
+
+        self.assertEqual((item.priority, item.notify), ("P2", False))
+        self.assertEqual(item.status, "FAR")
 
     def test_quote_failure_and_recovery_each_notify_once(self):
         failed = transitions.price_item(
@@ -75,6 +83,13 @@ class PriceTransitionTest(unittest.TestCase):
         self.assertTrue(failed.needs_human_review)
         self.assertTrue(recovered.resolved)
         self.assertTrue(recovered.notify)
+
+    def test_repeated_missing_quote_stays_p1_without_notification(self):
+        item = transitions.price_item(
+            target(), zone(), previous="NO_DATA", current="NO_DATA", price=None
+        )
+
+        self.assertEqual((item.priority, item.notify), ("P1", False))
 
 
 class EventTransitionTest(unittest.TestCase):

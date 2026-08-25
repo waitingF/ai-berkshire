@@ -88,7 +88,9 @@ def ai_result(*, degraded=False):
     )
 
 
-def services(ai, *, collector=None, extraction_status="EXTRACTED"):
+def services(
+    ai, *, collector=None, extraction_status="EXTRACTED", quote_price=90.0
+):
     def default_collector(target_id, config, *, since, until, http):
         return [disclosure()]
 
@@ -102,7 +104,7 @@ def services(ai, *, collector=None, extraction_status="EXTRACTED"):
         )
 
     return MonitorServices(
-        quote_provider=lambda codes: {code: {"price": 90.0} for code in codes},
+        quote_provider=lambda codes: {code: {"price": quote_price} for code in codes},
         collectors={"sec": collector or default_collector},
         http=object(),
         document_extractor=extractor,
@@ -207,7 +209,7 @@ class DailyMonitorRunnerTest(unittest.TestCase):
             self.assertEqual(second_ai.calls, 0)
             self.assertEqual(second.notification_items, ())
 
-    def test_first_price_observation_is_non_notifying_baseline(self):
+    def test_first_price_observation_uses_current_priority_without_notification(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             triggers = write_triggers(root, with_zone=True)
@@ -215,7 +217,21 @@ class DailyMonitorRunnerTest(unittest.TestCase):
             result = run_monitor(options(root, triggers), services(FakeAI(ai_result())))
 
             price = next(row for row in result.items if row.section == "price")
-            self.assertEqual(price.priority, "P2")
+            self.assertEqual(price.priority, "P0")
+            self.assertFalse(price.notify)
+
+    def test_price_within_five_percent_of_boundary_is_p1(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root, with_zone=True)
+
+            result = run_monitor(
+                options(root, triggers),
+                services(FakeAI(ai_result()), quote_price=104.0),
+            )
+
+            price = next(row for row in result.items if row.section == "price")
+            self.assertEqual((price.priority, price.status), ("P1", "NEAR"))
             self.assertFalse(price.notify)
 
     def test_source_failure_does_not_advance_cursor_and_still_writes_report(self):

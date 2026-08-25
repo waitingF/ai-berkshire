@@ -79,9 +79,9 @@ def _to_float(v):
 # 触发判定
 # ---------------------------------------------------------------------------
 
-def judge_zone(price, zone):
+def judge_zone(price, zone, *, near_ratio=0.03):
     """判断价格相对触发区间状态。返回 (状态, 说明)。
-    状态: 'TRIGGERED' 已触发 / 'NEAR' 接近（距边界≤3%）/ 'FAR' 未触发。"""
+    状态: 'TRIGGERED' 已触发 / 'NEAR' 接近 / 'FAR' 未触发。"""
     if price is None or price <= 0:
         return "NO_DATA", "无行情"
     low = zone.get("low")
@@ -90,14 +90,14 @@ def judge_zone(price, zone):
     if d == "below":          # 价格 ≤ high 触发
         if price <= high:
             return "TRIGGERED", f"现价 {price:.2f} ≤ {high:.2f}（触发线）"
-        if price <= high * 1.03:
-            return "NEAR", f"现价 {price:.2f}，距触发线 {high:.2f} 3% 内"
+        if price <= high * (1 + near_ratio):
+            return "NEAR", f"现价 {price:.2f}，距触发线 {high:.2f} {near_ratio:.0%} 内"
         return "FAR", f"现价 {price:.2f}，触发线 {high:.2f}"
     if d == "above":          # 价格 ≥ low 触发 → 警戒（涨过警戒线/不追高），非买入触发
         if price >= low:
             return "WARN", f"现价 {price:.2f} ≥ {low:.2f}（警戒线）"
-        if price >= low * 0.97:
-            return "NEAR", f"现价 {price:.2f}，距警戒线 {low:.2f} 3% 内"
+        if price >= low * (1 - near_ratio):
+            return "NEAR", f"现价 {price:.2f}，距警戒线 {low:.2f} {near_ratio:.0%} 内"
         return "FAR", f"现价 {price:.2f}，警戒线 {low:.2f}"
     # range：low ≤ price ≤ high 触发；区间外按距最近边界的比例判定接近
     if low is None and high is None:
@@ -107,23 +107,23 @@ def judge_zone(price, zone):
             return "TRIGGERED", f"现价 {price:.2f} ∈ [{low:.2f}, {high:.2f}]"
         if price < low:
             gap = (low - price) / low
-            if gap <= 0.03:
-                return "NEAR", f"现价 {price:.2f}，距下沿 {low:.2f} 3% 内"
+            if gap <= near_ratio:
+                return "NEAR", f"现价 {price:.2f}，距下沿 {low:.2f} {near_ratio:.0%} 内"
             return "FAR", f"现价 {price:.2f}，区间 [{low:.2f}, {high:.2f}]"
         gap = (price - high) / high
-        if gap <= 0.03:
-            return "NEAR", f"现价 {price:.2f}，距上沿 {high:.2f} 3% 内"
+        if gap <= near_ratio:
+            return "NEAR", f"现价 {price:.2f}，距上沿 {high:.2f} {near_ratio:.0%} 内"
         return "FAR", f"现价 {price:.2f}，区间 [{low:.2f}, {high:.2f}]"
     if low is not None:       # price ≥ low 触发
         if price >= low:
             return "TRIGGERED", f"现价 {price:.2f} ≥ {low:.2f}"
-        if price >= low * 0.97:
-            return "NEAR", f"现价 {price:.2f}，距 {low:.2f} 3% 内"
+        if price >= low * (1 - near_ratio):
+            return "NEAR", f"现价 {price:.2f}，距 {low:.2f} {near_ratio:.0%} 内"
         return "FAR", f"现价 {price:.2f}，触发线 {low:.2f}"
     if price <= high:         # price ≤ high 触发
         return "TRIGGERED", f"现价 {price:.2f} ≤ {high:.2f}"
-    if price <= high * 1.03:
-        return "NEAR", f"现价 {price:.2f}，距 {high:.2f} 3% 内"
+    if price <= high * (1 + near_ratio):
+        return "NEAR", f"现价 {price:.2f}，距 {high:.2f} {near_ratio:.0%} 内"
     return "FAR", f"现价 {price:.2f}，触发线 {high:.2f}"
 
 

@@ -324,7 +324,7 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
             price = quote.get("price")
             from tools.trigger_scanner import judge_zone
 
-            current, message = judge_zone(price, zone)
+            current, message = judge_zone(price, zone, near_ratio=0.05)
             key = price_state_key(target, zone)
             previous = (state["price_states"].get(key) or {}).get("status")
             monitor_item = price_item(
