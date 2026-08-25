@@ -108,5 +108,16 @@ def load_targets(path: str | Path) -> list[dict[str, Any]]:
         if target_id in seen:
             raise ConfigError(f"重复标的 id: {target_id}")
         seen.add(target_id)
+        zone_markets: set[str] = set()
+        for zone in target.get("zones") or []:
+            if not isinstance(zone, dict):
+                raise ConfigError(f"{target_id} 的 zones 中存在非对象条目")
+            market = str(zone.get("market", "")).strip()
+            if market and market in zone_markets:
+                raise ConfigError(
+                    f"{target_id} 在同一市场 {market} 配置了多个价格区间"
+                )
+            if market:
+                zone_markets.add(market)
         infer_sources(target)
     return targets

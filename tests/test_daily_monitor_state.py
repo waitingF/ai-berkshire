@@ -71,6 +71,44 @@ class DisclosureSourceConfigTest(unittest.TestCase):
             config.infer_sources(target)
 
 
+class TriggerConfigTest(unittest.TestCase):
+    def test_rejects_multiple_price_zones_for_same_target_market(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "triggers.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "targets": [
+                            {
+                                "id": "样例公司",
+                                "codes": {"A": "sh600000"},
+                                "zones": [
+                                    {
+                                        "label": "观察带",
+                                        "market": "A",
+                                        "dir": "range",
+                                        "low": 10,
+                                        "high": 12,
+                                    },
+                                    {
+                                        "label": "安全边际带",
+                                        "market": "A",
+                                        "dir": "below",
+                                        "high": 8,
+                                    },
+                                ],
+                            }
+                        ]
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(config.ConfigError, "同一市场 A 配置了多个价格区间"):
+                config.load_targets(path)
+
+
 class MonitoringStateTest(unittest.TestCase):
     def test_missing_state_starts_with_independent_mutable_schema_one(self):
         with tempfile.TemporaryDirectory() as tmp:

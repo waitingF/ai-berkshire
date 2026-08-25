@@ -56,15 +56,6 @@
           "market": "US",
           "action": "评估加码",
           "note": "且红线未触；单票建议上限5–8%内，小仓试探"
-        },
-        {
-          "label": "观望区",
-          "dir": "range",
-          "low": 75,
-          "high": 86,
-          "market": "US",
-          "action": "小仓试探",
-          "note": "Q2红线未触，但收入仅+8%；仅在Q3利润率维持>15%、增长与资本回报证据改善时再评估"
         }
       ],
       "events": [
@@ -312,28 +303,12 @@
       ],
       "zones": [
         {
-          "label": "A股估值风险带",
-          "dir": "above",
-          "low": 100,
-          "market": "A",
-          "action": "不加仓/降低估值风险",
-          "note": "经营改善未消除高估值；须以Q3 FCF质量与毛利率验证，不把单季转正FCF外推"
-        },
-        {
           "label": "A股重新估值带",
           "dir": "below",
           "high": 60,
           "market": "A",
           "action": "重新估值",
           "note": "仍须出口管制红线未触、利用率和现金流质量未恶化"
-        },
-        {
-          "label": "A股安全边际带",
-          "dir": "below",
-          "high": 50,
-          "market": "A",
-          "action": "评估分批研究性建仓",
-          "note": "仅在经营红线未触且估值模型复核后；不构成自动买入"
         },
         {
           "label": "H股研究建仓带",
@@ -510,29 +485,12 @@
           "action": "研究性观察"
         },
         {
-          "label": "高安全边际带",
-          "dir": "range",
-          "low": 8,
-          "high": 12,
-          "market": "A",
-          "action": "核心评估建仓",
-          "note": "须连续两季扣非转正、毛利率≥26%、OCF覆盖维护资本开支"
-        },
-        {
           "label": "观察带",
           "dir": "range",
           "low": 14,
           "high": 23,
           "market": "H",
           "action": "研究性观察"
-        },
-        {
-          "label": "高安全边际带",
-          "dir": "range",
-          "low": 9,
-          "high": 14,
-          "market": "H",
-          "action": "核心评估建仓"
         }
       ],
       "events": [
@@ -616,14 +574,6 @@
           "high": 105,
           "market": "H",
           "action": "小仓复核"
-        },
-        {
-          "label": "H股核心建仓带",
-          "dir": "range",
-          "low": 60,
-          "high": 80,
-          "market": "H",
-          "action": "核心建仓评估"
         }
       ],
       "events": [
@@ -689,14 +639,6 @@
           "market": "A",
           "action": "评估建仓",
           "note": "须正式中报/随后一季确认锂盐毛利稳健、CFO改善、净债务不再上升"
-        },
-        {
-          "label": "加强评估带",
-          "dir": "range",
-          "low": 20,
-          "high": 25,
-          "market": "A",
-          "action": "提高评估强度"
         }
       ],
       "events": [
@@ -1016,15 +958,6 @@
           "high": 85,
           "market": "US",
           "action": "重新评估"
-        },
-        {
-          "label": "安全边际带",
-          "dir": "range",
-          "low": 50,
-          "high": 65,
-          "market": "US",
-          "action": "评估建仓",
-          "note": "须增长未恶化"
         }
       ],
       "events": [
@@ -1096,15 +1029,6 @@
           "high": 165,
           "market": "US",
           "action": "小仓跟踪"
-        },
-        {
-          "label": "分批建仓带",
-          "dir": "range",
-          "low": 115,
-          "high": 135,
-          "market": "US",
-          "action": "分批建仓",
-          "note": "基本面未恶化"
         }
       ],
       "events": [
@@ -1218,15 +1142,6 @@
           "market": "A",
           "action": "评估建仓",
           "note": "扣非连续转正+定增条款清晰"
-        },
-        {
-          "label": "长期带",
-          "dir": "below",
-          "low": null,
-          "high": 20,
-          "market": "A",
-          "action": "长期再议",
-          "note": "杠杆改善"
         }
       ],
       "events": []
@@ -1341,14 +1256,6 @@
           "market": "H",
           "action": "重估评估",
           "note": "连续两期IFRS盈利、OCF改善、应收增速<收入"
-        },
-        {
-          "label": "小仓研究带",
-          "dir": "range",
-          "low": 10,
-          "high": 20,
-          "market": "H",
-          "action": "小仓研究性配置"
         }
       ],
       "events": [
@@ -1374,15 +1281,6 @@
         "reports/三环集团/三环集团-research-20260803.md"
       ],
       "zones": [
-        {
-          "label": "评估带",
-          "dir": "below",
-          "low": null,
-          "high": 85,
-          "market": "A",
-          "action": "分批研究/建仓评估",
-          "note": "或连续两季高端产品毛利率与FCF证实增长质量"
-        },
         {
           "label": "高确定性带",
           "dir": "range",
@@ -1479,15 +1377,6 @@
         "reports/圣邦股份/圣邦股份-research-20260803.md"
       ],
       "zones": [
-        {
-          "label": "评估带",
-          "dir": "below",
-          "low": null,
-          "high": 70,
-          "market": "A",
-          "action": "分批评估",
-          "note": "或连续两季扣非/CFO/存货周转共同改善"
-        },
         {
           "label": "确认带",
           "dir": "range",
@@ -1633,15 +1522,6 @@
           "market": "A",
           "action": "评估建仓",
           "note": "中报显示主业恢复、FCF不再恶化"
-        },
-        {
-          "label": "小仓评估带",
-          "dir": "range",
-          "low": 24,
-          "high": 28,
-          "market": "A",
-          "action": "小仓评估",
-          "note": "新业务收入/毛利披露、主业毛利不低于2025"
         }
       ],
       "events": [

@@ -3,7 +3,7 @@
   "date": "2026-08-25",
   "timezone": "Asia/Shanghai",
   "status": "OK",
-  "summary": "P0 0 · P1 3 · 新增价格 3 · 新增披露 0 · 异常 0",
+  "summary": "P0 0 · P1 0 · 新增价格 0 · 新增披露 0 · 异常 0",
   "items": [
     {
       "fingerprint": "28165036d4da5687ea5176d5a2d2ecb936b6089d061c86c22bc6dfa4a67f199a",
@@ -232,34 +232,6 @@
       }
     },
     {
-      "fingerprint": "19df4a9246e51c0bcc0f60a5b6f9bd0759c57fcc95b30b9a3e73125f2312925b",
-      "section": "price",
-      "priority": "P0",
-      "target_id": "中芯国际",
-      "name": "中芯国际",
-      "title": "A股估值风险带：WARN",
-      "why_now": "现价 119.65 ≥ 100.00（警戒线）",
-      "status": "WARN",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "WARN",
-        "current_status": "WARN",
-        "price": 119.65,
-        "market": "A",
-        "zone_label": "A股估值风险带",
-        "low": 100,
-        "high": null,
-        "direction": "above",
-        "note": "经营改善未消除高估值；须以Q3 FCF质量与毛利率验证，不把单季转正FCF外推"
-      }
-    },
-    {
       "fingerprint": "037efeb11896ed0e5592e31638056668d6e471e92a9aa16ab936b4e7d54853f7",
       "section": "disclosures",
       "priority": "P0",
@@ -453,10 +425,10 @@
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "FAR",
+        "previous_status": "NEAR",
         "current_status": "NEAR",
         "price": 122.78,
         "market": "US",
@@ -517,34 +489,6 @@
       }
     },
     {
-      "fingerprint": "59c75c2a969ff4a325dba44ba1ae42d7c3602fc896b2bf71ffbb54c63ce44f65",
-      "section": "price",
-      "priority": "P1",
-      "target_id": "拼多多",
-      "name": "PDD Holdings",
-      "title": "观望区：NEAR",
-      "why_now": "现价 87.07，距上沿 86.00 5% 内",
-      "status": "NEAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "NEAR",
-        "current_status": "NEAR",
-        "price": 87.07,
-        "market": "US",
-        "zone_label": "观望区",
-        "low": 75,
-        "high": 86,
-        "direction": "range",
-        "note": "Q2红线未触，但收入仅+8%；仅在Q3利润率维持>15%、增长与资本回报证据改善时再评估"
-      }
-    },
-    {
       "fingerprint": "d44adba42bc3f930a432cb50732794692abd7ce1f7194271850703123bf8e41d",
       "section": "other",
       "priority": "P1",
@@ -593,7 +537,7 @@
       "target_id": "华虹宏力",
       "name": "华虹半导体",
       "title": "H股小仓复核带：NEAR",
-      "why_now": "现价 109.10，距上沿 105.00 5% 内",
+      "why_now": "现价 109.20，距上沿 105.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -605,7 +549,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 109.1,
+        "price": 109.2,
         "market": "H",
         "zone_label": "H股小仓复核带",
         "low": 80,
@@ -628,10 +572,10 @@
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "FAR",
+        "previous_status": "NEAR",
         "current_status": "NEAR",
         "price": 16.5,
         "market": "US",
@@ -754,10 +698,10 @@
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "FAR",
+        "previous_status": "NEAR",
         "current_status": "NEAR",
         "price": 1305.15,
         "market": "A",
@@ -915,7 +859,7 @@
       "target_id": "Keyence",
       "name": "Keyence",
       "title": "加仓带：FAR",
-      "why_now": "现价 81350.00，触发线 64200.00",
+      "why_now": "现价 81500.00，触发线 64200.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -927,7 +871,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 81350.0,
+        "price": 81500.0,
         "market": "JP",
         "zone_label": "加仓带",
         "low": null,
@@ -993,34 +937,6 @@
       }
     },
     {
-      "fingerprint": "fc93c9709ccac2bc4afd42fe7ce395b377fbfdc6c53550744703b0ac46c8d68f",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "Palantir",
-      "name": "Palantir",
-      "title": "安全边际带：FAR",
-      "why_now": "现价 175.89，区间 [50.00, 65.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 175.89,
-        "market": "US",
-        "zone_label": "安全边际带",
-        "low": 50,
-        "high": 65,
-        "direction": "range",
-        "note": "须增长未恶化"
-      }
-    },
-    {
       "fingerprint": "be50f466b17aa09665e1928102622719ba6e04c8607976c64681f84f4c6b7f76",
       "section": "price",
       "priority": "P2",
@@ -1077,34 +993,6 @@
       }
     },
     {
-      "fingerprint": "26ee8863124da1a3c818530efa54b4730533b0136eff838b087047872ba62af0",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "Reddit",
-      "name": "Reddit",
-      "title": "分批建仓带：FAR",
-      "why_now": "现价 152.70，区间 [115.00, 135.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 152.7,
-        "market": "US",
-        "zone_label": "分批建仓带",
-        "low": 115,
-        "high": 135,
-        "direction": "range",
-        "note": "基本面未恶化"
-      }
-    },
-    {
       "fingerprint": "f377177b169c765a9642bbc20d559dff303db34c62e5e5ef122f0e249e72af15",
       "section": "price",
       "priority": "P2",
@@ -1130,34 +1018,6 @@
         "high": 2.0,
         "direction": "range",
         "note": "须验证BMW/SK On/Ford付费开发、长期协议或可复核材料/许可收入"
-      }
-    },
-    {
-      "fingerprint": "0cbe0f94dbd31ff5ade1b9b0b5f10f975759045b96168ad31c57f50cca7411ee",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "三环集团",
-      "name": "三环集团",
-      "title": "评估带：FAR",
-      "why_now": "现价 108.91，触发线 85.00",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 108.91,
-        "market": "A",
-        "zone_label": "评估带",
-        "low": null,
-        "high": 85,
-        "direction": "below",
-        "note": "或连续两季高端产品毛利率与FCF证实增长质量"
       }
     },
     {
@@ -1320,34 +1180,6 @@
         "days": 2,
         "event_type": "财报",
         "note": "确认正式中期业绩是否带来Q2公告以外的新事实；重点核库存、应收、债务、资本开支和现金流量表"
-      }
-    },
-    {
-      "fingerprint": "ce94d2bba06d33b0df8b4fb139f5067fcd0524e01ae0955937afc19163fd7a06",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "中芯国际",
-      "name": "中芯国际",
-      "title": "A股安全边际带：FAR",
-      "why_now": "现价 119.65，触发线 50.00",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 119.65,
-        "market": "A",
-        "zone_label": "A股安全边际带",
-        "low": null,
-        "high": 50,
-        "direction": "below",
-        "note": "仅在经营红线未触且估值模型复核后；不构成自动买入"
       }
     },
     {
@@ -1597,34 +1429,6 @@
       }
     },
     {
-      "fingerprint": "a68aa332a4d346fe3b210ec92f34c3dc2c80fdf081e68fdcfb976ee17aff7518",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "华虹宏力",
-      "name": "华虹半导体",
-      "title": "H股核心建仓带：FAR",
-      "why_now": "现价 109.10，区间 [60.00, 80.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 109.1,
-        "market": "H",
-        "zone_label": "H股核心建仓带",
-        "low": 60,
-        "high": 80,
-        "direction": "range",
-        "note": ""
-      }
-    },
-    {
       "fingerprint": "f74f8f7bd9fd92a8ff403673d15611cd910e7f972aacbac1c82cd1c1ef5c5983",
       "section": "price",
       "priority": "P2",
@@ -1678,34 +1482,6 @@
         "high": 28,
         "direction": "range",
         "note": "扣非连续转正+定增条款清晰"
-      }
-    },
-    {
-      "fingerprint": "34ebe7b7ff58e485d885b1f00fe41ddffe15265d345121407f92e73905d74759",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "合盛硅业",
-      "name": "合盛硅业",
-      "title": "长期带：FAR",
-      "why_now": "现价 33.05，触发线 20.00",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 33.05,
-        "market": "A",
-        "zone_label": "长期带",
-        "low": null,
-        "high": 20,
-        "direction": "below",
-        "note": "杠杆改善"
       }
     },
     {
@@ -1765,34 +1541,6 @@
       }
     },
     {
-      "fingerprint": "13ca6c3d15092b2e93ebf9260f4bc36e9894ddd5c6f6868cf1a5de62f562c39e",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "圣邦股份",
-      "name": "圣邦股份",
-      "title": "评估带：FAR",
-      "why_now": "现价 112.29，触发线 70.00",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 112.29,
-        "market": "A",
-        "zone_label": "评估带",
-        "low": null,
-        "high": 70,
-        "direction": "below",
-        "note": "或连续两季扣非/CFO/存货周转共同改善"
-      }
-    },
-    {
       "fingerprint": "9017c6dd9eda7b204f7c1314f84dc0ea1a0d5b66dd90a6f8882e551e0a90a954",
       "section": "disclosures",
       "priority": "P2",
@@ -1815,34 +1563,6 @@
         "days": 6,
         "event_type": "财报",
         "note": "核锂盐毛利、OCF、净债务"
-      }
-    },
-    {
-      "fingerprint": "f6ed0d512ce29a71182ce7f4d72fda8f23dec62cba35b2ac26261bbd042cb952",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "多氟多",
-      "name": "多氟多",
-      "title": "加强评估带：FAR",
-      "why_now": "现价 33.43，区间 [20.00, 25.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 33.43,
-        "market": "A",
-        "zone_label": "加强评估带",
-        "low": 20,
-        "high": 25,
-        "direction": "range",
-        "note": ""
       }
     },
     {
@@ -2148,62 +1868,6 @@
       }
     },
     {
-      "fingerprint": "0a04e690f7f966fb63f58a5e9c0b4832a29f5be16b5a1a3858c2e0a024a227ba",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "晶合集成",
-      "name": "晶合集成",
-      "title": "高安全边际带：FAR",
-      "why_now": "现价 37.20，区间 [8.00, 12.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 37.2,
-        "market": "A",
-        "zone_label": "高安全边际带",
-        "low": 8,
-        "high": 12,
-        "direction": "range",
-        "note": "须连续两季扣非转正、毛利率≥26%、OCF覆盖维护资本开支"
-      }
-    },
-    {
-      "fingerprint": "f33d60d4b1401ade449877fa808bafd57fec68dbe888b614be03969b41b32a7e",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "晶合集成",
-      "name": "晶合集成",
-      "title": "高安全边际带：FAR",
-      "why_now": "现价 29.30，区间 [9.00, 14.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 29.3,
-        "market": "H",
-        "zone_label": "高安全边际带",
-        "low": 9,
-        "high": 14,
-        "direction": "range",
-        "note": ""
-      }
-    },
-    {
       "fingerprint": "46cb73e22e5de28ebae21e87fa2c4257a8390e1772c9805c93ae43ed6014e0f8",
       "section": "price",
       "priority": "P2",
@@ -2254,34 +1918,6 @@
         "days": 6,
         "event_type": "财报",
         "note": "核盈利、回款与现金流"
-      }
-    },
-    {
-      "fingerprint": "7f0f950f2d6687a9f322538c653ed3e146d5cfd439e5cb0e01254fbf623d1727",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "极视角",
-      "name": "极视角",
-      "title": "小仓研究带：FAR",
-      "why_now": "现价 95.10，区间 [10.00, 20.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 95.1,
-        "market": "H",
-        "zone_label": "小仓研究带",
-        "low": 10,
-        "high": 20,
-        "direction": "range",
-        "note": ""
       }
     },
     {
@@ -2615,34 +2251,6 @@
       }
     },
     {
-      "fingerprint": "5a2c37a9d2d431949a2da045e4682b8c75e8e4f6ef17e07f5917f2c359582961",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "蓝思科技",
-      "name": "蓝思科技",
-      "title": "小仓评估带：FAR",
-      "why_now": "现价 38.45，区间 [24.00, 28.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 38.45,
-        "market": "A",
-        "zone_label": "小仓评估带",
-        "low": 24,
-        "high": 28,
-        "direction": "range",
-        "note": "新业务收入/毛利披露、主业毛利不低于2025"
-      }
-    },
-    {
       "fingerprint": "dd4b61c2f25b7217efb3a48d3a6df61bcf6e2f8a5b260be77b13c0def3a9148f",
       "section": "price",
       "priority": "P2",
@@ -2836,11 +2444,7 @@
       }
     }
   ],
-  "notification_items": [
-    "29265db7ada22d61c61f389981567690f7c4586c31c365ee82539ed6fbde2f45",
-    "cbb91e302e3b3899ef22e9e2024ba22dcff0b86c4dd114a79650a6bb1610239c",
-    "7978ba7626a4371e6f931b2d528673a8cf8f297645afe8db20df9b8cba281b35"
-  ],
+  "notification_items": [],
   "source_health": [
     {
       "source": "quotes",
