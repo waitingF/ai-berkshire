@@ -7,11 +7,12 @@ from pathlib import Path
 
 from tools.daily_monitoring.deepseek import DeepSeekAnalysis
 from tools.daily_monitoring.documents import ExtractedDocument
-from tools.daily_monitoring.models import Disclosure, FallbackClue, VerifiedFact
+from tools.daily_monitoring.models import Disclosure, FallbackClue, MonitorItem, VerifiedFact
 from tools.daily_monitoring.http import SourceError
 from tools.daily_monitoring.runner import (
     MonitorOptions,
     MonitorServices,
+    _aggregate_todays_disclosures,
     _watched,
     run_monitor,
 )
@@ -55,7 +56,7 @@ def disclosure():
         source="sec",
         document_id="0000000001-26-000001",
         title="Quarterly results",
-        published_at="2026-08-25T16:00:00-04:00",
+        published_at="2026-08-25T08:00:00-04:00",
         document_type="10-Q",
         official_url=OFFICIAL_URL,
         download_url=OFFICIAL_URL,
@@ -123,6 +124,89 @@ def options(root, triggers):
 
 
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_disclosure_summary_uses_highest_priority_in_group(self):
+        def disclosure_item(fingerprint, priority, published_at):
+            return MonitorItem(
+                fingerprint=fingerprint,
+                section="disclosures",
+                priority=priority,
+                target_id="样例公司",
+                name="样例公司",
+                title=f"{priority} announcement",
+                why_now="有新的正式披露。",
+                status="DONE",
+                notify=True,
+                metadata={
+                    "kind": "official_disclosure",
+                    "market": "H",
+                    "published_at": published_at,
+                },
+            )
+
+        items = _aggregate_todays_disclosures(
+            [
+                disclosure_item("p0", "P0", "2026-08-26T18:00:00+08:00"),
+                disclosure_item("p1", "P1", "2026-08-26T19:00:00+08:00"),
+            ],
+            today=date(2026, 8, 26),
+        )
+
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0].priority, "P0")
+
+    def test_disclosure_summary_requires_review_when_any_item_needs_human_review(self):
+        item = MonitorItem(
+            fingerprint="review",
+            section="disclosures",
+            priority="P0",
+            target_id="样例公司",
+            name="样例公司",
+            title="Interim results",
+            why_now="有新的正式披露。",
+            status="DONE",
+            needs_human_review=True,
+            notify=True,
+            metadata={
+                "kind": "official_disclosure",
+                "market": "H",
+                "published_at": "2026-08-26T18:00:00+08:00",
+            },
+        )
+
+        summaries = _aggregate_todays_disclosures(
+            [item], today=date(2026, 8, 26)
+        )
+
+        self.assertEqual(summaries[0].status, "REVIEW")
+
+    def test_raw_hkex_timestamp_is_interpreted_in_shanghai_date(self):
+        item = MonitorItem(
+            fingerprint="hkex",
+            section="disclosures",
+            priority="P0",
+            target_id="样例公司",
+            name="样例公司",
+            title="INTERIM RESULTS FOR THE SIX MONTHS ENDED 30 JUNE 2026",
+            why_now="有新的正式披露。",
+            status="DONE",
+            notify=True,
+            metadata={
+                "kind": "official_disclosure",
+                "market": "H",
+                "published_at": "26/08/2026 18:25",
+            },
+        )
+
+        summaries = _aggregate_todays_disclosures(
+            [item], today=date(2026, 8, 26)
+        )
+
+        self.assertEqual(len(summaries), 1)
+        self.assertEqual(
+            summaries[0].metadata["latest_time"],
+            "2026-08-26T18:25:00+08:00",
+        )
+
     def test_watch_matches_exact_identity_not_substring(self):
         target = {
             "id": "腾讯音乐",
@@ -209,6 +293,154 @@ class DailyMonitorRunnerTest(unittest.TestCase):
             self.assertEqual(second_ai.calls, 0)
             self.assertEqual(second.notification_items, ())
 
+    def test_aggregates_todays_disclosures_for_same_target_and_market(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root)
+            older = disclosure()
+            newer = replace(
+                older,
+                document_id="0000000001-26-000002",
+                title="Latest disclosure",
+                published_at="2026-08-25T09:00:00-04:00",
+            )
+
+            result = run_monitor(
+                options(root, triggers),
+                services(
+                    FakeAI(ai_result()),
+                    collector=lambda *args, **kwargs: [older, newer],
+                ),
+            )
+
+            disclosures = [
+                item for item in result.items if item.section == "disclosures"
+            ]
+            self.assertEqual(len(disclosures), 1)
+            self.assertEqual(disclosures[0].title, "2 项公告更新")
+            self.assertEqual(disclosures[0].metadata["market"], "US")
+            self.assertEqual(disclosures[0].metadata["announcement_count"], 2)
+            self.assertEqual(
+                disclosures[0].metadata.get("latest_time"),
+                "2026-08-25T21:00:00+08:00",
+            )
+            self.assertEqual(
+                [update["title"] for update in disclosures[0].metadata["updates"]],
+                ["Quarterly results", "Latest disclosure"],
+            )
+            self.assertEqual(
+                disclosures[0].metadata["updates"][0].get("verified_facts"),
+                [
+                    {
+                        "fact": "经营现金流发生变化。",
+                        "official_url": OFFICIAL_URL,
+                        "page": None,
+                        "confidence": "high",
+                    }
+                ],
+            )
+            self.assertEqual(disclosures[0].status, "DONE")
+            self.assertEqual(len(result.notification_items), 1)
+
+    def test_excludes_disclosures_not_published_today_from_daily_items(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root)
+            yesterday = replace(
+                disclosure(),
+                document_id="0000000001-26-000000",
+                title="Yesterday disclosure",
+                published_at="2026-08-24T23:59:00+08:00",
+            )
+            today = replace(
+                disclosure(),
+                title="Today disclosure",
+                published_at="2026-08-25T00:01:00+08:00",
+            )
+
+            result = run_monitor(
+                options(root, triggers),
+                services(
+                    FakeAI(ai_result()),
+                    collector=lambda *args, **kwargs: [yesterday, today],
+                ),
+            )
+
+            disclosures = [
+                item for item in result.items if item.section == "disclosures"
+            ]
+            self.assertEqual(len(disclosures), 1)
+            self.assertEqual(disclosures[0].title, "1 项公告更新")
+            self.assertEqual(disclosures[0].metadata["announcement_count"], 1)
+            self.assertEqual(
+                disclosures[0].metadata["updates"][0]["title"],
+                "Today disclosure",
+            )
+
+    def test_ignores_placeholder_when_group_has_substantive_disclosure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root)
+            substantive = replace(
+                disclosure(),
+                title="INTERIM RESULTS FOR THE SIX MONTHS ENDED 30 JUNE 2026",
+            )
+            placeholder = replace(
+                disclosure(),
+                document_id="0000000001-26-000002",
+                title=(
+                    "An announcement has just been published by the issuer in "
+                    "the Chinese section of this website"
+                ),
+                published_at="2026-08-25T09:00:00-04:00",
+            )
+
+            result = run_monitor(
+                options(root, triggers),
+                services(
+                    FakeAI(ai_result()),
+                    collector=lambda *args, **kwargs: [substantive, placeholder],
+                ),
+            )
+
+            summary = next(
+                item for item in result.items if item.section == "disclosures"
+            )
+            self.assertEqual(summary.metadata["announcement_count"], 1)
+            self.assertEqual(
+                [update["summary"] for update in summary.metadata["updates"]],
+                ["2026年中期业绩"],
+            )
+
+    def test_keeps_placeholder_as_pending_summary_when_it_is_the_only_disclosure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root)
+            placeholder = replace(
+                disclosure(),
+                title=(
+                    "An announcement has just been published by the issuer in "
+                    "the Chinese section of this website"
+                ),
+            )
+
+            result = run_monitor(
+                options(root, triggers),
+                services(
+                    FakeAI(ai_result()),
+                    collector=lambda *args, **kwargs: [placeholder],
+                ),
+            )
+
+            summary = next(
+                item for item in result.items if item.section == "disclosures"
+            )
+            self.assertEqual(summary.metadata["announcement_count"], 1)
+            self.assertEqual(
+                summary.metadata["updates"][0]["summary"],
+                "新增公告，内容待确认",
+            )
+
     def test_first_price_observation_uses_current_priority_without_notification(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -283,13 +515,14 @@ class DailyMonitorRunnerTest(unittest.TestCase):
 
             result = run_monitor(options(root, triggers), runtime_services)
 
-            disclosure_item = next(
+            disclosure_summary = next(
                 row for row in result.items if row.section == "disclosures"
             )
             self.assertEqual(
-                disclosure_item.limitations,
-                ("正文提取失败（连接中断或响应不完整）",),
+                disclosure_summary.metadata["updates"][0]["limitations"],
+                ["正文提取失败（连接中断或响应不完整）"],
             )
+            self.assertEqual(disclosure_summary.status, "REVIEW")
 
     def test_cninfo_failure_uses_akshare_only_as_unverified_clue(self):
         with tempfile.TemporaryDirectory() as tmp:

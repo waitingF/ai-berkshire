@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import os
 from dataclasses import asdict
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -215,11 +215,49 @@ def _item_notes(item: MonitorItem) -> str:
 def _render_disclosure_table(
     items: Iterable[MonitorItem], *, workflow_owners: set[str]
 ) -> list[str]:
-    lines = [
-        "| 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |",
-        "|---|---|---|---|---|---|---|---|---|",
+    rows = list(items)
+    summaries = [
+        item for item in rows if item.metadata.get("kind") == "disclosure_summary"
     ]
-    for item in items:
+    regular = [item for item in rows if item not in summaries]
+    lines: list[str] = []
+    if summaries:
+        lines.extend(
+            [
+                "| 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |",
+                "|---|---|---|---|---:|---|---|",
+            ]
+        )
+        for item in summaries:
+            updates = []
+            for update in item.metadata.get("updates") or []:
+                summary = str(update.get("summary") or "新增公告")
+                urls = update.get("source_urls") or []
+                updates.append(f"[{summary}]({urls[0]})" if urls else summary)
+            latest = str(item.metadata.get("latest_time") or "")
+            try:
+                latest = datetime.fromisoformat(latest).strftime("%H:%M")
+            except ValueError:
+                latest = latest or "-"
+            cells = (
+                item.priority,
+                item.name,
+                item.metadata.get("market") or "-",
+                "<br>".join(updates) or "-",
+                item.metadata.get("announcement_count") or 0,
+                latest,
+                item.status,
+            )
+            lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
+        lines.append("")
+    if regular:
+        lines.extend(
+            [
+                "| 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |",
+                "|---|---|---|---|---|---|---|---|---|",
+            ]
+        )
+    for item in regular:
         cells = (
             item.priority,
             item.name,
@@ -232,7 +270,8 @@ def _render_disclosure_table(
             _item_notes(item),
         )
         lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
-    lines.append("")
+    if regular:
+        lines.append("")
     return lines
 
 

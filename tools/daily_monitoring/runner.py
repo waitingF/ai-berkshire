@@ -5,10 +5,12 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import re
 from dataclasses import dataclass, replace
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Callable, Mapping
+from zoneinfo import ZoneInfo
 
 from .collectors import akshare, cninfo, hkex, sec
 from .config import infer_sources, load_targets
@@ -21,6 +23,7 @@ from .models import Disclosure, FallbackClue, MonitorItem, RunResult, SourceHeal
 from .report import write_reports
 from .state import load_state, save_state_atomic
 from .transitions import (
+    PRIORITY_RANK,
     classify_event,
     event_item,
     event_state_key,
@@ -57,6 +60,7 @@ class MonitorServices:
 FINANCIAL_DISCLOSURE_TYPES = frozenset(
     {"财报", "业绩预告", "10-K", "10-Q", "20-F", "40-F"}
 )
+DISCLOSURE_MARKETS = {"cninfo": "A", "hkex": "H", "sec": "US", "akshare": "A"}
 
 
 def _production_quotes(codes: list[str]) -> dict[str, dict[str, Any]]:
@@ -171,7 +175,13 @@ def _fallback_item(clue: FallbackClue, *, notify: bool) -> MonitorItem:
         needs_human_review=True,
         limitations=("AKShare 不是一期正式披露依据",),
         notify=notify,
-        metadata={"fallback": True, "published_at": clue.published_at},
+        metadata={
+            "kind": "fallback_clue",
+            "fallback": True,
+            "source": clue.source,
+            "market": DISCLOSURE_MARKETS.get(clue.source),
+            "published_at": clue.published_at,
+        },
     )
 
 
@@ -243,11 +253,148 @@ def _disclosure_item(
         limitations=tuple(limitations),
         notify=notify,
         metadata={
+            "kind": "official_disclosure",
             "document_type": disclosure.document_type,
+            "source": disclosure.source,
+            "market": DISCLOSURE_MARKETS.get(disclosure.source),
             "published_at": disclosure.published_at,
             "thesis_impacts": list(thesis_impacts),
         },
     )
+
+
+def _published_datetime(item: MonitorItem) -> datetime | None:
+    value = str(item.metadata.get("published_at") or "").strip()
+    if not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        parsed = None
+        for pattern in ("%d/%m/%Y %H:%M", "%d/%m/%Y", "%Y/%m/%d %H:%M", "%Y/%m/%d"):
+            try:
+                parsed = datetime.strptime(value, pattern)
+                break
+            except ValueError:
+                continue
+        if parsed is None:
+            return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=ZoneInfo("Asia/Shanghai"))
+    return parsed.astimezone(ZoneInfo("Asia/Shanghai"))
+
+
+def _disclosure_update_topic(item: MonitorItem) -> str:
+    title = " ".join(item.title.split())
+    upper = title.upper()
+    year_match = re.search(r"\b(20\d{2})\b", title)
+    year = year_match.group(1) if year_match else ""
+    if "INTERIM RESULTS" in upper:
+        return f"{year + '年' if year else ''}中期业绩"
+    if "H SHARE FULL CIRCULATION" in upper:
+        return "H股全流通申请"
+    if "NEXT DAY DISCLOSURE RETURN" in upper:
+        return "翌日披露报表"
+    if _is_placeholder_disclosure(item):
+        return "新增公告，内容待确认"
+    return title[:60] + ("…" if len(title) > 60 else "")
+
+
+def _is_placeholder_disclosure(item: MonitorItem) -> bool:
+    title = " ".join(item.title.casefold().split())
+    return "an announcement has just been published by the issuer" in title
+
+
+def _aggregate_todays_disclosures(
+    items: list[MonitorItem], *, today: date
+) -> list[MonitorItem]:
+    groups: dict[tuple[str, str], list[MonitorItem]] = {}
+    untouched: list[MonitorItem] = []
+    for item in items:
+        if item.metadata.get("kind") != "official_disclosure":
+            untouched.append(item)
+            continue
+        published = _published_datetime(item)
+        if published is None or published.date() != today:
+            continue
+        market = str(item.metadata.get("market") or "").strip()
+        if not market:
+            untouched.append(item)
+            continue
+        groups.setdefault((item.target_id, market), []).append(item)
+
+    summaries: list[MonitorItem] = []
+    for (target_id, market), rows in groups.items():
+        substantive = [item for item in rows if not _is_placeholder_disclosure(item)]
+        if substantive:
+            rows = substantive
+        rows.sort(key=lambda item: (_published_datetime(item), item.fingerprint))
+        latest = _published_datetime(rows[-1])
+        assert latest is not None
+        priority = max(rows, key=lambda item: PRIORITY_RANK[item.priority]).priority
+        completed = all(
+            item.status == "DONE" and not item.needs_human_review for item in rows
+        )
+        updates = [
+            {
+                "summary": _disclosure_update_topic(item),
+                "title": item.title,
+                "published_at": item.metadata.get("published_at"),
+                "priority": item.priority,
+                "status": item.status,
+                "why_now": item.why_now,
+                "source_urls": list(item.source_urls),
+                "verified_facts": [
+                    {
+                        "fact": fact.fact,
+                        "official_url": fact.official_url,
+                        "page": fact.page,
+                        "confidence": fact.confidence,
+                    }
+                    for fact in item.verified_facts
+                ],
+                "next_workflow": item.next_workflow,
+                "needs_human_review": item.needs_human_review,
+                "limitations": list(item.limitations),
+                "document_type": item.metadata.get("document_type"),
+                "source": item.metadata.get("source"),
+                "thesis_impacts": list(item.metadata.get("thesis_impacts") or []),
+            }
+            for item in rows
+        ]
+        fingerprint = hashlib.sha256(
+            "\0".join(
+                ("disclosure-summary", today.isoformat(), target_id, market)
+                + tuple(item.fingerprint for item in rows)
+            ).encode()
+        ).hexdigest()
+        summaries.append(
+            MonitorItem(
+                fingerprint=fingerprint,
+                section="disclosures",
+                priority=priority,
+                target_id=target_id,
+                name=rows[0].name,
+                title=f"{len(rows)} 项公告更新",
+                why_now="；".join(update["summary"] for update in updates),
+                status="DONE" if completed else "REVIEW",
+                source_urls=tuple(
+                    dict.fromkeys(url for item in rows for url in item.source_urls)
+                ),
+                needs_human_review=not completed,
+                notify=any(item.notify for item in rows),
+                metadata={
+                    "kind": "disclosure_summary",
+                    "market": market,
+                    "date": today.isoformat(),
+                    "published_at": rows[-1].metadata.get("published_at"),
+                    "latest_time": latest.isoformat(),
+                    "announcement_count": len(rows),
+                    "updates": updates,
+                },
+            )
+        )
+    return [*untouched, *summaries]
 
 
 def _cursor_start(source_state: dict[str, Any], today: date) -> date:
@@ -617,6 +764,7 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
         )
     state["completeness"] = {**preserved_gaps, **current_gaps}
 
+    items = _aggregate_todays_disclosures(items, today=options.today)
     notifications = tuple(item for item in items if item.notify)
     provisional = RunResult(
         status="DEGRADED" if degraded else "OK",

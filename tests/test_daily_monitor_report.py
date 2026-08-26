@@ -181,6 +181,55 @@ class DailyMonitorReportTest(unittest.TestCase):
         self.assertIn("核验利润率", markdown)
         self.assertNotIn("### [P0] 腾讯控股｜2026Q2业绩公告", markdown)
 
+    def test_disclosure_summary_renders_compact_linked_updates(self):
+        markdown = render_markdown(
+            result(
+                [
+                    item(
+                        "summary",
+                        "disclosures",
+                        "P0",
+                        title="2 项公告更新",
+                        status="REVIEW",
+                        source_urls=(
+                            "https://www1.hkexnews.hk/results.pdf",
+                            "https://www1.hkexnews.hk/circulation.pdf",
+                        ),
+                        metadata={
+                            "kind": "disclosure_summary",
+                            "market": "H",
+                            "announcement_count": 2,
+                            "latest_time": "2026-08-26T18:36:00+08:00",
+                            "updates": [
+                                {
+                                    "summary": "2026年中期业绩",
+                                    "source_urls": [
+                                        "https://www1.hkexnews.hk/results.pdf"
+                                    ],
+                                },
+                                {
+                                    "summary": "H股全流通申请",
+                                    "source_urls": [
+                                        "https://www1.hkexnews.hk/circulation.pdf"
+                                    ],
+                                },
+                            ],
+                        },
+                    )
+                ]
+            ),
+            run_date=date(2026, 8, 26),
+        )
+
+        self.assertIn(
+            "| 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |",
+            markdown,
+        )
+        self.assertIn("[2026年中期业绩](https://www1.hkexnews.hk/results.pdf)", markdown)
+        self.assertIn("[H股全流通申请](https://www1.hkexnews.hk/circulation.pdf)", markdown)
+        self.assertIn("| 2 | 18:36 | REVIEW |", markdown)
+        self.assertNotIn("出现了需要研究核验的增量", markdown)
+
     def test_other_section_renders_table(self):
         markdown = render_markdown(
             result(
