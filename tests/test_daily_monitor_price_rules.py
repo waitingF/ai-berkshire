@@ -28,12 +28,10 @@ class PricePriorityRuleTest(unittest.TestCase):
 
         self.assertEqual(status, "FAR")
 
-    def test_above_warning_zone_keeps_directional_semantics(self):
-        warning = {"label": "不追高线", "dir": "above", "low": 440}
+    def test_price_ceiling_more_than_five_percent_above_is_far(self):
+        ceiling = {"label": "不追高线", "dir": "below", "high": 440}
 
-        self.assertEqual(judge_zone(450, warning, near_ratio=0.05)[0], "WARN")
-        self.assertEqual(judge_zone(430, warning, near_ratio=0.05)[0], "NEAR")
-        self.assertEqual(judge_zone(400, warning, near_ratio=0.05)[0], "FAR")
+        self.assertEqual(judge_zone(487.31, ceiling, near_ratio=0.05)[0], "FAR")
 
 
 if __name__ == "__main__":

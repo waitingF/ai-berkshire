@@ -3,7 +3,7 @@
   "date": "2026-08-26",
   "timezone": "Asia/Shanghai",
   "status": "OK",
-  "summary": "P0 12 · P1 35 · 新增价格 2 · 新增披露 45 · 异常 0",
+  "summary": "P0 3 · P1 4 · 新增价格 0 · 新增披露 7 · 异常 0",
   "items": [
     {
       "fingerprint": "28165036d4da5687ea5176d5a2d2ecb936b6089d061c86c22bc6dfa4a67f199a",
@@ -97,10 +97,10 @@
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "NEAR",
+        "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
         "price": 118.33,
         "market": "US",
@@ -109,34 +109,6 @@
         "high": 119,
         "direction": "below",
         "note": "盯管理层过渡与品牌年轻化"
-      }
-    },
-    {
-      "fingerprint": "f48832c9e20a299affb29d7f9b78d43f04c7c236559569e4d3bd9bd63ff691ec",
-      "section": "price",
-      "priority": "P0",
-      "target_id": "微软",
-      "name": "Microsoft",
-      "title": "不追高线：WARN",
-      "why_now": "现价 491.71 ≥ 440.00（警戒线）",
-      "status": "WARN",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "WARN",
-        "current_status": "WARN",
-        "price": 491.71,
-        "market": "US",
-        "zone_label": "不追高线",
-        "low": 440,
-        "high": null,
-        "direction": "above",
-        "note": "FY27 Q1验证Azure约+45%、云毛利与FCF后再评估"
       }
     },
     {
@@ -235,192 +207,6 @@
       }
     },
     {
-      "fingerprint": "4a9634f602343c9f7c99571e236aef34d857ed45da5bddac58db97a77282d8e0",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "东方电气",
-      "name": "东方电气",
-      "title": "2026年半年度报告",
-      "why_now": "该正式披露为2026年半年度报告，属于公司规定的最低优先级别P0，需要进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年半年度报告中披露，子公司东方电气风电股份有限公司本期（2026年上半年）营业收入为5,515,701,020.54元，净利润为-301,965,573.83元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505169.PDF",
-          "page": 166,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年半年度报告中披露，子公司东方电气集团东方锅炉股份有限公司本期（2026年上半年）营业收入为10,848,860,946.26元，净利润为706,904,921.20元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505169.PDF",
-          "page": 166,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年半年度报告中披露，杭州萧山区人民法院于2026年1月22日裁定终结东方电气新能源设备（杭州）有限公司破产程序。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505169.PDF",
-          "page": 24,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年半年度报告中披露，报告期内公司投资设立6家子公司，注销2家子公司。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505169.PDF",
-          "page": 15,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505169.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本次分析基于半年度报告片段，未核验完整财务报表数据及分部信息。",
-        "正文中财务数据均为原始数据，未进行同比计算或与前期数据交叉核对。",
-        "公告片段中未包含现金流量表、资产负债表和所有者权益变动表的完整数据。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "风电子公司2026年上半年亏损3.02亿元，营业收入55.16亿元，毛利率持续承压，验证了原研究中'风电价格战持续、毛利无法改善'的风险路径。",
-          "东方锅炉子公司2026年上半年净利润7.07亿元，同比大幅增长（去年同期4.57亿元），显示传统发电设备业务盈利改善。",
-          "公司于报告期内新设多家新能源子公司并注销两家，显示业务结构持续调整，需关注低毛利风电业务扩张对整体盈利质量的影响。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "9e3e8ba6ef6ebea4eee22be482228c512a19873eb346feb0046114a380af5c60",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "东方电气",
-      "name": "东方电气",
-      "title": "2026年半年度报告摘要",
-      "why_now": "该正式披露的2026年半年度报告摘要显示归母净利润同比增长42.07%，扣非净利润同比增长30.96%，但经营现金流为负，与既有研究报告中关于现金流波动和盈利质量的核心关切直接相关，需进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年营业收入为38,122,958,912.16元，同比增长1.33%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505323.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年归属于上市公司股东的净利润为2,713,249,266.86元，同比增长42.07%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505323.PDF",
-          "page": 3,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年归属于上市公司股东的扣除非经常性损益的净利润为2,365,638,251.59元，同比增长30.96%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505323.PDF",
-          "page": 3,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年经营活动产生的现金流量净额为-1,722,168,649.61元，上年同期为-556,466,428.94元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505323.PDF",
-          "page": 3,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年基本每股收益为0.78元，同比增长30.00%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505323.PDF",
-          "page": 3,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505323.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本摘要未经审计，财务数据可能后续调整。",
-        "摘要未提供分部财务数据（如风电、核电等板块毛利率），无法更新板块盈利质量分析。",
-        "摘要未提供现金流量表详细构成，无法区分经营现金流恶化的具体原因（如存货、应收账款、合同资产变动）。",
-        "H股同日发布的财务数据可能采用不同会计准则或口径，未纳入本次核验。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "归母净利润42%的同比增速远超2026Q1的37.41%，但扣非增速仅30.96%，验证了非经常性损益对利润的放大作用，与研究报告指出的盈利质量问题一致。",
-          "经营现金流为-17.22亿元，较上年同期的-5.56亿元显著恶化，加剧了对现金回收和营运资金压力的担忧，可能影响加仓信号中关于经营现金流连续改善的触发条件。",
-          "本报告期利润总额增速22.04%低于归母净利润增速42.07%，表明少数股东损益或非经常性项目对归母利润有额外贡献，需进一步分析其对每股价值的稀释影响。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "10999e217db57ac13aa238ee51aa8870dffb93bead4c312b0cfdb9891e3a4878",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "东方电气",
-      "name": "东方电气",
-      "title": "ANNOUNCEMENT OF 2026 INTERIM RESULTS",
-      "why_now": "2026H1正式财报发布了，归母净利润同比增长42.07%，远超市场预期，对当前观望逻辑有重大影响，需立即进行正式复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "集团2026年上半年总经营收入为386.24亿元人民币，同比增长1.24%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501739.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "集团2026年上半年归属于母公司股东的净利润为27.13亿元人民币，同比增长42.07%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501739.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年每股收益为人民币0.78元，上年同期为0.60元。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501739.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年新增订单为698.80亿元人民币。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501739.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "董事会不建议派发中期股息。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501739.pdf",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501739.pdf"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告为英文版，基于中国会计准则编制，未经审计，需与后续正式报告核对。",
-        "未提供分部收入与毛利率数据，无法直接验证风电业务毛利率是否改善。",
-        "净利润高增长可能包含非经常性损益，需进一步拆解。",
-        "当前报告为初步公告，后续可能有详细财报补充。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "25/08/2026 20:45",
-        "thesis_impacts": [
-          "归母净利润同比+42.07%，尽管收入增速仅+1.24%，表明利润率显著改善，可能缓解此前对风电低毛利和项目周期压力的担忧。",
-          "新增订单698.8亿元（2026H1），若持续，可能支撑未来收入增长，但需关注订单质量与毛利。",
-          "不派中期股息，可能影响股息预期，需在盈利复核中评估。",
-          "盈利增速远超收入增速，可能源于毛利率提升或非经常性收益，需通过分部数据核实。"
-        ]
-      }
-    },
-    {
       "fingerprint": "7de041909974ed718737de45bc14d00cc8a7aecedef8ad3c592c15e291427817",
       "section": "disclosures",
       "priority": "P0",
@@ -443,141 +229,6 @@
         "days": -5,
         "event_type": "财报",
         "note": "重做利差损监测表：净投资收益率、偿付能力、NBV价值率、个险止跌"
-      }
-    },
-    {
-      "fingerprint": "36993fb301064e6753aec5d903748a325cca9620816279e2d4ce68d0e1cb9e0e",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "2026年半年度报告",
-      "why_now": "2026年半年度报告为正式财报披露，包含台山核电净利润大幅下滑、在建机组数量变化等关键事实，直接影响现有研究结论与跟踪触发条件，需立即进入复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年，公司主要控股子公司台山核电实现主营业务收入13.89亿元，较上期减少25.36亿元，变动幅度-64.62%；实现净利润-9.73亿元，较上期减少12.50亿元，变动幅度-451.26%，主要原因是本期机组换料大修时间同比增加。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503731.PDF",
-          "page": 29,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年，公司主要控股子公司防城港核电实现主营业务收入54.26亿元，较上期增加9.34亿元，增幅20.80%；实现净利润14.07亿元，较上期增加10.06亿元，增幅250.39%，主要原因是本期平均结算电价同比提升。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503731.PDF",
-          "page": 29,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年，公司主要控股子公司宁德核电实现净利润14.66亿元，较上期增加2.82亿元，增幅23.80%，主要原因是本期收到的增值税退税同比增加。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503731.PDF",
-          "page": 29,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年6月30日，公司管理的在运核电机组共30台，较上年末增加2台；在建核电机组共18台，较上年末减少2台。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503731.PDF",
-          "page": 30,
-          "confidence": "high"
-        },
-        {
-          "fact": "报告期内，子公司台山核电与银行开展远期购汇套期保值业务，合约规模9,900万欧元，其中5,000万欧元于本报告期内交割，截至期末剩余4,900万欧元远期购汇合约尚未交割。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503731.PDF",
-          "page": 27,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503731.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本次仅分析半年度报告部分摘录，未覆盖完整财务报表及附注，利润归因可能未完全反映。",
-        "公告中的数据未经审计，可能存在调整。",
-        "未能核实台山核电大修具体时间及对下半年发电量的影响。",
-        "未获取2026年半年报的完整财务数据，如营业收入、净利润、现金流等总体数据，需在后续审查中补充。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "台山核电净利润大幅下滑（-451.26%）印证了报告中对台山项目盈利承压的担忧，但下滑幅度超出预期，需重新评估台山资产对整体利润的拖累程度及新机组投产的节奏影响。",
-          "防城港核电净利润大幅增长（+250.39%）显示电价提升对部分基地盈利有显著正面影响，但报告已指出部分地区电价下降，需辨析电价分化对整体盈利的影响。",
-          "在建机组减少2台、在运机组增加2台，表明部分新机组已投产，但资本开支高峰仍在持续，需验证自由现金流是否继续为负。",
-          "公司确认2026年上半年面临电力市场化交易价格下降风险，与报告中的电价风险判断一致，需关注下半年电价走势对业绩的持续性影响。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "188838461ec3e977999eac522a27ba7ad488ca8866e45fd7b23da1c7a5c62ec0",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "2026年半年度报告摘要",
-      "why_now": "中国广核发布2026年半年度报告摘要，属于常规财务披露，需进入研究复核流程。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年营业收入314.83亿元，同比下降2.76%；归母净利润61.05亿元，同比增长2.66%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503730.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年经营活动现金流净额133.32亿元，同比增长1.80%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503730.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "截至2026年6月30日，公司管理30台在运核电机组和18台在建核电机组，装机容量分别为34248兆瓦和21812兆瓦。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503730.PDF",
-          "page": 6,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年累计上网电量1095.97亿千瓦时（含联营企业），同比下降3.32%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503730.PDF",
-          "page": 6,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年市场化交易电量占总上网电量约65.9%，同比上升约9.8个百分点。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503730.PDF",
-          "page": 7,
-          "confidence": "high"
-        },
-        {
-          "fact": "报告期利润分配预案：不派发现金红利，不送红股，不以公积金转增股本。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503730.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503730.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "报告摘要非完整报告，部分细节如具体电价、成本结构未披露。",
-        "数据未经审计（摘要中未见审计意见，但半年度报告通常不要求审计）。",
-        "公司对核电机组运营、在建项目进展的表述为主观描述，未提供独立第三方验证。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "2026年上半年归母净利润同比增长2.66%，与2025年全年利润下滑趋势形成对比，需关注利润增长能否持续。",
-          "市场化交易电量占比升至65.9%，电价压力仍是核心风险，平均结算电价同比下降。",
-          "在建核电机组18台，扩张周期持续，资本开支压力仍大。",
-          "资产负债表率升至68.25%，杠杆水平继续抬升。"
-        ]
       }
     },
     {
@@ -659,104 +310,70 @@
       }
     },
     {
-      "fingerprint": "2c5913aa8606085b0e3c534a83ecac6027f4d2de8187326e65d82a705e8068b5",
+      "fingerprint": "db0784ef6b043444b680a5ed3c7d7a822210bb1c12ee8e2677796643af9c8f74",
       "section": "disclosures",
       "priority": "P0",
-      "target_id": "合盛硅业",
-      "name": "合盛硅业",
-      "title": "合盛硅业2026年半年度报告",
-      "why_now": "该正式披露的半年度报告包含关键财务数据与风险更新，需进入研究复核。",
+      "target_id": "华虹宏力",
+      "name": "华虹宏力",
+      "title": "INTERIM RESULTS ANNOUNCEMENT\nFOR THE SIX MONTHS ENDED 30 JUNE 2026",
+      "why_now": "该正式披露包含2026年上半年未经审计财务数据，属于需要进入研究复核的增量事实。",
       "status": "DONE",
       "verified_facts": [
         {
-          "fact": "2026年上半年营业收入101.60亿元，同比增长3.94%；归母净利润3.24亿元，上年同期为-29.91亿元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505925.PDF",
-          "page": 15,
+          "fact": "2026年上半年销售收入为1,378,462千美元，较2025年上半年1,107,002千美元增长24.5%。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
+          "page": 20,
           "confidence": "high"
         },
         {
-          "fact": "2026年上半年经营活动现金流量净额为26.35亿元，同比减少25.21%；还原票据影响后为34.05亿元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505925.PDF",
-          "page": 15,
+          "fact": "2026年上半年毛利为204,463千美元，较2025年上半年111,608千美元增长83.2%。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
+          "page": 20,
           "confidence": "high"
         },
         {
-          "fact": "子公司新疆硅业新材料净利润同比增加529.97%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505925.PDF",
-          "page": 21,
+          "fact": "2026年上半年母公司拥有人应占溢利为59,568千美元，较2025年上半年11,702千美元增长409.0%。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
+          "page": 20,
           "confidence": "high"
         },
         {
-          "fact": "2026年7月14日，美国海关和边境保护局将子公司嘉兴合盛从涉疆暂扣令（WRO）名单中移除。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505925.PDF",
-          "page": 23,
+          "fact": "2026年上半年每股盈利为0.034美元（基本及摊薄），2025年上半年为0.007美元。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
+          "page": 31,
+          "confidence": "high"
+        },
+        {
+          "fact": "2026年上半年经营活动所得现金流量净额为468,481千美元，较2025年上半年219,816千美元增长113.1%。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
+          "page": 24,
+          "confidence": "high"
+        },
+        {
+          "fact": "建议收购华力微97.4988%股权事项的前置条件均已达成，收购完成后本集团将持有华力微100%股份。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
+          "page": 28,
           "confidence": "high"
         }
       ],
       "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505925.PDF"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf"
       ],
       "next_workflow": "/earnings-review",
       "needs_human_review": true,
       "limitations": [
-        "证据片段未包含完整财务报表，归母净利润数据仅见于股东权益变动表，需核实正式利润表。",
-        "未提供扣非净利润数据，需在完整报告中确认。",
-        "风险评估部分引用的WRO移除事件发生在报告期后，需确认其性质。"
+        "本次披露为未经审核的中期财务信息，最终数据以审计后年报为准。",
+        "本分析仅基于公告节选，未核验完整报告中的其他重要细节（如分部数据、资产负债表细节等）。"
       ],
       "notify": true,
       "resolved": false,
       "metadata": {
         "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
+        "published_at": "26/08/2026 18:25",
         "thesis_impacts": [
-          "盈利大幅扭亏，验证扣非连续转正逻辑，但需审视扣非净利润质量与持续性。",
-          "经营现金流仍强劲，但同比下滑需关注营运资本变化。",
-          "嘉兴合盛从WRO名单移除，降低制裁尾部风险，但需确认对出口影响有限。",
-          "子公司新疆硅业新材料净利润大增，需评估其业务占比与可持续性。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "c271e332d393bfeac3bd829519a6f301c77178b4a9724dc4fb9ccdc7b35ab7ef",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "合盛硅业",
-      "name": "合盛硅业",
-      "title": "合盛硅业2026年半年度报告摘要",
-      "why_now": "该半年度报告正式披露，其中账面归母净利润转正，但扣非净利润仍为负，且营收仅微增，需纳入研究复核以更新跟踪表。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年营业收入10,160,440,506.95元，同比增长3.94%；归属于上市公司股东的净利润324,494,945.39元，上年同期为-397,086,612.70元；扣非净利润-30,222,551.50元，上年同期为-532,986,058.74元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505539.PDF",
-          "page": 3,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年经营活动产生的现金流量净额2,635,162,196.21元，同比减少25.21%；总资产80,319,319,289.61元，较上年末减少3.93%；归属于上市公司股东的净资产29,692,488,440.43元，较上年末增加1.52%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505539.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505539.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本分析仅基于摘要，未包含完整财报中的分部数据、现金流明细及资产负债表详情。",
-        "扣非净利润为负，但具体非经常性损益项目未列示，需查阅完整报告。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "账面归母净利润转正，但扣非仍为负，验证报告结论：主业尚未形成持续盈利能力，周期反转信号不完整。",
-          "营收微增3.94%，而经营现金流下降25%，说明盈利质量存疑，可能依赖非经常性损益扭亏。",
-          "净资产略有增加，但资产负债率等风险指标未披露，需进一步审查流动性。"
+          "2026年上半年收入、毛利、归母溢利均大幅增长，显示基本面较2025年显著好转，可能影响原跟踪表中关于利润未同步修复的判断。",
+          "经营活动现金流量净额大幅改善至4.68亿美元，但资本开支仍高（投资活动净流出11.88亿美元），自由现金流可能仍为负，需重新核算简化FCF。",
+          "华力微收购前置条件已达成，交割完成在即，其对合并报表、股本及稀释影响成为下一阶段关键研究点。"
         ]
       }
     },
@@ -789,106 +406,92 @@
       }
     },
     {
-      "fingerprint": "0754294d044e11cce1d54357d44dc8fdd374c4c265b8d2c7887136d36163426e",
+      "fingerprint": "b656c705fef15126225d100c08d06573ec5cc834af99f694be22620863df9c46",
       "section": "disclosures",
       "priority": "P0",
-      "target_id": "杭叉集团",
-      "name": "杭叉集团",
-      "title": "杭叉集团股份有限公司2026年半年度报告全文",
-      "why_now": "该正式披露为2026年半年度报告，包含最新财务数据，需要纳入研究复核以更新标的跟踪表中的关键指标和判断。",
+      "target_id": "极视角",
+      "name": "极视角",
+      "title": "INTERIM RESULTS ANNOUNCEMENT\nFOR THE SIX MONTHS ENDED JUNE 30, 2026",
+      "why_now": "极视角发布2026年半年报，收入同比增长约181.2%，但IFRS净亏损仍为RMB40.8百万，与之前盈利预告一致。这是正式披露，需要进入研究复核。",
       "status": "DONE",
       "verified_facts": [
         {
-          "fact": "2026年半年度营业收入为10,100,128,374.70元，上年同期为9,296,138,420.08元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505912.PDF",
-          "page": 135,
+          "fact": "2026年上半年收入为RMB165.0百万，较2025年同期的RMB58.7百万增长约181.2%。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600979.pdf",
+          "page": 1,
           "confidence": "high"
         },
         {
-          "fact": "2026年半年度归属于母公司所有者的净利润为1,214,529,518.50元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505912.PDF",
-          "page": 135,
+          "fact": "2026年上半年亏损为RMB40.8百万，较2025年同期的RMB42.5百万减少约3.9%。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600979.pdf",
+          "page": 1,
           "confidence": "high"
         },
         {
-          "fact": "2026年半年度经营活动产生的现金流量净额为382,216,760.53元，上年同期为347,414,148.08元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505912.PDF",
-          "page": 56,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年6月30日现金及现金等价物余额为3,637,344,148.37元，期初余额为4,336,449,071.38元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505912.PDF",
-          "page": 57,
+          "fact": "2026年上半年毛利为RMB73.3百万，较2025年同期的RMB24.5百万增加约199.1%；毛利率为44.4%，同比提升约2.7个百分点。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600979.pdf",
+          "page": 1,
           "confidence": "high"
         }
       ],
       "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505912.PDF"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600979.pdf"
       ],
       "next_workflow": "/earnings-review",
       "needs_human_review": true,
       "limitations": [
-        "本次仅基于公告片段，未完整阅读全文，特别是财务附注和重要事项。",
-        "净利润同比数据需核实上年同期准确数值，可能需查阅上年半年报。",
-        "现金流与利润的匹配性及应收账款具体余额未在片段中完整展示，需进一步分析。",
-        "商誉减值测试参数可能影响未来减值风险，需关注实际业绩与预测的偏差。"
+        "公告未提供现金流、应收账龄、大模型客户数等关键跟踪指标，仅凭业绩摘要无法全面评估。",
+        "本报告为未经审计的中期业绩，后续需关注完整财务报告及管理层讨论。",
+        "未提供大模型业务分项收入及续费率等关键数据，无法验证盈利质量。"
       ],
       "notify": true,
       "resolved": false,
       "metadata": {
         "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
+        "published_at": "26/08/2026 18:36",
         "thesis_impacts": [
-          "2026年上半年营收增速约8.6%，高于2025年全年5.9%增速，增长动能增强。",
-          "2026年上半年净利润12.15亿元，同比（上年同期净利未直接显示，但按报告数据推测约11.15亿）增长约9%，与2025年增速持平，盈利稳定性延续。",
-          "经营活动现金流净额3.82亿元，较上年同期3.47亿元有所改善，但相对净利润比例较低，现金流质量仍需关注。",
-          "期末现金余额36.37亿元，较期初43.36亿元下降16%，主要受投资和筹资活动净流出影响，需关注资金状况。",
-          "报告中显示应收账款前五大客户集中度降至7.26%，上年同期11.02%，信用风险分散度改善。",
-          "报告中披露对子公司的商誉减值测试关键参数，包括收入增长率、利润率及折现率，表明管理层对相关资产组的预期，可能影响未来减值风险。"
+          "收入增速超预期（+181.2% vs 盈利预告+160%-180%），但亏损幅度超预期（RMB40.8m vs 预告RMB38-44m），两者均属预期内波动，非转折性证据。",
+          "毛利率提升至44.4%，略优于预期，可能反映产品结构调整或规模效应，但需进一步分析持续性。",
+          "仍处于IFRS亏损状态，未达到原定触发条件（连续两期IFRS盈利），因此观察区间不变。"
         ]
       }
     },
     {
-      "fingerprint": "547554151614813d5010662491b8026f344750384674157b0cf31278a674e3a3",
+      "fingerprint": "04c18dfdc6b48741630cc59d51a4e1d3e85362f5160bb4ff18807405ade3355c",
       "section": "disclosures",
       "priority": "P0",
-      "target_id": "杭叉集团",
-      "name": "杭叉集团",
-      "title": "杭叉集团股份有限公司2026年半年度报告摘要",
-      "why_now": "该正式披露的财务数据需进入研究复核，以验证投资逻辑中的关键假设。",
+      "target_id": "深演智能",
+      "name": "深演智能",
+      "title": "INTERIM RESULTS ANNOUNCEMENT FOR THE SIX MONTHS ENDED 30 JUNE 2026",
+      "why_now": "公司发布2026年中期业绩，财务数据与上一轮研究假设基线（2025年报数据）存在显著变化，需进入复核。",
       "status": "DONE",
       "verified_facts": [
         {
-          "fact": "2026年上半年营业收入10,100,128,374.70元，同比增长8.65%；归属于上市公司股东的净利润1,214,529,518.50元，同比增长8.89%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505401.PDF",
-          "page": 3,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年基本每股收益0.93元，同比增长9.41%；加权平均净资产收益率10.02%，同比减少0.4个百分点。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505401.PDF",
-          "page": 3,
+          "fact": "深演智能2026年上半年收入398,247千元人民币，同比增长43.6%；毛利97,754千元，同比增长30.3%；期内利润8,195千元，同比增长125.2%；经调整净利润17,462千元，同比增长30.6%。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601071.pdf",
+          "page": 1,
           "confidence": "high"
         }
       ],
       "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505401.PDF"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601071.pdf"
       ],
       "next_workflow": "/earnings-review",
       "needs_human_review": true,
       "limitations": [
-        "公告数据未经审计，可能存在调整风险。",
-        "半年度报告摘要信息有限，未提供应收账款周转率等关键财务指标。"
+        "本公告仅包含未审计的合并业绩摘录，缺乏分部数据、现金流、资产负债细节及Deep Agent收入确认的具体信息。",
+        "无法验证调整后净利润的计算口径及与报告期利润的调节项。",
+        "股价及市值数据未更新，估值影响需在复核中结合最新市值计算。"
       ],
       "notify": true,
       "resolved": false,
       "metadata": {
         "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
+        "published_at": "26/08/2026 18:52",
         "thesis_impacts": [
-          "净利润增速8.89%与历史增速趋势一致，但加权ROE下滑0.4个百分点，需关注资产周转效率变化。",
-          "营收增速8.65%高于此前报告中的5.9%增速，可能对成长性判断产生积极影响。"
+          "收入增速43.6%，远高于2025年全年7.2%的增速，可能表明业务增长加速，或受AI代理业务推动，挑战报告中对成长性的负面判断。",
+          "净利润同比增长125.2%，盈利改善显著，但利润率仍低，需验证是否为一次性因素或可持续。",
+          "经调整净利润同比增30.6%，增速低于收入增速，毛利率提升至24.6%，或反映业务结构变化，需关注智能广告投放收入占比及Deep Agent进展。"
         ]
       }
     },
@@ -943,151 +546,6 @@
         "high": 43.8,
         "direction": "range",
         "note": "提高仓位需连续两季扣非盈利、OCF覆盖资本开支、净负债下降"
-      }
-    },
-    {
-      "fingerprint": "f717c87736720ab106334fa129c63c374bf2f0633ebc7e18cb21244322c0085b",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "雅克科技",
-      "name": "雅克科技",
-      "title": "2026年半年度报告",
-      "why_now": "该正式披露的2026年半年度报告显示电子材料业务增长、半导体化学材料增速低于整体电子材料、国外销售大幅下滑、投资和筹资现金流净额大幅下降，这些变化需要进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年营业收入合计4,512,986,271.44元，同比增长5.12%；电子行业收入2,816,545,863.05元，同比增长9.45%；化工行业收入1,282,760,418.37元，同比下降1.30%；其他业务收入413,679,990.02元，同比下降1.48%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503911.PDF",
-          "page": 13,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年半导体化学材料、光刻胶及配套试剂收入2,288,928,463.24元，同比增长8.31%；其他电子材料收入403,617,148.83元，同比增长24.51%；LDS设备收入124,000,250.98元，同比下降8.77%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503911.PDF",
-          "page": 13,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年国内销售3,466,424,037.44元，同比增长26.65%；国外销售1,046,562,234.00元，同比下降32.74%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503911.PDF",
-          "page": 13,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年归属于母公司股东的净利润560,905,882.40元，上年同期522,787,762.09元（同比增长约7.29%）；基本每股收益1.1786元，上年同期1.0985元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503911.PDF",
-          "page": 41,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年经营活动产生的现金流量净额254,817,240.61元，上年同期290,004,928.39元；投资活动产生的现金流量净额-323,514,237.91元，上年同期-455,615,348.06元；筹资活动产生的现金流量净额-137,802,063.00元，上年同期719,851,845.84元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503911.PDF",
-          "page": 43,
-          "confidence": "high"
-        },
-        {
-          "fact": "科美特报告期主营业务收入同比增加9.02%，净利润增加47.11%（主要为斯洋国际分红2,010万所致）；EMTIER报告期内净利润同比增加82.63%；韩国先科净利润同比增加8.74%；江苏先科营业收入同比增加34.69%，净利润同比增加351.03%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503911.PDF",
-          "page": 17,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503911.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本次仅基于公告文本，未对财务数据进行独立验证，具体财务数据以审计报告为准。",
-        "公告中未披露前驱体等细分产品的具体增速和长鑫等大客户占比，无法据此验证核心业务增长结构。",
-        "国外销售下滑原因未在公告中明确说明，可能受地缘政治、汇率等因素影响，需进一步调查。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "电子材料业务收入增速（9.45%）高于整体营收增速（5.12%），半导体化学材料收入增速（8.31%）低于电子材料整体，与前期报告中'前驱体增速需验证'的关注点相关。",
-          "国外销售大幅下滑32.74%，而国内销售增长26.65%，可能影响海外业务稳定性判断，需进一步分析原因。",
-          "投资活动现金流出减少主要因购建固定资产减少，筹资活动净现金流大幅下降主要因偿还银行债务，需关注公司扩产节奏和负债率变化。",
-          "子公司经营数据出现分化：科美特、EMTIER、江苏先科利润增长显著，但韩国先科增速较低，需评估海外子公司利润贡献的持续性。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "99e7dc1fc3836ae9462ea21d377d09446b8f8f567ff90fe3f01fc1fa1cda3c93",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "雅克科技",
-      "name": "雅克科技",
-      "title": "2026年半年度报告摘要",
-      "why_now": "该正式披露为2026年半年度报告摘要，需进入研究复核以更新核心财务与经营数据。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年营业收入4,512,986,271.44元，同比增长5.12%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503910.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年归属于上市公司股东的净利润560,905,882.40元，同比增长7.29%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503910.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年扣非净利润529,903,821.93元，同比增长0.68%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503910.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年经营活动现金流净额254,817,240.61元，同比下降12.13%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503910.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年基本每股收益1.1786元，同比增长7.29%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503910.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年利润分配预案为每10股派3.5元现金，不送红股，不转增。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503910.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "报告期内控股股东、实际控制人未变更。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503910.PDF",
-          "page": 3,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503910.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "仅提供了半年度报告摘要，未包含前驱体业务分部收入、毛利率等关键细节，全面评估受限。",
-        "报告期利润分配预案仅经董事会审议，尚需股东大会批准，具有不确定性。",
-        "未提供前10大客户或长鑫集成占比数据，相关黑箱问题未能解决。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "扣非增速仅0.68%，进一步印证增长主要由非经常性损益贡献，与报告强调的前驱体主线存在预期差。",
-          "经营现金流同比下降12.13%，叠加FCF此前为负，财务质量改善信号未得到强化。",
-          "增长结构未披露前驱体单独增速，无法验证加仓信号，反而扩大'叙事与报表不一致'的风险。"
-        ]
       }
     },
     {
@@ -1146,10 +604,10 @@
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "TRIGGERED",
+        "previous_status": "NEAR",
         "current_status": "NEAR",
         "price": 160.56,
         "market": "US",
@@ -1182,209 +640,6 @@
       }
     },
     {
-      "fingerprint": "9025630cf7f6eea0f62685c99f0d5575d0e6dbed09cce1296f7753f8a8c31b80",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "东方电气",
-      "name": "东方电气",
-      "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
-      "why_now": "东方电气发布4份正式公告（港交所披露），可能涉及重大事项，需立即进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501792.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501778.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501768.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501752.htm"
-      ],
-      "next_workflow": "/news-pulse",
-      "needs_human_review": true,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "25/08/2026 21:04",
-        "thesis_impacts": []
-      }
-    },
-    {
-      "fingerprint": "e0bd78cab5c69014ee31a5055cd031b5088c4526c9b72eb7c470ac5b00fa2851",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "东方电气",
-      "name": "东方电气",
-      "title": "CHANGE OF JOINT COMPANY SECRETARY, AUTHORISED\nREPRESENTATIVE AND PROCESS AGENT",
-      "why_now": "该正式公告仅涉及公司秘书及授权代表人事变更，属常规公司治理事项，对投资论点无实质影响，但需做事实核验后归档。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "曾颖文女士辞任东方电气联合公司秘书、授权代表及法律程序文件代理人，自2026年8月25日生效。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501803.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "侯希文女士获委任为联合公司秘书、授权代表及法律程序文件代理人，自2026年8月25日生效。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501803.pdf",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501803.pdf"
-      ],
-      "next_workflow": "/news-pulse",
-      "needs_human_review": false,
-      "limitations": [
-        "公告内容仅涉及人事变更，未包含财务数据或其他实质性经营信息。",
-        "未核实公告中人物履历的细节信息。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "25/08/2026 21:09",
-        "thesis_impacts": [
-          "公司秘书及授权代表变更不改变公司治理、财务或运营基本面，对投资论点无直接影响。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "66e7664b495934c92242e050efd453cb458e1f57b64dcd0eb8196b6981a92ba9",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "东方电气",
-      "name": "东方电气",
-      "title": "关于2026年半年度募集资金存放、管理与使用情况的专项报告",
-      "why_now": "该公告披露东方电气2026年半年度募集资金已全部使用完毕且无余额，属于例行募集资金使用情况专项报告，需纳入正式事实核验与跟踪。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "东方电气2026年半年度报告期内，募集资金已全部使用完毕，截至2026年6月30日募集资金专户余额为0.00元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505530.PDF",
-          "page": 3,
-          "confidence": "high"
-        },
-        {
-          "fact": "本次募集资金来源于2025年向特定对象发行A股，发行272,878,203股，发行价15.11元/股，募集资金总额4,123,189,647.33元，扣除发行费用后净额4,116,565,363.01元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505530.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "截至2026年6月30日，募集资金已累计投入4,123,584,813.10元，本年度投入440,072,165.89元，无变更用途的募集资金。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505530.PDF",
-          "page": 5,
-          "confidence": "high"
-        },
-        {
-          "fact": "公司于2025年4月29日董事会审议通过使用闲置募集资金进行现金管理，额度不超过9.30亿元；截至2026年6月30日无闲置募集资金现金管理余额。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505530.PDF",
-          "page": 4,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505530.PDF"
-      ],
-      "next_workflow": "/news-pulse",
-      "needs_human_review": false,
-      "limitations": [
-        "公告为募集资金专项报告，不包含公司整体经营数据，无法据此评估公司业绩或估值。",
-        "公告中募投项目效益情况以附注形式披露，本次解析未获取完整附表细节。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "募集资金使用完毕且无余额，对现有投资论点无重大影响。",
-          "募投项目进度及效益信息（如抽水蓄能项目达到预定可使用状态）需在后续季报中验证其对业务和财务的实质贡献。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "1a891233459d07838ac0e379367018681a9a53871b1b99cd45dee7e8b5965fe8",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "东方电气",
-      "name": "东方电气",
-      "title": "关于东方电气集团财务有限公司2026年半年度风险评估情况的报告",
-      "why_now": "该正式披露为东方电气对其集团财务公司的半年度风险评估报告，属于关联方财务公司风险状况的正式公告，需纳入研究复核以评估其对上市公司资金安全及关联交易风险的影响。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "东方电气集团财务有限公司截至2026年6月30日资产总额625.39亿元，负债总额585.14亿元，所有者权益40.25亿元；2026年1-6月实现净利润1.79亿元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506124.PDF",
-          "page": 7,
-          "confidence": "high"
-        },
-        {
-          "fact": "财务公司2026年6月末资本充足率12.58%，流动性比率45.73%，投资比率57.04%，集团外负债总额/资本净额为0，均符合监管要求。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506124.PDF",
-          "page": 8,
-          "confidence": "high"
-        },
-        {
-          "fact": "财务公司注册资本20.95亿元，股东为中国东方电气集团有限公司持股5%，东方电气股份有限公司持股95%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506124.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "报告评估结论认为财务公司经营资质合法有效，未发现违反《企业集团财务公司管理办法》规定的情形，未发生重大风险事项。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506124.PDF",
-          "page": 9,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506124.PDF"
-      ],
-      "next_workflow": "/thesis-drift",
-      "needs_human_review": true,
-      "limitations": [
-        "报告为财务公司风险评估，不涉及上市公司合并报表业绩，对整体投资逻辑影响有限。",
-        "公告数据未经独立审计，且未提供上市公司在财务公司的具体存款余额，无法量化关联存款敞口。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "财务公司运营稳健且监管指标合规，降低了关联方资金安全风险，对现有研究中的风险因素有缓解作用。",
-          "财务公司吸收存款583.09亿元，是上市公司资金归集的重要平台，其稳健性支持了公司资金管理的安全性，但不改变对上市公司主营盈利质量的判断。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "14524057f08bd36cd1dfd8eeb81c0e909f19cb2a473fe3c5d81270f204eb864f",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "东方电气",
-      "name": "东方电气",
-      "title": "董事会十一届二十一次会议决议公告",
-      "why_now": "该正式公告披露了2026年半年度财务报告、募集资金使用情况等关键财务数据，并涉及公司秘书变更及提质增效行动评估，属于对当前投资论点有直接影响的正式披露，需尽快进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505927.PDF"
-      ],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": []
-      }
-    },
-    {
       "fingerprint": "0d2d7e03beaec41a55eb48279de6aca2b66e578fe66ffe2b62e37e600f69fcd6",
       "section": "other",
       "priority": "P1",
@@ -1406,980 +661,103 @@
       }
     },
     {
-      "fingerprint": "42f7d71d4fd15f3383f82a705fe40d313dd5f3a98666b05e6bb5e51d430f439e",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
-      "why_now": "港交所披露易出现多条中国广核正式公告，虽标题仅为提示，但正式披露需进入研究复核流程。",
-      "status": "DONE",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501358.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501340.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501316.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501295.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501268.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501254.htm"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告具体内容未在增量片段中提供，无法核验事实",
-        "正式公告链接尚未打开，无法确认公告类型及具体披露事项"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "25/08/2026 19:33",
-        "thesis_impacts": []
-      }
-    },
-    {
-      "fingerprint": "330c277ef66c652db38ebb27e2cb122f41ba2a8a735b48c4073023686fa29ae3",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "中国广核电力股份有限公司2026年半年度非经营性资金占用及其他关联资金往来情况汇总表",
-      "why_now": "该正式披露为2026年半年度非经营性资金占用及其他关联资金往来情况汇总表，属于定期报告配套的正式公告，需进入研究复核以验证关联方资金往来情况。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年中国广核无控股股东、实际控制人及其附属企业的非经营性资金占用。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503732.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年6月30日，中国广核对中广核财务有限责任公司的货币资金余额为1,917,032.74万元，属于经营性往来。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503732.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年6月30日，中国广核对中广核铀业发展有限公司及其子公司的预付款项余额为1,321,202.41万元，属于经营性往来。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503732.PDF",
-          "page": 3,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503732.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告片段为外部不可信数据，仅作核验参考，不构成投资建议。",
-        "本分析仅基于公告摘要，未核对完整财务报告附注。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "关联方资金往来规模较大但均为经营性，未发现非经营性占用，暂未改变公司治理评估。",
-          "对中广核财务公司存款余额超190亿元，需关注集团内部资金集中管理的潜在效率与风险。",
-          "核燃料采购预付款项超130亿元，与公司营运和资本开支相关，需结合现金流状况评估。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "aa9ee351485bf4b93b41b4071adbd7197a4b024fe864d0f63ce10e291c76fdec",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "中国广核电力股份有限公司自2026年1月1日至2026年6月30日止期间财务报表及审阅报告",
-      "why_now": "该正式披露为2026年半年度财务报表及审阅报告，属于定期财务披露，需要进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503733.PDF"
-      ],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [
-        "证据片段仅为财务报表附注摘录，未包含利润表、资产负债表、现金流量表等核心报表数据。",
-        "未提供完整报告，无法核实收入、利润、现金流等关键财务指标。",
-        "部分数据为分部信息，非整体财务数据，需进一步获取完整报告。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": []
-      }
-    },
-    {
-      "fingerprint": "8b0822d097205318265caa8730010361e7bd8a447351d4e8596b2c21bd7e646e",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "中广核财务有限责任公司风险评估报告",
-      "why_now": "中国广核发布了《中广核财务有限责任公司风险评估报告》，该报告是正式公告，涉及关联方财务公司风险状况，需进入研究复核流程。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "截至2026年6月30日，中广核财务有限责任公司资产总额为418.41亿元，负债总额为346.81亿元，所有者权益为71.60亿元，2026年上半年实现营业收入3.61亿元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503734.PDF",
-          "page": 12,
-          "confidence": "high"
-        },
-        {
-          "fact": "截至2026年6月30日，财务公司资本充足率为21.04%（标准值≥10.5%），流动性比例为45.45%（标准值≥25%），贷款余额占存款余额与实收资本之和的比例为67.68%（标准值≤80%），集团外负债总额占资本净额比例为0.00%（标准值≤100%），各项监管指标均符合规定。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503734.PDF",
-          "page": 12,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503734.PDF"
-      ],
-      "next_workflow": "/news-pulse",
-      "needs_human_review": true,
-      "limitations": [
-        "该报告为关联方财务公司的风险评估，非公司经营业绩或财务状况的直接披露，对公司整体经营影响有限。",
-        "报告中的金额和指标仅针对财务公司，不代表公司合并报表口径，需避免误读。",
-        "报告所依据的财务数据未经审计，可能存在调整风险。",
-        "未发现与已有关键假设（如电价、资本开支等）直接冲突的事实，但需持续关注监管评级、新机组投产进度等。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "财务公司各项监管指标远超监管要求，资本充足率21.04%、流动性比例45.45%，表明公司资金链稳健，减弱了财务风险担忧。",
-          "报告确认财务公司合规经营，未发现重大内控缺陷，对关联交易风险控制有正面意义。",
-          "报告结论称与财务公司发生的关联交易、存贷款业务风险可控，或小幅降低公司治理折价程度。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "696a1beaefbb3d551f0212098c12db2e8e64f0333be16cb58438846c83936a87",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "关于会计政策变更的公告",
-      "why_now": "该正式公告为会计政策变更，依据财政部《企业会计准则解释第20号》执行，公司明确表示对财务状况、经营成果和现金流量无重大影响。属于程序性、非实质性事项，无需紧急处理。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "中国广核于2026年8月25日发布公告，自2026年1月1日起执行财政部《企业会计准则解释第20号》，该变更不涉及董事会及股东会审议，预计对公司财务报表无重大影响。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503737.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503737.PDF"
-      ],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [
-        "仅基于公告文本，未核实原始准则文件及公司详细财务影响量化数据。",
-        "公告声明无重大影响，但需以定期报告实际披露为准。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "会计政策变更对基本面、财务数据、估值模型无实质影响，不改变原有投资研究结论。",
-          "无需调整中国广核的盈利预测、现金流或估值参数。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "7d00551dad633dcaaa2faf4a3848ef008e35bd7613a0f8da806ef1cadee7af5e",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "关于公司2026年度第五期及第六期中期票据发行完成的公告",
-      "why_now": "该正式披露为债务融资完成公告，虽不直接影响核心投资逻辑，但涉及公司融资活动和债务结构变化，需纳入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "中国广核于2026年8月24日完成2026年度第五期及第六期中期票据发行，募集资金于2026年8月25日到账。两期票据发行总额均为10亿元，期限均为5年，票面利率均为1.70%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503736.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "两期中期票据的募集资金均用于子公司偿还借款。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503736.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503736.PDF"
-      ],
-      "next_workflow": "/thesis-tracker",
-      "needs_human_review": false,
-      "limitations": [
-        "公告未披露本次发行对公司债务总额或资产负债率的具体影响数值。",
-        "募集资金用途仅提及用于子公司偿还借款，未披露具体借款项目或偿还安排。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "新增债务融资20亿元，利率1.70%，成本较低，对财务费用影响有限。",
-          "此次发行符合公司多品种债务融资工具注册计划，是常规融资行为，不改变公司资本开支和自由现金流状况的原有判断。",
-          "债务规模扩大可能微幅推高资产负债率，但影响轻微，不改变对财务杠杆风险的既有评估。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "4c5b08d097889c1b62fb8d19da0e1b7edc91c384788581ecb9045bb57f1033bb",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "中国广核",
-      "name": "中国广核",
-      "title": "第四届董事会第二十二次会议决议公告",
-      "why_now": "中国广核发布半年度报告及‘十五五’规划等正式董事会决议，需进入研究复核以更新增长与估值判断。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "中国广核第四届董事会第二十二次会议审议通过《关于中国广核电力股份有限公司2026年半年度财务报告的议案》、《关于中国广核电力股份有限公司2026年半年度报告及摘要的议案》等五项议案。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503735.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "中国广核2026年半年度报告及其摘要、中广核财务有限责任公司风险评估报告的详细内容于2026年8月25日登载于巨潮资讯网。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503735.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "中国广核董事会审议通过《关于制定〈核能产业十五五发展规划（2026年-2030年）〉的议案》，提出到2035年全面建成具有全球竞争力的世界一流核能企业，核能在运在建总装机规模全球第一。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503735.PDF",
-          "page": 2,
-          "confidence": "medium"
-        },
-        {
-          "fact": "中国广核董事会同意注册香港联交所联讯通系统账户。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503735.PDF",
-          "page": 3,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503735.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告中未披露半年度报告的具体财务数据，需等待完整报告以更新估值模型。",
-        "‘十五五’规划仅为方向性表述，缺乏具体项目、投资额和量化目标，难以直接评估对财务的影响。",
-        "公告内容为董事会决议，不构成对2026年下半年经营业绩的承诺。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "‘十五五’规划目标（2035年世界一流核能企业、装机规模全球第一）强化长期成长逻辑，但未披露具体装机目标与资本开支计划，需跟踪后续细节。",
-          "半年度财务报告即将披露，2026年上半年经营数据将验证此前对2025年利润下滑、资本开支高企和自由现金流转负的判断是否延续。",
-          "关联交易（中广核财务公司风险评估）及公司治理相关议案需关注对少数股东利益的影响。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "5bbd565a5b570e281d44dd378c3a2ed6bab273e851d7b6db9680ace089a3e2b1",
+      "fingerprint": "8f123cf3e40d4716bf6b14096a10a2b125931562a5f7f93ee1f91bc363bad976",
       "section": "disclosures",
       "priority": "P1",
       "target_id": "兆易创新",
       "name": "兆易创新",
-      "title": "H股公告-翌日披露报表",
-      "why_now": "该正式披露属于股票回购（但尚未注销）的变动，需进入研究复核以确认其对股份总数和公司治理承诺执行的影响。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "截至2026年8月25日，兆易创新已发行股份总数（不包括库存股份）为668,491,934股，与2026年8月24日相同。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505560.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "B部分披露三笔回购但尚未注销的股份：2026年8月21日回购247,000股（占0.04%，每股406.48元），2026年8月24日回购517,100股（占0.08%，每股383.37元），2026年8月25日回购265,000股（占0.04%，每股387.64元）。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505560.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505560.PDF"
-      ],
-      "next_workflow": "/thesis-tracker",
-      "needs_human_review": false,
-      "limitations": [
-        "公告为港股披露报表，未包含注销时间表或未来回购计划。",
-        "回购价格与当前股价比较需结合市场数据，但未提供。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "回购但未注销的股份累计约1,029,100股，虽占总股本比例极小，但显示管理层执行回购承诺，正面信号。",
-          "已发行股份总数未变，因回购尚未注销，股本结构暂无变化，不影响估值数据。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "1273a2c6d94f2e9c21f3e8f7ca067b723ba9ea6b4871d2d4a80037f0bc7fff19",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "剑桥科技",
-      "name": "剑桥科技",
-      "title": "H股公告-2026年半年度利润分配方案",
-      "why_now": "公司正式披露2026年半年度利润分配方案，且该方案无需股东大会审议，属于需进入研究复核的正式披露。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年8月24日，公司董事会审议通过《2026年半年度利润分配方案》，拟向全体股东每股派发现金红利0.09元（含税），不实施送股和资本公积转增股本。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506571.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "截至2026年6月30日，公司合并报表归属于上市公司股东的净利润为327,746,411.73元；母公司报表未分配利润为626,380,694.43元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506571.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "截至2026年6月30日，公司总股本为368,250,373股（其中A股275,588,373股、H股92,662,000股），拟派发现金红利总额为33,142,533.57元（含税），占2026年半年度合并报表归属于上市公司股东净利润的比例为10.11%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506571.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "该利润分配方案无需提交股东大会审议，因2026年4月28日召开的2025年年度股东大会已审议通过《2026年半年度现金分红预案》，授权董事会全权办理中期分红相关事宜。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506571.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506571.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本次公告为H股公告，A股公告可能同步发布，但当前仅核验H股公告内容。",
-        "本公告为中期分红方案，不提供分红的具体除权除息日，需关注后续实施公告。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-25T00:00:00+08:00",
-        "thesis_impacts": [
-          "本次中期分红占2026H1归母净利润的10.11%，符合此前股东会授权的不低于10%的现金分红比例，验证公司对2026H1盈利的真实性。",
-          "分红方案不会对公司经营现金流产生重大影响，但需结合公司2026H1经营现金流为负的情况（参考研究报告中2026Q1经营现金流-2.19亿元），评估分红对现金流的边际影响。",
-          "该公告未改变公司总体盈利趋势判断，但分红总额与预告净利润区间下端接近，需关注后续正式中报披露的实际净利润数据。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "70b25354d3d09de4233fc6cf04b098fdae2e34e34a854661c3ecc82a77066a9e",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "剑桥科技",
-      "name": "剑桥科技",
-      "title": "H股公告-截至2026年6月30日止六个月中期业绩公告",
-      "why_now": "该正式披露需要进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年营业收入27.05亿元，同比增长32.92%；归属于上市公司股东的净利润3.28亿元，同比增长171.08%；扣非净利润3.19亿元，同比增长168.42%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506568.PDF",
-          "page": 57,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年经营活动产生的现金流量净额为-11.13亿元，上年同期为-1.90亿元；投资活动产生的现金流量净额为-8.01亿元；筹资活动产生的现金流量净额为7.77亿元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506568.PDF",
-          "page": 41,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年高速光模块业务显著增长，市场需求旺盛带动订单增加，产品结构切换推动销售毛利率显著提升。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506568.PDF",
-          "page": 57,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年A股激励计划业绩考核目标：首次授予的股票期权第一个行权期要求2026年度营业收入不低于58.11亿元或净利润不低于3.35亿元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506568.PDF",
-          "page": 82,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506568.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本次分析仅基于公告文本，未对财务报表进行独立审计，需通过业绩会或电话会议进一步核实。",
-        "公告中未提供分产品收入明细，单靠中报无法完全拆分高速光模块的毛利率和ASP趋势。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-25T00:00:00+08:00",
-        "thesis_impacts": [
-          "2026年中期业绩超预期：归母净利润同比增长171.08%，大幅超过2026H1预告区间上限3.593亿元，反映高速光模块业务景气持续。",
-          "2026H1经营现金流净额为-11.13亿元，较上年同期-1.90亿元进一步恶化，需关注原材料采购和扩产导致现金流出。",
-          "财务费用同比大增2629.05%，主要系外币汇率变动，需关注汇率风险对利润的影响。",
-          "公司A股激励计划设定了2026年营收不低于58.11亿元或净利润不低于3.35亿元的考核目标，与当前业绩增速基本匹配。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "99c94166621d8f899c8629952da25aefee1121652b5d7cd4d4988db5c67cdcbd",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "剑桥科技",
-      "name": "剑桥科技",
-      "title": "H股公告-根据H股激励计划授出激励股份",
-      "why_now": "该正式披露为H股员工激励计划授出，涉及股本变动与费用摊销，需进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "于2026年8月24日，董事会根据H股激励计划向91名选定参与者授出合共2,285,000股激励股份，购买价为零。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506560.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "激励股份分三年归属，比例分别为35%、35%和30%，归属条件包括持续雇佣和个人绩效。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506560.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "H股于授出日期的收市价为每股89.85港元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506560.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506560.PDF"
-      ],
-      "next_workflow": "/portfolio-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告片段为OCR或文本提取，可能存在识别误差，需以官方PDF原文为准。",
-        "本公告未提供授权日公允价值，无法精确估算激励费用规模。",
-        "本次激励计划不影响公司现有客户的集中度、现金流或毛利等核心变量，仅属于常规公司行为。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-25T00:00:00+08:00",
-        "thesis_impacts": [
-          "本次激励股份相当于2,285,000股H股，约占公司总股本比例很小（约0.62%），对现有股东稀释有限，但需关注激励费用对利润的影响。",
-          "授予对象包括一名董事及90名雇员，覆盖核心员工，有助于绑定团队，但对业绩目标仅为个人层面考评，未与公司整体业绩挂钩，支持强度有限。",
-          "当前股价89.85港元处于观察区，本激励计划不改变公司基本面或估值逻辑，对投资论点无实质性影响，但需持续跟踪激励费用的季度摊销。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "6fa04fa8f863df6c472b6010d2f869730f20adde8bb0106d2171e9baabcd3a71",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "剑桥科技",
-      "name": "剑桥科技",
-      "title": "H股公告-派发截至2026年6月30日止六个月的中期股息",
-      "why_now": "正式披露的派息公告包含中期股息信息，且与后续中报业绩相关，需进入研究复核流程。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "剑桥科技于2026年8月24日公告宣派截至2026年6月30日止六个月的中期股息，每股0.09 RMB，股息派发日为2026年10月23日。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506575.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225506575.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告中除股息信息外，除净日、汇率、代扣所得税等关键细节有待公布，影响股息收益率测算。",
-        "本次公告为H股公告，与A股信息披露可能存在差异，需结合A股正式中报综合判断。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-25T00:00:00+08:00",
-        "thesis_impacts": [
-          "中期股息派发表明公司现金流状况或管理层对未来现金流有信心，但需结合正式中报现金流数据验证，对当前观望策略无直接影响。",
-          "股息金额较小，不改变估值核心逻辑，高速模块毛利率、客户集中度及经营现金流转正等关键验证条件仍需中报确认。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "f616a772bb1fbe2faccfe2d22eb8a3ac3cfe6e58f42c090de3ba5a2bb67e7e6c",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "北京君正",
-      "name": "北京君正",
       "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
-      "why_now": "该正式公告是港交所发布的通知，提示发行人在中文版块发布了公告，且英文版可能未同步；由于公告内容未提供，需立即核实公告的具体内容，以判断其对研究结论（如H股发行相关事件）的影响。",
+      "why_now": "港交所披露易发布正式公告，表明公司有新的公告披露，需进入研究复核流程以确认内容并评估对现有研究结论的影响。",
       "status": "DONE",
       "verified_facts": [],
       "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0825/2026082501630.htm"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601030.htm"
       ],
-      "next_workflow": "/news-pulse",
+      "next_workflow": "/earnings-review",
       "needs_human_review": true,
       "limitations": [
-        "公告内容未在本次数据中提供，仅包含通知标题和URL，需进一步获取正式公告文本。",
-        "官方URL为港交所披露页面，但无法确认公告的具体主题（如配售结果、定价、上市安排等）。"
+        "公告内容仅为占位提示，未提供具体披露细节，无法核实事实。",
+        "官方链接指向港交所披露易，但具体公告正文未在给定证据中，需人工访问确认。",
+        "无法判断该公告是否与中报或其他重大事项相关，影响评估待定。"
       ],
       "notify": true,
       "resolved": false,
       "metadata": {
         "document_type": "正式公告",
-        "published_at": "25/08/2026 20:21",
+        "published_at": "26/08/2026 18:45",
         "thesis_impacts": []
       }
     },
     {
-      "fingerprint": "9968a9984eec8d418f635b4da618078b57928ccb3e74a401f11900654aae73cf",
+      "fingerprint": "62cc1aed529b15bef1baee75cbefb1855664f2854bde91b17c2e2d578fc86a14",
       "section": "disclosures",
       "priority": "P1",
-      "target_id": "北京君正",
-      "name": "北京君正",
-      "title": "关于H股挂牌并上市交易的公告",
-      "why_now": "北京君正H股于2026-08-25正式在港交所主板挂牌上市，属于此前研究计划中的关键里程碑事件，需进入研究复核以更新标的跟踪表与后续判断。",
+      "target_id": "兆易创新",
+      "name": "兆易创新",
+      "title": "Next Day Disclosure Return",
+      "why_now": "该正式披露显示2026年8月21日至26日期间出现多笔股份回购待注销，以及8月25日因2023年股权激励计划行权新增股份，需进入研究复核以更新股本与回购承诺执行情况。",
       "status": "DONE",
       "verified_facts": [
         {
-          "fact": "北京君正集成电路股份有限公司本次全球发售H股总数为31,287,300股（行使超额配售权之前），其中香港公开发售3,128,800股（约10%），国际发售28,158,500股（约90%）。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504239.PDF",
+          "fact": "截至2026年8月26日，兆易创新总发行股份（不含库存股）为670,718,327股，较8月25日开盘余额668,491,934股增加2,226,393股，系2023年股权激励计划行权新增，行权价每股85.38元人民币，日期为2026年8月25日。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601067.pdf",
           "page": 1,
           "confidence": "high"
         },
         {
-          "fact": "按每股H股发售价100港元计算，扣除承销佣金及其他估计费用后，假设超额配售权未获行使，全球发售所得款项净额估计约为30.55亿港元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504239.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "经香港联交所批准，公司本次发行的31,287,300股H股股票（行使超额配售权之前）于2026年8月25日在香港联交所主板挂牌并上市交易。H股股票中文简称为“君正股份”，英文简称为“INGENIC”，股票代号为“3223”。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504239.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "本次境外发行上市完成后（假设超额配售选择权未获行使），公司总股本由483,664,367股增加至514,951,667股，其中A股483,664,367股（占93.92%），H股31,287,300股（占6.08%）；假设超额配售选择权悉数行使，总股本为519,644,667股，其中H股35,980,300股（占6.92%）。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504239.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "本次境外发行上市完成后，持股5%以上的股东及其一致行动人（香港中央结算有限公司除外）合计持股数量为59,588,178股，持股比例由发行前的12.32%降至11.57%（假设超额配售选择权未获行使）或11.47%（假设超额配售选择权悉数行使）。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504239.PDF",
+          "fact": "2026年8月21日、24日、25日、26日分别回购待注销股份247,000股、517,100股、265,000股、257,500股，回购价格分别为每股406.48元、383.37元、387.64元、391.99元人民币。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601067.pdf",
           "page": 2,
           "confidence": "high"
-        },
-        {
-          "fact": "本次发行最终发售价为每股100港元，低于此前的最高发售价102.80港元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504239.PDF",
-          "page": 1,
-          "confidence": "high"
         }
       ],
       "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504239.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告未提供超额配售权行使情况，最终H股数量可能在31,287,300股至35,980,300股之间。",
-        "未包含上市首日交易价格、成交量或配售结果，需后续数据补充。",
-        "公告未更新2026H1财务数据，盈利可持续性仍待验证。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-25T18:50:09+08:00",
-        "thesis_impacts": [
-          "最终发售价100港元低于此前设定上限102.80港元，降低打新成本，对参与一手现金认购的投资者略正面。",
-          "H股正式挂牌，A/H价差结构成为现实，需要跟踪上市后A/H折价是否收敛或扩大，以验证或否定“折价修复”假设。",
-          "股本扩张摊薄EPS，H股上限对应2025稀释PE可能较此前测算的120.63x略低，但估值仍高，不影响“一手打新非长期持有”的判断。",
-          "持股5%以上股东持股比例略有摊薄，但12.10%的一致行动持股比例下降至11.57%，不构成控制权变化。",
-          "需在后续报告中更新H股交易价格、成交与配售需求，以评估流动性和供给压力是否导致A/H折价扩大。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "a1d6e94958455a5781fa86f179234e83eaa69c62f4050cd9fa036461e7eb6f8b",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "北京君正",
-      "name": "北京君正",
-      "title": "关于控股股东暨实际控制人及其一致行动人持股比例被动稀释触及1%整数倍的公告",
-      "why_now": "该正式公告确认H股已于2026-08-25挂牌，总股本增加，控股股东持股比例被动稀释触及1%整数倍，与当前研究跟踪中的关键事件时间点直接相关，需进入复核流程。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "公司公开发行的31,287,300股H股已于2026年8月25日在香港联交所主板挂牌上市，总股本由483,664,367股增加至514,951,667股。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504238.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "控股股东暨实际控制人刘强、李杰及刘强控制的四海君芯、刘飞的兄弟刘飞在持股数量不变的情况下，合计持股比例由12.32%下降至11.57%，被动稀释触及1%整数倍，不涉及股东减持，不触及要约收购。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504238.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "本次权益变动不会导致公司控股股东、实际控制人发生变化，不会影响公司的治理结构和持续经营。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504238.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-25/1225504238.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告未提供H股上市首日成交、配售结果等市场反馈，需等待后续市场数据。",
-        "未涉及公司经营基本面变化，对库存、毛利、现金流等关键假设无直接影响。",
-        "公告中未披露绿鞋行使情况，最终股本可能进一步变化。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-25T18:50:27+08:00",
-        "thesis_impacts": [
-          "H股上市已按计划完成，验证了发行规模及时间线，与之前报告中预期的8月25日挂牌一致。",
-          "控股股东持股比例被动稀释至11.57%，但实控人未变，管理层控制权问题无实质变化，需持续关注质押及减持动态。",
-          "总股本增加至514,951,667股，摊薄后每股指标需更新，之前基于摊薄EPS的估值可能需要微调，但影响有限。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "def440ec0303734b5dc6361c0d1afc69f77cf2c9ab362d950907a0ffadbafad5",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "厦门钨业",
-      "name": "厦门钨业",
-      "title": "厦门钨业关于公开挂牌转让海峡国际社区项目一至四期尾盘房产及二期商业用房内部分固定资产的进展公告",
-      "why_now": "该正式公告涉及重大资产处置进展，需更新标的跟踪表中的交易状态与存货/现金流相关评估。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年8月25日，厦门钨业控股子公司厦门滕王阁与6家企业组成的联合体签署《资产转让合同》，成交价19,200万元，标的资产账面价值6,614.16万元，增值率190.29%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502374.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225502374.PDF"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601067.pdf"
       ],
       "next_workflow": "/thesis-tracker",
       "needs_human_review": true,
       "limitations": [
-        "公告未提供交易完成后的具体会计处理及对损益的影响，需关注后续公告。",
-        "交易对方为联合体，需关注其履约能力及后续款项回收风险。",
-        "本分析仅基于公告内容，未参考其他非公开信息。"
+        "公告片段为英文版《次日披露报表》，仅涵盖2026年8月21-26日变动，未覆盖更早时间或后续变化，需核对完整期间的回购与股本变动。",
+        "回购股份尚未注销，实际注销完成后的总股本可能进一步变化，需后续公告确认。",
+        "行权股份为激励计划，不涉及流通股比例变化，对A/H市场实际流通股本影响需另行确认。"
       ],
       "notify": true,
       "resolved": false,
       "metadata": {
         "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
+        "published_at": "26/08/2026 18:51",
         "thesis_impacts": [
-          "资产处置带来现金流入，有助于改善现金流状况，部分缓解存货高企和经营现金流为负的担忧。",
-          "处置非核心房产资产，聚焦主业，但交易金额相对公司体量较小，对整体业绩影响有限。"
+          "回购及注销行为显示公司现金用于股东回报，与既有回购及股东承诺公告方向一致，可视为管理层增持/回购承诺执行的持续验证。",
+          "激励行权新增股份导致股本小幅扩张（约0.33%），对每股收益的稀释作用有限，但需在估值计算中更新总股本。",
+          "回购价格（383-407元）远高于当前触发加仓的安全边际区间（A股≤180元），显示管理层认为价值高于市场部分水平或执行既有回购计划，不影响既定等待更便宜价格或业绩验证的触发逻辑。"
         ]
       }
     },
     {
-      "fingerprint": "69a8e09502fb0dc6998eb5550973f708c3081f221162d119e9830e860c91ae44",
+      "fingerprint": "71d97b58f87180d5e8bb05c9cbbfaa63fe1115861cd59231e29a9a94a535594e",
       "section": "disclosures",
       "priority": "P1",
-      "target_id": "合盛硅业",
-      "name": "合盛硅业",
-      "title": "合盛硅业2026年第二季度主要经营数据公告",
-      "why_now": "该正式经营数据公告进入研究复核，用于验证公司季度基本面变化。",
+      "target_id": "华虹宏力",
+      "name": "华虹宏力",
+      "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
+      "why_now": "该正式公告可能涉及港股信息披露，需进入研究复核流程以确认对现有跟踪表和研究报告的影响。",
       "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年二季度工业硅生产量410,686.71吨，销售量301,982.78吨，销售金额234,035.43万元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505214.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年二季度硅橡胶生产量182,616.08吨，销售量161,205.69吨，销售金额208,880.32万元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505214.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年二季度工业硅平均价格7,749.96元/吨，环比-1.24%，同比+5.62%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505214.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年二季度硅橡胶平均价格12,957.38元/吨，环比+2.84%，同比+15.39%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505214.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年二季度石油焦平均价格3,901.77元/吨，环比+12.21%，同比+100.62%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505214.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年二季度甲醇平均价格2,012.07元/吨，环比+50.22%，同比+17.11%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505214.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
+      "verified_facts": [],
       "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505214.PDF"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601264.htm",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601226.htm"
       ],
-      "next_workflow": "/earnings-review",
+      "next_workflow": null,
       "needs_human_review": true,
       "limitations": [
-        "未能从公告中获取2026年二季度利润数据，无法直接验证盈利转正。",
-        "公告未提供环比毛利率数据，需结合成本变动估算。",
-        "公告为经营数据摘要，不包含完整财务报表。"
+        "公告具体内容未提供，仅包含港交所英文版的跳转提示，无法提取实质事实；官方URL未能访问确认，需进一步获取公告全文。"
       ],
       "notify": true,
       "resolved": false,
       "metadata": {
         "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "有机硅产品（硅橡胶、硅油）价格同比大幅上涨，可能改善有机硅板块盈利，与报告中'有机硅扩产尾声+DMC价格修复'判断一致。",
-          "原材料石油焦和甲醇价格环比大幅上涨，可能挤压成本端利润，需关注毛利率变化。",
-          "工业硅价格同比小幅上涨，环比微降，显示价格仍处于低位，符合周期底部特征。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "7d061587c79f1ebfab7f655e8f4c3cd925e5bc459fb2d7957650733d0d10485d",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "合盛硅业",
-      "name": "合盛硅业",
-      "title": "合盛硅业关于2026年半年度计提资产减值准备的公告",
-      "why_now": "公司正式公告计提2026年半年度资产减值损失总额4.45亿元，占2026Q1归母净利润0.77亿元的比例较大，可能对半年报业绩产生重大影响，需要立即进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "合盛硅业于2026年8月25日召开第四届董事会第二十一次会议，审议通过《关于公司2026年半年度计提资产减值准备的议案》，对截至2026年6月30日的各项资产计提减值准备，合计44,523.14万元（其中信用减值损失-108.48万元，资产减值损失44,631.62万元）。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505574.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "本次计提资产减值准备减少2026年半年度利润总额44,523.14万元，并相应减少期末资产净值。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505574.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505574.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告未提供存货跌价损失的具体产品或明细，无法判断减值主要来自工业硅、有机硅还是其他业务。",
-        "未提供减值后的最新净资产、资产负债率等财务数据，需结合半年报进一步分析。",
-        "公告未提及定增进展或未来经营规划，对长期逻辑影响需结合后续信息评估。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "本次大额减值将进一步侵蚀2026年上半年净利润，可能使账面扭亏面临压力，需关注半年报实际盈利情况。",
-          "持续计提存货跌价损失反映出行业景气度或库存压力未明显改善，可能削弱前期关于价格修复带动业绩反转的乐观预期。",
-          "减值规模占2026Q1归母净利比例极高，凸显公司盈利波动性和周期风险，需重新评估安全边际与估值中枢。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "9c716b4a72b164d3d2d52c28936ea98bd6ff85312aabaca6757e1ea30be5c8fc",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "合盛硅业",
-      "name": "合盛硅业",
-      "title": "合盛硅业关于2026年度第二季度担保情况的公告",
-      "why_now": "该正式公告披露了新增担保，属于需要纳入研究复核的公司正式披露。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "合盛硅业于2026年8月26日披露2026年度第二季度担保情况公告，对全资子公司合盛硅业（鄯善）有限公司新增担保15,000万元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505808.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "截至2026年6月30日，合盛硅业及其控股子公司对外担保总额为1,854,649.39万元，占最近一期经审计净资产的比例为63.41%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505808.PDF",
-          "page": 4,
-          "confidence": "high"
-        },
-        {
-          "fact": "本次担保金额（含本次）超过上市公司最近一期经审计净资产50%，被担保方合盛硅业（鄯善）有限公司资产负债率为35.08%（2026年6月30日未经审计）。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505808.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "公司对外担保逾期累计金额为0.00万元，无逾期担保。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505808.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505808.PDF"
-      ],
-      "next_workflow": "/news-pulse",
-      "needs_human_review": true,
-      "limitations": [
-        "本公告仅涉及担保情况，未提供公司最新经营业绩或财务数据，无法据此全面评估公司基本面变化。",
-        "被担保方财务数据为未经审计数据，需关注后续审计结果。",
-        "公告中涉及的担保金额和比例基于公司自行披露，可能存在口径差异。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "担保总额占净资产比例63.41%，且公司此前已在报告中指出高杠杆风险（2025年资产负债率65.0%、流动比率0.29），本次披露的担保水平进一步反映公司的或有负债敞口，与报告中关于高杠杆和风险管控的担忧一致。",
-          "本次新增担保是在前期股东大会批准的185亿元担保额度内进行，剩余可用担保额度为744,461万元，整体担保安排未超出已批准框架，但担保总额占净资产比例较高，需持续跟踪。",
-          "公司对合并报表范围内子公司担保，未对控股股东和实际控制人提供担保，担保风险相对可控，但高比例担保可能加大未来资金链压力，与现有“观望/回避”结论中的风险因素一致。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "ff598728c7d2b8d660d4b1db9f67093c1766492804a17dc48d9dda28ed3a61a5",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "合盛硅业",
-      "name": "合盛硅业",
-      "title": "合盛硅业关于会计政策变更的公告",
-      "why_now": "该正式披露的会计政策变更公告需要进入研究复核，以评估其对财务数据可比性和投资论点的影响。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "合盛硅业于2026年8月26日发布关于会计政策变更的公告，根据财政部《企业会计准则解释第20号》（财会〔2026〕7号）要求，自2026年1月1日起执行相关变更。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505366.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "公告称本次会计政策变更不会对公司当期的财务状况、经营成果和现金流量产生重大影响，不涉及以前年度的追溯调整。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505366.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505366.PDF"
-      ],
-      "next_workflow": "/news-pulse",
-      "needs_human_review": false,
-      "limitations": [
-        "本分析仅基于公告内容，未验证公司实际会计处理细节，可能未覆盖所有潜在影响。",
-        "公告日期为2026年，属于未来信息，但基于当前框架分析，不影响客观性。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "会计政策变更未涉及追溯调整，对历史财务数据不构成影响，不改变既有盈利分析基础。",
-          "变更内容涉及金融资产分类和货币可兑换性，对公司主营业务（工业硅、有机硅）影响甚微，当前投资论点（成本优势与周期风险）维持不变。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "21495ccf1514d018a793116e3e87129f780bbd710d786b3850f3c75443e31162",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "合盛硅业",
-      "name": "合盛硅业",
-      "title": "合盛硅业第四届董事会第二十一次会议决议公告",
-      "why_now": "该正式决议公告披露了2026年半年度报告、半年度计提资产减值准备及会计政策变更等重要事项，属于需纳入研究复核的正式披露。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "合盛硅业第四届董事会第二十一次会议于2026年8月25日召开，审议通过2026年半年度报告及摘要、2026年度提质增效重回报行动方案半年度评估报告、2026年半年度计提资产减值准备议案、会计政策变更议案。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505711.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505711.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告未提供具体资产减值金额和会计政策变更内容，需查阅专项公告。",
-        "半年度报告全文未在此披露，需获取完整报告以核验财务数据。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "半年度计提资产减值准备可能影响当期利润，需核实金额及对盈利预测的影响。",
-          "会计政策变更可能影响财务数据可比性，需评估对历史财务指标和估值判断的影响。",
-          "2026年半年度报告数据是验证扣非连续转正及盈利趋势的关键信息。"
-        ]
+        "published_at": "26/08/2026 19:32",
+        "thesis_impacts": []
       }
     },
     {
@@ -2411,135 +789,47 @@
       }
     },
     {
-      "fingerprint": "fab96bb5fe07eedfa37b9b418f65515180f1bccdf04f061d7b0afe27e554649a",
+      "fingerprint": "641e5cea880b019497f1b41a53ff096c92d370f5bf563c689878dd05634d5d3e",
       "section": "disclosures",
       "priority": "P1",
-      "target_id": "拼多多",
-      "name": "拼多多",
-      "title": "FORM 6-K",
-      "why_now": "该6-K为拼多多2026年8月25日提交的Form 6-K，正式确认了2026年8月24日发布的Q2财报及其新闻稿，属于本标的的重点跟踪事件（财报后正式文件），需要进入研究复核流程。",
+      "target_id": "极视角",
+      "name": "极视角",
+      "title": "INSIDE INFORMATION\nPROPOSED IMPLEMENTATION AND APPLICATION OF\nTHE H SHARE FULL CIRCULATION BY THE COMPANY",
+      "why_now": "该正式披露涉及已上市H股公司的境内未上市股份申请全流通，属于需立即进入研究复核的重大公司行动。",
       "status": "DONE",
       "verified_facts": [
         {
-          "fact": "PDD Holdings Inc.于2026年8月25日向美国证券交易委员会提交了Form 6-K报告，报告中包含2026年8月24日发布的新闻稿（Exhibit 99.1，标题为'Earnings Release'）。",
-          "official_url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926100534/tm2623874d1_6k.htm",
+          "fact": "公司于2026年8月26日向中国证监会提交全流通备案申请，涉及一名股东持有的562,347股境内未上市股份转换为H股，约占公司已发行总股本的0.50%。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600923.pdf",
           "page": 1,
           "confidence": "high"
         },
         {
-          "fact": "该6-K由联席董事长兼联席首席执行官Lei Chen和Jiazhen Zhao共同签署，日期为2026年8月25日，文件编号为001-38591。",
-          "official_url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926100534/tm2623874d1_6k.htm",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www.sec.gov/Archives/edgar/data/1737806/000110465926100534/tm2623874d1_6k.htm"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "该6-K仅为正式提交外壳，未包含实际财务数据，本核验仅确认文件存在和签署人，不能验证财报数字本身。",
-        "证据片段仅提供6-K的封面和签名页，未包含新闻稿全文（Exhibit 99.1），因此无法核验具体财务指标。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "6-K",
-        "published_at": "2026-08-25T11:20:02.000Z",
-        "thesis_impacts": [
-          "本次6-K正式确认了2026年8月24日的Q2财报发布，与论文中设定的Q2检查时点（8/24）吻合，属于计划内事件，对论文无新增意外冲击。",
-          "财报显示Non-GAAP净利率回升至25.36%，红线4（连续两季<15%）未触发，论文健康度从5/10上调至6/10，但增长减速、Temu单位经济黑箱和零股东回报等核心弱化因素仍然存在。",
-          "6-K本身仅为形式性文件，不包含财务细节，因此不改变论文假设状态，但提供了正式来源用于验证财报日期和签署人。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "da9ce8b322d3741f99f3e535e16218476b61431aca51ed70cbbdff20ba93f643",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "杭叉集团",
-      "name": "杭叉集团",
-      "title": "杭叉集团股份有限公司2026年度“提质增效重回报”行动方案半年度评估报告",
-      "why_now": "该正式披露为半年度评估报告，包含2026年上半年经营数据及海外基地投产等增量信息，需要进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年实现营业收入101.00亿元，同比增长8.65%；归属于上市公司股东的净利润12.15亿元，同比增长8.89%；扣非净利润12.02亿元，同比增长10.12%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506134.PDF",
+          "fact": "全流通及转换上市须取得中国证监会、联交所等相关监管机构的备案或批准，并遵守适用法律法规，最终转换数量及完成情况尚未确定。",
+          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600923.pdf",
           "page": 2,
           "confidence": "high"
-        },
-        {
-          "fact": "2026年5月29日实施2025年度权益分派，每股派发现金红利0.40元（含税），共计派发现金红利523,924,819.60元，占2025年归母净利润的23.91%。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506134.PDF",
-          "page": 4,
-          "confidence": "high"
-        },
-        {
-          "fact": "报告期内首座海外自建生产基地杭叉泰国制造公司正式投产运营，总占地面积超35,000平方米，从事高空作业平台、新能源叉车等高端工业车辆的研发、制造、销售与本地化服务。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506134.PDF",
-          "page": 3,
-          "confidence": "high"
         }
       ],
       "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506134.PDF"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600923.pdf"
       ],
-      "next_workflow": "/thesis-tracker",
+      "next_workflow": "/news-pulse",
       "needs_human_review": true,
       "limitations": [
-        "报告为半年度评估，非正式财报，部分数据可能为初步核算，最终以半年报为准。",
-        "公告中的前瞻性描述（如具身智能、海外拓展）未经审计，存在不确定性。",
-        "未提供详细的应收账款和现金流数据，无法更新核心风险指标。"
+        "公告仅为意向性披露，最终转换数量及完成时间存在不确定性。",
+        "未核实公告以外的市场反应或交易数据。",
+        "未获得公司其他未公开信息，无法评估对股东结构的具体影响。"
       ],
       "notify": true,
       "resolved": false,
       "metadata": {
         "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
+        "published_at": "26/08/2026 18:26",
         "thesis_impacts": [
-          "2026年上半年营收和净利润同比增速均接近9%，略高于2025年增速（营收5.9%、净利8.87%），显示经营增速企稳，但应收账款风险仍需关注。",
-          "海外收入占比提升1.5个百分点，泰国工厂投产强化全球化逻辑，可能改善海外毛利率和交付能力。",
-          "新能源核心零部件充电机配套整机占比从9.4%提升至26.8%，清洁设备销售收入同比增长58%，显示多元化业务进展。",
-          "分红比例23.91%，略低于此前预期或行业惯例，但公司仍维持稳定回报。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "7e6fbcdba046cc2708dfce55cd38d0d5710e9bf1a7a1afe208384a2fde1edea1",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "杭叉集团",
-      "name": "杭叉集团",
-      "title": "杭叉集团股份有限公司第八届董事会第七次会议决议公告",
-      "why_now": "该正式披露的2026年半年度报告及‘提质增效重回报’行动方案半年度评估报告需要进入研究复核，以更新标的跟踪表和验证财报数据。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "杭叉集团于2026年8月25日召开第八届董事会第七次会议，审议通过《公司2026年半年度报告及摘要》和《公司2026年度“提质增效重回报”行动方案半年度评估报告》。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505426.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225505426.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": false,
-      "limitations": [
-        "公告中未包含具体财务数据，无法据此验证财务指标，需查阅半年度报告全文。",
-        "公告内容为董事会决议，不包含具体经营细节，不构成完整报表分析。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "2026年半年度报告将提供最新财务数据，可能验证或修正对应收账款周转天数、利润率等关键指标的担忧。",
-          "‘提质增效重回报’行动方案半年度评估报告可能披露公司治理和股东回报措施，影响对管理层和治理风险的评估。"
+          "全流通转换涉及562,347股，占已发行股本约0.50%，对总股本影响极小，不改变基本面。",
+          "全流通落地后可能增加H股流通量，但数量微小，对估值和流动性影响有限。",
+          "公司现有回避观点主要基于估值和盈利质量，本次公告不改变需等待IFRS盈利、现金流和应收改善的核心逻辑。"
         ]
       }
     },
@@ -2562,50 +852,6 @@
       "metadata": {
         "gap_type": "unregistered_price",
         "evidence_path": "reports/标普纳指定投-checklist-20260809.md"
-      }
-    },
-    {
-      "fingerprint": "9404be2fbb5b802a609f71a85b5aed11f703da12d3e3f7badd05c63d1cbb61d8",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "深演智能",
-      "name": "深演智能",
-      "title": "VOLUNTARY ANNOUNCEMENT\nMEMORANDUM OF UNDERSTANDING IN RELATION TO\nSTRATEGIC COOPERATION WITH DELOITTE CONSULTING\n(SHANGHAI) CO., LTD.",
-      "why_now": "该正式公告披露公司与德勤中国签署战略合作备忘录，涉及AI战略合作，可能影响公司未来业务发展方向及市场预期，需纳入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "公司于2026年8月26日发布自愿性公告，宣布与德勤咨询（上海）有限公司就战略合作签署谅解备忘录。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600061.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "合作内容包括结合德勤中国的咨询能力与公司企业决策AI智能体产品及实施能力，在联合解决方案开发、关键客户协同开发及行业实践等领域合作。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600061.pdf",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600061.pdf"
-      ],
-      "next_workflow": "/thesis-drift",
-      "needs_human_review": true,
-      "limitations": [
-        "公告为自愿性披露，MOU本身不具法律约束力，具体合作成果存在不确定性。",
-        "未提供合作金额、时间表或预期收入贡献，无法进行量化评估。",
-        "公告内容未提及公司现有财务或运营数据修正，不影响已披露的财务事实。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "26/08/2026 08:02",
-        "thesis_impacts": [
-          "该合作可能强化公司Deep Agent业务的市场拓展能力，有利于提升AI转型预期，但当前未提供具体收入量化指引，实质性影响仍需验证。",
-          "合作可能有助于改善客户结构，但不足以改变当前高估值与业绩不匹配的核心矛盾。"
-        ]
       }
     },
     {
@@ -2711,204 +957,6 @@
         "high": 1250,
         "direction": "range",
         "note": "等行业触底信号明确"
-      }
-    },
-    {
-      "fingerprint": "43bf21cc59bac34cf15bd624289f782bd65feeaa2ad9fcdf168002192e991b5b",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "雅克科技",
-      "name": "雅克科技",
-      "title": "关于2026年中期分红方案的公告",
-      "why_now": "该正式披露涉及2026年中期分红方案，属于需要进入研究复核的公司行动事件。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "公司于2026年8月24日召开第七届董事会第四次会议，审议通过《关于2026年中期分红方案的议案》，尚需提交2026年第二次临时股东会审议。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503913.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "截至2026年6月30日，公司归属于母公司所有者的净利润为560,905,882.40元。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503913.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "公司拟以最新总股本475,927,678股为基数，向全体股东每10股派发现金股利3.5元（含税），共计166,574,687.30元，不进行资本公积转增股本。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503913.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503913.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告中未提供前驱体业务的具体收入增速或客户占比，无法直接验证核心投资逻辑的边际变化。",
-        "分红方案尚未经股东会通过，实际实施存在变数。",
-        "本分析未包含公司未来盈利预测或估值更新，仅基于公告事实。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "中期分红方案显示公司现金流充足、回报股东意愿提升，对股东回报预期有正面影响。",
-          "分红金额约占上半年净利润的29.7%，需关注该比例是否可持续及对公司未来资本开支的影响。",
-          "方案尚需股东会审议，存在不确定性，后续需跟踪股东会结果。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "58c2a8c246bbd64741ad3df4a8b4121d10f0fddd63e603deb285baa8c5a7bad7",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "雅克科技",
-      "name": "雅克科技",
-      "title": "关于召开2026年第二次临时股东会的通知",
-      "why_now": "该正式公告为召开临时股东会通知，核心议案为2026年中期分红方案，属于公司治理及分红相关正式披露，虽然不直接涉及业绩数据，但中期分红可能反映公司现金流和盈利情况，且涉及股东权益，按程序进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "雅克科技将于2026年9月10日召开2026年第二次临时股东会，会议审议事项为《关于2026年中期分红方案的议案》。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503915.PDF",
-          "page": 2,
-          "confidence": "high"
-        },
-        {
-          "fact": "本次股东会股权登记日为2026年9月2日，现场会议时间为2026年9月10日13:30，网络投票时间为同日9:15-15:00。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503915.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503915.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本次公告仅为股东会通知，未提供分红具体金额、比例或方案细节，无法评估对财务的具体影响。",
-        "分红议案尚待股东会审议通过，存在不确定性。",
-        "公告中提及的‘2026年中期分红方案’未见具体内容，需后续公告补充。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "中期分红方案若实施，可能提升公司股东回报预期，但根据现有研究，公司处于扩产期且FCF为负，分红可能对现金流造成一定压力，需关注后续现金流状况。",
-          "中期分红可能反映管理层对未来盈利的信心，但当前公司估值偏贵，分红对投资逻辑的影响需结合业绩结构进一步评估。",
-          "该事件不改变现有核心逻辑，即前驱体业务增速与估值匹配度仍是关键跟踪点。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "81af23238e461248afd2f5a42daae2aa691c927f44ce13885c1602bff65db360",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "雅克科技",
-      "name": "雅克科技",
-      "title": "江苏雅克科技股份有限公司2026年半年度非经营性资金占用及其他关联资金往来情况汇总表",
-      "why_now": "该正式披露的子公司资金往来涉及非经营性往来，需进入研究复核以确认是否存在关联资金占用风险。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年半年度非经营性资金占用及其他关联资金往来情况汇总表显示，控股股东及实际控制人附属企业宜兴新雅酒店有限公司存在经营性往来余额202.27万元，形成原因为房屋租赁。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503912.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年半年度汇总表显示，子公司浙江华飞电子基材有限公司（控股子公司）存在非经营性往来，2026年期初余额78,438.55万元，2026年6月末余额25,518.58万元，形成原因为借款。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503912.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "汇总表显示非经营性资金占用总计无数据，所有非经营性占用小计均为空。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503912.PDF",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503912.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告为汇总表，缺乏借款利率、期限等细节，无法完全评估资金成本。",
-        "仅提供单期数据，需结合历史数据判断资金往来趋势。",
-        "未获取完整财务报表，子公司借款的合理性需进一步分析。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "子公司浙江华飞电子基材有限公司的大额借款往来（期初7.8亿，期末2.55亿）可能反映内部资金调配，需关注其对公司现金流及财务费用的影响。",
-          "非经营性资金占用总计为空，降低了大股东占用风险，但子公司借款的偿还情况需跟踪。",
-          "末余额2.55亿相对于公司规模仍需评估，但结合负债率连续上升，可能加剧资金压力。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "8f104e9255903da3c465f77b619cc781afba4ef98edc5eac630f1c04ec6dbd15",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "雅克科技",
-      "name": "雅克科技",
-      "title": "第七届董事会第四次会议决议公告",
-      "why_now": "该正式公告包含2026年半年度报告及中期分红方案，直接影响投资研究中的财务数据和股东回报预期，需进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "雅克科技第七届董事会第四次会议审议通过《2026年半年度报告》及《2026年半年度报告摘要》。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503914.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "董事会审议通过《关于2026年中期分红方案的议案》，拟以最新总股本475,927,678股为基数，每10股派发现金股利3.5元（含税），共计166,574,687.30元，不进行资本公积转增股本，该议案尚需提交股东会审议。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503914.PDF",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "公司拟定于2026年9月10日召开2026年第二次临时股东会，审议中期分红方案等议案。",
-          "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503914.PDF",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503914.PDF"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告未提供财务数据细节，半年度报告全文需进一步分析。",
-        "分红方案尚需股东会批准，存在不确定性。",
-        "本公告不涉及前驱体业务具体数据，无法直接验证增长结构。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "2026-08-26T00:00:00+08:00",
-        "thesis_impacts": [
-          "中期分红方案提升股东回报，或增强投资者信心，需评估对估值和吸引力的影响。",
-          "2026年半年度报告数据需与业绩预期核对，特别关注前驱体业务增速是否恢复，以验证增长结构是否改善。",
-          "分红可能反映现金流改善，但需结合FCF和负债率判断财务健康度。"
-        ]
       }
     },
     {
@@ -3136,23 +1184,51 @@
       }
     },
     {
-      "fingerprint": "f3d5be05aafbba059de07e82b8729262192d4514ac89cb71731b88f3a4cc311a",
+      "fingerprint": "564f4f10e8abb9272c18280417b55a826fd21b41408a8bd941bd9b8f6cbaeb86",
       "section": "price",
       "priority": "P2",
-      "target_id": "NovoNordisk",
-      "name": "Novo Nordisk",
-      "title": "观察仓带：条件已解除",
-      "why_now": "价格已离开此前监控条件，本次记录解除状态。",
+      "target_id": "微软",
+      "name": "Microsoft",
+      "title": "不追高线：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
-      "resolved": true,
+      "notify": false,
+      "resolved": false,
       "metadata": {
-        "previous_status": "NEAR",
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 491.71,
+        "market": "US",
+        "zone_label": "不追高线",
+        "low": null,
+        "high": 440,
+        "direction": "below",
+        "note": "FY27 Q1验证Azure约+45%、云毛利与FCF后再评估"
+      }
+    },
+    {
+      "fingerprint": "f3d5be05aafbba059de07e82b8729262192d4514ac89cb71731b88f3a4cc311a",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "NovoNordisk",
+      "name": "Novo Nordisk",
+      "title": "观察仓带：FAR",
+      "why_now": "现价 48.66，区间 [44.00, 46.00]",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "FAR",
         "current_status": "FAR",
         "price": 48.66,
         "market": "US",
@@ -4672,54 +2748,13 @@
     }
   ],
   "notification_items": [
-    "f3d5be05aafbba059de07e82b8729262192d4514ac89cb71731b88f3a4cc311a",
-    "3b1b0b1d213241dba3cba1647bee76a9a64a7a6df6a224239c02fe31c2538912",
-    "29265db7ada22d61c61f389981567690f7c4586c31c365ee82539ed6fbde2f45",
-    "def440ec0303734b5dc6361c0d1afc69f77cf2c9ab362d950907a0ffadbafad5",
-    "188838461ec3e977999eac522a27ba7ad488ca8866e45fd7b23da1c7a5c62ec0",
-    "36993fb301064e6753aec5d903748a325cca9620816279e2d4ce68d0e1cb9e0e",
-    "330c277ef66c652db38ebb27e2cb122f41ba2a8a735b48c4073023686fa29ae3",
-    "aa9ee351485bf4b93b41b4071adbd7197a4b024fe864d0f63ce10e291c76fdec",
-    "8b0822d097205318265caa8730010361e7bd8a447351d4e8596b2c21bd7e646e",
-    "4c5b08d097889c1b62fb8d19da0e1b7edc91c384788581ecb9045bb57f1033bb",
-    "7d00551dad633dcaaa2faf4a3848ef008e35bd7613a0f8da806ef1cadee7af5e",
-    "696a1beaefbb3d551f0212098c12db2e8e64f0333be16cb58438846c83936a87",
-    "99e7dc1fc3836ae9462ea21d377d09446b8f8f567ff90fe3f01fc1fa1cda3c93",
-    "f717c87736720ab106334fa129c63c374bf2f0633ebc7e18cb21244322c0085b",
-    "81af23238e461248afd2f5a42daae2aa691c927f44ce13885c1602bff65db360",
-    "43bf21cc59bac34cf15bd624289f782bd65feeaa2ad9fcdf168002192e991b5b",
-    "8f104e9255903da3c465f77b619cc781afba4ef98edc5eac630f1c04ec6dbd15",
-    "58c2a8c246bbd64741ad3df4a8b4121d10f0fddd63e603deb285baa8c5a7bad7",
-    "a1d6e94958455a5781fa86f179234e83eaa69c62f4050cd9fa036461e7eb6f8b",
-    "9968a9984eec8d418f635b4da618078b57928ccb3e74a401f11900654aae73cf",
-    "4a9634f602343c9f7c99571e236aef34d857ed45da5bddac58db97a77282d8e0",
-    "69a8e09502fb0dc6998eb5550973f708c3081f221162d119e9830e860c91ae44",
-    "9e3e8ba6ef6ebea4eee22be482228c512a19873eb346feb0046114a380af5c60",
-    "ff598728c7d2b8d660d4b1db9f67093c1766492804a17dc48d9dda28ed3a61a5",
-    "547554151614813d5010662491b8026f344750384674157b0cf31278a674e3a3",
-    "7e6fbcdba046cc2708dfce55cd38d0d5710e9bf1a7a1afe208384a2fde1edea1",
-    "66e7664b495934c92242e050efd453cb458e1f57b64dcd0eb8196b6981a92ba9",
-    "c271e332d393bfeac3bd829519a6f301c77178b4a9724dc4fb9ccdc7b35ab7ef",
-    "5bbd565a5b570e281d44dd378c3a2ed6bab273e851d7b6db9680ace089a3e2b1",
-    "7d061587c79f1ebfab7f655e8f4c3cd925e5bc459fb2d7957650733d0d10485d",
-    "21495ccf1514d018a793116e3e87129f780bbd710d786b3850f3c75443e31162",
-    "9c716b4a72b164d3d2d52c28936ea98bd6ff85312aabaca6757e1ea30be5c8fc",
-    "0754294d044e11cce1d54357d44dc8fdd374c4c265b8d2c7887136d36163426e",
-    "2c5913aa8606085b0e3c534a83ecac6027f4d2de8187326e65d82a705e8068b5",
-    "14524057f08bd36cd1dfd8eeb81c0e909f19cb2a473fe3c5d81270f204eb864f",
-    "1a891233459d07838ac0e379367018681a9a53871b1b99cd45dee7e8b5965fe8",
-    "da9ce8b322d3741f99f3e535e16218476b61431aca51ed70cbbdff20ba93f643",
-    "99c94166621d8f899c8629952da25aefee1121652b5d7cd4d4988db5c67cdcbd",
-    "70b25354d3d09de4233fc6cf04b098fdae2e34e34a854661c3ecc82a77066a9e",
-    "1273a2c6d94f2e9c21f3e8f7ca067b723ba9ea6b4871d2d4a80037f0bc7fff19",
-    "6fa04fa8f863df6c472b6010d2f869730f20adde8bb0106d2171e9baabcd3a71",
-    "42f7d71d4fd15f3383f82a705fe40d313dd5f3a98666b05e6bb5e51d430f439e",
-    "f616a772bb1fbe2faccfe2d22eb8a3ac3cfe6e58f42c090de3ba5a2bb67e7e6c",
-    "10999e217db57ac13aa238ee51aa8870dffb93bead4c312b0cfdb9891e3a4878",
-    "9025630cf7f6eea0f62685c99f0d5575d0e6dbed09cce1296f7753f8a8c31b80",
-    "e0bd78cab5c69014ee31a5055cd031b5088c4526c9b72eb7c470ac5b00fa2851",
-    "9404be2fbb5b802a609f71a85b5aed11f703da12d3e3f7badd05c63d1cbb61d8",
-    "fab96bb5fe07eedfa37b9b418f65515180f1bccdf04f061d7b0afe27e554649a"
+    "db0784ef6b043444b680a5ed3c7d7a822210bb1c12ee8e2677796643af9c8f74",
+    "641e5cea880b019497f1b41a53ff096c92d370f5bf563c689878dd05634d5d3e",
+    "b656c705fef15126225d100c08d06573ec5cc834af99f694be22620863df9c46",
+    "8f123cf3e40d4716bf6b14096a10a2b125931562a5f7f93ee1f91bc363bad976",
+    "62cc1aed529b15bef1baee75cbefb1855664f2854bde91b17c2e2d578fc86a14",
+    "04c18dfdc6b48741630cc59d51a4e1d3e85362f5160bb4ff18807405ade3355c",
+    "71d97b58f87180d5e8bb05c9cbbfaa63fe1115861cd59231e29a9a94a535594e"
   ],
   "source_health": [
     {

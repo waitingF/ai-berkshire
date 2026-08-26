@@ -138,7 +138,7 @@ def _markdown_cell(value: Any) -> str:
 def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
     visible = [item for item in items if item.priority != "P2"]
     lines = [
-        "> 价格优先级：P0=区间内或低于区间；P1=高于区间上界且距上界≤5%；P2 不展示。`above` 风险警戒线保留原方向语义。优先级只表示价格距离，不代表交易信号。",
+        "> 价格优先级：P0=区间内或低于区间；P1=高于区间上界且距上界≤5%；P2 不展示。优先级只表示价格距离，不代表交易信号。",
         "",
     ]
     if not visible:

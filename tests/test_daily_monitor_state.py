@@ -72,6 +72,35 @@ class DisclosureSourceConfigTest(unittest.TestCase):
 
 
 class TriggerConfigTest(unittest.TestCase):
+    def test_rejects_above_price_zone_that_conflicts_with_ceiling_priority(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "triggers.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "targets": [
+                            {
+                                "id": "样例公司",
+                                "codes": {"US": "usTEST"},
+                                "zones": [
+                                    {
+                                        "label": "不追高线",
+                                        "market": "US",
+                                        "dir": "above",
+                                        "low": 440,
+                                    }
+                                ],
+                            }
+                        ]
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(config.ConfigError, "只支持价格上界"):
+                config.load_targets(path)
+
     def test_rejects_multiple_price_zones_for_same_target_market(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "triggers.json"

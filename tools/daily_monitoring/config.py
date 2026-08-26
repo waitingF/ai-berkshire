@@ -112,6 +112,10 @@ def load_targets(path: str | Path) -> list[dict[str, Any]]:
         for zone in target.get("zones") or []:
             if not isinstance(zone, dict):
                 raise ConfigError(f"{target_id} 的 zones 中存在非对象条目")
+            if zone.get("dir", "range") == "above":
+                raise ConfigError(
+                    f"{target_id} 的价格监控只支持价格上界语义（below/range）"
+                )
             market = str(zone.get("market", "")).strip()
             if market and market in zone_markets:
                 raise ConfigError(

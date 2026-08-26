@@ -127,6 +127,7 @@ class DailyMonitorReportTest(unittest.TestCase):
             "P0=区间内或低于区间；P1=高于区间上界且距上界≤5%；P2 不展示",
             markdown,
         )
+        self.assertNotIn("above", markdown)
         self.assertIn(
             "| P0 | 腾讯控股 | H | 加仓带 | [400.00, 430.00] | 410.00 | 区间内 | TRIGGERED |",
             markdown,
