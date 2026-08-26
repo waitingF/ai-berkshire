@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-08-25",
+  "updated": "2026-08-26",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -1919,6 +1919,38 @@
         }
       ],
       "events": []
+    },
+    {
+      "id": "Intel",
+      "name": "英特尔",
+      "group": "台账",
+      "codes": {
+        "US": "usINTC"
+      },
+      "source": "Intel-research-20260826",
+      "links": [
+        "reports/Intel/Intel-research-20260826.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 25,
+          "high": 35,
+          "market": "US",
+          "action": "评估小仓分批",
+          "note": "非自动买入；须连续两季产品FCF改善、DCAI份额未恶化、Foundry亏损率下降、14A有绑定外部客户且无新增重大稀释"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-22",
+          "type": "财报",
+          "label": "2026Q3财报（日期待公司IR确认）",
+          "note": "核DCAI单位/ASP、产品FCF、Foundry外部收入和亏损率、18A/14A客户及总股本/债务变化",
+          "market": "US"
+        }
+      ]
     }
   ]
 }
