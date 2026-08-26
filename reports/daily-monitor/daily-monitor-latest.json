@@ -3,7 +3,7 @@
   "date": "2026-08-26",
   "timezone": "Asia/Shanghai",
   "status": "OK",
-  "summary": "P0 3 · P1 4 · 新增价格 0 · 新增披露 7 · 异常 0",
+  "summary": "P0 0 · P1 0 · 新增价格 0 · 新增披露 0 · 异常 0",
   "items": [
     {
       "fingerprint": "28165036d4da5687ea5176d5a2d2ecb936b6089d061c86c22bc6dfa4a67f199a",
@@ -310,74 +310,6 @@
       }
     },
     {
-      "fingerprint": "db0784ef6b043444b680a5ed3c7d7a822210bb1c12ee8e2677796643af9c8f74",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "华虹宏力",
-      "name": "华虹宏力",
-      "title": "INTERIM RESULTS ANNOUNCEMENT\nFOR THE SIX MONTHS ENDED 30 JUNE 2026",
-      "why_now": "该正式披露包含2026年上半年未经审计财务数据，属于需要进入研究复核的增量事实。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年销售收入为1,378,462千美元，较2025年上半年1,107,002千美元增长24.5%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
-          "page": 20,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年毛利为204,463千美元，较2025年上半年111,608千美元增长83.2%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
-          "page": 20,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年母公司拥有人应占溢利为59,568千美元，较2025年上半年11,702千美元增长409.0%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
-          "page": 20,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年每股盈利为0.034美元（基本及摊薄），2025年上半年为0.007美元。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
-          "page": 31,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年经营活动所得现金流量净额为468,481千美元，较2025年上半年219,816千美元增长113.1%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
-          "page": 24,
-          "confidence": "high"
-        },
-        {
-          "fact": "建议收购华力微97.4988%股权事项的前置条件均已达成，收购完成后本集团将持有华力微100%股份。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf",
-          "page": 28,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600917.pdf"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本次披露为未经审核的中期财务信息，最终数据以审计后年报为准。",
-        "本分析仅基于公告节选，未核验完整报告中的其他重要细节（如分部数据、资产负债表细节等）。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "26/08/2026 18:25",
-        "thesis_impacts": [
-          "2026年上半年收入、毛利、归母溢利均大幅增长，显示基本面较2025年显著好转，可能影响原跟踪表中关于利润未同步修复的判断。",
-          "经营活动现金流量净额大幅改善至4.68亿美元，但资本开支仍高（投资活动净流出11.88亿美元），自由现金流可能仍为负，需重新核算简化FCF。",
-          "华力微收购前置条件已达成，交割完成在即，其对合并报表、股本及稀释影响成为下一阶段关键研究点。"
-        ]
-      }
-    },
-    {
       "fingerprint": "cd12d5e6ec42e151aa13e53b2aa7356b454c2a645dd81ee16ec858454c441ec4",
       "section": "price",
       "priority": "P0",
@@ -403,96 +335,6 @@
         "high": 40,
         "direction": "range",
         "note": "验证Q2毛利率/FCF压力可控；加仓需连续两季广告/电商双位数、毛利率≥53%、FCF转正"
-      }
-    },
-    {
-      "fingerprint": "b656c705fef15126225d100c08d06573ec5cc834af99f694be22620863df9c46",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "极视角",
-      "name": "极视角",
-      "title": "INTERIM RESULTS ANNOUNCEMENT\nFOR THE SIX MONTHS ENDED JUNE 30, 2026",
-      "why_now": "极视角发布2026年半年报，收入同比增长约181.2%，但IFRS净亏损仍为RMB40.8百万，与之前盈利预告一致。这是正式披露，需要进入研究复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "2026年上半年收入为RMB165.0百万，较2025年同期的RMB58.7百万增长约181.2%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600979.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年亏损为RMB40.8百万，较2025年同期的RMB42.5百万减少约3.9%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600979.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年上半年毛利为RMB73.3百万，较2025年同期的RMB24.5百万增加约199.1%；毛利率为44.4%，同比提升约2.7个百分点。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600979.pdf",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600979.pdf"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告未提供现金流、应收账龄、大模型客户数等关键跟踪指标，仅凭业绩摘要无法全面评估。",
-        "本报告为未经审计的中期业绩，后续需关注完整财务报告及管理层讨论。",
-        "未提供大模型业务分项收入及续费率等关键数据，无法验证盈利质量。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "26/08/2026 18:36",
-        "thesis_impacts": [
-          "收入增速超预期（+181.2% vs 盈利预告+160%-180%），但亏损幅度超预期（RMB40.8m vs 预告RMB38-44m），两者均属预期内波动，非转折性证据。",
-          "毛利率提升至44.4%，略优于预期，可能反映产品结构调整或规模效应，但需进一步分析持续性。",
-          "仍处于IFRS亏损状态，未达到原定触发条件（连续两期IFRS盈利），因此观察区间不变。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "04c18dfdc6b48741630cc59d51a4e1d3e85362f5160bb4ff18807405ade3355c",
-      "section": "disclosures",
-      "priority": "P0",
-      "target_id": "深演智能",
-      "name": "深演智能",
-      "title": "INTERIM RESULTS ANNOUNCEMENT FOR THE SIX MONTHS ENDED 30 JUNE 2026",
-      "why_now": "公司发布2026年中期业绩，财务数据与上一轮研究假设基线（2025年报数据）存在显著变化，需进入复核。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "深演智能2026年上半年收入398,247千元人民币，同比增长43.6%；毛利97,754千元，同比增长30.3%；期内利润8,195千元，同比增长125.2%；经调整净利润17,462千元，同比增长30.6%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601071.pdf",
-          "page": 1,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601071.pdf"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "本公告仅包含未审计的合并业绩摘录，缺乏分部数据、现金流、资产负债细节及Deep Agent收入确认的具体信息。",
-        "无法验证调整后净利润的计算口径及与报告期利润的调节项。",
-        "股价及市值数据未更新，估值影响需在复核中结合最新市值计算。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "财报",
-        "published_at": "26/08/2026 18:52",
-        "thesis_impacts": [
-          "收入增速43.6%，远高于2025年全年7.2%的增速，可能表明业务增长加速，或受AI代理业务推动，挑战报告中对成长性的负面判断。",
-          "净利润同比增长125.2%，盈利改善显著，但利润率仍低，需验证是否为一次性因素或可持续。",
-          "经调整净利润同比增30.6%，增速低于收入增速，毛利率提升至24.6%，或反映业务结构变化，需关注智能广告投放收入占比及Deep Agent进展。"
-        ]
       }
     },
     {
@@ -661,106 +503,6 @@
       }
     },
     {
-      "fingerprint": "8f123cf3e40d4716bf6b14096a10a2b125931562a5f7f93ee1f91bc363bad976",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "兆易创新",
-      "name": "兆易创新",
-      "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
-      "why_now": "港交所披露易发布正式公告，表明公司有新的公告披露，需进入研究复核流程以确认内容并评估对现有研究结论的影响。",
-      "status": "DONE",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601030.htm"
-      ],
-      "next_workflow": "/earnings-review",
-      "needs_human_review": true,
-      "limitations": [
-        "公告内容仅为占位提示，未提供具体披露细节，无法核实事实。",
-        "官方链接指向港交所披露易，但具体公告正文未在给定证据中，需人工访问确认。",
-        "无法判断该公告是否与中报或其他重大事项相关，影响评估待定。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "26/08/2026 18:45",
-        "thesis_impacts": []
-      }
-    },
-    {
-      "fingerprint": "62cc1aed529b15bef1baee75cbefb1855664f2854bde91b17c2e2d578fc86a14",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "兆易创新",
-      "name": "兆易创新",
-      "title": "Next Day Disclosure Return",
-      "why_now": "该正式披露显示2026年8月21日至26日期间出现多笔股份回购待注销，以及8月25日因2023年股权激励计划行权新增股份，需进入研究复核以更新股本与回购承诺执行情况。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "截至2026年8月26日，兆易创新总发行股份（不含库存股）为670,718,327股，较8月25日开盘余额668,491,934股增加2,226,393股，系2023年股权激励计划行权新增，行权价每股85.38元人民币，日期为2026年8月25日。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601067.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "2026年8月21日、24日、25日、26日分别回购待注销股份247,000股、517,100股、265,000股、257,500股，回购价格分别为每股406.48元、383.37元、387.64元、391.99元人民币。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601067.pdf",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601067.pdf"
-      ],
-      "next_workflow": "/thesis-tracker",
-      "needs_human_review": true,
-      "limitations": [
-        "公告片段为英文版《次日披露报表》，仅涵盖2026年8月21-26日变动，未覆盖更早时间或后续变化，需核对完整期间的回购与股本变动。",
-        "回购股份尚未注销，实际注销完成后的总股本可能进一步变化，需后续公告确认。",
-        "行权股份为激励计划，不涉及流通股比例变化，对A/H市场实际流通股本影响需另行确认。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "26/08/2026 18:51",
-        "thesis_impacts": [
-          "回购及注销行为显示公司现金用于股东回报，与既有回购及股东承诺公告方向一致，可视为管理层增持/回购承诺执行的持续验证。",
-          "激励行权新增股份导致股本小幅扩张（约0.33%），对每股收益的稀释作用有限，但需在估值计算中更新总股本。",
-          "回购价格（383-407元）远高于当前触发加仓的安全边际区间（A股≤180元），显示管理层认为价值高于市场部分水平或执行既有回购计划，不影响既定等待更便宜价格或业绩验证的触发逻辑。"
-        ]
-      }
-    },
-    {
-      "fingerprint": "71d97b58f87180d5e8bb05c9cbbfaa63fe1115861cd59231e29a9a94a535594e",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "华虹宏力",
-      "name": "华虹宏力",
-      "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
-      "why_now": "该正式公告可能涉及港股信息披露，需进入研究复核流程以确认对现有跟踪表和研究报告的影响。",
-      "status": "DONE",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601264.htm",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082601226.htm"
-      ],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [
-        "公告具体内容未提供，仅包含港交所英文版的跳转提示，无法提取实质事实；官方URL未能访问确认，需进一步获取公告全文。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "26/08/2026 19:32",
-        "thesis_impacts": []
-      }
-    },
-    {
       "fingerprint": "cbb91e302e3b3899ef22e9e2024ba22dcff0b86c4dd114a79650a6bb1610239c",
       "section": "price",
       "priority": "P1",
@@ -786,51 +528,6 @@
         "high": 16,
         "direction": "range",
         "note": "广告连续两季>15%、游戏止跌、毛利率≥36%"
-      }
-    },
-    {
-      "fingerprint": "641e5cea880b019497f1b41a53ff096c92d370f5bf563c689878dd05634d5d3e",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "极视角",
-      "name": "极视角",
-      "title": "INSIDE INFORMATION\nPROPOSED IMPLEMENTATION AND APPLICATION OF\nTHE H SHARE FULL CIRCULATION BY THE COMPANY",
-      "why_now": "该正式披露涉及已上市H股公司的境内未上市股份申请全流通，属于需立即进入研究复核的重大公司行动。",
-      "status": "DONE",
-      "verified_facts": [
-        {
-          "fact": "公司于2026年8月26日向中国证监会提交全流通备案申请，涉及一名股东持有的562,347股境内未上市股份转换为H股，约占公司已发行总股本的0.50%。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600923.pdf",
-          "page": 1,
-          "confidence": "high"
-        },
-        {
-          "fact": "全流通及转换上市须取得中国证监会、联交所等相关监管机构的备案或批准，并遵守适用法律法规，最终转换数量及完成情况尚未确定。",
-          "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600923.pdf",
-          "page": 2,
-          "confidence": "high"
-        }
-      ],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0826/2026082600923.pdf"
-      ],
-      "next_workflow": "/news-pulse",
-      "needs_human_review": true,
-      "limitations": [
-        "公告仅为意向性披露，最终转换数量及完成时间存在不确定性。",
-        "未核实公告以外的市场反应或交易数据。",
-        "未获得公司其他未公开信息，无法评估对股东结构的具体影响。"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "document_type": "正式公告",
-        "published_at": "26/08/2026 18:26",
-        "thesis_impacts": [
-          "全流通转换涉及562,347股，占已发行股本约0.50%，对总股本影响极小，不改变基本面。",
-          "全流通落地后可能增加H股流通量，但数量微小，对估值和流动性影响有限。",
-          "公司现有回避观点主要基于估值和盈利质量，本次公告不改变需等待IFRS盈利、现金流和应收改善的核心逻辑。"
-        ]
       }
     },
     {
@@ -1189,8 +886,8 @@
       "priority": "P2",
       "target_id": "微软",
       "name": "Microsoft",
-      "title": "不追高线：初始基线",
-      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "title": "不追高线：FAR",
+      "why_now": "现价 491.71，触发线 440.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1200,7 +897,7 @@
       "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": null,
+        "previous_status": "FAR",
         "current_status": "FAR",
         "price": 491.71,
         "market": "US",
@@ -2747,15 +2444,7 @@
       }
     }
   ],
-  "notification_items": [
-    "db0784ef6b043444b680a5ed3c7d7a822210bb1c12ee8e2677796643af9c8f74",
-    "641e5cea880b019497f1b41a53ff096c92d370f5bf563c689878dd05634d5d3e",
-    "b656c705fef15126225d100c08d06573ec5cc834af99f694be22620863df9c46",
-    "8f123cf3e40d4716bf6b14096a10a2b125931562a5f7f93ee1f91bc363bad976",
-    "62cc1aed529b15bef1baee75cbefb1855664f2854bde91b17c2e2d578fc86a14",
-    "04c18dfdc6b48741630cc59d51a4e1d3e85362f5160bb4ff18807405ade3355c",
-    "71d97b58f87180d5e8bb05c9cbbfaa63fe1115861cd59231e29a9a94a535594e"
-  ],
+  "notification_items": [],
   "source_health": [
     {
       "source": "quotes",
