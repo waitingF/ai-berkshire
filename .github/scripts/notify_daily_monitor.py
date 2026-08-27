@@ -228,7 +228,9 @@ def _price_gap(item: dict[str, Any]) -> str:
         return "无行情"
     if status == "RESOLVED":
         return "已离开"
-    if status in {"TRIGGERED", "WARN"}:
+    if status == "WARN":
+        return "已越警戒线"
+    if status == "TRIGGERED":
         if low is not None and low > 0 and price < low:
             return f"低于下界 {(low - price) / low:.1%}"
         return "区间内"

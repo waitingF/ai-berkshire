@@ -436,6 +436,16 @@ python3 tools/daily_monitor.py --offline-fixtures tests/fixtures/daily-monitor \
 python3 tools/daily_monitor.py --check-ai
 ```
 
+启用提交与推送前的本地自动门禁（每个 clone 只需执行一次）：
+
+```bash
+./scripts/install-git-hooks.sh
+```
+
+- `pre-commit`：相关监控文件变更时运行快速配置与技能一致性校验。
+- `pre-push`：运行完整离线校验和全量单元测试；失败时中止推送。
+- `.github/workflows/validate-monitoring.yml`：在 PR 和 `main` 推送上重复执行完整校验。若要远端强制禁止未通过检查的改动进入 `main`，请在 GitHub Ruleset 中将 `validate-monitoring` 设为 Required Status Check；现有 `daily-monitor` 自动提交账号需要配置相应 bypass。
+
 ### 4. 发布报告站点
 
 仓库内置 GitHub Pages 构建流程，可以把 `reports/` 下的 Markdown 报告渲染成静态 HTML 站点。

@@ -219,6 +219,41 @@ class NotificationContractTest(unittest.TestCase):
         self.assertIn("| P0 | 美团-W | 2026中报：今天到期 | TODAY | 核减亏斜率 |", message)
         self.assertNotIn("| 标的 | 市场 | 事项 | 原因 |", message)
 
+    def test_above_warning_notification_says_crossed_warning_line(self):
+        module = load_module()
+        payload = {
+            "date": "2026-08-27",
+            "status": "OK",
+            "items": [
+                {
+                    "target_id": "沃尔玛",
+                    "name": "Walmart",
+                    "priority": "P0",
+                    "section": "price",
+                    "title": "估值警戒线：WARN",
+                    "why_now": "现价越过估值警戒线。",
+                    "notify": True,
+                    "resolved": False,
+                    "status": "WARN",
+                    "metadata": {
+                        "market": "US",
+                        "zone_label": "估值警戒线",
+                        "low": 120,
+                        "high": None,
+                        "direction": "above",
+                        "price": 122,
+                    },
+                }
+            ],
+        }
+
+        _, message = module.build_message(payload)
+
+        self.assertIn(
+            "| P0 | Walmart | US | 估值警戒线 ≥120.00 | 122.00 | 已越警戒线 | WARN |",
+            message,
+        )
+
     def test_degraded_message_explains_nested_ai_failure(self):
         module = load_module()
         payload = {

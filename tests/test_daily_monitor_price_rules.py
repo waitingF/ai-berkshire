@@ -33,6 +33,13 @@ class PricePriorityRuleTest(unittest.TestCase):
 
         self.assertEqual(judge_zone(487.31, ceiling, near_ratio=0.05)[0], "FAR")
 
+    def test_above_warning_zone_keeps_directional_semantics(self):
+        warning = {"label": "估值警戒线", "dir": "above", "low": 120}
+
+        self.assertEqual(judge_zone(122, warning, near_ratio=0.05)[0], "WARN")
+        self.assertEqual(judge_zone(117, warning, near_ratio=0.05)[0], "NEAR")
+        self.assertEqual(judge_zone(100, warning, near_ratio=0.05)[0], "FAR")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -23,6 +23,11 @@ import subprocess
 import sys
 from datetime import date, datetime, timedelta
 
+if __package__:
+    from tools.daily_monitoring.config import validate_price_zones
+else:
+    from daily_monitoring.config import validate_price_zones
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TRIGGERS_FILE = os.path.join(ROOT, "data", "triggers.json")
 REPORT_DIR = os.path.join(ROOT, "reports", "trigger-scan")
@@ -171,7 +176,6 @@ def cmd_check():
     errors, warns = [], []
     targets = data.get("targets", [])
     seen_ids, seen_codes = set(), set()
-    valid_dir = {"below", "above", "range"}
     valid_group = {"重点", "台账"}
 
     for t in targets:
@@ -195,18 +199,7 @@ def cmd_check():
             if not (code.startswith(("sh", "sz", "bj", "hk", "us", "kr", "jp"))):
                 warns.append(f"{tid}：代码前缀异常 {code}（应 sh/sz/bj/hk/us/kr/jp）")
 
-        for z in t.get("zones", []):
-            if z.get("market") not in codes:
-                errors.append(f"{tid}：zone「{z.get('label')}」引用市场 {z.get('market')} 不存在于 codes")
-            if z.get("dir", "range") not in valid_dir:
-                errors.append(f"{tid}：zone「{z.get('label')}」dir 非法（{z.get('dir')}）")
-            low, high = z.get("low"), z.get("high")
-            if low is not None and high is not None and low > high:
-                errors.append(f"{tid}：zone「{z.get('label')}」low({low}) > high({high})")
-            if z.get("dir") == "below" and high is None:
-                errors.append(f"{tid}：zone「{z.get('label')}」dir=below 但无 high")
-            if z.get("dir") == "above" and low is None:
-                errors.append(f"{tid}：zone「{z.get('label')}」dir=above 但无 low")
+        errors.extend(validate_price_zones(t))
 
         for ev in t.get("events", []):
             d = ev.get("date", "")

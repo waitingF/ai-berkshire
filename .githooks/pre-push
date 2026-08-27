@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# 推送前执行完整、离线、只读校验。
+
+set -euo pipefail
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+zero_sha="0000000000000000000000000000000000000000"
+while read -r _local_ref local_sha _remote_ref remote_sha; do
+  [[ -z "${local_sha:-}" || "$local_sha" == "$zero_sha" ]] && continue
+  if [[ "$remote_sha" == "$zero_sha" ]]; then
+    while read -r commit; do
+      [[ -z "$commit" ]] && continue
+      git diff-tree --check --root -r "$commit"
+    done < <(git rev-list "$local_sha" --not --remotes)
+  else
+    git diff --check "$remote_sha..$local_sha"
+  fi
+done
+
+bash scripts/validate-monitoring.sh --full

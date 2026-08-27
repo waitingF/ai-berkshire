@@ -1,10 +1,13 @@
+import io
 import json
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 
 from tools.daily_monitoring import config
 from tools.daily_monitoring import state as state_module
+from tools import trigger_scanner
 
 
 class DisclosureSourceConfigTest(unittest.TestCase):
@@ -72,7 +75,131 @@ class DisclosureSourceConfigTest(unittest.TestCase):
 
 
 class TriggerConfigTest(unittest.TestCase):
-    def test_rejects_above_price_zone_that_conflicts_with_ceiling_priority(self):
+    def _write_targets(self, targets):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        path = Path(tmp.name) / "triggers.json"
+        path.write_text(
+            json.dumps({"targets": targets}, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        return path
+
+    def test_accepts_one_downside_zone_plus_non_overlapping_above_warning(self):
+        path = self._write_targets(
+            [
+                {
+                    "id": "沃尔玛",
+                    "codes": {"US": "usWMT"},
+                    "zones": [
+                        {
+                            "label": "研究性分批评估带",
+                            "market": "US",
+                            "dir": "range",
+                            "low": 80,
+                            "high": 90,
+                        },
+                        {
+                            "label": "估值警戒线",
+                            "market": "US",
+                            "dir": "above",
+                            "low": 120,
+                        },
+                    ],
+                }
+            ]
+        )
+
+        targets = config.load_targets(path)
+
+        self.assertEqual(
+            [zone["dir"] for zone in targets[0]["zones"]], ["range", "above"]
+        )
+
+    def test_rejects_below_and_range_for_same_target_market(self):
+        path = self._write_targets(
+            [
+                {
+                    "id": "样例公司",
+                    "codes": {"A": "sh600000"},
+                    "zones": [
+                        {
+                            "label": "观察带",
+                            "market": "A",
+                            "dir": "range",
+                            "low": 10,
+                            "high": 12,
+                        },
+                        {
+                            "label": "安全边际线",
+                            "market": "A",
+                            "dir": "below",
+                            "high": 8,
+                        },
+                    ],
+                }
+            ]
+        )
+
+        with self.assertRaisesRegex(config.ConfigError, "below/range 二选一"):
+            config.load_targets(path)
+
+    def test_rejects_multiple_above_warnings_for_same_target_market(self):
+        path = self._write_targets(
+            [
+                {
+                    "id": "样例公司",
+                    "codes": {"US": "usTEST"},
+                    "zones": [
+                        {
+                            "label": "警戒线一",
+                            "market": "US",
+                            "dir": "above",
+                            "low": 120,
+                        },
+                        {
+                            "label": "警戒线二",
+                            "market": "US",
+                            "dir": "above",
+                            "low": 140,
+                        },
+                    ],
+                }
+            ]
+        )
+
+        with self.assertRaisesRegex(config.ConfigError, "只能配置一个 above"):
+            config.load_targets(path)
+
+    def test_rejects_overlapping_downside_zone_and_above_warning(self):
+        path = self._write_targets(
+            [
+                {
+                    "id": "样例公司",
+                    "codes": {"US": "usTEST"},
+                    "zones": [
+                        {
+                            "label": "研究带",
+                            "market": "US",
+                            "dir": "range",
+                            "low": 80,
+                            "high": 120,
+                        },
+                        {
+                            "label": "警戒线",
+                            "market": "US",
+                            "dir": "above",
+                            "low": 110,
+                        },
+                    ],
+                }
+            ]
+        )
+
+        with self.assertRaisesRegex(config.ConfigError, "必须高于下行评估条件"):
+            config.load_targets(path)
+
+    def test_rejects_above_without_low(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "triggers.json"
             path.write_text(
@@ -87,7 +214,6 @@ class TriggerConfigTest(unittest.TestCase):
                                         "label": "不追高线",
                                         "market": "US",
                                         "dir": "above",
-                                        "low": 440,
                                     }
                                 ],
                             }
@@ -98,44 +224,45 @@ class TriggerConfigTest(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            with self.assertRaisesRegex(config.ConfigError, "只支持价格上界"):
+            with self.assertRaisesRegex(config.ConfigError, "dir=above 但无 low"):
                 config.load_targets(path)
 
-    def test_rejects_multiple_price_zones_for_same_target_market(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp) / "triggers.json"
-            path.write_text(
-                json.dumps(
-                    {
-                        "targets": [
-                            {
-                                "id": "样例公司",
-                                "codes": {"A": "sh600000"},
-                                "zones": [
-                                    {
-                                        "label": "观察带",
-                                        "market": "A",
-                                        "dir": "range",
-                                        "low": 10,
-                                        "high": 12,
-                                    },
-                                    {
-                                        "label": "安全边际带",
-                                        "market": "A",
-                                        "dir": "below",
-                                        "high": 8,
-                                    },
-                                ],
-                            }
-                        ]
-                    },
-                    ensure_ascii=False,
-                ),
-                encoding="utf-8",
-            )
+    def test_legacy_scanner_uses_same_zone_combination_contract(self):
+        path = self._write_targets(
+            [
+                {
+                    "id": "样例公司",
+                    "name": "Example",
+                    "group": "台账",
+                    "codes": {"US": "usTEST"},
+                    "zones": [
+                        {
+                            "label": "研究带",
+                            "market": "US",
+                            "dir": "range",
+                            "low": 80,
+                            "high": 90,
+                        },
+                        {
+                            "label": "更低触发线",
+                            "market": "US",
+                            "dir": "below",
+                            "high": 70,
+                        },
+                    ],
+                }
+            ]
+        )
+        previous = trigger_scanner.TRIGGERS_FILE
+        trigger_scanner.TRIGGERS_FILE = str(path)
+        self.addCleanup(setattr, trigger_scanner, "TRIGGERS_FILE", previous)
 
-            with self.assertRaisesRegex(config.ConfigError, "同一市场 A 配置了多个价格区间"):
-                config.load_targets(path)
+        output = io.StringIO()
+        with redirect_stdout(output):
+            exit_code = trigger_scanner.cmd_check()
+
+        self.assertEqual(exit_code, 1)
+        self.assertIn("below/range 二选一", output.getvalue())
 
 
 class MonitoringStateTest(unittest.TestCase):

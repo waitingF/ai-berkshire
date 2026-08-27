@@ -2055,6 +2055,46 @@
           "market": "US"
         }
       ]
+    },
+    {
+      "id": "沃尔玛",
+      "name": "Walmart",
+      "group": "台账",
+      "codes": {
+        "US": "usWMT"
+      },
+      "source": "沃尔玛研究报告 2026-08-27",
+      "links": [
+        "reports/沃尔玛/沃尔玛-research-20260827.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 80,
+          "high": 90,
+          "market": "US",
+          "action": "分批评估",
+          "note": "非自动买入；须 FY27 指引未下修、电商/广告/会员增长健康，且 CapEx 未进一步吞噬 FCF；单独跌价不触发"
+        },
+        {
+          "label": "估值警戒线",
+          "dir": "above",
+          "low": 120,
+          "market": "US",
+          "action": "不追高，复核仓位",
+          "note": "若利润率、FCF 与高毛利业务披露未同步超预期，不因价格上涨新增"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-11-19",
+          "type": "财报",
+          "label": "FY2027Q3 财报（公司 IR 已确认）",
+          "note": "核美国交易数/单位、剔除关税退款后的毛利率、广告/会员/市场服务增长，以及 CapEx/FCF",
+          "market": "US"
+        }
+      ]
     }
   ]
 }

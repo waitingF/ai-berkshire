@@ -32,9 +32,26 @@ description: Use when a research report contains an explicit price band, review 
 ]
 ```
 
-- `dir`：`below`（价格 ≤ high 触发）/ `above`（价格 ≥ low 触发）/ `range`（low ≤ 价格 ≤ high 触发）
+- `dir`：`below`（价格 ≤ high 触发）/ `range`（价格进入区间或低于 low，统一在价格 ≤ high 时触发）/ `above`（价格 ≥ low 触发 `WARN`）
 - `market`：必须对应 `codes` 里的键（A/H/US/KR/JP），否则 `--check` 报错
 - `action`：报告稳健结论（买入/分批/观望/回避）；`note`：触发附加条件（红线、前提）
+
+同一标的、同一市场的组合约束：
+
+- 下行评估条件只能有一个：`below` 或 `range` 二选一；`range` 必须同时提供 `low/high`。
+- 可以额外登记一个 `above` 估值警戒线，用于“不追高/复核仓位”，触发状态为 `WARN`，不代表卖出。
+- 同时存在下行评估条件和 `above` 时，必须满足 `above.low > 下行条件.high`，避免同一价格同时触发相反含义。
+- 允许：`below`、`range`、`above`、`below + above`、`range + above`。
+- 禁止：`below + range`、多个 `above`、`below + range + above`、上下条件重叠。
+
+```json
+"zones": [
+  {"label": "研究性分批评估带", "dir": "range", "low": 80, "high": 90,
+   "market": "US", "action": "分批评估", "note": "仍须核验经营条件"},
+  {"label": "估值警戒线", "dir": "above", "low": 120,
+   "market": "US", "action": "不追高，复核仓位", "note": "仅为研究警戒"}
+]
+```
 
 ### ② 加/改事件（events）
 

@@ -97,7 +97,9 @@ def _price_condition(metadata: dict[str, Any]) -> str:
 
 
 def _price_gap(item: MonitorItem) -> str:
-    if item.status in {"TRIGGERED", "WARN"}:
+    if item.status == "WARN":
+        return "已越警戒线"
+    if item.status == "TRIGGERED":
         price = _as_number(item.metadata.get("price"))
         low = _as_number(item.metadata.get("low"))
         direction = item.metadata.get("direction", "range")
@@ -138,7 +140,7 @@ def _markdown_cell(value: Any) -> str:
 def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
     visible = [item for item in items if item.priority != "P2"]
     lines = [
-        "> 价格优先级：P0=区间内或低于区间；P1=高于区间上界且距上界≤5%；P2 不展示。优先级只表示价格距离，不代表交易信号。",
+        "> 价格优先级：P0=到达研究条件或越过估值警戒线；P1=距对应边界≤5%；P2 不展示。优先级只表示复核紧迫度，不代表交易信号。",
         "",
     ]
     if not visible:

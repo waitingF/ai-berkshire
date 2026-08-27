@@ -124,7 +124,7 @@ class DailyMonitorReportTest(unittest.TestCase):
             markdown,
         )
         self.assertIn(
-            "P0=区间内或低于区间；P1=高于区间上界且距上界≤5%；P2 不展示",
+            "P0=到达研究条件或越过估值警戒线；P1=距对应边界≤5%；P2 不展示",
             markdown,
         )
         self.assertNotIn("above", markdown)
@@ -138,6 +138,38 @@ class DailyMonitorReportTest(unittest.TestCase):
         )
         self.assertNotIn("### [P0] 腾讯控股", markdown)
         self.assertNotIn("Far Away Co", markdown)
+
+    def test_above_warning_is_rendered_as_crossed_warning_line(self):
+        markdown = render_markdown(
+            result(
+                [
+                    item(
+                        "warning",
+                        "price",
+                        "P0",
+                        target_id="沃尔玛",
+                        name="Walmart",
+                        title="估值警戒线：WARN",
+                        status="WARN",
+                        metadata={
+                            "market": "US",
+                            "zone_label": "估值警戒线",
+                            "low": 120,
+                            "high": None,
+                            "direction": "above",
+                            "price": 122,
+                        },
+                    )
+                ]
+            ),
+            run_date=date(2026, 8, 27),
+        )
+
+        self.assertIn(
+            "| P0 | Walmart | US | 估值警戒线 | ≥ 120.00 | 122.00 | 已越警戒线 | WARN |",
+            markdown,
+        )
+        self.assertIn("P0=到达研究条件或越过估值警戒线", markdown)
 
     def test_disclosure_section_renders_table_and_preserves_details(self):
         markdown = render_markdown(

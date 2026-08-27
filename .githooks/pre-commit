@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# 相关文件提交前执行快速、离线、只读校验。
+
+set -euo pipefail
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+relevant_pattern='^(data/triggers\.json|tools/daily_monitor\.py|tools/daily_monitoring/|tools/trigger_scanner\.py|skills/trigger-monitor\.md|codex-skills/trigger-monitor/|cursor-skills/trigger-monitor/|dsh-skills/trigger-monitor/|scripts/(validate-monitoring\.sh|sync-codex-skills\.py|sync-cursor-skills\.py|generate-dsh-skills\.py)|\.github/workflows/validate-monitoring\.yml)'
+staged_paths="$(git diff --cached --name-only --diff-filter=ACMRTD)"
+relevant_paths="$(printf '%s\n' "$staged_paths" | grep -E "$relevant_pattern" || true)"
+
+if [[ -z "$relevant_paths" ]]; then
+  exit 0
+fi
+
+while IFS= read -r path; do
+  if ! git diff --quiet -- "$path"; then
+    echo "提交已阻止：$path 同时存在未暂存修改，无法准确校验将提交版本。" >&2
+    echo "请先完整暂存该文件，再重新提交。" >&2
+    exit 1
+  fi
+done <<< "$relevant_paths"
+
+git diff --cached --check
+bash scripts/validate-monitoring.sh --fast
