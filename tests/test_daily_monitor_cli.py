@@ -36,6 +36,8 @@ class DailyMonitorCliTest(unittest.TestCase):
             completed = run_cli(
                 "--offline-fixtures",
                 FIXTURES,
+                "--today",
+                "2026-08-27",
                 "--state-file",
                 state,
                 "--report-dir",
@@ -64,6 +66,12 @@ class DailyMonitorCliTest(unittest.TestCase):
                 initial_state,
             )
 
+    def test_today_override_requires_offline_fixtures(self):
+        completed = run_cli("--today", "2026-08-27", "--json")
+
+        self.assertEqual(completed.returncode, 2)
+        self.assertIn("--today 仅能与 --offline-fixtures 一起使用", completed.stderr)
+
     def test_check_ai_requires_key_without_printing_secret(self):
         completed = run_cli("--check-ai")
 
@@ -91,6 +99,7 @@ class DailyMonitorCliTest(unittest.TestCase):
             "--check-ai",
             "--no-ai",
             "--offline-fixtures",
+            "--today",
             "--watch",
             "--state-file",
             "--report-dir",

@@ -8,7 +8,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -51,6 +51,12 @@ def _parser() -> argparse.ArgumentParser:
         type=Path,
         metavar="PATH",
         help="使用离线夹具运行，禁止所有出站请求",
+    )
+    parser.add_argument(
+        "--today",
+        type=date.fromisoformat,
+        metavar="YYYY-MM-DD",
+        help="离线夹具回放日期（仅可与 --offline-fixtures 一起使用）",
     )
     parser.add_argument(
         "--watch",
@@ -197,13 +203,16 @@ def _check_configuration(state_file: Path) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = _parser().parse_args(argv)
+    parser = _parser()
+    args = parser.parse_args(argv)
+    offline = args.offline_fixtures is not None
+    if args.today is not None and not offline:
+        parser.error("--today 仅能与 --offline-fixtures 一起使用")
     if args.check_ai:
         return _check_ai()
     try:
         if args.check:
             return _check_configuration(args.state_file)
-        offline = args.offline_fixtures is not None
         if offline:
             services = _offline_services(args.offline_fixtures)
         else:
@@ -213,7 +222,7 @@ def main(argv: list[str] | None = None) -> int:
                 deepseek_model=os.environ.get("DEEPSEEK_MODEL"),
                 no_ai=args.no_ai,
             )
-        today = datetime.now(ZoneInfo("Asia/Shanghai")).date()
+        today = args.today or datetime.now(ZoneInfo("Asia/Shanghai")).date()
         result = run_monitor(
             MonitorOptions(
                 root=ROOT,
