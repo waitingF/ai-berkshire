@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "date": "2026-08-26",
+  "date": "2026-08-27",
   "timezone": "Asia/Shanghai",
-  "status": "OK",
-  "summary": "P0 0 · P1 0 · 新增价格 0 · 新增披露 0 · 异常 0",
+  "status": "DEGRADED",
+  "summary": "P0 8 · P1 9 · 新增价格 1 · 新增披露 16 · 异常 0",
   "items": [
     {
       "fingerprint": "28165036d4da5687ea5176d5a2d2ecb936b6089d061c86c22bc6dfa4a67f199a",
@@ -25,7 +25,7 @@
         "previous_status": "OVERDUE",
         "current_status": "OVERDUE",
         "date": "2026-08-04",
-        "days": -22,
+        "days": -23,
         "event_type": "财报",
         "note": "核10-Q的AI GPU、毛利、FCF、稀释EPS与权证影响"
       }
@@ -37,7 +37,7 @@
       "target_id": "AppLovin",
       "name": "AppLovin",
       "title": "分批复核带：TRIGGERED",
-      "why_now": "现价 310.54 ≤ 区间上界 330.00（区间内或以下）",
+      "why_now": "现价 308.11 ≤ 区间上界 330.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -49,7 +49,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 310.54,
+        "price": 308.11,
         "market": "US",
         "zone_label": "分批复核带",
         "low": 300,
@@ -78,7 +78,7 @@
         "previous_status": "OVERDUE",
         "current_status": "OVERDUE",
         "date": "2026-08-05",
-        "days": -21,
+        "days": -22,
         "event_type": "财报",
         "note": "核10-Q的现金、净债务、CapEx、利用率、继任与指引"
       }
@@ -90,7 +90,7 @@
       "target_id": "lululemon",
       "name": "lululemon",
       "title": "观察仓带：TRIGGERED",
-      "why_now": "现价 118.33 ≤ 119.00（触发线）",
+      "why_now": "现价 116.35 ≤ 119.00（触发线）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -102,13 +102,144 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 118.33,
+        "price": 116.35,
         "market": "US",
         "zone_label": "观察仓带",
         "low": null,
         "high": 119,
         "direction": "below",
         "note": "盯管理层过渡与品牌年轻化"
+      }
+    },
+    {
+      "fingerprint": "ce4fb6672150f8c400cb2540d9c06eebddb69ff58bc2b9a0e20fe462d9d1c7c0",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "NVIDIA",
+      "name": "NVIDIA",
+      "title": "2 项公告更新",
+      "why_now": "8-K；10-Q",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "US",
+        "date": "2026-08-27",
+        "published_at": "2026-08-26T20:36:00.000Z",
+        "latest_time": "2026-08-27T04:36:00+08:00",
+        "announcement_count": 2,
+        "updates": [
+          {
+            "summary": "8-K",
+            "title": "8-K",
+            "published_at": "2026-08-26T20:21:19.000Z",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式披露（8-K）宣告了FY2027 Q2业绩及相关财务信息，属于增量事实核验与优先研究复核的触发事项。",
+            "source_urls": [
+              "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm"
+            ],
+            "verified_facts": [
+              {
+                "fact": "NVIDIA于2026年8月26日发布8-K，宣布其截至2026年7月26日的季度业绩，并附有新闻稿和CFO评论。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+                "page": null,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本输入仅包含8-K摘要，未包含新闻稿或CFO评论的完整内容，需进一步获取附件以全面核验财务数据。",
+              "公告片段属于不可信外部数据，所有事实核验以原始文件为准。"
+            ],
+            "document_type": "8-K",
+            "source": "sec",
+            "thesis_impacts": [
+              "该8-K为FY2027 Q2业绩提供正式披露，需与财报精读交叉核验，以确认业绩数据与现金流转化的关键信号。",
+              "业绩披露可能影响对营收增长、毛利率、DSO及供给承诺的跟踪判断，需纳入研究更新。"
+            ]
+          },
+          {
+            "summary": "10-Q",
+            "title": "10-Q",
+            "published_at": "2026-08-26T20:36:00.000Z",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "英伟达FY2027 Q2 10-Q正式披露，属于P0级增量事实，需立即进入财报精读流程进行核验。",
+            "source_urls": [
+              "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+            ],
+            "verified_facts": [
+              {
+                "fact": "FY2027 Q2（截至2026-07-26）收入96,221百万美元，同比增长106%（对比FY26 Q2）。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "FY2027 Q2 GAAP毛利率为75.0%，Non-GAAP毛利率为75.0%。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "FY2027 Q2 经营现金流为24,077百万美元，较上一季度50,344百万美元显著下降。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "FY2027 Q2 应收账款周转天数（DSO）从45天上升至60天。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "长期供应和产能承诺总额达2790亿美元。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "AI云客户信用保证的最大总敞口为1085亿美元，首批预计FY29生效。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "一名直接客户占Q2收入16%，前五名直接客户合计占期末应收账款70%。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+                "page": null,
+                "confidence": "medium"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告片段为XBRL标签和缩写，未包含完整财务报表文字描述，部分事实需从原始文档进一步确认。",
+              "官方URL未提供具体页码，无法定位到精确页面。",
+              "客户集中度数据来自上下文研究报告中转引，需要与原始10-Q核对。"
+            ],
+            "document_type": "10-Q",
+            "source": "sec",
+            "thesis_impacts": [
+              "强化核心护城河：数据中心收入同比+117%，毛利率75%显示系统级AI基础设施的定价权持续。",
+              "削弱利润质量论点：现金转换率仅40.3%，DSO从45升至60天，显示利润表收益不等于现金。",
+              "确认风险：长期供给承诺2790亿美元和AI云保证敞口1085亿美元，增加尾部风险。",
+              "中国风险：H200出货低于DC收入1%，Q3指引不含我国数据中心compute收入，长期TAM缺失确认。"
+            ]
+          }
+        ]
       }
     },
     {
@@ -160,7 +291,7 @@
       "target_id": "Reddit",
       "name": "Reddit",
       "title": "小仓跟踪带：TRIGGERED",
-      "why_now": "现价 162.45 ≤ 区间上界 165.00（区间内或以下）",
+      "why_now": "现价 155.36 ≤ 区间上界 165.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -172,7 +303,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 162.45,
+        "price": 155.36,
         "market": "US",
         "zone_label": "小仓跟踪带",
         "low": 145,
@@ -201,9 +332,131 @@
         "previous_status": "OVERDUE",
         "current_status": "OVERDUE",
         "date": "2026-08-05",
-        "days": -21,
+        "days": -22,
         "event_type": "财报",
         "note": "核流动性、OEM合作或融资公告"
+      }
+    },
+    {
+      "fingerprint": "510f44350ced666f1b2f93fbcaa5eeb52df34fe173b62957817dadc9e2af8d87",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "三环集团",
+      "name": "三环集团",
+      "title": "2 项公告更新",
+      "why_now": "2026年中期业绩；PROPOSED CHANGE OF REGISTERED CAPITAL, AMENDMENTS TO THE ART…",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700478.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700508.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "H",
+        "date": "2026-08-27",
+        "published_at": "27/08/2026 17:01",
+        "latest_time": "2026-08-27T17:01:00+08:00",
+        "announcement_count": 2,
+        "updates": [
+          {
+            "summary": "2026年中期业绩",
+            "title": "INTERIM RESULTS ANNOUNCEMENT FOR THE SIX MONTHS ENDED JUNE 30, 2026",
+            "published_at": "27/08/2026 16:58",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "该正式披露提供了三环集团2026年上半年未经审计的财务数据，核心指标收入与归母净利润同比大幅增长，与现有研究报告中的预测和估值情景相关，需要进入研究复核。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700478.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年上半年收入为人民币6,423,331,756.20元，同比增长54.82%。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700478.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年归母净利润为人民币1,932,118,240.71元，同比增长56.18%。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700478.pdf",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "数据为未经审计的中期业绩，可能调整。",
+              "披露未提供分部收入、毛利率、现金流等细节，无法全面验证增长质量。",
+              "现有研究报告基于A股价格，而本公告为H股披露，需注意AH股价格差异及股本变动。",
+              "本公告采用中国企业会计准则，而招股书曾采用国际会计准则，可能存在口径差异。"
+            ],
+            "document_type": "财报",
+            "source": "hkex",
+            "thesis_impacts": [
+              "2026H1收入同比增长54.82%，远超2025年年报的22.13%增速，也高于2026Q1的46.25%增速，显示增长加速，对现有'AI/数据中心顺风'的论述构成积极验证。",
+              "2026H1归母净利润同比增长56.18%，增速高于收入增速，表明利润率有所提升，可能缓解此前'高端产品毛利率未证明'的担忧。",
+              "若该增速可持续，现有中性情景（18%年增速）可能被上调，但估值仍高（114元对应约79倍TTM PE），需结合估值纪律评估。",
+              "现有报告强调需验证高端产品毛利率和自由现金流，本次披露未提供分部数据，仍待进一步信息。"
+            ]
+          },
+          {
+            "summary": "PROPOSED CHANGE OF REGISTERED CAPITAL, AMENDMENTS TO THE ART…",
+            "title": "PROPOSED CHANGE OF REGISTERED CAPITAL, AMENDMENTS TO THE ARTICLES OF ASSOCIATION AND THE APPENDIX THERETO",
+            "published_at": "27/08/2026 17:01",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露了三环集团H股上市后注册资本、股本结构及董事会人数的具体变更，属于影响公司基本面的正式事实，需进入研究复核以更新跟踪数据。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700508.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司拟将注册资本由未披露金额变更为人民币1,996,718,571元。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700508.pdf",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司拟将股份总数变更为1,996,718,571股，其中A股1,916,497,371股占95.98%，H股80,221,200股占4.02%。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700508.pdf",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司拟将董事会成员人数由7名调整为8名。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700508.pdf",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司于2026年6月1日向中国证监会备案，首次公开发行71,364,300股H股，并超额配售8,856,900股，分别于2026年7月9日和2026年8月10日在港交所上市。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700508.pdf",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告为拟议变更，尚需股东大会审议通过，最终生效时间存在不确定性。",
+              "公告未提供财务数据或业绩指引，仅涉及公司治理和股本结构。",
+              "未核实公告日期2026年8月27日之后的后续进展。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "H股发行完成后的股本变化需更新至研究底稿，原报告使用的股本数19.8786亿股已过时，真实H股股本为80,221,200股，总股本为1,996,718,571股。",
+              "董事会人数由7人变更为8人，可能影响公司治理结构，需关注后续高管变动。",
+              "注册资本和章程修订属常规公司行为，不改变投资逻辑，但需在跟踪表中更新正式数据。"
+            ]
+          }
+        ]
       }
     },
     {
@@ -226,9 +479,761 @@
         "previous_status": "OVERDUE",
         "current_status": "OVERDUE",
         "date": "2026-08-21",
-        "days": -5,
+        "days": -6,
         "event_type": "财报",
         "note": "重做利差损监测表：净投资收益率、偿付能力、NBV价值率、个险止跌"
+      }
+    },
+    {
+      "fingerprint": "746099f5c80e9fdd230cb6093d077bef7d2e40efc7caec3ed868f2d12081f182",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "中芯国际",
+      "name": "中芯国际",
+      "title": "1 项公告更新",
+      "why_now": "2026年中期业绩",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082701015.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "H",
+        "date": "2026-08-27",
+        "published_at": "27/08/2026 18:20",
+        "latest_time": "2026-08-27T18:20:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "2026年中期业绩",
+            "title": "ANNOUNCEMENT OF 2026 INTERIM RESULTS",
+            "published_at": "27/08/2026 18:20",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "公司正式中期业绩公告已发布，需进入财报复核流程以更新研究状态。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082701015.pdf"
+            ],
+            "verified_facts": [],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [],
+            "document_type": "财报",
+            "source": "hkex",
+            "thesis_impacts": []
+          }
+        ]
+      }
+    },
+    {
+      "fingerprint": "3baa2009cd84b6490f4918071c315d0dcfcc99872e77f139191dfb5b02cb3c39",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "中芯国际",
+      "name": "中芯国际",
+      "title": "2026年中期业绩董事会：今天到期",
+      "why_now": "登记事件状态为今天到期，需按备注核验；监控本身不作投资决定。",
+      "status": "TODAY",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "UPCOMING_7D",
+        "current_status": "TODAY",
+        "date": "2026-08-27",
+        "days": 0,
+        "event_type": "财报",
+        "note": "确认正式中期业绩是否带来Q2公告以外的新事实；重点核库存、应收、债务、资本开支和现金流量表"
+      }
+    },
+    {
+      "fingerprint": "75a61ef2f87d78e04a0970c78da3d34ce3391a7f35a2fcf374860af3361b776a",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "亨通光电",
+      "name": "亨通光电",
+      "title": "16 项公告更新",
+      "why_now": "亨通光电关于回购注销2024年限制性股票激励计划部分限制性股票的公告；亨通光电关于新增为控股子公司提供担保的公告；申万宏源证券承销保荐有限责任公司关于江苏亨通光电股份有限公司回购注销2024年限制性股票激励计划部分限制性股票之独立财务…；亨通光电独立董事关于第九届董事会第十八次会议相关事项的独立意见；亨通光电关于拟变更注册资本、修改经营范围及《公司章程》并办理工商变更的公告；亨通光电关于追加2026年度日常关联交易预计的公告；亨通光电关于新增公司2026年度与日常经营生产业务相关的商品期货套期保值业务的公告；亨通光电关于2026年上半年度亨通财务有限公司的风险持续评估报告的公告；亨通光电关于中标海洋能源项目的公告；亨通光电第九届董事会第十八次会议决议公告；亨通光电2026年半年度报告；亨通光电独立董事专门会议对第九届董事会第十八次会议相关事项的审核意见；亨通光电公司章程（2026年8月修订）；亨通光电关于召开2026年第四次临时股东会的通知；亨通光电2026年半年度报告摘要；安徽承义律师事务所关于江苏亨通光电股份有限公司2024年限制性股票激励计划回购注销部分限制性股票事项的法律意见书",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513700.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513666.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513667.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513679.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513665.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513702.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513660.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513688.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513677.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513675.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513678.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513705.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513676.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513695.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513669.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513710.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-08-27",
+        "published_at": "2026-08-27T00:00:00+08:00",
+        "latest_time": "2026-08-27T00:00:00+08:00",
+        "announcement_count": 16,
+        "updates": [
+          {
+            "summary": "亨通光电关于回购注销2024年限制性股票激励计划部分限制性股票的公告",
+            "title": "亨通光电关于回购注销2024年限制性股票激励计划部分限制性股票的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式披露涉及限制性股票回购注销，属于公司治理与股本变动事项，虽规模较小但需纳入研究复核流程。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513700.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "亨通光电于2026年8月25日召开第九届董事会第十八次会议，审议通过回购注销2024年限制性股票激励计划部分限制性股票的议案，涉及2名离职激励对象，合计33,000股，回购价格为7.135元/股。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513700.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": false,
+            "limitations": [
+              "公告片段仅为部分内容，未覆盖完整公告中的回购价格计算、资金来源等细节，核验范围有限。",
+              "本次公告未涉及财务数据或经营指标，无法作为调整盈利预测的依据。",
+              "股价及市值数据来自研究上下文，非本次公告直接提供。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "本次回购注销33,000股，占总股本比例极小（约0.013%），对公司股本、市值及估值影响微弱，不影响当前‘观望’判断。",
+              "回购注销行为反映股权激励计划正常管理，不改变对公司现金流质量、应收及资本开支的既有担忧。"
+            ]
+          },
+          {
+            "summary": "亨通光电关于新增为控股子公司提供担保的公告",
+            "title": "亨通光电关于新增为控股子公司提供担保的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司新增对外担保额度触及超过最近一期经审计净资产50%的特别风险提示，且涉及对资产负债率超过70%的子公司提供担保，需进入研究复核流程。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513666.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年8月25日，第九届董事会第十八次会议审议通过《关于新增为控股子公司提供担保的议案》，拟为控股子公司提供合计99,000万元人民币及40,000万美元担保，需提交股东会审议。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513666.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "截至2026年6月30日，上市公司及其控股子公司对外担保总额为2,249,602.56万元，占最近一期经审计净资产的比例为70.79%；对外担保逾期累计金额为0.00万元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513666.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次担保金额（含本次）超过上市公司最近一期经审计净资产50%，且对资产负债率超过70%的单位提供担保。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513666.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告未提供担保对象详细偿债能力分析及反担保安排，仅披露财务指标，无法全面评估担保风险。",
+              "公告提到担保额度占净资产比例按汇率1:6.8计算，实际汇率波动可能影响比例数值。",
+              "公告为董事会决议，尚需股东会审议，最终担保金额和期限可能调整。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "对外担保总额占净资产70.79%，超过50%风险线，反映公司或有负债规模较大，与当前研究报告中关于财务纪律和风险控制的观察一致。",
+              "为资产负债率74.5%、72.01%、75.61%的子公司提供担保，可能隐含对现金流偏弱子公司的隐性支持，需关注担保对象的偿债能力及对整体信用风险的影响。",
+              "新增担保涉及海外子公司（印尼蓝海、亨通光电国际），可能增加汇率或跨境法律风险，需评估对海外业务敞口的影响。"
+            ]
+          },
+          {
+            "summary": "申万宏源证券承销保荐有限责任公司关于江苏亨通光电股份有限公司回购注销2024年限制性股票激励计划部分限制性股票之独立财务…",
+            "title": "申万宏源证券承销保荐有限责任公司关于江苏亨通光电股份有限公司回购注销2024年限制性股票激励计划部分限制性股票之独立财务顾问报告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司披露独立财务顾问报告，涉及2024年限制性股票激励计划部分限制性股票回购注销，属于常规股权激励管理事项，需纳入研究复核但紧急程度较低。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513667.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年8月25日，亨通光电第九届董事会第十八次会议审议通过《关于回购注销2024年限制性股票激励计划部分限制性股票的议案》，因2名激励对象离职，拟回购注销合计33,000股限制性股票。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513667.PDF",
+                "page": 7,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": false,
+            "limitations": [
+              "本报告为独立财务顾问报告，非公司正式公告，具体回购价格和完成时间尚未披露。",
+              "公告日期为2026年8月27日，但内容涉及2026年8月25日董事会决议，存在披露时滞。",
+              "回购注销尚需股东会审议，存在不确定性。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "本次回购注销金额小，对总股本及财务指标影响极小，不改变现有研究结论。",
+              "员工离职导致回购注销，显示激励计划执行中的个别变动，不影响整体激励计划有效性。"
+            ]
+          },
+          {
+            "summary": "亨通光电独立董事关于第九届董事会第十八次会议相关事项的独立意见",
+            "title": "亨通光电独立董事关于第九届董事会第十八次会议相关事项的独立意见",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该独立意见披露了公司追加2026年度日常关联交易预计，属于正式公告，需进入研究复核以确认是否影响现有研究判断。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513679.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司独立董事同意追加2026年度日常关联交易预计，认为该交易属于持续性、经常性关联交易，未损害上市公司利益，不会对公司本期及未来财务状况和经营成果产生重大影响。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513679.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": false,
+            "limitations": [
+              "公告未披露追加关联交易的具体金额和关联方明细，无法评估其对财务的实际影响；",
+              "独立意见为董事会审议的前置程序，尚需股东大会批准，存在不确定性；",
+              "此公告为定期日常关联交易预计的补充，非重大事件，对投资逻辑影响有限。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该关联交易追加预计与现有研究中的财务纪律观察相关（如控股股东质押、关联交易规模），但独立意见明确表示不会对财务状况和经营成果产生重大影响，对当前观望判断无实质性改变。"
+            ]
+          },
+          {
+            "summary": "亨通光电关于拟变更注册资本、修改经营范围及《公司章程》并办理工商变更的公告",
+            "title": "亨通光电关于拟变更注册资本、修改经营范围及《公司章程》并办理工商变更的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露公司拟回购注销33,000股限制性股票，导致总股本及注册资本减少，同时拟增加经营范围，涉及公司章程修改，属于需要进入研究复核的公司治理和股本变动事项。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513665.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年8月25日，公司第九届董事会第十八次会议审议通过回购注销2名离职激励对象已获授但尚未解除限售的合计33,000股限制性股票。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513665.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次回购注销完成后，公司总股本将由2,466,343,957股变更为2,466,310,957股，注册资本将由人民币2,466,343,957元减少至2,466,310,957元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513665.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司拟增加经营范围包括：电线、电缆制造；光缆制造；海洋工程装备销售；通信设备销售；机械电气设备销售。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513665.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司章程注册资本相关条款及股份数相应修改，该修订需提交公司2026年第四次临时股东会审议。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513665.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": false,
+            "limitations": [
+              "公告数据来自公司董事会公告，未经独立第三方验证。",
+              "未包含关于回购注销的具体价格、时间安排及对公司财务影响的具体数字。",
+              "公告未详细说明增加经营范围的具体业务计划和预期贡献。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "回购注销规模极小（33,000股，占比约0.0013%），对股本、市值及每股收益的影响可忽略，不改变当前研究判断。",
+              "增加经营范围涉及电线电缆、光缆制造、海洋工程装备销售等，与公司现有主业一致，可能反映业务拓展意图，但无具体经营数据支撑，影响有限。",
+              "股本减少和章程修改属于常规公司治理事项，不构成基本面重大变化，不触发原定的买入或评估条件。"
+            ]
+          },
+          {
+            "summary": "亨通光电关于追加2026年度日常关联交易预计的公告",
+            "title": "亨通光电关于追加2026年度日常关联交易预计的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司于2026年8月25日董事会审议通过追加2026年度日常关联交易预计，正式披露需纳入研究复核，以评估其对2026年关联交易规模及财务影响的潜在变化。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513702.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年8月25日，公司第九届董事会第十八次会议审议通过《关于追加2026年度日常关联交易预计的议案》，关联董事回避表决，独立董事事先审议通过，无需提交股东会审议。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513702.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司此前预计2026年度日常关联交易总额为396,750.00万元，本次公告为追加预计，但公告未披露追加的具体金额。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513702.PDF",
+                "page": 1,
+                "confidence": "medium"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告未提供追加金额的具体数字，无法量化对财务的影响。",
+              "仅基于该公告和已有研究背景，未获取完整会议决议或更详细关联交易明细。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "追加关联交易可能影响公司营收及成本结构，需持续跟踪后续披露的追加金额及类别，以评估对利润率及现金流的影响。",
+              "关联交易定价以市场为基础，公告称不会影响公司独立性和财务状况，但需关注实际交易规模是否超出预期。"
+            ]
+          },
+          {
+            "summary": "亨通光电关于新增公司2026年度与日常经营生产业务相关的商品期货套期保值业务的公告",
+            "title": "亨通光电关于新增公司2026年度与日常经营生产业务相关的商品期货套期保值业务的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告新增2026年度商品期货套期保值业务额度，涉及铜、铝等主要原材料，影响公司成本对冲和风险敞口，需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513660.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "亨通光电于2026年8月25日召开第九届董事会第十八次会议，审议通过新增2026年度与日常经营生产业务相关的商品期货套期保值业务议案。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513660.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "新增套期保值额度：铜最高持仓量3,500吨，最高保证金及权利金7,950.00万元；铝最高持仓量55,000吨，最高保证金及权利金16,647.30万元；合计最高持仓量58,500吨，合计最高保证金及权利金24,597.30万元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513660.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "套期保值业务授权有效期为2026年度。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513660.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司明确套期保值业务原则，只限于在期货交易所交易的铜、铝、铅、锡、螺纹钢、银及镍的商品期货及场内期权、经国务院期货监督管理机构批准成立的期货公司开展的上述商品场外期权，严禁进行以逐利为目的的投机交易。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513660.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司已根据与日常经营生产业务相关的商品期货套期保值业务的实际情况编制了《公司关于开展与日常生产经营业务相关的商品期货套期保值业务可行性分析报告》，该报告认为业务切实可行。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513660.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": true,
+            "limitations": [
+              "公告内容为外部披露，未经独立核实，需以交易所和公司正式公告为准。",
+              "公告未提供套保具体开仓时点、实际持仓变化及对冲效果的量化数据，需后续财报验证。",
+              "本分析不包含对套保业务损益预测，仅基于公告文本。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该业务新增套保额度有助于对冲铜、铝原材料价格波动风险，降低主营成本波动，可能一定程度上改善盈利稳定性，但需结合公司现金流和保证金占用评估财务影响。",
+              "套保额度规模相对于公司体量较小（合计最高保证金约2.46亿元），不影响当前估值和观望判断，但需持续跟踪套保实际效果及公允价值和现金流影响。"
+            ]
+          },
+          {
+            "summary": "亨通光电关于2026年上半年度亨通财务有限公司的风险持续评估报告的公告",
+            "title": "亨通光电关于2026年上半年度亨通财务有限公司的风险持续评估报告的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该公告属于正式披露的风险持续评估报告，涉及关联财务公司的存贷款情况，需纳入研究复核，以评估对亨通光电财务风险的影响。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513688.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "截至2026年6月30日，上市公司在亨通财务有限公司存款余额为279,895.18万元，占比56.07%，贷款余额为46,634.28万元，占比8.44%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513688.PDF",
+                "page": 10,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": true,
+            "limitations": [
+              "公告为外部数据，未经独立核验，仅作信息参考。",
+              "财务数据未经审计，可能存在调整。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "财务公司存款余额占比较高，需关注关联交易风险及资金安全性。",
+              "财务公司各项监管指标均满足要求，未发现重大风险，短期对投资论点影响有限。"
+            ]
+          },
+          {
+            "summary": "亨通光电关于中标海洋能源项目的公告",
+            "title": "亨通光电关于中标海洋能源项目的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露公司中标海洋能源项目，总金额18.31亿元，占2025年度经审计营业收入的2.74%，属重大合同信息，需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513677.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司及控股子公司近期中标国内外海洋能源项目，中标总金额为18.31亿元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513677.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "中标项目包括国内海上风电项目（如大唐海南儋州120万千瓦海上风电项目等）和国外海洋能源项目。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513677.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": false,
+            "limitations": [
+              "公告内容基于外部披露，未经独立核实。",
+              "订单尚未全部签署合同，存在不确定性。",
+              "缺少订单利润率、回款条件等详细条款。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该订单金额相对公司营收占比较小（2.74%），对整体盈利和现金流影响有限，但可能增强市场对公司海缆业务竞争力的信心。",
+              "订单中标有助于巩固公司在海洋能源领域的市场地位，但需关注合同履约和回款情况，尤其是在当前现金流为负、应收高企的背景下。",
+              "该订单不改变现有估值和核心矛盾，仍需等待后续季度现金流和盈利质量改善证据。"
+            ]
+          },
+          {
+            "summary": "亨通光电第九届董事会第十八次会议决议公告",
+            "title": "亨通光电第九届董事会第十八次会议决议公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司发布董事会决议公告，涉及2026年半年度报告、追加日常关联交易、新增担保、回购注销限制性股票及股东大会安排等多项正式决议，需在下一研究流程中复核并更新跟踪表。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513675.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司第九届董事会第十八次会议于2026年8月25日召开，审议通过《2026年半年度报告全文及摘要》等八项议案，其中优先股等议案已通过。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513675.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司拟回购注销33,000股限制性股票，完成后总股本由2,466,343,957股变更为2,466,310,957股，注册资本相应减少。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513675.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司拟增加经营范围，包括电线电缆制造、光缆制造、海洋工程装备销售等。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513675.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "董事会拟定于2026年9月14日召开2026年第四次临时股东会，审议新增担保等三项议案。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513675.PDF",
+                "page": 3,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告为董事会决议，具体财务数据需以2026年半年度报告全文及其附注为准，本公告未提供详细数字。",
+              "新增担保和关联交易的具体金额及对象需查阅后续公告（2026-068、2026-069号）才能评估影响，存在信息不足。",
+              "无法确认经营范围变更实际业务影响，且回购注销占股本比例极小，对估值影响有限。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "回购注销33,000股（占总股本0.0013%）规模极小，对每股指标和估值影响可忽略，不改变现有估值判断。",
+              "新增日常关联交易预计和新增担保需结合后续公告（2026-068、2026-069号）评估对公司财务风险和关联交易依赖度的影响，可能影响对管理层资本配置和财务纪律的评估。",
+              "增加经营范围可能反映业务扩展方向，需关注是否与高毛利业务（海缆、光通信）相关，但公告未提供具体财务数据，暂不影响当前研究结论。"
+            ]
+          },
+          {
+            "summary": "亨通光电2026年半年度报告",
+            "title": "亨通光电2026年半年度报告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "这是亨通光电披露的2026年半年度正式报告，包含营收、利润、现金流、分红等重要财务数据，需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513678.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年上半年营业收入420.26亿元，同比增长31.13%；归属于母公司净利润31.20亿元，同比增长93.38%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513678.PDF",
+                "page": 76,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年经营活动产生的现金流量净额为-8.65亿元，上年同期为490.31万元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513678.PDF",
+                "page": 76,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年财务费用为2.90亿元，同比增长237.94%，主要系汇率波动导致汇兑损益增加。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513678.PDF",
+                "page": 76,
+                "confidence": "high"
+              },
+              {
+                "fact": "本报告期公司计划不派发现金红利，不送红股，不以公积金转增股本。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513678.PDF",
+                "page": 83,
+                "confidence": "high"
+              },
+              {
+                "fact": "报告期内财务总监吴燕因工作调动离任，聘任王金猛为财务总监。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513678.PDF",
+                "page": 83,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "仅分析了公告部分页面，未覆盖完整财报附注与分部数据。",
+              "财务费用增加的具体汇兑损益金额未在本次证据中披露。",
+              "诉讼仲裁等事项未展开分析。"
+            ],
+            "document_type": "财报",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "半年度营收增长与归母净利润高增长验证了光通信与电网业务景气，但经营现金流为负、财务费用大增再次确认现金流质量问题，强化原“观望”判断。",
+              "无分红与财务总监变动需纳入治理与股东回报跟踪。"
+            ]
+          },
+          {
+            "summary": "亨通光电独立董事专门会议对第九届董事会第十八次会议相关事项的审核意见",
+            "title": "亨通光电独立董事专门会议对第九届董事会第十八次会议相关事项的审核意见",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司独立董事专门会议对追加2026年度日常关联交易预计事项出具审核意见，属于正式披露，需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513705.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年8月25日，亨通光电第九届董事会独立董事专门会议对拟提交第九届董事会第十八次会议审议的《追加2026年度日常关联交易预计》事项进行了审核，会议审核意见为同意将该议案提交董事会审议，关联独立董事杨钧辉回避表决。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513705.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": false,
+            "limitations": [
+              "仅基于公告片段，未获取完整公告及关联交易具体金额、交易对手方等细节。",
+              "未核实该公告是否已通过交易所审核或存在其他补充披露。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "追加日常关联交易预计属于经常性关联交易，未损害上市公司利益，对公司财务状况和经营成果无重大影响，不影响公司独立性。",
+              "该事项不改变现有研究判断，仍需关注后续现金流、应收及高毛利业务持续性。"
+            ]
+          },
+          {
+            "summary": "亨通光电公司章程（2026年8月修订）",
+            "title": "亨通光电公司章程（2026年8月修订）",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司正式披露了2026年8月修订的公司章程，属于公司治理基础文件的重大更新，需要纳入研究复核以评估可能的治理结构变化。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513676.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司章程修订于2026年8月，经股东会审议通过后施行。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513676.PDF",
+                "page": 44,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司章程规定公司注册资本为人民币2,466,310,957元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513676.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司章程规定总经理（总裁）为公司法定代表人，辞任时同时辞去法定代表人。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513676.PDF",
+                "page": 3,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": true,
+            "limitations": [
+              "本次公告仅为章程文本，未提供修订对照说明，无法确定具体修改条款及其对财务或治理的影响。",
+              "章程中的部分表述（如利润分配政策）可能沿用既有内容，需与历史章程对比才能评估实质性变化。",
+              "公告未包含财务数据变更，对现有估值模型无直接影响。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "公司章程修订本身不直接影响财务数据，但可能涉及治理结构、利润分配政策或授权体系的变化，需与现有研究中的治理评估进行对照。",
+              "章程中关于利润分配的政策（如现金分红条件、比例）维持了原有框架，与研究报告中‘股东回报’的评估一致，不构成重大冲击。",
+              "章程中关于股东会、董事会职权的规定可能影响未来重大事项的决策流程，需持续关注后续公告以确认具体变化。"
+            ]
+          },
+          {
+            "summary": "亨通光电关于召开2026年第四次临时股东会的通知",
+            "title": "亨通光电关于召开2026年第四次临时股东会的通知",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该公告为召开临时股东会的例行通知，无重大财务或战略信息，正文提及的议案（新增担保、回购注销限制性股票、修改章程）需要后续跟踪，但当前无需立即深度研究。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513695.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "亨通光电定于2026年9月14日召开2026年第四次临时股东会，股权登记日为2026年9月7日。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513695.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": null,
+            "needs_human_review": false,
+            "limitations": [
+              "公告为流程性文件，未提供具体金额或经营细节。",
+              "议案中新增担保和回购注销的具体数量、价格及对财务的影响未在公告正文披露，需关注后续正式议案文档。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "亨通光电2026年半年度报告摘要",
+            "title": "亨通光电2026年半年度报告摘要",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "该正式披露为2026年半年度报告摘要，归属于上市公司股东的净利润同比增长93.38%，营业收入增长31.13%，远超市场预期，且扣非净利润增速更高，需要进入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513669.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年半年度营业收入42,025,897,144.30元，同比增长31.13%；归属于上市公司股东的净利润3,119,620,746.28元，同比增长93.38%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513669.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "归属于上市公司股东的扣除非经常性损益的净利润3,151,483,795.30元，同比增长100.62%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513669.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "经营活动产生的现金流量净额为-864,794,244.74元，上年同期为4,903,131.40元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513669.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "报告期内总资产77,883,089,082.45元，较上年度末增长7.63%；归属于上市公司股东的净资产33,707,321,217.55元，较上年度末增长6.06%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513669.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本摘要未经审计，数据可能存在调整。",
+              "摘要未提供分部信息，无法评估各业务板块的具体贡献。",
+              "现金流量表仅披露总额，未披露明细，难以分析现金流恶化的具体原因。"
+            ],
+            "document_type": "财报",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "业绩增速远超预期，但经营现金流为负的矛盾仍然存在，需进一步评估利润质量。",
+              "扣非净利润增速高于归母净利润，表明业绩增长非依靠非经常性损益，质量较高。",
+              "营收和利润高速增长可能强化市场对海缆和光通信业务的预期，但现金流恶化需要关注。"
+            ]
+          },
+          {
+            "summary": "安徽承义律师事务所关于江苏亨通光电股份有限公司2024年限制性股票激励计划回购注销部分限制性股票事项的法律意见书",
+            "title": "安徽承义律师事务所关于江苏亨通光电股份有限公司2024年限制性股票激励计划回购注销部分限制性股票事项的法律意见书",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "OCR_REQUIRED",
+            "why_now": "正式披露未提取到可用文本，一期不执行 OCR，需要人工核验。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513710.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "PDF 未提取到可用文本，一期不执行 OCR"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          }
+        ]
       }
     },
     {
@@ -251,7 +1256,7 @@
         "previous_status": "OVERDUE",
         "current_status": "OVERDUE",
         "date": "2026-08-13",
-        "days": -13,
+        "days": -14,
         "event_type": "财报",
         "note": "核新业务减亏、零售利润率、FCF"
       }
@@ -276,7 +1281,7 @@
         "previous_status": "OVERDUE",
         "current_status": "OVERDUE",
         "date": "2026-08-24",
-        "days": -2,
+        "days": -3,
         "event_type": "公告",
         "note": "核最终定价、稀释与首日表现"
       }
@@ -288,7 +1293,7 @@
       "target_id": "北京君正",
       "name": "北京君正",
       "title": "H上限触发：TRIGGERED",
-      "why_now": "现价 95.30 ≤ 102.80（触发线）",
+      "why_now": "现价 101.10 ≤ 102.80（触发线）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -300,7 +1305,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 95.3,
+        "price": 101.1,
         "market": "H",
         "zone_label": "H上限触发",
         "low": null,
@@ -310,13 +1315,752 @@
       }
     },
     {
+      "fingerprint": "9ef0a52fa4b8ac84fe56b145d27073d6c9bdc59ac20849c929ed2be1482bff0b",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "华虹宏力",
+      "name": "华虹宏力",
+      "title": "6 项公告更新",
+      "why_now": "2026年半年度报告摘要；港股公告：截至二零二六年六月三十日止六个月中期业绩公告；2026年半年度募集资金存放与实际使用情况专项报告；关于2026年半年度计提资产减值准备的公告；2026年半年度报告；关于2026年度“提质增效重回报”行动方案的半年度评估报告",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514056.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514139.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514118.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514154.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514149.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514178.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-08-27",
+        "published_at": "2026-08-27T00:00:00+08:00",
+        "latest_time": "2026-08-27T00:00:00+08:00",
+        "announcement_count": 6,
+        "updates": [
+          {
+            "summary": "2026年半年度报告摘要",
+            "title": "2026年半年度报告摘要",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "公司正式披露2026年半年度报告摘要，首次显示上半年营业收入同比增长19.41%、归母净利润同比增长436.69%、扣非净利润同比增长470.34%，且经营现金流净额同比大增109.59%，直接回应研究报告中'利润未随收入修复'的关键担忧，需要进入复核流程。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514056.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年上半年营业收入为9,574,266,889.90元，上年同期为8,017,656,907.53元，同比增长19.41%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514056.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年归属于上市公司股东的净利润为398,844,876.76元，上年同期为74,315,361.59元，同比增长436.69%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514056.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年归属于上市公司股东的扣除非经常性损益的净利润为315,922,267.25元，上年同期为55,391,752.37元，同比增长470.34%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514056.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年经营活动产生的现金流量净额为3,396,161,708.19元，上年同期为1,620,396,625.79元，同比增长109.59%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514056.PDF",
+                "page": 3,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本报告未经审计，数据准确性需待后续正式审计报告验证。",
+              "摘要未提供毛利率、资本开支、产能利用率等关键指标，不足以全面验证研究报告中的核心假设。",
+              "摘要未提及华力微交易的最新进展，该事项对长期价值评估仍至关重要。",
+              "本数据仅为单一会计期间的同比变化，不能据此推断趋势的持续性。"
+            ],
+            "document_type": "财报",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "2026H1净利润和现金流显著改善，与原先'收入修复但利润未同步修复'的判断形成对照，可能削弱空方论点，需要重新评估盈利拐点是否已现。",
+              "扣非净利润增长470%表明主营业务盈利能力改善，而非一次性收益，对'特色工艺毛利改善'的验证具有正面意义。",
+              "经营现金流大幅改善，但资本开支数据未在摘要中披露，FCF是否转正仍需结合全年资本开支数据判断，不改变对重资产扩张的担忧。"
+            ]
+          },
+          {
+            "summary": "港股公告：截至二零二六年六月三十日止六个月中期业绩公告",
+            "title": "港股公告：截至二零二六年六月三十日止六个月中期业绩公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式中期业绩公告提供了2026年上半年最新经营和财务数据，是验证研究触发条件的关键增量信息。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514139.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "截至2026年6月30日止六个月，销售收入为1,378,462千美元，同比增长24.5%；毛利为204,463千美元，同比增长83.2%；期内亏损为13,389千美元，但母公司拥有人应占溢利为59,568千美元，同比增长409.0%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514139.PDF",
+                "page": 31,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年经营活动所得现金流量净额为468,481千美元，同比增长113.1%；投资活动所用现金流量净额为1,188,153千美元，主要包括资本开支1,281,400千美元；期末现金及现金等价物为4,532,224千美元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514139.PDF",
+                "page": 36,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司已建议通过发行代价股份收购华力微97.4988%股权，总代价约人民币8,268百万元，发行价为每股人民币43.34元；该交易已获独立股东批准，且截至报告日所有前置条件均已达成。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514139.PDF",
+                "page": 28,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告数据为未经审核的中期财务信息，最终数据可能调整。",
+              "华力微收购虽前置条件达成，但交割及并表的具体时间尚待确认。",
+              "A/H股价及相关估值需在下一研究流程中结合最新行情更新。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "收入同比增长24.5%，且母公司拥有人应占溢利大幅增长，显示经营基本面有所改善，但期内整体亏损，主要由于非控股权益承担了大部分亏损，需关注并表结构影响。",
+              "经营活动现金流显著改善，但资本开支仍高，简化自由现金流仍为负，需重新评估FCF改善速度。",
+              "华力微收购事项前置条件已达成，预计将完成交割并并表，需评估收购对股本、资产结构和潜在摊薄的影响。"
+            ]
+          },
+          {
+            "summary": "2026年半年度募集资金存放与实际使用情况专项报告",
+            "title": "2026年半年度募集资金存放与实际使用情况专项报告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告提供了截至2026年6月30日的募集资金使用与结余情况，需进入研究复核以更新财务跟踪。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514118.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "截至2026年6月30日，公司募集资金专户余额为588,346.19万元，募投项目累计支出1,526,419.05万元，利息收入扣减手续费净额21,750.82万元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514118.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "报告期内，公司不存在变更募集资金投资项目的情况。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514118.PDF",
+                "page": 4,
+                "confidence": "high"
+              },
+              {
+                "fact": "报告期内，公司不存在募集资金投资项目对外转让或置换情况。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514118.PDF",
+                "page": 4,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": false,
+            "limitations": [
+              "公告片段可能包含不完整信息，完整报告需进一步查阅。",
+              "未提供募投项目具体进度及效益分析，需结合其他资料评估。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "募集资金使用情况不影响现有研究结论，但需更新财务数据以反映最新状态。",
+              "未变更募投项目，表明公司资本开支计划维持，与既有判断一致。"
+            ]
+          },
+          {
+            "summary": "关于2026年半年度计提资产减值准备的公告",
+            "title": "关于2026年半年度计提资产减值准备的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该公告属于常规半年度资产减值计提与转销，对当期利润影响较小（约3413.87万元），不改变公司基本面核心矛盾，但提供存货与信用减值的增量数据，需纳入跟踪。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514154.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年8月26日董事会审议通过2026年半年度计提资产减值准备，合计计提40,232.86万元，转销36,818.99万元，净减少利润总额3,413.87万元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514154.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "信用减值损失计提1,660.45万元（应收票据、应收账款坏账）；资产减值损失计提38,572.41万元，其中存货跌价损失38,525.98万元，固定资产减值损失46.43万元；转销存货跌价准备36,818.99万元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514154.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": false,
+            "limitations": [
+              "公告仅截至2026年6月30日，未提供2026H1完整财务数据，无法量化对估值的影响。",
+              "减值转回和转销的细节未完全披露，需结合后续半年报进一步核验存货、应收质量。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "本次计提与转销对利润总额影响约-0.34亿元，相对于2025年归母净利3.77亿元和2026Q1归母1.40亿元，属于小幅扰动，不改变当前利润修复趋势。",
+              "存货跌价转销规模较大（3.68亿元），反映前期计提的部分减值产品已实现销售，与跟踪表中'存货周转和减值风险'维度相关，但未破坏2026H1盈利改善迹象。",
+              "资产减值计提规模占比较小，未对重资产扩张、FCF为负、ROE低等核心空方论点构成实质影响。"
+            ]
+          },
+          {
+            "summary": "2026年半年度报告",
+            "title": "2026年半年度报告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "该正式披露的2026年半年度报告提供了最新财务数据，需与现有研究框架中的触发条件进行比对，以更新投资论点。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514149.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本数据为外部公告，未经正式核验，仅作为待分析输入。"
+            ],
+            "document_type": "财报",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "关于2026年度“提质增效重回报”行动方案的半年度评估报告",
+            "title": "关于2026年度“提质增效重回报”行动方案的半年度评估报告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露了2026年上半年经营成果、研发进展、重大资产重组获批及产能爬坡等关键数据，属于定期报告之外的正式增量信息，需进入研究复核以更新标的跟踪。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514178.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年上半年，公司实现营业收入95.74亿元，同比增长19.4%，创历史新高；实现归母净利润3.99亿元，同比增长436.7%；扣非归母净利润3.16亿元，同比增长470.3%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514178.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "研发方面，40纳米eFlash工艺平台实现风险量产，55纳米eFlash车规平台推进产品导入；40纳米超低功耗特色工艺实现规模量产；新一代小Pitch IGBT平台、高压超级结及Super IGBT系列工艺进入量产阶段。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514178.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年研发投入达9.13亿元，新增获授权国内外发明专利162个，累计获授权专利达4,997项。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514178.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "截至2026年6月30日，无锡二期项目（Fab 9）8.3万片/月规划产能所需工艺设备已全部完成搬入，正在推进安装调试，计划于第三季度末达到规划产能目标。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514178.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年，公司重大资产重组事项取得重大进展：交易已经上海证券交易所并购重组审核委员会审核通过，并获得中国证监会同意注册批复。交易完成后将新增约3.8万片/月的12英寸晶圆产能。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225514178.PDF",
+                "page": 3,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告内容未经审计，部分表述为管理层评估，需后续定期报告确认。",
+              "重大资产重组尚未完成交割，影响存在不确定性。",
+              "未提供分产品毛利率数据，无法直接验证特色工艺毛利改善情况。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "2026H1收入创新高且利润大幅增长，初步验证了业绩修复趋势，但当前估值仍极高，安全边际不足。",
+              "Fab9设备搬入完成并计划Q3末达产，需跟踪后续产能利用率、毛利率及资本回报验证。",
+              "重大资产重组获证监会注册批复，但尚未完成交割，关注后续并表影响及稀释效应。"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fingerprint": "754e52fba5ff59bc0d6c79373da26002e048988c8b5305fce854940f47b0e4b4",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "国电南瑞",
+      "name": "国电南瑞",
+      "title": "9 项公告更新",
+      "why_now": "国电南瑞2026年半年度报告摘要；国电南瑞第九届董事会第十五次会议决议公告；国电南瑞2026年度“提质增效重回报”行动方案的半年度评估报告；国电南瑞关于在中国电力财务有限公司办理金融业务的风险持续评估报告的公告；国电南瑞关于2026年半年度公司募集资金存放、管理与实际使用情况的专项报告；中信证券股份有限公司关于国电南瑞科技股份有限公司使用部分闲置募集资金进行现金管理之核查意见；国电南瑞2026年半年度报告；国电南瑞关于使用部分闲置募集资金进行现金管理的公告；国电南瑞关于2026年半年度利润分配方案的公告",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508118.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508123.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508101.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508094.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508120.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508110.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508108.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-08-27",
+        "published_at": "2026-08-27T00:00:00+08:00",
+        "latest_time": "2026-08-27T00:00:00+08:00",
+        "announcement_count": 9,
+        "updates": [
+          {
+            "summary": "国电南瑞2026年半年度报告摘要",
+            "title": "国电南瑞2026年半年度报告摘要",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "国电南瑞发布2026年半年度报告，核心财务数据及中期分红方案需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508118.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年上半年营业收入277.67亿元，同比增长14.54%；归母净利润30.73亿元，同比增长4.08%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508118.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年半年度利润分配预案：每股派发现金红利0.153元（含税），合计派发现金红利12.22亿元，现金分红和回购金额合计占半年度归母净利润41.03%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508118.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本数据为未经审计的半年度报告摘要，全文需参见上交所网站。",
+              "经营活动现金流净额下降可能受季节性及结算周期影响，需进一步分析。",
+              "中期分红方案有待股东大会批准，存在不确定性。"
+            ],
+            "document_type": "财报",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "营收增速14.54%高于2026Q1的7.52%，显示增长动能有所恢复，但归母净利润增速4.08%仍低于营收增速，验证毛利率压力或费用上升的担忧。",
+              "中期分红比例约40%，体现公司现金流良好及股东回报意愿，但需结合全年分红政策评估。",
+              "经营活动现金流量净额同比大幅下降78.95%，需关注现金流与利润匹配度，可能影响对盈利质量的评估。"
+            ]
+          },
+          {
+            "summary": "国电南瑞第九届董事会第十五次会议决议公告",
+            "title": "国电南瑞第九届董事会第十五次会议决议公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式披露属于P1优先，因为涉及半年度报告、利润分配、募集资金等核心财务与公司治理事项，且与跟踪表中的'下季报后'复查节点直接相关。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508123.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "国电南瑞第九届董事会第十五次会议于2026年8月25日召开，审议通过2026年半年度报告、半年度利润分配方案、募集资金现金管理等议案。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508123.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司拟向商业银行申请综合授信额度不超过人民币340亿元，包括招商银行150亿元、交通银行74亿元等，额度有效期12个月。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508123.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本公告未含半年度报告具体财务数据，需查阅正式半年报进行业绩核验。",
+              "关联交易风险持续评估报告的具体内容未在本公告中展示，需查看相应专项公告。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该公告确认公司半年度报告及利润分配方案，可能影响盈利与分红预期，需在后续季报复核中纳入评估。",
+              "大额综合授信额度反映业务发展需求，与公司电网投资景气逻辑一致，但需关注实际使用及债务变化。",
+              "关联交易议案（在中国电力财务有限公司办理金融业务）已有独立董事审议，提示治理监督机制正常，但关联风险仍需跟踪。"
+            ]
+          },
+          {
+            "summary": "国电南瑞2026年度“提质增效重回报”行动方案的半年度评估报告",
+            "title": "国电南瑞2026年度“提质增效重回报”行动方案的半年度评估报告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式披露包含2026年上半年经营与财务数据更新，以及分红、回购等投资者回报举措，需要进入研究复核以更新标的跟踪。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年上半年主营业务收入276.99亿元，同比增长14.41%；归母净利润30.73亿元，同比增长4.08%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年电网行业收入138.83亿元，同比增长6.42%；非电网行业收入138.16亿元，同比增长23.73%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年海外收入58.94亿元，同比增长196.61%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年资产负债率40.42%，较年初优化2.31个百分点。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司计划2026年中期分红12.22亿元，中期分红比例约39.77%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF",
+                "page": 5,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司已完成第二期股份回购，累计回购5亿元，并启动新一轮回购。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF",
+                "page": 5,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告内容为半年度评估报告，非完整财务报告，部分关键财务指标（如毛利率）未披露具体数值。",
+              "公告中提及的'提质增效'措施多为定性描述，定量影响需后续报告验证。",
+              "公司股价、估值等数据未更新，需结合市场数据进一步分析。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "海外收入大幅增长（+196.61%）可能提升增长预期，但需关注其毛利率贡献及相关风险。",
+              "中期分红计划（39.77%）强化了股东回报承诺，可能影响估值锚定。",
+              "毛利率下滑虽未直接披露具体数值，但提及市场竞争和原材料涨价影响，需关注后续财务报告以评估对盈利能力的影响。",
+              "回购和分红举措可能对市场情绪产生正面影响，但对基本面改变有限。"
+            ]
+          },
+          {
+            "summary": "国电南瑞关于在中国电力财务有限公司办理金融业务的风险持续评估报告的公告",
+            "title": "国电南瑞关于在中国电力财务有限公司办理金融业务的风险持续评估报告的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508101.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "DeepSeek 输出校验失败: next_workflow 不在允许列表"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "国电南瑞关于2026年半年度公司募集资金存放、管理与实际使用情况的专项报告",
+            "title": "国电南瑞关于2026年半年度公司募集资金存放、管理与实际使用情况的专项报告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该公告为常规半年度募集资金使用专项报告，内容涉及募集资金存放与使用情况，未包含重大经营或财务变动信息，但可能对持仓逻辑产生边际影响，需进行常规复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508094.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "截至2026年6月30日，国电南瑞募集资金余额为63,263.90万元，其中结构性存款余额5.56亿元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508094.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "报告期内，公司使用闲置募集资金暂时补充流动资金24,500万元，已于2026年3月2日归还。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508094.PDF",
+                "page": 4,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司于2025年8月26日董事会审议通过使用不超过15亿元闲置募集资金进行现金管理，截至2026年6月30日尚未到期的结构性存款余额为5.56亿元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508094.PDF",
+                "page": 4,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": false,
+            "limitations": [
+              "本次分析仅基于募集资金专项报告，未包含公司第半年度财务数据及经营业绩，需后续结合定期报告进行综合评估。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "募集资金使用情况正常，未发现重大异常，不影响公司整体财务稳健性。",
+              "闲置募集资金进行现金管理及补充流动资金，显示公司资金规划合理，但可能对短期收益产生小幅影响。",
+              "依据现有报告，公司治理和资金管理规范，与研究报告中对公司管理层的正面评价一致。"
+            ]
+          },
+          {
+            "summary": "中信证券股份有限公司关于国电南瑞科技股份有限公司使用部分闲置募集资金进行现金管理之核查意见",
+            "title": "中信证券股份有限公司关于国电南瑞科技股份有限公司使用部分闲置募集资金进行现金管理之核查意见",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式核查意见披露了公司使用不超过5.45亿元闲置募集资金进行现金管理的计划，属于重要资金使用事项，需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508120.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "国电南瑞于2026年8月25日召开第九届董事会第十五次会议，审议通过使用额度不超过人民币5.45亿元的暂时闲置募集资金进行现金管理，额度自董事会审议通过之日起12个月内有效且可滚动使用。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508120.PDF",
+                "page": 4,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次现金管理资金来源为闲置募集资金，拟购买安全性高、满足保本要求、流动性好、产品期限不超过12个月的金融机构结构性存款、大额存单及定期存款。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508120.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "截至2026年6月30日，公司货币资金余额为4,463,675,732.52元，资产负债率40.42%，本次拟使用额度不超过最近一期期末货币资金的12.21%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508120.PDF",
+                "page": 5,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": false,
+            "limitations": [
+              "公告中提及的募投项目进度及变更信息未在本次输入中完全展示，可能影响对募投项目实施的全面评估。",
+              "核查意见中引用的财务数据为截至2026年6月30日的未经审计数据，后续季度数据可能变化。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该事项不影响公司募投项目正常实施，不改变募集资金用途，对公司主营业务和财务状况无重大影响，与现有投资论点中的资金使用效率提升方向一致。",
+              "公司闲置募集资金管理规模较小（5.45亿元），相对于公司总资产和净资产规模有限，不影响公司基本面判断，维持原有持仓逻辑。"
+            ]
+          },
+          {
+            "summary": "国电南瑞2026年半年度报告",
+            "title": "国电南瑞2026年半年度报告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P0",
+            "status": "DONE",
+            "why_now": "公司正式披露2026年半年度报告，营收、现金流、业务进展及外汇套期保值和税收优惠等关键信息需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年上半年营业收入277.67亿元，同比增长14.54%；营业成本207.31亿元，同比增长16.27%；研发费用16.57亿元，同比增长9.47%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
+                "page": 22,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年经营活动产生的现金流量净额5.91亿元，同比下降78.95%，主要系本期支付采购款增加所致。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
+                "page": 22,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年财务费用0.93亿元，上年同期为-1.31亿元，主要系利息收入减少及外币汇率变动汇兑损失增加所致。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
+                "page": 22,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司开展外汇套期保值业务，已建立风险管理体系，选择高信用等级商业银行，严格履行审批程序。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
+                "page": 28,
+                "confidence": "medium"
+              },
+              {
+                "fact": "截至2026年6月30日，国网电科院持股56.91%，香港中央结算有限公司持股8.73%，沈国荣持股2.41%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
+                "page": 85,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年计入当期损益的政府补助合计2.64亿元，上年同期1.98亿元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
+                "page": 199,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "证据片段仅覆盖部分页码，未包含完整利润表、资产负债表及分部数据，无法全面评估毛利率、应收等关键指标。",
+              "官方URL为静态首页，尚未逐页核对，部分事实如外汇套期保值细节需要进一步确认。",
+              "报告中提及的税收优惠、公允价值变动等片段信息有限，可能影响结论完整性。"
+            ],
+            "document_type": "财报",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "营收增长14.54%符合预期，验证十五五电网高景气，但营业成本增速(16.27%)高于营收增速，毛利率可能承压，与最终报告减仓信号#1相关。",
+              "经营现金流大幅下降78.95%，虽解释为采购款增加，但需结合应收与存货质量评估，直接关联减仓信号#2。",
+              "财务费用由负转正，汇兑损失增加，公司已开展外汇套期保值，或影响海外业务盈利预期。",
+              "政府补助同比增加，对利润有正贡献，需关注其可持续性，与收益相关补助占比较高。"
+            ]
+          },
+          {
+            "summary": "国电南瑞关于使用部分闲置募集资金进行现金管理的公告",
+            "title": "国电南瑞关于使用部分闲置募集资金进行现金管理的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露了使用闲置募集资金进行现金管理的具体额度、审议程序及募集资金项目进展，可能影响对募投项目推进和资金使用效率的评估，属于需要进入研究复核的增量事实。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508110.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "国电南瑞于2026年8月25日召开第九届董事会第十五次会议，审议通过《关于使用部分闲置募集资金进行现金管理的议案》，同意使用额度不超过人民币5.45亿元（含5.45亿元）的闲置募集资金进行现金管理，额度自董事会审议通过之日起12个月内有效且可滚动使用。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508110.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次现金管理资金来源于2017年发行股份购买资产并募集配套资金的闲置募集资金，实际募集资金净额为6,020,040,632.51元，已于2018年4月8日到位。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508110.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "截至2026年6月30日，募投项目中多个已结项，但大电网运行控制数字孪生关键技术研发与产业能力提升建设项目预计2028年12月达到预定可使用状态，储能变流器生产测试线建设项目（累计投入16.47%）和新型储能PACK中试生产线建设项目（累计投入16.65%）尚在建设中，前两者均为2025年12月30日变更后的募集资金项目。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508110.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次现金管理额度不超过最近一期期末货币资金的12.21%（截至2026年6月30日，货币资金余额为4,463,675,732.52元，资产负债率40.42%），公司认为不会影响募投项目正常实施和主营业务发展。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508110.PDF",
+                "page": 6,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": true,
+            "limitations": [
+              "公告数据为外部披露，部分项目状态截至2026年6月30日，后续可能变化。",
+              "现金管理实际收益取决于市场利率，公告未提供具体产品收益率。",
+              "无法核实公告中未披露的细节，如具体产品签约情况。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "现金管理额度较小（5.45亿元），不影响募投项目推进，对公司基本面影响有限，不改变现有投资论点。",
+              "公告显示储能相关募投项目（储能变流器、储能PACK中试线）投入进度仅约16%，而预计完成时间在2026年底，需关注后续推进是否达标，可能影响对储能业务贡献的预期。",
+              "大电网数字孪生项目预计2028年底达到可使用状态，投入进度未披露，需跟踪研发投入节奏。",
+              "公司使用闲置募集资金进行现金管理，体现资金管理稳健，对财务费用或收益有小幅影响，但金额相对公司体量较小。"
+            ]
+          },
+          {
+            "summary": "国电南瑞关于2026年半年度利润分配方案的公告",
+            "title": "国电南瑞关于2026年半年度利润分配方案的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司发布2026年半年度利润分配方案，属于正式披露，需进入研究复核流程，评估其对投资研究的影响。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508108.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "国电南瑞2026年半年度拟每股派发现金红利0.153元（含税），合计拟派发现金红利1,221,949,631.85元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508108.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年上半年度现金分红和回购金额合计1,260,774,536.85元，占半年度归母净利润比例41.03%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508108.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司2026年1-6月归母净利润为3,072,688,826.28元，期末未分配利润为34,340,346,457.17元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508108.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司于2026年8月25日召开第九届董事会第十五次会议审议通过《关于2026年半年度利润分配方案的议案》，10票同意，0票反对，0票弃权。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508108.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告片段来源于外部PDF，虽为正式公告，但未与交易所官网交叉验证，需在复核时确认链接有效性。",
+              "公告中提及的财务数据未经审计，需结合后续定期报告确认。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "分红比例约40%，与历史分红政策一致，体现公司稳健回报股东，不影响核心投资逻辑。",
+              "现金分红和回购合计占净利润41.03%，略高于历史水平，但并未改变盈利能力和增长前景评估。",
+              "分红方案显示公司现金流充裕，支撑‘净现金、高分红’的优质财务特征，进一步验证‘好公司’判断。"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "fingerprint": "cd12d5e6ec42e151aa13e53b2aa7356b454c2a645dd81ee16ec858454c441ec4",
       "section": "price",
       "priority": "P0",
       "target_id": "快手",
       "name": "快手",
       "title": "评估带：TRIGGERED",
-      "why_now": "现价 33.62 ≤ 区间上界 40.00（区间内或以下）",
+      "why_now": "现价 33.66 ≤ 区间上界 40.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -328,13 +2072,38 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 33.62,
+        "price": 33.66,
         "market": "H",
         "zone_label": "评估带",
         "low": 35,
         "high": 40,
         "direction": "range",
         "note": "验证Q2毛利率/FCF压力可控；加仓需连续两季广告/电商双位数、毛利率≥53%、FCF转正"
+      }
+    },
+    {
+      "fingerprint": "932e3be41929fc9a356bc965a4d085ca94124105de6a4d89fe2377399856e54f",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "美团",
+      "name": "美团-W",
+      "title": "2026中报：今天到期",
+      "why_now": "登记事件状态为今天到期，需按备注核验；监控本身不作投资决定。",
+      "status": "TODAY",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "UPCOMING_7D",
+        "current_status": "TODAY",
+        "date": "2026-08-27",
+        "days": 0,
+        "event_type": "财报",
+        "note": "核Q2/H1减亏斜率、份额硬数据、销售费用率"
       }
     },
     {
@@ -357,7 +2126,7 @@
         "previous_status": "OVERDUE",
         "current_status": "OVERDUE",
         "date": "2026-08-22",
-        "days": -4,
+        "days": -5,
         "event_type": "财报",
         "note": "核主业利润、FCF、客户集中与新业务披露"
       }
@@ -369,7 +2138,7 @@
       "target_id": "赣锋锂业",
       "name": "赣锋锂业",
       "title": "H股小仓带：TRIGGERED",
-      "why_now": "现价 40.54 ≤ 区间上界 43.80（区间内或以下）",
+      "why_now": "现价 40.86 ≤ 区间上界 43.80（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -381,7 +2150,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 40.54,
+        "price": 40.86,
         "market": "H",
         "zone_label": "H股小仓带",
         "low": 34.6,
@@ -412,6 +2181,31 @@
       }
     },
     {
+      "fingerprint": "9813dadbdfd8f17fc9394deb376536d508a208fd5f56a135af94b6d74c0190f4",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "lululemon",
+      "name": "lululemon",
+      "title": "下季报后复检：14 天后到期",
+      "why_now": "登记事件状态为14 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_14D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "FUTURE",
+        "current_status": "UPCOMING_14D",
+        "date": "2026-09-10",
+        "days": 14,
+        "event_type": "财报",
+        "note": "核北美同店与库存"
+      }
+    },
+    {
       "fingerprint": "4d10d3eda8684cf144db863f6496b2d8480bd2137f51f90f5be7bb56cb6bfc36",
       "section": "other",
       "priority": "P1",
@@ -433,13 +2227,41 @@
       }
     },
     {
+      "fingerprint": "f3d5be05aafbba059de07e82b8729262192d4514ac89cb71731b88f3a4cc311a",
+      "section": "price",
+      "priority": "P1",
+      "target_id": "NovoNordisk",
+      "name": "Novo Nordisk",
+      "title": "观察仓带：NEAR",
+      "why_now": "现价 47.19，距上沿 46.00 5% 内",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "FAR",
+        "current_status": "NEAR",
+        "price": 47.19,
+        "market": "US",
+        "zone_label": "观察仓带",
+        "low": 44,
+        "high": 46,
+        "direction": "range",
+        "note": "加仓需CagriSema获批+2027正增长指引"
+      }
+    },
+    {
       "fingerprint": "3b1b0b1d213241dba3cba1647bee76a9a64a7a6df6a224239c02fe31c2538912",
       "section": "price",
       "priority": "P1",
       "target_id": "Qualcomm",
       "name": "Qualcomm",
       "title": "理想买入带：NEAR",
-      "why_now": "现价 160.56，距触发线 160.00 5% 内",
+      "why_now": "现价 163.72，距触发线 160.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -451,13 +2273,160 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 160.56,
+        "price": 163.72,
         "market": "US",
         "zone_label": "理想买入带",
         "low": null,
         "high": 160,
         "direction": "below",
         "note": "PE≤15x约$160或恐慌下跌"
+      }
+    },
+    {
+      "fingerprint": "af974bf6cbd0820df2c7401b788381c6122c8103c475b449fafb64879155cd91",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "上海复旦",
+      "name": "上海复旦",
+      "title": "3 项公告更新",
+      "why_now": "(1) INVESTMENT IN INDUSTRIAL FUND AND RELATED PARTY TRANSACT…；NOTICE OF THE 2026 THIRD EXTRAORDINARY GENERAL MEETING；PROXY FORM FOR 2026 THIRD EXTRAORDINARY GENERAL MEETING",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700794.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700848.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700913.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "H",
+        "date": "2026-08-27",
+        "published_at": "27/08/2026 18:08",
+        "latest_time": "2026-08-27T18:08:00+08:00",
+        "announcement_count": 3,
+        "updates": [
+          {
+            "summary": "(1) INVESTMENT IN INDUSTRIAL FUND AND RELATED PARTY TRANSACT…",
+            "title": "(1) INVESTMENT IN INDUSTRIAL FUND AND\nRELATED PARTY TRANSACTION\n(2) NOTICE OF THE 2026 THIRD EGM",
+            "published_at": "27/08/2026 17:48",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露公司在产业基金中的投资及关联交易事项，并通知2026年第三次临时股东大会，属于公司治理与关联交易相关的重要正式披露，需立即进入研究复核流程。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700794.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "上海复旦微电子集团股份有限公司于2026年8月27日发布通函，内容涉及(1)投资产业基金及关联交易，(2)2026年第三次临时股东大会通知。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700794.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "通函中明确载明2026年第三次临时股东大会将于2026年9月16日（星期三）下午1:30在中华人民共和国上海市国泰路127号复旦国家大学科技园4号楼会议室举行。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700794.pdf",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "当前提供的通函内容仅为封面和目录页，未包含投资产业基金的具体金额、关联方身份、交易条款等关键细节，无法进行全面影响评估。",
+              "公告片段属于不可信外部数据，已提取的verified_facts仅基于通函封面和目录中的明确信息，更详细的交易内容需查阅通函正文。",
+              "本次分析未结合最新财务数据或市场行情，仅基于现有研究context和公告摘要。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "本次投资产业基金及关联交易可能涉及公司资本配置和关联方利益，与现有研究报告中关于治理风险和关联交易风险的观点相关，需评估其对治理结构及中小股东利益的影响。",
+              "投资产业基金可能动用公司资本，影响未来现金流和资本配置，与研究报告中对自由现金流和资本开支的关注点相呼应。",
+              "关联交易的性质和规模可能影响公司盈利质量，特别是非经常性损益或潜在利益输送风险，需结合正常化利润分析。"
+            ]
+          },
+          {
+            "summary": "NOTICE OF THE 2026 THIRD EXTRAORDINARY GENERAL MEETING",
+            "title": "NOTICE OF THE 2026 THIRD EXTRAORDINARY GENERAL MEETING",
+            "published_at": "27/08/2026 18:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该公告披露将于2026年9月16日召开2026年第三次临时股东大会，审议投资产业基金及关联交易事项，属于需要进入研究复核的正式披露。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700848.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "上海复旦微电子集团股份有限公司将于2026年9月16日下午1:30在中国上海市国泰路127号复旦国家大学科技园4号楼会议室举行2026年第三次临时股东大会。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700848.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "会议将审议一项普通决议：批准投资产业基金及相关关联交易，详情见公司2026年8月27日发出的通函。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700848.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "H股股东名册将于2026年9月11日至9月16日（含首尾两天）关闭，期间不办理H股过户登记。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700848.pdf",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本公告仅提供会议时间和拟议事项概要，缺少投资产业基金及关联交易的具体金额、对手方和定价条款，需查阅公司2026年8月27日发出的通函。",
+              "公告属于程序性披露，不包含财务数据或经营指标变化，无法验证其对主营业务的直接影响。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "投资产业基金及相关关联交易事项需评估是否构成重大资本配置变化，可能影响公司现金流与主业聚焦。",
+              "关联交易需关注定价公允性及对公司利润质量的影响，与现有研究中对关联客户回款或定价恶化的风险点相关。",
+              "股东大会召开及决议内容可能影响公司治理与战略方向，需跟踪后续通函细节。"
+            ]
+          },
+          {
+            "summary": "PROXY FORM FOR 2026 THIRD EXTRAORDINARY GENERAL MEETING",
+            "title": "PROXY FORM FOR 2026 THIRD EXTRAORDINARY GENERAL MEETING",
+            "published_at": "27/08/2026 18:08",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "本公告为2026年第三次临时股东大会的委托书，包含一项普通决议案：投资产业基金及关联交易。该事项涉及重大投资及关联交易，需在临时股东大会审议，属于需要立即纳入研究流程的正式披露。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700913.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司将于2026年9月16日下午1:30在中国上海国泰路127号复旦国家大学科技园4号楼会议室召开2026年第三次临时股东大会，审议投资产业基金及关联交易事项。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700913.pdf",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本公告仅为委托书，未提供投资金额、基金详情及关联交易具体内容，需查阅公司2026年8月27日发出的通函以获取详细信息。",
+              "公告为英文，可能存在翻译或理解偏差。",
+              "项目优先级下限为P1，但实际优先级可能因进一步信息而调整。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "该投资产业基金及关联交易可能影响公司资本配置和现金流，需评估是否偏离主业及对自由现金流的影响。",
+              "关联交易可能涉及治理和利益输送风险，需关注交易定价公允性及对中小股东利益的影响。",
+              "该投资可能影响公司当前估值中关于资本配置和治理的假设，需在报告中更新相关讨论。"
+            ]
+          }
+        ]
       }
     },
     {
@@ -503,13 +2472,226 @@
       }
     },
     {
+      "fingerprint": "7d839f77bcc338b0ba6b81b7bd1e038930d89925986fce650563b53af567f9a4",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "兆易创新",
+      "name": "兆易创新",
+      "title": "1 项公告更新",
+      "why_now": "翌日披露报表",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "H",
+        "date": "2026-08-27",
+        "published_at": "27/08/2026 17:23",
+        "latest_time": "2026-08-27T17:23:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "翌日披露报表",
+            "title": "Next Day Disclosure Return",
+            "published_at": "27/08/2026 17:23",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式披露显示公司于2026年8月21日至27日连续多日回购股份用于注销，涉及金额较大，且回购价格集中在383至406元区间，可能影响股本结构和市场情绪，需纳入研究复核。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "截至2026年8月27日，兆易创新已发行股份（不含库存股）为670,718,327股，库存股为0。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年8月21日回购247,000股用于注销，回购价格406.48元/股。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年8月24日回购517,100股用于注销，回购价格383.37元/股。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年8月25日回购265,000股用于注销，回购价格387.64元/股。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年8月26日回购257,500股用于注销，回购价格391.99元/股。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年8月27日回购246,200股用于注销，回购价格406.26元/股。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本次披露为Next Day Disclosure Return，属于每日回购汇总，未包含回购目的、资金来源、后续计划等详细信息，需结合近期回购及股东承诺公告综合判断。",
+              "回购数量相对于总股本规模较小，对股本缩减和财务指标的影响有限，不应作为改变估值的依据。",
+              "缺乏回购价格的相对位置（如与历史价格区间、估值倍数比较）等背景，需结合行情和估值数据进一步分析。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "连续回购且价格高于A股安全边际（≤180元）和观望区间（200-300元），表明管理层对当前股价的认可，可能影响对管理层诚信的评估，但价格仍处于极高估值水平，不改变现有观望判断。",
+              "回购用于注销将减少总股本，但单日回购数量占比均低于0.1%，对每股收益的增厚作用有限，不改变对高景气和周期回落的担忧。",
+              "管理层回购执行与先前承诺一致，是正面信号，但需持续观察回购的持续性及是否在更高价位回购以支撑股价。"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fingerprint": "525d08617282e5fcd4e2b2bed44398473adac49d80be190a4c76631dfd0cfa96",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "兆易创新",
+      "name": "兆易创新",
+      "title": "2 项公告更新",
+      "why_now": "H股公告-翌日披露报表；兆易创新关于2023年股票期权激励计划第三个行权期行权结果暨股份上市的公告",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513765.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512764.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-08-27",
+        "published_at": "2026-08-27T00:00:00+08:00",
+        "latest_time": "2026-08-27T00:00:00+08:00",
+        "announcement_count": 2,
+        "updates": [
+          {
+            "summary": "H股公告-翌日披露报表",
+            "title": "H股公告-翌日披露报表",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式披露涉及股本变动及回购信息，属于重大事项，需要立即纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513765.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年8月26日，兆易创新已发行股份（不包括库存股份）数目为670,718,327股，库存股份数目为0。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513765.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年8月25日，根据2023年股票期权激励计划行使股票期权而发行新股2,226,393股，发行价为每股85.38元人民币。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513765.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年8月21日至8月26日期间，公司回购但尚未注销的股份共计1,286,600股，回购价格区间为每股383.37元至406.48元人民币。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225513765.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/portfolio-review",
+            "needs_human_review": true,
+            "limitations": [
+              "该公告为翌日披露报表，信息有限，未包含回购目的、资金来源及后续注销安排。",
+              "股本变动数据与研究报告中的总股本数据存在差异，需人工核实最新股本结构。",
+              "未提供回购股份是否将注销的信息，可能影响对每股收益和股东权益的评估。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "公司持续实施股份回购，已回购但尚未注销的股份数量增加（截至2026年8月26日累计约128.66万股），表明管理层认为股价低估，对投资论点中的管理层正面评价形成支撑。",
+              "发行新股（期权行权）导致总股本增加约222.64万股，对每股收益有一定摊薄影响，但影响较小。",
+              "回购价格（383-406元）低于当前A股价格（444元），但每股收益摊薄与回购注销的净效应需后续跟踪。",
+              "股本变动数据与之前报告中的总股本7.01745亿股不完全一致，需进一步核对数据口径，可能影响市值计算。"
+            ]
+          },
+          {
+            "summary": "兆易创新关于2023年股票期权激励计划第三个行权期行权结果暨股份上市的公告",
+            "title": "兆易创新关于2023年股票期权激励计划第三个行权期行权结果暨股份上市的公告",
+            "published_at": "2026-08-27T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式披露涉及股权激励行权导致的总股本变化及股份上市流通，需纳入研究复核以更新股本和摊薄数据。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512764.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "兆易创新2023年股票期权激励计划第三个行权期行权股份共2,226,393股，上市流通日期为2026年9月1日。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512764.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次行权后总股本为703,971,427股。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512764.PDF",
+                "page": 5,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次行权完成后，公司2026年半年度基本每股收益由9.83元/股摊薄至按703,971,427股计算的水平。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225512764.PDF",
+                "page": 5,
+                "confidence": "medium"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "行权后每股收益摊薄需结合具体口径核实，公告中未给出精确摊薄后数值。",
+              "本次股本变化对H股股本结构的具体影响需进一步确认（H股股本是否相应调整）。",
+              "行权资金来源与募集资金用途（补充流动资金）对财务状况的具体影响需结合中报进一步分析。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "总股本由7.01745亿股增加至7.03971亿股，增幅约0.32%，对A/H股每股指标有轻微摊薄效应。",
+              "公司2026年半年度归母净利润68.57亿元，基本每股收益摊薄后约9.74元/股（按新总股本计算），对估值情景中的EPS假设有小幅下调影响。",
+              "本次行权为股权激励转化，不改变公司经营面，不影响原有核心投资逻辑。"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "fingerprint": "cbb91e302e3b3899ef22e9e2024ba22dcff0b86c4dd114a79650a6bb1610239c",
       "section": "price",
       "priority": "P1",
       "target_id": "哔哩哔哩",
       "name": "哔哩哔哩",
       "title": "研究性分批带：NEAR",
-      "why_now": "现价 16.57，距上沿 16.00 5% 内",
+      "why_now": "现价 16.15，距上沿 16.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -521,13 +2703,98 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 16.57,
+        "price": 16.15,
         "market": "US",
         "zone_label": "研究性分批带",
         "low": 12,
         "high": 16,
         "direction": "range",
         "note": "广告连续两季>15%、游戏止跌、毛利率≥36%"
+      }
+    },
+    {
+      "fingerprint": "ce4b5de84b4a4d5f2cab31456f50157c50397f821fcdfe961a400fe7c5ef6185",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "安克创新",
+      "name": "安克创新",
+      "title": "1 项公告更新",
+      "why_now": "关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225520894.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-08-27",
+        "published_at": "2026-08-27T18:34:13+08:00",
+        "latest_time": "2026-08-27T18:34:13+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告",
+            "title": "关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告",
+            "published_at": "2026-08-27T18:34:13+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露公司将参加2026年湖南辖区投资者网上集体接待日暨半年度业绩说明会，涉及公司半年度业绩、经营状况、融资计划等信息，需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225520894.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "安克创新将于2026年9月2日14:30-17:00参加由湖南证监局、湖南省上市公司协会与深圳市全景网络有限公司联合举办的2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会，方式为网络远程。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225520894.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告未包含具体业绩数据，仅为活动通知。",
+              "公告内容为外部数据，已忽略其中可能存在的指令性文字。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该活动是常规投资者交流，不改变核心投资逻辑，但可能提供关于半年度业绩、经营状况、融资计划等增量信息。",
+              "研究报告中关注库存、现金流、关税、Amazon依赖等风险因素，活动可能提供相关管理层最新表述。"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fingerprint": "05f49881d8fca1d53f74d1fea0f43e8a35017e5b4a801a0aabfff0a33d5fe179",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "德明利",
+      "name": "德明利",
+      "title": "2026H1正式中报：1 天后到期",
+      "why_now": "登记事件状态为1 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_7D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "UPCOMING_7D",
+        "date": "2026-08-28",
+        "days": 1,
+        "event_type": "财报",
+        "note": "核H1预告兑现、CFO、存货/减值、借款、预付款与企业级主控收入"
       }
     },
     {
@@ -579,7 +2846,7 @@
       "target_id": "腾讯",
       "name": "腾讯控股",
       "title": "加仓带：NEAR",
-      "why_now": "现价 445.40，距上沿 430.00 5% 内",
+      "why_now": "现价 447.80，距上沿 430.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -591,7 +2858,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 445.4,
+        "price": 447.8,
         "market": "H",
         "zone_label": "加仓带",
         "low": 400,
@@ -607,7 +2874,7 @@
       "target_id": "腾讯音乐",
       "name": "腾讯音乐",
       "title": "买入带：NEAR",
-      "why_now": "现价 8.74，距上沿 8.50 5% 内",
+      "why_now": "现价 8.80，距上沿 8.50 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -619,7 +2886,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 8.74,
+        "price": 8.8,
         "market": "US",
         "zone_label": "买入带",
         "low": 7.5,
@@ -629,13 +2896,130 @@
       }
     },
     {
+      "fingerprint": "6d47a6223981010b2ea5a4605532ed7e04ede4bb0693e5fd755c854e4195ed6a",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "1 项公告更新",
+      "why_now": "关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515786.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-08-27",
+        "published_at": "2026-08-27T15:54:11+08:00",
+        "latest_time": "2026-08-27T15:54:11+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告",
+            "title": "关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告",
+            "published_at": "2026-08-27T15:54:11+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该公告正式披露了2026年半年度业绩说明会安排，属公司中期业绩披露流程的一部分，需要纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515786.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "蓝思科技将于2026年9月2日14:30-17:00参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会，活动将以网络远程方式举行。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515786.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "该公告由蓝思科技股份有限公司董事会于2026年8月27日发布，公告编号为临2026-057。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515786.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告仅披露会议安排，未涉及具体业绩数据或业务进展，信息量有限。",
+              "无法确认投资者问答环节是否会披露新信息，本次复核仅基于公告文本。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "业绩说明会安排本身不改变公司基本面，但为2026年半年报披露后的管理层沟通提供了时间窗口，可能影响市场对中期业绩的预期。",
+              "公告未包含任何新业务或财务数据，因此对当前观望评级和估值假设无直接影响。"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fingerprint": "953866b170a80d7a99b5c81f21b3a0e6a903bb8beb27926db2bf9ed94e68603e",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "蓝思科技",
+      "name": "蓝思科技",
+      "title": "1 项公告更新",
+      "why_now": "新增公告，内容待确认",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700255.htm"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "H",
+        "date": "2026-08-27",
+        "published_at": "27/08/2026 16:31",
+        "latest_time": "2026-08-27T16:31:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "新增公告，内容待确认",
+            "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
+            "published_at": "27/08/2026 16:31",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "港交所披露蓝思科技发布正式公告，当前处于2026年中报（8/22）披露前的敏感窗口，该公告可能涉及业绩、重大事项或合规信息，需立即进入研究复核以更新跟踪判断。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700255.htm"
+            ],
+            "verified_facts": [],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告正文未提供，仅知有正式公告发布，无法判断具体内容。",
+              "未提供公告标题、日期或全文，无法核验具体事实。",
+              "无法确认公告与中报或新业务进展的关联。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": []
+          }
+        ]
+      }
+    },
+    {
       "fingerprint": "7978ba7626a4371e6f931b2d528673a8cf8f297645afe8db20df9b8cba281b35",
       "section": "price",
       "priority": "P1",
       "target_id": "茅台",
       "name": "贵州茅台",
       "title": "建仓参考带：NEAR",
-      "why_now": "现价 1302.80，距上沿 1250.00 5% 内",
+      "why_now": "现价 1292.30，距上沿 1250.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -647,7 +3031,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 1302.8,
+        "price": 1292.3,
         "market": "A",
         "zone_label": "建仓参考带",
         "low": 1100,
@@ -663,7 +3047,7 @@
       "target_id": "Accenture",
       "name": "Accenture",
       "title": "分批带：FAR",
-      "why_now": "现价 186.93，触发线 150.00",
+      "why_now": "现价 181.38，触发线 150.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -675,7 +3059,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 186.93,
+        "price": 181.38,
         "market": "US",
         "zone_label": "分批带",
         "low": null,
@@ -691,7 +3075,7 @@
       "target_id": "ADP",
       "name": "ADP",
       "title": "加仓带：FAR",
-      "why_now": "现价 282.78，触发线 190.00",
+      "why_now": "现价 281.39，触发线 190.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -703,7 +3087,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 282.78,
+        "price": 281.39,
         "market": "US",
         "zone_label": "加仓带",
         "low": null,
@@ -719,7 +3103,7 @@
       "target_id": "Google",
       "name": "Alphabet/Google",
       "title": "未持有买入带：FAR",
-      "why_now": "现价 346.96，区间 [250.00, 300.00]",
+      "why_now": "现价 342.00，区间 [250.00, 300.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -731,7 +3115,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 346.96,
+        "price": 342.0,
         "market": "US",
         "zone_label": "未持有买入带",
         "low": 250,
@@ -747,7 +3131,7 @@
       "target_id": "AMD",
       "name": "AMD",
       "title": "分批评估带：FAR",
-      "why_now": "现价 479.18，区间 [220.00, 300.00]",
+      "why_now": "现价 480.93，区间 [220.00, 300.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -759,7 +3143,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 479.18,
+        "price": 480.93,
         "market": "US",
         "zone_label": "分批评估带",
         "low": 220,
@@ -775,7 +3159,7 @@
       "target_id": "Archrock",
       "name": "Archrock",
       "title": "评估带：FAR",
-      "why_now": "现价 30.71，区间 [22.20, 25.90]",
+      "why_now": "现价 31.67，区间 [22.20, 25.90]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -787,7 +3171,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 30.71,
+        "price": 31.67,
         "market": "US",
         "zone_label": "评估带",
         "low": 22.2,
@@ -803,7 +3187,7 @@
       "target_id": "Keyence",
       "name": "Keyence",
       "title": "加仓带：FAR",
-      "why_now": "现价 81500.00，触发线 64200.00",
+      "why_now": "现价 82150.00，触发线 64200.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -815,7 +3199,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 81500.0,
+        "price": 82150.0,
         "market": "JP",
         "zone_label": "加仓带",
         "low": null,
@@ -831,7 +3215,7 @@
       "target_id": "Mastercard",
       "name": "Mastercard",
       "title": "分批带：FAR",
-      "why_now": "现价 599.37，区间 [380.00, 500.00]",
+      "why_now": "现价 598.47，区间 [380.00, 500.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -843,7 +3227,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 599.37,
+        "price": 598.47,
         "market": "US",
         "zone_label": "分批带",
         "low": 380,
@@ -859,7 +3243,7 @@
       "target_id": "Meta",
       "name": "Meta",
       "title": "回调建仓带：FAR",
-      "why_now": "现价 570.05，触发线 480.00",
+      "why_now": "现价 576.14，触发线 480.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -871,7 +3255,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 570.05,
+        "price": 576.14,
         "market": "US",
         "zone_label": "回调建仓带",
         "low": null,
@@ -887,7 +3271,7 @@
       "target_id": "微软",
       "name": "Microsoft",
       "title": "不追高线：FAR",
-      "why_now": "现价 491.71，触发线 440.00",
+      "why_now": "现价 496.37，触发线 440.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -899,7 +3283,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 491.71,
+        "price": 496.37,
         "market": "US",
         "zone_label": "不追高线",
         "low": null,
@@ -909,41 +3293,13 @@
       }
     },
     {
-      "fingerprint": "f3d5be05aafbba059de07e82b8729262192d4514ac89cb71731b88f3a4cc311a",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "NovoNordisk",
-      "name": "Novo Nordisk",
-      "title": "观察仓带：FAR",
-      "why_now": "现价 48.66，区间 [44.00, 46.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 48.66,
-        "market": "US",
-        "zone_label": "观察仓带",
-        "low": 44,
-        "high": 46,
-        "direction": "range",
-        "note": "加仓需CagriSema获批+2027正增长指引"
-      }
-    },
-    {
       "fingerprint": "be50f466b17aa09665e1928102622719ba6e04c8607976c64681f84f4c6b7f76",
       "section": "price",
       "priority": "P2",
       "target_id": "Palantir",
       "name": "Palantir",
       "title": "重估带：FAR",
-      "why_now": "现价 172.73，区间 [70.00, 85.00]",
+      "why_now": "现价 177.50，区间 [70.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -955,7 +3311,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 172.73,
+        "price": 177.5,
         "market": "US",
         "zone_label": "重估带",
         "low": 70,
@@ -971,7 +3327,7 @@
       "target_id": "拼多多",
       "name": "PDD Holdings",
       "title": "加码带：FAR",
-      "why_now": "现价 87.75，触发线 75.00",
+      "why_now": "现价 86.74，触发线 75.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -983,7 +3339,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 87.75,
+        "price": 86.74,
         "market": "US",
         "zone_label": "加码带",
         "low": null,
@@ -1027,7 +3383,7 @@
       "target_id": "三环集团",
       "name": "三环集团",
       "title": "高确定性带：FAR",
-      "why_now": "现价 108.69，区间 [70.00, 85.00]",
+      "why_now": "现价 112.48，区间 [70.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1039,7 +3395,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 108.69,
+        "price": 112.48,
         "market": "A",
         "zone_label": "高确定性带",
         "low": 70,
@@ -1054,8 +3410,8 @@
       "priority": "P2",
       "target_id": "上海复旦",
       "name": "上海复旦",
-      "title": "2026H1业绩：5 天后到期",
-      "why_now": "登记事件状态为5 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1业绩：4 天后到期",
+      "why_now": "登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -1068,7 +3424,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-31",
-        "days": 5,
+        "days": 4,
         "event_type": "财报",
         "note": "核扣除约4.7亿公允价值收益后的经营利润、库存减值、管理层资本配置"
       }
@@ -1080,7 +3436,7 @@
       "target_id": "东方电气",
       "name": "东方电气",
       "title": "分批评估带：FAR",
-      "why_now": "现价 25.76，区间 [15.00, 18.00]",
+      "why_now": "现价 25.95，区间 [15.00, 18.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1092,7 +3448,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 25.76,
+        "price": 25.95,
         "market": "A",
         "zone_label": "分批评估带",
         "low": 15,
@@ -1108,7 +3464,7 @@
       "target_id": "中兴通讯",
       "name": "中兴通讯",
       "title": "评估带：FAR",
-      "why_now": "现价 33.54，区间 [22.00, 28.00]",
+      "why_now": "现价 33.96，区间 [22.00, 28.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1120,7 +3476,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 33.54,
+        "price": 33.96,
         "market": "A",
         "zone_label": "评估带",
         "low": 22,
@@ -1136,7 +3492,7 @@
       "target_id": "中国广核",
       "name": "中国广核",
       "title": "舒适买点带：FAR",
-      "why_now": "现价 4.14，区间 [3.20, 3.50]",
+      "why_now": "现价 4.18，区间 [3.20, 3.50]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1148,7 +3504,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 4.14,
+        "price": 4.18,
         "market": "A",
         "zone_label": "舒适买点带",
         "low": 3.2,
@@ -1158,38 +3514,13 @@
       }
     },
     {
-      "fingerprint": "3baa2009cd84b6490f4918071c315d0dcfcc99872e77f139191dfb5b02cb3c39",
-      "section": "disclosures",
-      "priority": "P2",
-      "target_id": "中芯国际",
-      "name": "中芯国际",
-      "title": "2026年中期业绩董事会：1 天后到期",
-      "why_now": "登记事件状态为1 天后到期，需按备注核验；监控本身不作投资决定。",
-      "status": "UPCOMING_7D",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "UPCOMING_7D",
-        "current_status": "UPCOMING_7D",
-        "date": "2026-08-27",
-        "days": 1,
-        "event_type": "财报",
-        "note": "确认正式中期业绩是否带来Q2公告以外的新事实；重点核库存、应收、债务、资本开支和现金流量表"
-      }
-    },
-    {
       "fingerprint": "3d05cd03b1bc92039274691d1bbbd361dfeb4a0400cf94a47eddbac6bd039ef8",
       "section": "price",
       "priority": "P2",
       "target_id": "中芯国际",
       "name": "中芯国际",
       "title": "A股重新估值带：FAR",
-      "why_now": "现价 124.15，触发线 60.00",
+      "why_now": "现价 126.33，触发线 60.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1201,7 +3532,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 124.15,
+        "price": 126.33,
         "market": "A",
         "zone_label": "A股重新估值带",
         "low": null,
@@ -1217,7 +3548,7 @@
       "target_id": "中芯国际",
       "name": "中芯国际",
       "title": "H股研究建仓带：FAR",
-      "why_now": "现价 69.70，触发线 58.00",
+      "why_now": "现价 71.30，触发线 58.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1229,7 +3560,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 69.7,
+        "price": 71.3,
         "market": "H",
         "zone_label": "H股研究建仓带",
         "low": null,
@@ -1239,13 +3570,41 @@
       }
     },
     {
+      "fingerprint": "101a33ecf2420dd4114bb5d5596ab5723389a761351e22c7add321bbaa7e9aa9",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "亨通光电",
+      "name": "亨通光电",
+      "title": "研究性分批评估带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 71.3,
+        "market": "A",
+        "zone_label": "研究性分批评估带",
+        "low": 45,
+        "high": 55,
+        "direction": "range",
+        "note": "非自动买入；须连续两季CFO转正、应收增速不高于收入且海缆/光通信毛利稳定"
+      }
+    },
+    {
       "fingerprint": "560d55d8df4ae40384e2e2f3c681770eb84662fb779f596a02fbbc7ff9127c8c",
       "section": "price",
       "priority": "P2",
       "target_id": "京东",
       "name": "京东集团",
       "title": "买入带：FAR",
-      "why_now": "现价 29.36，区间 [16.50, 20.60]",
+      "why_now": "现价 28.77，区间 [16.50, 20.60]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1257,7 +3616,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 29.36,
+        "price": 28.77,
         "market": "US",
         "zone_label": "买入带",
         "low": 16.5,
@@ -1272,8 +3631,8 @@
       "priority": "P2",
       "target_id": "兆易创新",
       "name": "兆易创新",
-      "title": "2026H1正式中报：5 天后到期",
-      "why_now": "登记事件状态为5 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1正式中报：4 天后到期",
+      "why_now": "登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -1286,7 +3645,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-31",
-        "days": 5,
+        "days": 4,
         "event_type": "财报",
         "note": "核扣非、经营现金流、库存、关联交易"
       }
@@ -1298,7 +3657,7 @@
       "target_id": "兆易创新",
       "name": "兆易创新",
       "title": "评估带：FAR",
-      "why_now": "现价 392.50，触发线 180.00",
+      "why_now": "现价 411.20，触发线 180.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1310,7 +3669,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 392.5,
+        "price": 411.2,
         "market": "A",
         "zone_label": "评估带",
         "low": null,
@@ -1326,7 +3685,7 @@
       "target_id": "剑桥科技",
       "name": "剑桥科技",
       "title": "评估带：FAR",
-      "why_now": "现价 190.85，区间 [80.00, 100.00]",
+      "why_now": "现价 198.21，区间 [80.00, 100.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1338,7 +3697,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 190.85,
+        "price": 198.21,
         "market": "A",
         "zone_label": "评估带",
         "low": 80,
@@ -1354,7 +3713,7 @@
       "target_id": "北京君正",
       "name": "北京君正",
       "title": "A股复核带：FAR",
-      "why_now": "现价 132.07，区间 [90.00, 115.00]",
+      "why_now": "现价 140.48，区间 [90.00, 115.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1366,7 +3725,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 132.07,
+        "price": 140.48,
         "market": "A",
         "zone_label": "A股复核带",
         "low": 90,
@@ -1381,8 +3740,8 @@
       "priority": "P2",
       "target_id": "华虹宏力",
       "name": "华虹半导体",
-      "title": "2026H1披露：5 天后到期",
-      "why_now": "登记事件状态为5 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1披露：4 天后到期",
+      "why_now": "登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -1395,7 +3754,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-31",
-        "days": 5,
+        "days": 4,
         "event_type": "财报",
         "note": "核华力微交割/融资条款与Fab9回报"
       }
@@ -1407,7 +3766,7 @@
       "target_id": "华虹宏力",
       "name": "华虹半导体",
       "title": "A股评估带：FAR",
-      "why_now": "现价 244.02，区间 [70.00, 100.00]",
+      "why_now": "现价 252.72，区间 [70.00, 100.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1419,7 +3778,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 244.02,
+        "price": 252.72,
         "market": "A",
         "zone_label": "A股评估带",
         "low": 70,
@@ -1435,7 +3794,7 @@
       "target_id": "华虹宏力",
       "name": "华虹半导体",
       "title": "H股小仓复核带：FAR",
-      "why_now": "现价 117.50，区间 [80.00, 105.00]",
+      "why_now": "现价 122.80，区间 [80.00, 105.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1447,7 +3806,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 117.5,
+        "price": 122.8,
         "market": "H",
         "zone_label": "H股小仓复核带",
         "low": 80,
@@ -1463,7 +3822,7 @@
       "target_id": "厦门钨业",
       "name": "厦门钨业",
       "title": "评估带：FAR",
-      "why_now": "现价 52.62，区间 [35.00, 42.00]",
+      "why_now": "现价 54.80，区间 [35.00, 42.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1475,7 +3834,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 52.62,
+        "price": 54.8,
         "market": "A",
         "zone_label": "评估带",
         "low": 35,
@@ -1491,7 +3850,7 @@
       "target_id": "合盛硅业",
       "name": "合盛硅业",
       "title": "评估区：FAR",
-      "why_now": "现价 33.79，区间 [22.00, 28.00]",
+      "why_now": "现价 34.73，区间 [22.00, 28.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1503,7 +3862,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 33.79,
+        "price": 34.73,
         "market": "A",
         "zone_label": "评估区",
         "low": 22,
@@ -1519,7 +3878,7 @@
       "target_id": "国电南瑞",
       "name": "国电南瑞",
       "title": "舒适带：FAR",
-      "why_now": "现价 23.42，区间 [18.00, 20.00]",
+      "why_now": "现价 23.06，区间 [18.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1531,7 +3890,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 23.42,
+        "price": 23.06,
         "market": "A",
         "zone_label": "舒适带",
         "low": 18,
@@ -1547,7 +3906,7 @@
       "target_id": "圣邦股份",
       "name": "圣邦股份",
       "title": "确认带：FAR",
-      "why_now": "现价 113.51，区间 [55.00, 70.00]",
+      "why_now": "现价 116.90，区间 [55.00, 70.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1559,7 +3918,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 113.51,
+        "price": 116.9,
         "market": "A",
         "zone_label": "确认带",
         "low": 55,
@@ -1574,8 +3933,8 @@
       "priority": "P2",
       "target_id": "多氟多",
       "name": "多氟多",
-      "title": "2026H1正式报告：5 天后到期",
-      "why_now": "登记事件状态为5 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1正式报告：4 天后到期",
+      "why_now": "登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -1588,7 +3947,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-31",
-        "days": 5,
+        "days": 4,
         "event_type": "财报",
         "note": "核锂盐毛利、OCF、净债务"
       }
@@ -1600,7 +3959,7 @@
       "target_id": "多氟多",
       "name": "多氟多",
       "title": "评估带：FAR",
-      "why_now": "现价 34.05，区间 [26.00, 30.00]",
+      "why_now": "现价 35.12，区间 [26.00, 30.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1612,7 +3971,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 34.05,
+        "price": 35.12,
         "market": "A",
         "zone_label": "评估带",
         "low": 26,
@@ -1628,7 +3987,7 @@
       "target_id": "天齐锂业",
       "name": "天齐锂业",
       "title": "评估带：FAR",
-      "why_now": "现价 47.56，区间 [30.00, 35.00]",
+      "why_now": "现价 48.23，区间 [30.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1640,7 +3999,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 47.56,
+        "price": 48.23,
         "market": "A",
         "zone_label": "评估带",
         "low": 30,
@@ -1656,7 +4015,7 @@
       "target_id": "安克创新",
       "name": "安克创新",
       "title": "评估带：FAR",
-      "why_now": "现价 124.89，区间 [87.00, 105.00]",
+      "why_now": "现价 126.20，区间 [87.00, 105.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1668,7 +4027,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 124.89,
+        "price": 126.2,
         "market": "A",
         "zone_label": "评估带",
         "low": 87,
@@ -1684,7 +4043,7 @@
       "target_id": "小米",
       "name": "小米集团",
       "title": "考虑带：FAR",
-      "why_now": "现价 28.46，区间 [18.00, 20.00]",
+      "why_now": "现价 27.48，区间 [18.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1696,7 +4055,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 28.46,
+        "price": 27.48,
         "market": "H",
         "zone_label": "考虑带",
         "low": 18,
@@ -1706,13 +4065,41 @@
       }
     },
     {
+      "fingerprint": "7ecc8e937bacdd1802e6555942eb4caa7a66b4fe18af5276aafbc13516bd2a35",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "德明利",
+      "name": "德明利",
+      "title": "研究性评估带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 429.76,
+        "market": "A",
+        "zone_label": "研究性评估带",
+        "low": 200,
+        "high": 260,
+        "direction": "range",
+        "note": "非自动买入；须连续两季CFO转正、库存增速低于收入、净债务不再上升且企业级主控收入有披露"
+      }
+    },
+    {
       "fingerprint": "283084d06e47264e1c8d065c776eb36c0cefc3a9e3d00e2eca7ea105d3bf5a8e",
       "section": "disclosures",
       "priority": "P2",
       "target_id": "快手",
       "name": "快手",
-      "title": "2026H1中报后复检：5 天后到期",
-      "why_now": "登记事件状态为5 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1中报后复检：4 天后到期",
+      "why_now": "登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -1725,7 +4112,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-31",
-        "days": 5,
+        "days": 4,
         "event_type": "财报",
         "note": "核主站减速、AI资本强度与可灵单位经济"
       }
@@ -1737,7 +4124,7 @@
       "target_id": "拓荆科技",
       "name": "拓荆科技",
       "title": "加仓带：FAR",
-      "why_now": "现价 675.06，触发线 420.00",
+      "why_now": "现价 693.00，触发线 420.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1749,7 +4136,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 675.06,
+        "price": 693.0,
         "market": "A",
         "zone_label": "加仓带",
         "low": null,
@@ -1765,7 +4152,7 @@
       "target_id": "搜狐",
       "name": "搜狐",
       "title": "考虑带：FAR",
-      "why_now": "现价 14.35，触发线 12.00",
+      "why_now": "现价 14.16，触发线 12.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1777,7 +4164,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 14.35,
+        "price": 14.16,
         "market": "US",
         "zone_label": "考虑带",
         "low": null,
@@ -1792,8 +4179,8 @@
       "priority": "P2",
       "target_id": "晶合集成",
       "name": "晶合集成",
-      "title": "2026H1正式报告：5 天后到期",
-      "why_now": "登记事件状态为5 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1正式报告：4 天后到期",
+      "why_now": "登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -1806,7 +4193,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-31",
-        "days": 5,
+        "days": 4,
         "event_type": "财报",
         "note": "证28nm/90nm BCD客户认证与稳定量产收入"
       }
@@ -1818,7 +4205,7 @@
       "target_id": "晶合集成",
       "name": "晶合集成",
       "title": "观察带：FAR",
-      "why_now": "现价 29.92，区间 [14.00, 23.00]",
+      "why_now": "现价 31.56，区间 [14.00, 23.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1830,7 +4217,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 29.92,
+        "price": 31.56,
         "market": "H",
         "zone_label": "观察带",
         "low": 14,
@@ -1846,7 +4233,7 @@
       "target_id": "晶合集成",
       "name": "晶合集成",
       "title": "观察带：FAR",
-      "why_now": "现价 38.30，区间 [12.00, 20.00]",
+      "why_now": "现价 41.03，区间 [12.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1858,7 +4245,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 38.3,
+        "price": 41.03,
         "market": "A",
         "zone_label": "观察带",
         "low": 12,
@@ -1874,7 +4261,7 @@
       "target_id": "杭叉集团",
       "name": "杭叉集团",
       "title": "等待带：FAR",
-      "why_now": "现价 26.88，区间 [20.00, 23.00]",
+      "why_now": "现价 26.36，区间 [20.00, 23.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1886,7 +4273,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 26.88,
+        "price": 26.36,
         "market": "A",
         "zone_label": "等待带",
         "low": 20,
@@ -1901,8 +4288,8 @@
       "priority": "P2",
       "target_id": "极视角",
       "name": "极视角",
-      "title": "2026H1中报（预计8月下旬）：5 天后到期",
-      "why_now": "登记事件状态为5 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1中报（预计8月下旬）：4 天后到期",
+      "why_now": "登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -1915,7 +4302,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-31",
-        "days": 5,
+        "days": 4,
         "event_type": "财报",
         "note": "核盈利、回款与现金流"
       }
@@ -1927,7 +4314,7 @@
       "target_id": "极视角",
       "name": "极视角",
       "title": "重估带：FAR",
-      "why_now": "现价 92.25，区间 [20.00, 40.00]",
+      "why_now": "现价 92.95，区间 [20.00, 40.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1939,7 +4326,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 92.25,
+        "price": 92.95,
         "market": "H",
         "zone_label": "重估带",
         "low": 20,
@@ -1955,7 +4342,7 @@
       "target_id": "永新股份",
       "name": "永新股份",
       "title": "等待带：FAR",
-      "why_now": "现价 11.23，触发线 10.00",
+      "why_now": "现价 11.18，触发线 10.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1967,7 +4354,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 11.23,
+        "price": 11.18,
         "market": "A",
         "zone_label": "等待带",
         "low": null,
@@ -1983,7 +4370,7 @@
       "target_id": "汇川技术",
       "name": "汇川技术",
       "title": "理想买点带：FAR",
-      "why_now": "现价 61.90，区间 [45.00, 52.00]",
+      "why_now": "现价 62.12，区间 [45.00, 52.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1995,7 +4382,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 61.9,
+        "price": 62.12,
         "market": "A",
         "zone_label": "理想买点带",
         "low": 45,
@@ -2011,7 +4398,7 @@
       "target_id": "泡泡玛特",
       "name": "泡泡玛特",
       "title": "加仓带：FAR",
-      "why_now": "现价 154.30，区间 [120.00, 140.00]",
+      "why_now": "现价 154.00，区间 [120.00, 140.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2023,7 +4410,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 154.3,
+        "price": 154.0,
         "market": "H",
         "zone_label": "加仓带",
         "low": 120,
@@ -2039,7 +4426,7 @@
       "target_id": "海尔智家",
       "name": "海尔智家",
       "title": "等待带：FAR",
-      "why_now": "现价 21.15，区间 [16.00, 18.00]",
+      "why_now": "现价 21.12，区间 [16.00, 18.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2051,7 +4438,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 21.15,
+        "price": 21.12,
         "market": "A",
         "zone_label": "等待带",
         "low": 16,
@@ -2067,7 +4454,7 @@
       "target_id": "海康威视",
       "name": "海康威视",
       "title": "等待带：FAR",
-      "why_now": "现价 34.78，区间 [26.00, 29.00]",
+      "why_now": "现价 35.29，区间 [26.00, 29.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2079,7 +4466,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 34.78,
+        "price": 35.29,
         "market": "A",
         "zone_label": "等待带",
         "low": 26,
@@ -2095,7 +4482,7 @@
       "target_id": "深演智能",
       "name": "深演智能",
       "title": "可关注带：FAR",
-      "why_now": "现价 658.00，触发线 80.00",
+      "why_now": "现价 702.00，触发线 80.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2107,7 +4494,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 658.0,
+        "price": 702.0,
         "market": "H",
         "zone_label": "可关注带",
         "low": null,
@@ -2122,8 +4509,8 @@
       "priority": "P2",
       "target_id": "立讯精密",
       "name": "立讯精密",
-      "title": "2026H1报告（预计8/28）：2 天后到期",
-      "why_now": "登记事件状态为2 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1报告（预计8/28）：1 天后到期",
+      "why_now": "登记事件状态为1 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -2136,7 +4523,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-28",
-        "days": 2,
+        "days": 1,
         "event_type": "财报",
         "note": "核通信/汽车毛利、OCF覆盖、大客户占比"
       }
@@ -2148,7 +4535,7 @@
       "target_id": "立讯精密",
       "name": "立讯精密",
       "title": "A股分批带：FAR",
-      "why_now": "现价 57.11，触发线 43.00",
+      "why_now": "现价 57.18，触发线 43.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2160,7 +4547,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 57.11,
+        "price": 57.18,
         "market": "A",
         "zone_label": "A股分批带",
         "low": null,
@@ -2176,7 +4563,7 @@
       "target_id": "立讯精密",
       "name": "立讯精密",
       "title": "H股分批带：FAR",
-      "why_now": "现价 63.35，触发线 44.00",
+      "why_now": "现价 64.05，触发线 44.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2188,7 +4575,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 63.35,
+        "price": 64.05,
         "market": "H",
         "zone_label": "H股分批带",
         "low": null,
@@ -2198,38 +4585,13 @@
       }
     },
     {
-      "fingerprint": "932e3be41929fc9a356bc965a4d085ca94124105de6a4d89fe2377399856e54f",
-      "section": "disclosures",
-      "priority": "P2",
-      "target_id": "美团",
-      "name": "美团-W",
-      "title": "2026中报：1 天后到期",
-      "why_now": "登记事件状态为1 天后到期，需按备注核验；监控本身不作投资决定。",
-      "status": "UPCOMING_7D",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "UPCOMING_7D",
-        "current_status": "UPCOMING_7D",
-        "date": "2026-08-27",
-        "days": 1,
-        "event_type": "财报",
-        "note": "核Q2/H1减亏斜率、份额硬数据、销售费用率"
-      }
-    },
-    {
       "fingerprint": "e85f713bb5b909685fa97762a3238deda9e6c67ef224310244f5883a9381d827",
       "section": "price",
       "priority": "P2",
       "target_id": "美团",
       "name": "美团-W",
       "title": "舒适加仓带：FAR",
-      "why_now": "现价 78.05，触发线 70.00",
+      "why_now": "现价 77.50，触发线 70.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2241,7 +4603,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 78.05,
+        "price": 77.5,
         "market": "H",
         "zone_label": "舒适加仓带",
         "low": null,
@@ -2251,13 +4613,69 @@
       }
     },
     {
+      "fingerprint": "97dfd93ac7a8a03676e024f55dfbabfb1e2249cf7ec872793a3afa18fa2f0652",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "NVIDIA",
+      "name": "英伟达",
+      "title": "研究性分批评估带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 209.66,
+        "market": "US",
+        "zone_label": "研究性分批评估带",
+        "low": 155,
+        "high": 180,
+        "direction": "range",
+        "note": "非自动买入；须DSO不继续恶化、CFO/FCF与利润重新匹配、Rubin交付与供给承诺匹配，且无新增信用保证或库存计提"
+      }
+    },
+    {
+      "fingerprint": "1a961f57cfbb722f9507a5fd893708ebcd237d000a9ee88d216e79769b58bcc0",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "Intel",
+      "name": "英特尔",
+      "title": "研究性分批评估带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 88.24,
+        "market": "US",
+        "zone_label": "研究性分批评估带",
+        "low": 25,
+        "high": 35,
+        "direction": "range",
+        "note": "非自动买入；须连续两季产品FCF改善、DCAI份额未恶化、Foundry亏损率下降、14A有绑定外部客户且无新增重大稀释"
+      }
+    },
+    {
       "fingerprint": "dd4b61c2f25b7217efb3a48d3a6df61bcf6e2f8a5b260be77b13c0def3a9148f",
       "section": "price",
       "priority": "P2",
       "target_id": "蓝思科技",
       "name": "蓝思科技",
       "title": "评估带：FAR",
-      "why_now": "现价 39.02，区间 [18.00, 24.00]",
+      "why_now": "现价 39.05，区间 [18.00, 24.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2269,7 +4687,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 39.02,
+        "price": 39.05,
         "market": "A",
         "zone_label": "评估带",
         "low": 18,
@@ -2285,7 +4703,7 @@
       "target_id": "赛轮轮胎",
       "name": "赛轮轮胎",
       "title": "参考带：FAR",
-      "why_now": "现价 13.94，区间 [10.00, 12.00]",
+      "why_now": "现价 13.99，区间 [10.00, 12.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2297,7 +4715,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 13.94,
+        "price": 13.99,
         "market": "A",
         "zone_label": "参考带",
         "low": 10,
@@ -2313,7 +4731,7 @@
       "target_id": "赣锋锂业",
       "name": "赣锋锂业",
       "title": "A股评估带：FAR",
-      "why_now": "现价 53.50，区间 [30.00, 38.00]",
+      "why_now": "现价 54.13，区间 [30.00, 38.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2325,7 +4743,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 53.5,
+        "price": 54.13,
         "market": "A",
         "zone_label": "A股评估带",
         "low": 30,
@@ -2340,8 +4758,8 @@
       "priority": "P2",
       "target_id": "迅策",
       "name": "迅策科技",
-      "title": "2026H1中报后复检：5 天后到期",
-      "why_now": "登记事件状态为5 天后到期，需按备注核验；监控本身不作投资决定。",
+      "title": "2026H1中报后复检：4 天后到期",
+      "why_now": "登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。",
       "status": "UPCOMING_7D",
       "verified_facts": [],
       "source_urls": [],
@@ -2354,7 +4772,7 @@
         "previous_status": "UPCOMING_7D",
         "current_status": "UPCOMING_7D",
         "date": "2026-08-31",
-        "days": 5,
+        "days": 4,
         "event_type": "财报",
         "note": "核经常性收入、毛利、现金流"
       }
@@ -2366,7 +4784,7 @@
       "target_id": "迅策",
       "name": "迅策科技",
       "title": "评估带：FAR",
-      "why_now": "现价 122.90，区间 [60.00, 85.00]",
+      "why_now": "现价 126.40，区间 [60.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2378,7 +4796,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 122.9,
+        "price": 126.4,
         "market": "H",
         "zone_label": "评估带",
         "low": 60,
@@ -2394,7 +4812,7 @@
       "target_id": "长光辰芯",
       "name": "长光辰芯",
       "title": "理想买入带：FAR",
-      "why_now": "现价 79.95，触发线 30.00",
+      "why_now": "现价 84.00，触发线 30.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2406,7 +4824,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 79.95,
+        "price": 84.0,
         "market": "H",
         "zone_label": "理想买入带",
         "low": null,
@@ -2422,7 +4840,7 @@
       "target_id": "雅克科技",
       "name": "雅克科技",
       "title": "卫星仓带：FAR",
-      "why_now": "现价 135.23，区间 [90.00, 110.00]",
+      "why_now": "现价 143.91，区间 [90.00, 110.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2434,7 +4852,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 135.23,
+        "price": 143.91,
         "market": "A",
         "zone_label": "卫星仓带",
         "low": 90,
@@ -2444,7 +4862,25 @@
       }
     }
   ],
-  "notification_items": [],
+  "notification_items": [
+    "932e3be41929fc9a356bc965a4d085ca94124105de6a4d89fe2377399856e54f",
+    "3baa2009cd84b6490f4918071c315d0dcfcc99872e77f139191dfb5b02cb3c39",
+    "f3d5be05aafbba059de07e82b8729262192d4514ac89cb71731b88f3a4cc311a",
+    "9813dadbdfd8f17fc9394deb376536d508a208fd5f56a135af94b6d74c0190f4",
+    "05f49881d8fca1d53f74d1fea0f43e8a35017e5b4a801a0aabfff0a33d5fe179",
+    "754e52fba5ff59bc0d6c79373da26002e048988c8b5305fce854940f47b0e4b4",
+    "525d08617282e5fcd4e2b2bed44398473adac49d80be190a4c76631dfd0cfa96",
+    "75a61ef2f87d78e04a0970c78da3d34ce3391a7f35a2fcf374860af3361b776a",
+    "9ef0a52fa4b8ac84fe56b145d27073d6c9bdc59ac20849c929ed2be1482bff0b",
+    "6d47a6223981010b2ea5a4605532ed7e04ede4bb0693e5fd755c854e4195ed6a",
+    "ce4b5de84b4a4d5f2cab31456f50157c50397f821fcdfe961a400fe7c5ef6185",
+    "953866b170a80d7a99b5c81f21b3a0e6a903bb8beb27926db2bf9ed94e68603e",
+    "510f44350ced666f1b2f93fbcaa5eeb52df34fe173b62957817dadc9e2af8d87",
+    "7d839f77bcc338b0ba6b81b7bd1e038930d89925986fce650563b53af567f9a4",
+    "af974bf6cbd0820df2c7401b788381c6122c8103c475b449fafb64879155cd91",
+    "746099f5c80e9fdd230cb6093d077bef7d2e40efc7caec3ed868f2d12081f182",
+    "ce4fb6672150f8c400cb2540d9c06eebddb69ff58bc2b9a0e20fe462d9d1c7c0"
+  ],
   "source_health": [
     {
       "source": "quotes",
