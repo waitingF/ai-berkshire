@@ -175,72 +175,203 @@ def _changed_items(payload: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def _summary_updates(item: dict[str, Any]) -> str:
+    metadata_updates = (item.get("metadata") or {}).get("updates") or []
     updates = []
-    for update in (item.get("metadata") or {}).get("updates") or []:
-        summary = str(update.get("summary") or "新增公告")
+    for update in metadata_updates[:3]:
+        summary = _safe_cell(update.get("summary") or "新增公告")
         urls = update.get("source_urls") or []
         updates.append(f"[{summary}]({urls[0]})" if urls else summary)
+    remaining = len(metadata_updates) - len(updates)
+    if remaining > 0:
+        updates.append(f"另 {remaining} 项（完整清单见每日监控页面）")
     return "<br>".join(updates) or "-"
+
+
+def _safe_cell(value: Any) -> str:
+    return " ".join(str(value or "-").replace("|", "／").split())
+
+
+def _number(value: Any) -> float | None:
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return None
+    return number if number == number else None
+
+
+def _price_band(item: dict[str, Any]) -> str:
+    metadata = item.get("metadata") or {}
+    label = _safe_cell(metadata.get("zone_label") or item.get("title") or "价格条件")
+    low = _number(metadata.get("low"))
+    high = _number(metadata.get("high"))
+    direction = metadata.get("direction", "range")
+    if direction == "below" and high is not None:
+        condition = f"≤{high:.2f}"
+    elif low is not None and high is not None:
+        condition = f"{low:.2f}–{high:.2f}"
+    elif high is not None:
+        condition = f"≤{high:.2f}"
+    elif low is not None:
+        condition = f"≥{low:.2f}"
+    else:
+        condition = "-"
+    return f"{label} {condition}"
+
+
+def _price_gap(item: dict[str, Any]) -> str:
+    metadata = item.get("metadata") or {}
+    price = _number(metadata.get("price"))
+    low = _number(metadata.get("low"))
+    high = _number(metadata.get("high"))
+    status = item.get("status")
+    if status == "NO_DATA" or price is None:
+        return "无行情"
+    if status == "RESOLVED":
+        return "已离开"
+    if status in {"TRIGGERED", "WARN"}:
+        if low is not None and low > 0 and price < low:
+            return f"低于下界 {(low - price) / low:.1%}"
+        return "区间内"
+    boundary = high if high is not None else low
+    if boundary is None or boundary <= 0:
+        return "-"
+    return f"{abs(price - boundary) / boundary:.1%}"
+
+
+def _degradation_reasons(payload: dict[str, Any]) -> list[str]:
+    reasons: list[str] = []
+
+    def add(name: str, limitations: Any) -> None:
+        for limitation in limitations or []:
+            reason = f"{name}：{_safe_cell(limitation)}"
+            if reason not in reasons:
+                reasons.append(reason)
+
+    for health in payload.get("source_health") or []:
+        if health.get("status") not in {"OK", "RECOVERED"}:
+            add(str(health.get("source") or "数据源"), [health.get("safe_message")])
+    for item in payload.get("items") or []:
+        name = _safe_cell(item.get("name") or item.get("target_id") or "监控项")
+        if item.get("status") in {"PENDING_AI", "PENDING_EXTRACTION", "OCR_REQUIRED"}:
+            add(name, item.get("limitations"))
+        for update in (item.get("metadata") or {}).get("updates") or []:
+            if update.get("status") in {"PENDING_AI", "PENDING_EXTRACTION", "OCR_REQUIRED"}:
+                add(name, update.get("limitations"))
+    return reasons
 
 
 def build_message(payload: dict[str, Any]) -> tuple[str, str]:
     changed = _changed_items(payload)
-    active = [item for item in changed if not item.get("resolved")]
-    resolved = [item for item in changed if item.get("resolved")]
-    p0 = [item for item in active if item.get("priority") == "P0"]
-    p1 = [item for item in active if item.get("priority") == "P1"]
+    price_rows = [item for item in changed if item.get("section") == "price"]
+    disclosure_rows = [item for item in changed if item.get("section") == "disclosures"]
+    disclosure_summaries = [
+        item
+        for item in disclosure_rows
+        if (item.get("metadata") or {}).get("kind") == "disclosure_summary"
+    ]
+    event_rows = [item for item in disclosure_rows if item not in disclosure_summaries]
+    other_rows = [
+        item for item in changed if item.get("section") not in {"price", "disclosures"}
+    ]
     title = f"每日监控 {payload.get('date', '')}"[:32]
     lines = [
         f"**运行状态**：{payload.get('status', 'UNKNOWN')}",
-        f"**新增 P0：{len(p0)}｜新增 P1：{len(p1)}｜已解除：{len(resolved)}**",
+        f"**今日增量**：价格变化 {len(price_rows)}｜正式披露 {len(disclosure_summaries)} 组｜"
+        f"财报节点 {len(event_rows)}｜其他 {len(other_rows)}",
         "",
     ]
-    for heading, rows in (("P0", p0), ("P1", p1), ("已解除", resolved)):
-        if not rows:
-            continue
-        lines.extend([f"## {heading}", ""])
-        summaries = [
-            item
-            for item in rows
-            if (item.get("metadata") or {}).get("kind") == "disclosure_summary"
-        ]
-        regular = [item for item in rows if item not in summaries]
-        if summaries:
-            lines.extend(
-                [
-                    "| 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |",
-                    "|---|---|---|---:|---|---|",
-                ]
+    if payload.get("status") == "DEGRADED":
+        reasons = _degradation_reasons(payload)
+        detail = "；".join(reasons[:3]) or "存在待重试的数据源、正文提取或 AI 分诊事项"
+        lines.extend([f"> **降级原因**：{detail}", ""])
+
+    lines.extend(["## 一、价格监控", ""])
+    if price_rows:
+        lines.extend(
+            [
+                "| 优先级 | 标的 | 市场 | 监控区间 | 现价 | 距边界 | 状态 |",
+                "|---|---|---|---|---:|---:|---|",
+            ]
+        )
+        for item in price_rows:
+            metadata = item.get("metadata") or {}
+            price = _number(metadata.get("price"))
+            lines.append(
+                f"| {item.get('priority') or '-'} | {_safe_cell(item.get('name') or item.get('target_id'))} | "
+                f"{_item_market(item) or '-'} | {_price_band(item)} | "
+                f"{price:.2f} | {_price_gap(item)} | {item.get('status') or '-'} |"
+                if price is not None
+                else f"| {item.get('priority') or '-'} | {_safe_cell(item.get('name') or item.get('target_id'))} | "
+                f"{_item_market(item) or '-'} | {_price_band(item)} | - | {_price_gap(item)} | {item.get('status') or '-'} |"
             )
-        for item in summaries:
+        lines.extend(
+            [
+                "",
+                "> 仅展示今日新进入、接近或离开监控条件的标的；完整价格状态见每日监控页面。",
+            ]
+        )
+    else:
+        lines.append("今日无新增进入、接近或离开价格监控条件的标的。")
+
+    lines.extend(["", "## 二、财报与正式披露监控", "", "### 正式披露", ""])
+    if disclosure_summaries:
+        lines.extend(
+            [
+                "| 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |",
+                "|---|---|---|---|---:|---|---|",
+            ]
+        )
+        for item in disclosure_summaries:
             metadata = item.get("metadata") or {}
             latest = str(metadata.get("latest_time") or "")
             try:
                 latest = datetime.fromisoformat(latest).strftime("%H:%M")
             except ValueError:
                 latest = latest or "-"
-            name = str(item.get("name") or item.get("target_id") or "-").replace("|", "／")
             lines.append(
-                f"| {name} | {_item_market(item) or '-'} | {_summary_updates(item)} | "
+                f"| {item.get('priority') or '-'} | {_safe_cell(item.get('name') or item.get('target_id'))} | "
+                f"{_item_market(item) or '-'} | {_summary_updates(item)} | "
                 f"{metadata.get('announcement_count') or 0} | {latest} | {item.get('status') or '-'} |"
             )
-        if summaries:
-            lines.append("")
-        if regular:
-            lines.extend(["| 标的 | 市场 | 事项 | 原因 |", "|---|---|---|---|"])
-        for item in regular:
-            name = str(item.get("name") or item.get("target_id") or "-").replace("|", "／")
-            market = _item_market(item) or "-"
-            item_title = (
-                str(item.get("title") or "-")
-                .replace("|", "／")
-                .replace("\n", " ")
+    else:
+        lines.append("今日无新增正式披露。")
+
+    lines.extend(["", "### 财报与复检节点", ""])
+    if event_rows:
+        lines.extend(
+            [
+                "| 优先级 | 标的 | 节点 | 到期状态 | 需要核验 |",
+                "|---|---|---|---|---|",
+            ]
+        )
+        for item in event_rows:
+            metadata = item.get("metadata") or {}
+            note = metadata.get("note") or item.get("why_now") or "-"
+            lines.append(
+                f"| {item.get('priority') or '-'} | {_safe_cell(item.get('name') or item.get('target_id'))} | "
+                f"{_safe_cell(item.get('title'))} | {item.get('status') or '-'} | {_safe_cell(note)[:120]} |"
             )
-            reason = str(item.get("why_now") or "-").replace("|", "／").replace("\n", " ")
-            lines.append(f"| {name} | {market} | {item_title} | {reason[:120]} |")
-        if regular:
-            lines.append("")
-    lines.append("仅用于研究复核，不构成买卖或仓位建议。")
+    else:
+        lines.append("今日无新增财报或复检节点变化。")
+
+    lines.extend(["", "## 三、其他监控", ""])
+    if other_rows:
+        lines.extend(
+            [
+                "| 优先级 | 标的/数据源 | 事项 | 状态 | 原因 |",
+                "|---|---|---|---|---|",
+            ]
+        )
+        for item in other_rows:
+            lines.append(
+                f"| {item.get('priority') or '-'} | {_safe_cell(item.get('name') or item.get('target_id'))} | "
+                f"{_safe_cell(item.get('title'))} | {item.get('status') or '-'} | "
+                f"{_safe_cell(item.get('why_now'))[:120]} |"
+            )
+    else:
+        lines.append("今日无新增研究缺口或缺口解除。")
+
+    lines.extend(["", "仅用于研究复核，不构成买卖或仓位建议。"])
     return title, "\n".join(lines)
 
 
