@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-08-26",
+  "updated": "2026-08-27",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -1919,6 +1919,48 @@
         }
       ],
       "events": []
+    },
+    {
+      "id": "NVIDIA",
+      "name": "英伟达",
+      "group": "台账",
+      "codes": {
+        "US": "usNVDA"
+      },
+      "source": "英伟达 FY2027Q2 财报精读与研究 2026-08-27",
+      "links": [
+        "reports/英伟达/英伟达-research-20260827.md",
+        "reports/英伟达/英伟达-earnings-2027Q2.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 155,
+          "high": 180,
+          "market": "US",
+          "action": "分批研究性建仓",
+          "note": "非自动买入；须DSO不继续恶化、CFO/FCF与利润重新匹配、Rubin交付与供给承诺匹配，且无新增信用保证或库存计提"
+        },
+        {
+          "label": "不追高警戒线",
+          "dir": "above",
+          "low": 260,
+          "high": null,
+          "market": "US",
+          "action": "不新增",
+          "note": "仅在现金转换、客户信用和供给纪律出现更强证据后重新评估"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-11-18",
+          "type": "财报",
+          "label": "FY2027Q3 财报（日期待公司 IR 确认）",
+          "note": "核收入/毛利率指引兑现、Rubin收入占比、DSO、存货、CFO/FCF、供给承诺与保证敞口/计提、中国Data Center收入",
+          "market": "US"
+        }
+      ]
     },
     {
       "id": "Intel",
