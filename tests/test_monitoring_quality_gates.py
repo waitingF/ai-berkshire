@@ -149,6 +149,21 @@ class LocalGitHookTest(unittest.TestCase):
 
 
 class GithubQualityGateTest(unittest.TestCase):
+    def test_workflow_installs_dependencies_for_every_test_module(self):
+        self.assertTrue(WORKFLOW.exists(), "缺少 GitHub 监控规则校验 workflow")
+        workflow = yaml.load(WORKFLOW.read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
+
+        commands = [
+            step.get("run", "")
+            for step in workflow["jobs"]["validate-monitoring"]["steps"]
+        ]
+        install_command = next(
+            (command for command in commands if "pip install" in command),
+            "",
+        )
+        self.assertIn("requirements-monitoring.txt", install_command)
+        self.assertIn("requirements-pages.txt", install_command)
+
     def test_workflow_runs_full_shared_validation_on_pull_requests_and_main(self):
         self.assertTrue(WORKFLOW.exists(), "缺少 GitHub 监控规则校验 workflow")
         workflow = yaml.load(WORKFLOW.read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
