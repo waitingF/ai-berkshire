@@ -2,46 +2,36 @@
 
 **数据截止日**：2026-08-27（Asia/Shanghai）
 **运行状态**：DEGRADED
-**摘要**：P0 8 · P1 9 · 新增价格 1 · 新增披露 16 · 异常 0
+**摘要**：P0 2 · P1 0 · 新增价格 1 · 新增披露 1 · 异常 0
 **数据源状态**：quotes=OK、cninfo=OK、hkex=OK、sec=OK
 
 > 价格条件、正式披露与其他研究缺口在同一份报告中展示；优先级表示研究处理顺序，不代表交易信号。
 
 ## 一、价格监控
 
-> 价格优先级：P0=区间内或低于区间；P1=高于区间上界且距上界≤5%；P2 不展示。优先级只表示价格距离，不代表交易信号。
+> 价格优先级：P0=到达研究条件或越过估值警戒线；P1=距对应边界≤5%；P2 不展示。优先级只表示复核紧迫度，不代表交易信号。
 
 | 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |
 |---|---|---|---|---:|---:|---:|---|
-| P0 | AppLovin | US | 分批复核带 | [300.00, 330.00] | 308.11 | 区间内 | TRIGGERED |
-| P0 | lululemon | US | 观察仓带 | ≤ 119.00 | 116.35 | 区间内 | TRIGGERED |
-| P0 | Reddit | US | 小仓跟踪带 | [145.00, 165.00] | 155.36 | 区间内 | TRIGGERED |
+| P0 | AppLovin | US | 分批复核带 | [300.00, 330.00] | 308.18 | 区间内 | TRIGGERED |
+| P0 | lululemon | US | 观察仓带 | ≤ 119.00 | 117.00 | 区间内 | TRIGGERED |
+| P0 | Novo Nordisk | US | 观察仓带 | [44.00, 46.00] | 45.97 | 区间内 | TRIGGERED |
+| P0 | Reddit | US | 小仓跟踪带 | [145.00, 165.00] | 156.67 | 区间内 | TRIGGERED |
 | P0 | 北京君正 | H | H上限触发 | ≤ 102.80 | 101.10 | 区间内 | TRIGGERED |
 | P0 | 快手 | H | 评估带 | [35.00, 40.00] | 33.66 | 低于下界 3.8% | TRIGGERED |
 | P0 | 赣锋锂业 | H | H股小仓带 | [34.60, 43.80] | 40.86 | 区间内 | TRIGGERED |
-| P1 | Novo Nordisk | US | 观察仓带 | [44.00, 46.00] | 47.19 | 2.6% | NEAR |
-| P1 | Qualcomm | US | 理想买入带 | ≤ 160.00 | 163.72 | 2.3% | NEAR |
-| P1 | 哔哩哔哩 | US | 研究性分批带 | [12.00, 16.00] | 16.15 | 0.9% | NEAR |
+| P1 | Qualcomm | US | 理想买入带 | ≤ 160.00 | 164.25 | 2.7% | NEAR |
+| P1 | 哔哩哔哩 | US | 研究性分批带 | [12.00, 16.00] | 16.64 | 4.0% | NEAR |
 | P1 | 腾讯控股 | H | 加仓带 | [400.00, 430.00] | 447.80 | 4.1% | NEAR |
-| P1 | 腾讯音乐 | US | 买入带 | [7.50, 8.50] | 8.80 | 3.5% | NEAR |
+| P1 | 腾讯音乐 | US | 买入带 | [7.50, 8.50] | 8.72 | 2.6% | NEAR |
 | P1 | 贵州茅台 | A | 建仓参考带 | [1100.00, 1250.00] | 1292.30 | 3.4% | NEAR |
 
 ## 二、财报与正式披露监控
 
 | 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |
 |---|---|---|---|---:|---|---|
-| P0 | NVIDIA | US | [8-K](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm)<br>[10-Q](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm) | 2 | 04:36 | REVIEW |
-| P0 | 三环集团 | H | [2026年中期业绩](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700478.pdf)<br>[PROPOSED CHANGE OF REGISTERED CAPITAL, AMENDMENTS TO THE ART…](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700508.pdf) | 2 | 17:01 | REVIEW |
-| P0 | 中芯国际 | H | [2026年中期业绩](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082701015.pdf) | 1 | 18:20 | REVIEW |
-| P0 | 亨通光电 | A | [亨通光电关于回购注销2024年限制性股票激励计划部分限制性股票的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513700.PDF)<br>[亨通光电关于新增为控股子公司提供担保的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513666.PDF)<br>[申万宏源证券承销保荐有限责任公司关于江苏亨通光电股份有限公司回购注销2024年限制性股票激励计划部分限制性股票之独立财务…](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513667.PDF)<br>[亨通光电独立董事关于第九届董事会第十八次会议相关事项的独立意见](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513679.PDF)<br>[亨通光电关于拟变更注册资本、修改经营范围及《公司章程》并办理工商变更的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513665.PDF)<br>[亨通光电关于追加2026年度日常关联交易预计的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513702.PDF)<br>[亨通光电关于新增公司2026年度与日常经营生产业务相关的商品期货套期保值业务的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513660.PDF)<br>[亨通光电关于2026年上半年度亨通财务有限公司的风险持续评估报告的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513688.PDF)<br>[亨通光电关于中标海洋能源项目的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513677.PDF)<br>[亨通光电第九届董事会第十八次会议决议公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513675.PDF)<br>[亨通光电2026年半年度报告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513678.PDF)<br>[亨通光电独立董事专门会议对第九届董事会第十八次会议相关事项的审核意见](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513705.PDF)<br>[亨通光电公司章程（2026年8月修订）](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513676.PDF)<br>[亨通光电关于召开2026年第四次临时股东会的通知](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513695.PDF)<br>[亨通光电2026年半年度报告摘要](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513669.PDF)<br>[安徽承义律师事务所关于江苏亨通光电股份有限公司2024年限制性股票激励计划回购注销部分限制性股票事项的法律意见书](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513710.PDF) | 16 | 00:00 | REVIEW |
-| P0 | 华虹宏力 | A | [2026年半年度报告摘要](https://static.cninfo.com.cn/finalpage/2026-08-27/1225514056.PDF)<br>[港股公告：截至二零二六年六月三十日止六个月中期业绩公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225514139.PDF)<br>[2026年半年度募集资金存放与实际使用情况专项报告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225514118.PDF)<br>[关于2026年半年度计提资产减值准备的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225514154.PDF)<br>[2026年半年度报告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225514149.PDF)<br>[关于2026年度“提质增效重回报”行动方案的半年度评估报告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225514178.PDF) | 6 | 00:00 | REVIEW |
-| P0 | 国电南瑞 | A | [国电南瑞2026年半年度报告摘要](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508118.PDF)<br>[国电南瑞第九届董事会第十五次会议决议公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508123.PDF)<br>[国电南瑞2026年度“提质增效重回报”行动方案的半年度评估报告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508111.PDF)<br>[国电南瑞关于在中国电力财务有限公司办理金融业务的风险持续评估报告的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508101.PDF)<br>[国电南瑞关于2026年半年度公司募集资金存放、管理与实际使用情况的专项报告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508094.PDF)<br>[中信证券股份有限公司关于国电南瑞科技股份有限公司使用部分闲置募集资金进行现金管理之核查意见](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508120.PDF)<br>[国电南瑞2026年半年度报告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF)<br>[国电南瑞关于使用部分闲置募集资金进行现金管理的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508110.PDF)<br>[国电南瑞关于2026年半年度利润分配方案的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508108.PDF) | 9 | 00:00 | REVIEW |
-| P1 | 上海复旦 | H | [(1) INVESTMENT IN INDUSTRIAL FUND AND RELATED PARTY TRANSACT…](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700794.pdf)<br>[NOTICE OF THE 2026 THIRD EXTRAORDINARY GENERAL MEETING](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700848.pdf)<br>[PROXY FORM FOR 2026 THIRD EXTRAORDINARY GENERAL MEETING](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700913.pdf) | 3 | 18:08 | REVIEW |
-| P1 | 兆易创新 | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700646.pdf) | 1 | 17:23 | REVIEW |
-| P1 | 兆易创新 | A | [H股公告-翌日披露报表](https://static.cninfo.com.cn/finalpage/2026-08-27/1225513765.PDF)<br>[兆易创新关于2023年股票期权激励计划第三个行权期行权结果暨股份上市的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225512764.PDF) | 2 | 00:00 | REVIEW |
-| P1 | 安克创新 | A | [关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225520894.PDF) | 1 | 18:34 | REVIEW |
-| P1 | 蓝思科技 | A | [关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225515786.PDF) | 1 | 15:54 | REVIEW |
-| P1 | 蓝思科技 | H | [新增公告，内容待确认](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082700255.htm) | 1 | 16:31 | REVIEW |
+| P0 | 海尔智家 | H | [2026年中期业绩](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082702357.pdf) | 1 | 22:47 | REVIEW |
+| P1 | 国电南瑞 | A | [国电南瑞关于在中国电力财务有限公司办理金融业务的风险持续评估报告的公告](https://static.cninfo.com.cn/finalpage/2026-08-27/1225508101.PDF) | 1 | 00:00 | REVIEW |
 
 | 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |
 |---|---|---|---|---|---|---|---|---|
@@ -54,12 +44,12 @@
 | P0 | 北京君正 | 8/24配售结果及8/25上市：已逾期 | 2026-08-24 | OVERDUE | 登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。 | - | - | 核最终定价、稀释与首日表现 |
 | P0 | 美团-W | 2026中报：今天到期 | 2026-08-27 | TODAY | 登记事件状态为今天到期，需按备注核验；监控本身不作投资决定。 | - | - | 核Q2/H1减亏斜率、份额硬数据、销售费用率 |
 | P0 | 蓝思科技 | 2026H1披露（8/22）：已逾期 | 2026-08-22 | OVERDUE | 登记事件状态为已逾期，需按备注核验；监控本身不作投资决定。 | - | - | 核主业利润、FCF、客户集中与新业务披露 |
-| P1 | lululemon | 下季报后复检：14 天后到期 | 2026-09-10 | UPCOMING_14D | 登记事件状态为14 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核北美同店与库存 |
-| P1 | 德明利 | 2026H1正式中报：1 天后到期 | 2026-08-28 | UPCOMING_7D | 登记事件状态为1 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核H1预告兑现、CFO、存货/减值、借款、预付款与企业级主控收入 |
+| P2 | lululemon | 下季报后复检：14 天后到期 | 2026-09-10 | UPCOMING_14D | 登记事件状态为14 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核北美同店与库存 |
 | P2 | 上海复旦 | 2026H1业绩：4 天后到期 | 2026-08-31 | UPCOMING_7D | 登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核扣除约4.7亿公允价值收益后的经营利润、库存减值、管理层资本配置 |
 | P2 | 兆易创新 | 2026H1正式中报：4 天后到期 | 2026-08-31 | UPCOMING_7D | 登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核扣非、经营现金流、库存、关联交易 |
 | P2 | 华虹半导体 | 2026H1披露：4 天后到期 | 2026-08-31 | UPCOMING_7D | 登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核华力微交割/融资条款与Fab9回报 |
 | P2 | 多氟多 | 2026H1正式报告：4 天后到期 | 2026-08-31 | UPCOMING_7D | 登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核锂盐毛利、OCF、净债务 |
+| P2 | 德明利 | 2026H1正式中报：1 天后到期 | 2026-08-28 | UPCOMING_7D | 登记事件状态为1 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核H1预告兑现、CFO、存货/减值、借款、预付款与企业级主控收入 |
 | P2 | 快手 | 2026H1中报后复检：4 天后到期 | 2026-08-31 | UPCOMING_7D | 登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核主站减速、AI资本强度与可灵单位经济 |
 | P2 | 晶合集成 | 2026H1正式报告：4 天后到期 | 2026-08-31 | UPCOMING_7D | 登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 证28nm/90nm BCD客户认证与稳定量产收入 |
 | P2 | 极视角 | 2026H1中报（预计8月下旬）：4 天后到期 | 2026-08-31 | UPCOMING_7D | 登记事件状态为4 天后到期，需按备注核验；监控本身不作投资决定。 | - | - | 核盈利、回款与现金流 |
