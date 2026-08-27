@@ -458,13 +458,19 @@ class WorkflowContractTest(unittest.TestCase):
             "git add reports/daily-monitor/ data/monitoring-state.json", commit["run"]
         )
         self.assertNotIn("data/triggers.json", commit["run"])
-        pages_index = next(
-            index for index, step in enumerate(steps) if step.get("id") == "rebuild_pages"
+        checkout = next(step for step in steps if step.get("uses") == "actions/checkout@v4")
+        self.assertEqual(
+            checkout["with"]["token"], "${{ secrets.DAILY_MONITOR_TOKEN }}"
+        )
+        self.assertFalse(
+            any(step.get("id") == "rebuild_pages" for step in steps),
+            "PAT 推送会自动触发 Pages，不应再次手动 dispatch",
         )
         gate_index = next(
             index for index, step in enumerate(steps) if step.get("id") == "health_gate"
         )
-        self.assertLess(pages_index, gate_index)
+        commit_index = steps.index(commit)
+        self.assertLess(commit_index, gate_index)
 
 
 if __name__ == "__main__":

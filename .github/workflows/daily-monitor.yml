@@ -19,7 +19,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: daily-monitor
@@ -31,6 +30,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.DAILY_MONITOR_TOKEN }}
 
       - uses: actions/setup-python@v5
         with:
@@ -82,13 +83,6 @@ jobs:
             git push
             echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
-
-      - name: 触发 Pages 重建
-        id: rebuild_pages
-        if: steps.commit_daily.outputs.committed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run pages.yml --ref "${GITHUB_REF_NAME}"
 
       - name: 最终健康门禁
         id: health_gate
