@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-08-27",
+  "updated": "2026-08-29",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -2092,6 +2092,38 @@
           "type": "财报",
           "label": "FY2027Q3 财报（公司 IR 已确认）",
           "note": "核美国交易数/单位、剔除关税退款后的毛利率、广告/会员/市场服务增长，以及 CapEx/FCF",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "nVent",
+      "name": "nVent Electric",
+      "group": "台账",
+      "codes": {
+        "US": "usNVT"
+      },
+      "source": "nVent-research-20260829",
+      "links": [
+        "reports/nVent/nVent-research-20260829.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 115,
+          "high": 130,
+          "market": "US",
+          "action": "分批评估",
+          "note": "非自动买入；须 Systems Protection 有机增长仍为双位数、FCF 不被应收/库存持续吞噬，且 Maverick 并购杠杆与整合可控；US$100–115 为更高安全边际带"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-30",
+          "type": "财报",
+          "label": "2026Q3 财报（日期待公司 IR 确认）",
+          "note": "核基础设施/数据中心订单兑现、Systems Protection 与 Electrical Connections ROS、应收和存货、FCF，以及 Maverick 的融资、交割和净债务变化",
           "market": "US"
         }
       ]
