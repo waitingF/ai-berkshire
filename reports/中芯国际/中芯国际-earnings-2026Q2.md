@@ -129,3 +129,9 @@
 - [CFi 公告镜像](https://www.cfi.net.cn/p20260813001038.html)、[中国金融信息网](https://www.cnfin.com/gs-lb/detail/20260813/4454977_1.html)：独立复核收入、毛利率、利用率、CapEx（四舍五入口径）。
 - [SAFE 人民币中间价（2026-08-21）](https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do)、[Twelve Data A 股历史行情](https://twelvedata.com/markets/963150/stock/sse/688981/historical-data)、[etnet H 股行情](https://content.etnet.com.hk/content/cpy/eng/stock_quote.php?code=981)：决策价格与汇率快照；[Investing A 股历史行情](https://ph.investing.com/equities/semiconductor-manufacturing-intl-co-historical-data) 作为 A 股价格独立复核。
 - 计算：现金型简化 FCF = CFO 2,522.116 − 现金购置 PPE 1,540.943 − 购置无形资产 5.664 = **975.509**（百万美元）；管理层 CapEx 口径 FCF = 2,522.116 − 1,835.700 = **686.416**（百万美元）。所有计算以 `tools/financial_rigor.py` 复算。
+
+## 2026-08-29 2026H1 正式披露更新
+
+8 月 27 日董事会审议后的中期结果已发布（[港交所正式公告](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082701015.pdf)；[巨潮同步披露](https://static.cninfo.com.cn/finalpage/2026-08-27/1225520297.PDF)）。2026H1 收入 **55.111 亿美元**（同比 **+23.7%**），税前利润 **10.654 亿美元**（同比 **+109.0%**）。公司同时提示为供应链与客户需求进行库存预建；这使库存、应收、负债、资本开支和现金流的 H1 明细仍是后续 Q3 复检重点，而非可忽略的背景噪音。
+
+**对原结论的影响。** 中期结果确认增长改善，但不推翻正文对 A/H 估值和现金流质量的行动纪律；本次未重算概率加权价值或买入区间。中期公告与巨潮版本互相核对了收入/利润，具体资产负债表及现金流项目仍应在下一次完整更新中逐项纳入双源审计。
