@@ -16,6 +16,7 @@ PRE_COMMIT = ROOT / ".githooks" / "pre-commit"
 PRE_PUSH = ROOT / ".githooks" / "pre-push"
 INSTALLER = ROOT / "scripts" / "install-git-hooks.sh"
 WORKFLOW = ROOT / ".github" / "workflows" / "validate-monitoring.yml"
+DAILY_WORKFLOW = ROOT / ".github" / "workflows" / "daily-monitor.yml"
 
 
 def run(command, *, cwd, env=None, stdin=None):
@@ -174,6 +175,23 @@ class GithubQualityGateTest(unittest.TestCase):
         job = workflow["jobs"]["validate-monitoring"]
         commands = [step.get("run", "") for step in job["steps"]]
         self.assertIn("bash scripts/validate-monitoring.sh --full", commands)
+
+    def test_daily_workflow_keeps_degraded_report_non_blocking(self):
+        self.assertTrue(DAILY_WORKFLOW.exists(), "缺少每日监控 workflow")
+        workflow = yaml.load(
+            DAILY_WORKFLOW.read_text(encoding="utf-8"), Loader=yaml.BaseLoader
+        )
+
+        steps = workflow["jobs"]["monitor"]["steps"]
+        run_monitor = next(step for step in steps if step.get("id") == "run_monitor")
+        self.assertIn('"$monitor_exit" -ne 2', run_monitor["run"])
+        self.assertFalse(
+            any(
+                "steps.run_monitor.outputs.exit_code" in step.get("run", "")
+                for step in steps
+            ),
+            "降级报告已生成时不应由后续门禁把 workflow 标记为失败",
+        )
 
 
 if __name__ == "__main__":

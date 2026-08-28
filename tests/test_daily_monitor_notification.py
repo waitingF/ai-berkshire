@@ -466,11 +466,10 @@ class WorkflowContractTest(unittest.TestCase):
             any(step.get("id") == "rebuild_pages" for step in steps),
             "PAT 推送会自动触发 Pages，不应再次手动 dispatch",
         )
-        gate_index = next(
-            index for index, step in enumerate(steps) if step.get("id") == "health_gate"
+        self.assertFalse(
+            any(step.get("id") == "health_gate" for step in steps),
+            "降级状态只写入日报，不应再把 workflow 标记为失败",
         )
-        commit_index = steps.index(commit)
-        self.assertLess(commit_index, gate_index)
 
 
 if __name__ == "__main__":

@@ -83,12 +83,3 @@ jobs:
             git push
             echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
-
-      - name: 最终健康门禁
-        id: health_gate
-        if: always() && steps.run_monitor.outcome == 'success'
-        run: |
-          if [ "${{ steps.run_monitor.outputs.exit_code }}" = "2" ]; then
-            echo "每日监控已生成降级报告；请检查数据源或 AI 状态。" >&2
-            exit 1
-          fi
