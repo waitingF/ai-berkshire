@@ -2,7 +2,7 @@
 
 **数据截止日**：2026-08-28（Asia/Shanghai）
 **运行状态**：DEGRADED
-**摘要**：P0 9 · P1 4 · 新增价格 1 · 新增披露 12 · 异常 0
+**摘要**：P0 1 · P1 3 · 新增价格 0 · 新增披露 4 · 异常 0
 **数据源状态**：quotes=OK、cninfo=OK、hkex=OK、sec=OK
 
 > 价格条件、正式披露与其他研究缺口在同一份报告中展示；优先级表示研究处理顺序，不代表交易信号。
@@ -13,31 +13,27 @@
 
 | 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |
 |---|---|---|---|---:|---:|---:|---|
-| P0 | AppLovin | US | 分批复核带 | [300.00, 330.00] | 313.06 | 区间内 | TRIGGERED |
-| P0 | lululemon | US | 观察仓带 | ≤ 119.00 | 115.19 | 区间内 | TRIGGERED |
-| P0 | Reddit | US | 小仓跟踪带 | [145.00, 165.00] | 154.45 | 区间内 | TRIGGERED |
-| P0 | 北京君正 | H | H上限触发 | ≤ 102.80 | 101.10 | 区间内 | TRIGGERED |
-| P0 | 快手 | H | 评估带 | [35.00, 40.00] | 33.66 | 低于下界 3.8% | TRIGGERED |
-| P0 | 赣锋锂业 | H | H股小仓带 | [34.60, 43.80] | 40.86 | 区间内 | TRIGGERED |
-| P1 | Novo Nordisk | US | 观察仓带 | [44.00, 46.00] | 46.25 | 0.5% | NEAR |
-| P1 | Qualcomm | US | 理想买入带 | ≤ 160.00 | 164.03 | 2.5% | NEAR |
-| P1 | 哔哩哔哩 | US | 研究性分批带 | [12.00, 16.00] | 16.66 | 4.1% | NEAR |
-| P1 | 腾讯控股 | H | 加仓带 | [400.00, 430.00] | 447.80 | 4.1% | NEAR |
+| P0 | AppLovin | US | 分批复核带 | [300.00, 330.00] | 312.63 | 区间内 | TRIGGERED |
+| P0 | lululemon | US | 观察仓带 | ≤ 119.00 | 115.00 | 区间内 | TRIGGERED |
+| P0 | Reddit | US | 小仓跟踪带 | [145.00, 165.00] | 153.95 | 区间内 | TRIGGERED |
+| P0 | 北京君正 | H | H上限触发 | ≤ 102.80 | 98.90 | 区间内 | TRIGGERED |
+| P0 | 快手 | H | 评估带 | [35.00, 40.00] | 33.46 | 低于下界 4.4% | TRIGGERED |
+| P0 | 赣锋锂业 | H | H股小仓带 | [34.60, 43.80] | 41.34 | 区间内 | TRIGGERED |
+| P1 | Novo Nordisk | US | 观察仓带 | [44.00, 46.00] | 46.26 | 0.6% | NEAR |
+| P1 | Qualcomm | US | 理想买入带 | ≤ 160.00 | 164.78 | 3.0% | NEAR |
+| P1 | 哔哩哔哩 | US | 研究性分批带 | [12.00, 16.00] | 16.77 | 4.8% | NEAR |
 | P1 | 腾讯音乐 | US | 买入带 | [7.50, 8.50] | 8.66 | 1.9% | NEAR |
-| P1 | 贵州茅台 | A | 建仓参考带 | [1100.00, 1250.00] | 1292.30 | 3.4% | NEAR |
+| P1 | 贵州茅台 | A | 建仓参考带 | [1100.00, 1250.00] | 1297.40 | 3.8% | NEAR |
 
 ## 二、财报与正式披露监控
 
 | 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |
 |---|---|---|---|---:|---|---|
-| P0 | 三环集团 | A | [2026年半年度报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516992.PDF)<br>[公司章程（2026年8月修订）](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516997.PDF)<br>[第十二届董事会第二次会议决议公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516995.PDF)<br>[董事会议事规则](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516998.PDF)<br>[关于募集资金2026年半年度存放、管理与使用情况的专项报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516994.PDF)<br>[2026年半年度非经营性资金占用及其他关联资金往来情况汇总表](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516993.PDF)<br>[关于会计政策变更的公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516996.PDF)<br>[2026年半年度报告摘要](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516991.PDF) | 8 | 00:00 | REVIEW |
-| P0 | 中芯国际 | A | [中芯国际2026年半年度报告摘要](https://static.cninfo.com.cn/finalpage/2026-08-28/1225520347.PDF)<br>[港股公告：2026年中期业绩公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225520324.PDF)<br>[中芯国际关于2026年度“提质增效重回报”行动方案的半年度评估报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225520310.PDF)<br>[中芯国际2026年半年度报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225520297.PDF) | 4 | 00:00 | REVIEW |
-| P0 | 天齐锂业 | A | [关于“质量回报双提升”行动方案的进展公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522279.PDF)<br>[2026年半年度报告摘要](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522275.PDF)<br>[2026年半年度报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522276.PDF)<br>[第七届董事会第三次会议决议公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522278.PDF)<br>[2026年半年度非经营性资金占用及其他关联资金往来情况汇总表](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522277.PDF) | 5 | 00:00 | REVIEW |
-| P0 | 德明利 | A | [关于非经常性损益的审核报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522464.PDF)<br>[2026年半年度审计报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522458.PDF)<br>[2026年半年度非经营性资金占用及其他关联方资金往来情况汇总表](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522457.PDF)<br>[第三届董事会第四次会议决议公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522460.PDF)<br>[关于前次募集资金使用情况的专项报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522463.PDF)<br>[关于公司2026年半年度利润分配及资本公积金转增股本预案的公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522454.PDF)<br>[关于聘任公司副总经理的公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522466.PDF)<br>[关于前次募集资金使用情况的审核报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522465.PDF)<br>[2026年半年度报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522456.PDF)<br>[关于召开2026年第四次临时股东会的通知](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522461.PDF)<br>[关于2026年半年度募集资金存放与实际使用情况的专项报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522459.PDF)<br>[关于公司及控股子公司开展应收账款无追索权保理业务的公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522462.PDF)<br>[2026年半年度报告摘要](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522455.PDF) | 13 | 00:00 | REVIEW |
-| P0 | 海尔智家 | A | [海尔智家股份有限公司第十二届董事会第七次会议决议公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522681.PDF)<br>[海尔智家股份有限公司2026年半年度报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522691.PDF)<br>[海尔智家股份有限公司2026年半年度报告_摘要](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522685.PDF)<br>[海尔智家股份有限公司高级管理人员离任公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522672.PDF)<br>[海尔智家股份有限公司关于海尔集团财务有限责任公司2026年半年度风险持续评估报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522693.PDF) | 5 | 00:00 | REVIEW |
-| P1 | 上海复旦 | A | [2026年第三次临时股东会会议资料](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516655.PDF)<br>[关于召开2026年第三次临时股东会的通知](https://static.cninfo.com.cn/finalpage/2026-08-28/1225516630.PDF) | 2 | 00:00 | REVIEW |
-| P1 | 兆易创新 | A | [H股公告-翌日披露报表](https://static.cninfo.com.cn/finalpage/2026-08-28/1225519288.PDF) | 1 | 00:00 | REVIEW |
-| P1 | 国电南瑞 | A | [国电南瑞关于以集中竞价交易方式首次回购公司股份的公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225518029.PDF) | 1 | 00:00 | REVIEW |
+| P0 | 晶合集成 | H | [2026 INTERIM REPORT](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082801168.pdf) | 1 | 17:42 | REVIEW |
+| P1 | 三环集团 | A | [薪酬与考核委员会关于2026年A股员工持股计划相关事项的审核意见](https://static.cninfo.com.cn/finalpage/2026-08-28/1225530760.PDF)<br>[2026年A股员工持股计划（草案）摘要](https://static.cninfo.com.cn/finalpage/2026-08-28/1225530757.PDF)<br>[第十二届董事会第三次会议决议公告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225530761.PDF)<br>[董事会关于2026年A股员工持股计划草案合规性说明](https://static.cninfo.com.cn/finalpage/2026-08-28/1225530759.PDF)<br>[2026年A股员工持股计划（草案）](https://static.cninfo.com.cn/finalpage/2026-08-28/1225530756.PDF)<br>[2026年A股员工持股计划管理办法](https://static.cninfo.com.cn/finalpage/2026-08-28/1225530758.PDF) | 6 | 18:48 | REVIEW |
+| P1 | 兆易创新 | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082801019.pdf) | 1 | 17:24 | REVIEW |
+| P1 | 德明利 | A | [2026年半年度审计报告](https://static.cninfo.com.cn/finalpage/2026-08-28/1225522458.PDF) | 1 | 00:00 | REVIEW |
+| P1 | 海尔智家 | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082801743.pdf) | 1 | 18:51 | DONE |
 
 | 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |
 |---|---|---|---|---|---|---|---|---|
