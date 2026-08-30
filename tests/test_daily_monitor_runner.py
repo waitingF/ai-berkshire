@@ -52,7 +52,7 @@ BACKFILLED_LEDGER_CODES = {
 }
 
 
-def write_triggers(root, *, with_zone=False):
+def write_triggers(root, *, with_zone=False, links=()):
     target = {
         "id": "样例公司",
         "name": "Example Co",
@@ -60,6 +60,7 @@ def write_triggers(root, *, with_zone=False):
         "codes": {"US": "usEXM"},
         "zones": [],
         "events": [],
+        "links": list(links),
         "disclosure_sources": {"sec": {"cik": "1"}},
     }
     if with_zone:
@@ -152,6 +153,55 @@ def options(root, triggers):
 
 
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_report_links_target_to_most_current_existing_research(self):
+        """Selecting the first configured report instead of the newest is a bug."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            company_reports = root / "reports" / "样例公司"
+            company_reports.mkdir(parents=True)
+            (company_reports / "旧报告.md").write_text(
+                "# 旧报告\n\n**数据截止日**：2026-07-31\n",
+                encoding="utf-8",
+            )
+            (company_reports / "最新报告.md").write_text(
+                "# 最新报告\n\n**研究日期 / 数据截止日**：2026-08-25 09:00 CST\n",
+                encoding="utf-8",
+            )
+            (company_reports / "补充报告-20260820.md").write_text(
+                "# 补充报告\n",
+                encoding="utf-8",
+            )
+            triggers = write_triggers(
+                root,
+                with_zone=True,
+                links=(
+                    "reports/样例公司/旧报告.md",
+                    "reports/样例公司/最新报告.md",
+                    "reports/样例公司/补充报告-20260820.md",
+                    "reports/样例公司/不存在.md",
+                ),
+            )
+
+            result = run_monitor(
+                options(root, triggers),
+                services(
+                    FakeAI(ai_result()),
+                    collector=lambda *args, **kwargs: [],
+                ),
+            )
+
+            markdown = result.report_paths.latest.read_text(encoding="utf-8")
+            self.assertIn(
+                "[Example Co](../../reports/%E6%A0%B7%E4%BE%8B%E5%85%AC%E5%8F%B8/"
+                "%E6%9C%80%E6%96%B0%E6%8A%A5%E5%91%8A.md)",
+                markdown,
+            )
+            self.assertNotIn(
+                "[Example Co](../../reports/%E6%A0%B7%E4%BE%8B%E5%85%AC%E5%8F%B8/"
+                "%E6%97%A7%E6%8A%A5%E5%91%8A.md)",
+                markdown,
+            )
+
     def test_watch_scans_every_backfilled_ledger_target_code(self):
         """Deleting a backfilled target must remove at least one watched quote."""
         captured_codes = []

@@ -61,6 +61,60 @@ def result(items):
 
 
 class DailyMonitorReportTest(unittest.TestCase):
+    def test_target_names_use_primary_research_link_in_every_section(self):
+        research_link = "../腾讯/腾讯-earnings-2026Q2.md"
+        markdown = render_markdown(
+            result(
+                [
+                    item(
+                        "price-link",
+                        "price",
+                        "P0",
+                        metadata={
+                            "market": "H",
+                            "zone_label": "加仓带",
+                            "low": 400,
+                            "high": 430,
+                            "direction": "range",
+                            "price": 410,
+                            "research_link": research_link,
+                        },
+                    ),
+                    item(
+                        "summary-link",
+                        "disclosures",
+                        "P0",
+                        metadata={
+                            "kind": "disclosure_summary",
+                            "market": "H",
+                            "announcement_count": 1,
+                            "latest_time": "2026-08-26T18:36:00+08:00",
+                            "updates": [],
+                            "research_link": research_link,
+                        },
+                    ),
+                    item(
+                        "disclosure-link",
+                        "disclosures",
+                        "P1",
+                        metadata={"research_link": research_link},
+                    ),
+                    item(
+                        "other-link",
+                        "other",
+                        "P1",
+                        metadata={"research_link": research_link},
+                    ),
+                ]
+            ),
+            run_date=date(2026, 8, 26),
+        )
+
+        self.assertEqual(
+            markdown.count(f"[腾讯控股]({research_link})"),
+            4,
+        )
+
     def test_price_section_renders_all_items_as_one_table(self):
         markdown = render_markdown(
             result(

@@ -3,11 +3,13 @@
 from __future__ import annotations
 
 import hashlib
+import os
 import re
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import quote
 
 from .models import MonitorItem
 
@@ -33,6 +35,13 @@ PRICE_PATTERN = re.compile(
     re.IGNORECASE,
 )
 DATE_PATTERN = re.compile(r"\b(20\d{2}-\d{2}-\d{2})\b")
+REPORT_DATE_LABEL_PATTERN = re.compile(
+    r"数据截止(?:日|日期)?|研究日期|报告日期|更新日期|最后更新|财报发布日期|发布日期"
+)
+SEPARATED_DATE_PATTERN = re.compile(
+    r"(?<!\d)(20\d{2})(?:-|/|\.|年)(\d{1,2})(?:-|/|\.|月)(\d{1,2})日?(?!\d)"
+)
+COMPACT_DATE_PATTERN = re.compile(r"(?<!\d)(20\d{2})(\d{2})(\d{2})(?!\d)")
 NEXT_CHECK_PATTERN = re.compile(r"下次(?:正式)?(?:检查|复检|动作)|复检(?:日|时间|节点)")
 CLOSED_LEDGER_STATES = ("已关闭", "已完成", "命中", "未命中", "已复盘")
 
@@ -111,6 +120,59 @@ def _candidate_target_files(root: Path, target: dict[str, Any]) -> list[Path]:
         if directory.is_dir():
             files.extend(directory.rglob("*-thesis*.md"))
     return list(dict.fromkeys(path.resolve() for path in files))
+
+
+def _dates_in(value: str) -> list[date]:
+    dates: list[date] = []
+    for pattern in (SEPARATED_DATE_PATTERN, COMPACT_DATE_PATTERN):
+        for match in pattern.finditer(value):
+            try:
+                dates.append(date(*(int(part) for part in match.groups())))
+            except ValueError:
+                continue
+    return dates
+
+
+def _report_recency(path: Path) -> date:
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError):
+        text = ""
+    labeled_dates = [
+        parsed
+        for line in text.splitlines()
+        if REPORT_DATE_LABEL_PATTERN.search(line)
+        for parsed in _dates_in(line)
+    ]
+    if labeled_dates:
+        return max(labeled_dates)
+    filename_dates = _dates_in(path.stem)
+    return max(filename_dates, default=date.min)
+
+
+def primary_research_link(
+    root: str | Path,
+    report_dir: str | Path,
+    target: dict[str, Any],
+) -> str | None:
+    """Return a report-relative link to the most current configured report."""
+    root_path = Path(root).resolve()
+    best_path: Path | None = None
+    best_recency = date.min
+    for relative_value in target.get("links") or []:
+        candidate, error = _safe_local_path(root_path, str(relative_value))
+        if error or candidate is None or not candidate.is_file():
+            continue
+        if candidate.suffix.lower() != ".md":
+            continue
+        recency = _report_recency(candidate)
+        if best_path is None or recency > best_recency:
+            best_path = candidate
+            best_recency = recency
+    if best_path is None:
+        return None
+    relative = os.path.relpath(best_path, start=Path(report_dir).resolve())
+    return quote(Path(relative).as_posix(), safe="/-._~")
 
 
 def build_context(

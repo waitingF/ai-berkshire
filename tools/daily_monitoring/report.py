@@ -137,6 +137,16 @@ def _markdown_cell(value: Any) -> str:
     return str(value).replace("|", "\\|").replace("\n", "<br>")
 
 
+def _target_name(item: MonitorItem) -> str:
+    link = str(item.metadata.get("research_link") or "").strip()
+    if not link:
+        return item.name
+    label = (
+        item.name.replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]")
+    )
+    return f"[{label}]({link})"
+
+
 def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
     visible = [item for item in items if item.priority != "P2"]
     lines = [
@@ -161,7 +171,7 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
             status += "（待人工确认）"
         cells = (
             item.priority,
-            item.name,
+            _target_name(item),
             metadata.get("market") or "-",
             metadata.get("zone_label") or item.title,
             _price_condition(metadata),
@@ -243,7 +253,7 @@ def _render_disclosure_table(
                 latest = latest or "-"
             cells = (
                 item.priority,
-                item.name,
+                _target_name(item),
                 item.metadata.get("market") or "-",
                 "<br>".join(updates) or "-",
                 item.metadata.get("announcement_count") or 0,
@@ -262,7 +272,7 @@ def _render_disclosure_table(
     for item in regular:
         cells = (
             item.priority,
-            item.name,
+            _target_name(item),
             item.title,
             _item_date(item),
             item.status,
@@ -287,7 +297,7 @@ def _render_other_table(
     for item in items:
         cells = (
             item.priority,
-            item.name,
+            _target_name(item),
             item.title,
             _item_date(item),
             item.status,

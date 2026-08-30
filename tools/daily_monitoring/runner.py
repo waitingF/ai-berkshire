@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 
 from .collectors import akshare, cninfo, hkex, sec
 from .config import infer_sources, load_targets
-from .context import build_context, find_completeness_gaps
+from .context import build_context, find_completeness_gaps, primary_research_link
 from .deepseek import AnalysisRequest, DeepSeekClient
 from .disclosures import deduplicate
 from .documents import ExtractedDocument, extract_document, prepare_prompt_chunks, temporary_document
@@ -765,6 +765,26 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
     state["completeness"] = {**preserved_gaps, **current_gaps}
 
     items = _aggregate_todays_disclosures(items, today=options.today)
+    research_links = {
+        str(target.get("id") or ""): link
+        for target in targets
+        if (
+            link := primary_research_link(
+                options.root,
+                options.report_dir,
+                target,
+            )
+        )
+    }
+    items = [
+        replace(
+            item,
+            metadata={**item.metadata, "research_link": research_links[item.target_id]},
+        )
+        if item.target_id in research_links
+        else item
+        for item in items
+    ]
     notifications = tuple(item for item in items if item.notify)
     provisional = RunResult(
         status="DEGRADED" if degraded else "OK",
