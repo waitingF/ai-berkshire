@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-08-29",
+  "updated": "2026-08-30",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -2127,6 +2127,289 @@
           "label": "2026Q3 财报（日期待公司 IR 确认）",
           "note": "核基础设施/数据中心订单兑现、Systems Protection 与 Electrical Connections ROS、应收和存货、FCF，以及 Maverick 的融资、交割和净债务变化",
           "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "澜起科技",
+      "name": "澜起科技",
+      "group": "台账",
+      "codes": {
+        "A": "sh688008",
+        "H": "hk06809"
+      },
+      "source": "标的跟踪表 20260817；补漏登记 20260830",
+      "links": [
+        "reports/澜起科技/澜起科技-research-20260817.md"
+      ],
+      "zones": [
+        {
+          "label": "A股研究性评估带",
+          "dir": "range",
+          "low": 120,
+          "high": 150,
+          "market": "A",
+          "action": "研究性小仓评估",
+          "note": "非自动买入；须连续两季确认新品收入占比、扣非利润和经营现金流持续增长，且韩国调查结果未恶化"
+        },
+        {
+          "label": "H股研究性评估带",
+          "dir": "range",
+          "low": 140,
+          "high": 175,
+          "market": "H",
+          "action": "研究性小仓评估",
+          "note": "按报告的无A/H溢价折算带；须满足与A股相同的盈利、现金流和调查条件"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-28",
+          "type": "财报",
+          "label": "2026H1正式中报复核",
+          "note": "报告发表后补漏；核扣非利润、经营现金流、库存和CXL/PCIe新品收入，并跟进韩国调查",
+          "market": "A"
+        },
+        {
+          "date": "2026-10-31",
+          "type": "财报",
+          "label": "2026Q3正式报告（最晚）",
+          "note": "核新品收入占比、扣非利润、经营现金流、客户集中度和调查进展；正式披露提前发布时由CNINFO自动扫描",
+          "market": "A"
+        }
+      ]
+    },
+    {
+      "id": "云迹科技",
+      "name": "云迹科技",
+      "group": "台账",
+      "codes": {
+        "H": "hk02670"
+      },
+      "source": "标的跟踪表 20260817；补漏登记 20260830",
+      "links": [
+        "reports/云迹科技/云迹科技-research-20260817.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性小仓评估带",
+          "dir": "range",
+          "low": 20,
+          "high": 35,
+          "market": "H",
+          "action": "回避为主，满足条件后复核",
+          "note": "非自动买入；须至少连续两期软件/服务占比提升、毛利修复、CFO接近转正且应收周转改善"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-20",
+          "type": "财报",
+          "label": "2026H1中报复核",
+          "note": "已披露但尚未按原研究框架复核；核软件/服务占比、毛利率、CFO和应收周转",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "Adobe",
+      "name": "Adobe",
+      "group": "台账",
+      "codes": {
+        "US": "usADBE"
+      },
+      "source": "标的跟踪表 20260516；补漏登记 20260830",
+      "links": [
+        "reports/Adobe/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "原报告分批上限",
+          "dir": "below",
+          "high": 247,
+          "market": "US",
+          "action": "分批评估",
+          "note": "仅复现2026-05报告的约US$247结论；须复核CEO交接与AI进展，旧价位不构成自动买入"
+        }
+      ],
+      "events": [
+        {
+          "type": "财报",
+          "label": "下一季报（待公司IR确认日期）",
+          "note": "核FY2026 Q2/Q3业绩、CEO交接与AI产品商业化；SEC正式披露将由每日扫描捕获",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Booking",
+      "name": "Booking Holdings",
+      "group": "台账",
+      "codes": {
+        "US": "usBKNG"
+      },
+      "source": "标的跟踪表 20260516；补漏登记 20260830",
+      "links": [
+        "reports/Booking/最终报告.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "type": "财报",
+          "label": "下一季报（待公司IR确认日期）",
+          "note": "原结论以Forward PE约14.7x为条件，属于估值指标，不设固定价格区间；核收入增速、ROIC、FCF和回购",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "MINIMAX",
+      "name": "MiniMax",
+      "group": "台账",
+      "codes": {
+        "H": "hk00100"
+      },
+      "source": "标的跟踪表 20260409；补漏登记 20260830",
+      "links": [
+        "reports/MINIMAX/MiniMax-深度研究-20260725.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "2026H1业绩披露截止日",
+          "note": "原研究要求盯披露易00100；核ARR斜率、API毛利率、现金消耗、A股发行进展和股东变化。PS<10x为估值条件，不设固定价格区间",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "Progressive",
+      "name": "Progressive",
+      "group": "台账",
+      "codes": {
+        "US": "usPGR"
+      },
+      "source": "标的跟踪表 20260721；补漏登记 20260830",
+      "links": [
+        "reports/Progressive/Progressive-earnings-2026Q2.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-08-04",
+          "type": "复检",
+          "label": "2026Q2 10-Q及电话会复核",
+          "note": "台账仍待触发；核综合成本率、现金流、Property一次性精算因素、保单/保费趋势和管理层交接。CR 92–94%与约15%回撤为条件，不设固定价格区间",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "Uber",
+      "name": "Uber",
+      "group": "台账",
+      "codes": {
+        "US": "usUBER"
+      },
+      "source": "标的跟踪表 20260516；补漏登记 20260830",
+      "links": [
+        "reports/Uber/最终报告.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "type": "财报",
+          "label": "下一季报（待公司IR确认日期）",
+          "note": "原结论以PE 11–12x/市值约US$1,300亿为条件，属于估值指标，不设固定价格区间；核核心业务增长、FCF、自动驾驶进展和监管风险",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "思格新能",
+      "name": "思格新能",
+      "group": "台账",
+      "codes": {
+        "H": "hk06656"
+      },
+      "source": "标的跟踪表 20260409；补漏登记 20260830",
+      "links": [
+        "reports/思格新能/思格新能-team-20260409/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "稳健型研究性评估带",
+          "dir": "range",
+          "low": 250,
+          "high": 280,
+          "market": "H",
+          "action": "观望，满足条件后评估",
+          "note": "非自动买入；须至少两个上市后报告期验证毛利率稳定、第二增长曲线和华为竞争影响"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-08-31",
+          "type": "财报",
+          "label": "上市后首份中期业绩披露截止日",
+          "note": "作为两期验证的第一个节点，核毛利率、单品依赖、海外销售和竞争格局",
+          "market": "H"
+        }
+      ]
+    },
+    {
+      "id": "深科技",
+      "name": "深科技",
+      "group": "台账",
+      "codes": {
+        "A": "sz000021"
+      },
+      "source": "标的跟踪表 20260720；补漏登记 20260830",
+      "links": [
+        "reports/深科技/最终报告.md"
+      ],
+      "zones": [
+        {
+          "label": "稳健型研究性评估带",
+          "dir": "range",
+          "low": 24,
+          "high": 28,
+          "market": "A",
+          "action": "观望，满足条件后评估",
+          "note": "非自动买入；须财报量化客户/份额或盈利上修确认，且接受DRAM周期和单一客户风险"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-31",
+          "type": "财报",
+          "label": "2026Q3正式报告（最晚）",
+          "note": "核客户/份额证据、毛利率、现金流和DRAM周期；正式披露提前发布时由CNINFO自动扫描",
+          "market": "A"
+        }
+      ]
+    },
+    {
+      "id": "群核科技",
+      "name": "群核科技",
+      "group": "台账",
+      "codes": {
+        "H": "hk00068"
+      },
+      "source": "标的跟踪表 20260409；补漏登记 20260830",
+      "links": [
+        "reports/群核科技/群核科技-team-20260409/最终报告.md"
+      ],
+      "zones": [],
+      "events": [
+        {
+          "date": "2026-08-27",
+          "type": "财报",
+          "label": "上市后首份2026H1业绩复核",
+          "note": "已披露但尚未按台账结论复核；核收入增速、经调整利润、空间智能业务、现金消耗和解禁/股东变化。原招股价不设为当前价格区间",
+          "market": "H"
         }
       ]
     }

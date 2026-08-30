@@ -5,6 +5,7 @@ from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
+from tools.daily_monitoring.config import load_targets
 from tools.daily_monitoring.deepseek import DeepSeekAnalysis
 from tools.daily_monitoring.documents import ExtractedDocument
 from tools.daily_monitoring.models import Disclosure, FallbackClue, MonitorItem, VerifiedFact
@@ -22,6 +23,33 @@ from tools.daily_monitoring.state import empty_state
 OFFICIAL_URL = (
     "https://www.sec.gov/Archives/edgar/data/1/000000000126000001/report.htm"
 )
+REPO = Path(__file__).resolve().parents[1]
+LIVE_TRIGGERS = REPO / "data" / "triggers.json"
+BACKFILLED_LEDGER_TARGET_IDS = (
+    "澜起科技",
+    "云迹科技",
+    "Adobe",
+    "Booking",
+    "MINIMAX",
+    "Progressive",
+    "Uber",
+    "思格新能",
+    "深科技",
+    "群核科技",
+)
+BACKFILLED_LEDGER_CODES = {
+    "sh688008",
+    "hk06809",
+    "hk02670",
+    "usADBE",
+    "usBKNG",
+    "hk00100",
+    "usPGR",
+    "usUBER",
+    "hk06656",
+    "sz000021",
+    "hk00068",
+}
 
 
 def write_triggers(root, *, with_zone=False):
@@ -124,6 +152,44 @@ def options(root, triggers):
 
 
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_watch_scans_every_backfilled_ledger_target_code(self):
+        """Deleting a backfilled target must remove at least one watched quote."""
+        captured_codes = []
+
+        def quote_provider(codes):
+            captured_codes.extend(codes)
+            return {code: {"price": 1_000.0} for code in codes}
+
+        services = MonitorServices(
+            quote_provider=quote_provider,
+            collectors={},
+            http=object(),
+            document_extractor=lambda *args, **kwargs: None,
+            deepseek=None,
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            result = run_monitor(
+                MonitorOptions(
+                    root=REPO,
+                    triggers_file=LIVE_TRIGGERS,
+                    state_file=root / "state.json",
+                    report_dir=root / "reports",
+                    today=date(2026, 8, 30),
+                    no_ai=True,
+                    watch=BACKFILLED_LEDGER_TARGET_IDS,
+                ),
+                services,
+            )
+
+        self.assertEqual(set(captured_codes), BACKFILLED_LEDGER_CODES)
+        self.assertEqual(
+            {target["id"] for target in load_targets(LIVE_TRIGGERS)}
+            & set(BACKFILLED_LEDGER_TARGET_IDS),
+            set(BACKFILLED_LEDGER_TARGET_IDS),
+        )
+        self.assertEqual(result.status, "OK")
+
     def test_disclosure_summary_uses_highest_priority_in_group(self):
         def disclosure_item(fingerprint, priority, published_at):
             return MonitorItem(
