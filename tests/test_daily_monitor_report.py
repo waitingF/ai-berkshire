@@ -178,7 +178,7 @@ class DailyMonitorReportTest(unittest.TestCase):
             markdown,
         )
         self.assertIn(
-            "P0=到达研究条件或越过估值警戒线；P1=距对应边界≤5%；P2 不展示",
+            "P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与已越警戒线事项不展示",
             markdown,
         )
         self.assertNotIn("above", markdown)
@@ -193,7 +193,7 @@ class DailyMonitorReportTest(unittest.TestCase):
         self.assertNotIn("### [P0] 腾讯控股", markdown)
         self.assertNotIn("Far Away Co", markdown)
 
-    def test_above_warning_is_rendered_as_crossed_warning_line(self):
+    def test_above_warning_is_hidden_from_price_section_and_summary(self):
         markdown = render_markdown(
             result(
                 [
@@ -205,6 +205,7 @@ class DailyMonitorReportTest(unittest.TestCase):
                         name="Walmart",
                         title="估值警戒线：WARN",
                         status="WARN",
+                        notify=True,
                         metadata={
                             "market": "US",
                             "zone_label": "估值警戒线",
@@ -219,11 +220,10 @@ class DailyMonitorReportTest(unittest.TestCase):
             run_date=date(2026, 8, 27),
         )
 
-        self.assertIn(
-            "| P0 | Walmart | US | 估值警戒线 | ≥ 120.00 | 122.00 | 已越警戒线 | WARN |",
-            markdown,
-        )
-        self.assertIn("P0=到达研究条件或越过估值警戒线", markdown)
+        self.assertNotIn("Walmart", markdown)
+        self.assertNotIn("| WARN |", markdown)
+        self.assertIn("P0 0 · P1 0 · 新增价格 0", markdown)
+        self.assertIn("无 P0/P1 建仓或关注价格事项", markdown)
 
     def test_disclosure_section_renders_table_and_preserves_details(self):
         markdown = render_markdown(
@@ -343,6 +343,30 @@ class DailyMonitorReportTest(unittest.TestCase):
         self.assertIn("`/thesis-tracker 腾讯`", markdown)
         self.assertIn("复核竞争格局", markdown)
         self.assertNotIn("### [P1] 腾讯控股｜论文复检", markdown)
+
+    def test_other_section_omits_resolved_items(self):
+        markdown = render_markdown(
+            result(
+                [
+                    item(
+                        "resolved-gap",
+                        "other",
+                        "P2",
+                        target_id="Keyence",
+                        name="Keyence",
+                        title="本地研究链接失效：已解除",
+                        status="RESOLVED",
+                        resolved=True,
+                        notify=True,
+                    )
+                ]
+            ),
+            run_date=date(2026, 8, 31),
+        )
+
+        self.assertNotIn("Keyence", markdown)
+        self.assertNotIn("已解除", markdown)
+        self.assertIn("## 三、其他监控\n\n无新增或持续事项。", markdown)
 
     def test_report_has_exactly_three_business_sections(self):
         markdown = render_markdown(

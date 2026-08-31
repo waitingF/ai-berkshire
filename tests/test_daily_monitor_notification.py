@@ -63,10 +63,12 @@ class NotificationContractTest(unittest.TestCase):
 
         title, message = module.build_message(monitor_payload())
 
-        self.assertIn("价格变化 0｜正式披露 0 组｜财报节点 1｜其他 1", message)
-        self.assertIn("今日无新增进入、接近或离开价格监控条件的标的", message)
+        self.assertIn("价格变化 0｜正式披露 0 组｜财报节点 1｜其他 0", message)
+        self.assertIn("今日无新增进入或接近建仓/关注条件的标的", message)
         self.assertIn("腾讯控股", message)
         self.assertNotIn("持续状态", message)
+        self.assertNotIn("美团", message)
+        self.assertNotIn("缺口解除", message)
         self.assertLessEqual(len(title), 32)
 
     def test_missing_sendkey_skips_without_failure(self):
@@ -219,7 +221,7 @@ class NotificationContractTest(unittest.TestCase):
         self.assertIn("| P0 | 美团-W | 2026中报：今天到期 | TODAY | 核减亏斜率 |", message)
         self.assertNotIn("| 标的 | 市场 | 事项 | 原因 |", message)
 
-    def test_above_warning_notification_says_crossed_warning_line(self):
+    def test_above_warning_is_not_included_or_sent(self):
         module = load_module()
         payload = {
             "date": "2026-08-27",
@@ -249,10 +251,10 @@ class NotificationContractTest(unittest.TestCase):
 
         _, message = module.build_message(payload)
 
-        self.assertIn(
-            "| P0 | Walmart | US | 估值警戒线 ≥120.00 | 122.00 | 已越警戒线 | WARN |",
-            message,
-        )
+        self.assertNotIn("Walmart", message)
+        self.assertIn("价格变化 0", message)
+        self.assertIn("今日无新增进入或接近建仓/关注条件的标的", message)
+        self.assertEqual(module.send_notification(payload, sendkey="secret"), "SKIPPED")
 
     def test_degraded_message_explains_nested_ai_failure(self):
         module = load_module()

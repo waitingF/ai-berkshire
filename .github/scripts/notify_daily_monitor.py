@@ -165,7 +165,11 @@ def _aggregate_changed_disclosures(
 
 def _changed_items(payload: dict[str, Any]) -> list[dict[str, Any]]:
     changed = [
-        item for item in payload.get("items", []) if item.get("notify") is True
+        item
+        for item in payload.get("items", [])
+        if item.get("notify") is True
+        and not item.get("resolved")
+        and not (item.get("section") == "price" and item.get("status") == "WARN")
     ]
     try:
         today = date.fromisoformat(str(payload.get("date") or ""))
@@ -313,7 +317,7 @@ def build_message(payload: dict[str, Any]) -> tuple[str, str]:
             ]
         )
     else:
-        lines.append("今日无新增进入、接近或离开价格监控条件的标的。")
+        lines.append("今日无新增进入或接近建仓/关注条件的标的。")
 
     lines.extend(["", "## 二、财报与正式披露监控", "", "### 正式披露", ""])
     if disclosure_summaries:
@@ -371,7 +375,7 @@ def build_message(payload: dict[str, Any]) -> tuple[str, str]:
                 f"{_safe_cell(item.get('why_now'))[:120]} |"
             )
     else:
-        lines.append("今日无新增研究缺口或缺口解除。")
+        lines.append("今日无新增研究缺口。")
 
     lines.extend(["", "仅用于研究复核，不构成买卖或仓位建议。"])
     return title, "\n".join(lines)

@@ -55,7 +55,13 @@ def _workflow_owners(items: Iterable[MonitorItem]) -> set[str]:
 
 
 def _summary(result: RunResult) -> str:
-    changed = [item for item in result.items if item.notify and not item.resolved]
+    changed = [
+        item
+        for item in result.items
+        if item.notify
+        and not item.resolved
+        and not (item.section == "price" and item.status == "WARN")
+    ]
     p0 = sum(item.priority == "P0" for item in changed)
     p1 = sum(item.priority == "P1" for item in changed)
     prices = sum(item.section == "price" for item in changed)
@@ -148,13 +154,15 @@ def _target_name(item: MonitorItem) -> str:
 
 
 def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
-    visible = [item for item in items if item.priority != "P2"]
+    visible = [
+        item for item in items if item.priority != "P2" and item.status != "WARN"
+    ]
     lines = [
-        "> 价格优先级：P0=到达研究条件或越过估值警戒线；P1=距对应边界≤5%；P2 不展示。优先级只表示复核紧迫度，不代表交易信号。",
+        "> 价格优先级：P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与已越警戒线事项不展示。优先级只表示复核紧迫度，不代表交易信号。",
         "",
     ]
     if not visible:
-        lines.extend(["无 P0/P1 价格事项（P2 已隐藏）。", ""])
+        lines.extend(["无 P0/P1 建仓或关注价格事项。", ""])
         return lines
     lines.extend(
         [
@@ -331,6 +339,8 @@ def render_markdown(result: RunResult, *, run_date: date | None = None) -> str:
     for section, heading in SECTION_HEADINGS:
         lines.extend([heading, ""])
         rows = _sorted_items(item for item in result.items if item.section == section)
+        if section == "other":
+            rows = [item for item in rows if not item.resolved]
         if not rows:
             lines.extend(["无新增或持续事项。", ""])
             continue
