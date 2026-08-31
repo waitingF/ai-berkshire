@@ -423,6 +423,16 @@ Cursor 会根据 skill 的 `description` 自动匹配；也可以明确点名 sk
 
 `python3 tools/daily_monitor.py` 在一份报告中输出“价格监控 / 财报与正式披露监控 / 其他监控”。正式披露一期只接入 A 股巨潮、港股 HKEXnews 和美股 SEC EDGAR；AKShare 仅作备用线索，不做一般网络搜索。PDF 和完整正文只在运行时临时处理，不写入仓库。
 
+首次在本机运行监控或处理 PDF，可创建隔离运行时：
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-monitoring.txt -r requirements-pages.txt pypdf pdfplumber
+```
+
+`scripts/prepush-check.sh` 与 `scripts/validate-monitoring.sh` 会自动优先使用 `.venv`；需要显式指定其他解释器时可设置 `AI_BERKSHIRE_PYTHON`，需要将虚拟环境放在其他位置时可设置 `AI_BERKSHIRE_VENV`。
+直接执行文档中原有的 `python3 ...` 命令前，先在该终端运行 `source .venv/bin/activate`。
+
 GitHub Actions `.github/workflows/daily-monitor.yml` 每个工作日 17:30（Asia/Shanghai）运行。仓库 Secrets 配置 `DEEPSEEK_API_KEY`、`EDGAR_IDENTITY`（SEC 免费且无 API Key，这里填写真实姓名和联系邮箱）、`DAILY_MONITOR_TOKEN`（`waitingF` 的 fine-grained PAT，仅授权本仓库 Contents 读写，用于自动提交日报）和可选的 `SERVERCHAN_SENDKEY`；仓库变量 `DEEPSEEK_MODEL` 可覆盖默认 `deepseek-v4-flash`。DeepSeek 只做增量研究分流，不自动给出买卖或仓位结论。
 
 安全本地验证：

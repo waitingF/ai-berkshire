@@ -6,21 +6,25 @@
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
+run_python() {
+  bash scripts/run-local-python.sh "$@"
+}
+
 echo "═══ 步骤 1/4：触发配置完整性校验（--check，纯本地，无网络无通知）═══"
-python3 tools/trigger_scanner.py --check
+run_python tools/trigger_scanner.py --check
 
 echo
 echo "═══ 步骤 2/4：每日监控配置校验（--check，纯本地，无网络无通知）═══"
-python3 tools/daily_monitor.py --check
+run_python tools/daily_monitor.py --check
 
 echo
 echo "═══ 步骤 3/4：全量扫描（默认模式，只写日报，零通知）═══"
-python3 tools/trigger_scanner.py 2>&1 | tail -8
+run_python tools/trigger_scanner.py 2>&1 | tail -8
 
 echo
 echo "═══ 步骤 4/4：JSON 输出校验 + 复核视图（供 GitHub Actions 消费）═══"
-python3 tools/trigger_scanner.py --json 2>/dev/null > /tmp/scan-preview.json
-python3 - <<'EOF'
+run_python tools/trigger_scanner.py --json 2>/dev/null > /tmp/scan-preview.json
+run_python - <<'EOF'
 import json
 d = json.load(open("/tmp/scan-preview.json"))
 print(f"  扫描标的：{d['scanned_targets']} | 触发：{d['triggered']} | 接近：{d['near']} | 事件提醒：{d['events_total']}")

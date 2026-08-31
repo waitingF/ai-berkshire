@@ -49,6 +49,7 @@ exit 0
             fake_python.chmod(fake_python.stat().st_mode | stat.S_IXUSR)
             env = os.environ.copy()
             env["PATH"] = f"{tmp}:{env['PATH']}"
+            env["AI_BERKSHIRE_PYTHON"] = str(fake_python)
 
             result = run(["bash", str(VALIDATOR), "--fast"], cwd=ROOT, env=env)
 

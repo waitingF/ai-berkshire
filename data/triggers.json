@@ -1,8 +1,60 @@
 {
   "schema": 1,
-  "updated": "2026-08-30",
+  "updated": "2026-08-31",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
+    {
+      "id": "RKLB",
+      "name": "Rocket Lab",
+      "group": "台账",
+      "codes": {
+        "US": "usRKLB"
+      },
+      "source": "Rocket Lab 投资研究 20260831",
+      "links": [
+        "reports/RKLB/RKLB-research-20260831.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 25,
+          "high": 35,
+          "market": "US",
+          "action": "观望，满足条件后分批评估",
+          "note": "非自动买入；须Neutron资格与首飞路径未结构性破坏、Iridium审批和融资可控、毛利与现金消耗改善、交易后完全稀释股数大致不超过720m"
+        },
+        {
+          "label": "估值警戒线",
+          "dir": "above",
+          "low": 60,
+          "market": "US",
+          "action": "不追高，复核仓位",
+          "note": "若Neutron、Iridium整合和每股现金流证据未同步增强，完全参与口径估值缺乏10%回报安全边际"
+        }
+      ],
+      "events": [
+        {
+          "type": "财报",
+          "label": "2026Q3财报（日期待公司IR确认）",
+          "note": "核收入250-265m指引、GAAP毛利率29%-31%、Adjusted EBITDA亏损、backlog转化、现金消耗及稀释股数",
+          "market": "US"
+        },
+        {
+          "date": "2026-12-31",
+          "type": "复检",
+          "label": "Neutron Q4 2026到台/首飞窗口复核",
+          "note": "公司10-Q称年末发射窗口收窄；核一级结构资格、Archimedes测试、上台与首飞结果",
+          "market": "US"
+        },
+        {
+          "type": "复检",
+          "label": "Iridium交易审批与融资条款",
+          "note": "跟踪Iridium股东和监管审批、3.6bn美元桥贷置换成本、最终交换比例与并表时间",
+          "market": "US"
+        }
+      ]
+    },
     {
       "id": "腾讯",
       "name": "腾讯控股",
@@ -83,9 +135,11 @@
       "codes": {
         "H": "hk03690"
       },
-      "source": "重点标的看板 2026-08-12",
+      "source": "美团 2026H1 财报精读与研究报告 2026-08-31",
       "links": [
-        "reports/美团/美团-thesis.md"
+        "reports/美团/美团-thesis.md",
+        "reports/美团/美团-earnings-2026H1.md",
+        "reports/美团/美团-research-20260831.md"
       ],
       "zones": [
         {
@@ -95,15 +149,23 @@
           "high": 70,
           "market": "H",
           "action": "评估加仓",
-          "note": "或中报确认UE/补贴收窄后按新证据重估"
+          "note": "不是自动买入：须Q3再次验证核心本地商业盈利、销售营销费用率不明显反弹且份额红线未触"
         }
       ],
       "events": [
         {
-          "date": "2026-08-27",
+          "date": "2026-08-28",
           "type": "财报",
           "label": "2026中报",
-          "note": "截至2026-08-29，HKEX 03690 在 8 月未检索到正式中报；保留待办，待公司披露后核Q2/H1减亏斜率、份额硬数据及销售费用率。",
+          "note": "已核：H1收入+10.1%、调整后净亏24.44亿；Q2核心本地商业利润率7.9%，但集团Q2含34.94亿其他收益，份额硬数据仍未披露。",
+          "market": "H",
+          "done": true
+        },
+        {
+          "date": "2026-11-27",
+          "type": "财报",
+          "label": "2026Q3财报（市场日期，待公司IR确认）",
+          "note": "核核心本地商业能否连续盈利、销售营销费用率/其他收益、外卖份额硬数据、新业务亏损率及含租赁净现金。",
           "market": "H"
         }
       ]
