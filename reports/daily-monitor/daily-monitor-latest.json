@@ -3,7 +3,7 @@
   "date": "2026-09-01",
   "timezone": "Asia/Shanghai",
   "status": "DEGRADED",
-  "summary": "P0 0 · P1 11 · 新增价格 1 · 新增披露 10 · 异常 0",
+  "summary": "P0 0 · P1 6 · 新增价格 1 · 新增披露 5 · 异常 0",
   "items": [
     {
       "fingerprint": "0c85a9f3d7ac0b149d52585f0e459afb9a582abebeb710068e9863ca3782aa2d",
@@ -12,7 +12,7 @@
       "target_id": "AppLovin",
       "name": "AppLovin",
       "title": "分批复核带：TRIGGERED",
-      "why_now": "现价 312.06 ≤ 区间上界 330.00（区间内或以下）",
+      "why_now": "现价 311.54 ≤ 区间上界 330.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -24,7 +24,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 312.06,
+        "price": 311.54,
         "market": "US",
         "zone_label": "分批复核带",
         "low": 300,
@@ -41,7 +41,7 @@
       "target_id": "NovoNordisk",
       "name": "Novo Nordisk",
       "title": "观察仓带：TRIGGERED",
-      "why_now": "现价 45.33 ≤ 区间上界 46.00（区间内或以下）",
+      "why_now": "现价 45.75 ≤ 区间上界 46.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -53,7 +53,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 45.33,
+        "price": 45.75,
         "market": "US",
         "zone_label": "观察仓带",
         "low": 44,
@@ -70,7 +70,7 @@
       "target_id": "Reddit",
       "name": "Reddit",
       "title": "小仓跟踪带：TRIGGERED",
-      "why_now": "现价 147.81 ≤ 区间上界 165.00（区间内或以下）",
+      "why_now": "现价 146.22 ≤ 区间上界 165.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -82,7 +82,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 147.81,
+        "price": 146.22,
         "market": "US",
         "zone_label": "小仓跟踪带",
         "low": 145,
@@ -99,7 +99,7 @@
       "target_id": "RKLB",
       "name": "Rocket Lab",
       "title": "估值警戒线：WARN",
-      "why_now": "现价 63.92 ≥ 60.00（警戒线）",
+      "why_now": "现价 62.24 ≥ 60.00（警戒线）",
       "status": "WARN",
       "verified_facts": [],
       "source_urls": [],
@@ -111,7 +111,7 @@
       "metadata": {
         "previous_status": "WARN",
         "current_status": "WARN",
-        "price": 63.92,
+        "price": 62.24,
         "market": "US",
         "zone_label": "估值警戒线",
         "low": 60,
@@ -264,7 +264,7 @@
       "target_id": "腾讯音乐",
       "name": "腾讯音乐",
       "title": "分批评估区：TRIGGERED",
-      "why_now": "现价 8.27 ≤ 区间上界 8.50（区间内或以下）",
+      "why_now": "现价 8.23 ≤ 区间上界 8.50（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -276,7 +276,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 8.27,
+        "price": 8.23,
         "market": "US",
         "zone_label": "分批评估区",
         "low": 6,
@@ -322,7 +322,7 @@
       "target_id": "lululemon",
       "name": "lululemon",
       "title": "观察仓带：NEAR",
-      "why_now": "现价 120.26，距触发线 119.00 5% 内",
+      "why_now": "现价 120.82，距触发线 119.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -334,7 +334,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 120.26,
+        "price": 120.82,
         "market": "US",
         "zone_label": "观察仓带",
         "low": null,
@@ -345,17 +345,46 @@
       }
     },
     {
-      "fingerprint": "57dc3d0b9121f156249f33f1cd9a32190ac89853c0867eca95e586715a3a1aee",
+      "fingerprint": "3b1b0b1d213241dba3cba1647bee76a9a64a7a6df6a224239c02fe31c2538912",
+      "section": "price",
+      "priority": "P1",
+      "target_id": "Qualcomm",
+      "name": "Qualcomm",
+      "title": "理想买入带：NEAR",
+      "why_now": "现价 162.48，距触发线 160.00 5% 内",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "FAR",
+        "current_status": "NEAR",
+        "price": 162.48,
+        "market": "US",
+        "zone_label": "理想买入带",
+        "low": null,
+        "high": 160,
+        "direction": "below",
+        "note": "PE≤15x约$160或恐慌下跌",
+        "research_link": "../Qualcomm/Qualcomm-earnings-FY2026Q3.md"
+      }
+    },
+    {
+      "fingerprint": "f3deccaa2e0a0816fe4cceadb3643cf098df783ad8bec733c685183f0df20f8e",
       "section": "disclosures",
       "priority": "P1",
       "target_id": "三环集团",
       "name": "三环集团",
       "title": "1 项公告更新",
-      "why_now": "翌日披露报表",
+      "why_now": "新增公告，内容待确认",
       "status": "REVIEW",
       "verified_facts": [],
       "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101166.pdf"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103364.htm"
       ],
       "next_workflow": null,
       "needs_human_review": true,
@@ -366,118 +395,34 @@
         "kind": "disclosure_summary",
         "market": "H",
         "date": "2026-09-01",
-        "published_at": "01/09/2026 16:19",
-        "latest_time": "2026-09-01T16:19:00+08:00",
+        "published_at": "01/09/2026 19:30",
+        "latest_time": "2026-09-01T19:30:00+08:00",
         "announcement_count": 1,
         "updates": [
           {
-            "summary": "翌日披露报表",
-            "title": "Next Day Disclosure Return",
-            "published_at": "01/09/2026 16:19",
+            "summary": "新增公告，内容待确认",
+            "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
+            "published_at": "01/09/2026 19:30",
             "priority": "P1",
             "status": "DONE",
-            "why_now": "该正式披露涉及公司于2026年9月1日回购1,306,500股A股，需纳入研究复核。",
+            "why_now": "港交所披露一份正式公告（中文版），但页面仅给出标题，未提供公告正文或具体内容；该公告可能与H股或A股重大事项相关，需要立即核实公告全文及影响。",
             "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101166.pdf"
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103364.htm"
             ],
-            "verified_facts": [
-              {
-                "fact": "2026年9月1日，公司回购1,306,500股A股，回购价格109.322元/股，回购股份计入库存股。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101166.pdf",
-                "page": 1,
-                "confidence": "high"
-              }
-            ],
+            "verified_facts": [],
             "next_workflow": "/news-pulse",
             "needs_human_review": true,
             "limitations": [
-              "公告为港交所披露，未包含公司A股公告原文，需进一步核实。",
-              "回购价格及动机需结合公司现金流和后续公告分析。"
+              "公告正文未在本次数据中提供，无法核实具体内容。",
+              "官方URL指向港交所披露易，但仅有英文占位符，中文版可能尚未同步。",
+              "缺乏公告发布日期、具体事项等关键细节，无法评估对研究论点的影响。"
             ],
             "document_type": "正式公告",
             "source": "hkex",
-            "thesis_impacts": [
-              "回购价格109.322元高于当前研究报告中定义的70-85元分批建仓区间，且高于中性目标价90.3元，可能影响对管理层资本配置的评估。",
-              "回购股份计入库存股而非注销，可能影响每股指标和未来股本变动。"
-            ]
+            "thesis_impacts": []
           }
         ],
         "research_link": "../%E4%B8%89%E7%8E%AF%E9%9B%86%E5%9B%A2/%E4%B8%89%E7%8E%AF%E9%9B%86%E5%9B%A2-research-20260803.md"
-      }
-    },
-    {
-      "fingerprint": "1db0eda8cfd5e12ae4bbba43cb1e3baf8e4fa023bb3db90e86214a8fd1afc624",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "上海复旦",
-      "name": "上海复旦",
-      "title": "1 项公告更新",
-      "why_now": "Monthly Return of Equity Issuer on Movements in Securities f…",
-      "status": "REVIEW",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090100341.pdf"
-      ],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "disclosure_summary",
-        "market": "H",
-        "date": "2026-09-01",
-        "published_at": "01/09/2026 10:27",
-        "latest_time": "2026-09-01T10:27:00+08:00",
-        "announcement_count": 1,
-        "updates": [
-          {
-            "summary": "Monthly Return of Equity Issuer on Movements in Securities f…",
-            "title": "Monthly Return of Equity Issuer on Movements in Securities for the Month Ended 31 August 2026",
-            "published_at": "01/09/2026 10:27",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "该正式披露为港交所月度权益变动申报，显示截至2026年8月31日公司已发行股本未发生变化（H股284,330,000股，A股539,389,250股），且确认H股公众持股量符合要求。由于公司2026H1正式财报尚未披露，此公告虽为程序性文件，但确认了公司股本结构稳定，可作为研究复核的增量事实。",
-            "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090100341.pdf"
-            ],
-            "verified_facts": [
-              {
-                "fact": "截至2026年8月31日，公司已发行H股284,330,000股，A股539,389,250股，总授权股本为82,371,925元人民币，与上月末持平。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090100341.pdf",
-                "page": 1,
-                "confidence": "high"
-              },
-              {
-                "fact": "公司确认截至2026年8月31日，H股公众持股量已符合适用的最低公众持股量要求（主板规则13.32D(1)/19A.28D(1)，适用5%的公众持股比例）。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090100341.pdf",
-                "page": 2,
-                "confidence": "high"
-              },
-              {
-                "fact": "截至2026年8月31日，公司无库存股份（treasury shares）。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090100341.pdf",
-                "page": 2,
-                "confidence": "high"
-              }
-            ],
-            "next_workflow": "/earnings-review",
-            "needs_human_review": true,
-            "limitations": [
-              "该公告为月度例行披露，仅涉及股本变动和公众持股量，不包含任何财务业绩、现金流、存货或减值信息；2026H1正式财报仍未披露。",
-              "公告为港交所文件，未提供A股市场对应的同源确认，但同股同权、总股本由两地共同构成，足够支撑本次核实。",
-              "未能从公告中获取业绩预告、管理层变动或关联交易等额外信息，本公告对投资论点的影响有限。"
-            ],
-            "document_type": "正式公告",
-            "source": "hkex",
-            "thesis_impacts": [
-              "股本结构无变化，不改变现有研究对总股本和分析基准的假设。",
-              "公众持股量合规确认，未触发任何流动性或股权分散风险，对原研究中的治理和资本结构担忧无直接影响。",
-              "未涉及2026H1财务数据，业绩与资产减值等核心待验证事件仍维持未决状态。"
-            ]
-          }
-        ],
-        "research_link": "../%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6/%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6-earnings-2026H1.md"
       }
     },
     {
@@ -510,17 +455,17 @@
       }
     },
     {
-      "fingerprint": "cc50c16ddfaf16b516398afbf63c1d228fe65bf2fc7e077f94024a875adc22b9",
+      "fingerprint": "4888a90bf039e64a21d60ec347de2f68f2852ee71e756cdb25264135d68a3a0d",
       "section": "disclosures",
       "priority": "P1",
-      "target_id": "兆易创新",
-      "name": "兆易创新",
+      "target_id": "云迹科技",
+      "name": "云迹科技",
       "title": "1 项公告更新",
-      "why_now": "新增公告，内容待确认",
+      "why_now": "ANNOUNCEMENT UPDATE ON THE EXPECTED TIMETABLE REGARDING THE …",
       "status": "REVIEW",
       "verified_facts": [],
       "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102876.htm"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103473.pdf"
       ],
       "next_workflow": null,
       "needs_human_review": true,
@@ -531,33 +476,295 @@
         "kind": "disclosure_summary",
         "market": "H",
         "date": "2026-09-01",
-        "published_at": "01/09/2026 17:55",
-        "latest_time": "2026-09-01T17:55:00+08:00",
+        "published_at": "01/09/2026 20:07",
+        "latest_time": "2026-09-01T20:07:00+08:00",
         "announcement_count": 1,
         "updates": [
           {
-            "summary": "新增公告，内容待确认",
-            "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
-            "published_at": "01/09/2026 17:55",
+            "summary": "ANNOUNCEMENT UPDATE ON THE EXPECTED TIMETABLE REGARDING THE …",
+            "title": "ANNOUNCEMENT\nUPDATE ON THE EXPECTED TIMETABLE REGARDING THE PROPOSED\nSHARE SUBDIVISION AND EXCHANGE OF SHARE CERTIFICATES",
+            "published_at": "01/09/2026 20:07",
             "priority": "P1",
-            "status": "DONE",
-            "why_now": "HKEXnews 发布兆易创新（03986.HK）公告，可能是正式中报或重大披露，需要立即核验。",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
             "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102876.htm"
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103473.pdf"
             ],
             "verified_facts": [],
-            "next_workflow": "/news-pulse",
+            "next_workflow": null,
             "needs_human_review": true,
             "limitations": [
-              "公告片段仅为占位文本，未提供具体标题或内容，无法确认是否包含中期业绩。",
-              "未取得公告全文，后续需从官方链接抓取并精读。"
+              "DeepSeek 输出校验失败: next_workflow 不在允许列表"
             ],
             "document_type": "正式公告",
             "source": "hkex",
             "thesis_impacts": []
           }
         ],
-        "research_link": "../%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0/%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0-earnings-2026H1.md"
+        "research_link": "../%E4%BA%91%E8%BF%B9%E7%A7%91%E6%8A%80/%E4%BA%91%E8%BF%B9%E7%A7%91%E6%8A%80-earnings-2026H1.md"
+      }
+    },
+    {
+      "fingerprint": "f0aacb2cf56dbbbc9d163655f07ee09724547e50ecc61958100cb0c8db3d7c26",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "北京君正",
+      "name": "北京君正",
+      "title": "5 项公告更新",
+      "why_now": "Letter and Reply Form to Registered Shareholders - Arrangeme…；Letter and Reply Form to Non-registered Shareholders - Arran…；(1) COMPLETION OF CERTAIN INVESTMENT PROJECT FUNDED BY PROCE…；FORM OF PROXY FOR THE FIRST EXTRAORDINARY GENERAL MEETING OF…；NOTICE OF THE FIRST EXTRAORDINARY GENERAL MEETING OF 2026",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103605.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103607.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103611.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103619.pdf",
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103615.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "H",
+        "date": "2026-09-01",
+        "published_at": "01/09/2026 21:14",
+        "latest_time": "2026-09-01T21:14:00+08:00",
+        "announcement_count": 5,
+        "updates": [
+          {
+            "summary": "Letter and Reply Form to Registered Shareholders - Arrangeme…",
+            "title": "Letter and Reply Form to Registered Shareholders - Arrangement of Electronic Dissemination of Corporate Communications",
+            "published_at": "01/09/2026 21:12",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该公告为常规的电子发布公司通讯安排及回条，属于程序性披露，对投资论点无实质影响。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103605.pdf"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": false,
+            "limitations": [
+              "公告为行政性安排，不包含财务或运营数据。",
+              "无法从该公告验证公司基本面。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "Letter and Reply Form to Non-registered Shareholders - Arran…",
+            "title": "Letter and Reply Form to Non-registered Shareholders - Arrangement of Electronic Dissemination of Corporate Communications",
+            "published_at": "01/09/2026 21:12",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式披露涉及公司通讯的电子发布安排，属于常规公司治理事项，但作为正式公告需要进入研究复核流程。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103607.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "北京君正集成电路股份有限公司（股份代号：3223）于2026年9月2日向非登记股东发出关于以电子方式发布公司通讯安排的信函。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103607.pdf",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": null,
+            "needs_human_review": false,
+            "limitations": [
+              "本公告为程序性文件，不包含可影响投资判断的实质性新信息。",
+              "研究跟踪表中的已计划验证节点（如H1报告、存货毛利）仍待后续公告验证。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "该公告不涉及财务数据、业务运营或估值，对现有投资论点无直接影响。",
+              "公司的H股上市后，持续履行联交所披露义务，属于正常合规行为。"
+            ]
+          },
+          {
+            "summary": "(1) COMPLETION OF CERTAIN INVESTMENT PROJECT FUNDED BY PROCE…",
+            "title": "(1) COMPLETION OF CERTAIN INVESTMENT PROJECT FUNDED\nBY PROCEEDS AND THE PERMANENT USE OF SURPLUS PROCEEDS TO\nSUPPLEMENT WORKING CAPITAL\nAND\n(2) NOTICE OF THE FIRST EXTRAORDINARY GENERAL MEETING\nOF 2026",
+            "published_at": "01/09/2026 21:13",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该通函为港交所正式披露，涉及募投项目结项、节余募集资金永久补流及2026年第一次临时股东大会通知，属于影响募集资金使用与公司治理的正式事项，需要进入研究复核。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103611.pdf"
+            ],
+            "verified_facts": [],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": true,
+            "limitations": [],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "FORM OF PROXY FOR THE FIRST EXTRAORDINARY GENERAL MEETING OF…",
+            "title": "FORM OF PROXY FOR THE FIRST EXTRAORDINARY GENERAL MEETING OF 2026",
+            "published_at": "01/09/2026 21:14",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告为2026年第一次临时股东大会的投票代理表格，涉及将部分募集资金投资项目结项并将节余募集资金永久补充流动资金，这一议案可能影响公司资本配置和流动性，需纳入研究复核。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103619.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "北京君正将于2026年9月22日下午3时召开2026年第一次临时股东大会，审议关于部分募集资金投资项目结项并将节余募集资金永久补充流动资金的议案。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103619.pdf",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": true,
+            "limitations": [
+              "该文件仅提供代理表格和议案标题，未披露节余资金的具体金额、项目明细及通函全文。",
+              "缺少通函（预计2026年9月2日发出），无法全面评估议案影响。",
+              "无法核验议案是否与之前的研究判断相关，需进一步获取通函和正式股东大会公告。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "募集资金用途变更属于资本配置事项，需关注节余资金补充流动资金是否反映项目进展或资金需求变化。",
+              "与管理层资本配置能力相关，结合前期ISSI并购和商誉减值风险，需评估资金使用效率。",
+              "可能影响公司现金状况和财务灵活性，但具体金额和项目明细需以通函披露为准。"
+            ]
+          },
+          {
+            "summary": "NOTICE OF THE FIRST EXTRAORDINARY GENERAL MEETING OF 2026",
+            "title": "NOTICE OF THE FIRST EXTRAORDINARY GENERAL MEETING OF 2026",
+            "published_at": "01/09/2026 21:14",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露了2026年第一次临时股东大会将审议关于部分募集资金投资项目结项及将节余募集资金永久补充流动资金的议案，涉及募集资金使用变更，需要进入研究复核。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103615.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "北京君正集成电路股份有限公司将召开2026年第一次临时股东大会（EGM），时间为2026年9月22日下午3:00，地点为北京市海淀区西北旺东路10号东区14号楼公司会议室。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103615.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "该股东大会拟审议一项普通决议案：关于部分募集资金投资项目结项及将节余募集资金永久补充流动资金的决议。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103615.pdf",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/news-pulse",
+            "needs_human_review": true,
+            "limitations": [
+              "该公告为港交所披露的英文版本，未提供具体募集资金金额和结余细节。",
+              "公告日期为2026年9月1日，但会议日期为9月22日，相关信息可能尚未在A股披露平台同步。",
+              "公告内容未包含募集资金项目的具体进展和节余原因，需进一步查阅通函或后续公告。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "募集资金用途变更不影响核心投资论文，但可能影响对资本配置效率和现金流的预期。",
+              "节余募集资金永久补充流动资金可能改善短期流动性，但需关注后续披露的具体金额和原因。"
+            ]
+          }
+        ],
+        "research_link": "../%E5%8C%97%E4%BA%AC%E5%90%9B%E6%AD%A3/%E5%8C%97%E4%BA%AC%E5%90%9B%E6%AD%A3-research-20260817.md"
+      }
+    },
+    {
+      "fingerprint": "4ab7e5643ccc3b00858bb41da0fd48032d26086277d13641ba38ac4134eb255c",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "华虹宏力",
+      "name": "华虹宏力",
+      "title": "1 项公告更新",
+      "why_now": "DISCLOSEABLE TRANSACTION IN RELATION TO THE JV INVESTMENT AG…",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103625.pdf"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "H",
+        "date": "2026-09-01",
+        "published_at": "01/09/2026 21:15",
+        "latest_time": "2026-09-01T21:15:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "DISCLOSEABLE TRANSACTION IN RELATION TO THE JV INVESTMENT AG…",
+            "title": "DISCLOSEABLE TRANSACTION IN RELATION\nTO THE JV INVESTMENT AGREEMENT\nAND THE JV SHAREHOLDERS AGREEMENT",
+            "published_at": "01/09/2026 21:15",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告披露了华虹宏力与其子公司HHGrace Shanghai、无锡地方政府实体、华芯基金和国开行实体共同投资无锡JV III，投资额合计约41.7亿美元，将设立12英寸晶圆生产线，月产能约5.5万片。该投资规模重大，对公司资本开支和未来现金流有显著影响，需进入研究复核。",
+            "source_urls": [
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103625.pdf"
+            ],
+            "verified_facts": [
+              {
+                "fact": "2026年9月1日，华虹半导体与HHGrace Shanghai、无锡市实体II、华芯基金、国开行实体和无锡JV III签署合资投资协议，各方拟分别投资10.425亿美元、10.842亿美元、8.34亿美元、6.255亿美元和5.838亿美元于无锡JV III，将注册资本由人民币668万元增至41.7亿美元。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103625.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "无锡JV III将建立月产能约55,000片的12英寸晶圆生产线。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103625.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "交易完成后，无锡JV III将由集团持有约51%，其中25%由公司直接持有，26%通过全资子公司HHGrace Shanghai间接持有。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103625.pdf",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "根据上市规则第14章，该合资公司成立构成须予披露的交易，因为适用百分比率超过5%但低于25%。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103625.pdf",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "国开行实体持有的无锡JV III股份附带回购权（Right to Redemption），由HHGrace Shanghai授予，该回购权不被视为须予披露交易。",
+                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103625.pdf",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "公告为港交所披露文件，未包含审计财务数据，具体投资资金安排和回购权条款细节需进一步查阅完整公告。",
+              "该交易尚需满足先决条件（包括股东批准），可能不一定完成。",
+              "公告未披露无锡JV III的预计投产时间和达产目标，后续需关注公司进一步公告。"
+            ],
+            "document_type": "正式公告",
+            "source": "hkex",
+            "thesis_impacts": [
+              "新增重大资本开支（总投资约41.7亿美元，集团出资约21.27亿美元）将进一步加大自由现金流压力，强化‘FCF深度为负’的担忧。",
+              "无锡JV III新产能（月产55千片12英寸）将扩大供给，需关注爬坡速度和盈利贡献，对‘周期底部恢复’论点的验证至关重要。",
+              "回购权的存在引入或有负债，需关注其对公司财务结构的潜在影响。",
+              "公司与地方政府、国开行等合作，投资规模大，但回报实现仍待验证，维持对估值的纪律性态度。"
+            ]
+          }
+        ],
+        "research_link": "../%E5%8D%8E%E8%99%B9%E5%AE%8F%E5%8A%9B/%E5%8D%8E%E8%99%B9%E5%8D%8A%E5%AF%BC%E4%BD%93-earnings-2026H1.md"
       }
     },
     {
@@ -567,7 +774,7 @@
       "target_id": "哔哩哔哩",
       "name": "哔哩哔哩",
       "title": "研究性分批带：NEAR",
-      "why_now": "现价 16.16，距上沿 16.00 5% 内",
+      "why_now": "现价 16.08，距上沿 16.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -579,7 +786,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 16.16,
+        "price": 16.08,
         "market": "US",
         "zone_label": "研究性分批带",
         "low": 12,
@@ -590,17 +797,17 @@
       }
     },
     {
-      "fingerprint": "af3c216a5d60d4cdc4ce5c648820b54fad8901a263bd8b5cf7ac8422bdfec888",
+      "fingerprint": "31171f29f32d05b3b238f22b34aa1d4a246760c0be28ecc1b24f3bb2b9ef0752",
       "section": "disclosures",
       "priority": "P1",
-      "target_id": "圣邦股份",
-      "name": "圣邦股份",
+      "target_id": "立讯精密",
+      "name": "立讯精密",
       "title": "1 项公告更新",
       "why_now": "新增公告，内容待确认",
       "status": "REVIEW",
       "verified_facts": [],
       "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102340.htm"
+        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103600.htm"
       ],
       "next_workflow": null,
       "needs_human_review": true,
@@ -611,373 +818,34 @@
         "kind": "disclosure_summary",
         "market": "H",
         "date": "2026-09-01",
-        "published_at": "01/09/2026 17:12",
-        "latest_time": "2026-09-01T17:12:00+08:00",
+        "published_at": "01/09/2026 21:03",
+        "latest_time": "2026-09-01T21:03:00+08:00",
         "announcement_count": 1,
         "updates": [
           {
             "summary": "新增公告，内容待确认",
             "title": "An announcement has just been published by the issuer in the Chinese section of this website, a corresponding version of which may or may not be published in this section",
-            "published_at": "01/09/2026 17:12",
+            "published_at": "01/09/2026 21:03",
             "priority": "P1",
             "status": "DONE",
-            "why_now": "该正式披露需要进入研究复核。",
+            "why_now": "港交所披露立讯精密新发布正式公告，属于增量事实核验义务，需进入研究复核以确认是否影响现有论点。",
             "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102340.htm"
+              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090103600.htm"
             ],
             "verified_facts": [],
-            "next_workflow": null,
+            "next_workflow": "/news-pulse",
             "needs_human_review": true,
             "limitations": [
-              "公告内容仅为英文提示信息，无具体实质内容；无法进行事实核验。"
+              "公告正文未提供，仅标题提示已发布，无法提取具体事实。",
+              "官方URL为港交所页面，但内容未抓取，无法验证具体公告内容。",
+              "当前证据仅为公告存在性提示，无实质信息可供核验。"
             ],
             "document_type": "正式公告",
             "source": "hkex",
             "thesis_impacts": []
           }
         ],
-        "research_link": "../%E5%9C%A3%E9%82%A6%E8%82%A1%E4%BB%BD/%E5%9C%A3%E9%82%A6%E8%82%A1%E4%BB%BD-research-20260803.md"
-      }
-    },
-    {
-      "fingerprint": "10f4e14c27f2ff5ae775d0587d6be0c9010e7e2962d6e476be8b31224e490def",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "汇川技术",
-      "name": "汇川技术",
-      "title": "1 项公告更新",
-      "why_now": "关于回购公司股份的进展公告",
-      "status": "DONE",
-      "verified_facts": [],
-      "source_urls": [
-        "https://static.cninfo.com.cn/finalpage/2026-09-01/1225540292.PDF"
-      ],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "disclosure_summary",
-        "market": "A",
-        "date": "2026-09-01",
-        "published_at": "2026-09-01T16:22:10+08:00",
-        "latest_time": "2026-09-01T16:22:10+08:00",
-        "announcement_count": 1,
-        "updates": [
-          {
-            "summary": "关于回购公司股份的进展公告",
-            "title": "关于回购公司股份的进展公告",
-            "published_at": "2026-09-01T16:22:10+08:00",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "公司披露回购进展，累计回购金额已超1.4亿元，接近计划下限，回购行为继续执行，但规模相对市值较小，对公司基本面影响有限。",
-            "source_urls": [
-              "https://static.cninfo.com.cn/finalpage/2026-09-01/1225540292.PDF"
-            ],
-            "verified_facts": [
-              {
-                "fact": "截至2026年8月31日，公司累计回购股份2,079,700股，占总股本0.077%，成交总金额约1.404亿元。",
-                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-01/1225540292.PDF",
-                "page": 1,
-                "confidence": "high"
-              },
-              {
-                "fact": "回购方案于2026年4月24日董事会审议通过，回购资金总额不低于1亿元且不高于2亿元，回购价格上限为84.5元/股（除权除息调整后）。",
-                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-01/1225540292.PDF",
-                "page": 1,
-                "confidence": "high"
-              }
-            ],
-            "next_workflow": null,
-            "needs_human_review": false,
-            "limitations": [
-              "公告内容为公司披露，未经独立第三方核实。",
-              "回购进展为阶段性数据，不代表最终回购结果。"
-            ],
-            "document_type": "正式公告",
-            "source": "cninfo",
-            "thesis_impacts": [
-              "回购进展符合既定方案，但累计回购金额仅约为计划下限的70%，对总股本影响微小，不改变公司基本面和估值判断。",
-              "回购用于员工持股或股权激励，对长期激励机制有轻微正面作用，但不影响当前买入纪律。"
-            ]
-          }
-        ],
-        "research_link": "../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md"
-      }
-    },
-    {
-      "fingerprint": "109fd70ae7a5969ecdb3fb84ff0d7201652db186d99f8fde86568a3210b316b2",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "泡泡玛特",
-      "name": "泡泡玛特",
-      "title": "1 项公告更新",
-      "why_now": "Monthly Return of Equity Issuer on Movements in Securities f…",
-      "status": "DONE",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102631.pdf"
-      ],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "disclosure_summary",
-        "market": "H",
-        "date": "2026-09-01",
-        "published_at": "01/09/2026 17:32",
-        "latest_time": "2026-09-01T17:32:00+08:00",
-        "announcement_count": 1,
-        "updates": [
-          {
-            "summary": "Monthly Return of Equity Issuer on Movements in Securities f…",
-            "title": "Monthly Return of Equity Issuer on Movements in Securities for the month ended 31 August 2026",
-            "published_at": "01/09/2026 17:32",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "该正式公告披露了截至2026年8月31日的股本变动月报表，属于监管合规性披露，对当前投资论文无新增增量信息，但需纳入常规研究复核流程。",
-            "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102631.pdf"
-            ],
-            "verified_facts": [
-              {
-                "fact": "截至2026年8月31日，泡泡玛特已发行股份（不包括库存股）为1,331,779,203股，较上月无变动；库存股为0；总发行股份为1,331,779,203股。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102631.pdf",
-                "page": 2,
-                "confidence": "high"
-              },
-              {
-                "fact": "公告确认截至2026年8月31日，公司符合主板规则13.32D(1)规定的公众持股量要求（最低公众持股比例为已发行股份总数的25%）。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102631.pdf",
-                "page": 2,
-                "confidence": "high"
-              }
-            ],
-            "next_workflow": "/news-pulse",
-            "needs_human_review": false,
-            "limitations": [
-              "该公告为股本变动月报表，仅为合规性披露，不包含业务运营或财务数据，对论文假设无直接影响。",
-              "公告中未提供除股本结构外的其他信息，不包含回购执行进度等关键跟踪指标。"
-            ],
-            "document_type": "正式公告",
-            "source": "hkex",
-            "thesis_impacts": []
-          }
-        ],
-        "research_link": "../%E6%B3%A1%E6%B3%A1%E7%8E%9B%E7%89%B9/%E6%B3%A1%E6%B3%A1%E7%8E%9B%E7%89%B9-earnings-2026H1.md"
-      }
-    },
-    {
-      "fingerprint": "02308d7753328704e22c185242bdcbb01b193de6916e74129f0fa25309f533d8",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "海尔智家",
-      "name": "海尔智家",
-      "title": "2 项公告更新",
-      "why_now": "Monthly Return of Equity Issuer on Movements in Securities f…；翌日披露报表",
-      "status": "REVIEW",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102389.pdf",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102717.pdf"
-      ],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "disclosure_summary",
-        "market": "H",
-        "date": "2026-09-01",
-        "published_at": "01/09/2026 17:40",
-        "latest_time": "2026-09-01T17:40:00+08:00",
-        "announcement_count": 2,
-        "updates": [
-          {
-            "summary": "Monthly Return of Equity Issuer on Movements in Securities f…",
-            "title": "Monthly Return of Equity Issuer on Movements in Securities for the month ended 31 August 2026",
-            "published_at": "01/09/2026 17:15",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "该正式披露为港交所每月证券变动报表，仅反映授权/注册股本变动，未涉及实际股份发行或回购，与投资论点无直接关联。",
-            "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102389.pdf"
-            ],
-            "verified_facts": [],
-            "next_workflow": null,
-            "needs_human_review": false,
-            "limitations": [
-              "公告为每月例行披露，不包含影响公司基本面的实质信息。",
-              "缺少与投资论点直接相关的财务或运营数据。"
-            ],
-            "document_type": "正式公告",
-            "source": "hkex",
-            "thesis_impacts": []
-          },
-          {
-            "summary": "翌日披露报表",
-            "title": "Next Day Disclosure Return",
-            "published_at": "01/09/2026 17:40",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "该正式披露涉及股本变动和股份回购注销，需纳入研究复核以评估对估值和股东回报的影响。",
-            "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102717.pdf"
-            ],
-            "verified_facts": [
-              {
-                "fact": "海尔智家于2026年9月1日提交 Next Day Disclosure Return，披露A股回购50,000股用于股权激励，并注销74,541,486股已回购未使用的股份。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102717.pdf",
-                "page": 1,
-                "confidence": "high"
-              },
-              {
-                "fact": "截至2026年9月1日，海尔智家已发行股份（不含库存股）为6,125,552,636股，库存股为52,934,289股，总股本为6,178,486,925股。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102717.pdf",
-                "page": 2,
-                "confidence": "high"
-              }
-            ],
-            "next_workflow": "/thesis-tracker",
-            "needs_human_review": true,
-            "limitations": [
-              "公告未提供回购支出总金额，无法直接计算对现金流的实际影响。",
-              "公告未披露激励计划的具体行权条件，可能影响对激励效果的评估。",
-              "披露数据基于港交所公告，与A股公告可能存在细微差异，需交叉验证。"
-            ],
-            "document_type": "正式公告",
-            "source": "hkex",
-            "thesis_impacts": [
-              "股份回购及注销可能对每股收益和股东回报产生正面影响，需更新估值模型中的股本数据。",
-              "回购用于股权激励显示管理层对未来信心的信号，但需关注激励计划的具体条款。",
-              "注销库存股且未回购股份无未注销余额，减少了潜在的股本摊薄风险。"
-            ]
-          }
-        ],
-        "research_link": "../%E6%B5%B7%E5%B0%94%E6%99%BA%E5%AE%B6-deepseek%E5%88%86%E6%9E%90/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md"
-      }
-    },
-    {
-      "fingerprint": "1c94a1a0ef0ac8567dafe1bf255bf27e649681f7185be4e8d26aca03ecadfbeb",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "澜起科技",
-      "name": "澜起科技",
-      "title": "2 项公告更新",
-      "why_now": "Monthly Return of Equity Issuer on Movements in Securities f…；翌日披露报表",
-      "status": "REVIEW",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101400.pdf",
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102887.pdf"
-      ],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "disclosure_summary",
-        "market": "H",
-        "date": "2026-09-01",
-        "published_at": "01/09/2026 17:58",
-        "latest_time": "2026-09-01T17:58:00+08:00",
-        "announcement_count": 2,
-        "updates": [
-          {
-            "summary": "Monthly Return of Equity Issuer on Movements in Securities f…",
-            "title": "Monthly Return of Equity Issuer on Movements in Securities for the Month Ended 31 August 2026",
-            "published_at": "01/09/2026 16:32",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "该公告为港交所按月披露的正式股份变动文件，属于正式事实核验的必要输入。",
-            "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101400.pdf"
-            ],
-            "verified_facts": [
-              {
-                "fact": "截至2026年8月31日，澜起科技H股已发行股份为75,773,500股，无库存股；期内无变动。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101400.pdf",
-                "page": 1,
-                "confidence": "high"
-              },
-              {
-                "fact": "截至2026年8月31日，澜起科技A股已发行股份（不含库存股）为1,132,983,521股，较上月减少205,000股；库存股由11,576,000股增加至11,781,000股（增加205,000股）。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101400.pdf",
-                "page": 2,
-                "confidence": "high"
-              },
-              {
-                "fact": "公告确认H股满足适用公众持股量要求（PRC发行人其他上市股份类别对应H股类别已发行股份总数的5%）。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101400.pdf",
-                "page": 2,
-                "confidence": "high"
-              },
-              {
-                "fact": "公司回购证券账户中的库存A股（Treasury A Shares）为11,781,000股，将用于股份激励计划、维护公司价值及股东权益。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101400.pdf",
-                "page": 2,
-                "confidence": "high"
-              }
-            ],
-            "next_workflow": "/news-pulse",
-            "needs_human_review": false,
-            "limitations": [
-              "该文件仅披露股份变动，不包含财务或经营数据，对投资论点无实质性影响。",
-              "公告为港交所披露的正式文件，已核实；但未独立核验上交所对应披露（若存在）。"
-            ],
-            "document_type": "正式公告",
-            "source": "hkex",
-            "thesis_impacts": [
-              "A股库存股增加205,000股，对应公司持续回购行为，与原先研究中的回购意图相符，不影响主营盈利或估值锚。",
-              "H股股份无变动，A股总股本无变动（总授权/注册股本1,220,538,021股不变），对每股收益摊薄无影响。"
-            ]
-          },
-          {
-            "summary": "翌日披露报表",
-            "title": "Next Day Disclosure Return",
-            "published_at": "01/09/2026 17:58",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "港交所正式披露显示公司于2026年9月1日回购A股100,000股并计入库存股，涉及已发行股份变动，需进入研究复核流程。",
-            "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102887.pdf"
-            ],
-            "verified_facts": [
-              {
-                "fact": "于2026年9月1日回购A股100,000股，回购价格为每股198.47元人民币，回购股份计入库存股。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102887.pdf",
-                "page": 1,
-                "confidence": "high"
-              },
-              {
-                "fact": "2026年8月31日开盘前已发行股份（不包括库存股）为1,132,983,521股，库存股为11,781,000股；2026年9月1日回购后，已发行股份（不包括库存股）减少至1,132,883,521股，库存股增加至11,881,000股。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102887.pdf",
-                "page": 1,
-                "confidence": "high"
-              }
-            ],
-            "next_workflow": "/news-pulse",
-            "needs_human_review": true,
-            "limitations": [
-              "公告仅反映回购事件本身，不包含公司对未来经营或业绩的指引。",
-              "回购行为的动机未披露，无法判断是否与市值管理或股权激励相关。",
-              "当前研究基线日期为2026年8月17日，回购发生于9月1日，时间滞后，且股价已变化，但公告未提供最新股价数据。"
-            ],
-            "document_type": "正式公告",
-            "source": "hkex",
-            "thesis_impacts": [
-              "回购规模极小（10万股，占总股本约0.0088%），对财务和估值影响微弱，不改变原有研究结论。",
-              "库存股增加可能暗示管理层认为当前股价低估，但金额太小无法构成明确信号，与原估值纪律判断无冲突。",
-              "继续关注后续是否有更大规模回购或注销行为，以及回购对每股收益的潜在影响。"
-            ]
-          }
-        ],
-        "research_link": "../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md"
+        "research_link": "../%E7%AB%8B%E8%AE%AF%E7%B2%BE%E5%AF%86/%E7%AB%8B%E8%AE%AF%E7%B2%BE%E5%AF%86-research-20260803.md"
       }
     },
     {
@@ -994,10 +862,10 @@
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "FAR",
+        "previous_status": "NEAR",
         "current_status": "NEAR",
         "price": 441.4,
         "market": "H",
@@ -1039,129 +907,13 @@
       }
     },
     {
-      "fingerprint": "bdeb224e45804b5093c20dcc70ca981b7e021b0872c28bb20cd41d07c791d499",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "赣锋锂业",
-      "name": "赣锋锂业",
-      "title": "1 项公告更新",
-      "why_now": "Monthly Return of Equity Issuer on Movements in Securities f…",
-      "status": "REVIEW",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101005.pdf"
-      ],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "disclosure_summary",
-        "market": "H",
-        "date": "2026-09-01",
-        "published_at": "01/09/2026 15:23",
-        "latest_time": "2026-09-01T15:23:00+08:00",
-        "announcement_count": 1,
-        "updates": [
-          {
-            "summary": "Monthly Return of Equity Issuer on Movements in Securities f…",
-            "title": "Monthly Return of Equity Issuer on Movements in Securities for the Month ended 31 August 2026",
-            "published_at": "01/09/2026 15:23",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "该正式披露为港交所证券变动月报表，需进入研究复核以确认股本结构无变化。",
-            "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101005.pdf"
-            ],
-            "verified_facts": [],
-            "next_workflow": null,
-            "needs_human_review": true,
-            "limitations": [],
-            "document_type": "正式公告",
-            "source": "hkex",
-            "thesis_impacts": []
-          }
-        ],
-        "research_link": "../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md"
-      }
-    },
-    {
-      "fingerprint": "347d7ff91f3006596f12beb953e3680eb8c397df7d204ba644c2fa2dd8c1a75e",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "迅策",
-      "name": "迅策",
-      "title": "1 项公告更新",
-      "why_now": "Monthly Return of Equity Issuer on Movements in Securities f…",
-      "status": "REVIEW",
-      "verified_facts": [],
-      "source_urls": [
-        "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102745.pdf"
-      ],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "disclosure_summary",
-        "market": "H",
-        "date": "2026-09-01",
-        "published_at": "01/09/2026 17:43",
-        "latest_time": "2026-09-01T17:43:00+08:00",
-        "announcement_count": 1,
-        "updates": [
-          {
-            "summary": "Monthly Return of Equity Issuer on Movements in Securities f…",
-            "title": "Monthly Return of Equity Issuer on Movements in Securities for the month ended 31 August 2026",
-            "published_at": "01/09/2026 17:43",
-            "priority": "P1",
-            "status": "DONE",
-            "why_now": "该正式披露涉及股份发行变动，需与已识别的配售及可转债稀释风险交叉核验。",
-            "source_urls": [
-              "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102745.pdf"
-            ],
-            "verified_facts": [
-              {
-                "fact": "截至2026年8月31日，迅策科技H股已发行股份为275,298,046股，较上月增加839,540股；未上市股份为55,518,894股。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102745.pdf",
-                "page": 2,
-                "confidence": "high"
-              },
-              {
-                "fact": "公司确认截至月末H股类别符合最低公众持股量要求（上市时最低15%）。",
-                "official_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090102745.pdf",
-                "page": 2,
-                "confidence": "high"
-              }
-            ],
-            "next_workflow": "/thesis-drift",
-            "needs_human_review": true,
-            "limitations": [
-              "仅依据月度变动公告，未披露股份变动具体原因（如配售、购股权行使等）。",
-              "公告片段为外部不可信数据，且不构成投资建议。"
-            ],
-            "document_type": "正式公告",
-            "source": "hkex",
-            "thesis_impacts": [
-              "H股增加839,540股，与期后配售约728万股相比规模较小，可能为行使购股权或少量配售，需进一步核实来源。",
-              "公众持股量合规，暂无异动风险。",
-              "该变动未改变核心论文验证方向，仍聚焦订阅占比、现金流和客户集中度。"
-            ]
-          }
-        ],
-        "research_link": "../%E8%BF%85%E7%AD%96/%E8%BF%85%E7%AD%96%E7%A7%91%E6%8A%80-earnings-2026H1.md"
-      }
-    },
-    {
       "fingerprint": "c800edb10501d0388bacec558a4c6d91553c6c47df7da0939c6ad841a5d792ab",
       "section": "price",
       "priority": "P2",
       "target_id": "Accenture",
       "name": "Accenture",
       "title": "分批带：FAR",
-      "why_now": "现价 189.76，触发线 150.00",
+      "why_now": "现价 189.42，触发线 150.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1173,7 +925,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 189.76,
+        "price": 189.42,
         "market": "US",
         "zone_label": "分批带",
         "low": null,
@@ -1216,7 +968,7 @@
       "target_id": "Adobe",
       "name": "Adobe",
       "title": "原报告分批上限：FAR",
-      "why_now": "现价 292.79，触发线 247.00",
+      "why_now": "现价 291.70，触发线 247.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1228,7 +980,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 292.79,
+        "price": 291.7,
         "market": "US",
         "zone_label": "原报告分批上限",
         "low": null,
@@ -1245,7 +997,7 @@
       "target_id": "ADP",
       "name": "ADP",
       "title": "加仓带：FAR",
-      "why_now": "现价 286.16，触发线 190.00",
+      "why_now": "现价 287.60，触发线 190.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1257,7 +1009,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 286.16,
+        "price": 287.6,
         "market": "US",
         "zone_label": "加仓带",
         "low": null,
@@ -1274,7 +1026,7 @@
       "target_id": "Google",
       "name": "Alphabet/Google",
       "title": "未持有买入带：FAR",
-      "why_now": "现价 339.35，区间 [250.00, 300.00]",
+      "why_now": "现价 336.60，区间 [250.00, 300.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1286,7 +1038,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 339.35,
+        "price": 336.6,
         "market": "US",
         "zone_label": "未持有买入带",
         "low": 250,
@@ -1303,7 +1055,7 @@
       "target_id": "AMD",
       "name": "AMD",
       "title": "分批评估带：FAR",
-      "why_now": "现价 470.72，区间 [220.00, 300.00]",
+      "why_now": "现价 455.24，区间 [220.00, 300.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1315,7 +1067,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 470.72,
+        "price": 455.24,
         "market": "US",
         "zone_label": "分批评估带",
         "low": 220,
@@ -1332,7 +1084,7 @@
       "target_id": "Archrock",
       "name": "Archrock",
       "title": "评估带：FAR",
-      "why_now": "现价 31.52，区间 [22.20, 25.90]",
+      "why_now": "现价 31.62，区间 [22.20, 25.90]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1344,7 +1096,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 31.52,
+        "price": 31.62,
         "market": "US",
         "zone_label": "评估带",
         "low": 22.2,
@@ -1416,7 +1168,7 @@
       "target_id": "Mastercard",
       "name": "Mastercard",
       "title": "分批带：FAR",
-      "why_now": "现价 589.31，区间 [380.00, 500.00]",
+      "why_now": "现价 590.84，区间 [380.00, 500.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1428,7 +1180,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 589.31,
+        "price": 590.84,
         "market": "US",
         "zone_label": "分批带",
         "low": 380,
@@ -1445,7 +1197,7 @@
       "target_id": "Meta",
       "name": "Meta",
       "title": "回调建仓带：FAR",
-      "why_now": "现价 572.34，触发线 480.00",
+      "why_now": "现价 567.38，触发线 480.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1457,7 +1209,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 572.34,
+        "price": 567.38,
         "market": "US",
         "zone_label": "回调建仓带",
         "low": null,
@@ -1474,7 +1226,7 @@
       "target_id": "微软",
       "name": "Microsoft",
       "title": "不追高线：FAR",
-      "why_now": "现价 507.29，触发线 440.00",
+      "why_now": "现价 503.73，触发线 440.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1486,7 +1238,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 507.29,
+        "price": 503.73,
         "market": "US",
         "zone_label": "不追高线",
         "low": null,
@@ -1503,7 +1255,7 @@
       "target_id": "nVent",
       "name": "nVent Electric",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 150.75，区间 [115.00, 130.00]",
+      "why_now": "现价 146.35，区间 [115.00, 130.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1515,7 +1267,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 150.75,
+        "price": 146.35,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 115,
@@ -1532,7 +1284,7 @@
       "target_id": "Palantir",
       "name": "Palantir",
       "title": "重估带：FAR",
-      "why_now": "现价 186.38，区间 [70.00, 85.00]",
+      "why_now": "现价 185.13，区间 [70.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1544,7 +1296,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 186.38,
+        "price": 185.13,
         "market": "US",
         "zone_label": "重估带",
         "low": 70,
@@ -1561,7 +1313,7 @@
       "target_id": "拼多多",
       "name": "PDD Holdings",
       "title": "首次建仓评估线：FAR",
-      "why_now": "现价 84.00，触发线 75.00",
+      "why_now": "现价 83.48，触发线 75.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1573,7 +1325,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 84.0,
+        "price": 83.48,
         "market": "US",
         "zone_label": "首次建仓评估线",
         "low": null,
@@ -1590,7 +1342,7 @@
       "target_id": "Progressive",
       "name": "Progressive",
       "title": "15%回撤后主加仓复核线：FAR",
-      "why_now": "现价 218.08，触发线 180.40",
+      "why_now": "现价 219.57，触发线 180.40",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1602,7 +1354,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 218.08,
+        "price": 219.57,
         "market": "US",
         "zone_label": "15%回撤后主加仓复核线",
         "low": null,
@@ -1636,35 +1388,6 @@
         "event_type": "复检",
         "note": "日期为研究复核窗口，待公司IR确认具体发布时间；核NPW、CR、广告费用与事故年损失率。",
         "research_link": "../Progressive/Progressive-earnings-2026Q2.md"
-      }
-    },
-    {
-      "fingerprint": "3b1b0b1d213241dba3cba1647bee76a9a64a7a6df6a224239c02fe31c2538912",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "Qualcomm",
-      "name": "Qualcomm",
-      "title": "理想买入带：FAR",
-      "why_now": "现价 170.48，触发线 160.00",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 170.48,
-        "market": "US",
-        "zone_label": "理想买入带",
-        "low": null,
-        "high": 160,
-        "direction": "below",
-        "note": "PE≤15x约$160或恐慌下跌",
-        "research_link": "../Qualcomm/Qualcomm-earnings-FY2026Q3.md"
       }
     },
     {
@@ -1726,7 +1449,7 @@
       "target_id": "RKLB",
       "name": "Rocket Lab",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 63.92，区间 [25.00, 35.00]",
+      "why_now": "现价 62.24，区间 [25.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1738,7 +1461,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 63.92,
+        "price": 62.24,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 25,
@@ -1755,7 +1478,7 @@
       "target_id": "SLDP",
       "name": "Solid Power",
       "title": "期权评估带：FAR",
-      "why_now": "现价 2.33，区间 [1.50, 2.00]",
+      "why_now": "现价 2.31，区间 [1.50, 2.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1767,7 +1490,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 2.33,
+        "price": 2.31,
         "market": "US",
         "zone_label": "期权评估带",
         "low": 1.5,
@@ -1784,7 +1507,7 @@
       "target_id": "沃尔玛",
       "name": "Walmart",
       "title": "估值警戒线：FAR",
-      "why_now": "现价 104.87，警戒线 120.00",
+      "why_now": "现价 105.86，警戒线 120.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1796,7 +1519,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 104.87,
+        "price": 105.86,
         "market": "US",
         "zone_label": "估值警戒线",
         "low": 120,
@@ -1813,7 +1536,7 @@
       "target_id": "沃尔玛",
       "name": "Walmart",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 104.87，区间 [80.00, 90.00]",
+      "why_now": "现价 105.86，区间 [80.00, 90.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1825,7 +1548,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 104.87,
+        "price": 105.86,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 80,
@@ -2103,7 +1826,7 @@
       "target_id": "京东",
       "name": "京东集团",
       "title": "买入带：FAR",
-      "why_now": "现价 28.24，区间 [16.50, 20.60]",
+      "why_now": "现价 28.08，区间 [16.50, 20.60]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2115,7 +1838,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 28.24,
+        "price": 28.08,
         "market": "US",
         "zone_label": "买入带",
         "low": 16.5,
@@ -2622,7 +2345,7 @@
       "target_id": "搜狐",
       "name": "搜狐",
       "title": "考虑带：FAR",
-      "why_now": "现价 14.05，触发线 12.00",
+      "why_now": "现价 14.14，触发线 12.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2634,7 +2357,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 14.05,
+        "price": 14.14,
         "market": "US",
         "zone_label": "考虑带",
         "low": null,
@@ -3141,7 +2864,7 @@
       "target_id": "腾讯音乐",
       "name": "腾讯音乐",
       "title": "估值减仓复核线：FAR",
-      "why_now": "现价 8.27，警戒线 10.80",
+      "why_now": "现价 8.23，警戒线 10.80",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3153,7 +2876,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 8.27,
+        "price": 8.23,
         "market": "US",
         "zone_label": "估值减仓复核线",
         "low": 10.8,
@@ -3196,7 +2919,7 @@
       "target_id": "NVIDIA",
       "name": "英伟达",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 220.78，区间 [155.00, 180.00]",
+      "why_now": "现价 217.80，区间 [155.00, 180.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3208,7 +2931,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 220.78,
+        "price": 217.8,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 155,
@@ -3225,7 +2948,7 @@
       "target_id": "Intel",
       "name": "英特尔",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 89.51，区间 [25.00, 35.00]",
+      "why_now": "现价 86.25，区间 [25.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3237,7 +2960,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 89.51,
+        "price": 86.25,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 25,
@@ -3423,17 +3146,12 @@
     }
   ],
   "notification_items": [
-    "29f7a66b271fd0a543a01cda0471db7aceb4945a82a266c6492a5bd37dd13820",
-    "10f4e14c27f2ff5ae775d0587d6be0c9010e7e2962d6e476be8b31224e490def",
-    "1db0eda8cfd5e12ae4bbba43cb1e3baf8e4fa023bb3db90e86214a8fd1afc624",
-    "bdeb224e45804b5093c20dcc70ca981b7e021b0872c28bb20cd41d07c791d499",
-    "57dc3d0b9121f156249f33f1cd9a32190ac89853c0867eca95e586715a3a1aee",
-    "1c94a1a0ef0ac8567dafe1bf255bf27e649681f7185be4e8d26aca03ecadfbeb",
-    "af3c216a5d60d4cdc4ce5c648820b54fad8901a263bd8b5cf7ac8422bdfec888",
-    "02308d7753328704e22c185242bdcbb01b193de6916e74129f0fa25309f533d8",
-    "109fd70ae7a5969ecdb3fb84ff0d7201652db186d99f8fde86568a3210b316b2",
-    "347d7ff91f3006596f12beb953e3680eb8c397df7d204ba644c2fa2dd8c1a75e",
-    "cc50c16ddfaf16b516398afbf63c1d228fe65bf2fc7e077f94024a875adc22b9"
+    "3b1b0b1d213241dba3cba1647bee76a9a64a7a6df6a224239c02fe31c2538912",
+    "f3deccaa2e0a0816fe4cceadb3643cf098df783ad8bec733c685183f0df20f8e",
+    "4888a90bf039e64a21d60ec347de2f68f2852ee71e756cdb25264135d68a3a0d",
+    "31171f29f32d05b3b238f22b34aa1d4a246760c0be28ecc1b24f3bb2b9ef0752",
+    "f0aacb2cf56dbbbc9d163655f07ee09724547e50ecc61958100cb0c8db3d7c26",
+    "4ab7e5643ccc3b00858bb41da0fd48032d26086277d13641ba38ac4134eb255c"
   ],
   "source_health": [
     {
