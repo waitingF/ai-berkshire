@@ -4,6 +4,129 @@
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
+      "id": "AZZ",
+      "name": "AZZ Inc.",
+      "group": "台账",
+      "codes": {
+        "US": "usAZZ"
+      },
+      "source": "AZZ 投资研究 20260901",
+      "links": [
+        "reports/AZZ/AZZ-research-20260901.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 105,
+          "high": 115,
+          "market": "US",
+          "action": "观望，满足条件后分批评估",
+          "note": "非自动买入；须Metal/Precoat利润率、FY2027指引、债务削减和Seattle整合未结构性破坏"
+        },
+        {
+          "label": "估值警戒线",
+          "dir": "above",
+          "low": 160,
+          "market": "US",
+          "action": "不追高，复核仓位",
+          "note": "若增长、利润率和每股现金流证据未同步增强，当前正常化估值缺乏安全边际"
+        }
+      ],
+      "events": [
+        {
+          "type": "财报",
+          "label": "FY2027 Q2财报（日期待公司IR确认）",
+          "note": "核Metal/Precoat量价与EBITDA率、Washington新线、Seattle整合、债务削减及FY2027指引",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "ALB",
+      "name": "Albemarle",
+      "group": "台账",
+      "codes": {
+        "US": "usALB"
+      },
+      "source": "Albemarle 投资研究 20260901",
+      "links": [
+        "reports/Albemarle/Albemarle-research-20260901.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 90,
+          "high": 110,
+          "market": "US",
+          "action": "观望，满足条件后分批评估",
+          "note": "非自动买入；须锂价不再结构性下破、Energy Storage量价与FCF可持续、净债务和资本开支纪律未恶化"
+        },
+        {
+          "label": "估值警戒线",
+          "dir": "above",
+          "low": 180,
+          "market": "US",
+          "action": "不追高，复核仓位",
+          "note": "若中周期EPS、FCF与资本回报证据未同步增强，周期股估值缺乏安全边际"
+        }
+      ],
+      "events": [
+        {
+          "type": "财报",
+          "label": "2026Q3财报（日期待公司IR确认）",
+          "note": "核Energy Storage实现价与销量、Specialties利润、TTM FCF、资本开支、净债务、CGP3恢复及CEO继任",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "SE",
+      "name": "Sea Limited",
+      "group": "台账",
+      "codes": {
+        "US": "usSE"
+      },
+      "source": "Sea Limited 2026Q2 research 20260901",
+      "links": [
+        "reports/SE/SE-research-20260901.md"
+      ],
+      "zones": [
+        {
+          "label": "分层研究性评估区间",
+          "dir": "range",
+          "low": 75,
+          "high": 105,
+          "market": "US",
+          "action": "研究性分批，75–105按分层规则评估",
+          "note": "非自动买入；90–105先建目标仓约1/3，75–90且条件未破坏可再加1/3；须Shopee GMV增速≥20%、EBITDA/GMV≥0.6%、Monee 90+ NPL≤1.5%、现金转换未恶化"
+        },
+        {
+          "label": "估值警戒线",
+          "dir": "above",
+          "low": 140,
+          "market": "US",
+          "action": "不追高，复核仓位",
+          "note": "除非EPS增长接近25%、Shopee利润率继续改善、Monee风险稳定，否则估值缺乏安全边际"
+        }
+      ],
+      "events": [
+        {
+          "type": "财报",
+          "label": "2026Q3财报（日期待公司IR确认）",
+          "note": "核Shopee EBITDA/GMV、GMV增速、物流成本、Monee拨备/贷款、90+ NPL、Garena bookings及Q3调整后EBITDA新口径",
+          "market": "US"
+        },
+        {
+          "type": "复检",
+          "label": "Sea 2026Q3财报后论文复检",
+          "note": "复核竞争税、Shopee盈利质量、Monee信用周期、Garena现金流及当前估值是否提供安全边际",
+          "market": "US"
+        }
+      ]
+    },
+    {
       "id": "RKLB",
       "name": "Rocket Lab",
       "group": "台账",
