@@ -2,8 +2,7 @@ name: 每日监控
 
 on:
   schedule:
-    - cron: "40 16 * * 1-5"
-      timezone: "Asia/Shanghai"
+    - cron: "5 8,16 * * 1-5"
   workflow_dispatch:
     inputs:
       commit:

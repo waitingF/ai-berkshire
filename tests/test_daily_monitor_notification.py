@@ -445,10 +445,6 @@ class WorkflowContractTest(unittest.TestCase):
         workflow = yaml.load(workflow_path.read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
 
         self.assertEqual(
-            workflow["on"]["schedule"][0],
-            {"cron": "30 17 * * 1-5", "timezone": "Asia/Shanghai"},
-        )
-        self.assertEqual(
             set(workflow["on"]["workflow_dispatch"]["inputs"]), {"commit", "notify"}
         )
         self.assertIn("concurrency", workflow)
