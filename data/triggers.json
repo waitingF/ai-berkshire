@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-03",
+  "updated": "2026-09-04",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -1286,19 +1286,29 @@
       "codes": {
         "US": "usLULU"
       },
-      "source": "标的跟踪表 20260516",
+      "source": "lululemon FY2026Q2 财报精读与研究 20260904",
       "links": [
+        "reports/lululemon/lululemon-research-20260904.md",
+        "reports/lululemon/lululemon-earnings-2026Q2.md",
         "reports/lululemon/最终报告.md"
       ],
       "zones": [
         {
-          "label": "观察仓带",
+          "label": "修复前研究性评估带",
           "dir": "below",
           "low": null,
-          "high": 119,
+          "high": 85,
           "market": "US",
-          "action": "建1–2%观察仓分批",
-          "note": "盯管理层过渡与品牌年轻化"
+          "action": "仅在经营条件未恶化时重新分批评估",
+          "note": "FY2026Q2低于预期、论文削弱；须Q3后北美同店/流量/转化、核心女装、折扣及库存没有继续恶化，单独跌价不触发买入"
+        },
+        {
+          "label": "修复未证实的估值警戒线",
+          "dir": "above",
+          "low": 140,
+          "market": "US",
+          "action": "不追高，复核仓位",
+          "note": "若北美修复、毛利率和产品证据未同步增强，不因反弹加仓"
         }
       ],
       "events": [
@@ -1307,6 +1317,14 @@
           "type": "财报",
           "label": "下季报后复检",
           "note": "核北美同店与库存",
+          "market": "US",
+          "done": true
+        },
+        {
+          "date": "2026-12-10",
+          "type": "财报",
+          "label": "FY2026Q3财报后复检（暂定）",
+          "note": "日期待公司IR确认；核北美同店、流量/转化、核心女装、折扣、库存与经营利润率",
           "market": "US"
         }
       ]
