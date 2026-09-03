@@ -153,6 +153,30 @@ class LocalGitHookTest(unittest.TestCase):
             self.assertEqual(result.returncode, 24)
             self.assertEqual(marker.read_text(encoding="utf-8"), "--full")
 
+    def test_pre_push_does_not_run_document_whitespace_check(self):
+        self.assertTrue(PRE_PUSH.exists(), "缺少 pre-push hook")
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self.make_repo(tmp)
+            marker = self.install_stub_validator(repo, exit_code=0)
+            report = repo / "reports" / "sample.md"
+            report.parent.mkdir()
+            report.write_text("document with trailing spaces  \n", encoding="utf-8")
+            run(["git", "add", "reports/sample.md"], cwd=repo)
+            run(["git", "commit", "-qm", "add report"], cwd=repo)
+            local_sha = run(["git", "rev-parse", "HEAD"], cwd=repo).stdout.strip()
+            zero_sha = "0" * 40
+
+            result = run(
+                ["bash", str(PRE_PUSH), "origin", "git@example.invalid:repo.git"],
+                cwd=repo,
+                stdin=(
+                    f"refs/heads/main {local_sha} refs/heads/main {zero_sha}\n"
+                ),
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(marker.read_text(encoding="utf-8"), "--full")
+
     def test_installer_sets_repository_hooks_path(self):
         self.assertTrue(INSTALLER.exists(), "缺少 Git hooks 安装脚本")
         with tempfile.TemporaryDirectory() as tmp:
