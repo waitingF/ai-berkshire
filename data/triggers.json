@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-01",
+  "updated": "2026-09-03",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -2777,6 +2777,51 @@
           "note": "已核：结果低于预期，收入质量、NRR/递延收入与现金消耗仍不足；论文削弱，维持观望不买入。原招股价不设为当前价格区间。",
           "market": "H",
           "done": true
+        }
+      ]
+    },
+    {
+      "id": "CRDO",
+      "name": "Credo Technology",
+      "group": "台账",
+      "codes": {
+        "US": "usCRDO"
+      },
+      "source": "Credo Technology 投资研究 20260903",
+      "links": [
+        "reports/Credo/Credo-research-20260903.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带（US$120–140；US$100–120更高安全边际）",
+          "dir": "range",
+          "low": 100,
+          "high": 140,
+          "market": "US",
+          "action": "观望，满足条件后分批研究性评估",
+          "note": "US$120–140为常规研究性评估带；US$100–120为更高安全边际，低价不等于买入。两档均须FY2027 Q2收入兑现、GAAP毛利率不低于公司指引、库存/应收及经营现金流健康、终端客户集中度不恶化，并排除大客户砍单、AEC技术路线失速或DustPhotonics整合失效"
+        },
+        {
+          "label": "估值警戒线",
+          "dir": "above",
+          "low": 220,
+          "market": "US",
+          "action": "不追高，复核仓位",
+          "note": "若收入、光学产品/客户分散与每股自由现金流证据未同步增强，高估值缺乏安全边际"
+        }
+      ],
+      "events": [
+        {
+          "type": "财报",
+          "label": "FY2027 Q2财报（日期待公司IR确认）",
+          "note": "核收入US$525–535m指引兑现、GAAP毛利率62.9%–64.9%、AEC驱动是否分散、库存/应收/经营现金流、SBC与DustPhotonics光学协同",
+          "market": "US"
+        },
+        {
+          "type": "复检",
+          "label": "FY2027 Q2财报后论文复检",
+          "note": "复核客户集中度、AEC与光学产品发展、毛利率、FCF转化、收购整合与稀释是否改变US$120–140研究带",
+          "market": "US"
         }
       ]
     }

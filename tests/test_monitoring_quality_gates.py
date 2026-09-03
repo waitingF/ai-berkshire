@@ -95,6 +95,24 @@ class LocalGitHookTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertFalse(marker.exists())
 
+    def test_pre_commit_does_not_run_document_whitespace_check(self):
+        self.assertTrue(PRE_COMMIT.exists(), "缺少 pre-commit hook")
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self.make_repo(tmp)
+            marker = self.install_stub_validator(repo, exit_code=0)
+            (repo / "data" / "triggers.json").write_text(
+                '{"updated":true}\n', encoding="utf-8"
+            )
+            report = repo / "reports" / "sample.md"
+            report.parent.mkdir()
+            report.write_text("document with trailing spaces  \n", encoding="utf-8")
+            run(["git", "add", "data/triggers.json", "reports/sample.md"], cwd=repo)
+
+            result = run(["bash", str(PRE_COMMIT)], cwd=repo)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(marker.read_text(encoding="utf-8"), "--fast")
+
     def test_pre_commit_blocks_relevant_change_when_fast_validation_fails(self):
         self.assertTrue(PRE_COMMIT.exists(), "缺少 pre-commit hook")
         with tempfile.TemporaryDirectory() as tmp:
