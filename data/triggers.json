@@ -2887,6 +2887,72 @@
           "market": "US"
         }
       ]
+    },
+    {
+      "id": "UFO",
+      "name": "Procure Space ETF",
+      "group": "台账",
+      "codes": {
+        "US": "usUFO"
+      },
+      "source": "全球太空领域产业链投资研究报告 20260908",
+      "links": [],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 34,
+          "high": 38,
+          "market": "US",
+          "action": "观望，满足条件后研究性分批评估",
+          "note": "非自动买入；须基金规模/流动性正常、持仓未明显偏离全球太空产业链，且主题总仓位不超过总权益5%"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "NOC",
+      "name": "Northrop Grumman",
+      "group": "台账",
+      "codes": {
+        "US": "usNOC"
+      },
+      "source": "全球太空领域产业链投资研究报告 20260908",
+      "links": [],
+      "zones": [
+        {
+          "label": "研究性评估带",
+          "dir": "range",
+          "low": 430,
+          "high": 470,
+          "market": "US",
+          "action": "观望，满足条件后评估",
+          "note": "非自动买入；须Space Systems固定价项目毛利、已拨款backlog和国防预算逻辑未恶化；本标的是防务/空间混合敞口"
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "ASTS",
+      "name": "AST SpaceMobile",
+      "group": "台账",
+      "codes": {
+        "US": "usASTS"
+      },
+      "source": "全球太空领域产业链投资研究报告 20260908",
+      "links": [],
+      "zones": [
+        {
+          "label": "高风险期权评估带",
+          "dir": "range",
+          "low": 30,
+          "high": 40,
+          "market": "US",
+          "action": "仅作高风险研究性评估",
+          "note": "非自动买入；须商业服务激活、卫星部署与收入兑现可验证、每股现金消耗受控；主题内期权桶总计不超过15%"
+        }
+      ],
+      "events": []
     }
   ]
 }
