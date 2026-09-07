@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-04",
+  "updated": "2026-09-08",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -2839,6 +2839,51 @@
           "type": "复检",
           "label": "FY2027 Q2财报后论文复检",
           "note": "复核客户集中度、AEC与光学产品发展、毛利率、FCF转化、收购整合与稀释是否改变US$120–140研究带",
+          "market": "US"
+        }
+      ]
+    },
+    {
+      "id": "PL",
+      "name": "Planet Labs PBC",
+      "group": "台账",
+      "codes": {
+        "US": "usPL"
+      },
+      "source": "Planet Labs 投资研究 20260908",
+      "links": [
+        "reports/Planet Labs/Planet Labs-research-20260908.md"
+      ],
+      "zones": [
+        {
+          "label": "研究性分批评估带",
+          "dir": "range",
+          "low": 6,
+          "high": 9,
+          "market": "US",
+          "action": "观望，满足条件后研究性分批评估",
+          "note": "非自动买入；须连续两季D&I/商业收入健康、TTM FCF显著转正、Capex/收入下降或由客户合同覆盖，且基本股数不再快速扩张"
+        },
+        {
+          "label": "估值警戒线",
+          "dir": "above",
+          "low": 18,
+          "market": "US",
+          "action": "不追高，复核仓位",
+          "note": "若RPO/Backlog、项目毛利、TTM FCF和完全稀释股数证据未同步改善，现价已接近乐观三年情景"
+        }
+      ],
+      "events": [
+        {
+          "type": "财报",
+          "label": "FY2027 Q3财报（日期待公司IR确认）",
+          "note": "核D&I/商业收入、点时确认收入、RPO/Backlog、GAAP营业亏损、Capex、ATM与完全稀释股数",
+          "market": "US"
+        },
+        {
+          "type": "复检",
+          "label": "FY2027 Q3财报后论文复检",
+          "note": "判断国防项目能否转为可重复高毛利服务，并重估稀释、净现金和估值",
           "market": "US"
         }
       ]
