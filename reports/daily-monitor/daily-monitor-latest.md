@@ -2,7 +2,7 @@
 
 **数据截止日**：2026-09-09（Asia/Shanghai）
 **运行状态**：DEGRADED
-**摘要**：P0 1 · P1 10 · 新增价格 5 · 新增披露 6 · 异常 1
+**摘要**：P0 2 · P1 10 · 新增价格 0 · 新增披露 12 · 异常 1
 **数据源状态**：quotes=OK、cninfo=OK、hkex=OK、sec=FAILED（SEC ticker 未映射到 CIK: UFO）
 
 > 价格条件、正式披露与其他研究缺口在同一份报告中展示；优先级表示研究处理顺序，不代表交易信号。
@@ -13,30 +13,37 @@
 
 | 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |
 |---|---|---|---|---:|---:|---:|---|
-| P0 | [AppLovin](../AppLovin/AppLovin-earnings-2026Q2.md) | US | 分批复核带 | [300.00, 330.00] | 312.09 | 区间内 | TRIGGERED |
-| P0 | [Novo Nordisk](../Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) | US | 观察仓带 | [44.00, 46.00] | 45.21 | 区间内 | TRIGGERED |
-| P0 | [Reddit](../Reddit/Reddit-earnings-2026Q2.md) | US | 小仓跟踪带 | [145.00, 165.00] | 148.97 | 区间内 | TRIGGERED |
-| P0 | [上海复旦](../%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6/%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6-earnings-2026H1.md) | H | H股原分批研究带（暂停执行） | [20.00, 28.00] | 25.82 | 区间内 | TRIGGERED |
-| P0 | [快手](../%E5%BF%AB%E6%89%8B/%E5%BF%AB%E6%89%8B2026Q2%E8%B4%A2%E6%8A%A5%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-20260820.md) | H | 评估带 | [35.00, 40.00] | 33.04 | 低于下界 5.6% | TRIGGERED |
-| P0 | [腾讯音乐](../%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90-research-20260831.md) | US | 分批评估区 | [6.00, 8.50] | 8.09 | 区间内 | TRIGGERED |
-| P0 | [赣锋锂业](../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md) | H | H股小仓带 | [34.60, 43.80] | 36.40 | 区间内 | TRIGGERED |
-| P1 | [Adobe](../Adobe/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | US | 原报告分批上限 | ≤ 247.00 | 256.52 | 3.9% | NEAR |
-| P1 | [Planet Labs PBC](../Planet%20Labs/Planet%20Labs-research-20260908.md) | US | 估值警戒线 | ≥ 18.00 | 17.97 | 0.2% | NEAR |
-| P1 | [中国平安](../%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89/%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89-thesis.md) | A | A股持有/分批复核带 | [48.00, 55.00] | 55.70 | 1.3% | NEAR |
-| P1 | [哔哩哔哩](../%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-research-20260803.md) | US | 研究性分批带 | [12.00, 16.00] | 16.25 | 1.6% | NEAR |
-| P1 | [腾讯控股](../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF-thesis.md) | H | 加仓带 | [400.00, 430.00] | 435.40 | 1.3% | NEAR |
-| P1 | [贵州茅台](../%E8%8C%85%E5%8F%B0/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | 建仓参考带 | [1100.00, 1250.00] | 1309.30 | 4.7% | NEAR |
+| P0 | [AppLovin](../AppLovin/AppLovin-earnings-2026Q2.md) | US | 分批复核带 | [300.00, 330.00] | 312.01 | 区间内 | TRIGGERED |
+| P0 | [Novo Nordisk](../Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) | US | 观察仓带 | [44.00, 46.00] | 45.16 | 区间内 | TRIGGERED |
+| P0 | [Reddit](../Reddit/Reddit-earnings-2026Q2.md) | US | 小仓跟踪带 | [145.00, 165.00] | 149.38 | 区间内 | TRIGGERED |
+| P0 | [上海复旦](../%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6/%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6-earnings-2026H1.md) | H | H股原分批研究带（暂停执行） | [20.00, 28.00] | 25.96 | 区间内 | TRIGGERED |
+| P0 | [快手](../%E5%BF%AB%E6%89%8B/%E5%BF%AB%E6%89%8B2026Q2%E8%B4%A2%E6%8A%A5%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-20260820.md) | H | 评估带 | [35.00, 40.00] | 32.32 | 低于下界 7.7% | TRIGGERED |
+| P0 | [腾讯音乐](../%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90-research-20260831.md) | US | 分批评估区 | [6.00, 8.50] | 8.06 | 区间内 | TRIGGERED |
+| P0 | [赣锋锂业](../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md) | H | H股小仓带 | [34.60, 43.80] | 37.00 | 区间内 | TRIGGERED |
+| P1 | [Adobe](../Adobe/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | US | 原报告分批上限 | ≤ 247.00 | 257.26 | 4.2% | NEAR |
+| P1 | [Planet Labs PBC](../Planet%20Labs/Planet%20Labs-research-20260908.md) | US | 估值警戒线 | ≥ 18.00 | 17.81 | 1.1% | NEAR |
+| P1 | [中国平安](../%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89/%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89-thesis.md) | A | A股持有/分批复核带 | [48.00, 55.00] | 56.26 | 2.3% | NEAR |
+| P1 | [哔哩哔哩](../%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-research-20260803.md) | US | 研究性分批带 | [12.00, 16.00] | 16.20 | 1.2% | NEAR |
+| P1 | [腾讯控股](../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF-thesis.md) | H | 加仓带 | [400.00, 430.00] | 434.00 | 0.9% | NEAR |
+| P1 | [贵州茅台](../%E8%8C%85%E5%8F%B0/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | 建仓参考带 | [1100.00, 1250.00] | 1290.88 | 3.3% | NEAR |
 
 ## 二、财报与正式披露监控
 
 | 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |
 |---|---|---|---|---:|---|---|
-| P1 | [亨通光电](../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20260826.md) | A | [亨通光电关于召开2026年半年度业绩说明会的提示性公告](https://static.cninfo.com.cn/finalpage/2026-09-09/1225553585.PDF)<br>[亨通光电2026年第四次临时股东会会议材料](https://static.cninfo.com.cn/finalpage/2026-09-09/1225553720.PDF) | 2 | 00:00 | REVIEW |
-| P1 | [厦门钨业](../%E5%8E%A6%E9%97%A8%E9%92%A8%E4%B8%9A/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | [厦门钨业关于使用闲置募集资金进行现金管理到期赎回并继续进行现金管理进展的公告](https://static.cninfo.com.cn/finalpage/2026-09-09/1225554029.PDF) | 1 | 00:00 | DONE |
-| P1 | [拓荆科技](../%E6%8B%93%E8%8D%86%E7%A7%91%E6%8A%80/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | [关于调整2026年半年度利润分配现金分红总额的公告](https://static.cninfo.com.cn/finalpage/2026-09-09/1225553277.PDF)<br>[中信建投证券股份有限公司关于拓荆科技股份有限公司2026年半年度持续督导跟踪报告](https://static.cninfo.com.cn/finalpage/2026-09-09/1225554367.PDF) | 2 | 00:00 | REVIEW |
-| P1 | [澜起科技](../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md) | A | [H股公告-翌日披露报表](https://static.cninfo.com.cn/finalpage/2026-09-09/1225554325.PDF) | 1 | 00:00 | REVIEW |
+| P0 | [兆易创新](../%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0/%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0-earnings-2026H1.md) | H | [POLL RESULTS OF THE 2026 THIRD EXTRAORDINARY GENERAL MEETING](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090901055.pdf) | 1 | 19:57 | DONE |
+| P0 | [迅策](../%E8%BF%85%E7%AD%96/%E8%BF%85%E7%AD%96%E7%A7%91%E6%8A%80-earnings-2026H1.md) | H | [PROPOSED AMENDMENTS TO THE ARTICLES OF ASSOCIATION](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090900989.pdf)<br>[(1) PROPOSED INVESTMENT IN THE PROJECT (2) PROPOSED FINANCIN…](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090900997.pdf)<br>[NOTICE OF 2026 FIRST EXTRAORDINARY GENERAL MEETING](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090901005.pdf)<br>[FORM OF PROXY FOR USE AT THE 2026 FIRST EXTRAORDINARY GENERA…](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090901009.pdf) | 4 | 19:38 | REVIEW |
+| P1 | [Adobe](../Adobe/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | US | [8-K](https://www.sec.gov/Archives/edgar/data/796343/000079634326000144/adbe-20260902.htm) | 1 | 04:38 | REVIEW |
+| P1 | [NovoNordisk](../Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) | US | [FORM 6-K](https://www.sec.gov/Archives/edgar/data/353278/000117184326005925/f6k_090726.htm) | 1 | 14:00 | DONE |
+| P1 | [中芯国际](../%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85-earnings-2026Q2.md) | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090900847.pdf) | 1 | 18:30 | REVIEW |
+| P1 | [哔哩哔哩](../%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-research-20260803.md) | US | [FORM 6-K](https://www.sec.gov/Archives/edgar/data/1723690/000119312526385939/d117682d6k.htm) | 1 | 16:19 | REVIEW |
+| P1 | [海尔智家](../%E6%B5%B7%E5%B0%94%E6%99%BA%E5%AE%B6-deepseek%E5%88%86%E6%9E%90/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090901033.pdf) | 1 | 19:52 | REVIEW |
+| P1 | [深演智能](../%E6%B7%B1%E6%BC%94%E6%99%BA%E8%83%BD/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | H | [VOLUNTARY ANNOUNCEMENT INCLUSION AS A CONSTITUENT STOCK OF T…](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090900033.pdf) | 1 | 08:04 | REVIEW |
+| P1 | [澜起科技](../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md) | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090900803.pdf) | 1 | 18:14 | DONE |
+| P1 | [立讯精密](../%E7%AB%8B%E8%AE%AF%E7%B2%BE%E5%AF%86/%E7%AB%8B%E8%AE%AF%E7%B2%BE%E5%AF%86-research-20260803.md) | H | [新增公告，内容待确认](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090900699.htm) | 1 | 17:54 | REVIEW |
+| P1 | [蓝思科技](../%E8%93%9D%E6%80%9D%E7%A7%91%E6%8A%80/%E8%93%9D%E6%80%9D%E7%A7%91%E6%8A%80-research-20260803.md) | A | [关于提前归还部分临时补充流动资金的闲置募集资金的公告](https://static.cninfo.com.cn/finalpage/2026-09-09/1225554953.PDF) | 1 | 16:12 | DONE |
+| P1 | [蓝思科技](../%E8%93%9D%E6%80%9D%E7%A7%91%E6%8A%80/%E8%93%9D%E6%80%9D%E7%A7%91%E6%8A%80-research-20260803.md) | H | [新增公告，内容待确认](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0909/2026090900249.htm) | 1 | 16:21 | REVIEW |
 | P1 | [赛轮轮胎](../%E8%B5%9B%E8%BD%AE%E8%BD%AE%E8%83%8E/%E8%B5%9B%E8%BD%AE%E8%BD%AE%E8%83%8E-earnings-2026H1.md) | A | [赛轮轮胎关于提供担保的进展公告](https://static.cninfo.com.cn/finalpage/2026-09-09/1225552881.PDF) | 1 | 00:00 | REVIEW |
-| P1 | [赣锋锂业](../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md) | A | [关于为控股子公司提供担保的进展公告](https://static.cninfo.com.cn/finalpage/2026-09-09/1225553208.PDF) | 1 | 00:00 | DONE |
 
 | 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |
 |---|---|---|---|---|---|---|---|---|
