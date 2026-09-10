@@ -2,7 +2,7 @@
 
 **数据截止日**：2026-09-10（Asia/Shanghai）
 **运行状态**：DEGRADED
-**摘要**：P0 3 · P1 6 · 新增价格 2 · 新增披露 7 · 异常 1
+**摘要**：P0 1 · P1 6 · 新增价格 3 · 新增披露 4 · 异常 1
 **数据源状态**：quotes=OK、cninfo=OK、hkex=OK、sec=FAILED（SEC ticker 未映射到 CIK: UFO）
 
 > 价格条件、正式披露与其他研究缺口在同一份报告中展示；优先级表示研究处理顺序，不代表交易信号。
@@ -13,31 +13,31 @@
 
 | 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |
 |---|---|---|---|---:|---:|---:|---|
-| P0 | [AppLovin](../AppLovin/AppLovin-earnings-2026Q2.md) | US | 分批复核带 | [300.00, 330.00] | 305.13 | 区间内 | TRIGGERED |
-| P0 | [Novo Nordisk](../Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) | US | 观察仓带 | [44.00, 46.00] | 44.64 | 区间内 | TRIGGERED |
-| P0 | [Reddit](../Reddit/Reddit-earnings-2026Q2.md) | US | 小仓跟踪带 | [145.00, 165.00] | 146.64 | 区间内 | TRIGGERED |
-| P0 | [上海复旦](../%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6/%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6-earnings-2026H1.md) | H | H股原分批研究带（暂停执行） | [20.00, 28.00] | 25.96 | 区间内 | TRIGGERED |
-| P0 | [哔哩哔哩](../%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-research-20260803.md) | US | 研究性分批带 | [12.00, 16.00] | 15.92 | 区间内 | TRIGGERED |
-| P0 | [快手](../%E5%BF%AB%E6%89%8B/%E5%BF%AB%E6%89%8B2026Q2%E8%B4%A2%E6%8A%A5%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-20260820.md) | H | 评估带 | [35.00, 40.00] | 32.32 | 低于下界 7.7% | TRIGGERED |
+| P0 | [AppLovin](../AppLovin/AppLovin-earnings-2026Q2.md) | US | 分批复核带 | [300.00, 330.00] | 305.06 | 区间内 | TRIGGERED |
+| P0 | [Novo Nordisk](../Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) | US | 观察仓带 | [44.00, 46.00] | 44.56 | 区间内 | TRIGGERED |
+| P0 | [Reddit](../Reddit/Reddit-earnings-2026Q2.md) | US | 小仓跟踪带 | [145.00, 165.00] | 146.44 | 区间内 | TRIGGERED |
+| P0 | [上海复旦](../%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6/%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6-earnings-2026H1.md) | H | H股原分批研究带（暂停执行） | [20.00, 28.00] | 25.34 | 区间内 | TRIGGERED |
+| P0 | [哔哩哔哩](../%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-research-20260803.md) | US | 研究性分批带 | [12.00, 16.00] | 15.91 | 区间内 | TRIGGERED |
+| P0 | [快手](../%E5%BF%AB%E6%89%8B/%E5%BF%AB%E6%89%8B2026Q2%E8%B4%A2%E6%8A%A5%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-20260820.md) | H | 评估带 | [35.00, 40.00] | 31.66 | 低于下界 9.5% | TRIGGERED |
+| P0 | [腾讯控股](../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF-thesis.md) | H | 加仓带 | [400.00, 430.00] | 425.60 | 区间内 | TRIGGERED |
 | P0 | [腾讯音乐](../%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90-research-20260831.md) | US | 分批评估区 | [6.00, 8.50] | 7.89 | 区间内 | TRIGGERED |
-| P0 | [赣锋锂业](../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md) | H | H股小仓带 | [34.60, 43.80] | 37.00 | 区间内 | TRIGGERED |
-| P1 | [Adobe](../Adobe/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | US | 原报告分批上限 | ≤ 247.00 | 255.53 | 3.5% | NEAR |
-| P1 | [Planet Labs PBC](../Planet%20Labs/Planet%20Labs-research-20260908.md) | US | 估值警戒线 | ≥ 18.00 | 17.31 | 3.8% | NEAR |
-| P1 | [Sea Limited](../SE/SE-research-20260901.md) | US | 分层研究性评估区间 | [75.00, 105.00] | 108.14 | 3.0% | NEAR |
-| P1 | [中国平安](../%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89/%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89-thesis.md) | A | A股持有/分批复核带 | [48.00, 55.00] | 56.26 | 2.3% | NEAR |
-| P1 | [腾讯控股](../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF-thesis.md) | H | 加仓带 | [400.00, 430.00] | 434.00 | 0.9% | NEAR |
-| P1 | [贵州茅台](../%E8%8C%85%E5%8F%B0/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | 建仓参考带 | [1100.00, 1250.00] | 1290.88 | 3.3% | NEAR |
+| P0 | [赣锋锂业](../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md) | H | H股小仓带 | [34.60, 43.80] | 35.88 | 区间内 | TRIGGERED |
+| P1 | [Adobe](../Adobe/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | US | 原报告分批上限 | ≤ 247.00 | 254.86 | 3.2% | NEAR |
+| P1 | [PDD Holdings](../%E6%8B%BC%E5%A4%9A%E5%A4%9A/%E6%8B%BC%E5%A4%9A%E5%A4%9A-thesis.md) | US | 首次建仓评估线 | ≤ 75.00 | 78.61 | 4.8% | NEAR |
+| P1 | [Planet Labs PBC](../Planet%20Labs/Planet%20Labs-research-20260908.md) | US | 估值警戒线 | ≥ 18.00 | 17.22 | 4.3% | NEAR |
+| P1 | [Sea Limited](../SE/SE-research-20260901.md) | US | 分层研究性评估区间 | [75.00, 105.00] | 108.71 | 3.5% | NEAR |
+| P1 | [中国平安](../%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89/%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89-thesis.md) | A | A股持有/分批复核带 | [48.00, 55.00] | 55.52 | 0.9% | NEAR |
+| P1 | [汇川技术](../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | 理想买点带 | [45.00, 52.00] | 54.46 | 4.7% | NEAR |
+| P1 | [贵州茅台](../%E8%8C%85%E5%8F%B0/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | 建仓参考带 | [1100.00, 1250.00] | 1285.13 | 2.8% | NEAR |
 
 ## 二、财报与正式披露监控
 
 | 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |
 |---|---|---|---|---:|---|---|
-| P0 | [合盛硅业](../%E5%90%88%E7%9B%9B%E7%A1%85%E4%B8%9A/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | [中国银河证券股份有限公司关于合盛硅业股份有限公司向特定对象发行股票之发行保荐书（2026年半年报财务数据更新版本）](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556069.PDF)<br>[中国银河证券股份有限公司关于合盛硅业股份有限公司向特定对象发行股票之上市保荐书（2026年半年报财务数据更新版本）](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556064.PDF)<br>[合盛硅业关于向特定对象发行股票募集说明书等申请文件更新的提示性公告](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556061.PDF)<br>[上海市锦天城律师事务所关于合盛硅业股份有限公司向特定对象发行股票的补充法律意见书（一）](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556044.PDF)<br>[天健会计师事务所（特殊普通合伙）关于合盛硅业股份有限公司向特定对象发行股票的财务报告及审计报告（2026年半年报财务数据…](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556058.PDF)<br>[关于合盛硅业股份有限公司向特定对象发行股票申请文件的审核问询函中有关财务事项的说明（修订稿）（2026年半年报财务数据更…](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556055.PDF)<br>[合盛硅业股份有限公司向特定对象发行股票证券募集说明书（申报稿）（2026年半年报财务数据更新版本）](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556045.PDF)<br>[关于合盛硅业股份有限公司向特定对象发行股票申请文件的审核问询函之回复报告（修订稿）（2026年半年报财务数据更新版本）](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556067.PDF) | 8 | 00:00 | REVIEW |
-| P1 | [中芯国际](../%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85-earnings-2026Q2.md) | A | [港股公告：翌日披露报表](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556195.PDF) | 1 | 00:00 | DONE |
-| P1 | [兆易创新](../%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0/%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0-earnings-2026H1.md) | A | [北京中银律师事务所关于兆易创新科技集团股份有限公司2026年第三次临时股东会的法律意见书](https://static.cninfo.com.cn/finalpage/2026-09-10/1225555804.PDF)<br>[兆易创新2026年第三次临时股东会决议公告](https://static.cninfo.com.cn/finalpage/2026-09-10/1225555799.PDF) | 2 | 00:00 | REVIEW |
-| P1 | [深科技](../%E6%B7%B1%E7%A7%91%E6%8A%80/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | [关于公司董事长退休离任暨选举董事长的公告](https://static.cninfo.com.cn/finalpage/2026-09-10/1225555679.PDF)<br>[第十届董事会第二十四次会议决议公告](https://static.cninfo.com.cn/finalpage/2026-09-10/1225555677.PDF)<br>[关于子公司拟扩大高端存储芯片封测产能的公告](https://static.cninfo.com.cn/finalpage/2026-09-10/1225555678.PDF) | 3 | 00:00 | REVIEW |
-| P1 | [澜起科技](../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md) | A | [H股公告-翌日披露报表](https://static.cninfo.com.cn/finalpage/2026-09-10/1225556190.PDF) | 1 | 00:00 | REVIEW |
-| P1 | [立讯精密](../%E7%AB%8B%E8%AE%AF%E7%B2%BE%E5%AF%86/%E7%AB%8B%E8%AE%AF%E7%B2%BE%E5%AF%86-research-20260803.md) | A | [关于召开2026年第一次临时股东会的提示性公告](https://static.cninfo.com.cn/finalpage/2026-09-10/1225555193.PDF) | 1 | 00:00 | REVIEW |
+| P1 | [兆易创新](../%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0/%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0-earnings-2026H1.md) | H | [新增公告，内容待确认](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0910/2026091000214.htm) | 1 | 12:00 | REVIEW |
+| P1 | [汇川技术](../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | [关于第七期股权激励计划预留授予股票期权第一个行权期采用自主行权模式开始行权的提示性公告](https://static.cninfo.com.cn/finalpage/2026-09-10/1225558226.PDF) | 1 | 18:24 | DONE |
+| P1 | [海尔智家](../%E6%B5%B7%E5%B0%94%E6%99%BA%E5%AE%B6-deepseek%E5%88%86%E6%9E%90/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0910/2026091000893.pdf) | 1 | 17:38 | REVIEW |
+| P1 | [澜起科技](../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md) | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0910/2026091000758.pdf) | 1 | 17:19 | DONE |
 
 | 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |
 |---|---|---|---|---|---|---|---|---|
