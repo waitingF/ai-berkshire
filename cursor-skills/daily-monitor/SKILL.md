@@ -49,7 +49,7 @@ This skill is generated from `skills/daily-monitor.md` so Claude Code, Codex, an
 - 正常输出仅写 `reports/daily-monitor/` 与机器状态。
 - 单一数据源、正文抽取或 DeepSeek 失败时仍保留确定性价格/事件结果，生成 `DEGRADED` 报告；失败源不推进游标，AI 失败的文档保持待重试。
 - 只通知新 P0/P1、状态变化、首次故障、恢复和已解除；持续状态不重复通知。
-- `reports/weekly-check/` 与 `reports/trigger-scan/` 是历史归档，不再更新、合并或作为 Pages 活动入口。
+- `reports/trigger-scan/` 是历史归档，不再更新、合并或作为 Pages 活动入口。
 
 ## 安全本地验证
 

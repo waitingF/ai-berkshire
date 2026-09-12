@@ -19,8 +19,8 @@ DeepSeek Harness users.
 - `tools/*.py`: shared financial validation and data tools used by both systems.
 - `reports/`: research outputs. Do not rewrite unrelated reports while changing
   tooling or skills. `reports/daily-monitor/` holds the active unified weekday
-  monitor. `reports/weekly-check/` and `reports/trigger-scan/` are historical
-  archives and are not updated or composed into the active Pages entry.
+  monitor. `reports/trigger-scan/` is a historical archive and is not updated
+  or composed into the active Pages entry.
 - `scripts/sync-codex-skills.py`: regenerates Codex skills from `skills/*.md`.
 - `scripts/install-codex-skills.sh` / `scripts/install-codex-skills.bat`:
   installs Codex skills locally.
@@ -96,8 +96,7 @@ DeepSeek Harness users.
   them. Do not commit downloaded PDFs, full announcement text, extracted text,
   complete model prompts, or secrets.
 - Pages pins `reports/daily-monitor/daily-monitor-latest.md` as "每日监控".
-  Historical weekly-check and trigger-scan files remain browsable only as
-  archives.
+  Historical trigger-scan files remain browsable only as an archive.
 
 ## Editing Rules
 

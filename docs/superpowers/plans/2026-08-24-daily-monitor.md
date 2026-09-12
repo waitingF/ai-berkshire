@@ -19,7 +19,7 @@
 - Program priority floors are authoritative; DeepSeek may upgrade but never downgrade them.
 - Do not commit PDFs, full announcement text, extracted text, complete model prompts, or secrets.
 - Do not OCR scanned PDFs in phase one; emit `OCR_REQUIRED / 待人工确认`.
-- Keep existing `reports/weekly-check/` and `reports/trigger-scan/` files unchanged as history and exclude them from the active Pages entry.
+- Keep existing `reports/trigger-scan/` files unchanged as history and exclude them from the active Pages entry.
 - Do not let GitHub Actions modify `data/triggers.json`; only `reports/daily-monitor/` and `data/monitoring-state.json` are machine-written.
 - Use TDD for production behavior: write one focused failing test, observe the intended failure, add minimal implementation, then rerun the focused and full tests.
 - Before a commit that touches `data/triggers.json` or `tools/trigger_scanner.py`, run `bash scripts/prepush-check.sh` and obtain explicit user confirmation. The implementation below avoids changing either file unless test evidence proves it necessary.
@@ -883,10 +883,7 @@ git commit -m "ci: run daily monitor on weekdays"
 ```python
 self.assertIn("每日监控", index_html)
 self.assertIn("reports/daily-monitor/daily-monitor-latest.html", index_html)
-self.assertNotIn("监控与周检", index_html)
-self.assertFalse((output_dir / "reports" / "监控与周检" / "index.html").exists())
 self.assertIn("价格监控", daily_monitor_html)
-self.assertNotIn("历史周检", daily_monitor_html)
 ```
 
 - [ ] **Step 2: Run and verify RED**
@@ -919,7 +916,7 @@ Run:
 python3 -m unittest tests.test_build_github_pages -v
 temporary_site=$(mktemp -d)
 python3 scripts/build-github-pages.py --reports-dir reports --output-dir "$temporary_site/site"
-rg -n "监控与周检|人工周检" "$temporary_site/site/index.html" "$temporary_site/site/reports/daily-monitor/daily-monitor-latest.html" || true
+rg -n "每日监控" "$temporary_site/site/index.html" "$temporary_site/site/reports/daily-monitor/daily-monitor-latest.html"
 ```
 
 Expected: Pages tests pass; active home/daily pages contain no old composed wording.
@@ -937,7 +934,6 @@ git commit -m "feat: publish one daily monitor page"
 
 **Files:**
 - Create: `skills/daily-monitor.md`
-- Delete: `skills/weekly-review.md`
 - Modify: `skills/trigger-monitor.md`
 - Modify: `AGENTS.md`
 - Modify: `CLAUDE.md`
@@ -971,7 +967,7 @@ def test_generated_skill_sets_exactly_match_canonical_sources(self):
 
 Run: `python3 -m unittest tests.test_skill_generation -v`
 
-Expected: failure after the canonical source is renamed because stale generated weekly-review artifacts remain.
+Expected: generated skill sets reconcile with the canonical source list.
 
 - [ ] **Step 3: Write the canonical skill and retire the old skill**
 
@@ -992,7 +988,7 @@ python3 scripts/generate-dsh-skills.py
 python3 scripts/sync-codex-prompts.py
 ```
 
-The generators must also remove stale generated `weekly-review` artifacts when their canonical source disappears; first add a failing generator test if current generators leave stale output, then implement stale-directory/file cleanup limited to generated names.
+The generators must remove stale generated artifacts when their canonical source disappears; first add a failing generator test if current generators leave stale output, then implement stale-directory/file cleanup limited to generated names.
 
 - [ ] **Step 6: Verify generated artifacts and contracts**
 
@@ -1006,7 +1002,7 @@ python3 scripts/generate-dsh-skills.py --check
 python3 scripts/sync-codex-prompts.py --check
 ```
 
-Expected: all checks pass; daily-monitor exists in all four compatibility surfaces and weekly-review is absent from active generated surfaces.
+Expected: all checks pass; daily-monitor exists in all four compatibility surfaces.
 
 - [ ] **Step 7: Commit skill and documentation migration**
 

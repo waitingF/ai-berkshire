@@ -54,21 +54,6 @@ class BuildGitHubPagesTest(unittest.TestCase):
                 encoding="utf-8",
             )
             (reports_dir / "portfolio-latest.md").write_text("# 组合最新报告\n\n组合。\n", encoding="utf-8")
-            weekly_dir = reports_dir / "weekly-check"
-            weekly_dir.mkdir()
-            (weekly_dir / "weekly-check-20260731.md").write_text(
-                "# 周检待办清单\n\n本周待办。\n",
-                encoding="utf-8",
-            )
-            (weekly_dir / "weekly-check-latest.md").write_text(
-                "# 最新周检\n\n"
-                "**当前报告：** [2026-07-31 周检待办清单](../weekly-check/weekly-check-20260731.md)\n\n"
-                "## 历史周检\n\n"
-                "| 数据截止日 | 报告 |\n"
-                "| --- | --- |\n"
-                "| 2026-07-31 | [周检待办清单](../weekly-check/weekly-check-20260731.md) |\n",
-                encoding="utf-8",
-            )
             scan_dir = reports_dir / "trigger-scan"
             scan_dir.mkdir()
             (scan_dir / "trigger-scan-latest.md").write_text(
@@ -100,9 +85,6 @@ class BuildGitHubPagesTest(unittest.TestCase):
             report_html = report_html_path.read_text(encoding="utf-8")
             board_html = (output_dir / "reports" / "重点标的看板.html").read_text(encoding="utf-8")
             ledger_html = (output_dir / "reports" / "标的跟踪表.html").read_text(encoding="utf-8")
-            weekly_latest_html = (
-                output_dir / "reports" / "weekly-check" / "weekly-check-latest.html"
-            ).read_text(encoding="utf-8")
             daily_monitor_html = (
                 output_dir / "reports" / "daily-monitor" / "daily-monitor-latest.html"
             ).read_text(encoding="utf-8")
@@ -137,7 +119,6 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn("重点标的看板", index_html)
             self.assertIn("标的跟踪表", index_html)
             self.assertIn("每日监控", index_html)
-            self.assertNotIn("监控与周检", index_html)
             self.assertIn("组合最新报告", index_html)
             self.assertIn("看板", index_html)
             self.assertIn("标的跟踪", index_html)
@@ -149,18 +130,13 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn("reports/%E6%A0%87%E7%9A%84%E8%B7%9F%E8%B8%AA%E8%A1%A8.html", index_html)
             self.assertIn("reports/daily-monitor/daily-monitor-latest.html", index_html)
             self.assertIn("reports/portfolio-latest.html", index_html)
-            self.assertNotIn("监控与周检", index_html)
             self.assertNotIn('class="pinned-home"', directory_html)
             self.assertIn("看板", report_html)
             self.assertIn("标的跟踪", report_html)
             self.assertIn("每日监控", report_html)
             self.assertIn("组合", report_html)
-            self.assertIn('aria-current="page"', weekly_latest_html)
-            self.assertIn('href="../weekly-check/weekly-check-20260731.html"', weekly_latest_html)
             self.assertIn("价格监控", daily_monitor_html)
             self.assertIn("财报与正式披露监控", daily_monitor_html)
-            self.assertNotIn("历史周检", daily_monitor_html)
-            self.assertFalse((output_dir / "reports" / "监控与周检" / "index.html").exists())
             self.assertIn("reports/portfolio-latest.html", daily_monitor_html)
             self.assertIn("腾讯", index_html)
             self.assertIn("reports/%E8%85%BE%E8%AE%AF/index.html", index_html)
@@ -191,17 +167,7 @@ class BuildGitHubPagesTest(unittest.TestCase):
             root = Path(tmp)
             reports_dir = root / "reports"
             output_dir = root / "site"
-            weekly_dir = reports_dir / "weekly-check"
-            weekly_dir.mkdir(parents=True)
-            (weekly_dir / "weekly-check-20260101.md").write_text(
-                "# 周检待办清单\n\n本周待办。\n",
-                encoding="utf-8",
-            )
-            (weekly_dir / "weekly-check-latest.md").write_text(
-                "# 最新周检\n\n"
-                "**当前报告：** [2026-01-01 周检待办清单](../weekly-check/weekly-check-20260101.md)\n",
-                encoding="utf-8",
-            )
+            reports_dir.mkdir()
             scan_dir = reports_dir / "trigger-scan"
             scan_dir.mkdir()
             (scan_dir / "trigger-scan-latest.md").write_text(
@@ -213,16 +179,10 @@ class BuildGitHubPagesTest(unittest.TestCase):
             builder.build_site(reports_dir, output_dir)
 
             home_html = (output_dir / "index.html").read_text(encoding="utf-8")
-            weekly_html = (
-                output_dir / "reports" / "weekly-check" / "weekly-check-latest.html"
-            ).read_text(encoding="utf-8")
-            for page_html in (home_html, weekly_html):
-                self.assertNotIn("reports/portfolio-latest.html", page_html)
-                self.assertNotIn("reports/%E9%87%8D%E7%82%B9%E6%A0%87%E7%9A%84%E7%9C%8B%E6%9D%BF.html", page_html)
-                self.assertNotIn("reports/%E6%A0%87%E7%9A%84%E8%B7%9F%E8%B8%AA%E8%A1%A8.html", page_html)
-                self.assertNotIn("reports/daily-monitor/daily-monitor-latest.html", page_html)
-            self.assertNotIn("监控与周检", home_html)
-            self.assertFalse((output_dir / "reports" / "监控与周检" / "index.html").exists())
+            self.assertNotIn("reports/portfolio-latest.html", home_html)
+            self.assertNotIn("reports/%E9%87%8D%E7%82%B9%E6%A0%87%E7%9A%84%E7%9C%8B%E6%9D%BF.html", home_html)
+            self.assertNotIn("reports/%E6%A0%87%E7%9A%84%E8%B7%9F%E8%B8%AA%E8%A1%A8.html", home_html)
+            self.assertNotIn("reports/daily-monitor/daily-monitor-latest.html", home_html)
 
 
 if __name__ == "__main__":

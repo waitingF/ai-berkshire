@@ -36,7 +36,6 @@ reports/
 ├── 重点标的看板.md            — thesis/指定标的一页总览（活文档）
 ├── 标的跟踪表.md          — 全部买卖建议的条件监控+复盘（活文档）
 ├── daily-monitor/             — 当前统一每日监控（价格 / 正式披露 / 其他）
-├── weekly-check/              — 历史周检归档（不再更新、不再作为 Pages 活动入口）
 ├── trigger-scan/              — 历史触发扫描归档（不再更新、不再作为 Pages 活动入口）
 ├── portfolio-latest.md       — 组合报告放根目录
 └── 多公司对比-checklist-20260408.md — 多公司报告放根目录

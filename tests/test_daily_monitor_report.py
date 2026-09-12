@@ -384,7 +384,6 @@ class DailyMonitorReportTest(unittest.TestCase):
         self.assertEqual(markdown.count("## 二、财报与正式披露监控"), 1)
         self.assertEqual(markdown.count("## 三、其他监控"), 1)
         self.assertNotIn("## 分诊", markdown)
-        self.assertNotIn("周检", markdown)
 
     def test_next_workflow_appears_only_once_per_target(self):
         markdown = render_markdown(

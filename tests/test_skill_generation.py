@@ -31,7 +31,7 @@ class SkillGenerationSetTest(unittest.TestCase):
         canonical = {path.stem for path in (ROOT / "skills").glob("*.md")}
 
         self.assertIn("daily-monitor", canonical)
-        self.assertNotIn("weekly-review", canonical)
+        self.assertFalse(any(name.startswith("week") for name in canonical))
         text = (ROOT / "skills" / "daily-monitor.md").read_text(encoding="utf-8")
         for requirement in (
             "python3 tools/daily_monitor.py --check",

@@ -44,7 +44,6 @@ class InvestmentSkillTrackingHooksTest(unittest.TestCase):
         self.assertIn("python3 tools/daily_monitor.py --check", text)
         self.assertIn("--state-file", text)
         self.assertIn("--report-dir", text)
-        self.assertNotIn("weekly-review", text)
 
 
 if __name__ == "__main__":
