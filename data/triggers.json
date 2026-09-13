@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-08",
+  "updated": "2026-09-12",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -1623,22 +1623,46 @@
       "codes": {
         "US": "usBILI"
       },
-      "source": "标的跟踪表 20260803",
+      "source": "标的跟踪表 20260803；2026Q2财报精读 20260912",
       "links": [
-        "reports/哔哩哔哩/哔哩哔哩-research-20260803.md"
+        "reports/哔哩哔哩/哔哩哔哩-research-20260803.md",
+        "reports/哔哩哔哩/哔哩哔哩-earnings-2026Q2.md",
+        "reports/哔哩哔哩/哔哩哔哩-thesis.md"
       ],
       "zones": [
         {
-          "label": "研究性分批带",
+          "label": "Q2后研究性分批带",
           "dir": "range",
           "low": 12,
           "high": 16,
           "market": "US",
-          "action": "研究性分批",
-          "note": "广告连续两季>15%、游戏止跌、毛利率≥36%"
+          "action": "仅复核，不自动建仓/加仓",
+          "note": "价格带已达但Q2游戏-14%（连续两季双位数下滑）；只有广告连续两季>15%、游戏同比恢复、毛利率≥36%且FCF细项可核时，才评估研究性分批"
         }
       ],
-      "events": []
+      "events": [
+        {
+          "date": "2026-08-27",
+          "type": "财报",
+          "label": "2026Q2财报复核",
+          "note": "已核：广告+28%、游戏-14%、毛利率37.22%、2026H1经营现金流RMB29.47亿（同比-10.4%）；论文边际弱化，FCF待年报补核。",
+          "market": "US",
+          "done": true
+        },
+        {
+          "date": "2026-09-17",
+          "type": "产品",
+          "label": "《Lumi Master》全球上线",
+          "note": "核初期留存、付费与投放纪律；不以下载量/榜单替代游戏收入和ROI，也不构成自动交易信号。",
+          "market": "US"
+        },
+        {
+          "type": "财报",
+          "label": "2026Q3财报（日期待公司IR确认）",
+          "note": "核广告同比是否仍>15%、游戏是否止跌、毛利率是否≥36%、应收账款与经营现金流；Q4财报再验游戏同比转正承诺。",
+          "market": "US"
+        }
+      ]
     },
     {
       "id": "圣邦股份",
@@ -2571,18 +2595,19 @@
       "codes": {
         "US": "usADBE"
       },
-      "source": "标的跟踪表 20260516；补漏登记 20260830；日期核验 20260831",
+      "source": "标的跟踪表 20260516；补漏登记 20260830；日期核验 20260831；FY2026Q3复核 20260912",
       "links": [
-        "reports/Adobe/最终报告.md"
+        "reports/Adobe/最终报告.md",
+        "reports/Adobe/Adobe-earnings-2026Q3.md"
       ],
       "zones": [
         {
-          "label": "原报告分批上限",
+          "label": "Q3后研究性分批上限",
           "dir": "below",
           "high": 247,
           "market": "US",
           "action": "分批评估",
-          "note": "仅复现2026-05报告的约US$247结论；须复核CEO交接与AI进展，旧价位不构成自动买入"
+          "note": "FY2026Q3后仍保留约US$247研究线：AI-first ARR已超US$650m但尚无Firefly独立收入/转化/利润率；CEO交接已定于12月1日生效。到线只触发复核，不构成自动买入"
         }
       ],
       "events": [
@@ -2590,7 +2615,15 @@
           "date": "2026-09-10",
           "type": "财报",
           "label": "FY2026Q3财报（公司IR已确认）",
-          "note": "Adobe IR 列示 2026-09-10 14:00 PT Q3 FY2026 earnings call；核FY2026 Q3业绩、CEO交接与AI产品商业化；SEC正式披露将由每日扫描捕获",
+          "note": "已核：收入US$6.76bn、AI-first ARR超US$650m、FCF US$2.438bn；Anil Chakravarthy将于2026-12-01接任CEO。Q3 10-Q尚待提交，附注项目待补核。",
+          "market": "US",
+          "done": true
+        },
+        {
+          "date": "2026-12-01",
+          "type": "管理层",
+          "label": "Anil Chakravarthy 就任 CEO",
+          "note": "核新CEO首批管理层安排、Creative Cloud/Firefly/企业CX的资源优先级，以及interim CFO安排是否转正；交接不代表自动交易信号。",
           "market": "US"
         }
       ]

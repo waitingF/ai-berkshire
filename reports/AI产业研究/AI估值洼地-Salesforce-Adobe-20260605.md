@@ -139,6 +139,8 @@ Salesforce在FY2026 Q4财报中将FY2030营收目标上调至630亿美元（含I
 
 ## 二、Adobe（ADBE）：15倍PE买入AI创意工具的垄断者
 
+> **后续跟踪（2026-09-12）**：本节保留 2026-06-05 的比较研究，并非最新建议。Adobe FY2026 Q3 已披露 AI-first ARR 超 US$6.5 亿、同比增逾 150%，Firefly App/积分包 ARR 环比 +40%，说明 AI 变现证据增强；但公司仍未给 Firefly 独立收入、付费转化率或增量利润率，因此本文“强烈买入”的表述不能直接延用。CEO 已确定由 Anil Chakravarthy 在 2026-12-01 接任，Narayen 转任执行董事长。请以 [FY2026 Q3 财报精读](../Adobe/Adobe-earnings-2026Q3.md) 的“持有/等待 US$247 研究线或更细 AI 转化证据”作为最新跟踪口径。
+
 **当前股价：$254.93 | 市值：~$1,050亿 | PE（TTM）：14.9x | 前瞻PE：10.5x**
 （数据来源：[GuruFocus](https://www.gurufocus.com/term/pe-ratio/ADBE)、[FinanceCharts](https://www.financecharts.com/stocks/ADBE/value/pe-ratio)）
 
