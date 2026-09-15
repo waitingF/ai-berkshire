@@ -3,7 +3,7 @@
   "date": "2026-09-15",
   "timezone": "Asia/Shanghai",
   "status": "DEGRADED",
-  "summary": "P0 1 · P1 11 · 新增价格 1 · 新增披露 10 · 异常 2",
+  "summary": "P0 1 · P1 7 · 新增价格 2 · 新增披露 6 · 异常 1",
   "items": [
     {
       "fingerprint": "f3d5be05aafbba059de07e82b8729262192d4514ac89cb71731b88f3a4cc311a",
@@ -48,10 +48,10 @@
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "UPCOMING_7D",
+        "previous_status": "TODAY",
         "current_status": "TODAY",
         "date": "2026-09-15",
         "days": 0,
@@ -67,7 +67,7 @@
       "target_id": "Reddit",
       "name": "Reddit",
       "title": "小仓跟踪带：TRIGGERED",
-      "why_now": "现价 162.36 ≤ 区间上界 165.00（区间内或以下）",
+      "why_now": "现价 162.38 ≤ 区间上界 165.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -79,7 +79,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 162.36,
+        "price": 162.38,
         "market": "US",
         "zone_label": "小仓跟踪带",
         "low": 145,
@@ -151,7 +151,7 @@
       "target_id": "上海复旦",
       "name": "上海复旦",
       "title": "H股原分批研究带（暂停执行）：TRIGGERED",
-      "why_now": "现价 24.06 ≤ 区间上界 28.00（区间内或以下）",
+      "why_now": "现价 24.14 ≤ 区间上界 28.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -163,7 +163,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 24.06,
+        "price": 24.14,
         "market": "H",
         "zone_label": "H股原分批研究带（暂停执行）",
         "low": 20,
@@ -180,7 +180,7 @@
       "target_id": "中国平安",
       "name": "中国平安",
       "title": "A股持有/分批复核带：TRIGGERED",
-      "why_now": "现价 54.73 ≤ 区间上界 55.00（区间内或以下）",
+      "why_now": "现价 53.90 ≤ 区间上界 55.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -192,7 +192,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 54.73,
+        "price": 53.9,
         "market": "A",
         "zone_label": "A股持有/分批复核带",
         "low": 48,
@@ -290,7 +290,7 @@
       "target_id": "快手",
       "name": "快手",
       "title": "评估带：TRIGGERED",
-      "why_now": "现价 30.58 ≤ 区间上界 40.00（区间内或以下）",
+      "why_now": "现价 29.84 ≤ 区间上界 40.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -302,7 +302,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 30.58,
+        "price": 29.84,
         "market": "H",
         "zone_label": "评估带",
         "low": 35,
@@ -310,6 +310,35 @@
         "direction": "range",
         "note": "2026H1复检已完成：价格进入评估带但经营条件未满足；至少再核一季广告/电商增速、毛利率≥53%、FCF及可灵单位经济",
         "research_link": "../%E5%BF%AB%E6%89%8B/%E5%BF%AB%E6%89%8B2026Q2%E8%B4%A2%E6%8A%A5%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-20260820.md"
+      }
+    },
+    {
+      "fingerprint": "8e913ea23bf1b094e2309fabacf0a1eba0916e570cf9b23c55dce6eb3f6b5b26",
+      "section": "price",
+      "priority": "P0",
+      "target_id": "汇川技术",
+      "name": "汇川技术",
+      "title": "理想买点带：TRIGGERED",
+      "why_now": "现价 51.55 ≤ 区间上界 52.00（区间内或以下）",
+      "status": "TRIGGERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "NEAR",
+        "current_status": "TRIGGERED",
+        "price": 51.55,
+        "market": "A",
+        "zone_label": "理想买点带",
+        "low": 45,
+        "high": 52,
+        "direction": "range",
+        "note": "或车毛利连续两季改善",
+        "research_link": "../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md"
       }
     },
     {
@@ -348,7 +377,7 @@
       "target_id": "赣锋锂业",
       "name": "赣锋锂业",
       "title": "H股小仓带：TRIGGERED",
-      "why_now": "现价 34.16 ≤ 区间上界 43.80（区间内或以下）",
+      "why_now": "现价 32.98 ≤ 区间上界 43.80（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -360,7 +389,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 34.16,
+        "price": 32.98,
         "market": "H",
         "zone_label": "H股小仓带",
         "low": 34.6,
@@ -413,10 +442,10 @@
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "TRIGGERED",
+        "previous_status": "NEAR",
         "current_status": "NEAR",
         "price": 334.24,
         "market": "US",
@@ -426,26 +455,6 @@
         "direction": "range",
         "note": "Q2绝对业绩强但略低市场预期；Q3须验证FCF/调整EBITDA、安装量、应收、SBC及独立ROAS/留存；总仓≤组合5%",
         "research_link": "../AppLovin/AppLovin-earnings-2026Q2.md"
-      }
-    },
-    {
-      "fingerprint": "cdcf912706c365b163c3b38107adde4b9e2ccf4879e9aa021e4a2fc837cf8a04",
-      "section": "other",
-      "priority": "P1",
-      "target_id": "cninfo",
-      "name": "CNINFO",
-      "title": "数据源异常",
-      "why_now": "HTTP 403",
-      "status": "FAILED",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "service": "cninfo"
       }
     },
     {
@@ -464,7 +473,7 @@
       "next_workflow": null,
       "needs_human_review": true,
       "limitations": [],
-      "notify": true,
+      "notify": false,
       "resolved": false,
       "metadata": {
         "kind": "disclosure_summary",
@@ -479,8 +488,8 @@
             "title": "APPOINTMENT OF HEIDI O'NEILL TO BOD & AMENDED BYLAWS",
             "published_at": "2026-09-14T16:15:47.000Z",
             "priority": "P1",
-            "status": "PENDING_AI",
-            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "status": "PENDING_EXTRACTION",
+            "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
             "source_urls": [
               "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000129/lulu-20260908.htm"
             ],
@@ -488,7 +497,7 @@
             "next_workflow": null,
             "needs_human_review": true,
             "limitations": [
-              "DeepSeek 连接失败或超时"
+              "正文提取失败（未配置 EDGAR_IDENTITY）"
             ],
             "document_type": "8-K",
             "source": "sec",
@@ -534,7 +543,7 @@
       "target_id": "sec",
       "name": "SEC",
       "title": "数据源异常",
-      "why_now": "SEC ticker 未映射到 CIK: UFO",
+      "why_now": "未配置 EDGAR_IDENTITY",
       "status": "FAILED",
       "verified_facts": [],
       "source_urls": [],
@@ -548,83 +557,123 @@
       }
     },
     {
-      "fingerprint": "319aac15697204eecf8ee3cb1f19a696f7a915a73e9d55eeb48d42539abf56a2",
-      "section": "disclosures",
+      "fingerprint": "e0769a8dcd0edb71925aac1444d0e578fc01600ec5ad169f35b88c5c77f85988",
+      "section": "price",
       "priority": "P1",
-      "target_id": "亨通光电",
-      "name": "亨通光电",
-      "title": "备用源线索：亨通光电:亨通光电2026年第四次临时股东会决议公告",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
+      "target_id": "中芯国际",
+      "name": "中芯国际",
+      "title": "H股研究建仓带：NEAR",
+      "why_now": "现价 60.80，距触发线 58.00 5% 内",
+      "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
       "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
+      "needs_human_review": false,
+      "limitations": [],
       "notify": true,
       "resolved": false,
       "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
-        "market": "A",
-        "published_at": "2026-09-15",
-        "research_link": "../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20260826.md"
+        "previous_status": "FAR",
+        "current_status": "NEAR",
+        "price": 60.8,
+        "market": "H",
+        "zone_label": "H股研究建仓带",
+        "low": null,
+        "high": 58,
+        "direction": "below",
+        "note": "且Q3确认毛利率/利用率稳定、CapEx与FCF质量未恶化；不构成自动买入",
+        "research_link": "../%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85-earnings-2026Q2.md"
       }
     },
     {
-      "fingerprint": "24fd84f6c8f7c8fba23bf3b018026bd9d8a4ae4b8c511e391576f92d4279b6e7",
+      "fingerprint": "b7c322949cc3e0557debb37ea751c9a89e2e04f499c627465351abde7d6d1175",
       "section": "disclosures",
       "priority": "P1",
       "target_id": "亨通光电",
       "name": "亨通光电",
-      "title": "备用源线索：亨通光电:亨通光电关于回购注销部分限制性股票并减少注册资本通知债权人的公告",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
+      "title": "3 项公告更新",
+      "why_now": "安徽承义律师事务所关于江苏亨通光电股份有限公司召开2026年第四次临时股东会的法律意见书；亨通光电2026年第四次临时股东会决议公告；亨通光电关于回购注销部分限制性股票并减少注册资本通知债权人的公告",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563333.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563325.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563335.PDF"
+      ],
       "next_workflow": null,
       "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
+      "limitations": [],
       "notify": true,
       "resolved": false,
       "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
+        "kind": "disclosure_summary",
         "market": "A",
-        "published_at": "2026-09-15",
-        "research_link": "../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20260826.md"
-      }
-    },
-    {
-      "fingerprint": "08ee5f6c1da263815681617e1eaadb3191d97115c9f04bb56e83ac00f1a890f4",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "亨通光电",
-      "name": "亨通光电",
-      "title": "备用源线索：亨通光电:安徽承义律师事务所关于江苏亨通光电股份有限公司召开2026年第四次临时股东会的法律意见书",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
-        "market": "A",
-        "published_at": "2026-09-15",
+        "date": "2026-09-15",
+        "published_at": "2026-09-15T00:00:00+08:00",
+        "latest_time": "2026-09-15T00:00:00+08:00",
+        "announcement_count": 3,
+        "updates": [
+          {
+            "summary": "安徽承义律师事务所关于江苏亨通光电股份有限公司召开2026年第四次临时股东会的法律意见书",
+            "title": "安徽承义律师事务所关于江苏亨通光电股份有限公司召开2026年第四次临时股东会的法律意见书",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "OCR_REQUIRED",
+            "why_now": "正式披露未提取到可用文本，一期不执行 OCR，需要人工核验。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563333.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "PDF 未提取到可用文本，一期不执行 OCR"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "亨通光电2026年第四次临时股东会决议公告",
+            "title": "亨通光电2026年第四次临时股东会决议公告",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563325.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "亨通光电关于回购注销部分限制性股票并减少注册资本通知债权人的公告",
+            "title": "亨通光电关于回购注销部分限制性股票并减少注册资本通知债权人的公告",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563335.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          }
+        ],
         "research_link": "../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20260826.md"
       }
     },
@@ -635,7 +684,7 @@
       "target_id": "华虹宏力",
       "name": "华虹半导体",
       "title": "H股小仓复核带：NEAR",
-      "why_now": "现价 106.50，距上沿 105.00 5% 内",
+      "why_now": "现价 105.70，距上沿 105.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -647,7 +696,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 106.5,
+        "price": 105.7,
         "market": "H",
         "zone_label": "H股小仓复核带",
         "low": 80,
@@ -680,166 +729,370 @@
       }
     },
     {
-      "fingerprint": "c54cbcfeead78400601c9ebd25609ca085d2b4998eeb1013a7636a769fda64af",
+      "fingerprint": "7526fbc5d6031ad1215b90d887803ec63fb06908c3649f6dc9b3bd7c11f14f8e",
       "section": "disclosures",
       "priority": "P1",
       "target_id": "德明利",
       "name": "德明利",
-      "title": "备用源线索：德明利:2026年第四次临时股东会决议公告",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
+      "title": "9 项公告更新",
+      "why_now": "华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市之发行保荐书；深圳市德明利技术股份有限公司最近一年以及最近一期的审计报告；大信会计师事务所（特殊普通合伙）《关于深圳市德明利技术股份有限公司申请向特定对象发行股票的审核问询函》之回复；2026年第四次临时股东会决议公告；关于深圳市德明利技术股份有限公司申请向特定对象发行股票的审核问询函的回复（修订稿）；深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市募集说明书（修订稿）；广东信达律师事务所关于深圳市德明利技术股份有限公司2026年第四次临时股东会的法律意见书；华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市之上市保荐书；广东信达律师事务所关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票的补充法律意见书(二)(修订稿)",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564377.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564383.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564382.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564254.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564378.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564381.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564255.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564380.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564379.PDF"
+      ],
       "next_workflow": null,
       "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
+      "limitations": [],
       "notify": true,
       "resolved": false,
       "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
+        "kind": "disclosure_summary",
         "market": "A",
-        "published_at": "2026-09-15",
+        "date": "2026-09-15",
+        "published_at": "2026-09-15T00:00:00+08:00",
+        "latest_time": "2026-09-15T00:00:00+08:00",
+        "announcement_count": 9,
+        "updates": [
+          {
+            "summary": "华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市之发行保荐书",
+            "title": "华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市之发行保荐书",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564377.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "深圳市德明利技术股份有限公司最近一年以及最近一期的审计报告",
+            "title": "深圳市德明利技术股份有限公司最近一年以及最近一期的审计报告",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_EXTRACTION",
+            "why_now": "正式披露正文暂未成功提取，保留待重试状态。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564383.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "正文提取失败（响应超过大小上限）"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "大信会计师事务所（特殊普通合伙）《关于深圳市德明利技术股份有限公司申请向特定对象发行股票的审核问询函》之回复",
+            "title": "大信会计师事务所（特殊普通合伙）《关于深圳市德明利技术股份有限公司申请向特定对象发行股票的审核问询函》之回复",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564382.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "2026年第四次临时股东会决议公告",
+            "title": "2026年第四次临时股东会决议公告",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564254.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "关于深圳市德明利技术股份有限公司申请向特定对象发行股票的审核问询函的回复（修订稿）",
+            "title": "关于深圳市德明利技术股份有限公司申请向特定对象发行股票的审核问询函的回复（修订稿）",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564378.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市募集说明书（修订稿）",
+            "title": "深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市募集说明书（修订稿）",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564381.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "广东信达律师事务所关于深圳市德明利技术股份有限公司2026年第四次临时股东会的法律意见书",
+            "title": "广东信达律师事务所关于深圳市德明利技术股份有限公司2026年第四次临时股东会的法律意见书",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564255.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市之上市保荐书",
+            "title": "华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市之上市保荐书",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564380.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "广东信达律师事务所关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票的补充法律意见书(二)(修订稿)",
+            "title": "广东信达律师事务所关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票的补充法律意见书(二)(修订稿)",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564379.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          }
+        ],
         "research_link": "../%E5%BE%B7%E6%98%8E%E5%88%A9/%E5%BE%B7%E6%98%8E%E5%88%A9-research-20260826.md"
       }
     },
     {
-      "fingerprint": "15554136f6b6c810b069d4ab20fa887e8ccf1692e6070d85bb6d82b10dc92dd7",
-      "section": "disclosures",
-      "priority": "P1",
-      "target_id": "德明利",
-      "name": "德明利",
-      "title": "备用源线索：德明利:广东信达律师事务所关于深圳市德明利技术股份有限公司2026年第四次临时股东会的法律意见书",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
-      "notify": true,
-      "resolved": false,
-      "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
-        "market": "A",
-        "published_at": "2026-09-15",
-        "research_link": "../%E5%BE%B7%E6%98%8E%E5%88%A9/%E5%BE%B7%E6%98%8E%E5%88%A9-research-20260826.md"
-      }
-    },
-    {
-      "fingerprint": "35b4288a4614333ef7f4a665c177136ccbfc94d4253a42ac1091bd34316dea46",
+      "fingerprint": "113ecae748e14e0c712f8f8be2dbec8c4081cd80463cf4e7e3ca9a5c39480c80",
       "section": "disclosures",
       "priority": "P1",
       "target_id": "晶合集成",
       "name": "晶合集成",
-      "title": "备用源线索：晶合集成:晶合集成关于2023年限制性股票激励计划预留授予部分第一个归属期归属结果暨股份上市公告",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
+      "title": "1 项公告更新",
+      "why_now": "晶合集成关于2023年限制性股票激励计划预留授予部分第一个归属期归属结果暨股份上市公告",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225562570.PDF"
+      ],
       "next_workflow": null,
       "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
+      "limitations": [],
       "notify": true,
       "resolved": false,
       "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
+        "kind": "disclosure_summary",
         "market": "A",
-        "published_at": "2026-09-15",
+        "date": "2026-09-15",
+        "published_at": "2026-09-15T00:00:00+08:00",
+        "latest_time": "2026-09-15T00:00:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "晶合集成关于2023年限制性股票激励计划预留授予部分第一个归属期归属结果暨股份上市公告",
+            "title": "晶合集成关于2023年限制性股票激励计划预留授予部分第一个归属期归属结果暨股份上市公告",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225562570.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          }
+        ],
         "research_link": "../%E6%99%B6%E5%90%88%E9%9B%86%E6%88%90/%E6%99%B6%E5%90%88%E9%9B%86%E6%88%90-research-20260821.md"
       }
     },
     {
-      "fingerprint": "feef982cecddd24c03b650585932a75845e4e180f5c9d4829287a284c5c1a6c1",
+      "fingerprint": "9f08e8b8c1d5e819f73c66636998a1cea65046f67a88b0320882369cd21fbc14",
       "section": "disclosures",
       "priority": "P1",
       "target_id": "杭叉集团",
       "name": "杭叉集团",
-      "title": "备用源线索：杭叉集团:杭叉集团股份有限公司关于召开2026年半年度业绩说明会的公告",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
+      "title": "1 项公告更新",
+      "why_now": "杭叉集团股份有限公司关于召开2026年半年度业绩说明会的公告",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225562207.PDF"
+      ],
       "next_workflow": null,
       "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
+      "limitations": [],
       "notify": true,
       "resolved": false,
       "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
+        "kind": "disclosure_summary",
         "market": "A",
-        "published_at": "2026-09-15",
+        "date": "2026-09-15",
+        "published_at": "2026-09-15T00:00:00+08:00",
+        "latest_time": "2026-09-15T00:00:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "杭叉集团股份有限公司关于召开2026年半年度业绩说明会的公告",
+            "title": "杭叉集团股份有限公司关于召开2026年半年度业绩说明会的公告",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225562207.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          }
+        ],
         "research_link": "../%E6%9D%AD%E5%8F%89%E9%9B%86%E5%9B%A2-deepseek%E5%88%86%E6%9E%90/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md"
       }
     },
     {
-      "fingerprint": "8e913ea23bf1b094e2309fabacf0a1eba0916e570cf9b23c55dce6eb3f6b5b26",
-      "section": "price",
-      "priority": "P1",
-      "target_id": "汇川技术",
-      "name": "汇川技术",
-      "title": "理想买点带：NEAR",
-      "why_now": "现价 53.66，距上沿 52.00 5% 内",
-      "status": "NEAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "NEAR",
-        "current_status": "NEAR",
-        "price": 53.66,
-        "market": "A",
-        "zone_label": "理想买点带",
-        "low": 45,
-        "high": 52,
-        "direction": "range",
-        "note": "或车毛利连续两季改善",
-        "research_link": "../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md"
-      }
-    },
-    {
-      "fingerprint": "a2ab44a53a9943c780b2ef45e84ab625020229495ee2fe7bdf5ec57792638513",
+      "fingerprint": "8e242b6a2f02e71aee3364a4cd5c27efea539707d645ba8df8bec7524a5d3014",
       "section": "disclosures",
       "priority": "P1",
       "target_id": "澜起科技",
       "name": "澜起科技",
-      "title": "备用源线索：澜起科技:H股公告-翌日披露报表",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
+      "title": "1 项公告更新",
+      "why_now": "H股公告-翌日披露报表",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563854.PDF"
+      ],
       "next_workflow": null,
       "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
+      "limitations": [],
       "notify": true,
       "resolved": false,
       "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
+        "kind": "disclosure_summary",
         "market": "A",
-        "published_at": "2026-09-15",
+        "date": "2026-09-15",
+        "published_at": "2026-09-15T00:00:00+08:00",
+        "latest_time": "2026-09-15T00:00:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "H股公告-翌日披露报表",
+            "title": "H股公告-翌日披露报表",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225563854.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          }
+        ],
         "research_link": "../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md"
       }
     },
@@ -850,7 +1103,7 @@
       "target_id": "腾讯",
       "name": "腾讯控股",
       "title": "加仓带：NEAR",
-      "why_now": "现价 430.60，距上沿 430.00 5% 内",
+      "why_now": "现价 438.60，距上沿 430.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -862,7 +1115,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 430.6,
+        "price": 438.6,
         "market": "H",
         "zone_label": "加仓带",
         "low": 400,
@@ -879,7 +1132,7 @@
       "target_id": "茅台",
       "name": "贵州茅台",
       "title": "建仓参考带：NEAR",
-      "why_now": "现价 1277.96，距上沿 1250.00 5% 内",
+      "why_now": "现价 1272.75，距上沿 1250.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -891,7 +1144,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 1277.96,
+        "price": 1272.75,
         "market": "A",
         "zone_label": "建仓参考带",
         "low": 1100,
@@ -902,29 +1155,52 @@
       }
     },
     {
-      "fingerprint": "b34b9aed15029bd6b0b32f97397cb28bd50e3dd5dfc40be60fb5e0495f0a2df8",
+      "fingerprint": "7108de38ae70bc85fbf5800ed6ff47cb7a8f6c19e6dea9bc71996b7e5e36a026",
       "section": "disclosures",
       "priority": "P1",
       "target_id": "雅克科技",
       "name": "雅克科技",
-      "title": "备用源线索：雅克科技:2026年中期权益分派实施公告",
-      "why_now": "正式披露源本次失败，AKShare 仅提供待回到正式来源核验的线索；不得据此形成已验证事实或投资结论。",
-      "status": "FALLBACK_CLUE",
+      "title": "1 项公告更新",
+      "why_now": "2026年中期权益分派实施公告",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-15/1225562438.PDF"
+      ],
       "next_workflow": null,
       "needs_human_review": true,
-      "limitations": [
-        "AKShare 不是一期正式披露依据"
-      ],
+      "limitations": [],
       "notify": true,
       "resolved": false,
       "metadata": {
-        "kind": "fallback_clue",
-        "fallback": true,
-        "source": "akshare",
+        "kind": "disclosure_summary",
         "market": "A",
-        "published_at": "2026-09-15",
+        "date": "2026-09-15",
+        "published_at": "2026-09-15T00:00:00+08:00",
+        "latest_time": "2026-09-15T00:00:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "2026年中期权益分派实施公告",
+            "title": "2026年中期权益分派实施公告",
+            "published_at": "2026-09-15T00:00:00+08:00",
+            "priority": "P1",
+            "status": "PENDING_AI",
+            "why_now": "AI 判断待补充；确定性监控结果仍然有效。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-15/1225562438.PDF"
+            ],
+            "verified_facts": [],
+            "next_workflow": null,
+            "needs_human_review": true,
+            "limitations": [
+              "未配置 DEEPSEEK_API_KEY"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          }
+        ],
         "research_link": "../%E9%9B%85%E5%85%8B%E7%A7%91%E6%8A%80/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md"
       }
     },
@@ -964,7 +1240,7 @@
       "target_id": "Adobe",
       "name": "Adobe",
       "title": "Q3后研究性分批上限：FAR",
-      "why_now": "现价 265.57，触发线 247.00",
+      "why_now": "现价 265.60，触发线 247.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -976,7 +1252,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 265.57,
+        "price": 265.6,
         "market": "US",
         "zone_label": "Q3后研究性分批上限",
         "low": null,
@@ -1270,6 +1546,26 @@
       }
     },
     {
+      "fingerprint": "c44ce53bd8eacf430bbc956e56bd8bea19309b55751d6410714b15a9339e3c39",
+      "section": "other",
+      "priority": "P2",
+      "target_id": "cninfo",
+      "name": "CNINFO",
+      "title": "数据源已恢复",
+      "why_now": "cninfo 正式披露采集本次恢复。",
+      "status": "RECOVERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": true,
+      "metadata": {
+        "service": "cninfo"
+      }
+    },
+    {
       "fingerprint": "5c9e7c6e5642b891736a199b86373c20c7246878195a2ff433b8bf0c5bdb0783",
       "section": "other",
       "priority": "P2",
@@ -1386,7 +1682,7 @@
       "target_id": "Keyence",
       "name": "Keyence",
       "title": "加仓带：FAR",
-      "why_now": "现价 75960.00，触发线 64200.00",
+      "why_now": "现价 75660.00，触发线 64200.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1398,7 +1694,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 75960.0,
+        "price": 75660.0,
         "market": "JP",
         "zone_label": "加仓带",
         "low": null,
@@ -1671,18 +1967,18 @@
       "priority": "P2",
       "target_id": "拼多多",
       "name": "PDD Holdings",
-      "title": "首次建仓评估线：条件已解除",
-      "why_now": "价格已离开此前监控条件，本次记录解除状态。",
+      "title": "首次建仓评估线：FAR",
+      "why_now": "现价 79.38，触发线 75.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
       "next_workflow": null,
       "needs_human_review": false,
       "limitations": [],
-      "notify": true,
-      "resolved": true,
+      "notify": false,
+      "resolved": false,
       "metadata": {
-        "previous_status": "NEAR",
+        "previous_status": "FAR",
         "current_status": "FAR",
         "price": 79.38,
         "market": "US",
@@ -2146,7 +2442,7 @@
       "target_id": "三环集团",
       "name": "三环集团",
       "title": "高确定性带：FAR",
-      "why_now": "现价 125.83，区间 [70.00, 85.00]",
+      "why_now": "现价 126.21，区间 [70.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2158,7 +2454,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 125.83,
+        "price": 126.21,
         "market": "A",
         "zone_label": "高确定性带",
         "low": 70,
@@ -2175,7 +2471,7 @@
       "target_id": "上海复旦",
       "name": "上海复旦",
       "title": "A股原分批研究带（暂停执行）：FAR",
-      "why_now": "现价 52.15，区间 [25.00, 32.00]",
+      "why_now": "现价 52.14，区间 [25.00, 32.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2187,7 +2483,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 52.15,
+        "price": 52.14,
         "market": "A",
         "zone_label": "A股原分批研究带（暂停执行）",
         "low": 25,
@@ -2204,7 +2500,7 @@
       "target_id": "东方电气",
       "name": "东方电气",
       "title": "分批评估带：FAR",
-      "why_now": "现价 24.31，区间 [15.00, 18.00]",
+      "why_now": "现价 24.12，区间 [15.00, 18.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2216,7 +2512,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 24.31,
+        "price": 24.12,
         "market": "A",
         "zone_label": "分批评估带",
         "low": 15,
@@ -2233,7 +2529,7 @@
       "target_id": "中兴通讯",
       "name": "中兴通讯",
       "title": "评估带：FAR",
-      "why_now": "现价 31.95，区间 [22.00, 28.00]",
+      "why_now": "现价 32.01，区间 [22.00, 28.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2245,7 +2541,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 31.95,
+        "price": 32.01,
         "market": "A",
         "zone_label": "评估带",
         "low": 22,
@@ -2262,7 +2558,7 @@
       "target_id": "中国广核",
       "name": "中国广核",
       "title": "舒适买点带：FAR",
-      "why_now": "现价 4.34，区间 [3.20, 3.50]",
+      "why_now": "现价 4.32，区间 [3.20, 3.50]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2274,7 +2570,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 4.34,
+        "price": 4.32,
         "market": "A",
         "zone_label": "舒适买点带",
         "low": 3.2,
@@ -2291,7 +2587,7 @@
       "target_id": "中芯国际",
       "name": "中芯国际",
       "title": "A股重新估值带：FAR",
-      "why_now": "现价 114.07，触发线 60.00",
+      "why_now": "现价 114.86，触发线 60.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2303,7 +2599,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 114.07,
+        "price": 114.86,
         "market": "A",
         "zone_label": "A股重新估值带",
         "low": null,
@@ -2314,42 +2610,13 @@
       }
     },
     {
-      "fingerprint": "e0769a8dcd0edb71925aac1444d0e578fc01600ec5ad169f35b88c5c77f85988",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "中芯国际",
-      "name": "中芯国际",
-      "title": "H股研究建仓带：FAR",
-      "why_now": "现价 61.30，触发线 58.00",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 61.3,
-        "market": "H",
-        "zone_label": "H股研究建仓带",
-        "low": null,
-        "high": 58,
-        "direction": "below",
-        "note": "且Q3确认毛利率/利用率稳定、CapEx与FCF质量未恶化；不构成自动买入",
-        "research_link": "../%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85-earnings-2026Q2.md"
-      }
-    },
-    {
       "fingerprint": "fcfcca30ab4f65d00920e0e9e6c4bfd3722f1363fb048a3512fdeba088832c19",
       "section": "price",
       "priority": "P2",
       "target_id": "云迹科技",
       "name": "云迹科技",
       "title": "研究性小仓评估带：FAR",
-      "why_now": "现价 91.55，区间 [20.00, 35.00]",
+      "why_now": "现价 84.75，区间 [20.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2361,7 +2628,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 91.55,
+        "price": 84.75,
         "market": "H",
         "zone_label": "研究性小仓评估带",
         "low": 20,
@@ -2378,7 +2645,7 @@
       "target_id": "亨通光电",
       "name": "亨通光电",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 63.20，区间 [45.00, 55.00]",
+      "why_now": "现价 62.42，区间 [45.00, 55.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2390,7 +2657,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 63.2,
+        "price": 62.42,
         "market": "A",
         "zone_label": "研究性分批评估带",
         "low": 45,
@@ -2436,7 +2703,7 @@
       "target_id": "兆易创新",
       "name": "兆易创新",
       "title": "评估带：FAR",
-      "why_now": "现价 356.88，触发线 180.00",
+      "why_now": "现价 363.11，触发线 180.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2448,7 +2715,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 356.88,
+        "price": 363.11,
         "market": "A",
         "zone_label": "评估带",
         "low": null,
@@ -2465,7 +2732,7 @@
       "target_id": "剑桥科技",
       "name": "剑桥科技",
       "title": "评估带：FAR",
-      "why_now": "现价 218.88，区间 [80.00, 100.00]",
+      "why_now": "现价 216.40，区间 [80.00, 100.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2477,7 +2744,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 218.88,
+        "price": 216.4,
         "market": "A",
         "zone_label": "评估带",
         "low": 80,
@@ -2494,7 +2761,7 @@
       "target_id": "北京君正",
       "name": "北京君正",
       "title": "A股复核带：FAR",
-      "why_now": "现价 126.32，区间 [90.00, 115.00]",
+      "why_now": "现价 127.58，区间 [90.00, 115.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2506,7 +2773,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 126.32,
+        "price": 127.58,
         "market": "A",
         "zone_label": "A股复核带",
         "low": 90,
@@ -2523,7 +2790,7 @@
       "target_id": "华虹宏力",
       "name": "华虹半导体",
       "title": "A股评估带：FAR",
-      "why_now": "现价 210.72，区间 [70.00, 100.00]",
+      "why_now": "现价 214.60，区间 [70.00, 100.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2535,7 +2802,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 210.72,
+        "price": 214.6,
         "market": "A",
         "zone_label": "A股评估带",
         "low": 70,
@@ -2552,7 +2819,7 @@
       "target_id": "厦门钨业",
       "name": "厦门钨业",
       "title": "评估带：FAR",
-      "why_now": "现价 49.38，区间 [35.00, 42.00]",
+      "why_now": "现价 51.14，区间 [35.00, 42.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2564,7 +2831,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 49.38,
+        "price": 51.14,
         "market": "A",
         "zone_label": "评估带",
         "low": 35,
@@ -2581,7 +2848,7 @@
       "target_id": "合盛硅业",
       "name": "合盛硅业",
       "title": "评估区：FAR",
-      "why_now": "现价 32.02，区间 [22.00, 28.00]",
+      "why_now": "现价 31.82，区间 [22.00, 28.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2593,7 +2860,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 32.02,
+        "price": 31.82,
         "market": "A",
         "zone_label": "评估区",
         "low": 22,
@@ -2662,7 +2929,7 @@
       "target_id": "国电南瑞",
       "name": "国电南瑞",
       "title": "舒适带：FAR",
-      "why_now": "现价 22.21，区间 [18.00, 20.00]",
+      "why_now": "现价 21.99，区间 [18.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2674,7 +2941,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 22.21,
+        "price": 21.99,
         "market": "A",
         "zone_label": "舒适带",
         "low": 18,
@@ -2691,7 +2958,7 @@
       "target_id": "圣邦股份",
       "name": "圣邦股份",
       "title": "确认带：FAR",
-      "why_now": "现价 107.60，区间 [55.00, 70.00]",
+      "why_now": "现价 108.78，区间 [55.00, 70.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2703,7 +2970,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 107.6,
+        "price": 108.78,
         "market": "A",
         "zone_label": "确认带",
         "low": 55,
@@ -2720,7 +2987,7 @@
       "target_id": "多氟多",
       "name": "多氟多",
       "title": "评估带：FAR",
-      "why_now": "现价 31.84，区间 [26.00, 30.00]",
+      "why_now": "现价 32.24，区间 [26.00, 30.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2732,7 +2999,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 31.84,
+        "price": 32.24,
         "market": "A",
         "zone_label": "评估带",
         "low": 26,
@@ -2749,7 +3016,7 @@
       "target_id": "天齐锂业",
       "name": "天齐锂业",
       "title": "评估带：FAR",
-      "why_now": "现价 42.97，区间 [30.00, 35.00]",
+      "why_now": "现价 42.10，区间 [30.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2761,7 +3028,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 42.97,
+        "price": 42.1,
         "market": "A",
         "zone_label": "评估带",
         "low": 30,
@@ -2778,7 +3045,7 @@
       "target_id": "安克创新",
       "name": "安克创新",
       "title": "评估带：FAR",
-      "why_now": "现价 127.84，区间 [87.00, 105.00]",
+      "why_now": "现价 127.30，区间 [87.00, 105.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2790,7 +3057,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 127.84,
+        "price": 127.3,
         "market": "A",
         "zone_label": "评估带",
         "low": 87,
@@ -2807,7 +3074,7 @@
       "target_id": "小米",
       "name": "小米集团",
       "title": "考虑带：FAR",
-      "why_now": "现价 27.16，区间 [18.00, 20.00]",
+      "why_now": "现价 26.56，区间 [18.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2819,7 +3086,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 27.16,
+        "price": 26.56,
         "market": "H",
         "zone_label": "考虑带",
         "low": 18,
@@ -2836,7 +3103,7 @@
       "target_id": "德明利",
       "name": "德明利",
       "title": "研究性评估带：FAR",
-      "why_now": "现价 387.90，区间 [200.00, 260.00]",
+      "why_now": "现价 385.98，区间 [200.00, 260.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2848,7 +3115,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 387.9,
+        "price": 385.98,
         "market": "A",
         "zone_label": "研究性评估带",
         "low": 200,
@@ -2920,7 +3187,7 @@
       "target_id": "拓荆科技",
       "name": "拓荆科技",
       "title": "加仓带：FAR",
-      "why_now": "现价 601.00，触发线 420.00",
+      "why_now": "现价 649.00，触发线 420.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2932,7 +3199,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 601.0,
+        "price": 649.0,
         "market": "A",
         "zone_label": "加仓带",
         "low": null,
@@ -2978,7 +3245,7 @@
       "target_id": "晶合集成",
       "name": "晶合集成",
       "title": "观察带：FAR",
-      "why_now": "现价 26.00，区间 [14.00, 23.00]",
+      "why_now": "现价 26.80，区间 [14.00, 23.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2990,7 +3257,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 26.0,
+        "price": 26.8,
         "market": "H",
         "zone_label": "观察带",
         "low": 14,
@@ -3007,7 +3274,7 @@
       "target_id": "晶合集成",
       "name": "晶合集成",
       "title": "观察带：FAR",
-      "why_now": "现价 34.21，区间 [12.00, 20.00]",
+      "why_now": "现价 34.30，区间 [12.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3019,7 +3286,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 34.21,
+        "price": 34.3,
         "market": "A",
         "zone_label": "观察带",
         "low": 12,
@@ -3036,7 +3303,7 @@
       "target_id": "杭叉集团",
       "name": "杭叉集团",
       "title": "等待带：FAR",
-      "why_now": "现价 24.55，区间 [20.00, 23.00]",
+      "why_now": "现价 24.38，区间 [20.00, 23.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3048,7 +3315,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 24.55,
+        "price": 24.38,
         "market": "A",
         "zone_label": "等待带",
         "low": 20,
@@ -3065,7 +3332,7 @@
       "target_id": "极视角",
       "name": "极视角",
       "title": "重估带：FAR",
-      "why_now": "现价 68.35，区间 [20.00, 40.00]",
+      "why_now": "现价 71.05，区间 [20.00, 40.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3077,7 +3344,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 68.35,
+        "price": 71.05,
         "market": "H",
         "zone_label": "重估带",
         "low": 20,
@@ -3094,7 +3361,7 @@
       "target_id": "永新股份",
       "name": "永新股份",
       "title": "等待带：FAR",
-      "why_now": "现价 11.45，触发线 10.00",
+      "why_now": "现价 11.40，触发线 10.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3106,7 +3373,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 11.45,
+        "price": 11.4,
         "market": "A",
         "zone_label": "等待带",
         "low": null,
@@ -3123,7 +3390,7 @@
       "target_id": "泡泡玛特",
       "name": "泡泡玛特",
       "title": "加仓带：FAR",
-      "why_now": "现价 152.90，区间 [120.00, 140.00]",
+      "why_now": "现价 152.70，区间 [120.00, 140.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3135,7 +3402,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 152.9,
+        "price": 152.7,
         "market": "H",
         "zone_label": "加仓带",
         "low": 120,
@@ -3152,7 +3419,7 @@
       "target_id": "海尔智家",
       "name": "海尔智家",
       "title": "等待带：FAR",
-      "why_now": "现价 21.12，区间 [16.00, 18.00]",
+      "why_now": "现价 21.17，区间 [16.00, 18.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3164,7 +3431,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 21.12,
+        "price": 21.17,
         "market": "A",
         "zone_label": "等待带",
         "low": 16,
@@ -3181,7 +3448,7 @@
       "target_id": "海康威视",
       "name": "海康威视",
       "title": "等待带：FAR",
-      "why_now": "现价 33.16，区间 [26.00, 29.00]",
+      "why_now": "现价 32.77，区间 [26.00, 29.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3193,7 +3460,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 33.16,
+        "price": 32.77,
         "market": "A",
         "zone_label": "等待带",
         "low": 26,
@@ -3210,7 +3477,7 @@
       "target_id": "深演智能",
       "name": "深演智能",
       "title": "可关注带：FAR",
-      "why_now": "现价 485.00，触发线 80.00",
+      "why_now": "现价 450.00，触发线 80.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3222,7 +3489,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 485.0,
+        "price": 450.0,
         "market": "H",
         "zone_label": "可关注带",
         "low": null,
@@ -3239,7 +3506,7 @@
       "target_id": "深科技",
       "name": "深科技",
       "title": "稳健型研究性评估带：FAR",
-      "why_now": "现价 33.77，区间 [24.00, 28.00]",
+      "why_now": "现价 33.91，区间 [24.00, 28.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3251,7 +3518,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 33.77,
+        "price": 33.91,
         "market": "A",
         "zone_label": "稳健型研究性评估带",
         "low": 24,
@@ -3268,7 +3535,7 @@
       "target_id": "澜起科技",
       "name": "澜起科技",
       "title": "A股研究性评估带：FAR",
-      "why_now": "现价 184.65，区间 [120.00, 150.00]",
+      "why_now": "现价 187.83，区间 [120.00, 150.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3280,7 +3547,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 184.65,
+        "price": 187.83,
         "market": "A",
         "zone_label": "A股研究性评估带",
         "low": 120,
@@ -3297,7 +3564,7 @@
       "target_id": "澜起科技",
       "name": "澜起科技",
       "title": "H股研究性评估带：FAR",
-      "why_now": "现价 243.00，区间 [140.00, 175.00]",
+      "why_now": "现价 256.20，区间 [140.00, 175.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3309,7 +3576,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 243.0,
+        "price": 256.2,
         "market": "H",
         "zone_label": "H股研究性评估带",
         "low": 140,
@@ -3326,7 +3593,7 @@
       "target_id": "立讯精密",
       "name": "立讯精密",
       "title": "A股分批带：FAR",
-      "why_now": "现价 52.78，触发线 43.00",
+      "why_now": "现价 51.63，触发线 43.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3338,7 +3605,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 52.78,
+        "price": 51.63,
         "market": "A",
         "zone_label": "A股分批带",
         "low": null,
@@ -3355,7 +3622,7 @@
       "target_id": "立讯精密",
       "name": "立讯精密",
       "title": "H股分批带：FAR",
-      "why_now": "现价 57.00，触发线 44.00",
+      "why_now": "现价 56.20，触发线 44.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3367,7 +3634,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 57.0,
+        "price": 56.2,
         "market": "H",
         "zone_label": "H股分批带",
         "low": null,
@@ -3384,7 +3651,7 @@
       "target_id": "美团",
       "name": "美团-W",
       "title": "舒适加仓带：FAR",
-      "why_now": "现价 75.05，触发线 70.00",
+      "why_now": "现价 74.85，触发线 70.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3396,7 +3663,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 75.05,
+        "price": 74.85,
         "market": "H",
         "zone_label": "舒适加仓带",
         "low": null,
@@ -3552,7 +3819,7 @@
       "target_id": "蓝思科技",
       "name": "蓝思科技",
       "title": "评估带：FAR",
-      "why_now": "现价 33.27，区间 [18.00, 24.00]",
+      "why_now": "现价 32.86，区间 [18.00, 24.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3564,7 +3831,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 33.27,
+        "price": 32.86,
         "market": "A",
         "zone_label": "评估带",
         "low": 18,
@@ -3581,7 +3848,7 @@
       "target_id": "赛轮轮胎",
       "name": "赛轮轮胎",
       "title": "参考带：FAR",
-      "why_now": "现价 13.60，区间 [10.00, 12.00]",
+      "why_now": "现价 13.83，区间 [10.00, 12.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3593,7 +3860,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 13.6,
+        "price": 13.83,
         "market": "A",
         "zone_label": "参考带",
         "low": 10,
@@ -3610,7 +3877,7 @@
       "target_id": "赣锋锂业",
       "name": "赣锋锂业",
       "title": "A股评估带：FAR",
-      "why_now": "现价 46.68，区间 [30.00, 38.00]",
+      "why_now": "现价 45.58，区间 [30.00, 38.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3622,7 +3889,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 46.68,
+        "price": 45.58,
         "market": "A",
         "zone_label": "A股评估带",
         "low": 30,
@@ -3639,7 +3906,7 @@
       "target_id": "迅策",
       "name": "迅策科技",
       "title": "评估带：FAR",
-      "why_now": "现价 93.70，区间 [60.00, 85.00]",
+      "why_now": "现价 95.65，区间 [60.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3651,7 +3918,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 93.7,
+        "price": 95.65,
         "market": "H",
         "zone_label": "评估带",
         "low": 60,
@@ -3668,7 +3935,7 @@
       "target_id": "长光辰芯",
       "name": "长光辰芯",
       "title": "理想买入带：FAR",
-      "why_now": "现价 78.00，触发线 30.00",
+      "why_now": "现价 78.05，触发线 30.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3680,7 +3947,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 78.0,
+        "price": 78.05,
         "market": "H",
         "zone_label": "理想买入带",
         "low": null,
@@ -3697,7 +3964,7 @@
       "target_id": "雅克科技",
       "name": "雅克科技",
       "title": "卫星仓带：FAR",
-      "why_now": "现价 128.52，区间 [90.00, 110.00]",
+      "why_now": "现价 133.17，区间 [90.00, 110.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3709,7 +3976,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 128.52,
+        "price": 133.17,
         "market": "A",
         "zone_label": "卫星仓带",
         "low": 90,
@@ -3721,19 +3988,15 @@
     }
   ],
   "notification_items": [
-    "b3c7ba8960076cbb25b38c67f17b2f30935e3ea77b4b88a62386b2144d68b0b5",
-    "0c85a9f3d7ac0b149d52585f0e459afb9a582abebeb710068e9863ca3782aa2d",
-    "a2d10ebf92c2f7495a0c176e92109c15ea0c1c3d3561b4865254ab77100c0208",
-    "35b4288a4614333ef7f4a665c177136ccbfc94d4253a42ac1091bd34316dea46",
-    "feef982cecddd24c03b650585932a75845e4e180f5c9d4829287a284c5c1a6c1",
-    "b34b9aed15029bd6b0b32f97397cb28bd50e3dd5dfc40be60fb5e0495f0a2df8",
-    "15554136f6b6c810b069d4ab20fa887e8ccf1692e6070d85bb6d82b10dc92dd7",
-    "c54cbcfeead78400601c9ebd25609ca085d2b4998eeb1013a7636a769fda64af",
-    "24fd84f6c8f7c8fba23bf3b018026bd9d8a4ae4b8c511e391576f92d4279b6e7",
-    "319aac15697204eecf8ee3cb1f19a696f7a915a73e9d55eeb48d42539abf56a2",
-    "08ee5f6c1da263815681617e1eaadb3191d97115c9f04bb56e83ac00f1a890f4",
-    "a2ab44a53a9943c780b2ef45e84ab625020229495ee2fe7bdf5ec57792638513",
-    "94323fe563d0a739f7b58c4bee2371004d5f5b6eb12f3b277f42383d0f0eceeb"
+    "e0769a8dcd0edb71925aac1444d0e578fc01600ec5ad169f35b88c5c77f85988",
+    "8e913ea23bf1b094e2309fabacf0a1eba0916e570cf9b23c55dce6eb3f6b5b26",
+    "c44ce53bd8eacf430bbc956e56bd8bea19309b55751d6410714b15a9339e3c39",
+    "9f08e8b8c1d5e819f73c66636998a1cea65046f67a88b0320882369cd21fbc14",
+    "7108de38ae70bc85fbf5800ed6ff47cb7a8f6c19e6dea9bc71996b7e5e36a026",
+    "113ecae748e14e0c712f8f8be2dbec8c4081cd80463cf4e7e3ca9a5c39480c80",
+    "b7c322949cc3e0557debb37ea751c9a89e2e04f499c627465351abde7d6d1175",
+    "8e242b6a2f02e71aee3364a4cd5c27efea539707d645ba8df8bec7524a5d3014",
+    "7526fbc5d6031ad1215b90d887803ec63fb06908c3649f6dc9b3bd7c11f14f8e"
   ],
   "source_health": [
     {
@@ -3743,8 +4006,8 @@
     },
     {
       "source": "cninfo",
-      "status": "FAILED",
-      "safe_message": "HTTP 403"
+      "status": "RECOVERED",
+      "safe_message": null
     },
     {
       "source": "hkex",
@@ -3754,7 +4017,7 @@
     {
       "source": "sec",
       "status": "FAILED",
-      "safe_message": "SEC ticker 未映射到 CIK: UFO"
+      "safe_message": "未配置 EDGAR_IDENTITY"
     }
   ]
 }
