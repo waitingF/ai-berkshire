@@ -2,8 +2,8 @@
 
 **数据截止日**：2026-09-15（Asia/Shanghai）
 **运行状态**：DEGRADED
-**摘要**：P0 1 · P1 7 · 新增价格 2 · 新增披露 6 · 异常 1
-**数据源状态**：quotes=OK、cninfo=RECOVERED、hkex=OK、sec=FAILED（未配置 EDGAR_IDENTITY）
+**摘要**：P0 0 · P1 2 · 新增价格 0 · 新增披露 2 · 异常 1
+**数据源状态**：quotes=OK、cninfo=OK、hkex=OK、sec=FAILED（SEC ticker 未映射到 CIK: UFO）
 
 > 价格条件、正式披露与其他研究缺口在同一份报告中展示；优先级表示研究处理顺序，不代表交易信号。
 
@@ -15,19 +15,19 @@
 |---|---|---|---|---:|---:|---:|---|
 | P0 | [Novo Nordisk](../Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) | US | 观察仓带 | [44.00, 46.00] | 43.45 | 低于下界 1.2% | TRIGGERED |
 | P0 | [Reddit](../Reddit/Reddit-earnings-2026Q2.md) | US | 小仓跟踪带 | [145.00, 165.00] | 162.38 | 区间内 | TRIGGERED |
-| P0 | [上海复旦](../%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6/%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6-earnings-2026H1.md) | H | H股原分批研究带（暂停执行） | [20.00, 28.00] | 24.14 | 区间内 | TRIGGERED |
+| P0 | [上海复旦](../%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6/%E4%B8%8A%E6%B5%B7%E5%A4%8D%E6%97%A6-earnings-2026H1.md) | H | H股原分批研究带（暂停执行） | [20.00, 28.00] | 24.06 | 区间内 | TRIGGERED |
 | P0 | [中国平安](../%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89/%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89-thesis.md) | A | A股持有/分批复核带 | [48.00, 55.00] | 53.90 | 区间内 | TRIGGERED |
 | P0 | [哔哩哔哩](../%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-earnings-2026Q2.md) | US | Q2后研究性分批带 | [12.00, 16.00] | 15.74 | 区间内 | TRIGGERED |
-| P0 | [快手](../%E5%BF%AB%E6%89%8B/%E5%BF%AB%E6%89%8B2026Q2%E8%B4%A2%E6%8A%A5%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-20260820.md) | H | 评估带 | [35.00, 40.00] | 29.84 | 低于下界 14.7% | TRIGGERED |
+| P0 | [快手](../%E5%BF%AB%E6%89%8B/%E5%BF%AB%E6%89%8B2026Q2%E8%B4%A2%E6%8A%A5%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-20260820.md) | H | 评估带 | [35.00, 40.00] | 29.80 | 低于下界 14.9% | TRIGGERED |
 | P0 | [汇川技术](../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | 理想买点带 | [45.00, 52.00] | 51.55 | 区间内 | TRIGGERED |
 | P0 | [腾讯音乐](../%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90/%E8%85%BE%E8%AE%AF%E9%9F%B3%E4%B9%90-research-20260831.md) | US | 分批评估区 | [6.00, 8.50] | 8.11 | 区间内 | TRIGGERED |
-| P0 | [赣锋锂业](../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md) | H | H股小仓带 | [34.60, 43.80] | 32.98 | 低于下界 4.7% | TRIGGERED |
+| P0 | [赣锋锂业](../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md) | H | H股小仓带 | [34.60, 43.80] | 33.02 | 低于下界 4.6% | TRIGGERED |
 | P1 | [Albemarle](../Albemarle/Albemarle-research-20260901.md) | US | 研究性分批评估带 | [90.00, 110.00] | 115.03 | 4.6% | NEAR |
 | P1 | [AppLovin](../AppLovin/AppLovin-earnings-2026Q2.md) | US | 分批复核带 | [300.00, 330.00] | 334.24 | 1.3% | NEAR |
 | P1 | [Sea Limited](../SE/SE-research-20260901.md) | US | 分层研究性评估区间 | [75.00, 105.00] | 108.68 | 3.5% | NEAR |
-| P1 | [中芯国际](../%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85-earnings-2026Q2.md) | H | H股研究建仓带 | ≤ 58.00 | 60.80 | 4.8% | NEAR |
+| P1 | [中芯国际](../%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85-earnings-2026Q2.md) | H | H股研究建仓带 | ≤ 58.00 | 60.75 | 4.7% | NEAR |
 | P1 | [华虹半导体](../%E5%8D%8E%E8%99%B9%E5%AE%8F%E5%8A%9B/%E5%8D%8E%E8%99%B9%E5%8D%8A%E5%AF%BC%E4%BD%93-earnings-2026H1.md) | H | H股小仓复核带 | [80.00, 105.00] | 105.70 | 0.7% | NEAR |
-| P1 | [腾讯控股](../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF-thesis.md) | H | 加仓带 | [400.00, 430.00] | 438.60 | 2.0% | NEAR |
+| P1 | [腾讯控股](../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF-thesis.md) | H | 加仓带 | [400.00, 430.00] | 438.80 | 2.0% | NEAR |
 | P1 | [贵州茅台](../%E8%8C%85%E5%8F%B0/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | 建仓参考带 | [1100.00, 1250.00] | 1272.75 | 1.8% | NEAR |
 
 ## 二、财报与正式披露监控
@@ -35,12 +35,14 @@
 | 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |
 |---|---|---|---|---:|---|---|
 | P1 | [lululemon](../lululemon/lululemon-research-20260904.md) | US | [APPOINTMENT OF HEIDI O'NEILL TO BOD & AMENDED BYLAWS](https://www.sec.gov/Archives/edgar/data/1397187/000139718726000129/lulu-20260908.htm) | 1 | 00:15 | REVIEW |
-| P1 | [亨通光电](../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20260826.md) | A | [安徽承义律师事务所关于江苏亨通光电股份有限公司召开2026年第四次临时股东会的法律意见书](https://static.cninfo.com.cn/finalpage/2026-09-15/1225563333.PDF)<br>[亨通光电2026年第四次临时股东会决议公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225563325.PDF)<br>[亨通光电关于回购注销部分限制性股票并减少注册资本通知债权人的公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225563335.PDF) | 3 | 00:00 | REVIEW |
+| P1 | [中国广核](../%E4%B8%AD%E5%9B%BD%E5%B9%BF%E6%A0%B8/%E4%B8%AD%E5%9B%BD%E5%B9%BF%E6%A0%B8-earnings-2026H1.md) | H | [新增公告，内容待确认](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0915/2026091500407.htm) | 1 | 16:48 | REVIEW |
+| P1 | [亨通光电](../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20260826.md) | A | [亨通光电2026年第四次临时股东会决议公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225563325.PDF)<br>[亨通光电关于回购注销部分限制性股票并减少注册资本通知债权人的公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225563335.PDF) | 2 | 00:00 | REVIEW |
 | P1 | [德明利](../%E5%BE%B7%E6%98%8E%E5%88%A9/%E5%BE%B7%E6%98%8E%E5%88%A9-research-20260826.md) | A | [华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市之发行保荐书](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564377.PDF)<br>[深圳市德明利技术股份有限公司最近一年以及最近一期的审计报告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564383.PDF)<br>[大信会计师事务所（特殊普通合伙）《关于深圳市德明利技术股份有限公司申请向特定对象发行股票的审核问询函》之回复](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564382.PDF)<br>[2026年第四次临时股东会决议公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564254.PDF)<br>[关于深圳市德明利技术股份有限公司申请向特定对象发行股票的审核问询函的回复（修订稿）](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564378.PDF)<br>[深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市募集说明书（修订稿）](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564381.PDF)<br>[广东信达律师事务所关于深圳市德明利技术股份有限公司2026年第四次临时股东会的法律意见书](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564255.PDF)<br>[华泰联合证券有限责任公司关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票并在主板上市之上市保荐书](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564380.PDF)<br>[广东信达律师事务所关于深圳市德明利技术股份有限公司2025年度向特定对象发行股票的补充法律意见书(二)(修订稿)](https://static.cninfo.com.cn/finalpage/2026-09-15/1225564379.PDF) | 9 | 00:00 | REVIEW |
-| P1 | [晶合集成](../%E6%99%B6%E5%90%88%E9%9B%86%E6%88%90/%E6%99%B6%E5%90%88%E9%9B%86%E6%88%90-research-20260821.md) | A | [晶合集成关于2023年限制性股票激励计划预留授予部分第一个归属期归属结果暨股份上市公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225562570.PDF) | 1 | 00:00 | REVIEW |
+| P1 | [晶合集成](../%E6%99%B6%E5%90%88%E9%9B%86%E6%88%90/%E6%99%B6%E5%90%88%E9%9B%86%E6%88%90-research-20260821.md) | A | [晶合集成关于2023年限制性股票激励计划预留授予部分第一个归属期归属结果暨股份上市公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225562570.PDF) | 1 | 00:00 | DONE |
 | P1 | [杭叉集团](../%E6%9D%AD%E5%8F%89%E9%9B%86%E5%9B%A2-deepseek%E5%88%86%E6%9E%90/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | [杭叉集团股份有限公司关于召开2026年半年度业绩说明会的公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225562207.PDF) | 1 | 00:00 | REVIEW |
-| P1 | [澜起科技](../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md) | A | [H股公告-翌日披露报表](https://static.cninfo.com.cn/finalpage/2026-09-15/1225563854.PDF) | 1 | 00:00 | REVIEW |
-| P1 | [雅克科技](../%E9%9B%85%E5%85%8B%E7%A7%91%E6%8A%80/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | [2026年中期权益分派实施公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225562438.PDF) | 1 | 00:00 | REVIEW |
+| P1 | [澜起科技](../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md) | A | [H股公告-翌日披露报表](https://static.cninfo.com.cn/finalpage/2026-09-15/1225563854.PDF) | 1 | 00:00 | DONE |
+| P1 | [澜起科技](../%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80/%E6%BE%9C%E8%B5%B7%E7%A7%91%E6%8A%80-earnings-2026H1.md) | H | [翌日披露报表](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0915/2026091500585.pdf) | 1 | 17:22 | DONE |
+| P1 | [雅克科技](../%E9%9B%85%E5%85%8B%E7%A7%91%E6%8A%80/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md) | A | [2026年中期权益分派实施公告](https://static.cninfo.com.cn/finalpage/2026-09-15/1225562438.PDF) | 1 | 00:00 | DONE |
 
 | 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |
 |---|---|---|---|---|---|---|---|---|
@@ -62,7 +64,7 @@
 | 优先级 | 标的/数据源 | 事项 | 日期 | 状态 | 为什么现在 | 下一流程 | 备注 |
 |---|---|---|---|---|---|---|---|
 | P0 | [Progressive](../Progressive/Progressive-earnings-2026Q2.md) | 2026年8月月度结果复核窗口：今天到期 | 2026-09-15 | TODAY | 登记事件状态为今天到期，需按备注核验；监控本身不作投资决定。 | - | 日期为研究复核窗口，待公司IR确认具体发布时间；核NPW、CR、广告费用与事故年损失率。 |
-| P1 | SEC | 数据源异常 | - | FAILED | 未配置 EDGAR_IDENTITY | - | 待人工确认 |
+| P1 | SEC | 数据源异常 | - | FAILED | SEC ticker 未映射到 CIK: UFO | - | 待人工确认 |
 | P1 | [哔哩哔哩](../%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-earnings-2026Q2.md) | thesis 未被重点标的看板覆盖 | - | GAP | 发现 thesis 文件，但重点标的看板中没有对应公司。 | - | 待人工确认 |
 | P2 | [Credo Technology](../Credo/Credo-research-20260903.md) | FY2027 Q2财报后论文复检：日期缺失或格式异常 | - | OPEN | 登记事件状态为日期缺失或格式异常，需按备注核验；监控本身不作投资决定。 | - | 复核客户集中度、AEC与光学产品发展、毛利率、FCF转化、收购整合与稀释是否改变US$120–140研究带<br>待人工确认 |
 | P2 | [Novo Nordisk](../Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) | Capital Markets Day：6 天后到期 | 2026-09-21 | UPCOMING_7D | 登记事件状态为6 天后到期，需按备注核验；监控本身不作投资决定。 | - | 核美国市场修复、口服Wegovy/下一代管线与2027增长框架 |
