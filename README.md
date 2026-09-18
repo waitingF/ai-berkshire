@@ -447,6 +447,16 @@ python3 tools/daily_monitor.py --offline-fixtures tests/fixtures/daily-monitor \
 python3 tools/daily_monitor.py --check-ai
 ```
 
+### 本机定时运行（macOS）
+
+如需在本机每个工作日 16:10 自动同步最新代码、运行监控并提交推送机器生成的日报，请执行：
+
+```bash
+bash scripts/install-daily-monitor-launchd.sh
+```
+
+安装器会注册当前用户的 `launchd` 任务。任务使用独立 worktree，因此不会覆盖开发目录中的未提交改动；推送时只会自动解决 `reports/daily-monitor/` 与 `data/monitoring-state.json` 的冲突，其他冲突会安全中止。日志写入 `~/Library/Logs/ai-berkshire/`。环境变量优先从 `~/.config/ai-berkshire/daily-monitor.env` 读取；文件不存在时回退至仓库根目录 `.env`。环境文件使用 `KEY=VALUE` 格式，可配置 `EDGAR_IDENTITY`、`DEEPSEEK_API_KEY`、`DEEPSEEK_MODEL` 和 `SERVERCHAN_SENDKEY`；监控产生需通知的变更时，后者会用于发送 Server酱通知。
+
 启用提交与推送前的本地自动门禁（每个 clone 只需执行一次）：
 
 ```bash
