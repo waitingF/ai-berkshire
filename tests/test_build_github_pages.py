@@ -45,6 +45,15 @@ class BuildGitHubPagesTest(unittest.TestCase):
                 "跳转 [标的跟踪表.md](标的跟踪表.md) 与 [thesis](腾讯/腾讯-thesis.md)。\n",
                 encoding="utf-8",
             )
+            (reports_dir / "README.md").write_text(
+                "# 研究报告索引\n\n"
+                "## 按公司\n\n"
+                "<details markdown=\"1\">\n"
+                "<summary><b>腾讯</b> · 1 份 · 最近 2026-09-19</summary>\n\n"
+                "- `2026-09-19` [腾讯最终报告](腾讯/最终报告.md) — 研究\n\n"
+                "</details>\n",
+                encoding="utf-8",
+            )
             (reports_dir / "标的跟踪表.md").write_text(
                 "# 标的跟踪表\n\n"
                 "| ID | 标的 | 建议日 | 来源 | 动作 | 锚定价 |\n"
@@ -91,6 +100,7 @@ class BuildGitHubPagesTest(unittest.TestCase):
             ).read_text(encoding="utf-8")
             report_html_path = output_dir / "reports" / "腾讯" / "最终报告.html"
             report_html = report_html_path.read_text(encoding="utf-8")
+            report_index_html = (output_dir / "reports" / "README.html").read_text(encoding="utf-8")
             board_html = (output_dir / "reports" / "重点标的看板.html").read_text(encoding="utf-8")
             ledger_html = (output_dir / "reports" / "标的跟踪表.html").read_text(encoding="utf-8")
             daily_monitor_html = (
@@ -113,6 +123,9 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn('href="../标的跟踪表.html"', report_html)
             self.assertIn('href="https://example.com/note.md"', report_html)
             self.assertNotIn('href="腾讯-thesis.md', report_html)
+            self.assertIn("<details>", report_index_html)
+            self.assertIn('href="腾讯/最终报告.html"', report_index_html)
+            self.assertNotIn('href="腾讯/最终报告.md"', report_index_html)
             self.assertIn('href="标的跟踪表.html"', board_html)
             self.assertIn('href="腾讯/腾讯-thesis.html"', board_html)
             self.assertNotIn('href="标的跟踪表.md"', board_html)

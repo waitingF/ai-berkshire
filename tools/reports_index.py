@@ -276,7 +276,9 @@ def render(items, cfg):
         for name, lst in order:
             lst = sorted(lst, key=lambda x: (x["date"], x["title"]), reverse=True)
             last = lst[0]["date"] or "—"
-            L.append("<details>")
+            # Python-Markdown 仅在显式标记后才会渲染 HTML 折叠块中的 Markdown；
+            # 否则 Pages 上的报告列表会成为不可点击的纯文本。
+            L.append('<details markdown="1">')
             L.append("<summary><b>%s</b> · %d 份 · 最近 %s</summary>" % (
                 display_name(name), len(lst), last))
             L.append("")
