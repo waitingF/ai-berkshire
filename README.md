@@ -14,7 +14,13 @@
 
 > 📮 **仓库是全量框架，公众号是精选。** 真正值得深研的公司，加上报告之外我自己的判断与取舍，都在微信公众号「**复利炼丹炉**」——[扫码关注 ↓](#精选研究首发于公众号)
 
-[实盘业绩](#real-track-record) · [为什么不能直接问AI](#为什么不能直接问-ai) · [Skills 一览](#skills-一览21个) · [快速开始](#快速开始) · [实战报告](#实战研究报告) · [设计理念](#设计理念) · [公众号](#精选研究首发于公众号)
+<!-- REPORTS-BANNER:START 由 tools/reports_index.py 自动更新，勿手改 -->
+
+> 📊 **日更内容是研究报告，全部在 [研究报告索引](reports/README.md)。** 2347 份报告 · 110 家公司 · 23 个专题，按公司与专题分组，更新至 2026-09-19。
+
+<!-- REPORTS-BANNER:END -->
+
+[实盘业绩](#real-track-record) · [为什么不能直接问AI](#为什么不能直接问-ai) · [Skills 一览](#skills-一览20个) · [快速开始](#快速开始) · [实战报告](#实战研究报告) · [研究索引](reports/README.md) · [设计理念](#设计理念) · [公众号](#精选研究首发于公众号)
 
 ---
 
@@ -172,7 +178,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 
 ---
 
-## Skills 一览（21个）
+## Skills 一览（20个）
 
 ### 🔬 深度研究类
 
@@ -209,7 +215,6 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 | [`/income-investment`](skills/income-investment.md) | 收益型股票分析 | 区分可持续收益、机会型高息与收益率陷阱 |
 | [`/portfolio-review`](skills/portfolio-review.md) | 组合管理与优化 | 从"研究公司"升级到"管理组合"——仓位、集中度、再平衡 |
 | [`/thesis-tracker`](skills/thesis-tracker.md) | 投资论文追踪 | 买入后的纪律系统：持续跟踪论文是否被证伪 |
-| [`/daily-monitor`](skills/daily-monitor.md) | 每日增量监控 | 工作日统一检查价格、A/H/美正式披露和研究完整性，输出 P0/P1/P2 待办 |
 | [`/thesis-drift`](skills/thesis-drift.md) | 投资论文漂移检测 | 对比两份论文/报告，区分事实变化、估值变化与措辞变化 |
 | [`/news-pulse`](skills/news-pulse.md) | 股价异动快速归因 | 股价大涨/大跌时10分钟搞清"发生了什么" |
 
@@ -218,7 +223,6 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 | Skill | 用途 | 适合场景 |
 |-------|------|---------|
 | [`/dyp-ask`](skills/dyp-ask.md) | 段永平问答 | 以段永平的方式思考任何问题——商业、投资、人生 |
-| [`/changzong-ask`](skills/changzong-ask.md) | 常总问答 | 以常士杉的方式思考——分配/周期/人性、五步交易法、3221阵型 |
 | [`/financial-data`](skills/financial-data.md) | 财务数据获取与交叉验证规范 | 确保关键数据来自2个独立来源，误差>1%告警 |
 | [`/wechat-article`](skills/wechat-article.md) | 微信公众号文章 | 作者、编辑、读者三Agent协作，产出可发布文章 |
 
@@ -242,7 +246,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 
 ### 1. 安装 AI 客户端
 
-本仓库保留同一套 canonical workflow，并分别提供 Claude Code commands、Codex skills 与 Cursor skills。按你使用的客户端安装即可。
+本仓库保留同一套 canonical workflow，并分别提供 Claude Code commands 与 Codex skills。按你使用的客户端安装即可。
 
 Claude Code 用户：
 
@@ -329,32 +333,7 @@ REM 可选：安装 Codex slash prompts
 .\scripts\install-codex-prompts.bat
 ```
 
-Cursor 用户安装（macOS / Linux）：
-
-```bash
-# 克隆仓库
-git clone https://github.com/xbtlin/ai-berkshire.git
-
-# 生成并安装 Cursor skills 到 ~/.cursor/skills
-cd ai-berkshire
-./scripts/install-cursor-skills.sh
-
-# 可选：仅安装到当前仓库 .cursor/skills
-./scripts/install-cursor-skills.sh --project
-```
-
-Cursor 用户安装（Windows PowerShell / Command Prompt）：
-
-```bat
-git clone https://github.com/xbtlin/ai-berkshire.git
-cd ai-berkshire
-.\scripts\install-cursor-skills.bat
-
-REM 可选：仅安装到当前仓库 .cursor/skills
-.\scripts\install-cursor-skills.bat --project
-```
-
-仓库同时维护四套入口：`skills/*.md` 是 Claude Code command 源文件；`codex-skills/*/SKILL.md` 是 Codex skill 包，由 `scripts/sync-codex-skills.py` 从 `skills/*.md` 生成；`codex-prompts/*.md` 是可选的 Codex slash prompt 兼容层；`cursor-skills/*/SKILL.md` 是 Cursor skill 包，由 `scripts/sync-cursor-skills.py` 从 `skills/*.md` 生成。
+仓库同时维护三套入口：`skills/*.md` 是 Claude Code command 源文件；`codex-skills/*/SKILL.md` 是 Codex skill 包，由 `scripts/sync-codex-skills.py` 从 `skills/*.md` 生成；`codex-prompts/*.md` 是可选的 Codex slash prompt 兼容层。
 
 ### 3. 使用
 
@@ -383,13 +362,11 @@ REM 可选：仅安装到当前仓库 .cursor/skills
 /income-investment Verizon mode=existing role=core-income quantity=100 cost_basis=39.50 tax_residence=France horizon=5y
 /portfolio-review 腾讯30%, 美团20%, 茅台20%, 现金30%
 /thesis-tracker 拼多多
-/daily-monitor
-/thesis-drift 拼多多 reports/拼多多/拼多多-thesis-2025Q4.md reports/拼多多/拼多多-thesis-2026Q1.md
+/thesis-drift 拼多多 reports/拼多多-thesis-2025Q4.md reports/拼多多-thesis-2026Q1.md
 /news-pulse 腾讯
 
 # 思维工具
 /dyp-ask 拼多多的护城河到底在哪里？
-/changzong-ask 现在美股高位该不该减仓？
 /wechat-article 美团
 ```
 
@@ -409,84 +386,6 @@ REM 可选：仅安装到当前仓库 .cursor/skills
 ```text
 /prompts:investment-research 腾讯
 ```
-
-在 Cursor 中安装后，新开一个 Agent 对话即可使用。直接描述任务，例如：
-
-```text
-使用 investment-research 研究腾讯
-使用 investment-checklist 筛选茅台、英伟达、苹果
-使用 news-pulse 分析拼多多最近跌12%的原因
-```
-
-Cursor 会根据 skill 的 `description` 自动匹配；也可以明确点名 skill 名称。修改 `skills/*.md` 后，重新运行 `./scripts/install-cursor-skills.sh` 同步更新。
-
-### 每日监控自动化
-
-`python3 tools/daily_monitor.py` 在一份报告中输出“价格监控 / 财报与正式披露监控 / 其他监控”。正式披露一期只接入 A 股巨潮、港股 HKEXnews 和美股 SEC EDGAR；AKShare 仅作备用线索，不做一般网络搜索。PDF 和完整正文只在运行时临时处理，不写入仓库。
-
-首次在本机运行监控或处理 PDF，可创建隔离运行时：
-
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-monitoring.txt -r requirements-pages.txt pypdf pdfplumber
-```
-
-`scripts/prepush-check.sh` 与 `scripts/validate-monitoring.sh` 会自动优先使用 `.venv`；需要显式指定其他解释器时可设置 `AI_BERKSHIRE_PYTHON`，需要将虚拟环境放在其他位置时可设置 `AI_BERKSHIRE_VENV`。
-直接执行文档中原有的 `python3 ...` 命令前，先在该终端运行 `source .venv/bin/activate`。
-
-GitHub Actions `.github/workflows/daily-monitor.yml` 每个工作日 17:30（Asia/Shanghai）运行。仓库 Secrets 配置 `DEEPSEEK_API_KEY`、`EDGAR_IDENTITY`（SEC 免费且无 API Key，这里填写真实姓名和联系邮箱）、`DAILY_MONITOR_TOKEN`（`waitingF` 的 fine-grained PAT，仅授权本仓库 Contents 读写，用于自动提交日报）和可选的 `SERVERCHAN_SENDKEY`；仓库变量 `DEEPSEEK_MODEL` 可覆盖默认 `deepseek-v4-flash`。DeepSeek 只做增量研究分流，不自动给出买卖或仓位结论。
-
-安全本地验证：
-
-```bash
-python3 tools/daily_monitor.py --check
-runtime_dir=$(mktemp -d)
-python3 tools/daily_monitor.py --offline-fixtures tests/fixtures/daily-monitor \
-  --state-file "$runtime_dir/state.json" --report-dir "$runtime_dir/reports" --json
-# 用户在本地 export DEEPSEEK_API_KEY 后：
-python3 tools/daily_monitor.py --check-ai
-```
-
-### 本机定时运行（macOS）
-
-如需在本机每个工作日 16:10 自动同步最新代码、运行监控并提交推送机器生成的日报，请执行：
-
-```bash
-bash scripts/install-daily-monitor-launchd.sh
-```
-
-安装器会注册当前用户的 `launchd` 任务。任务使用独立 worktree，因此不会覆盖开发目录中的未提交改动；推送时只会自动解决 `reports/daily-monitor/` 与 `data/monitoring-state.json` 的冲突，其他冲突会安全中止。日志写入 `~/Library/Logs/ai-berkshire/`。环境变量优先从 `~/.config/ai-berkshire/daily-monitor.env` 读取；文件不存在时回退至仓库根目录 `.env`。环境文件使用 `KEY=VALUE` 格式，可配置 `EDGAR_IDENTITY`、`DEEPSEEK_API_KEY`、`DEEPSEEK_MODEL` 和 `SERVERCHAN_SENDKEY`；监控产生需通知的变更时，后者会用于发送 Server酱通知。
-
-启用提交与推送前的本地自动门禁（每个 clone 只需执行一次）：
-
-```bash
-./scripts/install-git-hooks.sh
-```
-
-- `pre-commit`：相关监控文件变更时运行快速配置与技能一致性校验。
-- `pre-push`：运行完整离线校验和全量单元测试；失败时中止推送。
-- `.github/workflows/validate-monitoring.yml`：在 PR 和 `main` 推送上重复执行完整校验。若要远端强制禁止未通过检查的改动进入 `main`，请在 GitHub Ruleset 中将 `validate-monitoring` 设为 Required Status Check；现有 `daily-monitor` 自动提交账号需要配置相应 bypass。
-
-### 4. 发布报告站点
-
-仓库内置 GitHub Pages 构建流程，可以把 `reports/` 下的 Markdown 报告渲染成静态 HTML 站点。
-
-本地预览构建：
-
-```bash
-python3 -m pip install -r requirements-pages.txt
-python3 scripts/build-github-pages.py
-```
-
-构建输出位于 `site/`，其中 `site/index.html` 是目录式报告索引页。首页顶部「常用入口」会置顶 `重点标的看板.md`、`标的跟踪表.md`、`daily-monitor/daily-monitor-latest.md` 与 `portfolio-latest.md`；顶栏导航也可直接跳转。历史 `trigger-scan/` 仍可在研究库中回看，但不再合并或置顶。报告正文里的相对 `.md` 链接会改写为对应 `.html`，站内互链可点击；外链与纯锚点不变。首页其余部分只展示一级目录和根级报告，进入目录后再查看该目录下的子目录和报告。`site/` 是本地生成物，不提交到仓库。
-
-在 GitHub 仓库中启用：
-
-1. 进入 `Settings` -> `Pages`
-2. 在 `Build and deployment` 中将 `Source` 设为 `GitHub Actions`
-3. 推送到 `main` 后，`.github/workflows/pages.yml` 会自动构建并部署报告站点
-
-GitHub Pages 会公开发布站点内容，推送前请确认 `reports/` 中没有不希望公开的资料。
 
 ---
 
@@ -714,13 +613,11 @@ GitHub Pages 会公开发布站点内容，推送前请确认 `reports/` 中没�
 - **明确行动建议**：是否触发深度研究、是否需要重审论文、是否仅观察等
 
 **与其他 Skill 的区别**：
-
 | 场景 | 用什么 |
 |------|------|
 | 完整投研（小时级） | `/investment-team` 或 `/investment-research` |
 | 财报深读 | `/earnings-review` |
 | 长期论文跟踪 | `/thesis-tracker` |
-| **每日检查价格、正式披露与研究缺口** | **`/daily-monitor`** |
 | **股价异动 10 分钟归因** | **`/news-pulse`** |
 
 **输出示例摘录**（腾讯 4/17-5/01 实测，14 天 -10.47%）：
@@ -757,6 +654,23 @@ GitHub Pages 会公开发布站点内容，推送前请确认 `reports/` 中没�
 ## 实战研究报告
 
 > 以下是使用本框架生成的真实投资研究报告，展示 AI 投研的实际输出效果。
+
+<!-- REPORTS-INDEX:START 由 tools/reports_index.py 自动更新，勿手改 -->
+
+**📊 [全部研究索引 →](reports/README.md)** ｜ 2347 份报告 · 110 家公司 · 23 个专题 · 更新至 2026-09-19
+
+最近更新：
+
+| 日期 | 报告 | 归属 |
+|------|------|------|
+| 2026-09-19 | [基模变强之后：业务后训练的空间与算法工程师的去向](reports/AI产业研究/业务后训练的剩余空间与算法工程师职能迁移-20260919.md) | AI产业研究 |
+| 2026-09-12 | [早期年度财务补录（用于重建长历史估值序列）](reports/持仓估值分位与未来盈利-20260912/早期年度财务补录.md) | 持仓估值分位与未来盈利 |
+| 2026-09-12 | [十家中概都便宜，只有两家不在历史低位](reports/持仓估值分位与未来盈利-20260912/公众号-中概十公司估值分位与未来盈利-20260912.md) | 持仓估值分位与未来盈利 |
+| 2026-09-12 | [1.9亿次请求要的不是答案，是思路：拆Anthropic蒸馏报告](reports/AI产业研究/公众号-Anthropic蒸馏报告-七家中国实验室与1.9亿次请求-20260912.md) | AI产业研究 |
+| 2026-09-07 | [数据核查与适用边界](reports/跨市场确定性筛选-20260907/audit-notes.md) | 跨市场确定性筛选 |
+| 2026-09-07 | [跨市场优质股票筛选研究报告](reports/跨市场确定性-funnel-20260907.md) | 综合与横评 |
+
+<!-- REPORTS-INDEX:END -->
 
 | 公司 | 使用 Skill | 核心结论 | 报告链接 |
 |------|-----------|---------|---------|
