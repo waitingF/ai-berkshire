@@ -3,7 +3,7 @@
 > 本文件由 `tools/reports_index.py` 自动生成，请勿手工编辑。
 > 新增报告后运行 `python3 tools/reports_index.py` 重新生成。
 
-**2043 份报告** · **191 家公司** · **22 个专题** · 最近更新 2026-09-19
+**2044 份报告** · **191 家公司** · **22 个专题** · 最近更新 2026-09-19
 
 [最近更新](#最近更新) · [按公司](#按公司) · [专题研究](#专题研究) · [大师研究](#大师研究) · [筛选池](#筛选池)
 
@@ -13,10 +13,10 @@
 
 | 日期 | 报告 | 归属 | 类型 |
 |------|------|------|------|
+| 2026-09-19 | [每日监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
+| 2026-09-19 | [每日监控](daily-monitor/daily-monitor-20260919.md) | daily-monitor | 研究 |
 | 2026-09-19 | [基模变强之后：业务后训练的空间与算法工程师的去向](AI产业研究/业务后训练的剩余空间与算法工程师职能迁移-20260919.md) | AI产业研究 | 研究 |
-| 2026-09-18 | [每日监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
 | 2026-09-18 | [每日监控](daily-monitor/daily-monitor-20260918.md) | daily-monitor | 研究 |
-| 2026-09-17 | [每日监控](daily-monitor/daily-monitor-20260917.md) | daily-monitor | 研究 |
 | 2026-09-15 | [重点标的看板](重点标的看板.md) | 综合与横评 | 研究 |
 | 2026-09-12 | [早期年度财务补录（用于重建长历史估值序列）](持仓估值分位与未来盈利-20260912/早期年度财务补录.md) | 持仓估值分位与未来盈利 | 估值仓位 |
 | 2026-09-12 | [十家中概都便宜，只有两家不在历史低位](持仓估值分位与未来盈利-20260912/公众号-中概十公司估值分位与未来盈利-20260912.md) | 持仓估值分位与未来盈利 | 公众号 |
@@ -830,9 +830,10 @@
 </details>
 
 <details markdown="1">
-<summary><b>daily-monitor</b> · 25 份 · 最近 2026-09-18</summary>
+<summary><b>daily-monitor</b> · 26 份 · 最近 2026-09-19</summary>
 
-- `2026-09-18` [每日监控](daily-monitor/daily-monitor-latest.md) — 研究
+- `2026-09-19` [每日监控](daily-monitor/daily-monitor-latest.md) — 研究
+- `2026-09-19` [每日监控](daily-monitor/daily-monitor-20260919.md) — 研究
 - `2026-09-18` [每日监控](daily-monitor/daily-monitor-20260918.md) — 研究
 - `2026-09-17` [每日监控](daily-monitor/daily-monitor-20260917.md) — 研究
 - `2026-09-16` [每日监控](daily-monitor/daily-monitor-20260916.md) — 研究

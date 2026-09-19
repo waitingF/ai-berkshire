@@ -16,7 +16,7 @@
 
 <!-- REPORTS-BANNER:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-> 📊 **日更内容是研究报告，全部在 [研究报告索引](reports/README.md)。** 2043 份报告 · 191 家公司 · 22 个专题，按公司与专题分组，更新至 2026-09-19。
+> 📊 **日更内容是研究报告，全部在 [研究报告索引](reports/README.md)。** 2044 份报告 · 191 家公司 · 22 个专题，按公司与专题分组，更新至 2026-09-19。
 
 <!-- REPORTS-BANNER:END -->
 
@@ -657,15 +657,15 @@ REM 可选：安装 Codex slash prompts
 
 <!-- REPORTS-INDEX:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-**📊 [全部研究索引 →](reports/README.md)** ｜ 2043 份报告 · 191 家公司 · 22 个专题 · 更新至 2026-09-19
+**📊 [全部研究索引 →](reports/README.md)** ｜ 2044 份报告 · 191 家公司 · 22 个专题 · 更新至 2026-09-19
 
 最近更新：
 
 | 日期 | 报告 | 归属 |
 |------|------|------|
+| 2026-09-19 | [每日监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
+| 2026-09-19 | [每日监控](reports/daily-monitor/daily-monitor-20260919.md) | daily-monitor |
 | 2026-09-19 | [基模变强之后：业务后训练的空间与算法工程师的去向](reports/AI产业研究/业务后训练的剩余空间与算法工程师职能迁移-20260919.md) | AI产业研究 |
-| 2026-09-18 | [每日监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
-| 2026-09-18 | [每日监控](reports/daily-monitor/daily-monitor-20260918.md) | daily-monitor |
 | 2026-09-15 | [重点标的看板](reports/重点标的看板.md) | 综合与横评 |
 
 <!-- REPORTS-INDEX:END -->
