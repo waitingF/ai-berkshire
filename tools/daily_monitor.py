@@ -213,6 +213,15 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.check:
             return _check_configuration(args.state_file)
+        default_state = args.state_file.expanduser().resolve() == DEFAULT_STATE.resolve()
+        default_reports = (
+            args.report_dir.expanduser().resolve() == DEFAULT_REPORT_DIR.resolve()
+        )
+        if args.watch and (default_state or default_reports):
+            parser.error(
+                "--watch 仅可配合自定义的 --state-file 和 --report-dir 使用，"
+                "以免覆盖完整的每日监控报告"
+            )
         if offline:
             services = _offline_services(args.offline_fixtures)
         else:

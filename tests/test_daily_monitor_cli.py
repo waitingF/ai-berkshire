@@ -4,7 +4,12 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stderr
+from io import StringIO
 from pathlib import Path
+from unittest.mock import patch
+
+import tools.daily_monitor as daily_monitor
 
 
 REPO = Path(__file__).resolve().parents[1]
@@ -27,6 +32,32 @@ def run_cli(*args, env=None):
 
 
 class DailyMonitorCliTest(unittest.TestCase):
+    def test_watch_refuses_to_overwrite_default_latest_report(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            state = Path(tmp) / "monitoring-state.json"
+            reports = Path(tmp) / "daily-monitor"
+            stderr = StringIO()
+
+            with (
+                patch.object(daily_monitor, "DEFAULT_STATE", state),
+                patch.object(daily_monitor, "DEFAULT_REPORT_DIR", reports),
+                redirect_stderr(stderr),
+                self.assertRaises(SystemExit) as caught,
+            ):
+                daily_monitor.main(
+                    [
+                        "--offline-fixtures",
+                        str(FIXTURES),
+                        "--today",
+                        "2026-08-27",
+                        "--watch",
+                        "拼多多",
+                    ]
+                )
+
+        self.assertEqual(caught.exception.code, 2)
+        self.assertIn("--watch", stderr.getvalue())
+
     def test_offline_run_writes_only_to_supplied_runtime_paths(self):
         initial_state = (REPO / "data" / "monitoring-state.json").read_text(encoding="utf-8")
         with tempfile.TemporaryDirectory() as tmp:
