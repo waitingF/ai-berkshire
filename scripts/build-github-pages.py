@@ -11,6 +11,7 @@ from urllib.parse import quote, urlsplit, urlunsplit
 
 import markdown
 from markdown.extensions import Extension
+from markdown.extensions.toc import slugify_unicode
 from markdown.treeprocessors import Treeprocessor
 
 
@@ -111,6 +112,7 @@ class MarkdownLinkRewriteExtension(Extension):
 def render_markdown(markdown_text: str) -> str:
     renderer = markdown.Markdown(
         extensions=[*MARKDOWN_EXTENSIONS, MarkdownLinkRewriteExtension()],
+        extension_configs={"toc": {"slugify": slugify_unicode}},
         output_format="html5",
     )
     return renderer.convert(markdown_text)
