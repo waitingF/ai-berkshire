@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-15",
+  "updated": "2026-09-19",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -185,19 +185,21 @@
       "codes": {
         "H": "hk00700"
       },
-      "source": "重点标的看板 2026-08-12",
+      "source": "重点标的看板 2026-09-15；2026Q2 财报精读 / Checklist 2026-08-12",
       "links": [
-        "reports/腾讯/腾讯-thesis.md"
+        "reports/腾讯/腾讯-thesis.md",
+        "reports/腾讯/腾讯-earnings-2026Q2.md",
+        "reports/腾讯/腾讯-checklist-20260812.md"
       ],
       "zones": [
         {
-          "label": "加仓带",
+          "label": "400–430 港元加仓复核带",
           "dir": "range",
           "low": 400,
           "high": 430,
           "market": "H",
           "action": "评估加仓",
-          "note": "仅当红线未触或Q3证实FCF转正+AI回收"
+          "note": "400–430 港元仅在红线未触时重评第一档；低于400须FCF恢复或下跌非基本面红线所致才提高仓位。Q3证实AI预付款转收入、FCF转正和季度回购约150亿港元，也应复核"
         }
       ],
       "events": [
@@ -220,7 +222,8 @@
       "source": "PDD 2026Q2财报后更新 2026-08-25；未建仓状态校正 2026-08-31",
       "links": [
         "reports/拼多多/拼多多-thesis.md",
-        "reports/拼多多/拼多多-earnings-2026Q2.md"
+        "reports/拼多多/拼多多-earnings-2026Q2.md",
+        "reports/拼多多/拼多多-checklist-20260721.md"
       ],
       "zones": [
         {
@@ -343,7 +346,8 @@
       },
       "source": "重点标的看板 2026-08-12",
       "links": [
-        "reports/微软/微软-thesis.md"
+        "reports/微软/微软-thesis.md",
+        "reports/微软/微软-earnings-FY2026Q4.md"
       ],
       "zones": [
         {
@@ -397,7 +401,8 @@
       },
       "source": "重点标的看板 2026-08-12",
       "links": [
-        "reports/Accenture/Accenture-thesis.md"
+        "reports/Accenture/Accenture-thesis.md",
+        "reports/Accenture/Accenture-earnings-FY2026Q3.md"
       ],
       "zones": [
         {
@@ -435,9 +440,10 @@
         "A": "sh601318",
         "H": "hk02318"
       },
-      "source": "重点标的看板 2026-08-12",
+      "source": "重点标的看板及 2026H1 财报精读 2026-09-15",
       "links": [
-        "reports/中国平安/中国平安-thesis.md"
+        "reports/中国平安/中国平安-thesis.md",
+        "reports/中国平安/中国平安-earnings-2026H1.md"
       ],
       "zones": [
         {
@@ -572,7 +578,8 @@
       "source": "AppLovin 2026Q2 财报精读 20260831",
       "links": [
         "reports/AppLovin/AppLovin-earnings-2026Q2.md",
-        "reports/AppLovin/AppLovin-checklist-20260807.md"
+        "reports/AppLovin/AppLovin-checklist-20260807.md",
+        "reports/AppLovin/AppLovin-research-20260806.md"
       ],
       "zones": [
         {
@@ -911,7 +918,8 @@
       },
       "source": "标的跟踪表 20260804",
       "links": [
-        "reports/AMD/AMD-research-20260804.md"
+        "reports/AMD/AMD-research-20260804.md",
+        "reports/AMD/AMD-earnings-2026Q2.md"
       ],
       "zones": [
         {
@@ -1608,21 +1616,46 @@
       "name": "剑桥科技",
       "group": "台账",
       "codes": {
-        "A": "sh603083"
+        "A": "sh603083",
+        "H": "hk06166"
       },
-      "source": "标的跟踪表 20260803",
+      "source": "剑桥科技 A/H 研究报告 2026-08-17",
       "links": [
-        "reports/剑桥科技/剑桥科技-research-20260803.md"
+        "reports/剑桥科技/剑桥科技-research-20260803.md",
+        "reports/剑桥科技/剑桥科技-research-20260817.md"
       ],
       "zones": [
         {
-          "label": "评估带",
-          "dir": "range",
-          "low": 80,
-          "high": 100,
+          "label": "A股研究性分批复核线",
+          "dir": "below",
+          "high": 80,
           "market": "A",
-          "action": "评估建仓",
-          "note": "或新财报证明盈利/OCF显著上修、客户集中度下降"
+          "action": "研究性分批复核",
+          "note": "须正式财报确认毛利、CFO和客户份额，且连续两期高速模块增长、CFO改善、客户集中下降、ASP未大幅下行"
+        },
+        {
+          "label": "A股不追高线",
+          "dir": "above",
+          "low": 120,
+          "market": "A",
+          "action": "不新增，复核估值与基本面",
+          "note": "120元以上已隐含较多乐观假设；不以高景气叙事替代现金流和份额验证"
+        },
+        {
+          "label": "H股研究性分批复核线",
+          "dir": "below",
+          "high": 80,
+          "market": "H",
+          "action": "研究性分批复核",
+          "note": "60–80港元更接近中性价值以下；仍须正式财报、现金流和客户份额验证，不把A/H折价当作催化剂"
+        },
+        {
+          "label": "H股不追高线",
+          "dir": "above",
+          "low": 100,
+          "market": "H",
+          "action": "不新增，复核估值与基本面",
+          "note": "100港元以上不因A/H折价单独追买"
         }
       ],
       "events": []
@@ -2693,7 +2726,8 @@
       },
       "source": "Progressive 2026Q2 10-Q/会议/7月结果复核 20260831；8月结果发布日期核验 20260915",
       "links": [
-        "reports/Progressive/Progressive-earnings-2026Q2.md"
+        "reports/Progressive/Progressive-earnings-2026Q2.md",
+        "reports/Progressive/最终报告.md"
       ],
       "zones": [
         {
