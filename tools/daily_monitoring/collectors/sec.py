@@ -12,6 +12,7 @@ from ..models import Disclosure
 TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
 DEFAULT_FORMS = frozenset({"10-K", "10-Q", "8-K", "20-F", "6-K", "40-F"})
+_TICKER_CACHE_ATTR = "_ai_berkshire_sec_ticker_to_cik"
 
 
 def _optional_column(recent: dict[str, Any], name: str, index: int) -> Any:
@@ -34,11 +35,21 @@ def _resolve_cik(config: dict[str, Any], http: Any) -> str:
     ticker = str(config.get("ticker") or "").upper().strip()
     if not ticker:
         raise SourceError("sec", "缺少 ticker 或 CIK")
-    payload = http.get_json(TICKERS_URL, source="sec")
-    rows = payload.values() if isinstance(payload, dict) else payload
-    for row in rows:
-        if str(row.get("ticker") or "").upper() == ticker:
-            return _normalize_cik(row.get("cik_str"))
+    ticker_map = getattr(http, _TICKER_CACHE_ATTR, None)
+    if not isinstance(ticker_map, dict):
+        payload = http.get_json(TICKERS_URL, source="sec")
+        rows = payload.values() if isinstance(payload, dict) else payload
+        ticker_map = {
+            str(row.get("ticker") or "").upper(): row.get("cik_str")
+            for row in rows
+            if isinstance(row, dict) and str(row.get("ticker") or "").strip()
+        }
+        try:
+            setattr(http, _TICKER_CACHE_ATTR, ticker_map)
+        except (AttributeError, TypeError):
+            pass
+    if ticker in ticker_map:
+        return _normalize_cik(ticker_map[ticker])
     raise SourceError("sec", f"SEC ticker 未映射到 CIK: {ticker}")
 
 

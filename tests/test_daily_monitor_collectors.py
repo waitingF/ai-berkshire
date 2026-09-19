@@ -50,6 +50,13 @@ class FixtureHttp:
 
 
 class OfficialUrlTest(unittest.TestCase):
+    def test_official_requests_close_connections(self):
+        headers = HttpClient(edgar_identity="Test User test@example.com")._headers(
+            "sec", None
+        )
+
+        self.assertEqual(headers["Connection"], "close")
+
     def test_rejects_non_official_download_host(self):
         with self.assertRaises(UnsafeUrlError):
             validate_official_url("https://example.com/file.pdf", source="hkex")
@@ -114,6 +121,23 @@ class OfficialUrlTest(unittest.TestCase):
 
 
 class SecCollectorTest(unittest.TestCase):
+    def test_reuses_ticker_mapping_within_a_monitor_run(self):
+        http = FixtureHttp()
+
+        for target_id in ("拼多多", "拼多多二次核验"):
+            sec.collect(
+                target_id,
+                {"ticker": "PDD", "forms": ["6-K"]},
+                since=date(2026, 8, 20),
+                until=date(2026, 8, 24),
+                http=http,
+            )
+
+        ticker_lookups = [
+            call for call in http.calls if call[1].endswith("company_tickers.json")
+        ]
+        self.assertEqual(len(ticker_lookups), 1)
+
     def test_filters_configured_forms_and_builds_archive_url(self):
         http = FixtureHttp()
 

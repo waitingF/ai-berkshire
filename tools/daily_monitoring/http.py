@@ -68,6 +68,7 @@ class HttpClient:
         headers = {
             "Accept": "application/json, text/plain, */*",
             "User-Agent": "AI-Berkshire-Daily-Monitor/1.0",
+            "Connection": "close",
         }
         if source == "sec":
             if not self.edgar_identity:
