@@ -34,6 +34,9 @@ STATIC_SUFFIX_ALLOWLIST = {
     ".webp",
 }
 
+REPORTS_BANNER_START = "<!-- REPORTS-BANNER:START 由 tools/reports_index.py 自动更新，勿手改 -->"
+REPORTS_BANNER_END = "<!-- REPORTS-BANNER:END -->"
+
 # Living docs pinned on the homepage and site nav.
 HOME_PINNED_REPORTS = (
     {
@@ -111,6 +114,32 @@ def render_markdown(markdown_text: str) -> str:
         output_format="html5",
     )
     return renderer.convert(markdown_text)
+
+
+def read_repository_reports_banner(reports_dir: Path) -> str:
+    """Read the report-index banner maintained in the repository README."""
+    readme_path = reports_dir.parent / "README.md"
+    try:
+        readme = readme_path.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+
+    start = readme.find(REPORTS_BANNER_START)
+    end = readme.find(REPORTS_BANNER_END, start + len(REPORTS_BANNER_START))
+    if start < 0 or end < 0:
+        return ""
+    return readme[start + len(REPORTS_BANNER_START):end].strip()
+
+
+def render_repository_reports_banner(reports_dir: Path) -> str:
+    markdown_text = read_repository_reports_banner(reports_dir)
+    if not markdown_text:
+        return ""
+    return f"""    <section class=\"report-index-banner\" aria-labelledby=\"reports-banner-title\">
+      <h2 id=\"reports-banner-title\">研究报告索引</h2>
+{render_markdown(markdown_text)}
+    </section>
+"""
 
 
 def render_site_nav(
@@ -320,6 +349,7 @@ def render_directory_index(
     output_dir: Path,
     report_links: list[tuple[Path, Path]],
     total_reports: int,
+    home_banner_html: str,
 ) -> None:
     directories = set()
     reports = []
@@ -364,6 +394,7 @@ def render_directory_index(
     pinned_section = (
         render_home_pinned_section(report_links) if source_relative_dir == Path(".") else ""
     )
+    report_index_banner = home_banner_html if source_relative_dir == Path(".") else ""
 
     body_html = f"""    <section class="index-hero">
       {breadcrumb_html}
@@ -385,7 +416,7 @@ def render_directory_index(
         </div>
       </dl>
     </section>
-{pinned_section}    <section class="index-tools" aria-labelledby="filter-title">
+{report_index_banner}{pinned_section}    <section class="index-tools" aria-labelledby="filter-title">
       <div>
         <h2 id="filter-title">筛选当前页</h2>
         <p id="filter-status" class="filter-status" data-filter-status aria-live="polite">共 {visible_items} 个条目</p>
@@ -425,7 +456,11 @@ def render_directory_index(
     )
 
 
-def render_indexes(report_links: list[tuple[Path, Path]], output_dir: Path) -> None:
+def render_indexes(
+    report_links: list[tuple[Path, Path]],
+    output_dir: Path,
+    home_banner_html: str,
+) -> None:
     directory_paths = {Path(".")}
     for source_relative, _ in report_links:
         parent = source_relative.parent
@@ -444,6 +479,7 @@ def render_indexes(report_links: list[tuple[Path, Path]], output_dir: Path) -> N
             output_dir,
             report_links,
             len(report_links),
+            home_banner_html,
         )
 
 
@@ -664,6 +700,33 @@ input:focus-visible {
 
 .pinned-home {
   margin: 28px 0;
+}
+
+.report-index-banner {
+  margin: 28px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.report-index-banner h2 {
+  margin: 0 0 8px;
+  border: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+.report-index-banner blockquote {
+  margin: 0;
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+  color: var(--muted);
+}
+
+.report-index-banner blockquote p {
+  margin: 0;
 }
 
 .pinned-home-header {
@@ -1432,7 +1495,11 @@ def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:
     copy_static_assets(reports_dir, output_reports_dir)
     write_styles(output_dir)
     write_scripts(output_dir)
-    render_indexes(report_links, output_dir)
+    render_indexes(
+        report_links,
+        output_dir,
+        render_repository_reports_banner(reports_dir),
+    )
 
 
 def parse_args() -> argparse.Namespace:

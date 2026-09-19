@@ -73,6 +73,14 @@ class BuildGitHubPagesTest(unittest.TestCase):
                 "## 三、其他监控\n\n无。\n",
                 encoding="utf-8",
             )
+            (root / "README.md").write_text(
+                "# 仓库说明\n\n"
+                "<!-- REPORTS-BANNER:START 由 tools/reports_index.py 自动更新，勿手改 -->\n\n"
+                "> 📊 **日更内容是研究报告，全部在 [研究报告索引](reports/README.md)。** "
+                "测试统计。\n\n"
+                "<!-- REPORTS-BANNER:END -->\n",
+                encoding="utf-8",
+            )
 
             builder.build_site(reports_dir, output_dir)
 
@@ -115,6 +123,11 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn(".action-filter", site_css)
 
             self.assertIn("AI Berkshire Reports", index_html)
+            self.assertIn('class="report-index-banner"', index_html)
+            self.assertIn("日更内容是研究报告", index_html)
+            self.assertIn('href="reports/README.html"', index_html)
+            self.assertNotIn('href="reports/README.md"', index_html)
+            self.assertIn(".report-index-banner", site_css)
             self.assertIn("常用入口", index_html)
             self.assertIn("重点标的看板", index_html)
             self.assertIn("标的跟踪表", index_html)
@@ -183,6 +196,7 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertNotIn("reports/%E9%87%8D%E7%82%B9%E6%A0%87%E7%9A%84%E7%9C%8B%E6%9D%BF.html", home_html)
             self.assertNotIn("reports/%E6%A0%87%E7%9A%84%E8%B7%9F%E8%B8%AA%E8%A1%A8.html", home_html)
             self.assertNotIn("reports/daily-monitor/daily-monitor-latest.html", home_html)
+            self.assertNotIn('class="report-index-banner"', home_html)
 
 
 if __name__ == "__main__":
