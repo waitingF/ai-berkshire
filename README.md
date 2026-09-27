@@ -16,7 +16,7 @@
 
 <!-- REPORTS-BANNER:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-> 📊 **日更内容是研究报告，全部在 [研究报告索引](reports/README.md)。** 2050 份报告 · 191 家公司 · 22 个专题，按公司与专题分组，更新至 2026-09-26。
+> 📊 **日更内容是研究报告，全部在 [研究报告索引](reports/README.md)。** 2036 份报告 · 190 家公司 · 22 个专题，按公司与专题分组，更新至 2026-09-27。
 
 <!-- REPORTS-BANNER:END -->
 
@@ -657,18 +657,18 @@ REM 可选：安装 Codex slash prompts
 
 <!-- REPORTS-INDEX:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-**📊 [全部研究索引 →](reports/README.md)** ｜ 2050 份报告 · 191 家公司 · 22 个专题 · 更新至 2026-09-26
+**📊 [全部研究索引 →](reports/README.md)** ｜ 2036 份报告 · 190 家公司 · 22 个专题 · 更新至 2026-09-27
 
 最近更新：
 
 | 日期 | 报告 | 归属 |
 |------|------|------|
-| 2026-09-26 | [重点标的看板](reports/重点标的看板.md) | 综合与横评 |
-| 2026-09-26 | [标的跟踪表](reports/标的跟踪表.md) | 综合与横评 |
+| 2026-09-27 | [重点标的看板](reports/重点标的看板.md) | 综合与横评 |
+| 2026-09-27 | [标的跟踪表](reports/标的跟踪表.md) | 综合与横评 |
+| 2026-09-27 | [快手科技（01024.HK）研究报告：利润折价与现金再投资](reports/快手/快手-research-20260927.md) | 快手 |
+| 2026-09-27 | [Progressive（PGR）研究报告](reports/Progressive/Progressive-research-20260927.md) | Progressive |
 | 2026-09-26 | [杭叉集团（603298.SH）研究报告](reports/杭叉集团/杭叉集团-research-20260926.md) | 杭叉集团 |
 | 2026-09-26 | [诺和诺德（NYSE: NVO / CPH: NOVO.B）研究报告](reports/Novo%20Nordisk/诺和诺德-research-20260926.md) | Novo Nordisk |
-| 2026-09-25 | [每日监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
-| 2026-09-25 | [每日监控](reports/daily-monitor/daily-monitor-20260925.md) | daily-monitor |
 
 <!-- REPORTS-INDEX:END -->
 
