@@ -22,6 +22,8 @@ description: Use when a research report contains an explicit price band, review 
 
 ## 如何登记（改 data/triggers.json）
 
+**先查重，再修改**：按交易所及股票代码查找 `targets`，再用公司中文/英文全称、`source` 和 `links` 中的既有报告核对同一公司；ADR 与本地上市证券也要核实归属。若已有同标的 target，沿用其 `id` 和 `name`，在该条内维护代码、去重后的报告链接、价位带和事件，保留仍有效的历史记录及已完成事件。若因中英文命名已有重复 target，合并到同一条，修复引用后删除重复项；遵守下方同市场价位带约束。只有确认没有现有 target 时才新建，不能仅因报告目录或输入语言不同就建第二条。报告链接应指向复用后的同标的目录，并确认文件存在。
+
 ### ① 给已有标的加价位带（zones）
 
 ```json

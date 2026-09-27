@@ -1,0 +1,194 @@
+[
+  {
+    "id": 4,
+    "label": "总市值 · 数值",
+    "reported_value": 1292.1,
+    "unit": "亿港元",
+    "raw_text": "| 总市值 | 1,292.10亿港元 | 股价×官方股本；财务计算见附录 |",
+    "line_number": 11,
+    "fetched_value": 1292.1042863716,
+    "fetched_source": "港交所9/25总股本×Yahoo 9/25收盘，financial_rigor市值验算",
+    "fetched_value2": 1292.1042863716,
+    "fetched_source2": "东方财富同日市值"
+  },
+  {
+    "id": 5,
+    "label": "汇率假设 · 数值",
+    "reported_value": 1.0,
+    "unit": "",
+    "raw_text": "| 汇率假设 | 1港元＝0.855727元人民币 | [Yahoo Finance HKDCNY 9月25日收盘序列](https://query1.finance.yahoo.com/v8/finance/chart/HKDCNY%3D",
+    "line_number": 12,
+    "fetched_value": 1,
+    "fetched_source": "抽取器误读“1港元＝”单位左侧；货币换算定义"
+  },
+  {
+    "id": 12,
+    "label": "[9月6日三年拆分估值](快手研究报告-20260906.md) · 当时结论",
+    "reported_value": 30.0,
+    "unit": "",
+    "raw_text": "| [9月6日三年拆分估值](快手研究报告-20260906.md) | 30—36港元有条件研究买入；基准今日价值约49港元 | 保留其主业、可灵、盈余资产三层框架；将537亿元“可归属盈余资产”和未来300亿元主业累计现金流视为待验证假",
+    "line_number": 23,
+    "fetched_value": 30,
+    "fetched_source": "本地20260906三年拆分估值原文：30—36港元研究带"
+  },
+  {
+    "id": 14,
+    "label": "[9月6日十年现金流研究](《看懂快手》-20260906/03-便宜的市盈率与昂贵的再投资.md) · 当时结论",
+    "reported_value": 2026.0,
+    "unit": "",
+    "raw_text": "| [9月6日十年现金流研究](《看懂快手》-20260906/03-便宜的市盈率与昂贵的再投资.md) | 2026H1近似简单FCF为负；32港元以下还须经营修复 | 以现金回报约束买入判断；本次仅更新股本和汇率，不把旧估值当作已实现价",
+    "line_number": 24,
+    "fetched_value": 2026,
+    "fetched_source": "抽取器误读2026H1中的年份；本地20260906十年现金研究"
+  },
+  {
+    "id": 15,
+    "label": "[9月12日组合研究](../持仓估值分位与未来盈利-20260912/中概十公司估值分位与未来盈利研究-20260912.md) · 当时结论",
+    "reported_value": 24.0,
+    "unit": "%",
+    "raw_text": "| [9月12日组合研究](../持仓估值分位与未来盈利-20260912/中概十公司估值分位与未来盈利研究-20260912.md) | 快手属“确定性低、折让大”；当时组合记录为24% | 该仓位为历史快照，不能冒充今日实盘；若仍接近该",
+    "line_number": 25,
+    "fetched_value": 24,
+    "fetched_source": "本地20260912中概十公司估值研究组合快照；非实时仓位"
+  },
+  {
+    "id": 18,
+    "label": "直播 · 收入（亿元）",
+    "reported_value": 390.87,
+    "unit": "",
+    "raw_text": "| 直播 | 390.87 | 27.38% |",
+    "line_number": 36,
+    "fetched_value": 390.87,
+    "fetched_source": "快手2025年报分业务附注；第三方未找到相同精度拆分"
+  },
+  {
+    "id": 29,
+    "label": "毛利 · 2023",
+    "reported_value": 573.91,
+    "unit": "",
+    "raw_text": "| 毛利 | 340.30 | 421.31 | 573.91 | 692.92 | 785.49 |",
+    "line_number": 42,
+    "fetched_value": 573.91,
+    "fetched_source": "快手2023年报毛利",
+    "fetched_value2": 573.91,
+    "fetched_source2": "StockAnalysis年度财务"
+  },
+  {
+    "id": 36,
+    "label": "归母净利润 · 2025",
+    "reported_value": 186.17,
+    "unit": "",
+    "raw_text": "| 归母净利润 | -780.74 | -136.90 | 63.96 | 153.35 | 186.17 |",
+    "line_number": 43,
+    "fetched_value": 186.17,
+    "fetched_source": "快手2025年报归母净利润",
+    "fetched_value2": 186.17,
+    "fetched_source2": "StockAnalysis年度财务"
+  },
+  {
+    "id": 32,
+    "label": "归母净利润 · 2021",
+    "reported_value": -780.74,
+    "unit": "",
+    "raw_text": "| 归母净利润 | -780.74 | -136.90 | 63.96 | 153.35 | 186.17 |",
+    "line_number": 43,
+    "fetched_value": -780.74,
+    "fetched_source": "快手2021年报归母净利润",
+    "fetched_value2": -780.74,
+    "fetched_source2": "StockAnalysis年度财务"
+  },
+  {
+    "id": 55,
+    "label": "总收入 · 2026Q2",
+    "reported_value": 355.35,
+    "unit": "",
+    "raw_text": "| 总收入 | 355.54 | 395.68 | 337.16 | 355.35 |",
+    "line_number": 52,
+    "fetched_value": 355.35,
+    "fetched_source": "快手2026Q2官方业绩",
+    "fetched_value2": 355.35,
+    "fetched_source2": "StockAnalysis季度财务"
+  },
+  {
+    "id": 70,
+    "label": "合并毛利率（约） · 2026Q1",
+    "reported_value": 51.2,
+    "unit": "%",
+    "raw_text": "| 合并毛利率（约） | 54.7% | 55.1% | 51.2% | 51.6% |",
+    "line_number": 56,
+    "fetched_value": 51.2,
+    "fetched_source": "快手2026Q2官方公告Q1对照表",
+    "fetched_value2": 51.2,
+    "fetched_source2": "StockAnalysis季度毛利/收入四舍五入"
+  },
+  {
+    "id": 76,
+    "label": "2024—2026 · 可核结果",
+    "reported_value": 2026.0,
+    "unit": "",
+    "raw_text": "| 2024—2026 | 将可灵从研发推向收费产品 | 2026Q2收入超过8.5亿元，但成本与资本回报未披露 | 产品判断：正面；投资回报：待证 |",
+    "line_number": 96,
+    "fetched_value": 2026,
+    "fetched_source": "抽取器误读管理层时间区间中的2026；2026Q2公告"
+  },
+  {
+    "id": 82,
+    "label": "第1年→第10年现金路径端点 · 基准",
+    "reported_value": 30.0,
+    "unit": "",
+    "raw_text": "| 第1年→第10年现金路径端点 | 0→50 | 30→170 | 70→350 |",
+    "line_number": 129,
+    "fetched_value": 30,
+    "fetched_source": "十年DCF模型基准现金路径假设；非外部事实"
+  },
+  {
+    "id": 87,
+    "label": "永续增长假设 · 基准",
+    "reported_value": 1.0,
+    "unit": "%",
+    "raw_text": "| 永续增长假设 | 0% | 1% | 2% |",
+    "line_number": 131,
+    "fetched_value": 1,
+    "fetched_source": "十年DCF模型基准永续增长假设；非外部事实"
+  },
+  {
+    "id": 95,
+    "label": "期末每股价格（港元） · 中性",
+    "reported_value": 42.8,
+    "unit": "",
+    "raw_text": "| 期末每股价格（港元） | 68.4 | 42.8 | 18.4 |",
+    "line_number": 141,
+    "fetched_value": 42.8,
+    "fetched_source": "financial_rigor three-scenario模型输出；非外部事实"
+  },
+  {
+    "id": 101,
+    "label": "补抽：9/25收盘价",
+    "reported_value": 30.02,
+    "unit": "港元",
+    "fetched_value": 30.02,
+    "fetched_source": "Yahoo Finance 1024.HK 9/25",
+    "fetched_value2": 30.02,
+    "fetched_source2": "腾讯行情hk01024 9/25"
+  },
+  {
+    "id": 102,
+    "label": "补抽：9/25已发行股数",
+    "reported_value": 4304144858,
+    "unit": "股",
+    "fetched_value": 4304144858,
+    "fetched_source": "HKEX 2026092501063.pdf",
+    "fetched_value2": 4304144858,
+    "fetched_source2": "东方财富市值除以股价"
+  },
+  {
+    "id": 103,
+    "label": "补抽：2026H1经营现金流",
+    "reported_value": 90.44,
+    "unit": "亿元人民币",
+    "fetched_value": 90.44,
+    "fetched_source": "快手2026中期报告",
+    "fetched_value2": 90.44,
+    "fetched_source2": "StockAnalysis现金流表"
+  }
+]
