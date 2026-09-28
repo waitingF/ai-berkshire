@@ -256,6 +256,33 @@ class NotificationContractTest(unittest.TestCase):
         self.assertIn("今日无新增进入或接近建仓/关注条件的标的", message)
         self.assertEqual(module.send_notification(payload, sendkey="secret"), "SKIPPED")
 
+    def test_above_near_is_not_included_or_sent(self):
+        module = load_module()
+        payload = {
+            "date": "2026-09-28",
+            "status": "OK",
+            "items": [
+                {
+                    "target_id": "Credo",
+                    "name": "Credo Technology",
+                    "priority": "P1",
+                    "section": "price",
+                    "title": "估值警戒线：NEAR",
+                    "why_now": "距估值警戒线 4.1%",
+                    "notify": True,
+                    "resolved": False,
+                    "status": "NEAR",
+                    "metadata": {"direction": "above", "low": 220, "price": 210.97},
+                }
+            ],
+        }
+
+        _, message = module.build_message(payload)
+
+        self.assertNotIn("Credo Technology", message)
+        self.assertIn("价格变化 0", message)
+        self.assertEqual(module.send_notification(payload, sendkey="secret"), "SKIPPED")
+
     def test_degraded_message_explains_nested_ai_failure(self):
         module = load_module()
         payload = {

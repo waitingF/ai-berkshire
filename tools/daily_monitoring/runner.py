@@ -466,6 +466,8 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
 
     for target in targets:
         for zone in target.get("zones") or []:
+            if zone.get("dir", "range") == "above":
+                continue
             code = (target.get("codes") or {}).get(zone.get("market"))
             quote = quotes.get(str(code), {})
             price = quote.get("price")

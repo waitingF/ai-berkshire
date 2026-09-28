@@ -21,6 +21,10 @@ SECTION_HEADINGS = (
 SECTION_ORDER = {name: index for index, (name, _) in enumerate(SECTION_HEADINGS)}
 
 
+def _is_above_price(item: MonitorItem) -> bool:
+    return item.section == "price" and item.metadata.get("direction") == "above"
+
+
 def _sorted_items(items: Iterable[MonitorItem]) -> list[MonitorItem]:
     return sorted(
         items,
@@ -60,6 +64,7 @@ def _summary(result: RunResult) -> str:
         for item in result.items
         if item.notify
         and not item.resolved
+        and not _is_above_price(item)
         and not (item.section == "price" and item.status == "WARN")
     ]
     p0 = sum(item.priority == "P0" for item in changed)
@@ -155,10 +160,12 @@ def _target_name(item: MonitorItem) -> str:
 
 def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
     visible = [
-        item for item in items if item.priority != "P2" and item.status != "WARN"
+        item
+        for item in items
+        if item.priority != "P2" and item.status != "WARN" and not _is_above_price(item)
     ]
     lines = [
-        "> 价格优先级：P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与已越警戒线事项不展示。优先级只表示复核紧迫度，不代表交易信号。",
+        "> 价格优先级：P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与上涨警戒线事项不展示。优先级只表示复核紧迫度，不代表交易信号。",
         "> 最新研究报告日期仅比较标的已登记的本地报告；优先取报告中的日期标注，其次取文件名，无法判定显示 -。",
         "",
     ]
@@ -384,8 +391,16 @@ def report_payload(result: RunResult, *, run_date: date) -> dict[str, Any]:
         "timezone": "Asia/Shanghai",
         "status": result.status,
         "summary": _summary(result),
-        "items": [_json_value(asdict(item)) for item in _sorted_items(result.items)],
-        "notification_items": [item.fingerprint for item in result.notification_items],
+        "items": [
+            _json_value(asdict(item))
+            for item in _sorted_items(result.items)
+            if not _is_above_price(item)
+        ],
+        "notification_items": [
+            item.fingerprint
+            for item in result.notification_items
+            if not _is_above_price(item)
+        ],
         "source_health": [_json_value(asdict(row)) for row in result.source_health],
     }
 

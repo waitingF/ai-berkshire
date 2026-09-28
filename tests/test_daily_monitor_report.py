@@ -5,7 +5,7 @@ from datetime import date
 from pathlib import Path
 
 from tools.daily_monitoring.models import MonitorItem, RunResult, SourceHealth, VerifiedFact
-from tools.daily_monitoring.report import render_markdown, write_reports
+from tools.daily_monitoring.report import render_markdown, report_payload, write_reports
 
 
 def item(
@@ -178,7 +178,7 @@ class DailyMonitorReportTest(unittest.TestCase):
             markdown,
         )
         self.assertIn(
-            "P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与已越警戒线事项不展示",
+            "P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与上涨警戒线事项不展示",
             markdown,
         )
         self.assertNotIn("above", markdown)
@@ -247,6 +247,37 @@ class DailyMonitorReportTest(unittest.TestCase):
         self.assertNotIn("| WARN |", markdown)
         self.assertIn("P0 0 · P1 0 · 新增价格 0", markdown)
         self.assertIn("无 P0/P1 建仓或关注价格事项", markdown)
+
+    def test_above_near_is_absent_from_markdown_summary_and_json(self):
+        run = result(
+            [
+                item(
+                    "warning-near",
+                    "price",
+                    "P1",
+                    target_id="Credo",
+                    name="Credo Technology",
+                    title="估值警戒线：NEAR",
+                    status="NEAR",
+                    notify=True,
+                    metadata={
+                        "market": "US",
+                        "zone_label": "估值警戒线",
+                        "low": 220,
+                        "direction": "above",
+                        "price": 210.97,
+                    },
+                )
+            ]
+        )
+
+        markdown = render_markdown(run, run_date=date(2026, 9, 28))
+        payload = report_payload(run, run_date=date(2026, 9, 28))
+
+        self.assertNotIn("Credo Technology", markdown)
+        self.assertIn("P0 0 · P1 0 · 新增价格 0", markdown)
+        self.assertEqual(payload["items"], [])
+        self.assertEqual(payload["notification_items"], [])
 
     def test_disclosure_section_renders_table_and_preserves_details(self):
         markdown = render_markdown(

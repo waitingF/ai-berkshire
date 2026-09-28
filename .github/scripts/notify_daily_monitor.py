@@ -169,7 +169,13 @@ def _changed_items(payload: dict[str, Any]) -> list[dict[str, Any]]:
         for item in payload.get("items", [])
         if item.get("notify") is True
         and not item.get("resolved")
-        and not (item.get("section") == "price" and item.get("status") == "WARN")
+        and not (
+            item.get("section") == "price"
+            and (
+                item.get("status") == "WARN"
+                or (item.get("metadata") or {}).get("direction") == "above"
+            )
+        )
     ]
     try:
         today = date.fromisoformat(str(payload.get("date") or ""))

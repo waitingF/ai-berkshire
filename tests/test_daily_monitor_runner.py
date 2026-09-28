@@ -18,6 +18,7 @@ from tools.daily_monitoring.runner import (
     run_monitor,
 )
 from tools.daily_monitoring.state import empty_state
+from tools.daily_monitoring.transitions import price_state_key
 
 
 OFFICIAL_URL = (
@@ -153,6 +154,45 @@ def options(root, triggers):
 
 
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_above_zone_is_excluded_from_daily_monitor_and_price_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root, with_zone=True)
+            config = json.loads(triggers.read_text(encoding="utf-8"))
+            target = config["targets"][0]
+            warning = {
+                "label": "估值警戒线",
+                "dir": "above",
+                "low": 110,
+                "market": "US",
+            }
+            target["zones"].append(warning)
+            triggers.write_text(json.dumps(config, ensure_ascii=False), encoding="utf-8")
+
+            result = run_monitor(
+                options(root, triggers),
+                services(
+                    FakeAI(ai_result()),
+                    collector=lambda *args, **kwargs: [],
+                    quote_price=105,
+                ),
+            )
+
+            price_items = [item for item in result.items if item.section == "price"]
+            self.assertEqual([item.metadata["direction"] for item in price_items], ["below"])
+            self.assertNotIn(
+                "估值警戒线", result.report_paths.latest.read_text(encoding="utf-8")
+            )
+            payload = json.loads(result.report_paths.latest_json.read_text(encoding="utf-8"))
+            self.assertFalse(
+                any(
+                    item["section"] == "price"
+                    and item["metadata"]["direction"] == "above"
+                    for item in payload["items"]
+                )
+            )
+            self.assertNotIn(price_state_key(target, warning), result.next_state["price_states"])
+
     def test_report_links_target_to_most_current_existing_research(self):
         """Selecting the first configured report instead of the newest is a bug."""
         with tempfile.TemporaryDirectory() as tmp:
