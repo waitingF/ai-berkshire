@@ -159,6 +159,7 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
     ]
     lines = [
         "> 价格优先级：P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与已越警戒线事项不展示。优先级只表示复核紧迫度，不代表交易信号。",
+        "> 最新研究报告日期仅比较标的已登记的本地报告；优先取报告中的日期标注，其次取文件名，无法判定显示 -。",
         "",
     ]
     if not visible:
@@ -166,8 +167,8 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
         return lines
     lines.extend(
         [
-            "| 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |",
-            "|---|---|---|---|---:|---:|---:|---|",
+            "| 优先级 | 标的 | 最新研究报告日期 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |",
+            "|---|---|---|---|---|---:|---:|---:|---|",
         ]
     )
     for item in visible:
@@ -180,6 +181,7 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
         cells = (
             item.priority,
             _target_name(item),
+            metadata.get("research_date") or "-",
             metadata.get("market") or "-",
             metadata.get("zone_label") or item.title,
             _price_condition(metadata),

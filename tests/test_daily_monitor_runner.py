@@ -201,6 +201,13 @@ class DailyMonitorRunnerTest(unittest.TestCase):
                 "%E6%97%A7%E6%8A%A5%E5%91%8A.md)",
                 markdown,
             )
+            self.assertIn(
+                "%E6%9C%80%E6%96%B0%E6%8A%A5%E5%91%8A.md) | 2026-08-25 | US |",
+                markdown,
+            )
+            payload = json.loads(result.report_paths.latest_json.read_text(encoding="utf-8"))
+            price = next(row for row in payload["items"] if row["section"] == "price")
+            self.assertEqual(price["metadata"]["research_date"], "2026-08-25")
 
     def test_watch_scans_every_backfilled_ledger_target_code(self):
         """Deleting a backfilled target must remove at least one watched quote."""

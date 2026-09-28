@@ -174,7 +174,7 @@ class DailyMonitorReportTest(unittest.TestCase):
         )
 
         self.assertIn(
-            "| 优先级 | 标的 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |",
+            "| 优先级 | 标的 | 最新研究报告日期 | 市场 | 监控区间 | 条件 | 现价 | 距边界 | 状态 |",
             markdown,
         )
         self.assertIn(
@@ -183,15 +183,38 @@ class DailyMonitorReportTest(unittest.TestCase):
         )
         self.assertNotIn("above", markdown)
         self.assertIn(
-            "| P0 | 腾讯控股 | H | 加仓带 | [400.00, 430.00] | 410.00 | 区间内 | TRIGGERED |",
+            "| P0 | 腾讯控股 | - | H | 加仓带 | [400.00, 430.00] | 410.00 | 区间内 | TRIGGERED |",
             markdown,
         )
         self.assertIn(
-            "| P1 | Example Co | US | 复核线 | ≤ 100.00 | 104.00 | 4.0% | NEAR |",
+            "| P1 | Example Co | - | US | 复核线 | ≤ 100.00 | 104.00 | 4.0% | NEAR |",
             markdown,
         )
         self.assertNotIn("### [P0] 腾讯控股", markdown)
         self.assertNotIn("Far Away Co", markdown)
+
+    def test_price_section_shows_linked_report_date_and_missing_date(self):
+        markdown = render_markdown(
+            result(
+                [
+                    item(
+                        "dated",
+                        "price",
+                        "P0",
+                        metadata={
+                            "research_link": "../公司/研究.md",
+                            "research_date": "2026-08-31",
+                        },
+                    ),
+                    item("undated", "price", "P1", target_id="其他", name="其他公司"),
+                ]
+            ),
+            run_date=date(2026, 9, 1),
+        )
+
+        self.assertIn("| 优先级 | 标的 | 最新研究报告日期 | 市场 |", markdown)
+        self.assertIn("| P0 | [腾讯控股](../公司/研究.md) | 2026-08-31 |", markdown)
+        self.assertIn("| P1 | 其他公司 | - |", markdown)
 
     def test_above_warning_is_hidden_from_price_section_and_summary(self):
         markdown = render_markdown(

@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 
 from .collectors import akshare, cninfo, hkex, sec
 from .config import infer_sources, load_targets
-from .context import build_context, find_completeness_gaps, primary_research_link
+from .context import build_context, find_completeness_gaps, primary_research_report
 from .deepseek import AnalysisRequest, DeepSeekClient
 from .disclosures import deduplicate
 from .documents import ExtractedDocument, extract_document, prepare_prompt_chunks, temporary_document
@@ -765,11 +765,14 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
     state["completeness"] = {**preserved_gaps, **current_gaps}
 
     items = _aggregate_todays_disclosures(items, today=options.today)
-    research_links = {
-        str(target.get("id") or ""): link
+    research_reports = {
+        str(target.get("id") or ""): {
+            "research_link": selected[0],
+            "research_date": selected[1].isoformat() if selected[1] else None,
+        }
         for target in targets
         if (
-            link := primary_research_link(
+            selected := primary_research_report(
                 options.root,
                 options.report_dir,
                 target,
@@ -779,9 +782,9 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
     items = [
         replace(
             item,
-            metadata={**item.metadata, "research_link": research_links[item.target_id]},
+            metadata={**item.metadata, **research_reports[item.target_id]},
         )
-        if item.target_id in research_links
+        if item.target_id in research_reports
         else item
         for item in items
     ]

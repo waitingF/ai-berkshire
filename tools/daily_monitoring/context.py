@@ -36,7 +36,9 @@ PRICE_PATTERN = re.compile(
 )
 DATE_PATTERN = re.compile(r"\b(20\d{2}-\d{2}-\d{2})\b")
 REPORT_DATE_LABEL_PATTERN = re.compile(
-    r"数据截止(?:日|日期)?|研究日期|报告日期|更新日期|最后更新|财报发布日期|发布日期"
+    r"数据截止(?:日|日期)?|研究日期|研究日及信息截止|报告日期|建立日期|"
+    r"更新日期|最后更新|最新追踪更新|财报发布日期|发布日期|"
+    r"^\s*>?\s*(?:\*\*)?日期[:：]"
 )
 SEPARATED_DATE_PATTERN = re.compile(
     r"(?<!\d)(20\d{2})(?:-|/|\.|年)(\d{1,2})(?:-|/|\.|月)(\d{1,2})日?(?!\d)"
@@ -150,12 +152,12 @@ def _report_recency(path: Path) -> date:
     return max(filename_dates, default=date.min)
 
 
-def primary_research_link(
+def primary_research_report(
     root: str | Path,
     report_dir: str | Path,
     target: dict[str, Any],
-) -> str | None:
-    """Return a report-relative link to the most current configured report."""
+) -> tuple[str, date | None] | None:
+    """Return the newest configured report's relative link and stated date."""
     root_path = Path(root).resolve()
     best_path: Path | None = None
     best_recency = date.min
@@ -172,7 +174,18 @@ def primary_research_link(
     if best_path is None:
         return None
     relative = os.path.relpath(best_path, start=Path(report_dir).resolve())
-    return quote(Path(relative).as_posix(), safe="/-._~")
+    link = quote(Path(relative).as_posix(), safe="/-._~")
+    return link, (best_recency if best_recency != date.min else None)
+
+
+def primary_research_link(
+    root: str | Path,
+    report_dir: str | Path,
+    target: dict[str, Any],
+) -> str | None:
+    """Return a report-relative link to the most current configured report."""
+    selected = primary_research_report(root, report_dir, target)
+    return selected[0] if selected else None
 
 
 def build_context(

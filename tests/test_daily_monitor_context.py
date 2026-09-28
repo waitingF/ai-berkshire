@@ -2,8 +2,13 @@ import tempfile
 import unittest
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
-from tools.daily_monitoring.context import build_context, find_completeness_gaps
+from tools.daily_monitoring.context import (
+    build_context,
+    find_completeness_gaps,
+    primary_research_report,
+)
 
 
 def write(path, text):
@@ -12,6 +17,65 @@ def write(path, text):
 
 
 class ResearchContextTest(unittest.TestCase):
+    def test_primary_report_returns_link_and_latest_labeled_date(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            older = root / "reports" / "公司" / "公司-research-20260801.md"
+            latest = root / "reports" / "公司" / "公司-thesis.md"
+            write(older, "# 旧报告\n**报告日期：2026-08-01**\n")
+            write(
+                latest,
+                "# 投资论文\n**建立日期：2026年4月9日** | "
+                "**最新追踪更新：2026年8月31日**\n"
+                "\n**数据截止：2026-08-25**\n",
+            )
+
+            selected = primary_research_report(
+                root,
+                root / "reports" / "daily-monitor",
+                {"links": [str(older.relative_to(root)), str(latest.relative_to(root))]},
+            )
+
+            self.assertEqual(
+                selected,
+                (quote("../公司/公司-thesis.md", safe="/-._~"), date(2026, 8, 31)),
+            )
+
+    def test_primary_report_reads_generic_header_date(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write(
+                root / "reports" / "Booking" / "最终报告.md",
+                "# 报告\n> 日期：2026-05-16\n",
+            )
+
+            selected = primary_research_report(
+                root,
+                root / "reports" / "daily-monitor",
+                {"links": ["reports/Booking/最终报告.md"]},
+            )
+
+            self.assertEqual(
+                selected,
+                (quote("../Booking/最终报告.md", safe="/-._~"), date(2026, 5, 16)),
+            )
+
+    def test_primary_report_keeps_undated_link_without_inventing_date(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write(root / "reports" / "公司" / "最终报告.md", "# 无日期报告\n")
+
+            selected = primary_research_report(
+                root,
+                root / "reports" / "daily-monitor",
+                {"links": ["reports/公司/最终报告.md"]},
+            )
+
+            self.assertEqual(
+                selected,
+                (quote("../公司/最终报告.md", safe="/-._~"), None),
+            )
+
     def test_context_uses_target_files_and_matching_rows_only(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
