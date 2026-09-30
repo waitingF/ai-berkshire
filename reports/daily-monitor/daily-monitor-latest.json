@@ -1,10 +1,37 @@
 {
   "schema": 1,
-  "date": "2026-09-28",
+  "date": "2026-09-30",
   "timezone": "Asia/Shanghai",
   "status": "DEGRADED",
-  "summary": "P0 0 · P1 1 · 新增价格 1 · 新增披露 0 · 异常 1",
+  "summary": "P0 3 · P1 11 · 新增价格 3 · 新增披露 9 · 异常 0",
   "items": [
+    {
+      "fingerprint": "1f395266eb08470cf16b272fed6cafb338de15bc92ffad6a8cae9eb729891c17",
+      "section": "disclosures",
+      "priority": "P0",
+      "target_id": "Accenture",
+      "name": "Accenture",
+      "title": "FY26 Q4/全年财报（约9月）：今天到期",
+      "why_now": "登记事件状态为今天到期，需按备注核验；监控本身不作投资决定。",
+      "status": "TODAY",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "UPCOMING_7D",
+        "current_status": "TODAY",
+        "date": "2026-09-30",
+        "days": 0,
+        "event_type": "财报",
+        "note": "核全年本币增速、利润率、AI可审计指标",
+        "research_link": "../Accenture/Accenture-thesis.md",
+        "research_date": "2026-07-21"
+      }
+    },
     {
       "fingerprint": "ed63a8cef3b3db615e95305086a838cb20b3b21e94a721b1a9a8acdc1561588c",
       "section": "price",
@@ -12,7 +39,7 @@
       "target_id": "Adobe",
       "name": "Adobe",
       "title": "Q3后研究性分批上限：TRIGGERED",
-      "why_now": "现价 235.47 ≤ 247.00（触发线）",
+      "why_now": "现价 233.17 ≤ 247.00（触发线）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -24,7 +51,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 235.47,
+        "price": 233.17,
         "market": "US",
         "zone_label": "Q3后研究性分批上限",
         "low": null,
@@ -42,7 +69,7 @@
       "target_id": "ALB",
       "name": "Albemarle",
       "title": "研究性分批评估带：TRIGGERED",
-      "why_now": "现价 109.73 ≤ 区间上界 110.00（区间内或以下）",
+      "why_now": "现价 107.62 ≤ 区间上界 110.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -54,7 +81,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 109.73,
+        "price": 107.62,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 90,
@@ -72,7 +99,7 @@
       "target_id": "AppLovin",
       "name": "AppLovin",
       "title": "分批复核带：TRIGGERED",
-      "why_now": "现价 310.75 ≤ 区间上界 330.00（区间内或以下）",
+      "why_now": "现价 305.66 ≤ 区间上界 330.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -84,7 +111,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 310.75,
+        "price": 305.66,
         "market": "US",
         "zone_label": "分批复核带",
         "low": 300,
@@ -102,7 +129,7 @@
       "target_id": "Reddit",
       "name": "Reddit",
       "title": "小仓跟踪带：TRIGGERED",
-      "why_now": "现价 149.84 ≤ 区间上界 165.00（区间内或以下）",
+      "why_now": "现价 145.36 ≤ 区间上界 165.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -114,7 +141,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 149.84,
+        "price": 145.36,
         "market": "US",
         "zone_label": "小仓跟踪带",
         "low": 145,
@@ -132,7 +159,7 @@
       "target_id": "SE",
       "name": "Sea Limited",
       "title": "分层研究性评估区间：TRIGGERED",
-      "why_now": "现价 99.55 ≤ 区间上界 105.00（区间内或以下）",
+      "why_now": "现价 98.62 ≤ 区间上界 105.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -144,7 +171,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 99.55,
+        "price": 98.62,
         "market": "US",
         "zone_label": "分层研究性评估区间",
         "low": 75,
@@ -162,7 +189,7 @@
       "target_id": "上海复旦",
       "name": "上海复旦",
       "title": "H股原分批研究带（暂停执行）：TRIGGERED",
-      "why_now": "现价 25.18 ≤ 区间上界 28.00（区间内或以下）",
+      "why_now": "现价 25.62 ≤ 区间上界 28.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -174,7 +201,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 25.18,
+        "price": 25.62,
         "market": "H",
         "zone_label": "H股原分批研究带（暂停执行）",
         "low": 20,
@@ -192,7 +219,7 @@
       "target_id": "中国平安",
       "name": "中国平安",
       "title": "A股持有/分批复核带：TRIGGERED",
-      "why_now": "现价 52.40 ≤ 区间上界 55.00（区间内或以下）",
+      "why_now": "现价 53.29 ≤ 区间上界 55.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -204,7 +231,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 52.4,
+        "price": 53.29,
         "market": "A",
         "zone_label": "A股持有/分批复核带",
         "low": 48,
@@ -216,13 +243,43 @@
       }
     },
     {
+      "fingerprint": "101a33ecf2420dd4114bb5d5596ab5723389a761351e22c7add321bbaa7e9aa9",
+      "section": "price",
+      "priority": "P0",
+      "target_id": "亨通光电",
+      "name": "亨通光电",
+      "title": "研究性分批评估带：TRIGGERED",
+      "why_now": "现价 54.86 ≤ 区间上界 55.00（区间内或以下）",
+      "status": "TRIGGERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "FAR",
+        "current_status": "TRIGGERED",
+        "price": 54.86,
+        "market": "A",
+        "zone_label": "研究性分批评估带",
+        "low": 45,
+        "high": 55,
+        "direction": "range",
+        "note": "非自动买入；须连续两季CFO转正、应收增速不高于收入且海缆/光通信毛利稳定",
+        "research_link": "../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20260826.md",
+        "research_date": "2026-08-26"
+      }
+    },
+    {
       "fingerprint": "74059f00341afe2cff117368228a8b6143b95e0b314c1ce15c9f1beb393bc22a",
       "section": "price",
       "priority": "P0",
       "target_id": "哔哩哔哩",
       "name": "哔哩哔哩",
       "title": "Q2后研究性分批带：TRIGGERED",
-      "why_now": "现价 14.90 ≤ 区间上界 16.00（区间内或以下）",
+      "why_now": "现价 14.84 ≤ 区间上界 16.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -234,7 +291,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 14.9,
+        "price": 14.84,
         "market": "US",
         "zone_label": "Q2后研究性分批带",
         "low": 12,
@@ -265,7 +322,7 @@
         "previous_status": "OVERDUE",
         "current_status": "OVERDUE",
         "date": "2026-09-17",
-        "days": -11,
+        "days": -13,
         "event_type": "产品",
         "note": "核初期留存、付费与投放纪律；不以下载量/榜单替代游戏收入和ROI，也不构成自动交易信号。",
         "research_link": "../%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-earnings-2026Q2.md",
@@ -279,7 +336,7 @@
       "target_id": "多氟多",
       "name": "多氟多",
       "title": "评估带：TRIGGERED",
-      "why_now": "现价 29.75 ≤ 区间上界 30.00（区间内或以下）",
+      "why_now": "现价 29.49 ≤ 区间上界 30.00（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -291,7 +348,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 29.75,
+        "price": 29.49,
         "market": "A",
         "zone_label": "评估带",
         "low": 26,
@@ -303,13 +360,43 @@
       }
     },
     {
+      "fingerprint": "9b8d12fa7c149ef00a20fe4c5391c885a08caa46fee4c57a920e2ad098778881",
+      "section": "price",
+      "priority": "P0",
+      "target_id": "思格新能",
+      "name": "思格新能",
+      "title": "稳健型研究性评估带：TRIGGERED",
+      "why_now": "现价 276.60 ≤ 区间上界 280.00（区间内或以下）",
+      "status": "TRIGGERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "FAR",
+        "current_status": "TRIGGERED",
+        "price": 276.6,
+        "market": "H",
+        "zone_label": "稳健型研究性评估带",
+        "low": 250,
+        "high": 280,
+        "direction": "range",
+        "note": "非自动买入；须至少两个上市后报告期验证毛利率稳定、第二增长曲线和华为竞争影响",
+        "research_link": "../%E6%80%9D%E6%A0%BC%E6%96%B0%E8%83%BD/%E6%80%9D%E6%A0%BC%E6%96%B0%E8%83%BD-earnings-2026H1.md",
+        "research_date": "2026-08-31"
+      }
+    },
+    {
       "fingerprint": "aac6f83b4ef1b48909769a16cc51049f47d04337f87e944ae9bd0d53d6b9a0c5",
       "section": "price",
       "priority": "P0",
       "target_id": "腾讯音乐",
       "name": "腾讯音乐",
       "title": "分批评估区：TRIGGERED",
-      "why_now": "现价 8.39 ≤ 区间上界 8.50（区间内或以下）",
+      "why_now": "现价 7.96 ≤ 区间上界 8.50（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -321,7 +408,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 8.39,
+        "price": 7.96,
         "market": "US",
         "zone_label": "分批评估区",
         "low": 6,
@@ -333,43 +420,13 @@
       }
     },
     {
-      "fingerprint": "7978ba7626a4371e6f931b2d528673a8cf8f297645afe8db20df9b8cba281b35",
-      "section": "price",
-      "priority": "P0",
-      "target_id": "茅台",
-      "name": "贵州茅台",
-      "title": "建仓参考带：TRIGGERED",
-      "why_now": "现价 1243.88 ≤ 区间上界 1250.00（区间内或以下）",
-      "status": "TRIGGERED",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "TRIGGERED",
-        "current_status": "TRIGGERED",
-        "price": 1243.88,
-        "market": "A",
-        "zone_label": "建仓参考带",
-        "low": 1100,
-        "high": 1250,
-        "direction": "range",
-        "note": "等行业触底信号明确",
-        "research_link": "../%E8%8C%85%E5%8F%B0/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md",
-        "research_date": "2026-04-09"
-      }
-    },
-    {
       "fingerprint": "70449e33e4ca8034d9e1ec4ed2f2677cb5806c2c8cfa7008c8ebb31ab518e524",
       "section": "price",
       "priority": "P0",
       "target_id": "赣锋锂业",
       "name": "赣锋锂业",
       "title": "H股小仓带：TRIGGERED",
-      "why_now": "现价 29.86 ≤ 区间上界 43.80（区间内或以下）",
+      "why_now": "现价 30.80 ≤ 区间上界 43.80（区间内或以下）",
       "status": "TRIGGERED",
       "verified_facts": [],
       "source_urls": [],
@@ -381,7 +438,7 @@
       "metadata": {
         "previous_status": "TRIGGERED",
         "current_status": "TRIGGERED",
-        "price": 29.86,
+        "price": 30.8,
         "market": "H",
         "zone_label": "H股小仓带",
         "low": 34.6,
@@ -393,13 +450,136 @@
       }
     },
     {
+      "fingerprint": "ddbae04c9c4c431b719282e2f816a6dad197729de4ec62518cb1490d1684a651",
+      "section": "other",
+      "priority": "P1",
+      "target_id": "Accenture",
+      "name": "Accenture",
+      "title": "Investor Day：14 天后到期",
+      "why_now": "登记事件状态为14 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_14D",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "FUTURE",
+        "current_status": "UPCOMING_14D",
+        "date": "2026-10-14",
+        "days": 14,
+        "event_type": "投资者日",
+        "note": "核增长战略、并购整合、AI承诺",
+        "research_link": "../Accenture/Accenture-thesis.md",
+        "research_date": "2026-07-21"
+      }
+    },
+    {
+      "fingerprint": "dba8e7f89e87246fa37a2271ed95c0d617e39e2d15582192b9f9405755c44fac",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "nVent",
+      "name": "nVent",
+      "title": "1 项公告更新",
+      "why_now": "FORM 8-K",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1720635/000110465926111938/tm2626249d1_8k.htm"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "US",
+        "date": "2026-09-30",
+        "published_at": "2026-09-29T16:15:32.000Z",
+        "latest_time": "2026-09-30T00:15:32+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "FORM 8-K",
+            "title": "FORM 8-K",
+            "published_at": "2026-09-29T16:15:32.000Z",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "nVent 于 2026-09-29 完成 8 亿美元 6.150% 高级票据公开发行，并披露所得款项将用于为约 17.5 亿美元 Maverick Power 收购及相关费用融资，同时涉及 6 亿美元定期贷款与 2.5 亿美元特定循环额度。该事件直接影响此前研究中“Maverick 融资、杠杆与整合可控”的核心假设，属于需要进入研究复核的重大资本结构变化。",
+            "source_urls": [
+              "https://www.sec.gov/Archives/edgar/data/1720635/000110465926111938/tm2626249d1_8k.htm"
+            ],
+            "verified_facts": [
+              {
+                "fact": "nVent Electric plc、Hoffman Schroff Holdings, Inc. 和 nVent Finance S.à r.l. 于 2026 年 9 月 29 日完成了本金总额 8 亿美元的 Hoffman Schroff 6.150% 2036 年到期高级票据公开发行。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1720635/000110465926111938/tm2626249d1_8k.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "该票据由 nVent Electric plc 和 nVent Finance S.à r.l. 提供完全、无条件且连带的本金和利息支付担保。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1720635/000110465926111938/tm2626249d1_8k.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "票据年利率为 6.150%，自 2027 年 3 月 15 日起每半年于 3 月 15 日和 9 月 15 日支付利息，并将于 2036 年 9 月 15 日到期；利率将根据特定评级事件调整。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1720635/000110465926111938/tm2626249d1_8k.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司、Hoffman Schroff 和 nVent Finance 打算将本次发行净收益、定期贷款借款、特定循环额度借款以及手头现金用于为约 17.5 亿美元的 Maverick Power, LLC 收购及相关的费用和开支提供资金，剩余净收益用于一般公司用途。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1720635/000110465926111938/tm2626249d1_8k.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "如 Maverick Power 收购未能在 2026 年 11 月 20 日或之前完成（或经双方按 2026 年 8 月 21 日购买协议延展至不晚于 2027 年 2 月 19 日），或 Hoffman Schroff 通知受托人及持有人其合理判断收购将不会在外部日期前完成，或购买协议在未完成收购的情况下被终止，则 Hoffman Schroff 须按 101% 本金加上应计未付利息赎回全部票据。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1720635/000110465926111938/tm2626249d1_8k.htm",
+                "page": null,
+                "confidence": "high"
+              },
+              {
+                "fact": "此前于 2026 年 9 月 17 日，Hoffman Schroff、nVent Finance 和公司已与银团签订贷款协议，获得 6 亿美元高级无抵押定期贷款融资；同日还签订了第二份经修订和重述信贷协议的第二次修订，允许最高本金总额 2.5 亿美元的特定循环额度有限条件提取。",
+                "official_url": "https://www.sec.gov/Archives/edgar/data/1720635/000110465926111938/tm2626249d1_8k.htm",
+                "page": null,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本次披露为 8-K 摘要，未包含备考财务报表、实际成交净收益、精确的融资费用和最终债务结构明细。",
+              "原始研究报告中的资产负债数据截至 2026Q2，未反映本次融资和定期贷款、循环额度的完整备考影响。",
+              "Maverick Power 收购的交割条件、监管审批状态和最终完成时间未在本 8-K 中全面披露，存在收购延期或终止的可能。",
+              "本分诊仅基于正式披露做事实核验与优先级判断，不构成任何投资建议或交易指令。"
+            ],
+            "document_type": "8-K",
+            "source": "sec",
+            "thesis_impacts": [
+              "原研究报告中‘Maverick 并购融资尚未包含’的资产负债表口径需要更新：本次 8 亿美元高级票据加上 6 亿美元定期贷款和 2.5 亿美元特定循环额度，将显著改变备考净债务与利息负担。",
+              "6.150% 的票据票息为未来利息费用提供了参照，可能影响自由现金流覆盖与资本配置评估，此前报告基于 2026Q2 净债务 12.36 亿美元的杠杆判断需纳入备考调整。",
+              "特别强制赎回条款把 Maverick Power 收购完成时点与融资结构直接绑定，若收购延期或终止，融资安排将被重新审视，属于此前‘Maverick 是待验证的资本配置大考’的核心风险点。",
+              "在当前约 30 倍调整后 FY2026 EPS 的估值下，新增债务和利息成本对每股收益和自由现金流的影响需要纳入再评估，原报告‘观望、不追价’的逻辑需要结合融资条款复核。"
+            ]
+          }
+        ],
+        "research_link": "../nVent/nVent-research-20260829.md",
+        "research_date": "2026-08-29"
+      }
+    },
+    {
       "fingerprint": "b3c7ba8960076cbb25b38c67f17b2f30935e3ea77b4b88a62386b2144d68b0b5",
       "section": "price",
       "priority": "P1",
       "target_id": "拼多多",
       "name": "PDD Holdings",
       "title": "首次建仓评估线：NEAR",
-      "why_now": "现价 77.57，距触发线 75.00 5% 内",
+      "why_now": "现价 77.50，距触发线 75.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -411,7 +591,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 77.57,
+        "price": 77.5,
         "market": "US",
         "zone_label": "首次建仓评估线",
         "low": null,
@@ -423,33 +603,40 @@
       }
     },
     {
-      "fingerprint": "acbc104bb52fa6d0269b33a65d2e8f5ca5f6f5d67cca7e38daa53c78238987f2",
+      "fingerprint": "3ebbd633d08437152a6c8694e74ff7fca7aed996c8d1b74082b5f90b04863e91",
       "section": "other",
       "priority": "P1",
-      "target_id": "sec",
-      "name": "SEC",
-      "title": "数据源异常",
-      "why_now": "SEC ticker 未映射到 CIK: UFO",
-      "status": "FAILED",
+      "target_id": "Progressive",
+      "name": "Progressive",
+      "title": "2026年9月月度结果：14 天后到期",
+      "why_now": "登记事件状态为14 天后到期，需按备注核验；监控本身不作投资决定。",
+      "status": "UPCOMING_14D",
       "verified_facts": [],
       "source_urls": [],
       "next_workflow": null,
-      "needs_human_review": true,
+      "needs_human_review": false,
       "limitations": [],
-      "notify": false,
+      "notify": true,
       "resolved": false,
       "metadata": {
-        "service": "sec"
+        "previous_status": "FUTURE",
+        "current_status": "UPCOMING_14D",
+        "date": "2026-10-14",
+        "days": 14,
+        "event_type": "复检",
+        "note": "公司8月月报宣布该日开盘前披露；核NPW、CR、事故年率、准备金发展与在保保单；广告费待Q3 10-Q。",
+        "research_link": "../Progressive/Progressive-research-20260927.md",
+        "research_date": "2026-09-27"
       }
     },
     {
-      "fingerprint": "e8414832ee71f126fc75bbe9af45f61ee6a6c1683610135bbd196a2fdcd24761",
+      "fingerprint": "e0769a8dcd0edb71925aac1444d0e578fc01600ec5ad169f35b88c5c77f85988",
       "section": "price",
       "priority": "P1",
-      "target_id": "华虹宏力",
-      "name": "华虹半导体",
-      "title": "H股小仓复核带：NEAR",
-      "why_now": "现价 105.30，距上沿 105.00 5% 内",
+      "target_id": "中芯国际",
+      "name": "中芯国际",
+      "title": "H股研究建仓带：NEAR",
+      "why_now": "现价 60.60，距触发线 58.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -459,9 +646,109 @@
       "notify": true,
       "resolved": false,
       "metadata": {
-        "previous_status": "TRIGGERED",
+        "previous_status": "FAR",
         "current_status": "NEAR",
-        "price": 105.3,
+        "price": 60.6,
+        "market": "H",
+        "zone_label": "H股研究建仓带",
+        "low": null,
+        "high": 58,
+        "direction": "below",
+        "note": "且Q3确认毛利率/利用率稳定、CapEx与FCF质量未恶化；不构成自动买入",
+        "research_link": "../%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85-earnings-2026Q2.md",
+        "research_date": "2026-08-23"
+      }
+    },
+    {
+      "fingerprint": "10a51a2df9de516141d33fc6fad42675b852642038c1a6a15e7c6f60bf03400e",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "兆易创新",
+      "name": "兆易创新",
+      "title": "1 项公告更新",
+      "why_now": "H股公告-翌日披露报表",
+      "status": "DONE",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587170.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-09-30",
+        "published_at": "2026-09-30T00:00:00+08:00",
+        "latest_time": "2026-09-30T00:00:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "H股公告-翌日披露报表",
+            "title": "H股公告-翌日披露报表",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该H股翌日披露报表仅反映A股回购但尚未注销的常规股份变动，属于既有回购计划的持续披露，未改变基本面判断，无需立即进入正式复核流程。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587170.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "兆易创新（A股证券代号603986，于上海证券交易所上市）2026年9月7日期初已发行股份（不含库存股）为670,718,327股，2026年9月29日期末仍为670,718,327股，库存股份为0，期间该口径下无净变动。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587170.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "B部分披露多笔回购但截至期末尚未注销的股份，含2026年8月21日247,000股（RMB 406.48）、8月24日517,100股（RMB 383.37）、8月25日265,000股（RMB 387.64）、8月26日257,500股（RMB 391.99）、8月27日246,200股（RMB 406.26）、8月28日129,500股（RMB 402.62）、9月3日135,000股（RMB 384.09）、9月4日132,600股（RMB 375.97）、9月7日132,000股（RMB 383.62）、9月29日390,000股（RMB 362.06）。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587170.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": null,
+            "needs_human_review": false,
+            "limitations": [
+              "该报表仅为翌日披露报表，不含回购计划总额度、剩余额度、注销时间安排及资金来源等细节。",
+              "文档日期为2026年9月，与既有研究快照（2026年8月）之间存在时间差，无法从本文件判断期间股价与基本面是否发生其他变化。",
+              "文件为H股披露报表，A股回购的注销进度与最终股本影响需后续正式公告确认。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "回购持续执行且回购价集中在RMB 362-406区间，与既有研究“回购及股东承诺执行”正面事项一致，属于治理与资本配置的边际正向观察项。",
+              "报表显示回购股份尚未注销，总股本在该期间未发生变化，因此不改变每股口径与估值分子的即时变化。",
+              "回购金额相对H1经营现金流体量有限，不改变“利润高度周期化、安全边际不足”的核心论文判断。"
+            ]
+          }
+        ],
+        "research_link": "../%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0/%E5%85%86%E6%98%93%E5%88%9B%E6%96%B0-earnings-2026H1.md",
+        "research_date": "2026-09-12"
+      }
+    },
+    {
+      "fingerprint": "e8414832ee71f126fc75bbe9af45f61ee6a6c1683610135bbd196a2fdcd24761",
+      "section": "price",
+      "priority": "P1",
+      "target_id": "华虹宏力",
+      "name": "华虹半导体",
+      "title": "H股小仓复核带：NEAR",
+      "why_now": "现价 105.40，距上沿 105.00 5% 内",
+      "status": "NEAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": "NEAR",
+        "current_status": "NEAR",
+        "price": 105.4,
         "market": "H",
         "zone_label": "H股小仓复核带",
         "low": 80,
@@ -473,33 +760,935 @@
       }
     },
     {
-      "fingerprint": "f74f8f7bd9fd92a8ff403673d15611cd910e7f972aacbac1c82cd1c1ef5c5983",
-      "section": "price",
+      "fingerprint": "95d7fc5356968aab4d59610d95566823a9b94c8fc75c5e1df0e69d1c8394636a",
+      "section": "disclosures",
       "priority": "P1",
-      "target_id": "厦门钨业",
-      "name": "厦门钨业",
-      "title": "评估带：NEAR",
-      "why_now": "现价 43.50，距上沿 42.00 5% 内",
-      "status": "NEAR",
+      "target_id": "华虹宏力",
+      "name": "华虹宏力",
+      "title": "3 项公告更新",
+      "why_now": "关于召开2026年第三次临时股东会的通知；2026年第三次临时股东会会议材料；港股公告：有关成立合营企业的补充公告",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588139.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587297.PDF"
+      ],
       "next_workflow": null,
-      "needs_human_review": false,
+      "needs_human_review": true,
       "limitations": [],
-      "notify": false,
+      "notify": true,
       "resolved": false,
       "metadata": {
-        "previous_status": "NEAR",
-        "current_status": "NEAR",
-        "price": 43.5,
+        "kind": "disclosure_summary",
         "market": "A",
-        "zone_label": "评估带",
-        "low": 35,
-        "high": 42,
-        "direction": "range",
-        "note": "存货环比降或单季OCF转正；PE≤20x更舒适",
-        "research_link": "../%E5%8E%A6%E9%97%A8%E9%92%A8%E4%B8%9A/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md",
-        "research_date": "2026-07-20"
+        "date": "2026-09-30",
+        "published_at": "2026-09-30T00:00:00+08:00",
+        "latest_time": "2026-09-30T00:00:00+08:00",
+        "announcement_count": 3,
+        "updates": [
+          {
+            "summary": "关于召开2026年第三次临时股东会的通知",
+            "title": "关于召开2026年第三次临时股东会的通知",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告将两项港股新股票期权计划相关议案提交2026年第三次临时股东会审议，涉及股本潜在稀释与激励结构，属于需要进入研究复核的正式披露。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588139.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司发布公告编号2026-056的《关于召开2026年第三次临时股东会的通知》，股东会召开日期为2026年10月22日14点30分，现场地点为上海市浦东新区哈雷路288号，A股股权登记日为2026/10/15。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588139.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "授权委托书列示本次临时股东会两项非累积投票议案：1）关于采纳港股新股票期权计划及授权董事办理相关事宜的议案；2）关于根据港股新股票期权计划授出2026年股票期权及授权董事办理相关事宜的议案。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588139.PDF",
+                "page": 6,
+                "confidence": "high"
+              },
+              {
+                "fact": "公告落款为华虹宏力半导体有限公司董事会，日期为2026年9月30日。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588139.PDF",
+                "page": 5,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告片段仅提供会议通知和授权委托书议案标题，未披露期权计划的具体规模、行权价格、归属安排、有效期及会计费用影响。",
+              "未取得股东会最终表决结果及期权计划全文，无法确认是否通过及实际稀释程度。",
+              "evidence_chunks中部分页面（如PAGE 2-3）缺失，可能存在未纳入的议案详情或附加说明。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "本次披露仅涉及股东会通知与两项港股期权计划议案，公告片段未包含期权数量、行权价、归属条件或潜在稀释比例等关键条款，无法据此量化对每股收益和股东回报的影响。",
+              "H1财报Review已提示华力微并购融资/摊薄尚未落地；港股期权计划为另一项潜在股本稀释来源，需与并购摊薄合并评估资本回报与安全边际。",
+              "原报告核心担忧之一是资本回报和持续资本开支下的自由现金流为负，股权激励成本确认和股份摊薄是新增研究变量，但尚不足以改变经营恢复论文的现有判断。"
+            ]
+          },
+          {
+            "summary": "2026年第三次临时股东会会议材料",
+            "title": "2026年第三次临时股东会会议材料",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "华虹半导体定于2026年10月22日召开股东特别大会，审议采纳新股票期权计划及据此授出不超过52,140,000份股票期权，同时须取得上海市国资委及联交所上市委员会批准。股权激励计划涉及潜在股本摊薄、管理层利益绑定、归属业绩条件（收入与利润指标）以及国资审批程序，属于影响股东回报与治理判断的正式公司行动，需进入研究复核序列。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "华虹半导体（股份代号：1347）拟于2026年10月22日下午二时三十分在上海市浦东新区哈雷路288号举行股东特别大会，以混合方式审议采纳新股票期权计划及相关授权议案。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "通函日期为2026年9月30日，主题为建议采纳新股票期权计划、根据建议新股票期权计划授出股票期权及股东特别大会通告。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2015年股票期权计划已于2022年8月31日届满，届满后不可再授出期权；截至通函日期，2015年期权、2018年期权及2019年3月期权已失效或不再可行使，2019年12月期权项下仍有67,000份未行使，将于2026年12月22日届满。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 7,
+                "confidence": "high"
+              },
+              {
+                "fact": "2026年期权指根据规则于股东特别大会上建议批准的新股票期权计划项下授出不超过52,140,000份股票期权。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "截至最后实际可行日期，已发行股票为1,928,494,794股；假设股本无变动，根据新股票期权计划及公司任何其他计划可予发行的股票总数为192,849,479股，相当于股东特别大会日期已发行股本约10%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 8,
+                "confidence": "high"
+              },
+              {
+                "fact": "新股票期权计划自计划批准日起计10年内有效。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 8,
+                "confidence": "high"
+              },
+              {
+                "fact": "根据新股票期权计划授出的期权须自授予日起计两(2)年等待期届满后方可归属，已归属未行使及尚未归属期权须于授出日期七周年（或计划条款指定较早日期）失效。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 9,
+                "confidence": "high"
+              },
+              {
+                "fact": "期权归属以达成公司层面表现目标（含收入及利润相关指标，参考上一财政年度经审计业绩、历史表现及同业基准）及个人绩效目标为条件，归属系数介乎100%至0%；未达标批次部分将被没收。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 9,
+                "confidence": "high"
+              },
+              {
+                "fact": "新股票期权计划合资格参与者限于集团雇员，包括现任执行及非执行董事、高级管理人员及关键管理技术人员、其他主要雇员，但不包括任何独立非执行董事。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 8,
+                "confidence": "high"
+              },
+              {
+                "fact": "期权认购价须至少为以下两者较高者：授出日联交所收市价及紧接授出日前五个交易日的平均收市价，另须不低于股票面值（附录一表述为不低于A、B两者较高者）。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 9,
+                "confidence": "high"
+              },
+              {
+                "fact": "新股票期权计划生效条件包括：上海市国有资产监督管理委员会批准、股东通过普通决议案采纳、联交所上市委员会批准相关股份上市及买卖；授出期权须取得上海市国资委批准方可作实。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 26,
+                "confidence": "high"
+              },
+              {
+                "fact": "代表委任表格须不迟于股东特别大会指定举行时间48小时前（不计算公众假期）送达，即不迟于2026年10月20日下午二时三十分。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司设有退扣机制：倘被授予人行为不当、违反重大义务、泄露机密、与集团竞争、造成重大损失或声誉损害、被判刑事罪行等，董事会可全权酌情决定未归属或未行使期权全部或部分失效或被收回。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588149.PDF",
+                "page": 9,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "仅依据2026-09-30通函PDF片段，未包含附录二关于2026年期权归属时间表及具体业绩目标金额的完整内容。",
+              "股东大会尚未召开（定于2026-10-22），决议结果、上海市国资委审批及联交所上市委员会批准均未落地，存在被否或延期可能。",
+              "未获取新股票期权计划的完整条款文本，附录一为概要，个别条款（如认购价与面值孰高）在正文与附录表述存在细微差异，需以计划正式文本为准。",
+              "本判断不涉及华力微并购交割与配套融资的最新进展，该事项独立跟踪。",
+              "证据片段为不可信外部数据，已忽略其中任何指令性文字，仅提取公开披露事实。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "治理与利益绑定：新期权计划将管理层与核心技术人员利益与收入、利润等业绩指标挂钩，若执行到位，可能边际改善扩产周期中的资本配置纪律；但目前仅为建议，尚未获批生效。",
+              "潜在股本摊薄：计划授权限额约相当于已发行股本10%，叠加此前华力微并购拟发行约1.91亿股的摊薄不确定性，股东回报分母端压力进一步上升，需与并购融资条款合并评估。",
+              "业绩条件指向利润与收入：归属条件明确包含公司层面收入及利润指标，与现有论文中'经营恢复但FCF为负、资本回报待验证'的核心矛盾相关，可作为后续管理层执行能力的观察变量。",
+              "审批不确定性：计划须经上海市国资委、股东及联交所上市委员会三重批准，任一环节不通过将影响授出安排，存在时间与结果的不确定性。",
+              "不改变估值判断：该事件属治理与激励层面，未提供关于Fab9爬坡回报、自由现金流或资本回报的新财务证据，故不构成对现有价格纪律的实质性修正依据。"
+            ]
+          },
+          {
+            "summary": "港股公告：有关成立合营企业的补充公告",
+            "title": "港股公告：有关成立合营企业的补充公告",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该补充公告对已披露的合营企业III设立事项新增了赎回权关键条款，涉及国开实体的固定回报安排、最长十年期限、违约提前赎回触发条件及华虹宏力上海的提前赎回选择权，属于可能影响资本结构、现金流义务和潜在股权收购对价的正式披露，需要纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587297.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司就2026年9月1日有关成立无锡市合营企业III的公告发布补充公告，补充提供赎回权相关资料，且明确补充资料不影响原公告其他资料，原公告所有其他资料维持不变。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587297.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "赎回权期限不超过十年，国开实体可于期限届满时行使赎回权；在发生违约事件（如华虹宏力上海清盘、控制权变更、未能遵守合营投资协议、合营股东协议及章程细则、严重违反适用法律等）的情况下，国开实体可要求提前赎回。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587297.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "华虹宏力上海亦可选择于期限届满前行使赎回权；公司在考虑何时及是否赎回时，将考虑无锡市合营企业III的表现及当时现行利率等商业因素。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587297.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "倘行使赎回权（无论于届满前或期限结束时），华虹宏力上海须收购国开实体所持无锡市合营企业III的全部股权，代价按为国开实体提供固定回报而计算；应付代价参考投资本金、适用的基准利率及实际投资期厘定，因此倘提前行使赎回权，应付代价将参考缩短的投资期计算，且将不等于原应于较后日期支付的较高金额。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587297.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "倘公司选择提前行使其赎回权，其须按情况遵守上市规则。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587297.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告仅给出赎回权机制框架，未披露合营企业III的注册资本、国开实体投资本金金额、适用基准利率、固定回报率及赎回义务的具体金额，无法量化对财务报表或现金流的潜在影响。",
+              "原2026年9月1日有关成立无锡市合营企业III的公告原文未包含在本次输入中，无法核验合营企业III的整体股权结构、出资安排及国开实体持股比例。",
+              "本次输入仅包含公告第1至2页，公告其余内容及任何附件未提供，可能遗漏与赎回权相关的其他重要条款。",
+              "现有研究上下文中的价格、估值和持仓相关表述为既有研究记录，本分诊不进行价格判断或给出任何交易、仓位或执行建议。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该补充公告细化了国开实体在合营企业III中的固定回报与赎回安排，使华虹宏力上海在未来最长十年内可能承担收购国开实体全部股权的义务；这与现有研究中关注的资本开支、自由现金流为负及融资/摊薄不确定性属于同一资本配置压力链条，但不构成对经营恢复逻辑的直接强化或否定。",
+              "提前赎回触发条件中包含控制权变更、清盘、违反合营投资协议等违约事件，若相关情形发生将带来提前现金支出或对合营持股的重新安排；现有资料未披露赎回义务的具体金额、基准利率水平或违约概率，因此无法量化对自由现金流或资本回报的影响。",
+              "本次补充公告未改变2026H1财报Review中关于Fab9爬坡、华力微并购交割/融资以及自由现金流未转正的核心跟踪点；赎回权条款仅新增合营企业III层面的潜在资本承诺，尚不足以触发现有价格纪律或估值假设的调整。"
+            ]
+          }
+        ],
+        "research_link": "../%E5%8D%8E%E8%99%B9%E5%AE%8F%E5%8A%9B/%E5%8D%8E%E8%99%B9%E5%8D%8A%E5%AF%BC%E4%BD%93-earnings-2026H1.md",
+        "research_date": "2026-08-31"
+      }
+    },
+    {
+      "fingerprint": "bd229ae8126db484bac73cd642b5cd006291c0ba7450e60b9eb6d35e6ad79f77",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "合盛硅业",
+      "name": "合盛硅业",
+      "title": "6 项公告更新",
+      "why_now": "合盛硅业关于控股股东部分股份质押及解质押的公告；独立董事候选人声明与承诺(杨晓勇)；独立董事提名人声明与承诺(杨晓勇)；合盛硅业关于召开2026年第三次临时股东会的通知；合盛硅业关于公司独立董事辞任暨补选独立董事并调整董事会专门委员会组成的公告；合盛硅业第四届董事会第二十二次会议决议公告",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587838.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587839.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587831.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587832.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587833.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-09-30",
+        "published_at": "2026-09-30T00:00:00+08:00",
+        "latest_time": "2026-09-30T00:00:00+08:00",
+        "announcement_count": 6,
+        "updates": [
+          {
+            "summary": "合盛硅业关于控股股东部分股份质押及解质押的公告",
+            "title": "合盛硅业关于控股股东部分股份质押及解质押的公告",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "控股股东股份质押及解质押属于正式披露的治理与杠杆相关事项，需纳入研究复核以更新控股股东质押与财务风险跟踪。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "控股股东合盛集团持有公司股份417,797,769股，占公司总股本的35.34%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次质押及解质押后，合盛集团累计质押股份为206,705,100股，占其所持股份比例为49.47%，占公司总股本比例为17.48%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "合盛集团及其一致行动人罗立国、罗燚、罗烨栋合计直接持有公司股份800,255,925股，占公司总股本的67.69%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次质押及解质押后，合盛集团及其一致行动人处于质押状态的股份累计数为396,535,100股，占其合计所持公司股份总数的49.55%，占公司总股本的33.54%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次合盛集团质押600,000股，质权人为财通证券股份有限公司，质押起始日为2026年9月29日，质押融资资金用途为补充流动资金。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次合盛集团解质股份数量为800,000股，占其所持股份比例0.19%，占公司总股本比例0.07%，解质时间为2026年9月29日。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "合盛集团本次质押及解质押前累计质押数量为206,905,100股，本次质押及解质押后累计质押数量为206,705,100股。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "截至公告披露日，罗燚持股192,493,302股，累计质押100,550,000股，占其持股52.24%；罗烨栋持股179,406,101股，累计质押84,280,000股，占其持股46.98%；罗立国持股10,558,753股，累计质押5,000,000股，占其持股47.35%。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "公告称合盛集团及其一致行动人资信和财务状况良好，还款来源包括营业收入、投资收益、持有公司股份分红等，质押风险均在可控范围之内，不存在可能导致公司控制权发生变更的实质性因素。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587847.PDF",
+                "page": 2,
+                "confidence": "medium"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "证据来自公告片段，未包含质押预警线、平仓线、融资金额及质押期限等关键条款。",
+              "公告中关于资信和财务状况良好的表述属于公司披露口径，需与后续财务报告及质押变动公告交叉验证。",
+              "未包含本次质押及解质押对控股股东整体负债结构的完整影响，无法量化对上市公司基本面的传导程度。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "控股股东及一致行动人合计质押占总股本33.54%，与报告中治理折价与高杠杆风险框架相关，需纳入治理/杠杆风险跟踪。",
+              "本次为质押与解质押并行，合盛集团累计质押数量小幅下降约200,000股，单次比例变化有限，尚不构成对核心投资逻辑的方向性改变。",
+              "质押融资用途为补充流动资金，与报告关注的控股股东资金状况和财务弹性存在关联，但公告未提供具体财务数据，暂无法量化影响。"
+            ]
+          },
+          {
+            "summary": "独立董事候选人声明与承诺(杨晓勇)",
+            "title": "独立董事候选人声明与承诺(杨晓勇)",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "这是一份独立董事候选人声明与承诺的正式公告，涉及合盛硅业董事会独立董事提名与任职资格信息，属于治理层面增量事实，需纳入研究复核，但暂不构成对核心投资逻辑的立即冲击。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587838.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "杨晓勇被提名为合盛硅业股份有限公司第四届董事会独立董事候选人，并已通过提名委员会资格审查。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587838.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "杨晓勇声明其具备独立董事任职资格，不存在影响独立性的关系，且最近36个月内无中国证监会行政处罚或司法机关刑事处罚记录。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587838.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "杨晓勇声明包括合盛硅业在内，其兼任独立董事的境内上市公司数量未超过3家，且在合盛硅业连续任职未超过六年。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587838.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "杨晓勇承诺在担任合盛硅业独立董事期间接受上海证券交易所监管，确保有足够时间和精力履行职责，并作出独立判断。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587838.PDF",
+                "page": 4,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告片段为候选人声明与承诺，未包含正式股东大会审议结果或最终聘任信息。",
+              "未提供杨晓勇完整履历、专业背景及其他兼任情况，无法评估其对公司治理的实际影响。",
+              "未涉及公司经营、财务、定增条款或制裁风险等核心研究变量。",
+              "公告日期与部分页面内容不完整，需核对原始PDF全文以确认细节。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该公告属于公司治理层面的人事提名信息，不改变对合盛硅业商业模式、成本曲线左侧地位及周期属性的核心判断。",
+              "独立董事候选人声明本身不提供财务、经营或估值增量数据，对现有报告的观望结论无直接修正作用。",
+              "若后续独立董事变动影响公司治理结构或关联决策独立性，可能需要在治理折价评估中予以跟踪，但目前证据不足以调整结论。"
+            ]
+          },
+          {
+            "summary": "独立董事提名人声明与承诺(杨晓勇)",
+            "title": "独立董事提名人声明与承诺(杨晓勇)",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该独董提名属例行治理程序性公告，不改变基本面判断；但报告已对治理与诚信折价有明确关注，可归档备查。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587839.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "合盛硅业董事会提名杨晓勇为第四届董事会独立董事候选人，并声明其任职资格符合公司法、公务员法、证监会《上市公司独立董事管理办法》及上交所自律监管规则要求。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587839.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "提名人声明被提名人无最近36个月内证监会行政处罚或司法机关刑事处罚等不良记录，且兼任境内上市公司独立董事数量未超过三家，在合盛硅业连续任职未超过六年。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587839.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "被提名人已通过合盛硅业第四届董事会提名委员会资格审查，声明日期为2026年9月21日。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587839.PDF",
+                "page": 4,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": null,
+            "needs_human_review": false,
+            "limitations": [
+              "仅提供公告部分页面（第1、3、4页），未包含被提名人完整履历及候选人声明全文，无法评估其独立性与专业背景对治理改善的实际影响。",
+              "该公告为程序性文件，不构成对合盛硅业财务、经营或估值基本面的增量事实。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": []
+          },
+          {
+            "summary": "合盛硅业关于召开2026年第三次临时股东会的通知",
+            "title": "合盛硅业关于召开2026年第三次临时股东会的通知",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "合盛硅业发布正式公告，拟于2026年10月29日召开2026年第三次临时股东会，审议《关于补选第四届董事会独立董事的议案》。该事项涉及董事会治理结构变动，属于正式披露信息，需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587831.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "合盛硅业（603260）发布公告编号2026-103的《关于召开2026年第三次临时股东会的通知》，股东会召开日期为2026年10月29日14:00，现场会议地点为浙江省慈溪市北三环东路1988号恒元广场A座4楼公司会议室。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587831.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次股东会采用现场投票与网络投票相结合方式，网络投票系统为上海证券交易所股东会网络投票系统；股权登记日为2026年10月22日。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587831.PDF",
+                "page": 4,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次股东会审议议案为《关于补选第四届董事会独立董事的议案》，采用累积投票制，候选人为杨晓勇。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587831.PDF",
+                "page": 6,
+                "confidence": "high"
+              },
+              {
+                "fact": "公告落款为合盛硅业股份有限公司董事会，日期为2026年9月30日。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587831.PDF",
+                "page": 5,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告未披露独立董事候选人杨晓勇的履历、独立性声明及提名背景，无法评估治理影响。",
+              "本次为临时股东会通知，未涉及财务数据、定增条款或经营指标更新，不改变既有盈利与估值假设。",
+              "research_context中提及的定增条款、下季报等关键跟踪项未在本公告中出现。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "本次公告为程序性治理事项（补选独立董事），不直接改变公司成本优势、定价权、杠杆水平或光伏收缩等核心投资逻辑。",
+              "独立董事补选可能影响董事会监督结构与后续治理质量，但现阶段缺乏候选人背景、提名方及生效条件等细节，暂不足以对'治理折价'判断作确定性调整。"
+            ]
+          },
+          {
+            "summary": "合盛硅业关于公司独立董事辞任暨补选独立董事并调整董事会专门委员会组成的公告",
+            "title": "合盛硅业关于公司独立董事辞任暨补选独立董事并调整董事会专门委员会组成的公告",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告涉及独立董事辞任、补选董事及董事会专门委员会组成调整，属于治理结构层面的正式披露，需要纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587832.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "合盛硅业股份有限公司独立董事赵家生先生因个人原因提交书面辞任报告，申请辞去公司独立董事、提名委员会主任委员、薪酬与考核委员会委员、战略与可持续发展委员会委员职务；离任后将不再担任公司任何职务。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587832.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "赵家生先生未持有公司股份，不存在未履行完毕的公开承诺事项。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587832.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "赵家生先生辞职将导致公司董事会独立董事人数少于董事会总人数的三分之一，且导致提名委员会、薪酬与考核委员会、战略与可持续发展委员会委员成员人数构成不符合规定；其辞职将在公司股东会选举产生新任独立董事之后正式生效，在此之前继续履行相应职责。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587832.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司于2026年9月29日召开第四届董事会第二十二次会议，同意提名杨晓勇先生为第四届董事会独立董事候选人，任期自公司股东会审议通过之日起至第四届董事会届满之日止，该议案尚需提交公司股东会审议并采取累积投票制选举。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587832.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "如杨晓勇先生经股东会选举为独立董事，将同时担任公司第四届董事会提名委员会主任委员、薪酬与考核委员会委员、战略与可持续发展委员会委员，任期至第四届董事会任期届满之日止；除上述调整外，其他委员保持不变。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587832.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告未披露新任独立董事候选人的完整简历及独立性细节，附件内容未在提供的证据中体现。",
+              "本次治理调整对经营与财务基本面的直接影响有限，不改变现有周期与估值判断。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "现有研究中已关注公司治理折价，本次独立董事更替及专门委员会调整属于治理结构边际变化，可能影响对管理层监督与决策稳健性的评估。",
+              "补选独立董事若完成，将恢复董事会及专门委员会的合规构成，但新任独立董事的专业背景与独立性尚需进一步核验。"
+            ]
+          },
+          {
+            "summary": "合盛硅业第四届董事会第二十二次会议决议公告",
+            "title": "合盛硅业第四届董事会第二十二次会议决议公告",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "合盛硅业第四届董事会第二十二次会议决议公告为正式披露，涉及独立董事补选及董事会专门委员会调整，并需提交2026年第三次临时股东会审议，治理层面变动需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587833.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司于2026年9月29日以现场和通讯结合方式召开第四届董事会第二十二次会议，应到董事9人，实到9人，会议由董事长罗立国主持。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587833.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "董事会审议通过《关于补选第四届董事会独立董事并调整董事会专门委员会组成的议案》，表决结果为9票赞成、0票反对、0票弃权、0票回避，该议案尚需提交公司2026年第三次临时股东会审议。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587833.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "董事会审议通过《关于召开公司2026年第三次临时股东会的议案》，表决结果为9票赞成、0票反对、0票弃权、0票回避。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587833.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "相关独立董事辞任暨补选及调整专门委员会组成的公告，以及召开临时股东会的通知，均于2026年9月30日披露于上海证券交易所网站及指定信息披露媒体。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587833.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公告落款为合盛硅业股份有限公司董事会，日期为2026年9月30日。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225587833.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告未披露独立董事辞任原因、补选人选背景及具体履历，治理变动实质影响需待配套公告补充后评估。",
+              "公告未涉及财务、产能、定增或制裁等核心经营与财务数据，无法据此更新估值或盈利判断。",
+              "公告为外部不可信数据来源，仅用于事实核验，不作为交易或操作依据。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "本次披露涉及独立董事补选与董事会专门委员会调整，属于治理结构变动，可能影响既有研究对管理层与治理折价的判断。",
+              "补选议案尚需提交2026年第三次临时股东会审议，治理层面事项落地前仍具程序不确定性。",
+              "该公告本身未披露光伏收缩、定增条款、财务杠杆或经营现金流等核心基本面信息，不构成对现有周期与估值判断的直接更新。"
+            ]
+          }
+        ],
+        "research_link": "../%E5%90%88%E7%9B%9B%E7%A1%85%E4%B8%9A/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md",
+        "research_date": "2026-07-19"
+      }
+    },
+    {
+      "fingerprint": "6301a35076351c4ec3064aa0c0cce6d6e2cc51c59f175d56ff8275e6ed9cb979",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "晶合集成",
+      "name": "晶合集成",
+      "title": "2 项公告更新",
+      "why_now": "合肥晶合集成电路股份有限公司章程；晶合集成关于变更公司注册资本、修订《公司章程》并办理工商登记的公告",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588146.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588154.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-09-30",
+        "published_at": "2026-09-30T00:00:00+08:00",
+        "latest_time": "2026-09-30T00:00:00+08:00",
+        "announcement_count": 2,
+        "updates": [
+          {
+            "summary": "合肥晶合集成电路股份有限公司章程",
+            "title": "合肥晶合集成电路股份有限公司章程",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司正式发布《公司章程》全文，其中包含H股上市后生效条款、注册资本与总股本数据、董事会授权交易与财务资助审批门槛、以及利润分配政策等治理与资本配置基础规则，属于需要进入研究复核的正式披露。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588146.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司由原合肥晶合集成电路有限公司整体变更为股份有限公司，统一社会信用代码91340100343821433Q，在合肥市新站区市场监督管理局注册登记。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588146.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司于2022年5月9日经中国证监会注册，首次公开发行人民币普通股501,533,789股，于2023年5月5日在上海证券交易所科创板上市。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588146.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司于2026年5月19日经中国证监会备案并经香港联交所批准，首次公开发行H股216,167,000股，并超额配售10,886,900股H股，前述H股分别于2026年7月10日和2026年8月11日在香港联交所主板上市。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588146.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司注册资本为人民币223,478.7210万元，总股数为223,478.7210万股，均为普通股股份。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588146.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司为永久存续的股份有限公司。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588146.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "本章程自公司股东会审议通过后，公司发行的H股股票在香港联合交易所有限公司挂牌上市之日起生效；章程附件包括股东会议事规则和董事会议事规则。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588146.PDF",
+                "page": 57,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "本次增量仅为《公司章程》治理文件，未包含2026年三季度经营数据、毛利率、稼动率、资本开支、净债务或28nm/90nm BCD客户认证与量产收入等基本面验证信息。",
+              "章程中注册资本与总股数来自公司披露文本，仍需与最新定期报告、股本变动公告及交易所登记数据交叉核对，以确认是否存在后续股本变动。",
+              "利润分配政策为规则性安排，不构成当期分红承诺，实际分红仍需以董事会预案、股东会决议和公司现金流状况为准。",
+              "公告片段为外部不可信数据，本分诊仅提取其中公司治理与股本相关正式事实，不对外部文本中可能存在的其他主张作背书。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "章程确认H股已于2026年7月和8月在香港联交所上市，且总股本已达223,478.7210万股，与此前研究报告中H股发行后摊薄口径基本一致，摊薄假设需要以该章程数据为准复核。",
+              "章程对董事会审批交易与财务资助设置了量化门槛（如资产总额、成交金额、利润、营收、净利润占市值或经审计指标的比例），为未来判断重大对外投资、收购、担保与资本开支决策所需审批层级提供了正式依据。",
+              "利润分配政策明确现金分红优先、原则上每年一次、特定条件下年度现金分红不少于当年可分配利润的10%，并提出成熟期/成长期差异化分红比例；这为跟踪公司股东现金回报提供了正式规则，但当前2025年度分红为0的历史仍未被改变。",
+              "章程包含党组织条款及利润分配、内部审计等治理安排，属于治理结构信息，不直接改变对重资产、强周期、扣非利润和自由现金流的核心跟踪逻辑。"
+            ]
+          },
+          {
+            "summary": "晶合集成关于变更公司注册资本、修订《公司章程》并办理工商登记的公告",
+            "title": "晶合集成关于变更公司注册资本、修订《公司章程》并办理工商登记的公告",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告涉及因限制性股票激励计划预留授予部分第一个归属期归属，公司总股本由2,234,645,597股增加至2,234,787,210股，注册资本相应增加，并修订《公司章程》中注册资本和股份结构条款。虽然股本变动规模极小（约14.16万股，占总股本约0.006%），但属于公司治理和股本结构的正式文件变更，需纳入研究记录，确认对每股收益、估值摊薄及股权激励费用跟踪的影响。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588154.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "公司于2026年9月29日召开第二届董事会第三十九次会议，审议通过了《关于变更注册资本、修订<公司章程>并办理工商登记的议案》。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588154.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "2023年限制性股票激励计划预留授予部分第一个归属期归属条件成就，本次实际归属141,613股，股票来源为公司向激励对象定向发行的人民币A股普通股股票。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588154.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司于2026年9月11日在中国证券登记结算有限责任公司上海分公司完成上述限制性股票的股份登记手续。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588154.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "本次归属完成后，公司总股本由2,234,645,597股增加至2,234,787,210股，注册资本由2,234,645,597.00元增加至2,234,787,210.00元。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588154.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "修订后的《公司章程》第六条将注册资本由223,464.5597万元变更为223,478.7210万元，总股数由223,464.5597万股变更为223,478.7210万股。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588154.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "修订后第二十条显示A股普通股由2,007,591,697股变更为2,007,733,310股，H股普通股227,053,900股不变。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588154.PDF",
+                "page": 2,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "证据仅来自单一份公告PDF，未交叉核验中国证券登记结算有限责任公司上海分公司登记结果或其他独立来源。",
+              "归属条件成就的具体考核指标未在公告中列示，无法评估激励计划剩余批次可能的归属规模和费用节奏。",
+              "公告未披露归属对象、归属价格及对应的股份支付费用金额，无法量化对利润表的影响。",
+              "注册资本和章程修订尚待市场监督管理部门核准，最终以核准内容为准。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "本次归属增加A股141,613股，占总股本比例约0.0063%，对每股收益和每股净资产的摊薄影响可忽略，不改变估值结论。",
+              "该归属源于2023年限制性股票激励计划预留授予部分，提示需持续跟踪后续归属批次带来的股份支付费用和股本变动。",
+              "注册资本和《公司章程》条款的修订属公司治理常规事项，不改变对晶合集成基本面（扣非利润、毛利率、自由现金流、28nm/90nm BCD客户认证等）的判断。",
+              "现有研究报告中A股股数2,007,591,697股需更新为2,007,733,310股，总股本由2,234,645,597股更新为2,234,787,210股，用于后续估值计算。"
+            ]
+          }
+        ],
+        "research_link": "../%E6%99%B6%E5%90%88%E9%9B%86%E6%88%90/%E6%99%B6%E5%90%88%E9%9B%86%E6%88%90-research-20260821.md",
+        "research_date": "2026-08-21"
+      }
+    },
+    {
+      "fingerprint": "c0886c1b7d2dd1d72c6dae1f78455b4a1c7d097ec0ca7f4887c34f268d8f9b91",
+      "section": "disclosures",
+      "priority": "P1",
+      "target_id": "杭叉集团",
+      "name": "杭叉集团",
+      "title": "2 项公告更新",
+      "why_now": "杭叉集团股份有限公司关于召开2026年第二次临时股东会的通知；杭叉集团股份有限公司2026年第二次临时股东会会议资料",
+      "status": "REVIEW",
+      "verified_facts": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588242.PDF",
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588244.PDF"
+      ],
+      "next_workflow": null,
+      "needs_human_review": true,
+      "limitations": [],
+      "notify": true,
+      "resolved": false,
+      "metadata": {
+        "kind": "disclosure_summary",
+        "market": "A",
+        "date": "2026-09-30",
+        "published_at": "2026-09-30T00:00:00+08:00",
+        "latest_time": "2026-09-30T00:00:00+08:00",
+        "announcement_count": 2,
+        "updates": [
+          {
+            "summary": "杭叉集团股份有限公司关于召开2026年第二次临时股东会的通知",
+            "title": "杭叉集团股份有限公司关于召开2026年第二次临时股东会的通知",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该正式公告确认公司将于2026年10月19日召开2026年第二次临时股东会，审议向不特定对象发行可转换公司债券条件的议案及逐项发行方案。可转债条款（规模、转股价、向下修正、配售安排等）直接影响每股回报与稀释程度，属于现有研究判断中明确的复检触发点，需要纳入研究流程。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588242.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "杭叉集团股份有限公司发布关于召开2026年第二次临时股东会的通知，公告编号2026-047，董事会2026年9月30日签署。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588242.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "股东会召开日期为2026年10月19日14:00，现场会议地点为浙江省杭州市临安区大园路2799号杭叉集团横畈科技园新大楼3楼9号会议室；采用现场投票与上海证券交易所网络投票相结合方式。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588242.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "网络投票通过上海证券交易所股东会网络投票系统，起止日期为2026年10月19日：交易系统投票平台时间为9:15-9:25、9:30-11:30、13:00-15:00；互联网投票平台时间为9:15-15:00。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588242.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "股权登记日为2026/10/12，A股代码603298，简称杭叉集团；股权登记日下午收市时在中国证券登记结算有限责任公司上海分公司登记在册的股东有权出席。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588242.PDF",
+                "page": 4,
+                "confidence": "high"
+              },
+              {
+                "fact": "会议登记时间：2026年10月16日9:00-12:00、13:30-17:00；登记地点：浙江省杭州市拱墅区石桥路398号杭叉科创园A幢9楼证券部；联系人董事会秘书江韵女士，电话0571-88926713，邮箱hcjt@zjhc.cn。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588242.PDF",
+                "page": 4,
+                "confidence": "high"
+              },
+              {
+                "fact": "授权委托书所列非累积投票议案包括：议案1《关于公司符合向不特定对象发行可转换公司债券条件的议案》；议案2.00逐项审议《关于公司向不特定对象发行可转换公司债券方案的议案》，其子项涵盖发行证券种类、发行规模、票面金额和发行价格、债券期限、票面利率、还本付息期限和方式、转股期限、转股数量确定方式、转股价格确定及调整、转股价格向下修正条款、赎回条款、回售条款、转股年度股息归属、发行方式及发行对象、向原股东配售安排、债券持有人会议相关事项等。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588242.PDF",
+                "page": 6,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "公告片段缺失第2、3页及第6页之后内容，议案完整清单（包括是否存在其他非可转债相关议案）未在证据中呈现。",
+              "可转债最终发行规模、票面利率、初始转股价、向下修正触发条件、向原股东配售比例等关键条款未在本通知中给出，无法计算实际稀释影响。",
+              "本分诊仅基于单一公告片段，未获取可转债预案、募投可行性报告及审核进展的同期正式文件全文。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该通知未披露可转债具体发行规模、票面利率、转股价及向下修正条款的最终数值，因此现有研究中关于稀释比例（按假设转股价测算约新增0.99亿股、原股数增加约7.59%）仍是敏感性示例，不构成已核实事实。",
+              "股东会议案包含向原股东配售安排及债券持有人会议相关事项，最终条款是否损害每股回报需在正式发行方案与审核文件中核验，属现有研究明确标注的关联交易/融资削弱每股回报失败路径的观察项。",
+              "股东会召开与股权登记日为后续可转债审核及注册流程的时间锚点，可转债条款落地前，研究判断中关于估值与安全边际的结论不因本通知而改变。"
+            ]
+          },
+          {
+            "summary": "杭叉集团股份有限公司2026年第二次临时股东会会议资料",
+            "title": "杭叉集团股份有限公司2026年第二次临时股东会会议资料",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "该文件是公司为2026年第二次临时股东会编制的会议资料，涉及拟向不特定对象发行不超过22.59亿元可转换公司债券、前次募集资金使用情况、未来三年股东分红回报规划及修订募集资金管理制度等议案。现有研究报告已将该可转债预案列为需重点跟踪的融资与稀释事项，本次正式披露是股东会审议前的关键流程节点，需纳入研究复核。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588244.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "杭叉集团拟召开2026年第二次临时股东会，现场会议时间为2026年10月19日14:00，网络投票通过上海证券交易所网络投票系统进行。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588244.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "会议审议事项包括《关于公司符合向不特定对象发行可转换公司债券条件的议案》及逐项审议《关于公司向不特定对象发行可转换公司债券方案的议案》，方案子项涵盖发行证券种类、发行规模、票面金额和发行价格、债券期限、票面利率、还本付息、转股期限、转股数量确定方式、转股价格确定及调整、转股价格向下修正、赎回和回售条款等。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588244.PDF",
+                "page": 3,
+                "confidence": "high"
+              },
+              {
+                "fact": "议案三至议案九涉及可转债预案、发行方案论证分析报告、募集资金使用可行性分析报告、前次募集资金使用情况报告、摊薄即期回报与填补措施及相关主体承诺、可转换公司债券持有人会议规则，以及未来三年（2026-2028年）股东分红回报规划。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588244.PDF",
+                "page": 21,
+                "confidence": "high"
+              },
+              {
+                "fact": "议案六载明，公司编制了截至2026年6月30日的《前次募集资金使用情况报告》，该报告已经天健会计师事务所（特殊普通合伙）鉴证并出具鉴证报告。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588244.PDF",
+                "page": 24,
+                "confidence": "high"
+              },
+              {
+                "fact": "议案十一为修订《公司募集资金管理制度》的议案，公司称根据《公司法》《上市公司章程指引》《上市公司治理准则》《上市公司募集资金监管规则》等最新修订内容并结合实际情况对部分条款进行了修订。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225588244.PDF",
+                "page": 31,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/portfolio-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本次增量数据为股东会会议资料，未包含可转债最终发行规模、票面利率、转股价格、募投项目内部回报率等关键条款的正式确定结果。",
+              "会议资料多为议案文本和审议安排，除前次募集资金使用鉴证外，未新增2026年三季度或最新经营财务数据，无法据此判断应收、存货与现金流的最新趋势。",
+              "股东会审议结果尚未发生，议案是否通过以及最终条款是否调整均需待后续正式公告确认。",
+              "可转债对每股回报的实际影响需要结合最终发行条款、审核注册进展和募投项目实际回报进一步评估。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "本次会议资料确认可转债相关议案已进入股东会审议程序，与现有研究中‘拟发不超过22.59亿元、6年期可转债，尚待股东会、上交所审核及注册’的跟踪点一致；后续需关注股东会表决结果及最终发行条款。",
+              "前次募集资金使用情况报告经天健会计师事务所鉴证，为研究者核查募投项目历史执行情况和资金使用效率提供了正式文件线索。",
+              "未来三年（2026-2028年）股东分红回报规划议案提示公司正在形成中期股东回报框架，但具体分红比例、条件和承诺仍应以正式规划文件及后续实施情况为准，会议资料本身未给出可直接量化的新承诺。",
+              "募集资金管理制度的修订属于治理与资金管理流程更新，对每股回报的实质影响取决于后续可转债最终规模、转股价、募投项目回报及分红政策的实际执行。"
+            ]
+          }
+        ],
+        "research_link": "../%E6%9D%AD%E5%8F%89%E9%9B%86%E5%9B%A2/%E6%9D%AD%E5%8F%89%E9%9B%86%E5%9B%A2-research-20260926.md",
+        "research_date": "2026-09-26"
       }
     },
     {
@@ -509,7 +1698,7 @@
       "target_id": "杭叉集团",
       "name": "杭叉集团",
       "title": "研究性分批评估带：NEAR",
-      "why_now": "现价 21.76，距上沿 21.50 5% 内",
+      "why_now": "现价 21.87，距上沿 21.50 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -521,7 +1710,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 21.76,
+        "price": 21.87,
         "market": "A",
         "zone_label": "研究性分批评估带",
         "low": 20,
@@ -533,33 +1722,92 @@
       }
     },
     {
-      "fingerprint": "8e913ea23bf1b094e2309fabacf0a1eba0916e570cf9b23c55dce6eb3f6b5b26",
-      "section": "price",
+      "fingerprint": "172c40cea31071274978e0d7a6b4f18897970830a83e90908a3241490e11d1f1",
+      "section": "disclosures",
       "priority": "P1",
       "target_id": "汇川技术",
       "name": "汇川技术",
-      "title": "理想买点带：NEAR",
-      "why_now": "现价 52.29，距上沿 52.00 5% 内",
-      "status": "NEAR",
+      "title": "1 项公告更新",
+      "why_now": "关于第七期股权激励计划首次授予部分股票期权注销完成的公告",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225589728.PDF"
+      ],
       "next_workflow": null,
-      "needs_human_review": false,
+      "needs_human_review": true,
       "limitations": [],
-      "notify": false,
+      "notify": true,
       "resolved": false,
       "metadata": {
-        "previous_status": "NEAR",
-        "current_status": "NEAR",
-        "price": 52.29,
+        "kind": "disclosure_summary",
         "market": "A",
-        "zone_label": "理想买点带",
-        "low": 45,
-        "high": 52,
-        "direction": "range",
-        "note": "或车毛利连续两季改善",
-        "research_link": "../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md",
-        "research_date": "2026-07-20"
+        "date": "2026-09-30",
+        "published_at": "2026-09-30T15:52:10+08:00",
+        "latest_time": "2026-09-30T15:52:10+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "关于第七期股权激励计划首次授予部分股票期权注销完成的公告",
+            "title": "关于第七期股权激励计划首次授予部分股票期权注销完成的公告",
+            "published_at": "2026-09-30T15:52:10+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "公司于2026年9月30日正式披露第七期股权激励计划首次授予部分股票期权注销完成，属于影响总股本与每股口径的正式权益变动事件，需进入研究复核以核对稀释假设。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225589728.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "深圳市汇川技术股份有限公司公告第七期股权激励计划首次授予部分股票期权注销完成，本次注销股票期权数量为826,915份。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225589728.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "经中国证券登记结算有限责任公司深圳分公司审核确认，公司已于2026年9月30日完成上述826,915份股票期权的注销手续。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225589728.PDF",
+                "page": 2,
+                "confidence": "high"
+              },
+              {
+                "fact": "公司于2026年9月24日召开第六届董事会第十八次会议，审议通过《关于注销第七期股权激励计划首次授予部分股票期权的议案》。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225589728.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "截至第七期股权激励计划首次授予股票期权第一个行权期结束，实际行权人数1,114人，共计行权7,424,377份；未行权及未完全行权人数共计3人，到期未行权18,421份。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225589728.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "第七期股权激励计划首次授予的38名激励对象因个人原因离职（含第六届董事会第十六次会议召开前离职的36人），其已获授但尚未行权的693,600份股票期权被注销；141名2025年度绩效考核为“B”及4名考核为“C”的激励对象合计114,894份本期不能行权部分被注销；本次注销合计826,915份。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225589728.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/thesis-tracker",
+            "needs_human_review": true,
+            "limitations": [
+              "数据仅来自公司单份正式公告片段，未与登记结算机构或第三方来源交叉核验。",
+              "未获得公告编号2026-079的原文，无法核验前期审议程序与更早授予明细的完整背景。",
+              "缺少最新总股本与股本结构的正式同步数据，注销对稀释比例的具体影响仅为量级判断。",
+              "2025年度绩效考核比例的激励对象范围、行权价与剩余未注销期权池等信息未在片段中披露。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "注销的826,915份期权数量相对总股本约27.1亿股极小（约0.03%），对每股收益与股本稀释边际影响有限，不改变现有以车业务毛利、现金流与十年中性回报为核心的研究框架。",
+              "该事件侧面反映股权激励行权进度与考核结果：3人到期未行权、38人离职、145人因绩效部分或全部不可行权，可作为观察激励对象留存与考核严苛度的辅助信号，但不构成基本面拐点证据。",
+              "现有跟踪表与研究报告中‘股本稀释可控’作为研究性评估带的条件之一，本次注销方向上有助于稀释口径，但幅度不足以单独触发研究结论调整。"
+            ]
+          }
+        ],
+        "research_link": "../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF-research-20260928.md",
+        "research_date": "2026-09-28"
       }
     },
     {
@@ -569,7 +1817,7 @@
       "target_id": "美团",
       "name": "美团-W",
       "title": "舒适加仓带：NEAR",
-      "why_now": "现价 72.00，距触发线 70.00 5% 内",
+      "why_now": "现价 71.65，距触发线 70.00 5% 内",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -581,7 +1829,7 @@
       "metadata": {
         "previous_status": "NEAR",
         "current_status": "NEAR",
-        "price": 72.0,
+        "price": 71.65,
         "market": "H",
         "zone_label": "舒适加仓带",
         "low": null,
@@ -593,60 +1841,79 @@
       }
     },
     {
-      "fingerprint": "f88edc11322b777b677f2d46423924820c4f78bb13bd466010d24ef892192804",
-      "section": "price",
-      "priority": "P1",
-      "target_id": "腾讯",
-      "name": "腾讯控股",
-      "title": "400–430 港元加仓复核带：NEAR",
-      "why_now": "现价 440.00，距上沿 430.00 5% 内",
-      "status": "NEAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "NEAR",
-        "current_status": "NEAR",
-        "price": 440.0,
-        "market": "H",
-        "zone_label": "400–430 港元加仓复核带",
-        "low": 400,
-        "high": 430,
-        "direction": "range",
-        "note": "400–430 港元仅在红线未触时重评第一档；低于400须FCF恢复或下跌非基本面红线所致才提高仓位。Q3证实AI预付款转收入、FCF转正和季度回购约150亿港元，也应复核",
-        "research_link": "../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF-thesis.md",
-        "research_date": "2026-08-15"
-      }
-    },
-    {
-      "fingerprint": "1f395266eb08470cf16b272fed6cafb338de15bc92ffad6a8cae9eb729891c17",
+      "fingerprint": "26b3039627342934fb29360da228f2550d8e2484abc3677afaa162433749ac08",
       "section": "disclosures",
-      "priority": "P2",
-      "target_id": "Accenture",
-      "name": "Accenture",
-      "title": "FY26 Q4/全年财报（约9月）：2 天后到期",
-      "why_now": "登记事件状态为2 天后到期，需按备注核验；监控本身不作投资决定。",
-      "status": "UPCOMING_7D",
+      "priority": "P1",
+      "target_id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "title": "1 项公告更新",
+      "why_now": "H股公告（董事会会议通知）",
+      "status": "REVIEW",
       "verified_facts": [],
-      "source_urls": [],
+      "source_urls": [
+        "https://static.cninfo.com.cn/finalpage/2026-09-30/1225586640.PDF"
+      ],
       "next_workflow": null,
-      "needs_human_review": false,
+      "needs_human_review": true,
       "limitations": [],
-      "notify": false,
+      "notify": true,
       "resolved": false,
       "metadata": {
-        "previous_status": "UPCOMING_7D",
-        "current_status": "UPCOMING_7D",
+        "kind": "disclosure_summary",
+        "market": "A",
         "date": "2026-09-30",
-        "days": 2,
-        "event_type": "财报",
-        "note": "核全年本币增速、利润率、AI可审计指标",
-        "research_link": "../Accenture/Accenture-thesis.md",
-        "research_date": "2026-07-21"
+        "published_at": "2026-09-30T00:00:00+08:00",
+        "latest_time": "2026-09-30T00:00:00+08:00",
+        "announcement_count": 1,
+        "updates": [
+          {
+            "summary": "H股公告（董事会会议通知）",
+            "title": "H股公告（董事会会议通知）",
+            "published_at": "2026-09-30T00:00:00+08:00",
+            "priority": "P1",
+            "status": "DONE",
+            "why_now": "赣锋锂业发布H股正式公告，董事会将于2026年10月15日审议并批准截至2026年9月30日止九个月的第三季度报告。该正式披露将确认或否定现有论文中多项核心可证伪条件，包括扣非盈利连续性、经营现金流是否覆盖资本开支以及净负债是否继续下降，因此需要进入研究复核流程。",
+            "source_urls": [
+              "https://static.cninfo.com.cn/finalpage/2026-09-30/1225586640.PDF"
+            ],
+            "verified_facts": [
+              {
+                "fact": "赣锋锂业（股份代号：1772）发布H股董事会会议召开日期公告，宣布董事会会议将于2026年10月15日（星期四）举行。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225586640.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "该董事会会议旨在（其中包括）审议及批准公司及其附属公司截至2026年9月30日止九个月的第三季度报告及/或其他议题（如适用）。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225586640.PDF",
+                "page": 1,
+                "confidence": "high"
+              },
+              {
+                "fact": "公告由董事长李良彬签署，日期为2026年9月29日，地点为中国江西。",
+                "official_url": "https://static.cninfo.com.cn/finalpage/2026-09-30/1225586640.PDF",
+                "page": 1,
+                "confidence": "high"
+              }
+            ],
+            "next_workflow": "/earnings-review",
+            "needs_human_review": true,
+            "limitations": [
+              "本次输入仅为董事会会议日期公告，不含任何实际季度财务数据，无法验证收入、利润、现金流、杠杆或项目进度。",
+              "公告未提供会议议程的完整细节，'及/或其他议题（如适用）'的具体内容不明确，可能存在未列示的审议事项。",
+              "既有研究报告中2026H1数据及估值参数基于此前披露文件，尚未经本次Q3报告更新，读者不应将现有时点判断等同于Q3披露后的结论。"
+            ],
+            "document_type": "正式公告",
+            "source": "cninfo",
+            "thesis_impacts": [
+              "该公告本身不包含任何经营或财务数据，但确立了2026Q3报告的正式审议时点，使现有论文中'Q3扣非继续为正'和'CFO覆盖资本开支且净负债下降'两项可证伪条件的验证窗口临近。",
+              "公告未涉及资源项目产量、锂价实现价格、资本开支进度或债务结构，因此对'资源一体化穿越周期'、'周期性而非稳定复利'、'现金流/杠杆约束'和'电池第二曲线'等论文要素暂不构成新增证据。",
+              "在Q3报告正式披露前，既有研究报告中的A股30–38元再评估带、H股34.6–43.8港元维持/建立小仓的评估条件，以及提高仓位须满足的连续两季扣非盈利、正自由现金流和净负债下行三项条件，均不因本次会议通知公告而改变。"
+            ]
+          }
+        ],
+        "research_link": "../%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A/%E8%B5%A3%E9%94%8B%E9%94%82%E4%B8%9A-earnings-2026H1.md",
+        "research_date": "2026-08-31"
       }
     },
     {
@@ -656,7 +1923,7 @@
       "target_id": "Accenture",
       "name": "Accenture",
       "title": "分批带：FAR",
-      "why_now": "现价 176.11，触发线 150.00",
+      "why_now": "现价 177.12，触发线 150.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -668,7 +1935,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 176.11,
+        "price": 177.12,
         "market": "US",
         "zone_label": "分批带",
         "low": null,
@@ -686,7 +1953,7 @@
       "target_id": "ADP",
       "name": "ADP",
       "title": "加仓带：FAR",
-      "why_now": "现价 263.67，触发线 190.00",
+      "why_now": "现价 261.80，触发线 190.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -698,7 +1965,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 263.67,
+        "price": 261.8,
         "market": "US",
         "zone_label": "加仓带",
         "low": null,
@@ -743,7 +2010,7 @@
       "target_id": "Google",
       "name": "Alphabet/Google",
       "title": "未持有买入带：FAR",
-      "why_now": "现价 343.92，区间 [250.00, 300.00]",
+      "why_now": "现价 340.92，区间 [250.00, 300.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -755,7 +2022,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 343.92,
+        "price": 340.92,
         "market": "US",
         "zone_label": "未持有买入带",
         "low": 250,
@@ -773,7 +2040,7 @@
       "target_id": "AMD",
       "name": "AMD",
       "title": "分批评估带：FAR",
-      "why_now": "现价 630.63，区间 [220.00, 300.00]",
+      "why_now": "现价 607.57，区间 [220.00, 300.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -785,7 +2052,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 630.63,
+        "price": 607.57,
         "market": "US",
         "zone_label": "分批评估带",
         "low": 220,
@@ -803,7 +2070,7 @@
       "target_id": "Archrock",
       "name": "Archrock",
       "title": "评估带：FAR",
-      "why_now": "现价 30.43，区间 [22.20, 25.90]",
+      "why_now": "现价 29.99，区间 [22.20, 25.90]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -815,7 +2082,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 30.43,
+        "price": 29.99,
         "market": "US",
         "zone_label": "评估带",
         "low": 22.2,
@@ -833,7 +2100,7 @@
       "target_id": "ASTS",
       "name": "AST SpaceMobile",
       "title": "高风险期权评估带：FAR",
-      "why_now": "现价 61.81，区间 [30.00, 40.00]",
+      "why_now": "现价 59.40，区间 [30.00, 40.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -845,7 +2112,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 61.81,
+        "price": 59.4,
         "market": "US",
         "zone_label": "高风险期权评估带",
         "low": 30,
@@ -888,7 +2155,7 @@
       "target_id": "AZZ",
       "name": "AZZ Inc.",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 137.17，区间 [105.00, 115.00]",
+      "why_now": "现价 135.29，区间 [105.00, 115.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -900,7 +2167,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 137.17,
+        "price": 135.29,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 105,
@@ -972,7 +2239,7 @@
       "target_id": "CRDO",
       "name": "Credo Technology",
       "title": "研究性分批评估带（US$120–140；US$100–120更高安全边际）：FAR",
-      "why_now": "现价 210.97，区间 [100.00, 140.00]",
+      "why_now": "现价 192.35，区间 [100.00, 140.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -984,7 +2251,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 210.97,
+        "price": 192.35,
         "market": "US",
         "zone_label": "研究性分批评估带（US$120–140；US$100–120更高安全边际）",
         "low": 100,
@@ -1002,7 +2269,7 @@
       "target_id": "Keyence",
       "name": "Keyence",
       "title": "加仓带：FAR",
-      "why_now": "现价 78500.00，触发线 64200.00",
+      "why_now": "现价 80480.00，触发线 64200.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1014,7 +2281,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 78500.0,
+        "price": 80480.0,
         "market": "JP",
         "zone_label": "加仓带",
         "low": null,
@@ -1032,7 +2299,7 @@
       "target_id": "lululemon",
       "name": "lululemon",
       "title": "修复前研究性评估带：FAR",
-      "why_now": "现价 101.30，触发线 85.00",
+      "why_now": "现价 96.87，触发线 85.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1044,7 +2311,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 101.3,
+        "price": 96.87,
         "market": "US",
         "zone_label": "修复前研究性评估带",
         "low": null,
@@ -1062,7 +2329,7 @@
       "target_id": "Mastercard",
       "name": "Mastercard",
       "title": "分批带：FAR",
-      "why_now": "现价 567.65，区间 [380.00, 500.00]",
+      "why_now": "现价 563.58，区间 [380.00, 500.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1074,7 +2341,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 567.65,
+        "price": 563.58,
         "market": "US",
         "zone_label": "分批带",
         "low": 380,
@@ -1092,7 +2359,7 @@
       "target_id": "Meta",
       "name": "Meta",
       "title": "回调建仓带：FAR",
-      "why_now": "现价 751.66，触发线 480.00",
+      "why_now": "现价 738.79，触发线 480.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1104,7 +2371,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 751.66,
+        "price": 738.79,
         "market": "US",
         "zone_label": "回调建仓带",
         "low": null,
@@ -1122,7 +2389,7 @@
       "target_id": "微软",
       "name": "Microsoft",
       "title": "不追高线：FAR",
-      "why_now": "现价 516.17，触发线 440.00",
+      "why_now": "现价 508.96，触发线 440.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1134,7 +2401,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 516.17,
+        "price": 508.96,
         "market": "US",
         "zone_label": "不追高线",
         "low": null,
@@ -1152,7 +2419,7 @@
       "target_id": "NOC",
       "name": "Northrop Grumman",
       "title": "研究性评估带：FAR",
-      "why_now": "现价 510.52，区间 [430.00, 470.00]",
+      "why_now": "现价 504.61，区间 [430.00, 470.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1164,7 +2431,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 510.52,
+        "price": 504.61,
         "market": "US",
         "zone_label": "研究性评估带",
         "low": 430,
@@ -1180,7 +2447,7 @@
       "target_id": "NovoNordisk",
       "name": "Novo Nordisk",
       "title": "研究性分批与更高安全边际复核带：FAR",
-      "why_now": "现价 38.80，区间 [28.00, 35.00]",
+      "why_now": "现价 38.31，区间 [28.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1192,7 +2459,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 38.8,
+        "price": 38.31,
         "market": "US",
         "zone_label": "研究性分批与更高安全边际复核带",
         "low": 28,
@@ -1210,7 +2477,7 @@
       "target_id": "nVent",
       "name": "nVent Electric",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 164.41，区间 [115.00, 130.00]",
+      "why_now": "现价 161.68，区间 [115.00, 130.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1222,7 +2489,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 164.41,
+        "price": 161.68,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 115,
@@ -1240,7 +2507,7 @@
       "target_id": "Palantir",
       "name": "Palantir",
       "title": "重估带：FAR",
-      "why_now": "现价 189.67，区间 [70.00, 85.00]",
+      "why_now": "现价 186.97，区间 [70.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1252,7 +2519,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 189.67,
+        "price": 186.97,
         "market": "US",
         "zone_label": "重估带",
         "low": 70,
@@ -1324,7 +2591,7 @@
       "target_id": "PL",
       "name": "Planet Labs PBC",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 17.43，区间 [6.00, 9.00]",
+      "why_now": "现价 16.38，区间 [6.00, 9.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1336,7 +2603,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 17.43,
+        "price": 16.38,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 6,
@@ -1354,7 +2621,7 @@
       "target_id": "UFO",
       "name": "Procure Space ETF",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 43.55，区间 [34.00, 38.00]",
+      "why_now": "现价 42.42，区间 [34.00, 38.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1366,7 +2633,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 43.55,
+        "price": 42.42,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 34,
@@ -1382,7 +2649,7 @@
       "target_id": "Progressive",
       "name": "Progressive",
       "title": "有条件研究性分批买入线：FAR",
-      "why_now": "现价 205.50，触发线 170.00",
+      "why_now": "现价 210.52，触发线 170.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1394,7 +2661,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 205.5,
+        "price": 210.52,
         "market": "US",
         "zone_label": "有条件研究性分批买入线",
         "low": null,
@@ -1412,7 +2679,7 @@
       "target_id": "Qualcomm",
       "name": "Qualcomm",
       "title": "理想买入带：FAR",
-      "why_now": "现价 201.97，触发线 160.00",
+      "why_now": "现价 184.10，触发线 160.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1424,7 +2691,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 201.97,
+        "price": 184.1,
         "market": "US",
         "zone_label": "理想买入带",
         "low": null,
@@ -1496,7 +2763,7 @@
       "target_id": "RKLB",
       "name": "Rocket Lab",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 73.95，区间 [25.00, 35.00]",
+      "why_now": "现价 69.70，区间 [25.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1508,7 +2775,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 73.95,
+        "price": 69.7,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 25,
@@ -1574,13 +2841,33 @@
       }
     },
     {
+      "fingerprint": "443d467869a8156e42a004837f6708cf7ed840928d5820ea50f7646bf48fb63a",
+      "section": "other",
+      "priority": "P2",
+      "target_id": "sec",
+      "name": "SEC",
+      "title": "数据源已恢复",
+      "why_now": "sec 正式披露采集本次恢复。",
+      "status": "RECOVERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": true,
+      "resolved": true,
+      "metadata": {
+        "service": "sec"
+      }
+    },
+    {
       "fingerprint": "f377177b169c765a9642bbc20d559dff303db34c62e5e5ef122f0e249e72af15",
       "section": "price",
       "priority": "P2",
       "target_id": "SLDP",
       "name": "Solid Power",
       "title": "期权评估带：FAR",
-      "why_now": "现价 2.39，区间 [1.50, 2.00]",
+      "why_now": "现价 2.27，区间 [1.50, 2.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1592,7 +2879,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 2.39,
+        "price": 2.27,
         "market": "US",
         "zone_label": "期权评估带",
         "low": 1.5,
@@ -1610,7 +2897,7 @@
       "target_id": "沃尔玛",
       "name": "Walmart",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 107.98，区间 [80.00, 90.00]",
+      "why_now": "现价 106.80，区间 [80.00, 90.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1622,7 +2909,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 107.98,
+        "price": 106.8,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 80,
@@ -1640,7 +2927,7 @@
       "target_id": "三环集团",
       "name": "三环集团",
       "title": "高确定性带：FAR",
-      "why_now": "现价 115.54，区间 [70.00, 85.00]",
+      "why_now": "现价 117.33，区间 [70.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1652,7 +2939,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 115.54,
+        "price": 117.33,
         "market": "A",
         "zone_label": "高确定性带",
         "low": 70,
@@ -1670,7 +2957,7 @@
       "target_id": "上海复旦",
       "name": "上海复旦",
       "title": "A股原分批研究带（暂停执行）：FAR",
-      "why_now": "现价 56.95，区间 [25.00, 32.00]",
+      "why_now": "现价 56.18，区间 [25.00, 32.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1682,7 +2969,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 56.95,
+        "price": 56.18,
         "market": "A",
         "zone_label": "A股原分批研究带（暂停执行）",
         "low": 25,
@@ -1700,7 +2987,7 @@
       "target_id": "东方电气",
       "name": "东方电气",
       "title": "分批评估带：FAR",
-      "why_now": "现价 22.71，区间 [15.00, 18.00]",
+      "why_now": "现价 23.04，区间 [15.00, 18.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1712,7 +2999,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 22.71,
+        "price": 23.04,
         "market": "A",
         "zone_label": "分批评估带",
         "low": 15,
@@ -1730,7 +3017,7 @@
       "target_id": "中兴通讯",
       "name": "中兴通讯",
       "title": "评估带：FAR",
-      "why_now": "现价 30.79，区间 [22.00, 28.00]",
+      "why_now": "现价 30.58，区间 [22.00, 28.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1742,7 +3029,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 30.79,
+        "price": 30.58,
         "market": "A",
         "zone_label": "评估带",
         "low": 22,
@@ -1760,7 +3047,7 @@
       "target_id": "中国广核",
       "name": "中国广核",
       "title": "舒适买点带：FAR",
-      "why_now": "现价 4.26，区间 [3.20, 3.50]",
+      "why_now": "现价 4.23，区间 [3.20, 3.50]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1772,7 +3059,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 4.26,
+        "price": 4.23,
         "market": "A",
         "zone_label": "舒适买点带",
         "low": 3.2,
@@ -1790,7 +3077,7 @@
       "target_id": "中芯国际",
       "name": "中芯国际",
       "title": "A股重新估值带：FAR",
-      "why_now": "现价 116.56，触发线 60.00",
+      "why_now": "现价 111.99，触发线 60.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1802,7 +3089,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 116.56,
+        "price": 111.99,
         "market": "A",
         "zone_label": "A股重新估值带",
         "low": null,
@@ -1814,43 +3101,13 @@
       }
     },
     {
-      "fingerprint": "e0769a8dcd0edb71925aac1444d0e578fc01600ec5ad169f35b88c5c77f85988",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "中芯国际",
-      "name": "中芯国际",
-      "title": "H股研究建仓带：FAR",
-      "why_now": "现价 61.00，触发线 58.00",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 61.0,
-        "market": "H",
-        "zone_label": "H股研究建仓带",
-        "low": null,
-        "high": 58,
-        "direction": "below",
-        "note": "且Q3确认毛利率/利用率稳定、CapEx与FCF质量未恶化；不构成自动买入",
-        "research_link": "../%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85/%E4%B8%AD%E8%8A%AF%E5%9B%BD%E9%99%85-earnings-2026Q2.md",
-        "research_date": "2026-08-23"
-      }
-    },
-    {
       "fingerprint": "e782b8eeda397d7485a6a99d75b79d90ef79ad6725505c01bb1b3805575cf5c9",
       "section": "price",
       "priority": "P2",
       "target_id": "乐动机器人",
       "name": "乐动机器人",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 25.02，区间 [12.00, 16.00]",
+      "why_now": "现价 24.60，区间 [12.00, 16.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1862,7 +3119,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 25.02,
+        "price": 24.6,
         "market": "H",
         "zone_label": "研究性分批评估带",
         "low": 12,
@@ -1904,43 +3161,13 @@
       }
     },
     {
-      "fingerprint": "101a33ecf2420dd4114bb5d5596ab5723389a761351e22c7add321bbaa7e9aa9",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "亨通光电",
-      "name": "亨通光电",
-      "title": "研究性分批评估带：FAR",
-      "why_now": "现价 60.64，区间 [45.00, 55.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 60.64,
-        "market": "A",
-        "zone_label": "研究性分批评估带",
-        "low": 45,
-        "high": 55,
-        "direction": "range",
-        "note": "非自动买入；须连续两季CFO转正、应收增速不高于收入且海缆/光通信毛利稳定",
-        "research_link": "../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20260826.md",
-        "research_date": "2026-08-26"
-      }
-    },
-    {
       "fingerprint": "560d55d8df4ae40384e2e2f3c681770eb84662fb779f596a02fbbc7ff9127c8c",
       "section": "price",
       "priority": "P2",
       "target_id": "京东",
       "name": "京东集团",
       "title": "买入带：FAR",
-      "why_now": "现价 26.51，区间 [16.50, 20.60]",
+      "why_now": "现价 26.30，区间 [16.50, 20.60]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1952,7 +3179,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 26.51,
+        "price": 26.3,
         "market": "US",
         "zone_label": "买入带",
         "low": 16.5,
@@ -1970,7 +3197,7 @@
       "target_id": "兆易创新",
       "name": "兆易创新",
       "title": "评估带：FAR",
-      "why_now": "现价 358.51，触发线 180.00",
+      "why_now": "现价 353.90，触发线 180.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1982,7 +3209,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 358.51,
+        "price": 353.9,
         "market": "A",
         "zone_label": "评估带",
         "low": null,
@@ -2000,7 +3227,7 @@
       "target_id": "剑桥科技",
       "name": "剑桥科技",
       "title": "A股研究性分批复核线：FAR",
-      "why_now": "现价 197.37，触发线 80.00",
+      "why_now": "现价 205.45，触发线 80.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2012,7 +3239,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 197.37,
+        "price": 205.45,
         "market": "A",
         "zone_label": "A股研究性分批复核线",
         "low": null,
@@ -2030,7 +3257,7 @@
       "target_id": "剑桥科技",
       "name": "剑桥科技",
       "title": "H股研究性分批复核线：FAR",
-      "why_now": "现价 102.30，触发线 80.00",
+      "why_now": "现价 111.40，触发线 80.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2042,7 +3269,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 102.3,
+        "price": 111.4,
         "market": "H",
         "zone_label": "H股研究性分批复核线",
         "low": null,
@@ -2060,7 +3287,7 @@
       "target_id": "北京君正",
       "name": "北京君正",
       "title": "A股复核带：FAR",
-      "why_now": "现价 132.26，区间 [90.00, 115.00]",
+      "why_now": "现价 129.15，区间 [90.00, 115.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2072,7 +3299,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 132.26,
+        "price": 129.15,
         "market": "A",
         "zone_label": "A股复核带",
         "low": 90,
@@ -2090,7 +3317,7 @@
       "target_id": "华虹宏力",
       "name": "华虹半导体",
       "title": "A股评估带：FAR",
-      "why_now": "现价 213.76，区间 [70.00, 100.00]",
+      "why_now": "现价 207.92，区间 [70.00, 100.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2102,7 +3329,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 213.76,
+        "price": 207.92,
         "market": "A",
         "zone_label": "A股评估带",
         "low": 70,
@@ -2114,13 +3341,43 @@
       }
     },
     {
+      "fingerprint": "59e8a3ad741605a31e3d2f19d36f4d4ed29efa79f6c5c59d669977c3292409be",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "厦门钨业",
+      "name": "厦门钨业",
+      "title": "研究性分批评估带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 44.11,
+        "market": "A",
+        "zone_label": "研究性分批评估带",
+        "low": 28,
+        "high": 32,
+        "direction": "range",
+        "note": "非自动买入；须存货连续两期下降、单季经营现金流持续为正且钨钼毛利未塌陷",
+        "research_link": "../%E5%8E%A6%E9%97%A8%E9%92%A8%E4%B8%9A/%E5%8E%A6%E9%97%A8%E9%92%A8%E4%B8%9A-research-20260928.md",
+        "research_date": "2026-09-28"
+      }
+    },
+    {
       "fingerprint": "4bc6c30652040f370b312d7dace6d41efca3cb484a5a8c8a3464a3cd4fe89a38",
       "section": "price",
       "priority": "P2",
       "target_id": "合盛硅业",
       "name": "合盛硅业",
       "title": "评估区：FAR",
-      "why_now": "现价 30.91，区间 [22.00, 28.00]",
+      "why_now": "现价 31.55，区间 [22.00, 28.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2132,7 +3389,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 30.91,
+        "price": 31.55,
         "market": "A",
         "zone_label": "评估区",
         "low": 22,
@@ -2177,7 +3434,7 @@
       "target_id": "国电南瑞",
       "name": "国电南瑞",
       "title": "舒适带：FAR",
-      "why_now": "现价 22.64，区间 [18.00, 20.00]",
+      "why_now": "现价 22.52，区间 [18.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2189,7 +3446,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 22.64,
+        "price": 22.52,
         "market": "A",
         "zone_label": "舒适带",
         "low": 18,
@@ -2207,7 +3464,7 @@
       "target_id": "圣邦股份",
       "name": "圣邦股份",
       "title": "确认带：FAR",
-      "why_now": "现价 117.00，区间 [55.00, 70.00]",
+      "why_now": "现价 110.21，区间 [55.00, 70.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2219,7 +3476,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 117.0,
+        "price": 110.21,
         "market": "A",
         "zone_label": "确认带",
         "low": 55,
@@ -2237,7 +3494,7 @@
       "target_id": "天齐锂业",
       "name": "天齐锂业",
       "title": "评估带：FAR",
-      "why_now": "现价 39.41，区间 [30.00, 35.00]",
+      "why_now": "现价 40.25，区间 [30.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2249,7 +3506,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 39.41,
+        "price": 40.25,
         "market": "A",
         "zone_label": "评估带",
         "low": 30,
@@ -2267,7 +3524,7 @@
       "target_id": "安克创新",
       "name": "安克创新",
       "title": "评估带：FAR",
-      "why_now": "现价 121.10，区间 [87.00, 105.00]",
+      "why_now": "现价 124.63，区间 [87.00, 105.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2279,7 +3536,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 121.1,
+        "price": 124.63,
         "market": "A",
         "zone_label": "评估带",
         "low": 87,
@@ -2297,7 +3554,7 @@
       "target_id": "小米",
       "name": "小米集团",
       "title": "考虑带：FAR",
-      "why_now": "现价 25.82，区间 [18.00, 20.00]",
+      "why_now": "现价 25.26，区间 [18.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2309,7 +3566,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 25.82,
+        "price": 25.26,
         "market": "H",
         "zone_label": "考虑带",
         "low": 18,
@@ -2327,7 +3584,7 @@
       "target_id": "德明利",
       "name": "德明利",
       "title": "研究性评估带：FAR",
-      "why_now": "现价 371.28，区间 [200.00, 260.00]",
+      "why_now": "现价 358.46，区间 [200.00, 260.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2339,7 +3596,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 371.28,
+        "price": 358.46,
         "market": "A",
         "zone_label": "研究性评估带",
         "low": 200,
@@ -2384,7 +3641,7 @@
       "target_id": "快手",
       "name": "快手",
       "title": "分批研究性买入候选线：FAR",
-      "why_now": "现价 30.72，触发线 25.00",
+      "why_now": "现价 30.90，触发线 25.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2396,7 +3653,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 30.72,
+        "price": 30.9,
         "market": "H",
         "zone_label": "分批研究性买入候选线",
         "low": null,
@@ -2408,43 +3665,13 @@
       }
     },
     {
-      "fingerprint": "9b8d12fa7c149ef00a20fe4c5391c885a08caa46fee4c57a920e2ad098778881",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "思格新能",
-      "name": "思格新能",
-      "title": "稳健型研究性评估带：FAR",
-      "why_now": "现价 325.20，区间 [250.00, 280.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 325.2,
-        "market": "H",
-        "zone_label": "稳健型研究性评估带",
-        "low": 250,
-        "high": 280,
-        "direction": "range",
-        "note": "非自动买入；须至少两个上市后报告期验证毛利率稳定、第二增长曲线和华为竞争影响",
-        "research_link": "../%E6%80%9D%E6%A0%BC%E6%96%B0%E8%83%BD/%E6%80%9D%E6%A0%BC%E6%96%B0%E8%83%BD-earnings-2026H1.md",
-        "research_date": "2026-08-31"
-      }
-    },
-    {
       "fingerprint": "b284793fd1f77e99b6a7735b92ab1ea4a26bea691c357febd5321df023a43d4d",
       "section": "price",
       "priority": "P2",
       "target_id": "拓荆科技",
       "name": "拓荆科技",
       "title": "加仓带：FAR",
-      "why_now": "现价 653.80，触发线 420.00",
+      "why_now": "现价 640.00，触发线 420.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2456,7 +3683,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 653.8,
+        "price": 640.0,
         "market": "A",
         "zone_label": "加仓带",
         "low": null,
@@ -2474,7 +3701,7 @@
       "target_id": "搜狐",
       "name": "搜狐",
       "title": "考虑带：FAR",
-      "why_now": "现价 13.05，触发线 12.00",
+      "why_now": "现价 13.11，触发线 12.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2486,7 +3713,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 13.05,
+        "price": 13.11,
         "market": "US",
         "zone_label": "考虑带",
         "low": null,
@@ -2504,7 +3731,7 @@
       "target_id": "晶合集成",
       "name": "晶合集成",
       "title": "观察带：FAR",
-      "why_now": "现价 26.16，区间 [14.00, 23.00]",
+      "why_now": "现价 26.62，区间 [14.00, 23.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2516,7 +3743,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 26.16,
+        "price": 26.62,
         "market": "H",
         "zone_label": "观察带",
         "low": 14,
@@ -2534,7 +3761,7 @@
       "target_id": "晶合集成",
       "name": "晶合集成",
       "title": "观察带：FAR",
-      "why_now": "现价 33.21，区间 [12.00, 20.00]",
+      "why_now": "现价 32.81，区间 [12.00, 20.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2546,7 +3773,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 33.21,
+        "price": 32.81,
         "market": "A",
         "zone_label": "观察带",
         "low": 12,
@@ -2591,7 +3818,7 @@
       "target_id": "极视角",
       "name": "极视角",
       "title": "重估带：FAR",
-      "why_now": "现价 72.85，区间 [20.00, 40.00]",
+      "why_now": "现价 72.05，区间 [20.00, 40.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2603,7 +3830,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 72.85,
+        "price": 72.05,
         "market": "H",
         "zone_label": "重估带",
         "low": 20,
@@ -2621,7 +3848,7 @@
       "target_id": "永新股份",
       "name": "永新股份",
       "title": "等待带：FAR",
-      "why_now": "现价 10.98，触发线 10.00",
+      "why_now": "现价 11.21，触发线 10.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2633,7 +3860,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 10.98,
+        "price": 11.21,
         "market": "A",
         "zone_label": "等待带",
         "low": null,
@@ -2645,13 +3872,43 @@
       }
     },
     {
+      "fingerprint": "006d8509af16bba58a1611c2fb4bab097ada09805a0ee0104b7d129dabb92f46",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "汇川技术",
+      "name": "汇川技术",
+      "title": "研究性分批评估带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 51.9,
+        "market": "A",
+        "zone_label": "研究性分批评估带",
+        "low": 22,
+        "high": 25,
+        "direction": "range",
+        "note": "原45—52元带由2026-09-28研究取代；须工控毛利约40%、车毛利止跌、CFO改善及稀释可控，跌价不自动买入",
+        "research_link": "../%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF/%E6%B1%87%E5%B7%9D%E6%8A%80%E6%9C%AF-research-20260928.md",
+        "research_date": "2026-09-28"
+      }
+    },
+    {
       "fingerprint": "579bdf8f6ab2897f0ecf02a48252b0c250e21b10cab9eda1083ec2c8a7906826",
       "section": "price",
       "priority": "P2",
       "target_id": "泡泡玛特",
       "name": "泡泡玛特",
       "title": "加仓带：FAR",
-      "why_now": "现价 153.40，区间 [120.00, 140.00]",
+      "why_now": "现价 152.70，区间 [120.00, 140.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2663,7 +3920,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 153.4,
+        "price": 152.7,
         "market": "H",
         "zone_label": "加仓带",
         "low": 120,
@@ -2681,7 +3938,7 @@
       "target_id": "海尔智家",
       "name": "海尔智家",
       "title": "等待带：FAR",
-      "why_now": "现价 20.16，区间 [16.00, 18.00]",
+      "why_now": "现价 20.42，区间 [16.00, 18.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2693,7 +3950,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 20.16,
+        "price": 20.42,
         "market": "A",
         "zone_label": "等待带",
         "low": 16,
@@ -2711,7 +3968,7 @@
       "target_id": "海康威视",
       "name": "海康威视",
       "title": "等待带：FAR",
-      "why_now": "现价 32.16，区间 [26.00, 29.00]",
+      "why_now": "现价 32.46，区间 [26.00, 29.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2723,7 +3980,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 32.16,
+        "price": 32.46,
         "market": "A",
         "zone_label": "等待带",
         "low": 26,
@@ -2741,7 +3998,7 @@
       "target_id": "深演智能",
       "name": "深演智能",
       "title": "可关注带：FAR",
-      "why_now": "现价 419.20，触发线 80.00",
+      "why_now": "现价 582.00，触发线 80.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2753,7 +4010,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 419.2,
+        "price": 582.0,
         "market": "H",
         "zone_label": "可关注带",
         "low": null,
@@ -2771,7 +4028,7 @@
       "target_id": "深科技",
       "name": "深科技",
       "title": "稳健型研究性评估带：FAR",
-      "why_now": "现价 33.68，区间 [24.00, 28.00]",
+      "why_now": "现价 32.83，区间 [24.00, 28.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2783,7 +4040,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 33.68,
+        "price": 32.83,
         "market": "A",
         "zone_label": "稳健型研究性评估带",
         "low": 24,
@@ -2801,7 +4058,7 @@
       "target_id": "澜起科技",
       "name": "澜起科技",
       "title": "A股研究性评估带：FAR",
-      "why_now": "现价 208.60，区间 [120.00, 150.00]",
+      "why_now": "现价 202.31，区间 [120.00, 150.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2813,7 +4070,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 208.6,
+        "price": 202.31,
         "market": "A",
         "zone_label": "A股研究性评估带",
         "low": 120,
@@ -2831,7 +4088,7 @@
       "target_id": "澜起科技",
       "name": "澜起科技",
       "title": "H股研究性评估带：FAR",
-      "why_now": "现价 285.60，区间 [140.00, 175.00]",
+      "why_now": "现价 289.00，区间 [140.00, 175.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2843,7 +4100,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 285.6,
+        "price": 289.0,
         "market": "H",
         "zone_label": "H股研究性评估带",
         "low": 140,
@@ -2861,7 +4118,7 @@
       "target_id": "立讯精密",
       "name": "立讯精密",
       "title": "A股分批带：FAR",
-      "why_now": "现价 49.92，触发线 43.00",
+      "why_now": "现价 49.43，触发线 43.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2873,7 +4130,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 49.92,
+        "price": 49.43,
         "market": "A",
         "zone_label": "A股分批带",
         "low": null,
@@ -2891,7 +4148,7 @@
       "target_id": "立讯精密",
       "name": "立讯精密",
       "title": "H股分批带：FAR",
-      "why_now": "现价 52.70，触发线 44.00",
+      "why_now": "现价 53.85，触发线 44.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -2903,7 +4160,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 52.7,
+        "price": 53.85,
         "market": "H",
         "zone_label": "H股分批带",
         "low": null,
@@ -2915,14 +4172,14 @@
       }
     },
     {
-      "fingerprint": "35131cb6a7d998e935a355b50b06712587b02b890adba5256eac13eec728542e",
-      "section": "disclosures",
+      "fingerprint": "507e97a05c661a1a2ac774ce65a34307ddc6e046b322af45213411e0df4e8336",
+      "section": "price",
       "priority": "P2",
       "target_id": "腾讯",
       "name": "腾讯控股",
-      "title": "2026Q3财报：2 天后到期",
-      "why_now": "登记事件状态为2 天后到期，需按备注核验；监控本身不作投资决定。",
-      "status": "UPCOMING_7D",
+      "title": "330–370 港元分批复核带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
       "next_workflow": null,
@@ -2931,14 +4188,17 @@
       "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "UPCOMING_7D",
-        "current_status": "UPCOMING_7D",
-        "date": "2026-09-30",
-        "days": 2,
-        "event_type": "财报",
-        "note": "盯Q3 FCF转正、AI预付款回收、国际游戏、回购",
-        "research_link": "../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF-thesis.md",
-        "research_date": "2026-08-15"
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 431.6,
+        "market": "H",
+        "zone_label": "330–370 港元分批复核带",
+        "low": 330,
+        "high": 370,
+        "direction": "range",
+        "note": "仅在红线未触、算力预付款开始转为收入或毛利、FCF恢复、游戏广告质量未恶化时分批评估；价位触发不自动买入。旧400–430港元带由2026-09-28十年终值研究下调",
+        "research_link": "../%E8%85%BE%E8%AE%AF/%E8%85%BE%E8%AE%AF%E6%8E%A7%E8%82%A1-research-20260928.md",
+        "research_date": "2026-09-28"
       }
     },
     {
@@ -3002,7 +4262,7 @@
       "target_id": "NVIDIA",
       "name": "英伟达",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 225.07，区间 [155.00, 180.00]",
+      "why_now": "现价 227.21，区间 [155.00, 180.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3014,7 +4274,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 225.07,
+        "price": 227.21,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 155,
@@ -3032,7 +4292,7 @@
       "target_id": "Intel",
       "name": "英特尔",
       "title": "研究性分批评估带：FAR",
-      "why_now": "现价 123.00，区间 [25.00, 35.00]",
+      "why_now": "现价 115.93，区间 [25.00, 35.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3044,7 +4304,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 123.0,
+        "price": 115.93,
         "market": "US",
         "zone_label": "研究性分批评估带",
         "low": 25,
@@ -3062,7 +4322,7 @@
       "target_id": "蓝思科技",
       "name": "蓝思科技",
       "title": "评估带：FAR",
-      "why_now": "现价 31.60，区间 [18.00, 24.00]",
+      "why_now": "现价 32.31，区间 [18.00, 24.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3074,7 +4334,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 31.6,
+        "price": 32.31,
         "market": "A",
         "zone_label": "评估带",
         "low": 18,
@@ -3086,13 +4346,43 @@
       }
     },
     {
+      "fingerprint": "d29af2c8bd7ce32f84be95d156ae13451174749a891b38c4b5f55e38d9262e89",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "茅台",
+      "name": "贵州茅台",
+      "title": "研究性分批评估带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 1258.62,
+        "market": "A",
+        "zone_label": "研究性分批评估带",
+        "low": 950,
+        "high": 1050,
+        "direction": "range",
+        "note": "须核2026Q3收入与利润、批发毛利、销售收现及渠道库存企稳；价格到位不自动买入",
+        "research_link": "../%E8%8C%85%E5%8F%B0/%E8%B4%B5%E5%B7%9E%E8%8C%85%E5%8F%B0-research-20260928.md",
+        "research_date": "2026-09-28"
+      }
+    },
+    {
       "fingerprint": "d6633371d3441bd5bc8ce0e7f3d4bff581473a6f6fdb637e9bd7aa8acb8ee364",
       "section": "price",
       "priority": "P2",
       "target_id": "赛轮轮胎",
       "name": "赛轮轮胎",
       "title": "参考带：FAR",
-      "why_now": "现价 13.21，区间 [10.00, 12.00]",
+      "why_now": "现价 13.24，区间 [10.00, 12.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3104,7 +4394,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 13.21,
+        "price": 13.24,
         "market": "A",
         "zone_label": "参考带",
         "low": 10,
@@ -3122,7 +4412,7 @@
       "target_id": "赣锋锂业",
       "name": "赣锋锂业",
       "title": "A股评估带：FAR",
-      "why_now": "现价 41.90，区间 [30.00, 38.00]",
+      "why_now": "现价 43.43，区间 [30.00, 38.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3134,7 +4424,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 41.9,
+        "price": 43.43,
         "market": "A",
         "zone_label": "A股评估带",
         "low": 30,
@@ -3152,7 +4442,7 @@
       "target_id": "迅策",
       "name": "迅策科技",
       "title": "评估带：FAR",
-      "why_now": "现价 99.60，区间 [60.00, 85.00]",
+      "why_now": "现价 94.80，区间 [60.00, 85.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3164,7 +4454,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 99.6,
+        "price": 94.8,
         "market": "H",
         "zone_label": "评估带",
         "low": 60,
@@ -3182,7 +4472,7 @@
       "target_id": "长光辰芯",
       "name": "长光辰芯",
       "title": "理想买入带：FAR",
-      "why_now": "现价 68.80，触发线 30.00",
+      "why_now": "现价 73.30，触发线 30.00",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3194,7 +4484,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 68.8,
+        "price": 73.3,
         "market": "H",
         "zone_label": "理想买入带",
         "low": null,
@@ -3212,7 +4502,7 @@
       "target_id": "雅克科技",
       "name": "雅克科技",
       "title": "卫星仓带：FAR",
-      "why_now": "现价 124.70，区间 [90.00, 110.00]",
+      "why_now": "现价 121.00，区间 [90.00, 110.00]",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -3224,7 +4514,7 @@
       "metadata": {
         "previous_status": "FAR",
         "current_status": "FAR",
-        "price": 124.7,
+        "price": 121.0,
         "market": "A",
         "zone_label": "卫星仓带",
         "low": 90,
@@ -3237,7 +4527,21 @@
     }
   ],
   "notification_items": [
-    "e8414832ee71f126fc75bbe9af45f61ee6a6c1683610135bbd196a2fdcd24761"
+    "1f395266eb08470cf16b272fed6cafb338de15bc92ffad6a8cae9eb729891c17",
+    "ddbae04c9c4c431b719282e2f816a6dad197729de4ec62518cb1490d1684a651",
+    "e0769a8dcd0edb71925aac1444d0e578fc01600ec5ad169f35b88c5c77f85988",
+    "101a33ecf2420dd4114bb5d5596ab5723389a761351e22c7add321bbaa7e9aa9",
+    "3ebbd633d08437152a6c8694e74ff7fca7aed996c8d1b74082b5f90b04863e91",
+    "9b8d12fa7c149ef00a20fe4c5391c885a08caa46fee4c57a920e2ad098778881",
+    "443d467869a8156e42a004837f6708cf7ed840928d5820ea50f7646bf48fb63a",
+    "26b3039627342934fb29360da228f2550d8e2484abc3677afaa162433749ac08",
+    "10a51a2df9de516141d33fc6fad42675b852642038c1a6a15e7c6f60bf03400e",
+    "95d7fc5356968aab4d59610d95566823a9b94c8fc75c5e1df0e69d1c8394636a",
+    "bd229ae8126db484bac73cd642b5cd006291c0ba7450e60b9eb6d35e6ad79f77",
+    "6301a35076351c4ec3064aa0c0cce6d6e2cc51c59f175d56ff8275e6ed9cb979",
+    "c0886c1b7d2dd1d72c6dae1f78455b4a1c7d097ec0ca7f4887c34f268d8f9b91",
+    "172c40cea31071274978e0d7a6b4f18897970830a83e90908a3241490e11d1f1",
+    "dba8e7f89e87246fa37a2271ed95c0d617e39e2d15582192b9f9405755c44fac"
   ],
   "source_health": [
     {
@@ -3257,8 +4561,8 @@
     },
     {
       "source": "sec",
-      "status": "FAILED",
-      "safe_message": "SEC ticker 未映射到 CIK: UFO"
+      "status": "RECOVERED",
+      "safe_message": null
     }
   ]
 }
