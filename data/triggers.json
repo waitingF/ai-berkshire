@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-28T21:46:59+08:00",
+  "updated": "2026-09-30T17:22:27+08:00",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -75,9 +75,10 @@
       ],
       "events": [
         {
+          "date": "2026-10-13",
           "type": "财报",
-          "label": "FY2027 Q2财报（日期待公司IR确认）",
-          "note": "核Metal/Precoat量价与EBITDA率、Washington新线、Seattle整合、债务削减及FY2027指引",
+          "label": "FY2027 Q2财报（公司IR已确认）",
+          "note": "公司IR于2026-09-23公告：10月13日美股收盘后发布财报，10月14日11:00 ET举行电话会。核Metal/Precoat量价与EBITDA率、Washington新线、Seattle整合、债务削减及FY2027指引。[公司公告](https://investor.azz.com/2026-09-23-AZZ-Inc-to-Review-Second-Quarter-Fiscal-Year-2027-Financial-Results-on-Wednesday,-October-14,-2026)",
           "market": "US"
         }
       ]
