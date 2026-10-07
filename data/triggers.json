@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-30T17:22:27+08:00",
+  "updated": "2026-10-07T23:22:58+08:00",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -625,11 +625,12 @@
       "codes": {
         "US": "usAPP"
       },
-      "source": "AppLovin 2026Q2 财报精读 20260831",
+      "source": "AppLovin 2026Q2 财报精读 20260831；新闻脉搏 20261007",
       "links": [
         "reports/AppLovin/AppLovin-earnings-2026Q2.md",
         "reports/AppLovin/AppLovin-checklist-20260807.md",
-        "reports/AppLovin/AppLovin-research-20260806.md"
+        "reports/AppLovin/AppLovin-research-20260806.md",
+        "reports/AppLovin/AppLovin-news-20261007.md"
       ],
       "zones": [
         {
@@ -645,9 +646,16 @@
       "events": [
         {
           "date": "2026-10-25",
-          "type": "财报",
-          "label": "2026Q3财报",
-          "note": "核Q3指引兑现、FCF、独立ROAS/留存与平台政策",
+          "type": "复检",
+          "label": "2026Q3财报日期确认（待公司公告）",
+          "note": "原登记日期未获官方确认，改为日期确认复检；第三方估计11月4日也非公司承诺。实际财报发布后核Q3指引兑现、FCF、独立ROAS/留存与平台政策，并按官方日期另登记财报事件",
+          "market": "US"
+        },
+        {
+          "date": "2026-10-21",
+          "type": "复检",
+          "label": "新闻脉搏：增长与合规风险复检",
+          "note": "核电商真实流量/付费客户与收入、游戏广告份额/价差、Unity数据争议与圣迭戈县儿童广告及隐私诉讼；核公司回应/临时救济/平台整改，不把指控当裁决或跌价当买入信号",
           "market": "US"
         }
       ]
@@ -1194,11 +1202,12 @@
       "codes": {
         "US": "usNVO"
       },
-      "source": "诺和诺德投资研究 20260926；2026Q2/H1 财报精读",
+      "source": "诺和诺德投资研究 20260926；2026Q2/H1 财报精读；新闻脉搏 20261007",
       "links": [
         "reports/Novo Nordisk/诺和诺德-research-20260926.md",
         "reports/Novo Nordisk/Novo Nordisk-earnings-2026Q2.md",
-        "reports/Novo Nordisk/最终报告.md"
+        "reports/Novo Nordisk/最终报告.md",
+        "reports/Novo Nordisk/诺和诺德-news-20261007.md"
       ],
       "zones": [
         {
@@ -1224,7 +1233,7 @@
           "date": "2026-11-04",
           "type": "财报",
           "label": "2026Q3业绩",
-          "note": "核美国Wegovy净销售、品牌处方份额、口服制剂放量、毛利、应收回款与调整后全年指引",
+          "note": "核美国Wegovy净销售、品牌处方份额、口服制剂放量、毛利、应收回款与调整后全年指引；按20261007新闻脉搏同时核量增能否抵销净价/渠道压力、礼来竞争、Mylan单项专利案与denecimig制造整改进展，剔除340B一次性影响",
           "market": "US"
         },
         {
@@ -1349,11 +1358,12 @@
       "codes": {
         "US": "usLULU"
       },
-      "source": "lululemon FY2026Q2 财报精读与研究 20260904；Heidi O'Neill履职与董事会/章程公告核验 20260915",
+      "source": "lululemon FY2026Q2 财报精读与研究 20260904；Heidi O'Neill履职与董事会/章程公告核验 20260915；近两周新闻脉搏与经营压力复检 20261007",
       "links": [
         "reports/lululemon/lululemon-research-20260904.md",
         "reports/lululemon/lululemon-earnings-2026Q2.md",
-        "reports/lululemon/最终报告.md"
+        "reports/lululemon/最终报告.md",
+        "reports/lululemon/lululemon-news-20261007.md"
       ],
       "zones": [
         {
@@ -1396,6 +1406,13 @@
           "type": "财报",
           "label": "FY2026Q3财报后复检（暂定）",
           "note": "日期待公司IR确认；核北美同店、流量/转化、核心女装、折扣、库存与经营利润率",
+          "market": "US"
+        },
+        {
+          "date": "2026-10-21",
+          "type": "复检",
+          "label": "新闻与新CEO执行复检",
+          "note": "核新CEO战略/量化产品销售、财务指引与Q3正式披露日期；跟踪退税消费者诉讼/PFAS正式进展。美洲可比销售、流量/转化、折扣、库存及剔除退税的正常毛利为核心；中国区分报表和固定汇率口径。新品/开店/名人交易不等于经营修复。",
           "market": "US"
         }
       ]
