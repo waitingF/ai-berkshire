@@ -42,11 +42,12 @@ import subprocess
 from pathlib import Path
 
 paths = subprocess.run(
-    ["git", "ls-files", "*.py"],
+    ["git", "ls-files", "-z", "*.py"],
     check=True,
     capture_output=True,
     text=True,
-).stdout.splitlines()
+).stdout.split("\0")
+paths = [path for path in paths if path]
 for raw_path in paths:
     path = Path(raw_path)
     ast.parse(path.read_text(encoding="utf-8"), filename=str(path))

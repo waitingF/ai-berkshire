@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import stat
 import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -32,6 +33,28 @@ def run(command, *, cwd, env=None, stdin=None):
 
 
 class MonitoringValidatorTest(unittest.TestCase):
+    def test_syntax_validation_handles_git_quoted_filenames(self):
+        syntax_check = VALIDATOR.read_text(encoding="utf-8").split(
+            "run_python - <<'PY'\n", 1
+        )[1].split("\nPY", 1)[0]
+        for source, expected_code in [("value = 1\n", 0), ("value =\n", 1)]:
+            with self.subTest(source=source), tempfile.TemporaryDirectory() as tmp:
+                repo = Path(tmp)
+                run(["git", "init", "-q"], cwd=repo)
+                run(["git", "config", "core.quotePath", "true"], cwd=repo)
+                script = repo / "reports" / "中文 空格" / '模型"\n脚本.py'
+                script.parent.mkdir(parents=True)
+                script.write_text(source, encoding="utf-8")
+                run(["git", "add", "--", str(script.relative_to(repo))], cwd=repo)
+
+                result = run([sys.executable, "-c", syntax_check], cwd=repo)
+
+                self.assertEqual(result.returncode, expected_code, result.stderr)
+                if expected_code == 0:
+                    self.assertIn("Checked 1 tracked Python files", result.stdout)
+                else:
+                    self.assertIn("SyntaxError", result.stderr)
+
     def test_fast_validation_propagates_daily_config_failure(self):
         self.assertTrue(VALIDATOR.exists(), "缺少统一监控校验脚本")
         with tempfile.TemporaryDirectory() as tmp:
