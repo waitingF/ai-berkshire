@@ -1,0 +1,226 @@
+{
+  "report": "reports/SE/Sea-Cloud-20261020/最终报告.md",
+  "data_cutoff": "2026-10-20",
+  "report_sha256": "aa0d1fa7d6dbb8cfa07d89ad5ea7484b8255606ef4cfb8b5cb05a91e630f21b2",
+  "initial_random_sample": [
+    {
+      "id": 8,
+      "label": "经营利润率 · 2026Q2",
+      "reported_value": 8.35,
+      "unit": "%",
+      "raw_text": "| 经营利润率 | 9.27% | 8.35% |",
+      "line_number": 87
+    },
+    {
+      "id": 12,
+      "label": "财务资本配置 · 评分",
+      "reported_value": 3.0,
+      "unit": "",
+      "raw_text": "| 财务资本配置 | 巴菲特 | 3/5 | 可以试验，不能把历史投入与现金当免费 |",
+      "line_number": 109
+    },
+    {
+      "id": 13,
+      "label": "行业竞争 · 评分",
+      "reported_value": 3.5,
+      "unit": "",
+      "raw_text": "| 行业竞争 | 芒格 | 3.5/5 | 窄场景可能成立，通用平台供给成熟 |",
+      "line_number": 110
+    }
+  ],
+  "scope": "随机样本包含主观评分，因此扩展核验全部十项财务表值，并补查两项现金流；不把主观评分当成已核事实。",
+  "results": [
+    {
+      "id": 1,
+      "label": "收入 · 2025Q2",
+      "reported_value": 5259.477,
+      "unit": "百万美元",
+      "raw_text": "| 收入 | 5259.477 | 7787.779 |",
+      "line_number": 84,
+      "fetched_value": 5259.477,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+      "fetched_value2": 5259,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly"
+    },
+    {
+      "id": 2,
+      "label": "收入 · 2026Q2",
+      "reported_value": 7787.779,
+      "unit": "百万美元",
+      "raw_text": "| 收入 | 5259.477 | 7787.779 |",
+      "line_number": 84,
+      "fetched_value": 7787.779,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+      "fetched_value2": 7788,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly"
+    },
+    {
+      "id": 3,
+      "label": "经营利润 · 2025Q2",
+      "reported_value": 487.719,
+      "unit": "百万美元",
+      "raw_text": "| 经营利润 | 487.719 | 650.329 |",
+      "line_number": 85,
+      "fetched_value": 487.719,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+      "fetched_value2": 487.72,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly"
+    },
+    {
+      "id": 4,
+      "label": "经营利润 · 2026Q2",
+      "reported_value": 650.329,
+      "unit": "百万美元",
+      "raw_text": "| 经营利润 | 487.719 | 650.329 |",
+      "line_number": 85,
+      "fetched_value": 650.329,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+      "fetched_value2": 650.33,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly"
+    },
+    {
+      "id": 5,
+      "label": "净利润 · 2025Q2",
+      "reported_value": 414.204,
+      "unit": "百万美元",
+      "raw_text": "| 净利润 | 414.204 | 458.116 |",
+      "line_number": 86,
+      "fetched_value": 414.204,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+      "fetched_value2": 414.2,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly"
+    },
+    {
+      "id": 6,
+      "label": "净利润 · 2026Q2",
+      "reported_value": 458.116,
+      "unit": "百万美元",
+      "raw_text": "| 净利润 | 414.204 | 458.116 |",
+      "line_number": 86,
+      "fetched_value": 458.116,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+      "fetched_value2": 458.12,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly"
+    },
+    {
+      "id": 7,
+      "label": "经营利润率 · 2025Q2",
+      "reported_value": 9.27,
+      "unit": "%",
+      "raw_text": "| 经营利润率 | 9.27% | 8.35% |",
+      "line_number": 87,
+      "fetched_value": 9.273146360370053,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm（以原始损益计算）",
+      "fetched_value2": 9.274006465107435,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly（以独立数据商取整数据计算）"
+    },
+    {
+      "id": 8,
+      "label": "经营利润率 · 2026Q2",
+      "reported_value": 8.35,
+      "unit": "%",
+      "raw_text": "| 经营利润率 | 9.27% | 8.35% |",
+      "line_number": 87,
+      "fetched_value": 8.350635014167711,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm（以原始损益计算）",
+      "fetched_value2": 8.350410888546481,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly（以独立数据商取整数据计算）"
+    },
+    {
+      "id": 9,
+      "label": "净利率 · 2025Q2",
+      "reported_value": 7.88,
+      "unit": "%",
+      "raw_text": "| 净利率 | 7.88% | 5.88% |",
+      "line_number": 88,
+      "fetched_value": 7.875383807173223,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm（以原始损益计算）",
+      "fetched_value2": 7.876022057425366,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly（以独立数据商取整数据计算）"
+    },
+    {
+      "id": 10,
+      "label": "净利率 · 2026Q2",
+      "reported_value": 5.88,
+      "unit": "%",
+      "raw_text": "| 净利率 | 7.88% | 5.88% |",
+      "line_number": 88,
+      "fetched_value": 5.88249872011006,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm（以原始损益计算）",
+      "fetched_value2": 5.882383153569594,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/?p=quarterly（以独立数据商取整数据计算）"
+    },
+    {
+      "id": 101,
+      "label": "2026H1经营现金流",
+      "reported_value": 2563.884,
+      "unit": "百万美元",
+      "fetched_value": 2563.884,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+      "fetched_value2": 2564,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/cash-flow-statement/?p=quarterly（季度合计）"
+    },
+    {
+      "id": 102,
+      "label": "2026H1购置固定资产",
+      "reported_value": 495,
+      "unit": "百万美元",
+      "fetched_value": 495,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+      "fetched_value2": 495,
+      "fetched_source2": "https://stockanalysis.com/stocks/se/financials/cash-flow-statement/?p=quarterly（季度合计）"
+    }
+  ],
+  "excluded_nonfinancial": [
+    {
+      "id": 11,
+      "label": "商业模式 · 评分",
+      "reported_value": 3.0,
+      "unit": "",
+      "raw_text": "| 商业模式 | 段永平 | 3/5 | 能力相邻，外部客户价值和定价权待证 |",
+      "line_number": 108,
+      "reason": "主观战略评分或日期，不作为可外部验证的财务事实"
+    },
+    {
+      "id": 12,
+      "label": "财务资本配置 · 评分",
+      "reported_value": 3.0,
+      "unit": "",
+      "raw_text": "| 财务资本配置 | 巴菲特 | 3/5 | 可以试验，不能把历史投入与现金当免费 |",
+      "line_number": 109,
+      "reason": "主观战略评分或日期，不作为可外部验证的财务事实"
+    },
+    {
+      "id": 13,
+      "label": "行业竞争 · 评分",
+      "reported_value": 3.5,
+      "unit": "",
+      "raw_text": "| 行业竞争 | 芒格 | 3.5/5 | 窄场景可能成立，通用平台供给成熟 |",
+      "line_number": 110,
+      "reason": "主观战略评分或日期，不作为可外部验证的财务事实"
+    },
+    {
+      "id": 14,
+      "label": "风险与组织 · 评分",
+      "reported_value": 2.5,
+      "unit": "",
+      "raw_text": "| 风险与组织 | 李录 | 2.5/5 | ToB服务、长期承诺和风险治理资料不足 |",
+      "line_number": 111,
+      "reason": "主观战略评分或日期，不作为可外部验证的财务事实"
+    },
+    {
+      "id": 15,
+      "label": "研究及资料截止",
+      "reported_value": 2026.0,
+      "unit": "",
+      "raw_text": "**研究及资料截止：2026-10-20（北京时间）。** 最新核验财务期为2026Q2。本报告结合用户提供内部信与公开资料；信件真实性、Sea Cloud正式对外产品及Monee上市方向尚未独立核验。报告为本地研究，未保存信件全文。",
+      "line_number": 3,
+      "reason": "主观战略评分或日期，不作为可外部验证的财务事实"
+    }
+  ],
+  "source_gaps": [
+    "Macrotrends未成功读取。",
+    "贷款投放2855百万美元拆项仅官方披露及转载，缺独立数据商拆项；未将其计入两渠道核验通过。",
+    "两渠道财务核对共用公司底层披露，非独立审计。"
+  ]
+}
