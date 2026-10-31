@@ -16,11 +16,13 @@
 
 <!-- REPORTS-BANNER:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-> 📊 **日更内容是研究报告，全部在 [研究报告索引](reports/README.md)。** 2078 份报告 · 192 家公司 · 22 个专题，按公司与专题分组，更新至 2026-10-08。
+> 📖 **想读报告，用 [阅读站](https://xbtlin.github.io/ai-berkshire/)**：成品报告按公司、专题、时间整理，电脑和手机都好读，可搜索、记住阅读进度。
+>
+> 📊 全部 2026 份报告（含底稿）· 194 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-10-31。
 
 <!-- REPORTS-BANNER:END -->
 
-[实盘业绩](#real-track-record) · [为什么不能直接问AI](#为什么不能直接问-ai) · [Skills 一览](#skills-一览20个) · [快速开始](#快速开始) · [实战报告](#实战研究报告) · [研究索引](reports/README.md) · [设计理念](#设计理念) · [公众号](#精选研究首发于公众号)
+[📖 阅读站](https://xbtlin.github.io/ai-berkshire/) · [实盘业绩](#real-track-record) · [为什么不能直接问AI](#为什么不能直接问-ai) · [Skills 一览](#skills-一览22个) · [快速开始](#快速开始) · [实战报告](#实战研究报告) · [研究索引](reports/README.md) · [设计理念](#设计理念) · [公众号](#精选研究首发于公众号)
 
 ---
 
@@ -61,6 +63,10 @@
 <img src="assets/wechat-qr.png" width="160" alt="微信公众号：复利炼丹炉" />
 
 **复利炼丹炉** —— 用 AI 炼投研这颗丹。
+
+> ⚠️ **官方渠道只有三个**：本仓库、[阅读站](https://xbtlin.github.io/ai-berkshire/)、公众号「复利炼丹炉」。**不收费、不荐股、不带单、不建投资群，也不以任何形式收款**。ai-berkshire.com、aiberkshire.com 等域名由他人注册，与本项目无关；凡以 AI Berkshire 名义拉群、收费、推荐个股的都不是本人。
+
+已发表文章按公司归档在 [投资炼丹/](投资炼丹/README.md)，每篇附对应的研究原稿。
 
 ---
 
@@ -172,19 +178,20 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 
 
 **三层设计哲学**：
-- **Skill 层**：把"你要做什么"抽象成 20 个明确入口——深度研究、财报分析、行业筛选、持仓管理、思维工具，按场景选用
+- **Skill 层**：把"你要做什么"抽象成 22 个明确入口——深度研究、财报分析、行业筛选、持仓管理、思维工具，按场景选用
 - **Agent 层**：团队型 skill（如 `/investment-team`、`/earnings-team`）由 Team Lead 并行调度 4 个大师视角 Agent——各自独立搜索、独立判断、互相挑战，最后综合研判；轻量 skill 不经过这一层，直连工具快进快出
 - **工具层**：精确计算、实时检索、报告抽检——保证每份报告的数据严谨性可验证
 
 ---
 
-## Skills 一览（20个）
+## Skills 一览（22个）
 
 ### 🔬 深度研究类
 
 | Skill | 用途 | 适合场景 |
 |-------|------|---------|
 | [`/investment-research`](skills/investment-research.md) | 四大师综合深度分析 | 对一家上市公司进行全方位投资研究 |
+| [`/company-valuation`](skills/company-valuation.md) | 公司内在价值与估值复核 | 腾讯等重点公司及美股七姐妹：现金流、SOTP、反向估值与可复算验证 |
 | [`/investment-team`](skills/investment-team.md) | 多Agent并行投研团队 | 4个Agent并行研究，最快速、最全面 |
 | [`/management-deep-dive`](skills/management-deep-dive.md) | 管理层纵深研究 | "买股票就是买人"——当管理层是核心变量时深挖 |
 | [`/private-company-research`](skills/private-company-research.md) | 未上市公司深度研究 | 研究蚂蚁、SpaceX等信息稀缺的未上市公司 |
@@ -228,7 +235,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 
 ### 🔗 搭配 Claude Code 内置的 /deep-research
 
-除以上 20 个 skill 外，Claude Code 自带一个 `/deep-research` 深度研究编排器（内置于客户端，不由本仓库分发，安装 Claude Code 即可使用）。它的流程是：把问题拆成 5 个检索角度并行搜索 → 抓取来源、提取可证伪论断 → 每条论断由 3 个独立 Agent 对抗验证（3 票中 2 票证伪才剔除）→ 按置信度合成带引用来源的报告。核心价值是每条结论都被人试图推翻过，而不是搜到什么写什么。
+除以上 22 个 skill 外，Claude Code 自带一个 `/deep-research` 深度研究编排器（内置于客户端，不由本仓库分发，安装 Claude Code 即可使用）。它的流程是：把问题拆成 5 个检索角度并行搜索 → 抓取来源、提取可证伪论断 → 每条论断由 3 个独立 Agent 对抗验证（3 票中 2 票证伪才剔除）→ 按置信度合成带引用来源的报告。核心价值是每条结论都被人试图推翻过，而不是搜到什么写什么。
 
 适合在运行本仓库的个股/行业 skill 之前，先对一个关键事实判断做独立核查。实战示例：[存储涨价周期研究](reports/存储行业/存储涨价周期研究-还能维持几年高价-20260727.md)（106 个检索/验证 Agent，23 条论断三票制交叉验证）、[diffusion LLM 技术路线综述](reports/大模型技术/diffusion-LLM技术路线综述-与AR对比-20260706.md)（25 条论断验证，22 条确认、3 条被证伪）。
 
@@ -657,18 +664,18 @@ REM 可选：安装 Codex slash prompts
 
 <!-- REPORTS-INDEX:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-**📊 [全部研究索引 →](reports/README.md)** ｜ 2078 份报告 · 192 家公司 · 22 个专题 · 更新至 2026-10-08
+**📊 [全部研究索引 →](reports/README.md)** ｜ 2026 份报告 · 194 家公司 · 28 个专题 · 更新至 2026-10-31
 
 最近更新：
 
 | 日期 | 报告 | 归属 |
 |------|------|------|
-| 2026-10-08 | [每日监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
-| 2026-10-08 | [每日监控](reports/daily-monitor/daily-monitor-20261008.md) | daily-monitor |
-| 2026-10-07 | [李录演讲与访谈合集](reports/李录/李录演讲与访谈合集.md) | 李录 |
-| 2026-10-07 | [露露乐檬（lululemon，LULU）近两周下跌归因报告](reports/lululemon/lululemon-news-20261007.md) | lululemon |
-| 2026-10-07 | [诺和诺德（NVO）近两周下跌归因报告](reports/Novo%20Nordisk/诺和诺德-news-20261007.md) | Novo Nordisk |
-| 2026-10-07 | [AppLovin（APP）近两周下跌归因报告](reports/AppLovin/AppLovin-news-20261007.md) | AppLovin |
+| 2026-10-31 | [贵州茅台（600519）2026年三季报研究报告](reports/茅台/贵州茅台-earnings-2026Q3-20261031.md) | 茅台 |
+| 2026-10-31 | [茅台三季报：三个亮眼数字，三种不同含义](reports/茅台/茅台-公众号-20261031.md) | 茅台 |
+| 2026-10-30 | [每日监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
+| 2026-10-30 | [每日监控](reports/daily-monitor/daily-monitor-20261030.md) | daily-monitor |
+| 2026-10-28 | [泡泡玛特（09992.HK）2026Q3业绩分析](reports/泡泡玛特/泡泡玛特-earnings-2026H1及Q3更新-20261028.md) | 泡泡玛特 |
+| 2026-10-27 | [腾讯控股（00700.HK）投资研究报告](reports/腾讯/腾讯投资研究报告-workbuddy-20261027.md) | 腾讯 |
 
 <!-- REPORTS-INDEX:END -->
 
@@ -700,6 +707,8 @@ REM 可选：安装 Codex slash prompts
 - 你得到的不是四份报告的拼接，而是四种思维方式的碰撞
 
 ### 金融严谨性工具 (`tools/financial_rigor.py`)
+
+专门估值可调用 `/company-valuation 腾讯`（Codex 使用 `$company-valuation 腾讯`）。[公司方法指南](tools/valuation/company-playbooks.md) 覆盖 14 家公司；[估值引擎](tools/valuation/model-schema.md) 使用 Decimal 计算 DCF、股权桥、敏感性与反向估值。[验证记录](tools/valuation/validation.md) 区分算术测试、行为复核和仍需当期验证的经济假设。
 
 | 功能 | 命令 | 解决的问题 |
 |------|------|-----------|
