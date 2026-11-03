@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-03",
   "note": "标的触发监控 — 机器可读数据源。由 tools/trigger_scanner.py 每日读取，比对价位区间并检查事件到期。维护规则见 docs/2026-08-21-标的触发监控-design.md。价位/事件回填自 重点标的看板 与 标的跟踪表。",
   "targets": [
     {
@@ -1679,9 +1679,10 @@
       "codes": {
         "US": "usLULU"
       },
-      "source": "lululemon FY2026Q2 财报精读与研究 20260904；Heidi O'Neill履职与董事会/章程公告核验 20260915；近两周新闻脉搏与经营压力复检 20261007；20261031持仓研究及操作建议",
+      "source": "lululemon FY2026Q2 财报精读与研究 20260904；Heidi O'Neill履职与董事会/章程公告核验 20260915；近两周新闻脉搏与经营压力复检 20261007；最新8-K管理层重构与研究更新 20261008；20261031持仓研究及操作建议",
       "links": [
         "reports/lululemon/lululemon-research-20261031.md",
+        "reports/lululemon/lululemon-research-20261008.md",
         "reports/lululemon/lululemon-research-20260904.md",
         "reports/lululemon/lululemon-earnings-2026Q2.md",
         "reports/lululemon/最终报告.md",
@@ -1742,7 +1743,7 @@
           "date": "2026-11-06",
           "type": "复检",
           "label": "新组织交接及原高管离任复检",
-          "note": "10月26日产品负责人及COO已履职，11月6日原高管离任；核品牌/技术等招聘与执行，不把换人当销量修复。",
+          "note": "10月26日产品负责人及COO已履职，11月6日原高管离任；核品牌/技术等招聘与执行，不把换人当销量修复。核后续完整雇佣协议、补偿与CFO留任激励披露；未披露金额不当作零或自行估计。",
           "market": "US",
           "done": false
         },
@@ -1753,6 +1754,22 @@
           "note": "跟踪真实披露日；重点正常毛利、可比销售、库存/折扣，防止仅靠日历检查遗漏业绩。",
           "market": "US",
           "done": false
+        },
+        {
+          "date": "2026-10-07",
+          "type": "公告",
+          "label": "最新8-K领导架构、任免与激励复核",
+          "note": "已核0001397187-26-000131，最早事件9/30；新CPO及COO计划10/26到任，两位旧高管11/6离任按无因解雇处理。无新财务指引；维持观望、不因人事变更加仓。",
+          "market": "US",
+          "done": true
+        },
+        {
+          "date": "2026-10-26",
+          "type": "公告",
+          "label": "Maggie Gauger与Joseph Godsey到任复核（10月31日研究已接续）",
+          "note": "10月31日研究已复核10月26日产品负责人及COO履职；未填补岗位及后续执行由11月6日交接和正式财报继续复检，到任不等于产品或盈利改善。",
+          "market": "US",
+          "done": true
         }
       ]
     },
