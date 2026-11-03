@@ -299,10 +299,6 @@ git clone https://github.com/xbtlin/ai-berkshire.git
 # Generate and install Codex skills to ~/.codex/skills
 cd ai-berkshire
 ./scripts/install-codex-skills.sh
-
-# Optional: install Codex slash prompts to ~/.codex/prompts
-# for a Claude Code-like /investment-research entry point
-./scripts/install-codex-prompts.sh
 ```
 
 For Codex users on Windows PowerShell / Command Prompt:
@@ -311,12 +307,9 @@ For Codex users on Windows PowerShell / Command Prompt:
 git clone https://github.com/xbtlin/ai-berkshire.git
 cd ai-berkshire
 .\scripts\install-codex-skills.bat
-
-REM Optional: install Codex slash prompts
-.\scripts\install-codex-prompts.bat
 ```
 
-The repository maintains three entry points: `skills/*.md` are the Claude Code command sources; `codex-skills/*/SKILL.md` are Codex skill packages generated from `skills/*.md` by `scripts/sync-codex-skills.py`; `codex-prompts/*.md` are an optional Codex slash-prompt compatibility layer.
+The repository uses `skills/*.md` as the canonical workflow sources for Claude Code commands. The corresponding sync scripts generate `codex-skills/*/SKILL.md`, `cursor-skills/*/SKILL.md`, and `dsh-skills/*/SKILL.md` for Codex, Cursor, and DeepSeek Harness.
 
 ### 3. Use
 
@@ -365,10 +358,10 @@ Use thesis-drift to compare two Pinduoduo theses
 Use wechat-article to write a Meituan investment article
 ```
 
-If you install Codex slash prompts, restart Codex and search for them in the `/` menu. Codex's official custom prompt entry point usually appears as `prompts:<name>`, for example:
+You can also explicitly invoke a skill, for example:
 
 ```text
-/prompts:investment-research Tencent
+$investment-research Tencent
 ```
 
 ---

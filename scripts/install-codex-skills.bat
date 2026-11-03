@@ -30,5 +30,4 @@ for /d %%D in ("%ROOT%\codex-skills\*") do (
 )
 
 echo Installed Codex skills to %DEST%
-echo Run .\scripts\install-codex-prompts.bat if you want slash-command prompts.
 echo Restart Codex to pick up new skills.

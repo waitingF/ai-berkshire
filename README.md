@@ -323,10 +323,6 @@ git clone https://github.com/xbtlin/ai-berkshire.git
 # 生成并安装 Codex skills 到 ~/.codex/skills
 cd ai-berkshire
 ./scripts/install-codex-skills.sh
-
-# 可选：安装 Codex slash prompts 到 ~/.codex/prompts
-# 用于获得接近 Claude Code 的 /investment-research 体验
-./scripts/install-codex-prompts.sh
 ```
 
 Codex 用户安装（Windows PowerShell / Command Prompt）：
@@ -335,12 +331,9 @@ Codex 用户安装（Windows PowerShell / Command Prompt）：
 git clone https://github.com/xbtlin/ai-berkshire.git
 cd ai-berkshire
 .\scripts\install-codex-skills.bat
-
-REM 可选：安装 Codex slash prompts
-.\scripts\install-codex-prompts.bat
 ```
 
-仓库同时维护三套入口：`skills/*.md` 是 Claude Code command 源文件；`codex-skills/*/SKILL.md` 是 Codex skill 包，由 `scripts/sync-codex-skills.py` 从 `skills/*.md` 生成；`codex-prompts/*.md` 是可选的 Codex slash prompt 兼容层。
+仓库以 `skills/*.md` 为统一工作流源文件，供 Claude Code commands 使用；`codex-skills/*/SKILL.md`、`cursor-skills/*/SKILL.md` 和 `dsh-skills/*/SKILL.md` 分别由对应同步脚本生成，供 Codex、Cursor 和 DeepSeek Harness 使用。
 
 ### 3. 使用
 
@@ -388,10 +381,10 @@ REM 可选：安装 Codex slash prompts
 使用 wechat-article 写美团投研文章
 ```
 
-如果安装了 Codex slash prompts，重启 Codex 后也可以在 `/` 菜单里搜索这些 prompt。Codex 官方的 custom prompt 入口通常显示为 `prompts:<name>`，例如：
+也可以显式指定 skill，例如：
 
 ```text
-/prompts:investment-research 腾讯
+$investment-research 腾讯
 ```
 
 ---

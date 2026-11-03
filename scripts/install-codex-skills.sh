@@ -17,5 +17,4 @@ done
 chmod +x "$ROOT"/tools/*.py "$ROOT"/tools/*.sh 2>/dev/null || true
 
 echo "Installed Codex skills to $DEST"
-echo "Run ./scripts/install-codex-prompts.sh if you want slash-command prompts."
 echo "Restart Codex to pick up new skills."

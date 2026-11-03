@@ -301,10 +301,6 @@ git clone https://github.com/xbtlin/ai-berkshire.git
 # Codex skillsを生成して ~/.codex/skills にインストール
 cd ai-berkshire
 ./scripts/install-codex-skills.sh
-
-# オプション：Codexスラッシュプロンプトを ~/.codex/prompts にインストール
-# Claude Codeのような /investment-research エントリーポイントを使いたい場合
-./scripts/install-codex-prompts.sh
 ```
 
 CodexユーザーでWindows PowerShell / コマンドプロンプトの場合：
@@ -313,12 +309,9 @@ CodexユーザーでWindows PowerShell / コマンドプロンプトの場合：
 git clone https://github.com/xbtlin/ai-berkshire.git
 cd ai-berkshire
 .\scripts\install-codex-skills.bat
-
-REM オプション：Codexスラッシュプロンプトをインストール
-.\scripts\install-codex-prompts.bat
 ```
 
-リポジトリは3つのエントリーポイントを維持しています：`skills/*.md` はClaude Codeコマンドのソース；`codex-skills/*/SKILL.md` は `scripts/sync-codex-skills.py` が `skills/*.md` から生成するCodex skillパッケージ；`codex-prompts/*.md` はオプションのCodexスラッシュプロンプト互換レイヤーです。
+リポジトリでは `skills/*.md` を共通のワークフローソースとしてClaude Codeコマンドに使用します。対応する同期スクリプトから `codex-skills/*/SKILL.md`、`cursor-skills/*/SKILL.md`、`dsh-skills/*/SKILL.md` を生成し、Codex、Cursor、DeepSeek Harnessで使用します。
 
 ### 3. 使い方
 
@@ -367,10 +360,10 @@ thesis-driftを使って拼多多の2つの投資テーゼを比較して
 wechat-articleを使って美団の投資記事を書いて
 ```
 
-Codexスラッシュプロンプトをインストールした場合、Codexを再起動して`/`メニューから検索します。Codexの公式カスタムプロンプトエントリーポイントは通常 `prompts:<name>` として表示されます：
+skillを明示的に指定することもできます：
 
 ```text
-/prompts:investment-research テンセント
+$investment-research テンセント
 ```
 
 ---

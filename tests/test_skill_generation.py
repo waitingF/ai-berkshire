@@ -20,12 +20,10 @@ class SkillGenerationSetTest(unittest.TestCase):
         dsh = {
             path.parent.name for path in (ROOT / "dsh-skills").glob("*/SKILL.md")
         }
-        prompts = {path.stem for path in (ROOT / "codex-prompts").glob("*.md")}
 
         self.assertEqual(codex, canonical)
         self.assertEqual(cursor, canonical)
         self.assertEqual(dsh, canonical)
-        self.assertEqual(prompts, canonical)
 
     def test_daily_monitor_is_the_only_active_monitoring_skill(self):
         canonical = {path.stem for path in (ROOT / "skills").glob("*.md")}
