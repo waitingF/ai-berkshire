@@ -5,4 +5,9 @@ set -euo pipefail
 repo_root="$(git rev-parse --show-toplevel)"
 cd "$repo_root"
 
+# 校验测试会创建独立仓库，不能继承 push 注入的当前 worktree 环境。
+while IFS= read -r git_variable; do
+  unset "$git_variable"
+done < <(git rev-parse --local-env-vars)
+
 bash scripts/validate-monitoring.sh --full

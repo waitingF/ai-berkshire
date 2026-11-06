@@ -176,6 +176,29 @@ class LocalGitHookTest(unittest.TestCase):
             self.assertEqual(result.returncode, 24)
             self.assertEqual(marker.read_text(encoding="utf-8"), "--full")
 
+    def test_pre_push_isolates_git_operations_in_linked_worktree(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self.make_repo(tmp)
+            worktree = Path(tmp) / "monitor worktree"
+            added = run(["git", "worktree", "add", "--detach", str(worktree)], cwd=repo)
+            self.assertEqual(added.returncode, 0, added.stderr)
+            (worktree / "scripts").mkdir()
+            (worktree / "scripts" / "validate-monitoring.sh").write_text(
+                "#!/bin/sh\nset -e\nmkdir foreign.git\ngit -C foreign.git init --bare -q\n",
+                encoding="utf-8",
+            )
+            git_dir = run(["git", "rev-parse", "--absolute-git-dir"], cwd=worktree).stdout.strip()
+            env = os.environ.copy()
+            env.update({"GIT_DIR": git_dir, "GIT_WORK_TREE": str(worktree),
+                        "GIT_INDEX_FILE": str(Path(git_dir) / "index")})
+
+            result = run(["bash", str(PRE_PUSH)], cwd=worktree, env=env, stdin="")
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue((worktree / "foreign.git" / "HEAD").exists())
+            bare = run(["git", "config", "--bool", "core.bare"], cwd=repo)
+            self.assertEqual(bare.stdout.strip(), "false")
+
     def test_pre_push_does_not_run_document_whitespace_check(self):
         self.assertTrue(PRE_PUSH.exists(), "缺少 pre-push hook")
         with tempfile.TemporaryDirectory() as tmp:

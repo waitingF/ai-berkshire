@@ -25,6 +25,7 @@ echo configured-venv-python
             venv_python.chmod(venv_python.stat().st_mode | stat.S_IXUSR)
 
             env = os.environ.copy()
+            env.pop("AI_BERKSHIRE_PYTHON", None)
             env["AI_BERKSHIRE_VENV"] = str(venv_python.parents[1])
             result = subprocess.run(
                 ["bash", "scripts/run-local-python.sh", "-c", "ignored"],
