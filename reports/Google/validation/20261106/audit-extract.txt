@@ -1,0 +1,370 @@
+======================================================================
+报告数据抽检清单
+文件：reports/Google/Google-research-20261106.md
+总提取数据点：179  |  抽样比例：15%  |  抽检数量：27
+随机种子：20261106（可用于复现同一批样本）
+======================================================================
+
+ ID     行号  数据标签                                          报告值  单位
+───  ─────  ───────────────────────────────────  ────────────  ──────
+  1     26  [Q2精读](Google-earnings-2026Q2.md)、[          3.00  
+  2     27  [10月19日单篇研究](../美股七姐妹-20261019/谷歌/谷        339.23  
+  3     56  Search & other · FY2025                    224.53  
+  7     58  Network · FY2025                            29.79  
+ 13     61  Other Bets · FY2025                          1.54  
+ 20     72  集团收入 · 2026Q3                              127.58  
+ 23     73  Search & other · 2026Q2                     63.27  
+ 29     75  Network · 2026Q2                             7.30  
+ 35     77  Google Cloud · 2026Q2                       24.77  
+ 36     78  Other Bets · 2025Q4                          0.37  
+ 44     80  集团经营利润 · 2026Q2                             40.77  
+ 56     83  Cloud经营利润率 · 2026Q2                         35.59  %
+ 61     84  OCF · 2026Q3                                42.29  
+ 62     85  现金CapEx · 2025Q4                            27.85  
+ 70    100  报表利润 · 最新核验                                235.69  
+ 72    101  现金回报 · 最新核验                                179.55  
+ 80    234  全类别普通股，十亿股 · 口径                             10.00  
+ 84    237  TTM报表EPS，美元 · 口径                            19.15  
+ 87    240  自建NOPAT，B · 本次值                            125.58  
+104    262  非上市权益折价后价值 · 处理理由                          135.23  
+130    303  第1—3年NOPAT现金转化 · 悲观                          5.00  %
+149    309  终值前瞻经营盈利倍数 · 基准                             12.14  倍
+159    399  11月5日价格 · 处理                                 0.03  %
+167    403  FY2025现金短投 · 独立对照                          126.84  B
+176    407  TTM稀释EPS · 处理                                1.00  %
+174    407  TTM稀释EPS · 官方／主来源                           19.16  
+179    410  市值工具                                       282.57  
+
+↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：
+  美股：macrotrends.net（主）+ stockanalysis.com（副）
+  港股：aastocks.com（主）+ macrotrends ADR（副）
+  A股： eastmoney.com（主）+ cninfo.com.cn（副）
+
+抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：
+
+[
+  {
+    "id": 1,
+    "label": "[Q2精读](Google-earnings-2026Q2.md)、[7月checklist](Google-checklist-20260723.md) · 本次修正或更新",
+    "reported_value": 3.0,
+    "unit": "",
+    "line_number": 26,
+    "raw_text": "| [Q2精读](Google-earnings-2026Q2.md)、[7月checklist](Google-checklist-20260723.md) | AI 能力强与现金回报承压可以同时成立 | 更新 Q3、股数、融资和现金构成",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 2,
+    "label": "[10月19日单篇研究](../美股七姐妹-20261019/谷歌/谷歌投资研究报告-20261019.md) · 本次修正或更新",
+    "reported_value": 339.23,
+    "unit": "",
+    "line_number": 27,
+    "raw_text": "| [10月19日单篇研究](../美股七姐妹-20261019/谷歌/谷歌投资研究报告-20261019.md) | 经营盈利与投资重估分离 | 339.23 美元现值依赖三年增长及退出倍数，不能当长期确定价值 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 3,
+    "label": "Search & other · FY2025",
+    "reported_value": 224.532,
+    "unit": "",
+    "line_number": 56,
+    "raw_text": "| Search & other | 224.532 | 63.350 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 7,
+    "label": "Network · FY2025",
+    "reported_value": 29.792,
+    "unit": "",
+    "line_number": 58,
+    "raw_text": "| Network | 29.792 | 7.455 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 13,
+    "label": "Other Bets · FY2025",
+    "reported_value": 1.537,
+    "unit": "",
+    "line_number": 61,
+    "raw_text": "| Other Bets | 1.537 | 0.372 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 20,
+    "label": "集团收入 · 2026Q3",
+    "reported_value": 127.577,
+    "unit": "",
+    "line_number": 72,
+    "raw_text": "| 集团收入 | 113.828 | 109.896 | 119.796 | 127.577 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 23,
+    "label": "Search & other · 2026Q2",
+    "reported_value": 63.271,
+    "unit": "",
+    "line_number": 73,
+    "raw_text": "| Search & other | 63.073 | 60.399 | 63.271 | 63.350 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 29,
+    "label": "Network · 2026Q2",
+    "reported_value": 7.303,
+    "unit": "",
+    "line_number": 75,
+    "raw_text": "| Network | 7.828 | 6.971 | 7.303 | 7.455 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 35,
+    "label": "Google Cloud · 2026Q2",
+    "reported_value": 24.768,
+    "unit": "",
+    "line_number": 77,
+    "raw_text": "| Google Cloud | 17.664 | 20.028 | 24.768 | 30.709 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 36,
+    "label": "Other Bets · 2025Q4",
+    "reported_value": 0.37,
+    "unit": "",
+    "line_number": 78,
+    "raw_text": "| Other Bets | 0.370 | 0.411 | 0.382 | 0.372 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 44,
+    "label": "集团经营利润 · 2026Q2",
+    "reported_value": 40.77,
+    "unit": "",
+    "line_number": 80,
+    "raw_text": "| 集团经营利润 | 35.934 | 39.696 | 40.770 | 40.576 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 56,
+    "label": "Cloud经营利润率 · 2026Q2",
+    "reported_value": 35.59,
+    "unit": "%",
+    "line_number": 83,
+    "raw_text": "| Cloud经营利润率 | 30.08% | 32.94% | 35.59% | 36.21% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 61,
+    "label": "OCF · 2026Q3",
+    "reported_value": 42.29,
+    "unit": "",
+    "line_number": 84,
+    "raw_text": "| OCF | 52.402 | 45.790 | 39.069 | 42.290 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 62,
+    "label": "现金CapEx · 2025Q4",
+    "reported_value": 27.851,
+    "unit": "",
+    "line_number": 85,
+    "raw_text": "| 现金CapEx | 27.851 | 35.674 | 44.924 | 51.355 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 70,
+    "label": "报表利润 · 最新核验",
+    "reported_value": 235.694,
+    "unit": "",
+    "line_number": 100,
+    "raw_text": "| 报表利润 | TTM集团净利235.694；投资处置／重估收益税前约129.109 | 高净利率并非主营稳定盈利能力；Q3转为投资损失也不等于主营崩塌 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 72,
+    "label": "现金回报 · 最新核验",
+    "reported_value": 179.551,
+    "unit": "",
+    "line_number": 101,
+    "raw_text": "| 现金回报 | TTM OCF179.551、CapEx159.804、FCF19.747；前三季FCF -4.804 | 经营现金仍强，但基础设施投入吸收了大部分现金 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 80,
+    "label": "全类别普通股，十亿股 · 口径",
+    "reported_value": 10.0,
+    "unit": "",
+    "line_number": 234,
+    "raw_text": "| 全类别普通股，十亿股 | 12.294 | 10月21日封面A/B/C合计，与9月末总量一致 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 84,
+    "label": "TTM报表EPS，美元 · 口径",
+    "reported_value": 19.15,
+    "unit": "",
+    "line_number": 237,
+    "raw_text": "| TTM报表EPS，美元 | 19.16 | 官方季度稀释EPS之和；第三方标准化为19.15，差异低于1% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 87,
+    "label": "自建NOPAT，B · 本次值",
+    "reported_value": 125.5808,
+    "unit": "",
+    "line_number": 240,
+    "raw_text": "| 自建NOPAT，B | 125.5808 | EBIT乘80%；20%税率为研究假设，不是公司调整后净利 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 104,
+    "label": "非上市权益折价后价值 · 处理理由",
+    "reported_value": 135.23,
+    "unit": "",
+    "line_number": 262,
+    "raw_text": "| 非上市权益折价后价值 | +33.8075 | 账面135.230按四分之一，反映不透明和流动性 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 130,
+    "label": "第1—3年NOPAT现金转化 · 悲观",
+    "reported_value": 5.0,
+    "unit": "%",
+    "line_number": 303,
+    "raw_text": "| 第1—3年NOPAT现金转化 | 5% | 20% | 30% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 149,
+    "label": "终值前瞻经营盈利倍数 · 基准",
+    "reported_value": 12.1429,
+    "unit": "倍",
+    "line_number": 309,
+    "raw_text": "| 终值前瞻经营盈利倍数 | 11.2500倍 | 12.1429倍 | 12.6923倍 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 159,
+    "label": "11月5日价格 · 处理",
+    "reported_value": 0.025,
+    "unit": "%",
+    "line_number": 399,
+    "raw_text": "| 11月5日价格 | StockAnalysis 282.57美元 | ChartExchange 282.64美元，15:59:59 | 时点差约0.025%；选16:00收盘，不混用 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 167,
+    "label": "FY2025现金短投 · 独立对照",
+    "reported_value": 126.843,
+    "unit": "B",
+    "line_number": 403,
+    "raw_text": "| FY2025现金短投 | SEC 126.843 B | StockAnalysis／Macrotrends 126.843 B | 一致 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 176,
+    "label": "TTM稀释EPS · 处理",
+    "reported_value": 1.0,
+    "unit": "%",
+    "line_number": 407,
+    "raw_text": "| TTM稀释EPS | 官方季度和19.16美元 | StockAnalysis 19.15美元 | 低于1%；官方季度和作为近似TTM |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 174,
+    "label": "TTM稀释EPS · 官方／主来源",
+    "reported_value": 19.16,
+    "unit": "",
+    "line_number": 407,
+    "raw_text": "| TTM稀释EPS | 官方季度和19.16美元 | StockAnalysis 19.15美元 | 低于1%；官方季度和作为近似TTM |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 179,
+    "label": "市值工具",
+    "reported_value": 282.57,
+    "unit": "",
+    "line_number": 410,
+    "raw_text": "市值工具：282.57美元×12,294,000,000股＝3,473,915,580,000美元；与第三方约3,473,916,000,000美元的差异属于显示舍入。Macrotrends正文访问受403限制，已读取其搜索索引可见值；本次",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  }
+]

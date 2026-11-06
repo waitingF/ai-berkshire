@@ -1,0 +1,40 @@
+{
+  "cutoff": "2026-11-06",
+  "price_hkd": "476",
+  "shares": "487588090",
+  "cny_hkd": "1.1754",
+  "usd_cny_for_arr": "6.69",
+  "net_cash_cny_100m_assumption": "200",
+  "annual_dilution_assumption": "0.01",
+  "roic_assumption": "0.20",
+  "discount_rates": ["0.08", "0.09"],
+  "scenarios": {
+    "bear": {
+      "g": "0",
+      "revenue_cny_100m": [50,65,80,90,100,105,110,115,118,120],
+      "fcf_cny_100m": [-40,-35,-30,-25,-15,-5,0,1,2,3],
+      "terminal_operating_profit_cny_100m": "6"
+    },
+    "base": {
+      "g": "0.015",
+      "revenue_cny_100m": [120,160,200,250,310,370,430,490,550,600],
+      "fcf_cny_100m": [-30,-20,0,10,18,26,34,43,54,63],
+      "terminal_operating_profit_cny_100m": "90"
+    },
+    "bull": {
+      "g": "0.02",
+      "revenue_cny_100m": [160,240,340,460,600,740,880,1000,1100,1200],
+      "fcf_cny_100m": [-15,0,15,35,60,85,110,130,150,168],
+      "terminal_operating_profit_cny_100m": "240"
+    }
+  },
+  "notes": [
+    "2027-2036 ten annual periods; all forward revenue, cash flow and profit numbers are research assumptions, not guidance.",
+    "FCF is operating cash after taxes, working capital, all cash capital expenditure and operating lease costs; training is expensed before FCF. Principal repayments on starting bank, lease and CB debt are already reserved in net cash and excluded from projected FCF to avoid double deduction. New assets and renewed leases still require cash.",
+    "Net cash is an illustrative present equity bridge after reserving all bank, lease and CB obligations; not a measured November balance.",
+    "Assume CB redeemed; no CB conversion shares. Conversion sensitivity must add principal back to cash and add shares together.",
+    "Dilution represents uncompensated SBC; no proceeds credited. A-share issuance excluded.",
+    "FCF accumulates as non-interest-bearing cash until 2029; price2029 is a roll-forward of this same DCF, not a peer multiple target.",
+    "No exact IRR claimed; no empirical probabilities assigned to scenarios or zero-equity tail."
+  ]
+}

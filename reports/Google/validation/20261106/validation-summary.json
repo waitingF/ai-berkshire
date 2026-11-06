@@ -1,0 +1,20 @@
+{
+  "report": "reports/Google/Google-research-20261106.md",
+  "report_sha256": "548ac10f464fe8c7db3106c0e4f71f2569c081886b787c46fb2e525fafa71152",
+  "research_cutoff": "2026-11-06 Asia/Shanghai",
+  "random_seed": 20261106,
+  "sample_ratio": "0.15",
+  "raw_sample_count": 27,
+  "documented_parser_false_positives": 3,
+  "verified_count": 24,
+  "failures": 0,
+  "warnings": 0,
+  "future_assumptions_are_not_external_facts": true,
+  "terminal_audit": "PASS at r9%,10%,11%; ROIC20%;g2%,3%,3.5%",
+  "unmodeled_risk": "重大模型诉讼及安全事件",
+  "trigger_id": "Google",
+  "ledger_new_event": "20261106-GOOGL",
+  "ledger_old_event": "20260718-Google closed without performance verdict",
+  "monitor_config": "PASS",
+  "temporary_runtime": "PASS; quotes=OK;sec=OK; detected Nov5 8-K already discussed in report; no production state mutation"
+}
