@@ -1,0 +1,1188 @@
+{
+  "as_of": "2026-10-31",
+  "monitor_as_of": "2026-10-30",
+  "scope": "底层全部91个登记标的，已获用户明确确认；按底层登记顺序，首个已开始ALB先收尾",
+  "threshold": "latest_date < 2026-10-24；日期不明纳入待核实研究",
+  "execution": "sequential",
+  "counts": {
+    "completed": 16,
+    "fresh": 9,
+    "in_progress": 0,
+    "pending": 0,
+    "deferred_by_user": 66
+  },
+  "targets": [
+    {
+      "order": 1,
+      "id": "中国核电",
+      "name": "中国核能电力股份有限公司（中国核电）",
+      "codes": {
+        "A": "sh601985"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/中国核电/中国核电-research-20261031.md",
+      "status": "completed",
+      "new_report": "reports/中国核电/中国核电-research-20261031.md",
+      "audit": "PASS: 9随机+8关键事实，17项全通过；terminal PASS（核安全/监管停运未建模已披露）",
+      "tracking": "新增台账20261031-601985，旧事件关闭接续，更新原中国核电触发target；非重点摘要103条",
+      "limitation": "四季完整商品分部毛利、维护资本开支、精确净有息债务及2026永续分配仍有限；年度现金新旧合并口径已说明"
+    },
+    {
+      "order": 2,
+      "id": "乐动机器人",
+      "name": "乐动机器人",
+      "codes": {
+        "H": "hk01236"
+      },
+      "latest_date": "2026-09-28",
+      "latest_report": "reports/乐动机器人/乐动机器人-research-20260928.md",
+      "status": "completed",
+      "started_at": "2026-10-31 14:18 Asia/Shanghai",
+      "latest_report_recheck": "本公司目录及跨目录正文/代码检索未见9/28之后实质研究；10/31为旧复检日期，非报告日期",
+      "new_report": "reports/乐动机器人/乐动机器人-research-20261031.md",
+      "audit": {
+        "report": "PASS随机26＋追加20共46；三年度/最新半年度独立源和股数/行情核实，费用/产品单源及分类缺口明示",
+        "terminal": "PASS CNYr8/ROIC15/g0/.5/1%；±2和±1合法r6/7/8/9均未过，无翻转；十年仅限仓",
+        "monitor": "trigger/daily配置check通过；临时实测OK，3项/2通知候选未发送，独立状态--no-ai"
+      },
+      "tracking": "沿原target更新港元条件5–6/复核20、11/10激励股东会、11/30SABO/日程复检、财报日期待定、180天窗口研究检查；非重点台账新增20261031-01236、旧9/28关闭无法判定，重统计104条/待63/关37/复检4",
+      "limitation": "只有2023–25三个完整FY和半年度，未虚构五年/四季度；H1产品毛利、渠道终端/售后、存款完整拆分、个人持股独立精确二源及SABO正式交割/支付未得；70.7M成熟8%净率只是条件假设；现金留存、最高并购预算、固定FX和初始激励压力及两项尾部非已验证事实"
+    },
+    {
+      "order": 3,
+      "id": "AZZ",
+      "name": "AZZ Inc.",
+      "codes": {
+        "US": "usAZZ"
+      },
+      "latest_date": "2026-09-01",
+      "latest_report": "reports/AZZ/AZZ-research-20260901.md",
+      "status": "completed",
+      "started_at": "2026-10-31 14:32 Asia/Shanghai",
+      "latest_report_recheck": "公司目录及10月实质报告正文跨目录检索未见9/1后更新；触发已登记10/13Q2日程，非研究报告更新",
+      "new_report": "reports/AZZ/AZZ-research-20261031.md",
+      "audit": {
+        "report": "PASS随机27＋追加20共47，持续/终止/普通净利与GAAP标准化差异明确，最新股数和现金桥核实",
+        "terminal": "PASS USD r10/ROIC12/g1/2/3；±2带外仅参考，补±1 r9/10/11无翻转；只限仓",
+        "monitor": "trigger/daily配置check通过，临时实测OK 3项/2通知候选未发送，quotes/SEC正常，独立状态--no-ai"
+      },
+      "tracking": "原target接续70–80USD条件/160复核，Q2核销，11/5仅原登记股东派息、11/30、下季日期待定、6/30互换及FY28末养老金检查；非重点台账新增20261031-AZZ，旧9/1关闭；台账105=待63/关38/复检4",
+      "limitation": "Macrotrends受限，SA毛利/经营标准化与GAAP不同已解释；五年全部分部毛利独立序列及FY22普通本金未复得；合同最低承购、养老金终止总成本、厂级ROIC/管理层实时持股与环境尾部缺口；EPS6.60、AVAIL税效桥、FCFF/现金储备/未来股息均为研究假设，非已有精确盈利桥"
+    },
+    {
+      "order": 4,
+      "id": "ALB",
+      "name": "Albemarle",
+      "codes": {
+        "US": "usALB"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/Albemarle/Albemarle-research-20261031.md",
+      "status": "completed",
+      "new_report": "reports/Albemarle/Albemarle-research-20261031.md",
+      "audit": "PASS: 8随机+5历史事实；terminal PASS（尾部未建模已披露）",
+      "tracking": "新增台账20261031-ALB，接续旧事件，更新既有ALB触发target"
+    },
+    {
+      "order": 5,
+      "id": "SE",
+      "name": "Sea Limited",
+      "codes": {
+        "US": "usSE"
+      },
+      "latest_date": "2026-10-20",
+      "latest_report": "reports/SE/Sea-Cloud-20261020/最终报告.md",
+      "status": "completed",
+      "started_at": "2026-10-31 14:48 Asia/Shanghai",
+      "previous_latest_report": "reports/SE/SE-thesis-drift-20261008.md",
+      "latest_report_recheck": "已读10/20 Cloud实质专题且仍早于10/24；本轮已取得10/20正式SEC原文，计划真实性已核，旧未核声明由新稿接续。集团基线10/8及9/1保留。",
+      "new_report": "reports/SE/SE-research-20261031.md",
+      "audit": {
+        "report": "有界PASS随机19＋追加34共53；年度归母/GAAP/现金分类和独立行情核验，当前股本620M仅研究代理，不冒实时双核",
+        "terminal": "PASS USD r10/增量股权回报代理15/g1/2/3；后5年利润与留存淡化，DCF/十年归母同步；±2带外仅参考，±1r9/10/11无翻转；只限仓",
+        "monitor": "trigger/daily配置check通过；临时实测OK 4项/3通知候选未发送，quotes/SEC正常。另有旧10/8thesis缺结构化next_check的GAP，target已登记11/10、11/11、11/30，未改历史文件掩盖缺口"
+      },
+      "tracking": "原SE target接续30–35USD条件/120复核、11/10正式Q3北京20:30电话会、11/11及11/30研究检查；非重点台账新增20261031-SE，旧10/8关闭；台账106=待63/关39/复检4",
+      "limitation": "Macrotrends403；分部/季度部分原件单源及CODM毛利未摊全部成本。2021余额原件未重取、季度无形与融资租赁未完整；实时法定股数及9月到期债结算缺口，620M仅研究代理并补+10%压力；金融资本可上划、信贷成熟分群及SeaCloud预算/外部盈利未知；模型现金留存用途是假设，金融挤兑牌照/重大治理数据尾部未建模。"
+    },
+    {
+      "order": 6,
+      "id": "RKLB",
+      "name": "Rocket Lab",
+      "codes": {
+        "US": "usRKLB"
+      },
+      "latest_date": "2026-08-31",
+      "latest_report": "reports/RKLB/RKLB-research-20260831.md",
+      "status": "completed",
+      "started_at": "2026-10-31 15:10 Asia/Shanghai",
+      "latest_report_recheck": "公司目录仅6/24无日期名旧稿及8/31完整稿；跨目录Rocket/RKLB检索未见更晚有效研究，本轮以8/31接续。",
+      "new_report": "reports/RKLB/RKLB-research-20261031.md",
+      "audit": {
+        "report": "有界PASS随机17（多模型）＋追加38关键历史/资本/行情共55项；亏损不负PE，GAAP/标准化、税益与完整软件现金、流动租赁缺口明确",
+        "terminal": "PASS USD r10/ROIC12/g1/2/3；十年只为并购完成条件内概率，DCF/归母/规范终值再投资同档接续；±2带外、±1r9/10/11均未覆盖资本成本无翻转",
+        "monitor": "trigger/daily配置check通过；独立临时状态实测OK 3项/2通知候选未发送，quotes/SEC正常"
+      },
+      "tracking": "原RKLB target接续6–7USD条件/35复核，Q3北京11/10 06:00、FCC美国11/9回复非批准、11/30与2027工程/交易研究日历；旧2026首飞窗口仅核销预期；非重点台账107=待63/关40/复检4",
+      "limitation": "Macrotrends受限；即时完整参与股数与9月净募精确值未披露，约668.711M仅已识别代理、未来700/750为压力假设非完整稀释上限；H1流动租赁未单列，SA133.691非全租赁债；Neutron成功/重复复用、项目最终成本、星座更新CapEx、Iridium监管/最终交换及全部费用仍待证；模型烧钱/现金储备、净募/费用、未来融资160/税25和资本再投皆研究假设，事故长期停飞/禁运及监管/牌照永久失效未完整建模。"
+    },
+    {
+      "order": 7,
+      "id": "腾讯",
+      "name": "腾讯控股",
+      "codes": {
+        "H": "hk00700"
+      },
+      "latest_date": "2026-10-27",
+      "latest_report": "reports/腾讯/腾讯投资研究报告-workbuddy-20261027.md",
+      "status": "fresh"
+    },
+    {
+      "order": 8,
+      "id": "拼多多",
+      "name": "PDD Holdings",
+      "codes": {
+        "US": "usPDD"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/拼多多/拼多多-research-20261031.md",
+      "status": "completed",
+      "new_report": "reports/拼多多/拼多多-research-20261031.md",
+      "audit": "PASS: 9随机+8关键事实17项；terminal定稿PASS，r区间内翻转已对账；尾部未建模已披露",
+      "tracking": "更新既有重点标的看板行，不新增台账；沿用拼多多target，更新价格带与DSA节点，Q3日期未确认保持开放",
+      "limitation": "股本用最近法定代理非10月实时；管理层同日独立持股、Temu分部/国别盈利及可汇出资金未完整双核；持仓不推定"
+    },
+    {
+      "order": 9,
+      "id": "美团",
+      "name": "美团-W",
+      "codes": {
+        "H": "hk03690"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/美团/美团-research-20261031.md",
+      "status": "completed",
+      "new_report": "reports/美团/美团-research-20261031.md",
+      "audit": "PASS: 10随机+12追加22项；terminal定稿PASS，r±2有效区间翻转已对账，尾部限制披露",
+      "tracking": "重点看板与原美团target接续；不新增非重点台账；配置双检通过、临时监控OK，4提醒候选未外发",
+      "limitation": "SA季度混旧列报/余差与原文冲突已明确，原文优先；分部毛利部分季度及同日独立管理层权益仍有限；新债未作已到账，Q3日期未官宣"
+    },
+    {
+      "order": 10,
+      "id": "泡泡玛特",
+      "name": "泡泡玛特",
+      "codes": {
+        "H": "hk09992"
+      },
+      "latest_date": "2026-10-28",
+      "latest_report": "reports/泡泡玛特/泡泡玛特-earnings-2026H1及Q3更新-20261028.md",
+      "status": "fresh"
+    },
+    {
+      "order": 11,
+      "id": "微软",
+      "name": "Microsoft",
+      "codes": {
+        "US": "usMSFT"
+      },
+      "latest_date": "2026-07-30",
+      "latest_report": "reports/微软/微软-earnings-FY2026Q4.md",
+      "status": "completed",
+      "new_report": "reports/微软/微软-research-20261031.md",
+      "audit": {
+        "report": "PASS 31项（随机21＋追加10）；细分一手和模型参数不冒充独立双核事实",
+        "terminal": "PASS USD r10/ROIC20/g0/3/4；±2及±1，无区间内翻转",
+        "monitor": "两项check通过，临时定点监控通过；未发外部通知"
+      },
+      "tracking": "重点看板更新；原微软target接续，Q1旧事件核销；不新增非重点台账",
+      "limitation": "Macrotrends403；细分分部/CEO逐人持股无独立精确二源；管理层CapEx/回报timing未完整桥，尾部未建模；AI现金回报仍属情景"
+    },
+    {
+      "order": 12,
+      "id": "SK海力士",
+      "name": "SK hynix",
+      "codes": {
+        "KR": "kr000660"
+      },
+      "latest_date": "2026-07-30",
+      "latest_report": "reports/SK海力士/SK海力士-thesis-20260713.md",
+      "status": "completed",
+      "new_report": "reports/SK海力士/SK海力士-research-20261031.md",
+      "audit": {
+        "report": "PASS工具26项（随机9含1误抽季度标签、追加17）；精细一手与模型参数边界已披露",
+        "terminal": "PASS 全部转换USD r10/ROIC18/g0/2/3；±2及±1，区间内未翻转",
+        "monitor": "两check通过；临时定点3项/2候选未外发，KR行情实取1418000/FAR、quotes OK；DART自动披露范围缺口明示"
+      },
+      "tracking": "重点看板更新；原SK海力士target接续，Q3事件纠正10/28已核；不新增台账",
+      "limitation": "Q3初步未完成审阅/完整租赁无形；Kioxia税后归母剔除桥不齐，采用正常化情景；经济股数10/28代理、新购股后续待核；本次KR行情已实取，DART正式披露自动覆盖仍缺；固定长期FX及未建模尾部"
+    },
+    {
+      "order": 13,
+      "id": "Accenture",
+      "name": "Accenture",
+      "codes": {
+        "US": "usACN"
+      },
+      "latest_date": "2026-07-21",
+      "latest_report": "reports/Accenture/Accenture-earnings-FY2026Q3.md",
+      "status": "completed",
+      "new_report": "reports/Accenture/Accenture-research-20261031.md",
+      "audit": {
+        "report": "PASS随机15＋追加12共27；SA非GAAP营业差异、权益/单一来源缺口已披露",
+        "terminal": "PASS USD r10/ROIC18/g0/2.5/3.5；±2及±1，区间内未翻转",
+        "monitor": "两check通过，临时定点运行通过，未发外部通知"
+      },
+      "tracking": "原Accenture target接续；全年实际10/1与10/14 InvestorDay已核销，重点看板主行和本周动作更新，不新增台账",
+      "limitation": "Macrotrends403；AI独立美元序列未恢复；Canada可交换股当前量和CEO全部经济权益二源不足；现金模型含正常并购，NCI账面扣值与跨年/运营储备为假设；AFS正式DOJ调查与WIRED指控/否认未定责；极端尾部未建模"
+    },
+    {
+      "order": 14,
+      "id": "中国平安",
+      "name": "中国平安",
+      "codes": {
+        "A": "sh601318",
+        "H": "hk02318"
+      },
+      "latest_date": "2026-09-12",
+      "latest_report": "reports/中国平安/中国平安-earnings-2026H1.md",
+      "status": "completed",
+      "new_report": "reports/中国平安/中国平安-research-20261031.md",
+      "audit": {
+        "report": "PASS随机28＋追加16共44；OCI580亿元量级纠正后重抽，单一来源/准则/假设缺口已披露",
+        "terminal": "PASS CNY r8/股权资本回报代理10/g0/.5/1；A/H±2及±1带内均通过、无翻转；DDM与理论资本释放分歧已对账",
+        "monitor": "两check通过，临时定点3项/1通知候选，未发外部通知"
+      },
+      "tracking": "沿原中国平安target接续A/H独立价格带，Q3已披露核销、11/30复检与全年日待定；重点看板主行/本周动作更新，不新增台账",
+      "limitation": "五年IFRS17及OPAT/EV假设断点、完整同假设分部历史缺口；子公司资本不全可上划；集团偿付最新H1；可转债与员工计划分母不同、转换利润桥未完全模拟；EV/细分资本多为单一原件；H股税费/长期FX及极端尾部未建模"
+    },
+    {
+      "order": 15,
+      "id": "上海复旦",
+      "name": "上海复旦",
+      "codes": {
+        "A": "sh688385",
+        "H": "hk01385"
+      },
+      "latest_date": "2026-09-12",
+      "latest_report": "reports/上海复旦/上海复旦-earnings-2026H1.md",
+      "status": "completed",
+      "new_report": "reports/上海复旦/上海复旦-research-20261031.md",
+      "audit": {
+        "report": "PASS随机30＋追加16共46；扣非/非经常税后桥、最新股数/价格/市场NCI已核",
+        "terminal": "PASS CNYr8/ROIC15/g0/1/2；r6虽币种带内但C2失败仅参考，±1合法r7/8/9均未过，无有效翻转",
+        "monitor": "两配置check通过；临时实测DEGRADED exit2，CNINFO超时、quotes/HKEX正常，4项/2通知候选未发送"
+      },
+      "tracking": "原target接续A/H现金条件带，Q3及国盛过户核销、11/30与全年日期待定/锁定附近复检；重点看板主行及本周动作更新，不新增台账；同页拼多多待办接续10/31",
+      "limitation": "2021–22原件反爬以旧可靠底稿+EM/SA历史复核；产品季度毛利及Q4产品、Q3流动租赁分拆未得；NCI其他账面比例为代理非合并精确勾稽；个别EAR许可/供应、基金实缴及税后兑现未全部验证；金融资产/运营/基金储备和固定FX为假设，极端尾部未建模；本次CNINFO运行超时"
+    },
+    {
+      "order": 16,
+      "id": "中芯国际",
+      "name": "中芯国际",
+      "codes": {
+        "A": "sh688981",
+        "H": "hk00981"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/中芯国际/中芯国际-research-20261008.md",
+      "status": "completed",
+      "new_report": "reports/中芯国际/中芯国际-research-20261031.md",
+      "audit": {
+        "report": "PASS随机30＋追加18共48；年度双源按真实舍入，单源指标/模型非事实明确",
+        "terminal": "PASS USD r10/ROIC10/g0/2/3；±2带外仅参考，补±1 r9/10/11两市场均未过，无有效翻转",
+        "monitor": "trigger/daily配置check通过；临时实测OK，quotes/CNINFO/HKEX正常，5项/3通知候选未发送，--no-ai公告PENDING_AI范围明确"
+      },
+      "tracking": "沿原target接续A/港股条件带与超配复核线；正式11/12盘后财报、11/13说明会和11/30复检登记；重点看板主行/本周动作同步，不新增台账",
+      "limitation": "最新仍H1/Q2、无Q3实绩；应用利润/全五年结构、逐线良率及个别EAR许可缺口；未上市NCI账面代理非公平价值、现金上划范围不完整；两CapEx无完整官方精确桥，H1 CFO包含净利息，未来用纯经营NOPAT排除；固定FX、后期更积极现金修复及两项未建模尾部已明示"
+    },
+    {
+      "order": 17,
+      "id": "AppLovin",
+      "name": "AppLovin",
+      "codes": {
+        "US": "usAPP"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/AppLovin/AppLovin-research-20261031.md",
+      "status": "fresh"
+    },
+    {
+      "order": 18,
+      "id": "标普500",
+      "name": "标普500指数（VOO）",
+      "codes": {
+        "US": "usVOO"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/标普500/标普500-research-20261031.md",
+      "status": "completed",
+      "started_at": "2026-10-31 15:29 Asia/Shanghai",
+      "latest_report_recheck": "已读8/9共享checklist，目录及跨目录SP500/VOO/标普检索未见更晚实质研究；原QQQM由10/24指数稿fresh跳过，不在本只重研。现有根目录共享旧稿保留，新建标普500专用目录复用原VOO target。",
+      "new_report": "reports/标普500/标普500-research-20261031.md",
+      "completed_at": "2026-10-31T16:08:04+08:00",
+      "audit": {
+        "report": "有界PASS：随机11含1日期误识别排除，10有效＋51追加共61数值；官方五年单源、当前份额双源及PE口径缺口明确",
+        "terminal": "PASS USD r10/增量股权回报代理15/g1/2/3；±2带外参考、补±1 r9/10/11无翻转；工具k1%与真实逐笔分红IRR对账，只限增强仓位",
+        "monitor": "trigger/daily配置PASS；独立临时状态实测OK，行情694.81/FAR、报告日期10/31；1项/0候选，未发外部通知。SEC原配置关闭，不假称完整披露覆盖"
+      },
+      "tracking": "更新原VOO重点target和重点看板；520–560条件额外分批、850复核；新增11/30人工基金披露/盈利检查，保留12/31再平衡；非重点台账不重复新增",
+      "limitation": "ETF适配无企业合并收入/FCF；5年会计列为单一官方原件，Macrotrends不可达/Yahoo429；SA份额×价格与资产相差59.09%排除，9月底隐含份额非实时登记；SPY/IVV的PE定义桥不完整，利润仅代理并补压力；统一5年PE、经理权益及全部成分资本回报缺口；FX/美国制度/跨境账户及个人税务尾部未建模，SEC自动来源保持关闭。"
+    },
+    {
+      "order": 19,
+      "id": "纳指100",
+      "name": "纳斯达克100指数（QQQM）",
+      "codes": {
+        "US": "usQQQM"
+      },
+      "latest_date": "2026-10-24",
+      "latest_report": "reports/恒生科技/恒生科技与纳斯达克估值对比-20261024.md",
+      "status": "fresh",
+      "previous_latest_report": "reports/标普纳指定投-checklist-20260809.md",
+      "skip_note": "跨目录识别10/24实质Nasdaq-100指数研究，恰在一周内；仅按日期跳过，本轮未重新审计，不代表本轮准出。QQQM载体费用/税务checklist日期仍旧，不把指数研究冒称ETF载体重新核实。"
+    },
+    {
+      "order": 20,
+      "id": "兆易创新",
+      "name": "兆易创新",
+      "codes": {
+        "A": "sh603986",
+        "H": "hk03986"
+      },
+      "latest_date": "2026-09-12",
+      "latest_report": "reports/兆易创新/兆易创新-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 21,
+      "id": "晶合集成",
+      "name": "晶合集成",
+      "codes": {
+        "A": "sh688249",
+        "H": "hk02249"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/晶合集成/晶合集成-earnings-refresh-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 22,
+      "id": "北京君正",
+      "name": "北京君正",
+      "codes": {
+        "A": "sz300223",
+        "H": "hk03223"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/北京君正/北京君正-earnings-2026H1-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 23,
+      "id": "华虹宏力",
+      "name": "华虹半导体",
+      "codes": {
+        "A": "sh688347",
+        "H": "hk01347"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/华虹宏力/华虹半导体-research-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 24,
+      "id": "京东",
+      "name": "京东集团",
+      "codes": {
+        "US": "usJD",
+        "H": "hk09618"
+      },
+      "latest_date": "2026-10-21",
+      "latest_report": "reports/京东/京东研究报告-20261021.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 25,
+      "id": "多氟多",
+      "name": "多氟多",
+      "codes": {
+        "A": "sz002407"
+      },
+      "latest_date": "2026-09-12",
+      "latest_report": "reports/多氟多/多氟多-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 26,
+      "id": "ADP",
+      "name": "ADP",
+      "codes": {
+        "US": "usADP"
+      },
+      "latest_date": "2026-07-30",
+      "latest_report": "reports/ADP/ADP-earnings-FY2026Q4.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 27,
+      "id": "AMD",
+      "name": "AMD",
+      "codes": {
+        "US": "usAMD"
+      },
+      "latest_date": "2026-08-17",
+      "latest_report": "reports/AMD/AMD-earnings-2026Q2.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 28,
+      "id": "Archrock",
+      "name": "Archrock",
+      "codes": {
+        "US": "usAROC"
+      },
+      "latest_date": "2026-08-05",
+      "latest_report": "reports/Archrock/Archrock-research-20260805.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 29,
+      "id": "SLDP",
+      "name": "Solid Power",
+      "codes": {
+        "US": "usSLDP"
+      },
+      "latest_date": "2026-08-05",
+      "latest_report": "reports/SLDP/SLDP-research-20260805.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 30,
+      "id": "Google",
+      "name": "Alphabet/Google",
+      "codes": {
+        "US": "usGOOGL"
+      },
+      "latest_date": "2026-07-23",
+      "latest_report": "reports/Google/Google-checklist-20260723.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 31,
+      "id": "Keyence",
+      "name": "Keyence",
+      "codes": {
+        "JP": "jp6861"
+      },
+      "latest_date": "2026-07-20",
+      "latest_report": "reports/Keyence/最终报告.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 32,
+      "id": "Mastercard",
+      "name": "Mastercard",
+      "codes": {
+        "US": "usMA"
+      },
+      "latest_date": "2026-07-31",
+      "latest_report": "reports/Mastercard/Mastercard-earnings-2026Q2.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 33,
+      "id": "Meta",
+      "name": "Meta",
+      "codes": {
+        "US": "usMETA"
+      },
+      "latest_date": "2026-07-30",
+      "latest_report": "reports/Meta/Meta-earnings-2026Q2.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 34,
+      "id": "NovoNordisk",
+      "name": "Novo Nordisk",
+      "codes": {
+        "US": "usNVO"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/Novo Nordisk/诺和诺德-research-20261031.md",
+      "status": "fresh"
+    },
+    {
+      "order": 35,
+      "id": "Palantir",
+      "name": "Palantir",
+      "codes": {
+        "US": "usPLTR"
+      },
+      "latest_date": "2026-08-31",
+      "latest_report": "reports/Palantir/Palantir-earnings-2026Q2.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 36,
+      "id": "Qualcomm",
+      "name": "Qualcomm",
+      "codes": {
+        "US": "usQCOM"
+      },
+      "latest_date": "2026-07-31",
+      "latest_report": "reports/Qualcomm/Qualcomm-earnings-FY2026Q3.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 37,
+      "id": "Reddit",
+      "name": "Reddit",
+      "codes": {
+        "US": "usRDDT"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/Reddit/Reddit-research-20261031.md",
+      "status": "fresh"
+    },
+    {
+      "order": 38,
+      "id": "lululemon",
+      "name": "lululemon",
+      "codes": {
+        "US": "usLULU"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/lululemon/lululemon-research-20261031.md",
+      "status": "fresh"
+    },
+    {
+      "order": 39,
+      "id": "中国广核",
+      "name": "中国广核",
+      "codes": {
+        "A": "sz003816",
+        "H": "hk01816"
+      },
+      "latest_date": "2026-08-31",
+      "latest_report": "reports/中国广核/中国广核-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 40,
+      "id": "厦门钨业",
+      "name": "厦门钨业",
+      "codes": {
+        "A": "sh600549"
+      },
+      "latest_date": "2026-09-28",
+      "latest_report": "reports/厦门钨业/厦门钨业-research-20260928.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 41,
+      "id": "合盛硅业",
+      "name": "合盛硅业",
+      "codes": {
+        "A": "sh603260"
+      },
+      "latest_date": "2026-07-19",
+      "latest_report": "reports/合盛硅业/最终报告.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 42,
+      "id": "国电南瑞",
+      "name": "国电南瑞",
+      "codes": {
+        "A": "sh600406"
+      },
+      "latest_date": "2026-07-19",
+      "latest_report": "reports/国电南瑞/国电南瑞-checklist-20260719.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 43,
+      "id": "东方电气",
+      "name": "东方电气",
+      "codes": {
+        "A": "sh600875",
+        "H": "hk01072"
+      },
+      "latest_date": "2026-08-03",
+      "latest_report": "reports/东方电气/东方电气-research-20260803.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 44,
+      "id": "立讯精密",
+      "name": "立讯精密",
+      "codes": {
+        "A": "sz002475",
+        "H": "hk02475"
+      },
+      "latest_date": "2026-08-03",
+      "latest_report": "reports/立讯精密/立讯精密-research-20260803.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 45,
+      "id": "极视角",
+      "name": "极视角",
+      "codes": {
+        "H": "hk06636"
+      },
+      "latest_date": "2026-08-31",
+      "latest_report": "reports/极视角/极视角-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 46,
+      "id": "三环集团",
+      "name": "三环集团",
+      "codes": {
+        "A": "sz300408",
+        "H": "hk06951"
+      },
+      "latest_date": "2026-08-03",
+      "latest_report": "reports/三环集团/三环集团-research-20260803.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 47,
+      "id": "中兴通讯",
+      "name": "中兴通讯",
+      "codes": {
+        "A": "sz000063"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/中兴通讯/中兴通讯-earnings-2026H1-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 48,
+      "id": "剑桥科技",
+      "name": "剑桥科技",
+      "codes": {
+        "A": "sh603083",
+        "H": "hk06166"
+      },
+      "latest_date": "2026-08-17",
+      "latest_report": "reports/剑桥科技/剑桥科技-research-20260817.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 49,
+      "id": "哔哩哔哩",
+      "name": "哔哩哔哩",
+      "codes": {
+        "US": "usBILI"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/哔哩哔哩/哔哩哔哩-research-20261031.md",
+      "status": "completed",
+      "new_report": "reports/哔哩哔哩/哔哩哔哩-research-20261031.md",
+      "audit": "PASS: 11随机+12关键历史/估值23项；terminal定稿PASS，两项极端尾部未建模已披露",
+      "tracking": "重点看板更新，不新增台账；旧20260803事件保留关闭接续；原target由台账纠正重点，临时监控OK；台账103/待触发63/已关闭36/已复检4",
+      "limitation": "单季完整FCF、分部毛利、管理层持股独立双核及TAM仍有限；股本法律代理非逐日登记；Q3正式日期未确认。完整H1现金流已补齐"
+    },
+    {
+      "order": 50,
+      "id": "圣邦股份",
+      "name": "圣邦股份",
+      "codes": {
+        "A": "sz300661",
+        "H": "hk03661"
+      },
+      "latest_date": "2026-08-03",
+      "latest_report": "reports/圣邦股份/圣邦股份-research-20260803.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 51,
+      "id": "天齐锂业",
+      "name": "天齐锂业",
+      "codes": {
+        "A": "sz002466"
+      },
+      "latest_date": "2026-08-03",
+      "latest_report": "reports/天齐锂业/天齐锂业-research-20260803.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 52,
+      "id": "赣锋锂业",
+      "name": "赣锋锂业",
+      "codes": {
+        "A": "sz002460",
+        "H": "hk01772"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/赣锋锂业/赣锋锂业-research-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 53,
+      "id": "安克创新",
+      "name": "安克创新",
+      "codes": {
+        "A": "sz300866"
+      },
+      "latest_date": "2026-08-31",
+      "latest_report": "reports/安克创新/安克创新-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 54,
+      "id": "快手",
+      "name": "快手",
+      "codes": {
+        "H": "hk01024"
+      },
+      "latest_date": "2026-10-25",
+      "latest_report": "reports/腾讯快手比较/估值-20261025/腾讯与快手估值及三年十年回报研究报告-20261025.md",
+      "status": "fresh",
+      "previous_latest_report": "reports/快手/快手研究报告-20261020.md",
+      "skip_note": "跨目录识别10/25腾讯/快手实质双公司估值及三年十年研究，旧公司目录10/20非最新；仅按日期跳过，本轮未重新审计，不代表本轮准出。"
+    },
+    {
+      "order": 55,
+      "id": "蓝思科技",
+      "name": "蓝思科技",
+      "codes": {
+        "A": "sz300433",
+        "H": "hk06613"
+      },
+      "latest_date": "2026-08-22",
+      "latest_report": "reports/蓝思科技/蓝思科技-research-20260803.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 56,
+      "id": "迅策",
+      "name": "迅策科技",
+      "codes": {
+        "H": "hk03317"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/迅策/迅策科技-earnings-refresh-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 57,
+      "id": "小米",
+      "name": "小米集团",
+      "codes": {
+        "H": "hk01810"
+      },
+      "latest_date": "2026-08-23",
+      "latest_report": "reports/小米/小米-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 58,
+      "id": "拓荆科技",
+      "name": "拓荆科技",
+      "codes": {
+        "A": "sh688072"
+      },
+      "latest_date": "2026-07-20",
+      "latest_report": "reports/拓荆科技/拓荆科技-checklist-20260720.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 59,
+      "id": "搜狐",
+      "name": "搜狐",
+      "codes": {
+        "US": "usSOHU"
+      },
+      "latest_date": "2026-10-09",
+      "latest_report": "reports/搜狐/搜狐-research-20261009.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 60,
+      "id": "杭叉集团",
+      "name": "杭叉集团",
+      "codes": {
+        "A": "sh603298"
+      },
+      "latest_date": "2026-09-26",
+      "latest_report": "reports/杭叉集团/杭叉集团-research-20260926.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 61,
+      "id": "永新股份",
+      "name": "永新股份",
+      "codes": {
+        "A": "sz002014"
+      },
+      "latest_date": "2026-04-25",
+      "latest_report": "reports/永新股份-deepseek分析/最终报告.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 62,
+      "id": "汇川技术",
+      "name": "汇川技术",
+      "codes": {
+        "A": "sz300124"
+      },
+      "latest_date": "2026-09-28",
+      "latest_report": "reports/汇川技术/汇川技术-research-20260928.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 63,
+      "id": "海尔智家",
+      "name": "海尔智家",
+      "codes": {
+        "A": "sh600690",
+        "H": "hk06690"
+      },
+      "latest_date": "2026-04-27",
+      "latest_report": "reports/海尔智家-deepseek分析/海尔智家-最终报告-20260427.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 64,
+      "id": "海康威视",
+      "name": "海康威视",
+      "codes": {
+        "A": "sz002415"
+      },
+      "latest_date": "2026-07-07",
+      "latest_report": "reports/海康威视/最终报告.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 65,
+      "id": "深演智能",
+      "name": "深演智能",
+      "codes": {
+        "H": "hk02723"
+      },
+      "latest_date": "2026-07-07",
+      "latest_report": "reports/深演智能/最终报告.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 66,
+      "id": "腾讯音乐",
+      "name": "腾讯音乐",
+      "codes": {
+        "US": "usTME"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/腾讯音乐/腾讯音乐-thesis-drift-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 67,
+      "id": "茅台",
+      "name": "贵州茅台",
+      "codes": {
+        "A": "sh600519"
+      },
+      "latest_date": "2026-10-31",
+      "latest_report": "reports/茅台/贵州茅台-earnings-2026Q3-20261031.md",
+      "status": "fresh"
+    },
+    {
+      "order": 68,
+      "id": "赛轮轮胎",
+      "name": "赛轮轮胎",
+      "codes": {
+        "A": "sh601058"
+      },
+      "latest_date": "2026-08-31",
+      "latest_report": "reports/赛轮轮胎/赛轮轮胎-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 69,
+      "id": "长光辰芯",
+      "name": "长光辰芯",
+      "codes": {
+        "H": "hk03277"
+      },
+      "latest_date": "2026-04-09",
+      "latest_report": "reports/长光辰芯/长光辰芯-team-20260409/最终报告.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 70,
+      "id": "雅克科技",
+      "name": "雅克科技",
+      "codes": {
+        "A": "sz002409"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/雅克科技/雅克科技-earnings-2026H1-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 71,
+      "id": "NVIDIA",
+      "name": "英伟达",
+      "codes": {
+        "US": "usNVDA"
+      },
+      "latest_date": "2026-09-07",
+      "latest_report": "reports/英伟达/英伟达商业模式与十年利润研究-20260907.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 72,
+      "id": "德明利",
+      "name": "德明利",
+      "codes": {
+        "A": "sz001309"
+      },
+      "latest_date": "2026-08-26",
+      "latest_report": "reports/德明利/德明利-research-20260826.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 73,
+      "id": "亨通光电",
+      "name": "亨通光电",
+      "codes": {
+        "A": "sh600487"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/亨通光电/亨通光电-earnings-2026H1-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 74,
+      "id": "Intel",
+      "name": "英特尔",
+      "codes": {
+        "US": "usINTC"
+      },
+      "latest_date": "2026-08-26",
+      "latest_report": "reports/Intel/Intel-research-20260826.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 75,
+      "id": "沃尔玛",
+      "name": "Walmart",
+      "codes": {
+        "US": "usWMT"
+      },
+      "latest_date": "2026-08-27",
+      "latest_report": "reports/沃尔玛/沃尔玛-research-20260827.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 76,
+      "id": "nVent",
+      "name": "nVent Electric",
+      "codes": {
+        "US": "usNVT"
+      },
+      "latest_date": "2026-08-29",
+      "latest_report": "reports/nVent/nVent-research-20260829.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 77,
+      "id": "澜起科技",
+      "name": "澜起科技",
+      "codes": {
+        "A": "sh688008",
+        "H": "hk06809"
+      },
+      "latest_date": "2026-08-31",
+      "latest_report": "reports/澜起科技/澜起科技-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 78,
+      "id": "云迹科技",
+      "name": "云迹科技",
+      "codes": {
+        "H": "hk02670"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/云迹科技/云迹科技-earnings-refresh-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 79,
+      "id": "Adobe",
+      "name": "Adobe",
+      "codes": {
+        "US": "usADBE"
+      },
+      "latest_date": "2026-09-12",
+      "latest_report": "reports/Adobe/Adobe-earnings-2026Q3.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 80,
+      "id": "Booking",
+      "name": "Booking Holdings",
+      "codes": {
+        "US": "usBKNG"
+      },
+      "latest_date": "2026-05-16",
+      "latest_report": "reports/Booking/最终报告.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 81,
+      "id": "MINIMAX",
+      "name": "MiniMax",
+      "codes": {
+        "H": "hk00100"
+      },
+      "latest_date": "2026-10-20",
+      "latest_report": "reports/MINIMAX/MiniMax研究报告-20261020.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 82,
+      "id": "Progressive",
+      "name": "Progressive",
+      "codes": {
+        "US": "usPGR"
+      },
+      "latest_date": "2026-09-27",
+      "latest_report": "reports/Progressive/Progressive-research-20260927.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 83,
+      "id": "Uber",
+      "name": "Uber",
+      "codes": {
+        "US": "usUBER"
+      },
+      "latest_date": "2026-05-16",
+      "latest_report": "reports/Uber/最终报告.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 84,
+      "id": "思格新能",
+      "name": "思格新能",
+      "codes": {
+        "H": "hk06656"
+      },
+      "latest_date": "2026-10-08",
+      "latest_report": "reports/思格新能/思格新能-earnings-refresh-20261008.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 85,
+      "id": "深科技",
+      "name": "深科技",
+      "codes": {
+        "A": "sz000021"
+      },
+      "latest_date": "2026-07-20",
+      "latest_report": "reports/深科技/深科技-checklist-20260720.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 86,
+      "id": "群核科技",
+      "name": "群核科技",
+      "codes": {
+        "H": "hk00068"
+      },
+      "latest_date": "2026-08-31",
+      "latest_report": "reports/群核科技/群核科技-earnings-2026H1.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 87,
+      "id": "CRDO",
+      "name": "Credo Technology",
+      "codes": {
+        "US": "usCRDO"
+      },
+      "latest_date": "2026-09-03",
+      "latest_report": "reports/Credo/Credo-research-20260903.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 88,
+      "id": "PL",
+      "name": "Planet Labs PBC",
+      "codes": {
+        "US": "usPL"
+      },
+      "latest_date": "2026-09-08",
+      "latest_report": "reports/Planet Labs/Planet Labs-research-20260908.md",
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 89,
+      "id": "UFO",
+      "name": "Procure Space ETF",
+      "codes": {
+        "US": "usUFO"
+      },
+      "latest_date": null,
+      "latest_report": null,
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 90,
+      "id": "NOC",
+      "name": "Northrop Grumman",
+      "codes": {
+        "US": "usNOC"
+      },
+      "latest_date": null,
+      "latest_report": null,
+      "status": "deferred_by_user"
+    },
+    {
+      "order": 91,
+      "id": "ASTS",
+      "name": "AST SpaceMobile",
+      "codes": {
+        "US": "usASTS"
+      },
+      "latest_date": null,
+      "latest_report": null,
+      "status": "deferred_by_user"
+    }
+  ],
+  "skip_policy": "fresh仅表示已有一周内研究文件，按日期跳过；本轮未重新审计这些既有文件，不代表本轮准出",
+  "priority_scope": "每日监控页面可见且在重点标的看板主表或triggers.group=重点中；最新研究文件早于2026-10-24。哔哩哔哩已在看板但group仍台账，纳入优先。",
+  "priority_ids": [
+    "拼多多",
+    "哔哩哔哩",
+    "美团",
+    "微软",
+    "SK海力士",
+    "Accenture",
+    "中国平安",
+    "上海复旦",
+    "中芯国际"
+  ],
+  "priority_requested_at": "2026-10-31 Asia/Shanghai",
+  "priority_counts": {
+    "completed": 9
+  },
+  "priority_completed_at": "2026-10-31 Asia/Shanghai",
+  "execution_control": {
+    "requested_at": "2026-10-31T15:36:28+08:00",
+    "stop_after_target_id": "标普500",
+    "allow_new_targets": false,
+    "instruction": "用户要求：继续处理完标普500（VOO）后，本轮停止；其余标的先不处理。允许完成VOO报告、审计及必要监控登记验证，不得启动其他标的；恢复须有用户后续明确指令。",
+    "deferred_target_count": 66,
+    "completed_target_id": "标普500",
+    "completed_at": "2026-10-31T16:08:04+08:00",
+    "remaining_action": "暂缓66个标的；等待用户后续明确恢复指令"
+  },
+  "execution_status": "stopped_after_requested_target",
+  "stopped_at": "2026-10-31T16:08:04+08:00"
+}

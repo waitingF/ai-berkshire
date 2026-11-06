@@ -1,0 +1,260 @@
+{
+  "extract_stdout": "======================================================================\n报告数据抽检清单\n文件：reports/哔哩哔哩/哔哩哔哩-research-20261031.md\n总提取数据点：67  |  抽样比例：15%  |  抽检数量：11\n随机种子：20261031（可用于复现同一批样本）\n======================================================================\n\n ID     行号  数据标签                                          报告值  单位\n───  ─────  ───────────────────────────────────  ────────────  ──────\n  3     48  GAAP归母 · 2025H1                              0.21  \n 10     51  无形资产现金购置 · 2026H1                            0.74  \n 14     53  SBC · 2026H1                                 0.60  \n 15     92  规模成本 · 可核证据与反证                              20.86  %\n 16    108  广告效率阶段性见顶、流量无增长 · 观察信号与应对                   10.00  %\n 31    179  基准 · 三年退出PE                                 20.00  \n 33    179  基准 · 按人民币9%折现今日值（固定汇率）                      13.12  \n 40    190  悲观 · 今日每ADS价值（美元）                            6.22  \n 41    191  基准 · 起始经营FCFF（亿元）                           20.00  \n 49    192  乐观 · 加入净金融资产（亿元）                           120.00  \n 66    250  卖出／重做信号 · 动作与必要证据                           10.00  %\n\n↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：\n  美股：macrotrends.net（主）+ stockanalysis.com（副）\n  港股：aastocks.com（主）+ macrotrends ADR（副）\n  A股： eastmoney.com（主）+ cninfo.com.cn（副）\n\n抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：\n\n[\n  {\n    \"id\": 3,\n    \"label\": \"GAAP归母 · 2025H1\",\n    \"reported_value\": 0.21,\n    \"unit\": \"\",\n    \"line_number\": 48,\n    \"raw_text\": \"| GAAP归母 | 0.210 | 0.554 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 10,\n    \"label\": \"无形资产现金购置 · 2026H1\",\n    \"reported_value\": 0.738,\n    \"unit\": \"\",\n    \"line_number\": 51,\n    \"raw_text\": \"| 无形资产现金购置 | 0.593 | 0.738 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 14,\n    \"label\": \"SBC · 2026H1\",\n    \"reported_value\": 0.599,\n    \"unit\": \"\",\n    \"line_number\": 53,\n    \"raw_text\": \"| SBC | 0.576 | 0.599 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 15,\n    \"label\": \"规模成本 · 可核证据与反证\",\n    \"reported_value\": 20.86,\n    \"unit\": \"%\",\n    \"line_number\": 92,\n    \"raw_text\": \"| 规模成本 | 有改善，未成熟 | 五年毛利率从20.86%到36.62%；规模上升仍可能被内容与AI设备成本抵消 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 16,\n    \"label\": \"广告效率阶段性见顶、流量无增长 · 观察信号与应对\",\n    \"reported_value\": 10.0,\n    \"unit\": \"%\",\n    \"line_number\": 108,\n    \"raw_text\": \"| 广告效率阶段性见顶、流量无增长 | 中 | 利润杠杆逆转 | 广告<10%且DAU或时长同步走弱，停止建仓复核 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 31,\n    \"label\": \"基准 · 三年退出PE\",\n    \"reported_value\": 20.0,\n    \"unit\": \"\",\n    \"line_number\": 179,\n    \"raw_text\": \"| 基准 | +15% | 20 | 16.99 | 13.12 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 33,\n    \"label\": \"基准 · 按人民币9%折现今日值（固定汇率）\",\n    \"reported_value\": 13.12,\n    \"unit\": \"\",\n    \"line_number\": 179,\n    \"raw_text\": \"| 基准 | +15% | 20 | 16.99 | 13.12 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 40,\n    \"label\": \"悲观 · 今日每ADS价值（美元）\",\n    \"reported_value\": 6.22,\n    \"unit\": \"\",\n    \"line_number\": 190,\n    \"raw_text\": \"| 悲观 | 10 | 0%／0% | 0% | 60 | 6.22 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 41,\n    \"label\": \"基准 · 起始经营FCFF（亿元）\",\n    \"reported_value\": 20.0,\n    \"unit\": \"\",\n    \"line_number\": 191,\n    \"raw_text\": \"| 基准 | 20 | +3%／+2% | 1.5% | 100 | 14.28 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 49,\n    \"label\": \"乐观 · 加入净金融资产（亿元）\",\n    \"reported_value\": 120.0,\n    \"unit\": \"\",\n    \"line_number\": 192,\n    \"raw_text\": \"| 乐观 | 35 | +8%／+4% | 2% | 120 | 29.83 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 66,\n    \"label\": \"卖出／重做信号 · 动作与必要证据\",\n    \"reported_value\": 10.0,\n    \"unit\": \"%\",\n    \"line_number\": 250,\n    \"raw_text\": \"| 卖出／重做信号 | 广告<10%且用户时长转弱；毛利率连续两季<35%；Q4游戏仍下降；现金持续被常态投入消耗；重大治理或VIE事实 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  }\n]\n",
+  "checks": [
+    {
+      "id": 3,
+      "label": "GAAP归母 · 2025H1",
+      "reported_value": 0.21,
+      "unit": "",
+      "line_number": 48,
+      "raw_text": "| GAAP归母 | 0.210 | 0.554 |",
+      "fetched_value": 0.2099,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
+      "fetched_value2": 0.2099,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/income-statement/?p=quarterly"
+    },
+    {
+      "id": 10,
+      "label": "无形资产现金购置 · 2026H1",
+      "reported_value": 0.738,
+      "unit": "",
+      "line_number": 51,
+      "raw_text": "| 无形资产现金购置 | 0.593 | 0.738 |",
+      "fetched_value": 0.738135,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
+      "fetched_value2": null,
+      "fetched_source2": "独立标准化平台未更新H1无形购置，保留一手缺口"
+    },
+    {
+      "id": 14,
+      "label": "SBC · 2026H1",
+      "reported_value": 0.599,
+      "unit": "",
+      "line_number": 53,
+      "raw_text": "| SBC | 0.576 | 0.599 |",
+      "fetched_value": 0.599101,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
+      "fetched_value2": null,
+      "fetched_source2": "完整中报SBC；非独立双核"
+    },
+    {
+      "id": 15,
+      "label": "规模成本 · 可核证据与反证",
+      "reported_value": 20.86,
+      "unit": "%",
+      "line_number": 92,
+      "raw_text": "| 规模成本 | 有改善，未成熟 | 五年毛利率从20.86%到36.62%；规模上升仍可能被内容与AI设备成本抵消 |",
+      "fetched_value": 20.8585065667,
+      "fetched_source": "2023审计20F／financial_rigor",
+      "fetched_value2": 20.86,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/"
+    },
+    {
+      "id": 16,
+      "label": "广告效率阶段性见顶、流量无增长 · 观察信号与应对",
+      "reported_value": 10.0,
+      "unit": "%",
+      "line_number": 108,
+      "raw_text": "| 广告效率阶段性见顶、流量无增长 | 中 | 利润杠杆逆转 | 广告<10%且DAU或时长同步走弱，停止建仓复核 |",
+      "fetched_value": 10,
+      "fetched_source": "研究红线阈值，非外部事实",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 31,
+      "label": "基准 · 三年退出PE",
+      "reported_value": 20.0,
+      "unit": "",
+      "line_number": 179,
+      "raw_text": "| 基准 | +15% | 20 | 16.99 | 13.12 |",
+      "fetched_value": 20,
+      "fetched_source": "三年模型基准退出PE输入",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 33,
+      "label": "基准 · 按人民币9%折现今日值（固定汇率）",
+      "reported_value": 13.12,
+      "unit": "",
+      "line_number": 179,
+      "raw_text": "| 基准 | +15% | 20 | 16.99 | 13.12 |",
+      "fetched_value": 13.120364845635308,
+      "fetched_source": "financial_rigor三情景及Decimal",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 40,
+      "label": "悲观 · 今日每ADS价值（美元）",
+      "reported_value": 6.22,
+      "unit": "",
+      "line_number": 190,
+      "raw_text": "| 悲观 | 10 | 0%／0% | 0% | 60 | 6.22 |",
+      "fetched_value": 6.218232536336472,
+      "fetched_source": "financial_rigor逐年FCFF及Decimal",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 41,
+      "label": "基准 · 起始经营FCFF（亿元）",
+      "reported_value": 20.0,
+      "unit": "",
+      "line_number": 191,
+      "raw_text": "| 基准 | 20 | +3%／+2% | 1.5% | 100 | 14.28 |",
+      "fetched_value": 20,
+      "fetched_source": "正常化经营FCFF研究输入，非管理层指引",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 49,
+      "label": "乐观 · 加入净金融资产（亿元）",
+      "reported_value": 120.0,
+      "unit": "",
+      "line_number": 192,
+      "raw_text": "| 乐观 | 35 | +8%／+4% | 2% | 120 | 29.83 |",
+      "fetched_value": 120,
+      "fetched_source": "研究净金融资产折扣输入，非当期事实",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 66,
+      "label": "卖出／重做信号 · 动作与必要证据",
+      "reported_value": 10.0,
+      "unit": "%",
+      "line_number": 250,
+      "raw_text": "| 卖出／重做信号 | 广告<10%且用户时长转弱；毛利率连续两季<35%；Q4游戏仍下降；现金持续被常态投入消耗；重大治理或VIE事实 |",
+      "fetched_value": 10,
+      "fetched_source": "研究红线阈值，非外部事实",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 100,
+      "label": "2025收入",
+      "reported_value": 30.348,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 30.347766,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm",
+      "fetched_value2": 30.348,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/"
+    },
+    {
+      "id": 101,
+      "label": "2025GAAP归母",
+      "reported_value": 1.194,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 1.193531,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm",
+      "fetched_value2": 1.194,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/"
+    },
+    {
+      "id": 102,
+      "label": "2025CFO",
+      "reported_value": 7.147,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 7.147108,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm",
+      "fetched_value2": 7.147,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/cash-flow-statement/"
+    },
+    {
+      "id": 103,
+      "label": "2025设备购置",
+      "reported_value": 0.513,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 0.512858,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm",
+      "fetched_value2": 0.51286,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/cash-flow-statement/"
+    },
+    {
+      "id": 104,
+      "label": "2025无形购置",
+      "reported_value": 1.314,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 1.314441,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm",
+      "fetched_value2": 1.314,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/cash-flow-statement/"
+    },
+    {
+      "id": 105,
+      "label": "六月现金定存短投",
+      "reported_value": 24.3,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 24.299706,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
+      "fetched_value2": 24.3,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/"
+    },
+    {
+      "id": 106,
+      "label": "六月有息债务",
+      "reported_value": 9.514,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 9.51429,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
+      "fetched_value2": 9.514,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/"
+    },
+    {
+      "id": 107,
+      "label": "Q2GAAP归母",
+      "reported_value": 0.344,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 0.343729,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526371261/d434015dex991.htm",
+      "fetched_value2": 0.34373,
+      "fetched_source2": "https://stockanalysis.com/stocks/bili/financials/income-statement/?p=quarterly"
+    },
+    {
+      "id": 108,
+      "label": "10/30价格",
+      "reported_value": 12.68,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 12.68,
+      "fetched_source": "https://stockanalysis.com/stocks/bili/history/",
+      "fetched_value2": 12.68,
+      "fetched_source2": "https://equibles.com/stocks/bili/short-interest"
+    },
+    {
+      "id": 109,
+      "label": "经济股本代理百万股",
+      "reported_value": 413.339206,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 413.339206,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526436108/d32541dex992.htm",
+      "fetched_value2": 413.34,
+      "fetched_source2": "https://equibles.com/stocks/bili/short-interest"
+    },
+    {
+      "id": 110,
+      "label": "十年基准终值PE",
+      "reported_value": 12,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 12,
+      "fetched_source": "terminal_value pe实际输出",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 111,
+      "label": "十年基准回报代理",
+      "reported_value": 4.49,
+      "unit": "依字段为十亿元人民币、百万股、美元或百分数",
+      "fetched_value": 4.485245066728595,
+      "fetched_source": "terminal_value irr实际输出",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    }
+  ],
+  "verdict_exit": 0,
+  "verdict_stdout": "======================================================================\n\u001b[1m报告数据抽检 — 准出/打回判决\u001b[0m\n报告：哔哩哔哩-research-20261031.md\n======================================================================\n\n  \u001b[92m✅ 通过\u001b[0m [ 3] GAAP归母 · 2025H1                      报告:         0.21 \n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf: 0.21 (偏差 0.05%)  |  https://stockanalysis.com/stocks/bili/financials/income-statement/?p=quarterly: 0.21 (偏差 0.05%)\n  \u001b[92m✅ 通过\u001b[0m [10] 无形资产现金购置 · 2026H1                    报告:         0.74 \n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf: 0.74 (偏差 0.02%)\n  \u001b[92m✅ 通过\u001b[0m [14] SBC · 2026H1                         报告:         0.60 \n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf: 0.60 (偏差 0.02%)\n  \u001b[92m✅ 通过\u001b[0m [15] 规模成本 · 可核证据与反证                       报告:        20.86 %\n                                                    2023审计20F／financial_rigor: 20.86 (偏差 0.01%)  |  https://stockanalysis.com/stocks/bili/financials/: 20.86 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [16] 广告效率阶段性见顶、流量无增长 · 观察信号与应对            报告:        10.00 %\n                                                    研究红线阈值，非外部事实: 10.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [31] 基准 · 三年退出PE                          报告:        20.00 \n                                                    三年模型基准退出PE输入: 20.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [33] 基准 · 按人民币9%折现今日值（固定汇率）               报告:        13.12 \n                                                    financial_rigor三情景及Decimal: 13.12 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [40] 悲观 · 今日每ADS价值（美元）                    报告:         6.22 \n                                                    financial_rigor逐年FCFF及Decimal: 6.22 (偏差 0.03%)\n  \u001b[92m✅ 通过\u001b[0m [41] 基准 · 起始经营FCFF（亿元）                    报告:        20.00 \n                                                    正常化经营FCFF研究输入，非管理层指引: 20.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [49] 乐观 · 加入净金融资产（亿元）                     报告:       120.00 \n                                                    研究净金融资产折扣输入，非当期事实: 120.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [66] 卖出／重做信号 · 动作与必要证据                    报告:        10.00 %\n                                                    研究红线阈值，非外部事实: 10.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [100] 2025收入                               报告:        30.35 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm: 30.35 (偏差 0.00%)  |  https://stockanalysis.com/stocks/bili/financials/: 30.35 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [101] 2025GAAP归母                           报告:         1.19 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm: 1.19 (偏差 0.04%)  |  https://stockanalysis.com/stocks/bili/financials/: 1.19 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [102] 2025CFO                              报告:         7.15 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm: 7.15 (偏差 0.00%)  |  https://stockanalysis.com/stocks/bili/financials/cash-flow-statement/: 7.15 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [103] 2025设备购置                             报告:         0.51 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm: 0.51 (偏差 0.03%)  |  https://stockanalysis.com/stocks/bili/financials/cash-flow-statement/: 0.51 (偏差 0.03%)\n  \u001b[92m✅ 通过\u001b[0m [104] 2025无形购置                             报告:         1.31 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526157842/d91984d20f.htm: 1.31 (偏差 0.03%)  |  https://stockanalysis.com/stocks/bili/financials/cash-flow-statement/: 1.31 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [105] 六月现金定存短投                             报告:        24.30 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf: 24.30 (偏差 0.00%)  |  https://stockanalysis.com/stocks/bili/financials/: 24.30 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [106] 六月有息债务                               报告:         9.51 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf: 9.51 (偏差 0.00%)  |  https://stockanalysis.com/stocks/bili/financials/: 9.51 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [107] Q2GAAP归母                             报告:         0.34 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526371261/d434015dex991.htm: 0.34 (偏差 0.08%)  |  https://stockanalysis.com/stocks/bili/financials/income-statement/?p=quarterly: 0.34 (偏差 0.08%)\n  \u001b[92m✅ 通过\u001b[0m [108] 10/30价格                              报告:        12.68 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://stockanalysis.com/stocks/bili/history/: 12.68 (偏差 0.00%)  |  https://equibles.com/stocks/bili/short-interest: 12.68 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [109] 经济股本代理百万股                            报告:       413.34 依字段为十亿元人民币、百万股、美元或百分数\n                                                    https://www.sec.gov/Archives/edgar/data/1723690/000119312526436108/d32541dex992.htm: 413.34 (偏差 0.00%)  |  https://equibles.com/stocks/bili/short-interest: 413.34 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [110] 十年基准终值PE                             报告:        12.00 依字段为十亿元人民币、百万股、美元或百分数\n                                                    terminal_value pe实际输出: 12.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [111] 十年基准回报代理                             报告:         4.49 依字段为十亿元人民币、百万股、美元或百分数\n                                                    terminal_value irr实际输出: 4.49 (偏差 0.11%)\n\n----------------------------------------------------------------------\n  抽检总数: 23  |  通过: \u001b[92m23\u001b[0m  |  警告: \u001b[93m0\u001b[0m  |  不通过: \u001b[91m0\u001b[0m\n\n\u001b[1m\u001b[92m【准出】所有抽检数据通过，报告可发布。\u001b[0m\n======================================================================\n",
+  "verdict_stderr": ""
+}

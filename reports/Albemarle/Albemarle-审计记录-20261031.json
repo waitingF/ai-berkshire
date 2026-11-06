@@ -1,0 +1,162 @@
+{
+  "report": "reports/Albemarle/Albemarle-research-20261031.md",
+  "seed": 20261031,
+  "ratio": 0.15,
+  "total_extracted": 51,
+  "random_sample_count": 8,
+  "supplemental_fact_checks": 5,
+  "checks": [
+    {
+      "id": 3,
+      "label": "普通股市值 · 本次复算",
+      "reported_value": 10738.46,
+      "unit": "",
+      "raw_text": "| 普通股市值 | 10,738.460百万美元 | 91美元乘最近披露普通股数 |",
+      "line_number": 142,
+      "fetched_value": 10738.460187,
+      "fetched_source": "Decimal:91*118005057/1e6",
+      "kind": "derived"
+    },
+    {
+      "id": 5,
+      "label": "TTM机械PE · 本次复算",
+      "reported_value": 185.71,
+      "unit": "倍",
+      "raw_text": "| TTM机械PE | 185.71倍 | EPS0.49已取整，不能当中周期估值 |",
+      "line_number": 143,
+      "fetched_value": 185.71428571428572,
+      "fetched_source": "Decimal:91/0.49",
+      "kind": "derived"
+    },
+    {
+      "id": 16,
+      "label": "乐观 · 第三年股价",
+      "reported_value": 252.05,
+      "unit": "",
+      "raw_text": "| 乐观 | 20% | +26% | 18倍 | 252.05美元 | 189.37美元 | +176.98% |",
+      "line_number": 159,
+      "fetched_value": 252.047376,
+      "fetched_source": "Decimal:7*1.26^3*18",
+      "kind": "derived"
+    },
+    {
+      "id": 20,
+      "label": "中性 · EPS年增速",
+      "reported_value": 5.0,
+      "unit": "%",
+      "raw_text": "| 中性 | 50% | +5% | 13倍 | 105.34美元 | 79.15美元 | +15.76% |",
+      "line_number": 160,
+      "fetched_value": 5.0,
+      "fetched_source": "本报告声明的增长假设",
+      "kind": "assumption"
+    },
+    {
+      "id": 25,
+      "label": "悲观 · 概率",
+      "reported_value": 30.0,
+      "unit": "%",
+      "raw_text": "| 悲观 | 30% | -29% | 9倍 | 22.55美元 | 16.94美元 | -75.22% |",
+      "line_number": 161,
+      "fetched_value": 30.0,
+      "fetched_source": "本报告声明的概率假设",
+      "kind": "assumption"
+    },
+    {
+      "id": 33,
+      "label": "悲观 · 公式终值PE",
+      "reported_value": 10.0,
+      "unit": "倍",
+      "raw_text": "| 悲观 | 30% | 2美元 | 0.0% | 10.0个百分点 | 10.00倍 | -13.06% |",
+      "line_number": 173,
+      "fetched_value": 10.0,
+      "fetched_source": "Decimal:(1-0/.13)/(.10-0)",
+      "kind": "derived"
+    },
+    {
+      "id": 47,
+      "label": "11%补检 · 期望年化近似",
+      "reported_value": -1.97,
+      "unit": "%",
+      "raw_text": "| 11%补检 | -1.97% | 未通过，处于美元合理区间 |",
+      "line_number": 183,
+      "fetched_value": -1.9710207628426695,
+      "fetched_source": "Decimal按同一十年利润与r=11%独立重算",
+      "kind": "derived"
+    },
+    {
+      "id": 49,
+      "label": "空仓者 · 建议",
+      "reported_value": 91.0,
+      "unit": "",
+      "raw_text": "| 空仓者 | 91美元观望；60—75美元且Q3量价、现金与资本纪律均可接受时，才研究性分批 |",
+      "line_number": 214,
+      "fetched_value": 91.0,
+      "fetched_source": "https://stockanalysis.com/stocks/alb/history/",
+      "kind": "fact",
+      "fetched_value2": 91,
+      "fetched_source2": "https://query1.finance.yahoo.com/v8/finance/chart/ALB?range=5d&interval=1d"
+    },
+    {
+      "id": 1001,
+      "label": "FY2025收入",
+      "reported_value": 5142.733,
+      "unit": "million USD",
+      "fetched_value": 5142.733,
+      "fetched_value2": 5143,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000018/alb-20251231.htm",
+      "fetched_source2": "https://stockanalysis.com/stocks/alb/financials/income-statement/",
+      "kind": "fact"
+    },
+    {
+      "id": 1002,
+      "label": "FY2025公司归母净利",
+      "reported_value": -510.628,
+      "unit": "million USD",
+      "fetched_value": -510.628,
+      "fetched_value2": -510.63,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000018/alb-20251231.htm",
+      "fetched_source2": "https://stockanalysis.com/stocks/alb/financials/income-statement/",
+      "kind": "fact"
+    },
+    {
+      "id": 1003,
+      "label": "FY2025普通股归母净利",
+      "reported_value": -677.378,
+      "unit": "million USD",
+      "fetched_value": -677.378,
+      "fetched_value2": -677.38,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000018/alb-20251231.htm",
+      "fetched_source2": "https://stockanalysis.com/stocks/alb/financials/income-statement/",
+      "kind": "fact"
+    },
+    {
+      "id": 1004,
+      "label": "Q2现金",
+      "reported_value": 1631.688,
+      "unit": "million USD",
+      "fetched_value": 1631.688,
+      "fetched_value2": 1632,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000102/alb-20260630.htm",
+      "fetched_source2": "https://stockanalysis.com/stocks/alb/financials/balance-sheet/",
+      "kind": "fact"
+    },
+    {
+      "id": 1005,
+      "label": "2023 FCF",
+      "reported_value": -827.959,
+      "unit": "million USD",
+      "fetched_value": -827.959,
+      "fetched_value2": -827.96,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000018/alb-20251231.htm",
+      "fetched_source2": "https://stockanalysis.com/stocks/alb/financials/cash-flow-statement/",
+      "kind": "fact"
+    }
+  ],
+  "verdict": "PASS",
+  "warnings": 0,
+  "failures": 0,
+  "final_terminal_audit": "PASS",
+  "policy": "历史事实双源；模型输入仅核声明一致，派生值另算，不把预测当已被事实验证",
+  "report_sha256": "6132bd532dd030900615214532c2e08f83ce9a5bc793431bf8463d0126bb8cbd",
+  "post_audit_edits": "仅更正电话会北京时间、添加既有工具原始输出；模型参数及随机抽样51项未变，终值定稿参数复审保持PASS"
+}

@@ -1,0 +1,193 @@
+{
+  "random_extract_stdout": "======================================================================\n报告数据抽检清单\n文件：reports/中国核电/中国核电-research-20261031.md\n总提取数据点：57  |  抽样比例：15%  |  抽检数量：9\n随机种子：20261031（可用于复现同一批样本）\n======================================================================\n\n ID     行号  数据标签                                          报告值  单位\n───  ─────  ───────────────────────────────────  ────────────  ──────\n  3     52  核电 · 2026H1收入                              307.90  \n  5     53  风电 · 2025收入                                 54.44  \n 14     55  其他及服务 · 2026H1收入                            11.16  \n 16    122  股息和回购 · 已见结果                                 0.18  \n 20    159  乐观 · 三年退出PE                                 22.00  \n 25    160  中性 · 三年后EPS                                  0.50  \n 33    161  悲观 · 三年股息                                    0.43  \n 47    179  乐观 · 退出PE                                   12.96  \n 49    186  7%〔另做±1pp〕 · 期望回报代理                          0.59  %\n\n↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：\n  美股：macrotrends.net（主）+ stockanalysis.com（副）\n  港股：aastocks.com（主）+ macrotrends ADR（副）\n  A股： eastmoney.com（主）+ cninfo.com.cn（副）\n\n抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：\n\n[\n  {\n    \"id\": 3,\n    \"label\": \"核电 · 2026H1收入\",\n    \"reported_value\": 307.9,\n    \"unit\": \"\",\n    \"line_number\": 52,\n    \"raw_text\": \"| 核电 | 654.53 | 41.66% | 307.90 | 38.88% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 5,\n    \"label\": \"风电 · 2025收入\",\n    \"reported_value\": 54.44,\n    \"unit\": \"\",\n    \"line_number\": 53,\n    \"raw_text\": \"| 风电 | 54.44 | 41.87% | 25.98 | 30.66% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 14,\n    \"label\": \"其他及服务 · 2026H1收入\",\n    \"reported_value\": 11.16,\n    \"unit\": \"\",\n    \"line_number\": 55,\n    \"raw_text\": \"| 其他及服务 | 24.54 | 口径混合 | 11.16 | 口径混合 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 16,\n    \"label\": \"股息和回购 · 已见结果\",\n    \"reported_value\": 0.18,\n    \"unit\": \"\",\n    \"line_number\": 122,\n    \"raw_text\": \"| 股息和回购 | 年度每股股息0.18元；新1—2亿元回购计划 | 计划不等于实际完成，不能提前视作注销增厚 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 20,\n    \"label\": \"乐观 · 三年退出PE\",\n    \"reported_value\": 22.0,\n    \"unit\": \"\",\n    \"line_number\": 159,\n    \"raw_text\": \"| 乐观 | 20% | 0.6168 | 22 | 13.57 | 0.6236 | 11.30 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 25,\n    \"label\": \"中性 · 三年后EPS\",\n    \"reported_value\": 0.5015,\n    \"unit\": \"\",\n    \"line_number\": 160,\n    \"raw_text\": \"| 中性 | 12% | 0.5015 | 18 | 9.03 | 0.5396 | 7.63 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 33,\n    \"label\": \"悲观 · 三年股息\",\n    \"reported_value\": 0.4283,\n    \"unit\": \"\",\n    \"line_number\": 161,\n    \"raw_text\": \"| 悲观 | 0% | 0.3569 | 14 | 5.00 | 0.4283 | 4.33 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 47,\n    \"label\": \"乐观 · 退出PE\",\n    \"reported_value\": 12.96,\n    \"unit\": \"\",\n    \"line_number\": 179,\n    \"raw_text\": \"| 乐观 | 12% | 228.02 | 2.0% | 12.96 | 4.90% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 49,\n    \"label\": \"7%〔另做±1pp〕 · 期望回报代理\",\n    \"reported_value\": 0.59,\n    \"unit\": \"%\",\n    \"line_number\": 186,\n    \"raw_text\": \"| 7%〔另做±1pp〕 | +0.59% | 否 | 分母满足要求 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  }\n]\n",
+  "checks": [
+    {
+      "id": 3,
+      "label": "核电 · 2026H1收入",
+      "reported_value": 307.9,
+      "unit": "",
+      "line_number": 52,
+      "raw_text": "| 核电 | 654.53 | 41.66% | 307.90 | 38.88% |",
+      "fetched_value": 307.8985683271,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531682.PDF",
+      "fetched_value2": 307.8985683271,
+      "fetched_source2": "https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FN_MAINOP&columns=ALL&filter=(SECUCODE%3D%22601985.SH%22)"
+    },
+    {
+      "id": 5,
+      "label": "风电 · 2025收入",
+      "reported_value": 54.44,
+      "unit": "",
+      "line_number": 53,
+      "raw_text": "| 风电 | 54.44 | 41.87% | 25.98 | 30.66% |",
+      "fetched_value": 54.4424799196,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257680.PDF",
+      "fetched_value2": 54.4424799196,
+      "fetched_source2": "https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FN_MAINOP&columns=ALL&filter=(SECUCODE%3D%22601985.SH%22)"
+    },
+    {
+      "id": 14,
+      "label": "其他及服务 · 2026H1收入",
+      "reported_value": 11.16,
+      "unit": "",
+      "line_number": 55,
+      "raw_text": "| 其他及服务 | 24.54 | 口径混合 | 11.16 | 口径混合 |",
+      "fetched_value": 11.1626396036,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531682.PDF",
+      "fetched_value2": 11.1626396036,
+      "fetched_source2": "https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FN_MAINOP&columns=ALL&filter=(SECUCODE%3D%22601985.SH%22)"
+    },
+    {
+      "id": 16,
+      "label": "股息和回购 · 已见结果",
+      "reported_value": 0.18,
+      "unit": "",
+      "line_number": 122,
+      "raw_text": "| 股息和回购 | 年度每股股息0.18元；新1—2亿元回购计划 | 计划不等于实际完成，不能提前视作注销增厚 |",
+      "fetched_value": 0.18,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257680.PDF",
+      "fetched_value2": 0.18,
+      "fetched_source2": "https://emweb.securities.eastmoney.com/PC_HSF10/BonusFinancing/Index?type=web&code=SH601985"
+    },
+    {
+      "id": 20,
+      "label": "乐观 · 三年退出PE",
+      "reported_value": 22.0,
+      "unit": "",
+      "line_number": 159,
+      "raw_text": "| 乐观 | 20% | 0.6168 | 22 | 13.57 | 0.6236 | 11.30 |",
+      "fetched_value": 22,
+      "fetched_source": "研究参数，与报告三情景及financial_rigor输出一致",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 25,
+      "label": "中性 · 三年后EPS",
+      "reported_value": 0.5015,
+      "unit": "",
+      "line_number": 160,
+      "raw_text": "| 中性 | 12% | 0.5015 | 18 | 9.03 | 0.5396 | 7.63 |",
+      "fetched_value": 0.5014733033468233,
+      "fetched_source": "financial_rigor三年EPS复算",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 33,
+      "label": "悲观 · 三年股息",
+      "reported_value": 0.4283,
+      "unit": "",
+      "line_number": 161,
+      "raw_text": "| 悲观 | 0% | 0.3569 | 14 | 5.00 | 0.4283 | 4.33 |",
+      "fetched_value": 0.42832655055361407,
+      "fetched_source": "financial_rigor逐年40%派息和",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 47,
+      "label": "乐观 · 退出PE",
+      "reported_value": 12.96,
+      "unit": "",
+      "line_number": 179,
+      "raw_text": "| 乐观 | 12% | 228.02 | 2.0% | 12.96 | 4.90% |",
+      "fetched_value": 12.962962962962964,
+      "fetched_source": "terminal_value pe与Decimal公式复算",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 49,
+      "label": "7%〔另做±1pp〕 · 期望回报代理",
+      "reported_value": 0.59,
+      "unit": "%",
+      "line_number": 186,
+      "raw_text": "| 7%〔另做±1pp〕 | +0.59% | 否 | 分母满足要求 |",
+      "fetched_value": 0.59,
+      "fetched_source": "terminal_value flip r=7%实际输出，模型敏感性非事实",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 100,
+      "label": "2025收入",
+      "reported_value": 820.75,
+      "unit": "亿元/亿股/元（按标签）",
+      "fetched_value": 820.7549524495,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257680.PDF",
+      "fetched_value2": 820.7549524495,
+      "fetched_source2": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_DMSK_FN_INCOME"
+    },
+    {
+      "id": 101,
+      "label": "2025归母",
+      "reported_value": 93.04,
+      "unit": "亿元/亿股/元（按标签）",
+      "fetched_value": 93.0421153674,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257680.PDF",
+      "fetched_value2": 93.0421153674,
+      "fetched_source2": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_DMSK_FN_INCOME"
+    },
+    {
+      "id": 102,
+      "label": "9M26收入",
+      "reported_value": 598.48,
+      "unit": "亿元/亿股/元（按标签）",
+      "fetched_value": 598.4840784834,
+      "fetched_source": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-10-28/601985_20261028_HBTR.pdf",
+      "fetched_value2": 598.4840784834,
+      "fetched_source2": "东方财富RPT_DMSK_FN_INCOME 2026-09-30"
+    },
+    {
+      "id": 103,
+      "label": "9M26归母",
+      "reported_value": 60.66,
+      "unit": "亿元/亿股/元（按标签）",
+      "fetched_value": 60.660476185,
+      "fetched_source": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-10-28/601985_20261028_HBTR.pdf",
+      "fetched_value2": 60.660476185,
+      "fetched_source2": "东方财富RPT_DMSK_FN_INCOME 2026-09-30"
+    },
+    {
+      "id": 104,
+      "label": "9M26 CFO",
+      "reported_value": 351.69,
+      "unit": "亿元/亿股/元（按标签）",
+      "fetched_value": 351.6873683893,
+      "fetched_source": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-10-28/601985_20261028_HBTR.pdf",
+      "fetched_value2": 351.6873683893,
+      "fetched_source2": "东方财富RPT_DMSK_FN_CASHFLOW 2026-09-30"
+    },
+    {
+      "id": 105,
+      "label": "9月货币资金",
+      "reported_value": 157.83,
+      "unit": "亿元/亿股/元（按标签）",
+      "fetched_value": 157.8272986299,
+      "fetched_source": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-10-28/601985_20261028_HBTR.pdf",
+      "fetched_value2": 157.8272986299,
+      "fetched_source2": "东方财富RPT_DMSK_FN_BALANCE 2026-09-30"
+    },
+    {
+      "id": 106,
+      "label": "总股本",
+      "reported_value": 205.68002074,
+      "unit": "亿元/亿股/元（按标签）",
+      "fetched_value": 205.68002074,
+      "fetched_source": "https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-10-28/601985_20261028_HBTR.pdf",
+      "fetched_value2": 205.68002074,
+      "fetched_source2": "东方财富RPT_F10_FINANCE_MAINFINADATA 2026-09-30"
+    },
+    {
+      "id": 107,
+      "label": "10/30收盘",
+      "reported_value": 9.8,
+      "unit": "亿元/亿股/元（按标签）",
+      "fetched_value": 9.8,
+      "fetched_source": "https://qt.gtimg.cn/q=sh601985",
+      "fetched_value2": 9.8,
+      "fetched_source2": "https://cn.investing.com/equities/china-national-nuclear-power-co-ltd-historical-data"
+    }
+  ]
+}

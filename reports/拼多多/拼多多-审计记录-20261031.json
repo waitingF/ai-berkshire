@@ -1,0 +1,193 @@
+{
+  "extract_stdout": "======================================================================\n报告数据抽检清单\n文件：reports/拼多多/拼多多-research-20261031.md\n总提取数据点：60  |  抽样比例：15%  |  抽检数量：9\n随机种子：20261031（可用于复现同一批样本）\n======================================================================\n\n ID     行号  数据标签                                          报告值  单位\n───  ─────  ───────────────────────────────────  ────────────  ──────\n  5     40  2025Q3原公告 · 营业利润                            25.03  \n  3     40  2025Q3原公告 · 总收入                            108.28  \n 16    149  乐观 · 三年后价格（美元）                             171.36  \n 14    149  乐观 · EPS年增长                                  8.00  %\n 20    150  基准 · 三年后价格（美元）                             103.11  \n 25    151  悲观 · 按人民币9%折现今日值（汇率固定）                      38.29  \n 33    164  基准 · 加入余留资产                                300.00  \n 47    178  基准 · 十年回报代理                                  6.94  %\n 49    179  乐观 · 2036利润（十亿元）                           198.78  \n\n↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：\n  美股：macrotrends.net（主）+ stockanalysis.com（副）\n  港股：aastocks.com（主）+ macrotrends ADR（副）\n  A股： eastmoney.com（主）+ cninfo.com.cn（副）\n\n抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：\n\n[\n  {\n    \"id\": 5,\n    \"label\": \"2025Q3原公告 · 营业利润\",\n    \"reported_value\": 25.026,\n    \"unit\": \"\",\n    \"line_number\": 40,\n    \"raw_text\": \"| 2025Q3原公告 | 53.348 | 54.929 | 108.277 | 56.74% | 25.026 | 29.328 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 3,\n    \"label\": \"2025Q3原公告 · 总收入\",\n    \"reported_value\": 108.277,\n    \"unit\": \"\",\n    \"line_number\": 40,\n    \"raw_text\": \"| 2025Q3原公告 | 53.348 | 54.929 | 108.277 | 56.74% | 25.026 | 29.328 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 16,\n    \"label\": \"乐观 · 三年后价格（美元）\",\n    \"reported_value\": 171.36,\n    \"unit\": \"\",\n    \"line_number\": 149,\n    \"raw_text\": \"| 乐观 | 8% | 14 | 171.36 | 132.32 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 14,\n    \"label\": \"乐观 · EPS年增长\",\n    \"reported_value\": 8.0,\n    \"unit\": \"%\",\n    \"line_number\": 149,\n    \"raw_text\": \"| 乐观 | 8% | 14 | 171.36 | 132.32 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 20,\n    \"label\": \"基准 · 三年后价格（美元）\",\n    \"reported_value\": 103.11,\n    \"unit\": \"\",\n    \"line_number\": 150,\n    \"raw_text\": \"| 基准 | 2% | 10 | 103.11 | 79.62 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 25,\n    \"label\": \"悲观 · 按人民币9%折现今日值（汇率固定）\",\n    \"reported_value\": 38.29,\n    \"unit\": \"\",\n    \"line_number\": 151,\n    \"raw_text\": \"| 悲观 | -10% | 7 | 49.58 | 38.29 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 33,\n    \"label\": \"基准 · 加入余留资产\",\n    \"reported_value\": 300.0,\n    \"unit\": \"\",\n    \"line_number\": 164,\n    \"raw_text\": \"| 基准 | 70 | 3% / 2% | 1.5% | 300 | 139.88 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 47,\n    \"label\": \"基准 · 十年回报代理\",\n    \"reported_value\": 6.94,\n    \"unit\": \"%\",\n    \"line_number\": 178,\n    \"raw_text\": \"| 基准 | 3% | 123.74 | 1.5% | 12.33 | 6.94% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 49,\n    \"label\": \"乐观 · 2036利润（十亿元）\",\n    \"reported_value\": 198.78,\n    \"unit\": \"\",\n    \"line_number\": 179,\n    \"raw_text\": \"| 乐观 | 8% | 198.78 | 2.0% | 12.86 | 12.62% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  }\n]\n",
+  "checks": [
+    {
+      "id": 5,
+      "label": "2025Q3原公告 · 营业利润",
+      "reported_value": 25.026,
+      "unit": "",
+      "line_number": 40,
+      "raw_text": "| 2025Q3原公告 | 53.348 | 54.929 | 108.277 | 56.74% | 25.026 | 29.328 |",
+      "fetched_value": 25.025924,
+      "fetched_source": "https://investor.pddholdings.com/news-releases/news-release-details/pdd-holdings-announces-third-quarter-2025-unaudited-financial",
+      "fetched_value2": 25.026,
+      "fetched_source2": "https://stockanalysis.com/stocks/pdd/financials/income-statement/?p=quarterly"
+    },
+    {
+      "id": 3,
+      "label": "2025Q3原公告 · 总收入",
+      "reported_value": 108.277,
+      "unit": "",
+      "line_number": 40,
+      "raw_text": "| 2025Q3原公告 | 53.348 | 54.929 | 108.277 | 56.74% | 25.026 | 29.328 |",
+      "fetched_value": 108.276512,
+      "fetched_source": "https://investor.pddholdings.com/news-releases/news-release-details/pdd-holdings-announces-third-quarter-2025-unaudited-financial",
+      "fetched_value2": 108.277,
+      "fetched_source2": "https://stockanalysis.com/stocks/pdd/financials/income-statement/?p=quarterly"
+    },
+    {
+      "id": 16,
+      "label": "乐观 · 三年后价格（美元）",
+      "reported_value": 171.36,
+      "unit": "",
+      "line_number": 149,
+      "raw_text": "| 乐观 | 8% | 14 | 171.36 | 132.32 |",
+      "fetched_value": 171.36141446950774,
+      "fetched_source": "financial_rigor 三年情景",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 14,
+      "label": "乐观 · EPS年增长",
+      "reported_value": 8.0,
+      "unit": "%",
+      "line_number": 149,
+      "raw_text": "| 乐观 | 8% | 14 | 171.36 | 132.32 |",
+      "fetched_value": 8,
+      "fetched_source": "模型输入：乐观EPS年增8%，非外部事实",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 20,
+      "label": "基准 · 三年后价格（美元）",
+      "reported_value": 103.11,
+      "unit": "",
+      "line_number": 150,
+      "raw_text": "| 基准 | 2% | 10 | 103.11 | 79.62 |",
+      "fetched_value": 103.11319680686502,
+      "fetched_source": "financial_rigor 三年情景",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 25,
+      "label": "悲观 · 按人民币9%折现今日值（汇率固定）",
+      "reported_value": 38.29,
+      "unit": "",
+      "line_number": 151,
+      "raw_text": "| 悲观 | -10% | 7 | 49.58 | 38.29 |",
+      "fetched_value": 38.28774692513046,
+      "fetched_source": "financial_rigor：远期价格/(1.09^3)",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 33,
+      "label": "基准 · 加入余留资产",
+      "reported_value": 300.0,
+      "unit": "",
+      "line_number": 164,
+      "raw_text": "| 基准 | 70 | 3% / 2% | 1.5% | 300 | 139.88 |",
+      "fetched_value": 300,
+      "fetched_source": "研究参数：余留金融资产折扣，非可分配事实",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 47,
+      "label": "基准 · 十年回报代理",
+      "reported_value": 6.94,
+      "unit": "%",
+      "line_number": 178,
+      "raw_text": "| 基准 | 3% | 123.74 | 1.5% | 12.33 | 6.94% |",
+      "fetched_value": 6.935761299843712,
+      "fetched_source": "terminal_value irr实际输出及数学复算",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 49,
+      "label": "乐观 · 2036利润（十亿元）",
+      "reported_value": 198.78,
+      "unit": "",
+      "line_number": 179,
+      "raw_text": "| 乐观 | 8% | 198.78 | 2.0% | 12.86 | 12.62% |",
+      "fetched_value": 198.78418278446537,
+      "fetched_source": "financial_rigor 十年乐观利润条件算术",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 100,
+      "label": "2025审计收入",
+      "reported_value": 431.846,
+      "unit": "按原文：十亿元、美元、CNY/USD、十亿ADS",
+      "fetched_value": 431.845713,
+      "fetched_source": "https://investor.pddholdings.com/static-files/92dafbdc-3125-4f2c-a28f-3d61203efbaf",
+      "fetched_value2": 431.846,
+      "fetched_source2": "https://stockanalysis.com/stocks/pdd/financials/income-statement/"
+    },
+    {
+      "id": 101,
+      "label": "2025审计净利",
+      "reported_value": 97.843,
+      "unit": "按原文：十亿元、美元、CNY/USD、十亿ADS",
+      "fetched_value": 97.842539,
+      "fetched_source": "https://investor.pddholdings.com/static-files/92dafbdc-3125-4f2c-a28f-3d61203efbaf",
+      "fetched_value2": 97.843,
+      "fetched_source2": "https://stockanalysis.com/stocks/pdd/financials/income-statement/"
+    },
+    {
+      "id": 102,
+      "label": "2025CFO",
+      "reported_value": 106.939,
+      "unit": "按原文：十亿元、美元、CNY/USD、十亿ADS",
+      "fetched_value": 106.93869,
+      "fetched_source": "https://investor.pddholdings.com/static-files/92dafbdc-3125-4f2c-a28f-3d61203efbaf",
+      "fetched_value2": 106.939,
+      "fetched_source2": "https://stockanalysis.com/stocks/pdd/financials/cash-flow-statement/"
+    },
+    {
+      "id": 103,
+      "label": "2025CapEx",
+      "reported_value": 1.145,
+      "unit": "按原文：十亿元、美元、CNY/USD、十亿ADS",
+      "fetched_value": 1.145077,
+      "fetched_source": "https://investor.pddholdings.com/static-files/92dafbdc-3125-4f2c-a28f-3d61203efbaf",
+      "fetched_value2": 1.145,
+      "fetched_source2": "https://stockanalysis.com/stocks/pdd/financials/cash-flow-statement/"
+    },
+    {
+      "id": 104,
+      "label": "2026Q2金融资产合计",
+      "reported_value": 456.414,
+      "unit": "按原文：十亿元、美元、CNY/USD、十亿ADS",
+      "fetched_value": 456.414,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926100534/tm2623874d1_ex99-1.htm",
+      "fetched_value2": 456.414,
+      "fetched_source2": "https://stockanalysis.com/stocks/pdd/financials/balance-sheet/"
+    },
+    {
+      "id": 105,
+      "label": "10/30价格",
+      "reported_value": 78.61,
+      "unit": "按原文：十亿元、美元、CNY/USD、十亿ADS",
+      "fetched_value": 78.61,
+      "fetched_source": "https://query1.finance.yahoo.com/v8/finance/chart/PDD?range=5d&interval=1d",
+      "fetched_value2": 78.61,
+      "fetched_source2": "https://www.financialcontent.com/quote/NQ%3APDD/historical"
+    },
+    {
+      "id": 106,
+      "label": "USD/CNY",
+      "reported_value": 6.6574,
+      "unit": "按原文：十亿元、美元、CNY/USD、十亿ADS",
+      "fetched_value": 6.6574,
+      "fetched_source": "https://www.exchangerates.org.uk/USD-CNY-spot-exchange-rates-history-2026.html",
+      "fetched_value2": 6.6541,
+      "fetched_source2": "https://cn.investing.com/currencies/usd-cny-historical-data"
+    },
+    {
+      "id": 107,
+      "label": "法律ADS代理",
+      "reported_value": 1.423396462,
+      "unit": "按原文：十亿元、美元、CNY/USD、十亿ADS",
+      "fetched_value": 1.423396462,
+      "fetched_source": "https://investor.pddholdings.com/static-files/92dafbdc-3125-4f2c-a28f-3d61203efbaf",
+      "fetched_value2": 1.42,
+      "fetched_source2": "https://stockanalysis.com/stocks/pdd/statistics/（约数与时点差异已披露）"
+    }
+  ]
+}

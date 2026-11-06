@@ -1,0 +1,287 @@
+{
+  "extract_stdout": "======================================================================\n报告数据抽检清单\n文件：reports/SK海力士/SK海力士-research-20261031.md\n总提取数据点：57  |  抽样比例：15%  |  抽检数量：9\n随机种子：20261031（可用于复现同一批样本）\n======================================================================\n\n ID     行号  数据标签                                          报告值  单位\n───  ─────  ───────────────────────────────────  ────────────  ──────\n  5     39  2026Q3初步 · 营业利润率                            79.66  %\n  3     39  2026Q3初步 · 毛利率                              85.70  %\n 14    130  终止Solidigm IPO审议 · 新事实与评价                    3.00  \n 16    176  悲观 · 2029正常化归母，万亿KRW／十亿USD                  60.00  \n 20    177  基准 · 2029正常化归母，万亿KRW／十亿USD                 120.00  \n 25    178  乐观 · 三年PE假设                                 12.00  \n 33    191  基准 · 前五年FCFF，万亿KRW                          70.00  \n 47    206  悲观30% · 十年年化回报代理                             1.00  %\n 49    207  基准50% · 永续g                                  2.00  %\n\n↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：\n  美股：macrotrends.net（主）+ stockanalysis.com（副）\n  港股：aastocks.com（主）+ macrotrends ADR（副）\n  A股： eastmoney.com（主）+ cninfo.com.cn（副）\n\n抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：\n\n[\n  {\n    \"id\": 5,\n    \"label\": \"2026Q3初步 · 营业利润率\",\n    \"reported_value\": 79.66,\n    \"unit\": \"%\",\n    \"line_number\": 39,\n    \"raw_text\": \"| 2026Q3初步 | 104.615 | 89.653 | 85.70% | 83.334 | 79.66% | 39.534 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 3,\n    \"label\": \"2026Q3初步 · 毛利率\",\n    \"reported_value\": 85.7,\n    \"unit\": \"%\",\n    \"line_number\": 39,\n    \"raw_text\": \"| 2026Q3初步 | 104.615 | 89.653 | 85.70% | 83.334 | 79.66% | 39.534 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 14,\n    \"label\": \"终止Solidigm IPO审议 · 新事实与评价\",\n    \"reported_value\": 3.0,\n    \"unit\": \"\",\n    \"line_number\": 130,\n    \"raw_text\": \"| 终止Solidigm IPO审议 | Q3解释市场条件等使预期目的难实现；减少新上市结构复杂度，也保留集团投资责任 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 16,\n    \"label\": \"悲观 · 2029正常化归母，万亿KRW／十亿USD\",\n    \"reported_value\": 60.0,\n    \"unit\": \"\",\n    \"line_number\": 176,\n    \"raw_text\": \"| 悲观 | 60／44.982 | 8 | 680,684 | 511,408／383.40 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 20,\n    \"label\": \"基准 · 2029正常化归母，万亿KRW／十亿USD\",\n    \"reported_value\": 120.0,\n    \"unit\": \"\",\n    \"line_number\": 177,\n    \"raw_text\": \"| 基准 | 120／89.963 | 10 | 1,701,709 | 1,278,519／958.50 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 25,\n    \"label\": \"乐观 · 三年PE假设\",\n    \"reported_value\": 12.0,\n    \"unit\": \"\",\n    \"line_number\": 178,\n    \"raw_text\": \"| 乐观 | 180／134.945 | 12 | 3,063,077 | 2,301,335／1725.29 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 33,\n    \"label\": \"基准 · 前五年FCFF，万亿KRW\",\n    \"reported_value\": 70.0,\n    \"unit\": \"\",\n    \"line_number\": 191,\n    \"raw_text\": \"| 基准 | 70／80／90／100／110 | 52.478 | +4% | 133.832 | 2% | 1,907,380／1429.95 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 47,\n    \"label\": \"悲观30% · 十年年化回报代理\",\n    \"reported_value\": 1.0,\n    \"unit\": \"%\",\n    \"line_number\": 206,\n    \"raw_text\": \"| 悲观30% | 100／74.969 | 0% | 10.00 | +1.00% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 49,\n    \"label\": \"基准50% · 永续g\",\n    \"reported_value\": 2.0,\n    \"unit\": \"%\",\n    \"line_number\": 207,\n    \"raw_text\": \"| 基准50% | 180／134.945 | 2% | 11.11 | +8.18% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  }\n]\n",
+  "checks": [
+    {
+      "id": 5,
+      "label": "2026Q3初步 · 营业利润率",
+      "reported_value": 79.66,
+      "unit": "%",
+      "line_number": 39,
+      "raw_text": "| 2026Q3初步 | 104.615 | 89.653 | 85.70% | 83.334 | 79.66% | 39.534 |",
+      "fetched_value": 79.65725111645281,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/2120882/000119312526434994/d162547d6k.htm",
+      "fetched_value2": 79.66,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/?p=quarterly"
+    },
+    {
+      "id": 3,
+      "label": "2026Q3初步 · 毛利率",
+      "reported_value": 85.7,
+      "unit": "%",
+      "line_number": 39,
+      "raw_text": "| 2026Q3初步 | 104.615 | 89.653 | 85.70% | 83.334 | 79.66% | 39.534 |",
+      "fetched_value": 85.69763999464591,
+      "fetched_source": "https://files.quartr.com/conference-calls/3c89c948b784df9f7259006bdd1b6c15-2026-10-27-23-54-58.pdf",
+      "fetched_value2": 85.7,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/?p=quarterly"
+    },
+    {
+      "id": 14,
+      "label": "终止Solidigm IPO审议 · 新事实与评价",
+      "reported_value": 3.0,
+      "unit": "",
+      "line_number": 130,
+      "raw_text": "| 终止Solidigm IPO审议 | Q3解释市场条件等使预期目的难实现；减少新上市结构复杂度，也保留集团投资责任 |",
+      "fetched_value": 3,
+      "fetched_source": "抽取器误将Q3标签识别成数值3；原文确认发生于第三季度",
+      "fetched_value2": null,
+      "fetched_source2": "仅标签校对，不作经营数据验证"
+    },
+    {
+      "id": 16,
+      "label": "悲观 · 2029正常化归母，万亿KRW／十亿USD",
+      "reported_value": 60.0,
+      "unit": "",
+      "line_number": 176,
+      "raw_text": "| 悲观 | 60／44.982 | 8 | 680,684 | 511,408／383.40 |",
+      "fetched_value": 60,
+      "fetched_source": "2029正常化悲观归母参数",
+      "fetched_value2": null,
+      "fetched_source2": "不是已披露事实"
+    },
+    {
+      "id": 20,
+      "label": "基准 · 2029正常化归母，万亿KRW／十亿USD",
+      "reported_value": 120.0,
+      "unit": "",
+      "line_number": 177,
+      "raw_text": "| 基准 | 120／89.963 | 10 | 1,701,709 | 1,278,519／958.50 |",
+      "fetched_value": 120,
+      "fetched_source": "2029正常化基准归母参数",
+      "fetched_value2": null,
+      "fetched_source2": "不是已披露事实"
+    },
+    {
+      "id": 25,
+      "label": "乐观 · 三年PE假设",
+      "reported_value": 12.0,
+      "unit": "",
+      "line_number": 178,
+      "raw_text": "| 乐观 | 180／134.945 | 12 | 3,063,077 | 2,301,335／1725.29 |",
+      "fetched_value": 12,
+      "fetched_source": "三年乐观PE研究假设",
+      "fetched_value2": null,
+      "fetched_source2": "不是永续终值PE"
+    },
+    {
+      "id": 33,
+      "label": "基准 · 前五年FCFF，万亿KRW",
+      "reported_value": 70.0,
+      "unit": "",
+      "line_number": 191,
+      "raw_text": "| 基准 | 70／80／90／100／110 | 52.478 | +4% | 133.832 | 2% | 1,907,380／1429.95 |",
+      "fetched_value": 70,
+      "fetched_source": "经营FCFF基准首年研究假设及financial_rigor桥",
+      "fetched_value2": null,
+      "fetched_source2": "不是管理层指引"
+    },
+    {
+      "id": 47,
+      "label": "悲观30% · 十年年化回报代理",
+      "reported_value": 1.0,
+      "unit": "%",
+      "line_number": 206,
+      "raw_text": "| 悲观30% | 100／74.969 | 0% | 10.00 | +1.00% |",
+      "fetched_value": 1.0006422883688018,
+      "fetched_source": "terminal_value实际输出，完整换USD后计算",
+      "fetched_value2": null,
+      "fetched_source2": "回报代理，不是预测验证"
+    },
+    {
+      "id": 49,
+      "label": "基准50% · 永续g",
+      "reported_value": 2.0,
+      "unit": "%",
+      "line_number": 207,
+      "raw_text": "| 基准50% | 180／134.945 | 2% | 11.11 | +8.18% |",
+      "fetched_value": 2,
+      "fetched_source": "USD基准永续g研究假设，terminal准出",
+      "fetched_value2": null,
+      "fetched_source2": "不是历史事实"
+    },
+    {
+      "id": 1000,
+      "label": "FY25收入",
+      "reported_value": 97.146675,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 97.146675,
+      "fetched_source": "https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf",
+      "fetched_value2": 97.146675,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/"
+    },
+    {
+      "id": 1001,
+      "label": "FY25归母",
+      "reported_value": 42.919287,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 42.919287,
+      "fetched_source": "https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf",
+      "fetched_value2": 42.919287,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/"
+    },
+    {
+      "id": 1002,
+      "label": "FY25CFO",
+      "reported_value": 53.373126,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 53.373126,
+      "fetched_source": "https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf",
+      "fetched_value2": 53.373126,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/cash-flow-statement/"
+    },
+    {
+      "id": 1003,
+      "label": "FY25PPE",
+      "reported_value": 27.518924,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 27.518924,
+      "fetched_source": "https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf",
+      "fetched_value2": 27.518924,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/cash-flow-statement/"
+    },
+    {
+      "id": 1004,
+      "label": "FY25gross无形",
+      "reported_value": 1.060419,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 1.060419,
+      "fetched_source": "https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf",
+      "fetched_value2": null,
+      "fetched_source2": "SA1.058277为净买卖，无同义双核"
+    },
+    {
+      "id": 1005,
+      "label": "FY21CFO",
+      "reported_value": 19.797648,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 19.797648,
+      "fetched_source": "https://files.quartr.com/reports/ab896-2026-05-12-05-16-41.pdf",
+      "fetched_value2": 19.797648,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/cash-flow-statement/"
+    },
+    {
+      "id": 1006,
+      "label": "FY23归母",
+      "reported_value": -9.112428,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": -9.112428,
+      "fetched_source": "https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf",
+      "fetched_value2": -9.112428,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/"
+    },
+    {
+      "id": 1007,
+      "label": "Q3收入",
+      "reported_value": 104.615483,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 104.615483,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/2120882/000119312526434994/d162547d6k.htm",
+      "fetched_value2": 104.615,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/?p=quarterly"
+    },
+    {
+      "id": 1008,
+      "label": "Q3归母",
+      "reported_value": 39.534392,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 39.534392,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/2120882/000119312526434994/d162547d6k.htm",
+      "fetched_value2": null,
+      "fetched_source2": "SA39.776为集团净利误置，未当独立归母"
+    },
+    {
+      "id": 1009,
+      "label": "Q3现金池",
+      "reported_value": 114.46,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 114.5,
+      "fetched_source": "https://news.skhynix.com/en/q3-2026-business-results/",
+      "fetched_value2": 114.46,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/balance-sheet/"
+    },
+    {
+      "id": 1010,
+      "label": "Q3借款不含确认租赁",
+      "reported_value": 15.799,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 15.8,
+      "fetched_source": "https://news.skhynix.com/en/q3-2026-business-results/",
+      "fetched_value2": 15.799,
+      "fetched_source2": "https://stockanalysis.com/quote/krx/000660/financials/balance-sheet/"
+    },
+    {
+      "id": 1011,
+      "label": "经济股数百万",
+      "reported_value": 705.173324,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 705.173324,
+      "fetched_source": "10/26库存6K＋发行DART/分红总额桥",
+      "fetched_value2": null,
+      "fetched_source2": "独立精确外部数缺口；SA728.87M不同口径不强行通过"
+    },
+    {
+      "id": 1012,
+      "label": "10/30正常收盘",
+      "reported_value": 1418000,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 1418000,
+      "fetched_source": "https://stockanalysis.com/quote/krx/000660/history/",
+      "fetched_value2": 1418000,
+      "fetched_source2": "https://www.investing.com/equities/sk-hynix-inc-historical-data"
+    },
+    {
+      "id": 1013,
+      "label": "USD_KRW",
+      "reported_value": 1333.88,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 1333.88,
+      "fetched_source": "https://www.investing.com/currencies/usd-krw-historical-data",
+      "fetched_value2": 1333.4,
+      "fetched_source2": "https://www.fxempire.com/currencies/usd-krw"
+    },
+    {
+      "id": 1014,
+      "label": "H1完整FCF",
+      "reported_value": 72.748485,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 72.748485,
+      "fetched_source": "https://files.quartr.com/reports/c096a0dd3a4ffbf5ed08c69679243a3b-2026-08-14-07-51-16.pdf",
+      "fetched_value2": null,
+      "fetched_source2": "公司审阅CFgross购置＋financial_rigor，不冒充独立审计意见"
+    },
+    {
+      "id": 1015,
+      "label": "三年基准现值KRW",
+      "reported_value": 1278519,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 1278519.3801260318,
+      "fetched_source": "financial_rigor三情景＋Decimal",
+      "fetched_value2": null,
+      "fetched_source2": "模型输出"
+    },
+    {
+      "id": 1016,
+      "label": "经营DCF基准KRW",
+      "reported_value": 1907380,
+      "unit": "按字段：万亿KRW/股价KRW/百万股/FX",
+      "fetched_value": 1907379.9072854854,
+      "fetched_source": "全路径先转USD，再financial_rigor＋Decimal",
+      "fetched_value2": null,
+      "fetched_source2": "模型输出"
+    }
+  ],
+  "verdict_exit": 0,
+  "verdict_stdout": "======================================================================\n\u001b[1m报告数据抽检 — 准出/打回判决\u001b[0m\n报告：SK海力士-research-20261031.md\n======================================================================\n\n  \u001b[92m✅ 通过\u001b[0m [ 5] 2026Q3初步 · 营业利润率                     报告:        79.66 %\n                                                    https://www.sec.gov/Archives/edgar/data/2120882/000119312526434994/d162547d6k.htm: 79.66 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/?p=quarterly: 79.66 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [ 3] 2026Q3初步 · 毛利率                       报告:        85.70 %\n                                                    https://files.quartr.com/conference-calls/3c89c948b784df9f7259006bdd1b6c15-2026-10-27-23-54-58.pdf: 85.70 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/?p=quarterly: 85.70 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [14] 终止Solidigm IPO审议 · 新事实与评价            报告:         3.00 \n                                                    抽取器误将Q3标签识别成数值3；原文确认发生于第三季度: 3.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [16] 悲观 · 2029正常化归母，万亿KRW／十亿USD           报告:        60.00 \n                                                    2029正常化悲观归母参数: 60.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [20] 基准 · 2029正常化归母，万亿KRW／十亿USD           报告:       120.00 \n                                                    2029正常化基准归母参数: 120.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [25] 乐观 · 三年PE假设                          报告:        12.00 \n                                                    三年乐观PE研究假设: 12.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [33] 基准 · 前五年FCFF，万亿KRW                   报告:        70.00 \n                                                    经营FCFF基准首年研究假设及financial_rigor桥: 70.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [47] 悲观30% · 十年年化回报代理                     报告:         1.00 %\n                                                    terminal_value实际输出，完整换USD后计算: 1.00 (偏差 0.06%)\n  \u001b[92m✅ 通过\u001b[0m [49] 基准50% · 永续g                          报告:         2.00 %\n                                                    USD基准永续g研究假设，terminal准出: 2.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1000] FY25收入                               报告:        97.15 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf: 97.15 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/: 97.15 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1001] FY25归母                               报告:        42.92 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf: 42.92 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/: 42.92 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1002] FY25CFO                              报告:        53.37 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf: 53.37 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/cash-flow-statement/: 53.37 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1003] FY25PPE                              报告:        27.52 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf: 27.52 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/cash-flow-statement/: 27.52 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1004] FY25gross无形                          报告:         1.06 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf: 1.06 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1005] FY21CFO                              报告:        19.80 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://files.quartr.com/reports/ab896-2026-05-12-05-16-41.pdf: 19.80 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/cash-flow-statement/: 19.80 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1006] FY23归母                               报告:        -9.11 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf: -9.11 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/: -9.11 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1007] Q3收入                                 报告:       104.62 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://www.sec.gov/Archives/edgar/data/2120882/000119312526434994/d162547d6k.htm: 104.62 (偏差 0.00%)  |  https://stockanalysis.com/quote/krx/000660/financials/?p=quarterly: 104.61 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1008] Q3归母                                 报告:        39.53 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://www.sec.gov/Archives/edgar/data/2120882/000119312526434994/d162547d6k.htm: 39.53 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1009] Q3现金池                                报告:       114.46 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://news.skhynix.com/en/q3-2026-business-results/: 114.50 (偏差 0.03%)  |  https://stockanalysis.com/quote/krx/000660/financials/balance-sheet/: 114.46 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1010] Q3借款不含确认租赁                           报告:        15.80 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://news.skhynix.com/en/q3-2026-business-results/: 15.80 (偏差 0.01%)  |  https://stockanalysis.com/quote/krx/000660/financials/balance-sheet/: 15.80 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1011] 经济股数百万                               报告:       705.17 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    10/26库存6K＋发行DART/分红总额桥: 705.17 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1012] 10/30正常收盘                            报告:   1418000.00 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://stockanalysis.com/quote/krx/000660/history/: 1418000.00 (偏差 0.00%)  |  https://www.investing.com/equities/sk-hynix-inc-historical-data: 1418000.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1013] USD_KRW                              报告:      1333.88 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://www.investing.com/currencies/usd-krw-historical-data: 1333.88 (偏差 0.00%)  |  https://www.fxempire.com/currencies/usd-krw: 1333.40 (偏差 0.04%)\n  \u001b[92m✅ 通过\u001b[0m [1014] H1完整FCF                              报告:        72.75 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    https://files.quartr.com/reports/c096a0dd3a4ffbf5ed08c69679243a3b-2026-08-14-07-51-16.pdf: 72.75 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1015] 三年基准现值KRW                            报告:   1278519.00 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    financial_rigor三情景＋Decimal: 1278519.38 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [1016] 经营DCF基准KRW                           报告:   1907380.00 按字段：万亿KRW/股价KRW/百万股/FX\n                                                    全路径先转USD，再financial_rigor＋Decimal: 1907379.91 (偏差 0.00%)\n\n----------------------------------------------------------------------\n  抽检总数: 26  |  通过: \u001b[92m26\u001b[0m  |  警告: \u001b[93m0\u001b[0m  |  不通过: \u001b[91m0\u001b[0m\n\n\u001b[1m\u001b[92m【准出】所有抽检数据通过，报告可发布。\u001b[0m\n======================================================================\n",
+  "verdict_stderr": "",
+  "sampling_note": "随机9项中1项Q3标签被误抽成3，已识别为非财务数值；模型项只核参数及算术，追加17项核心历史/资产/价格事实含明确来源缺口。"
+}

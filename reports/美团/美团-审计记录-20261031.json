@@ -1,0 +1,249 @@
+{
+  "extract_stdout": "======================================================================\n报告数据抽检清单\n文件：reports/美团/美团-research-20261031.md\n总提取数据点：65  |  抽样比例：15%  |  抽检数量：10\n随机种子：20261031（可用于复现同一批样本）\n======================================================================\n\n ID     行号  数据标签                                          报告值  单位\n───  ─────  ───────────────────────────────────  ────────────  ──────\n  5     40  2025Q3年报比较列 · 集团毛利率                         26.04  %\n  3     40  2025Q3年报比较列 · 新业务收入                         28.04  \n 14     59  再减融资栏财务费用付款 · 数值                            14.15  \n 16     61  SBC费用，非当期现金支出 · 数值                          33.02  \n 25    180  基准 · 三年退出PE                                 18.00  \n 31    181  乐观 · 折现今日值（港元）                             162.08  \n 33    191  悲观 · 后五期增长                                   3.00  %\n 40    192  基准 · 每股今日值（港元）                             120.07  \n 47    209  悲观 · 终值PE                                   11.11  \n 49    210  基准 · 2036归母（亿元）                            600.00  \n\n↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：\n  美股：macrotrends.net（主）+ stockanalysis.com（副）\n  港股：aastocks.com（主）+ macrotrends ADR（副）\n  A股： eastmoney.com（主）+ cninfo.com.cn（副）\n\n抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：\n\n[\n  {\n    \"id\": 5,\n    \"label\": \"2025Q3年报比较列 · 集团毛利率\",\n    \"reported_value\": 26.04,\n    \"unit\": \"%\",\n    \"line_number\": 40,\n    \"raw_text\": \"| 2025Q3年报比较列 | 95.062 | 67.021 | 28.041 | 24.755 | 26.04% | -14.071 | -1.278 | -19.759 | -18.632 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 3,\n    \"label\": \"2025Q3年报比较列 · 新业务收入\",\n    \"reported_value\": 28.041,\n    \"unit\": \"\",\n    \"line_number\": 40,\n    \"raw_text\": \"| 2025Q3年报比较列 | 95.062 | 67.021 | 28.041 | 24.755 | 26.04% | -14.071 | -1.278 | -19.759 | -18.632 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 14,\n    \"label\": \"再减融资栏财务费用付款 · 数值\",\n    \"reported_value\": 14.146,\n    \"unit\": \"\",\n    \"line_number\": 59,\n    \"raw_text\": \"| 再减融资栏财务费用付款 | 14.146 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 16,\n    \"label\": \"SBC费用，非当期现金支出 · 数值\",\n    \"reported_value\": 33.016,\n    \"unit\": \"\",\n    \"line_number\": 61,\n    \"raw_text\": \"| SBC费用，非当期现金支出 | 33.016 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 25,\n    \"label\": \"基准 · 三年退出PE\",\n    \"reported_value\": 18.0,\n    \"unit\": \"\",\n    \"line_number\": 180,\n    \"raw_text\": \"| 基准 | 300 | 18 | 103.04 | 79.57 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 31,\n    \"label\": \"乐观 · 折现今日值（港元）\",\n    \"reported_value\": 162.08,\n    \"unit\": \"\",\n    \"line_number\": 181,\n    \"raw_text\": \"| 乐观 | 500 | 22 | 209.90 | 162.08 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 33,\n    \"label\": \"悲观 · 后五期增长\",\n    \"reported_value\": 3.0,\n    \"unit\": \"%\",\n    \"line_number\": 191,\n    \"raw_text\": \"| 悲观 | -50、50、100、150、200 | +3% | 0% | 231.85 | 45.76 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 40,\n    \"label\": \"基准 · 每股今日值（港元）\",\n    \"reported_value\": 120.07,\n    \"unit\": \"\",\n    \"line_number\": 192,\n    \"raw_text\": \"| 基准 | 100、200、300、380、450 | +6% | 1.5% | 602.20 | 120.07 |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 47,\n    \"label\": \"悲观 · 终值PE\",\n    \"reported_value\": 11.11,\n    \"unit\": \"\",\n    \"line_number\": 209,\n    \"raw_text\": \"| 悲观 | 200 | 0% | 11.11 | -5.10% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  },\n  {\n    \"id\": 49,\n    \"label\": \"基准 · 2036归母（亿元）\",\n    \"reported_value\": 600.0,\n    \"unit\": \"\",\n    \"line_number\": 210,\n    \"raw_text\": \"| 基准 | 600 | 1.5% | 12.00 | +6.73% |\",\n    \"fetched_value\": null,\n    \"fetched_source\": \"\",\n    \"fetched_value2\": null,\n    \"fetched_source2\": \"\"\n  }\n]\n",
+  "checks": [
+    {
+      "id": 5,
+      "label": "2025Q3年报比较列 · 集团毛利率",
+      "reported_value": 26.04,
+      "unit": "%",
+      "line_number": 40,
+      "raw_text": "| 2025Q3年报比较列 | 95.062 | 67.021 | 28.041 | 24.755 | 26.04% | -14.071 | -1.278 | -19.759 | -18.632 |",
+      "fetched_value": 26.04081201570071,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf",
+      "fetched_value2": null,
+      "fetched_source2": "SA仍为原Q3公告毛利/收入，重呈列后不强行双核；报告已披露差异"
+    },
+    {
+      "id": 3,
+      "label": "2025Q3年报比较列 · 新业务收入",
+      "reported_value": 28.041,
+      "unit": "",
+      "line_number": 40,
+      "raw_text": "| 2025Q3年报比较列 | 95.062 | 67.021 | 28.041 | 24.755 | 26.04% | -14.071 | -1.278 | -19.759 | -18.632 |",
+      "fetched_value": 28.041247,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf",
+      "fetched_value2": 28.041,
+      "fetched_source2": "https://stockanalysis.com/quote/hkg/3690/financials/?p=quarterly"
+    },
+    {
+      "id": 14,
+      "label": "再减融资栏财务费用付款 · 数值",
+      "reported_value": 14.146,
+      "unit": "",
+      "line_number": 59,
+      "raw_text": "| 再减融资栏财务费用付款 | 14.146 |",
+      "fetched_value": 14.14617,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf",
+      "fetched_value2": null,
+      "fetched_source2": "该融资栏付款仅一手精确值，保留缺口"
+    },
+    {
+      "id": 16,
+      "label": "SBC费用，非当期现金支出 · 数值",
+      "reported_value": 33.016,
+      "unit": "",
+      "line_number": 61,
+      "raw_text": "| SBC费用，非当期现金支出 | 33.016 |",
+      "fetched_value": 33.01589,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf",
+      "fetched_value2": null,
+      "fetched_source2": "完整中报精确SBC，独立同日核验不足"
+    },
+    {
+      "id": 25,
+      "label": "基准 · 三年退出PE",
+      "reported_value": 18.0,
+      "unit": "",
+      "line_number": 180,
+      "raw_text": "| 基准 | 300 | 18 | 103.04 | 79.57 |",
+      "fetched_value": 18,
+      "fetched_source": "三年基准PE研究参数",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 31,
+      "label": "乐观 · 折现今日值（港元）",
+      "reported_value": 162.08,
+      "unit": "",
+      "line_number": 181,
+      "raw_text": "| 乐观 | 500 | 22 | 209.90 | 162.08 |",
+      "fetched_value": 162.08299716413254,
+      "fetched_source": "financial_rigor正常化利润直接估值／Decimal",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 33,
+      "label": "悲观 · 后五期增长",
+      "reported_value": 3.0,
+      "unit": "%",
+      "line_number": 191,
+      "raw_text": "| 悲观 | -50、50、100、150、200 | +3% | 0% | 231.85 | 45.76 |",
+      "fetched_value": 3,
+      "fetched_source": "经营FCFF后五期增长假设，非外部事实",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 40,
+      "label": "基准 · 每股今日值（港元）",
+      "reported_value": 120.07,
+      "unit": "",
+      "line_number": 192,
+      "raw_text": "| 基准 | 100、200、300、380、450 | +6% | 1.5% | 602.20 | 120.07 |",
+      "fetched_value": 120.06725387293518,
+      "fetched_source": "financial_rigor十年FCFF及Decimal复算",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 47,
+      "label": "悲观 · 终值PE",
+      "reported_value": 11.11,
+      "unit": "",
+      "line_number": 209,
+      "raw_text": "| 悲观 | 200 | 0% | 11.11 | -5.10% |",
+      "fetched_value": 11.11111111111111,
+      "fetched_source": "terminal_value pe实际输出",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 49,
+      "label": "基准 · 2036归母（亿元）",
+      "reported_value": 600.0,
+      "unit": "",
+      "line_number": 210,
+      "raw_text": "| 基准 | 600 | 1.5% | 12.00 | +6.73% |",
+      "fetched_value": 600,
+      "fetched_source": "2036基准利润研究参数，非公司指引",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 100,
+      "label": "2025审计收入",
+      "reported_value": 364.855,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 364.854746,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf",
+      "fetched_value2": 364.855,
+      "fetched_source2": "https://stockanalysis.com/quote/hkg/3690/financials/"
+    },
+    {
+      "id": 101,
+      "label": "2025归母",
+      "reported_value": -23.355,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": -23.355015,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf",
+      "fetched_value2": -23.355,
+      "fetched_source2": "https://stockanalysis.com/quote/hkg/3690/financials/"
+    },
+    {
+      "id": 102,
+      "label": "2025CFO",
+      "reported_value": -13.815,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": -13.815001,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf",
+      "fetched_value2": -13.815,
+      "fetched_source2": "https://stockanalysis.com/quote/hkg/3690/financials/"
+    },
+    {
+      "id": 103,
+      "label": "2025资本开支",
+      "reported_value": 13.271,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 13.270708,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf",
+      "fetched_value2": 13.271,
+      "fetched_source2": "https://stockanalysis.com/quote/hkg/3690/financials/"
+    },
+    {
+      "id": 104,
+      "label": "H1现金短期理财",
+      "reported_value": 168.314,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 168.31417,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf",
+      "fetched_value2": 168.314,
+      "fetched_source2": "https://stockanalysis.com/quote/hkg/3690/financials/"
+    },
+    {
+      "id": 105,
+      "label": "H1银行票据及租赁债",
+      "reported_value": 95.817,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 95.817302,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf",
+      "fetched_value2": 95.817,
+      "fetched_source2": "https://stockanalysis.com/quote/hkg/3690/financials/"
+    },
+    {
+      "id": 106,
+      "label": "H1融资性质供应链应付",
+      "reported_value": 4.586897,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 4.586897,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf",
+      "fetched_value2": null,
+      "fetched_source2": "原文附注26一手，标准债务库未包含"
+    },
+    {
+      "id": 107,
+      "label": "10/30股价",
+      "reported_value": 71.6,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 71.6,
+      "fetched_source": "https://stockanalysis.com/quote/hkg/3690/history/",
+      "fetched_value2": 71.6,
+      "fetched_source2": "https://qt.gtimg.cn/q=hk03690"
+    },
+    {
+      "id": 108,
+      "label": "股本十亿股",
+      "reported_value": 6.175508233,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 6.175508233,
+      "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1007/2026100700730.pdf",
+      "fetched_value2": 6.175508233,
+      "fetched_source2": "https://qt.gtimg.cn/q=hk03690"
+    },
+    {
+      "id": 109,
+      "label": "HKD/CNY",
+      "reported_value": 0.8486,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 0.8486,
+      "fetched_source": "https://www.exchangerates.org.uk/HKD-CNY-spot-exchange-rates-history-2026.html",
+      "fetched_value2": 0.8482,
+      "fetched_source2": "https://cn.investing.com/currencies/hkd-cny-historical-data"
+    },
+    {
+      "id": 110,
+      "label": "三年基准现值",
+      "reported_value": 79.57,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 79.56801678966507,
+      "fetched_source": "financial_rigor直接正常化估值",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 111,
+      "label": "r9十年基准回报代理",
+      "reported_value": 6.73,
+      "unit": "按字段：十亿元CNY/十亿股/港元/FX/百分数",
+      "fetched_value": 6.73439043752857,
+      "fetched_source": "terminal_value irr实际输出",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    }
+  ],
+  "verdict_exit": 0,
+  "verdict_stdout": "======================================================================\n\u001b[1m报告数据抽检 — 准出/打回判决\u001b[0m\n报告：美团-research-20261031.md\n======================================================================\n\n  \u001b[92m✅ 通过\u001b[0m [ 5] 2025Q3年报比较列 · 集团毛利率                  报告:        26.04 %\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf: 26.04 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [ 3] 2025Q3年报比较列 · 新业务收入                  报告:        28.04 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf: 28.04 (偏差 0.00%)  |  https://stockanalysis.com/quote/hkg/3690/financials/?p=quarterly: 28.04 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [14] 再减融资栏财务费用付款 · 数值                     报告:        14.15 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf: 14.15 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [16] SBC费用，非当期现金支出 · 数值                   报告:        33.02 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf: 33.02 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [25] 基准 · 三年退出PE                          报告:        18.00 \n                                                    三年基准PE研究参数: 18.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [31] 乐观 · 折现今日值（港元）                       报告:       162.08 \n                                                    financial_rigor正常化利润直接估值／Decimal: 162.08 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [33] 悲观 · 后五期增长                           报告:         3.00 %\n                                                    经营FCFF后五期增长假设，非外部事实: 3.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [40] 基准 · 每股今日值（港元）                       报告:       120.07 \n                                                    financial_rigor十年FCFF及Decimal复算: 120.07 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [47] 悲观 · 终值PE                            报告:        11.11 \n                                                    terminal_value pe实际输出: 11.11 (偏差 0.01%)\n  \u001b[92m✅ 通过\u001b[0m [49] 基准 · 2036归母（亿元）                      报告:       600.00 \n                                                    2036基准利润研究参数，非公司指引: 600.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [100] 2025审计收入                             报告:       364.86 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf: 364.85 (偏差 0.00%)  |  https://stockanalysis.com/quote/hkg/3690/financials/: 364.86 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [101] 2025归母                               报告:       -23.36 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf: -23.36 (偏差 0.00%)  |  https://stockanalysis.com/quote/hkg/3690/financials/: -23.36 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [102] 2025CFO                              报告:       -13.81 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf: -13.82 (偏差 0.00%)  |  https://stockanalysis.com/quote/hkg/3690/financials/: -13.81 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [103] 2025资本开支                             报告:        13.27 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf: 13.27 (偏差 0.00%)  |  https://stockanalysis.com/quote/hkg/3690/financials/: 13.27 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [104] H1现金短期理财                             报告:       168.31 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf: 168.31 (偏差 0.00%)  |  https://stockanalysis.com/quote/hkg/3690/financials/: 168.31 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [105] H1银行票据及租赁债                           报告:        95.82 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf: 95.82 (偏差 0.00%)  |  https://stockanalysis.com/quote/hkg/3690/financials/: 95.82 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [106] H1融资性质供应链应付                          报告:         4.59 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900007.pdf: 4.59 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [107] 10/30股价                              报告:        71.60 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://stockanalysis.com/quote/hkg/3690/history/: 71.60 (偏差 0.00%)  |  https://qt.gtimg.cn/q=hk03690: 71.60 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [108] 股本十亿股                                报告:         6.18 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1007/2026100700730.pdf: 6.18 (偏差 0.00%)  |  https://qt.gtimg.cn/q=hk03690: 6.18 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [109] HKD/CNY                              报告:         0.85 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    https://www.exchangerates.org.uk/HKD-CNY-spot-exchange-rates-history-2026.html: 0.85 (偏差 0.00%)  |  https://cn.investing.com/currencies/hkd-cny-historical-data: 0.85 (偏差 0.05%)\n  \u001b[92m✅ 通过\u001b[0m [110] 三年基准现值                               报告:        79.57 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    financial_rigor直接正常化估值: 79.57 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [111] r9十年基准回报代理                           报告:         6.73 按字段：十亿元CNY/十亿股/港元/FX/百分数\n                                                    terminal_value irr实际输出: 6.73 (偏差 0.07%)\n\n----------------------------------------------------------------------\n  抽检总数: 22  |  通过: \u001b[92m22\u001b[0m  |  警告: \u001b[93m0\u001b[0m  |  不通过: \u001b[91m0\u001b[0m\n\n\u001b[1m\u001b[92m【准出】所有抽检数据通过，报告可发布。\u001b[0m\n======================================================================\n",
+  "verdict_stderr": "",
+  "source_conflicts": "SA季度仍混原公告与年报余差，>1%差异在报告显式披露，原文优先；不冒充该口径独立双核。"
+}

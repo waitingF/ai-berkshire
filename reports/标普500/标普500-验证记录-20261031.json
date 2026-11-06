@@ -1,0 +1,183 @@
+{
+  "as_of": "2026-10-31",
+  "checked_at": "2026-10-31T16:08:04+08:00",
+  "data_boundary": "ETF基金适配：未将公司GAAP/EV/FCF或今日市值虚构应用；单一原始来源与独立二源差异见正文。",
+  "cross_checks": [
+    {
+      "command": [
+        "python3",
+        "tools/financial_rigor.py",
+        "cross-validate",
+        "--field",
+        "VOO季度分红2026Q3",
+        "--values",
+        "{\"Vanguard\":1.8226,\"StockAnalysis\":1.8226}",
+        "--tolerance",
+        "1"
+      ],
+      "exit_code": 0,
+      "output": "============================================================\n交叉验证: VOO季度分红2026Q3 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 1.82 \n\n  ✅ Vanguard            : 1.82   (偏差 0.00%)\n  ✅ StockAnalysis       : 1.82   (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1.0%, 数据一致\n\n  共识值 (加权中位数): 1.82 \n"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/financial_rigor.py",
+        "cross-validate",
+        "--field",
+        "VOO费用率",
+        "--values",
+        "{\"Vanguard\":0.03,\"StockAnalysis\":0.03}",
+        "--tolerance",
+        "1"
+      ],
+      "exit_code": 0,
+      "output": "============================================================\n交叉验证: VOO费用率 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 0.03 \n\n  ✅ Vanguard            : 0.03   (偏差 0.00%)\n  ✅ StockAnalysis       : 0.03   (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1.0%, 数据一致\n\n  共识值 (加权中位数): 0.03 \n"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/financial_rigor.py",
+        "cross-validate",
+        "--field",
+        "VOO_NVIDIA权重",
+        "--values",
+        "{\"Vanguard\":8.4,\"StockAnalysis\":8.39,\"Schwab\":8.39}",
+        "--tolerance",
+        "1"
+      ],
+      "exit_code": 0,
+      "output": "============================================================\n交叉验证: VOO_NVIDIA权重 (Cross-Validation)\n============================================================\n  数据来源数: 3\n  参考中位数: 8.39 \n\n  ✅ Vanguard            : 8.40   (偏差 0.12%)\n  ✅ StockAnalysis       : 8.39   (偏差 0.00%)\n  ✅ Schwab              : 8.39   (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1.0%, 数据一致\n\n  共识值 (加权中位数): 8.39 \n"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/financial_rigor.py",
+        "cross-validate",
+        "--field",
+        "VOO2025分红",
+        "--values",
+        "{\"VanguardProspectus\":7.068,\"StockAnalysis四次相加\":7.0678}",
+        "--tolerance",
+        "1"
+      ],
+      "exit_code": 0,
+      "output": "============================================================\n交叉验证: VOO2025分红 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 7.07 \n\n  ✅ VanguardProspectus  : 7.07   (偏差 0.00%)\n  ✅ StockAnalysis四次相加   : 7.07   (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1.0%, 数据一致\n\n  共识值 (加权中位数): 7.07 \n"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/financial_rigor.py",
+        "cross-validate",
+        "--field",
+        "美国10年国债20261030",
+        "--values",
+        "{\"US_Treasury\":4.94,\"YCharts\":4.94}",
+        "--tolerance",
+        "1"
+      ],
+      "exit_code": 0,
+      "output": "============================================================\n交叉验证: 美国10年国债20261030 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 4.94 \n\n  ✅ US_Treasury         : 4.94   (偏差 0.00%)\n  ✅ YCharts             : 4.94   (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1.0%, 数据一致\n\n  共识值 (加权中位数): 4.94 \n"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/financial_rigor.py",
+        "cross-validate",
+        "--field",
+        "持仓计数口径差异非同口径比对",
+        "--values",
+        "{\"Vanguard股票505\":505,\"StockAnalysis全部项目518\":518}",
+        "--tolerance",
+        "1"
+      ],
+      "exit_code": 0,
+      "output": "============================================================\n交叉验证: 持仓计数口径差异非同口径比对 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 511.50 \n\n  ❌ Vanguard股票505       : 505.00   (偏差 1.27%)\n  ❌ StockAnalysis全部项目518: 518.00   (偏差 1.27%)\n\n  ⚠️  存在来源偏差 > 1.0%, 请核实差异原因\n     建议: 优先采用公司年报/交易所数据\n\n  共识值 (加权中位数): 511.50 \n"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/financial_rigor.py",
+        "cross-validate",
+        "--field",
+        "同指数不同机构PE差异不能直接平均",
+        "--values",
+        "{\"SPY_1029\":24.28,\"IVV_1029\":29.4}",
+        "--tolerance",
+        "1"
+      ],
+      "exit_code": 0,
+      "output": "============================================================\n交叉验证: 同指数不同机构PE差异不能直接平均 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 26.84 \n\n  ❌ SPY_1029            : 24.28   (偏差 9.54%)\n  ❌ IVV_1029            : 29.40   (偏差 9.54%)\n\n  ⚠️  存在来源偏差 > 1.0%, 请核实差异原因\n     建议: 优先采用公司年报/交易所数据\n\n  共识值 (加权中位数): 26.84 \n"
+    }
+  ],
+  "terminal_audit": {
+    "status": "PASS",
+    "currency": "USD",
+    "r": 0.1,
+    "incremental_equity_return_proxy": 0.15,
+    "g": [
+      0.01,
+      0.02,
+      0.03
+    ],
+    "rf": 0.0494,
+    "beta": 1,
+    "unmodeled": [
+      "美元汇率",
+      "美国市场长期制度失效",
+      "跨境账户冻结及税务身份差异"
+    ]
+  },
+  "runtime": {
+    "exit_code": 0,
+    "runtime_dir": "/var/folders/10/3xzg987j4kv26f_fc9wltps40000gn/T/voo-verified-monitor-20261031-rzhov7o4",
+    "summary": {
+      "status": "OK",
+      "date": "2026-10-31",
+      "items": 1,
+      "notifications": 0,
+      "report": "/private/var/folders/10/3xzg987j4kv26f_fc9wltps40000gn/T/voo-verified-monitor-20261031-rzhov7o4/reports/daily-monitor-latest.md",
+      "state_file": "/private/var/folders/10/3xzg987j4kv26f_fc9wltps40000gn/T/voo-verified-monitor-20261031-rzhov7o4/state.json"
+    },
+    "source_health": [
+      {
+        "source": "quotes",
+        "status": "OK",
+        "safe_message": null
+      }
+    ],
+    "items": [
+      {
+        "target_id": "标普500",
+        "section": "price",
+        "priority": "P2",
+        "status": "FAR",
+        "metadata": {
+          "previous_status": null,
+          "current_status": "FAR",
+          "price": 694.81,
+          "market": "US",
+          "zone_label": "额外分批研究带（不代替定投计划）",
+          "low": 520,
+          "high": 560,
+          "direction": "range",
+          "note": "仅为额外投入触发；先核盈利/PE口径、费用/跟踪及账户条件。低于520须重新研究下跌原因。增强累计不超过可投资资产5%且服从整体权益上限；非自动买入。",
+          "research_link": "../../../../../../../../Users/kongwei/stock/ai-berkshire/reports/%E6%A0%87%E6%99%AE500/%E6%A0%87%E6%99%AE500-research-20261031.md",
+          "research_date": "2026-10-31"
+        }
+      }
+    ],
+    "external_notifications_sent": false,
+    "boundary": "SEC为原配置关闭；本次定点验证仅行情与配置/本地研究识别，不代表基金正式披露完整覆盖。"
+  },
+  "tracking": {
+    "target_id": "标普500",
+    "group": "重点",
+    "board_updated": true,
+    "nonpriority_ledger_added": false,
+    "new_report": "reports/标普500/标普500-research-20261031.md",
+    "new_review_event": "2026-11-30",
+    "retained_review_event": "2026-12-31",
+    "sec_automatic_source_enabled": false
+  },
+  "scope": "仅完成VOO；剩余66个标的依用户指示暂缓；未提交或推送。"
+}
