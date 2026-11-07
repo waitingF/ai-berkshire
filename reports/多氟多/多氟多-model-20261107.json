@@ -1,0 +1,537 @@
+{
+  "as_of": "2026-11-07 Asia/Shanghai",
+  "quote_as_of": "2026-11-06 close",
+  "currency": "CNY",
+  "sources": {
+    "annual2025": "https://static.cninfo.com.cn/finalpage/2026-04-16/1225107815.pdf",
+    "H1": "https://static.cninfo.com.cn/finalpage/2026-08-18/1225478600.PDF",
+    "Q3": "https://static.cninfo.com.cn/finalpage/2026-10-22/1225613679.PDF",
+    "eastmoney_financials": "https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FINANCE_MAINFINADATA&columns=ALL&filter=(SECUCODE%3D%22002407.SZ%22)&pageNumber=1&pageSize=20&sortTypes=-1&sortColumns=REPORT_DATE&source=HSF10&client=PC",
+    "quote_tencent": "https://qt.gtimg.cn/q=sz002407",
+    "quote_eastmoney": "https://push2.eastmoney.com/api/qt/stock/get?secid=0.002407&fields=f43,f84,f116"
+  },
+  "annual": {
+    "2021": {
+      "revenue": "7798541139.21",
+      "profit": "1259706825.21",
+      "gross_margin_percent": "32.1359483179340390240730013357521818",
+      "operating_margin_percent": "18.0482650453355458383656867795749093",
+      "cfo": "1975048651.82",
+      "capex": "1216946065.13",
+      "simple_fcf": "758102586.69",
+      "cash": "1442821935.58"
+    },
+    "2022": {
+      "revenue": "12358053902.66",
+      "profit": "1958306571.94",
+      "cfo": "1767236900.31"
+    },
+    "2023": {
+      "revenue": "11991656540.48",
+      "profit": "511635456.30",
+      "cfo": "316881791.06"
+    },
+    "2024": {
+      "revenue": "8249239821.75",
+      "profit": "-308498770.03",
+      "gross_margin_percent": "8.85690838886296438397032956280957331",
+      "operating_margin_percent": "-4.71587373644171990640793252677991826",
+      "cfo": "-313283511.10",
+      "capex": "1020324350.71",
+      "simple_fcf": "-1333607861.81",
+      "cash": "5988990861.02"
+    },
+    "2025": {
+      "revenue": "9434247610.47",
+      "profit": "212784849.4",
+      "gross_margin_percent": "13.9618678340410785675786066286252640",
+      "operating_margin_percent": "2.28794500210543719755204140938914158",
+      "cfo": "199089470.35",
+      "capex": "1056712029.23",
+      "simple_fcf": "-857622558.88",
+      "cash": "5030602303.23"
+    }
+  },
+  "quarters": {
+    "2025Q4": {
+      "TOTAL_OPERATE_INCOME": "2705411651.01",
+      "PARENT_NETPROFIT": "134730209.59",
+      "OPERATE_COST": "2147402399.05",
+      "OPERATE_PROFIT": "160156054.50",
+      "DEDUCT_PARENT_NETPROFIT": "122062565.58",
+      "gross_margin_percent": "20.6256689902137718375996830072141961",
+      "cfo": "-113052626.44",
+      "capex": "210831890.68",
+      "simple_fcf": "-323884517.12"
+    },
+    "2026Q1": {
+      "TOTAL_OPERATE_INCOME": "3215501075.67",
+      "PARENT_NETPROFIT": "375528935.28",
+      "OPERATE_COST": "2327741767.8",
+      "OPERATE_PROFIT": "496831090.66",
+      "DEDUCT_PARENT_NETPROFIT": "380151002.68",
+      "gross_margin_percent": "27.6087392595575931182347412559278101",
+      "cfo": "-687984411.21",
+      "capex": "123650898.51",
+      "simple_fcf": "-811635309.72"
+    },
+    "2026Q2": {
+      "TOTAL_OPERATE_INCOME": "3820339567.05",
+      "PARENT_NETPROFIT": "136332686.63",
+      "OPERATE_COST": "3190444102.95",
+      "OPERATE_PROFIT": "183461214.22",
+      "DEDUCT_PARENT_NETPROFIT": "115565475.40",
+      "gross_margin_percent": "16.4879444103026255360836275952942846",
+      "cfo": "1024354288.04",
+      "capex": "361115864.73",
+      "simple_fcf": "663238423.31"
+    },
+    "2026Q3": {
+      "TOTAL_OPERATE_INCOME": "3890940150.32",
+      "PARENT_NETPROFIT": "80355049.44",
+      "OPERATE_COST": "3379056812.05",
+      "OPERATE_PROFIT": "94060008.78",
+      "DEDUCT_PARENT_NETPROFIT": "63943930.96",
+      "gross_margin_percent": "13.1557751724323366795610187585487466",
+      "cfo": "1241708156.58",
+      "capex": "301943117.25",
+      "simple_fcf": "939765039.33"
+    }
+  },
+  "ttm": {
+    "TOTAL_OPERATE_INCOME": "13632192444.05",
+    "PARENT_NETPROFIT": "726946880.94",
+    "DEDUCT_PARENT_NETPROFIT": "681722974.62",
+    "cfo": "1465025406.97",
+    "capex": "997541771.17",
+    "simple_fcf": "467483635.80"
+  },
+  "metrics": {
+    "price": "23.20",
+    "shares": "1190432569",
+    "mcap": "27618035600.80",
+    "ttm_eps_recomputed": "0.610657755735511970859056696389831384",
+    "bps_parent": "7.36728287775029784152352101851810138",
+    "ttm_pe": "37.9918207573677026966184371892189276",
+    "pb_parent": "3.14905785280291046033758566491115179",
+    "ps": "2.02594232102807181321130976907586814",
+    "simple_fcf_yield_percent": "1.69267518717536376302808839125319721",
+    "dividend_yield_percent": "0.862068965517241379310344827586206897",
+    "gross_debt": "8806145578.80",
+    "cash_and_trading_assets": "6308625534.45",
+    "strict_net_debt_excluding_trading_assets": "4686098129.57",
+    "net_debt_cce_plus_trading": "4270795184.07",
+    "wide_net_debt": "2497520044.35",
+    "ev_revenue_with_book_nci_and_all_cash": "2.40190948886885480103163347478550445",
+    "ev_revenue_with_book_nci_and_cce": "2.56245432376628480082889341581529065",
+    "nine_month_simple_fcf": "791368152.92",
+    "nine_month_cfo_to_profit_percent": "266.469707752849805010812619029118117",
+    "q3_profit_qoq_percent": "-41.0595863499121597263574736024403688",
+    "q3_payable_plus_notes_increase": "1182793803.69",
+    "nine_month_payable_plus_notes_increase": "2648706312.57"
+  },
+  "three_year_assumptions": {
+    "normalized_eps": ".65",
+    "r": ".08",
+    "no_additional_dividend_credit": true,
+    "no_dilution": true
+  },
+  "three_year": [
+    {
+      "label": "悲观",
+      "growth": "-0.10",
+      "pe": "15",
+      "future_eps": "0.47385000",
+      "future_profit": "564086472.82065000",
+      "year3_price": "7.10775000",
+      "present_value": "5.64236111111111111111111111111111111",
+      "price_return_percent": "-69.3631465517241379310344827586206897",
+      "annual_price_return_percent": "-32.5863172297108399802522703391408151"
+    },
+    {
+      "label": "基准",
+      "growth": "0.10",
+      "pe": "20",
+      "future_eps": "0.86515000",
+      "future_profit": "1029902737.07035000",
+      "year3_price": "17.30300000",
+      "present_value": "13.7356792663719961387999796778946299",
+      "price_return_percent": "-25.4181034482758620689655172413793103",
+      "annual_price_return_percent": "-9.31311714951422964812016170988696940"
+    },
+    {
+      "label": "乐观",
+      "growth": "0.30",
+      "pe": "25",
+      "future_eps": "1.42805000",
+      "future_profit": "1699997230.16045000",
+      "year3_price": "35.70125000",
+      "present_value": "28.3408032947213331301122796321698928",
+      "price_return_percent": "53.8846982758620689655172413793103450",
+      "annual_price_return_percent": "15.4512073850578550176053459423278130"
+    }
+  ],
+  "ten_year": {
+    "config": {
+      "多氟多": {
+        "roic": 0.1,
+        "g": [
+          0,
+          0.005,
+          0.01
+        ],
+        "p": [
+          0.35,
+          0.5,
+          0.15
+        ],
+        "irr10": [
+          -17.569730332750577,
+          -7.997665782518892,
+          -1.3943396943089992
+        ],
+        "k": 0
+      }
+    },
+    "rows": [
+      {
+        "profit_yi": 4,
+        "g": 0,
+        "r": 0.1,
+        "pe": 10.0,
+        "irr_percent": -17.569730332750577,
+        "spread": 0.1,
+        "terminal_pv_per_share": null
+      },
+      {
+        "profit_yi": 4,
+        "g": 0,
+        "r": 0.08,
+        "pe": 12.5,
+        "irr_percent": -15.709676248944549,
+        "spread": 0.08,
+        "terminal_pv_per_share": 1.9454839364558938
+      },
+      {
+        "profit_yi": 12,
+        "g": 0.005,
+        "r": 0.1,
+        "pe": 10.0,
+        "irr_percent": -7.997665782518892,
+        "spread": 0.095,
+        "terminal_pv_per_share": null
+      },
+      {
+        "profit_yi": 12,
+        "g": 0.005,
+        "r": 0.08,
+        "pe": 12.666666666666666,
+        "irr_percent": -5.79692480206937,
+        "spread": 0.075,
+        "terminal_pv_per_share": 5.914271166825917
+      },
+      {
+        "profit_yi": 24,
+        "g": 0.01,
+        "r": 0.1,
+        "pe": 9.999999999999998,
+        "irr_percent": -1.3943396943089992,
+        "spread": 0.09000000000000001,
+        "terminal_pv_per_share": null
+      },
+      {
+        "profit_yi": 24,
+        "g": 0.01,
+        "r": 0.08,
+        "pe": 12.857142857142856,
+        "irr_percent": 1.1151644704452623,
+        "spread": 0.07,
+        "terminal_pv_per_share": 12.00641515069923
+      }
+    ],
+    "mcap_yi": "276.180356008"
+  },
+  "ten_year_flip": {
+    "rates": [
+      0.06,
+      0.08,
+      0.1
+    ],
+    "means": [
+      -5.365752203764121,
+      -8.229574417598485,
+      -10.357389461868499
+    ],
+    "passes": [
+      false,
+      false,
+      false
+    ],
+    "in_band": [
+      true,
+      true,
+      false
+    ],
+    "flipped": false,
+    "labels": [
+      "r−2pp",
+      "基准 r",
+      "r+2pp"
+    ]
+  },
+  "reverse_valuation": {
+    "year3_required_profit_at_pe20_8pct": "1739538543.13774848",
+    "year10_required_profit_at_terminal_pe_8pct": "4707257955.32659467955397421336252630",
+    "three_year_base_price_vs_band12_margin_percent": "12.6362827255389238860313240478529736"
+  },
+  "reverse_dcf": {
+    "note": "假设归属普通股可分配FCFE起点4亿元；不是把简化FCF当FCFE。含1-10年现金流和终值；新增资本需求已含在FCFE假设内。",
+    "fcfe0_yi": "4",
+    "r": "0.08",
+    "terminal_g": "0.005",
+    "required_growth": "0.225967859516425974116384701935493726",
+    "year10_fcfe_yi": "30.6796809000875602704854238562685434",
+    "pv_yi": "276.180356008000000000000000000000007"
+  },
+  "historical_original_scope": {
+    "2021": {
+      "revenue": "7808855820.6",
+      "profit": "1259706825.21",
+      "gross_margin_percent": "32.1359483179340390240730013357521818",
+      "operating_margin_percent": "18.0482650453355458383656867795749093",
+      "cfo": "1975048651.82",
+      "capex": "1216946065.13",
+      "simple_fcf": "758102586.69",
+      "cash": "1442821935.58"
+    },
+    "2022": {
+      "revenue": "12358006103.93",
+      "profit": "1948064917.99",
+      "gross_margin_percent": "30.5230533129486317764571970164768907",
+      "operating_margin_percent": "18.3057882407145156057166822137701841",
+      "cfo": "1753086803.3",
+      "capex": "2573903849.64",
+      "simple_fcf": "-820817046.34",
+      "cash": "3684280082.72"
+    },
+    "2023": {
+      "revenue": "11937564553.28",
+      "profit": "511056268.03",
+      "gross_margin_percent": "16.0119522521434907435092654942996400",
+      "operating_margin_percent": "5.30979294722087003358784319954373560",
+      "cfo": "330077941.84",
+      "capex": "1512609258.13",
+      "simple_fcf": "-1182531316.29",
+      "cash": "6875232110.7"
+    },
+    "2024": {
+      "revenue": "8249239821.75",
+      "profit": "-308498770.03",
+      "gross_margin_percent": "8.85690838886296438397032956280957331",
+      "operating_margin_percent": "-4.71587373644171990640793252677991826",
+      "cfo": "-313283511.1",
+      "capex": "1020324350.71",
+      "simple_fcf": "-1333607861.81",
+      "cash": "5988990861.02"
+    },
+    "2025": {
+      "revenue": "9434247610.47",
+      "profit": "212784849.4",
+      "gross_margin_percent": "13.9618678340410785675786066286252640",
+      "operating_margin_percent": "2.28794500210543719755204140938914158",
+      "cfo": "199089470.35",
+      "capex": "1056712029.23",
+      "simple_fcf": "-857622558.88",
+      "cash": "5030602303.23"
+    }
+  },
+  "segments": {
+    "2025-12-31": [
+      {
+        "ITEM_NAME": "其他",
+        "MAIN_BUSINESS_INCOME": "253273102.74",
+        "MAIN_BUSINESS_COST": "274675857.81",
+        "MAIN_BUSINESS_RPOFIT": "-21402755.07",
+        "GROSS_RPOFIT_RATIO": "-0.084505",
+        "MBI_RATIO": "0.026846",
+        "MBR_RATIO": "-0.016249"
+      },
+      {
+        "ITEM_NAME": "电子信息材料",
+        "MAIN_BUSINESS_INCOME": "408951827.99",
+        "MAIN_BUSINESS_COST": "362098681.58",
+        "MAIN_BUSINESS_RPOFIT": "46853146.41",
+        "GROSS_RPOFIT_RATIO": "0.114569",
+        "MBI_RATIO": "0.043348",
+        "MBR_RATIO": "0.03557"
+      },
+      {
+        "ITEM_NAME": "氟基新材料",
+        "MAIN_BUSINESS_INCOME": "2788873135.08",
+        "MAIN_BUSINESS_COST": "2536438923.33",
+        "MAIN_BUSINESS_RPOFIT": "252434211.75",
+        "GROSS_RPOFIT_RATIO": "0.090515",
+        "MBI_RATIO": "0.295612",
+        "MBR_RATIO": "0.191645"
+      },
+      {
+        "ITEM_NAME": "新能源电池",
+        "MAIN_BUSINESS_INCOME": "2849639910.66",
+        "MAIN_BUSINESS_COST": "2491434530.34",
+        "MAIN_BUSINESS_RPOFIT": "358205380.32",
+        "GROSS_RPOFIT_RATIO": "0.125702",
+        "MBI_RATIO": "0.302053",
+        "MBR_RATIO": "0.271945"
+      },
+      {
+        "ITEM_NAME": "新能源材料",
+        "MAIN_BUSINESS_INCOME": "3133509634",
+        "MAIN_BUSINESS_COST": "2452402434.9",
+        "MAIN_BUSINESS_RPOFIT": "681107199.1",
+        "GROSS_RPOFIT_RATIO": "0.217362",
+        "MBI_RATIO": "0.332142",
+        "MBR_RATIO": "0.517088"
+      }
+    ],
+    "2026-06-30": [
+      {
+        "ITEM_NAME": "电子信息材料",
+        "MAIN_BUSINESS_INCOME": "264928696.8",
+        "MAIN_BUSINESS_COST": "216544549.83",
+        "MAIN_BUSINESS_RPOFIT": "48384146.97",
+        "GROSS_RPOFIT_RATIO": "0.182631",
+        "MBI_RATIO": "0.037654",
+        "MBR_RATIO": "0.031881"
+      },
+      {
+        "ITEM_NAME": "其他",
+        "MAIN_BUSINESS_INCOME": "326013987.93",
+        "MAIN_BUSINESS_COST": "243053660.15",
+        "MAIN_BUSINESS_RPOFIT": "82960327.78",
+        "GROSS_RPOFIT_RATIO": "0.254469",
+        "MBI_RATIO": "0.046336",
+        "MBR_RATIO": "0.054664"
+      },
+      {
+        "ITEM_NAME": "氟基新材料",
+        "MAIN_BUSINESS_INCOME": "1457198956.05",
+        "MAIN_BUSINESS_COST": "1272208747.6",
+        "MAIN_BUSINESS_RPOFIT": "184990208.45",
+        "GROSS_RPOFIT_RATIO": "0.126949",
+        "MBI_RATIO": "0.207111",
+        "MBR_RATIO": "0.121892"
+      },
+      {
+        "ITEM_NAME": "新能源电池",
+        "MAIN_BUSINESS_INCOME": "2395790722.8",
+        "MAIN_BUSINESS_COST": "2110422734.11",
+        "MAIN_BUSINESS_RPOFIT": "285367988.69",
+        "GROSS_RPOFIT_RATIO": "0.119112",
+        "MBI_RATIO": "0.340512",
+        "MBR_RATIO": "0.188032"
+      },
+      {
+        "ITEM_NAME": "新能源材料",
+        "MAIN_BUSINESS_INCOME": "2591908279.14",
+        "MAIN_BUSINESS_COST": "1675956179.06",
+        "MAIN_BUSINESS_RPOFIT": "915952100.08",
+        "GROSS_RPOFIT_RATIO": "0.353389",
+        "MBI_RATIO": "0.368386",
+        "MBR_RATIO": "0.603531"
+      }
+    ]
+  },
+  "official_reports": {
+    "2021": "https://static.cninfo.com.cn/finalpage/2022-03-22/1212631020.PDF",
+    "2022": "https://static.cninfo.com.cn/finalpage/2023-03-23/1216190000.PDF",
+    "2023": "https://static.cninfo.com.cn/finalpage/2024-03-29/1219437815.PDF",
+    "2024": "https://static.cninfo.com.cn/finalpage/2025-04-24/1223233779.PDF",
+    "2025": "https://static.cninfo.com.cn/finalpage/2026-04-16/1225107815.pdf",
+    "2026H1": "https://static.cninfo.com.cn/finalpage/2026-08-18/1225478600.PDF",
+    "2026Q3": "https://static.cninfo.com.cn/finalpage/2026-10-22/1225613679.PDF",
+    "2026Q1": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-04-24/b372fe46-ce66-4141-8e5b-38c42dc7c3c1.PDF"
+  },
+  "restatement_differences": {
+    "2022_as_2024_annual_p8": {
+      "OPERATE_INCOME": "12358053902.66",
+      "PARENT_NETPROFIT": "1958306571.94",
+      "DEDUCT_PARENT_NETPROFIT": "1842419811.17",
+      "NETCASH_OPERATE": "1767236900.31",
+      "TOTAL_ASSETS": "18276300349.40",
+      "TOTAL_PARENT_EQUITY": "6517252083.79"
+    },
+    "2023_as_2025_annual_p8": {
+      "OPERATE_INCOME": "11991656540.48",
+      "PARENT_NETPROFIT": "511635456.30",
+      "DEDUCT_PARENT_NETPROFIT": "471051014.85",
+      "NETCASH_OPERATE": "316881791.06",
+      "TOTAL_ASSETS": "22910003808.35",
+      "TOTAL_PARENT_EQUITY": "9376780437.08"
+    },
+    "2024_as_2025_annual_p8": {
+      "OPERATE_INCOME": "8249239821.75",
+      "PARENT_NETPROFIT": "-308498770.03",
+      "DEDUCT_PARENT_NETPROFIT": "-403761361.80",
+      "NETCASH_OPERATE": "-313283511.10",
+      "TOTAL_ASSETS": "23446342865.76",
+      "TOTAL_PARENT_EQUITY": "8549004773.19"
+    }
+  },
+  "source_limitations": [
+    "2025 and 2024 annual reports restate earlier years for common-control acquisitions. Eastmoney historical tables partly retain older figures; especially 2023 CFO 330077941.84 vs latest restated316881791.06 (over1%). Use official latest restated number, disclose difference.",
+    "2022 latest summary restated in2024 annual p8; latest cost/CFO detail not fully restated to2025 consolidation. For trend use clearly labeled historical/as-then scope, do not silently mix newest restated revenue with old costs.",
+    "2021 total operating income7808855820.60 differs from operating revenue7798541139.21 because10.31468139m interest income from then finance business; use营业收入consistently.",
+    "2026Q3 has no segment breakdown or restricted cash note; cannot infer Q3 segment profitability fromH1, cannot call all monetary funds freely available.",
+    "CFO includes changes in bank acceptance guarantees and workingcapital; simple CFO-capex excludes acquisitions, investment payments, and financing obligations.",
+    "Debt proxy treats full current portion of noncurrent liabilities as financing debt, includes noncurrent leases and excludes2.1879m long payable pending classification; no bond payable onQ3 sheet."
+  ],
+  "latest_balance_verified": {
+    "asof": "2026-09-30",
+    "MONETARYFUNDS": "5893322588.95",
+    "trading_financial_assets": "415302945.50",
+    "cash_cash_equivalents": "4120047449.23",
+    "short_borrowing": "314063048.50",
+    "long_borrowing": "6853437859.46",
+    "current_portion_noncurrent_liabilities": "943230533.95",
+    "noncurrent_lease": "695414136.89",
+    "total_debt_proxy_including_leases": "8806145578.80",
+    "net_debt_using_CCE_plus_trading_assets": "4270795184.07",
+    "net_debt_using_all_monetaryfunds_plus_trading_assets_excluding_noncurrent_lease": "1802105907.46",
+    "longterm_payable_excluded_uncertain_type": "2187900.00",
+    "q3_restricted_cash_detail": "not disclosed",
+    "H1_restricted_cash_total": "2000387323.99",
+    "H1_restricted_breakdown": {
+      "acceptance_bill_guarantees": "1913027493.77",
+      "borrowing_guarantees": "15000000.00",
+      "frozen": "3768862.48",
+      "futures_guarantees": "30522042.81",
+      "other_limited_use": "400000.00",
+      "unmatured_interest": "37668924.93"
+    },
+    "H1_restricted_source": "2026H1 PDF p118"
+  },
+  "peers": {
+    "002709": {
+      "quote": {
+        "price": "28.64",
+        "market_cap_yi": "583.84",
+        "time": "20261106161430"
+      },
+      "ttm_profit": "4843291040.84",
+      "pe": "12.05461317680263231331350859",
+      "gross_margin_percent": "29.42853269558264",
+      "note": "年报与2026Q3合并利润表核对当前及比较期归母；市值为腾讯亿元展示值，PE近似。"
+    },
+    "300037": {
+      "quote": {
+        "price": "54.69",
+        "market_cap_yi": "412.30",
+        "time": "20261106161427"
+      },
+      "ttm_profit": "1891619062.77",
+      "pe": "21.79614321481021834014280613",
+      "gross_margin_percent": "23.533331346582994",
+      "note": "年报与2026Q3合并利润表核对当前及比较期归母；市值为腾讯亿元展示值，PE近似。"
+    }
+  }
+}
