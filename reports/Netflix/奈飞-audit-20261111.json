@@ -1,0 +1,375 @@
+{
+  "schema": 1,
+  "research_cutoff": "2026-11-11",
+  "report": "reports/Netflix/奈飞-research-20261111.md",
+  "sampling_seed": 20261111,
+  "sampling_ratio": 0.15,
+  "extracted_points": 129,
+  "sample_count": 20,
+  "results": [
+    {
+      "id": 11,
+      "label": "美国及加拿大 · 2025Q4",
+      "reported_value": 5.339,
+      "unit": "",
+      "line_number": 85,
+      "raw_text": "| 美国及加拿大 | 19.957 | 5.339 | 5.245 | 5.432 | 5.628 | +11% |",
+      "fetched_value": 5.33927,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000290/ex991_q326.htm",
+      "fetched_value2": 5.33927,
+      "fetched_source2": "https://www.detailed-charts.com/chart-view/nflx/revenue-by-geographic-location",
+      "verification_type": "financial_fact"
+    },
+    {
+      "id": 19,
+      "label": "欧洲、中东及非洲 · 2026Q2",
+      "reported_value": 4.034,
+      "unit": "",
+      "line_number": 86,
+      "raw_text": "| 欧洲、中东及非洲 | 14.515 | 3.873 | 3.998 | 4.034 | 4.107 | +11% |",
+      "fetched_value": 4.033515,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000290/ex991_q326.htm",
+      "fetched_value2": 4.033515,
+      "fetched_source2": "https://www.detailed-charts.com/chart-view/nflx/revenue-by-geographic-location",
+      "verification_type": "financial_fact"
+    },
+    {
+      "id": 20,
+      "label": "欧洲、中东及非洲 · 2026Q3",
+      "reported_value": 4.107,
+      "unit": "",
+      "line_number": 86,
+      "raw_text": "| 欧洲、中东及非洲 | 14.515 | 3.873 | 3.998 | 4.034 | 4.107 | +11% |",
+      "fetched_value": 4.106572,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000291/nflx-20260930.htm",
+      "fetched_value2": 4.11,
+      "fetched_source2": "https://stockanalysis.com/stocks/nflx/financials/metrics/?p=quarterly",
+      "verification_type": "financial_fact"
+    },
+    {
+      "id": 29,
+      "label": "亚太 · 2025Q4",
+      "reported_value": 1.421,
+      "unit": "",
+      "line_number": 88,
+      "raw_text": "| 亚太 | 5.354 | 1.421 | 1.509 | 1.510 | 1.537 | +12% |",
+      "fetched_value": 1.42081,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000290/ex991_q326.htm",
+      "fetched_value2": 1.42081,
+      "fetched_source2": "https://www.detailed-charts.com/chart-view/nflx/revenue-by-geographic-location",
+      "verification_type": "financial_fact"
+    },
+    {
+      "id": 30,
+      "label": "亚太 · 2026Q1",
+      "reported_value": 1.509,
+      "unit": "",
+      "line_number": 88,
+      "raw_text": "| 亚太 | 5.354 | 1.421 | 1.509 | 1.510 | 1.537 | +12% |",
+      "fetched_value": 1.508982,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000290/ex991_q326.htm",
+      "fetched_value2": 1.508982,
+      "fetched_source2": "https://www.detailed-charts.com/chart-view/nflx/revenue-by-geographic-location",
+      "verification_type": "financial_fact"
+    },
+    {
+      "id": 37,
+      "label": "2026 广告收入 · 数据性质",
+      "reported_value": 5.28,
+      "unit": "%",
+      "line_number": 97,
+      "raw_text": "| 2026 广告收入 | 约 2.7B，原约 3B | 公司预测；约占全年收入指引 5.28% |",
+      "fetched_value": 5.283757338551859,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000290/ex991_q326.htm；2.7/51.1×100（指引占比）",
+      "fetched_value2": 5.283757338551859,
+      "fetched_source2": "https://www.marketingdive.com/news/netflix-lowers-ad-revenue-forecast-by-10-continues-to-beef-up-ad-suite/833571/；独立报道相同公司预测，非实绩",
+      "verification_type": "guidance_calculation"
+    },
+    {
+      "id": 41,
+      "label": "9/30 现金、短投 · 数据性质",
+      "reported_value": 8.222953,
+      "unit": "B",
+      "line_number": 99,
+      "raw_text": "| 9/30 现金、短投 | 8.194275B；0.028678B | 报表事实；合计 8.222953B |",
+      "fetched_value": 8.222953,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000291/nflx-20260930.htm",
+      "fetched_value2": 8.223,
+      "fetched_source2": "https://stockanalysis.com/stocks/nflx/financials/balance-sheet/",
+      "verification_type": "financial_fact"
+    },
+    {
+      "id": 47,
+      "label": "2026年前九月 · 决策与结果",
+      "reported_value": 10.782,
+      "unit": "B",
+      "line_number": 184,
+      "raw_text": "| 2026年前九月 | 现金流回购支出 10.782B；不含消费税的计划购股额约 10.7B，Q3 约 4.8B；授权余额 22.3B | 授权不是收益，需看买价及抵销激励后的股数 |",
+      "fetched_value": 10.781716,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000291/nflx-20260930.htm",
+      "fetched_value2": 10.781974,
+      "fetched_source2": "https://stockanalysis.com/stocks/nflx/financials/cash-flow-statement/?p=quarterly；季度总额10.823减SEC明确的结算代扣税0.041026，统一现金流口径",
+      "verification_type": "financial_fact"
+    },
+    {
+      "id": 51,
+      "label": "TTM GAAP 净利 · 取数或计算结果",
+      "reported_value": 14.766653,
+      "unit": "B",
+      "line_number": 227,
+      "raw_text": "| TTM GAAP 净利 | 14.766653B | 含一次性终止费 |",
+      "fetched_value": 14.766653,
+      "fetched_source": "SEC2025全年+2026前九月−2025前九月；https://www.sec.gov/Archives/edgar/data/1065280/000106528026000291/nflx-20260930.htm",
+      "fetched_value2": 14.767,
+      "fetched_source2": "https://stockanalysis.com/stocks/nflx/financials/",
+      "verification_type": "financial_fact_calculation"
+    },
+    {
+      "id": 65,
+      "label": "再加回往期巴西税款的现金锚 · 如何解释",
+      "reported_value": 0.729,
+      "unit": "B",
+      "line_number": 235,
+      "raw_text": "| 再加回往期巴西税款的现金锚 | 9.304063B | 加回 0.729B；不是公司定义的经常 FCF，亦不是精确区间上限 |",
+      "fetched_value": 0.729,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000291/nflx-20260930.htm",
+      "fetched_value2": null,
+      "fetched_source2": "无独立测量；SEC镜像仅用于录入检查，不计第二源",
+      "verification_type": "single_source_fact"
+    },
+    {
+      "id": 69,
+      "label": "正常化 PEG，示意 · 如何解释",
+      "reported_value": 21.44,
+      "unit": "",
+      "line_number": 237,
+      "raw_text": "| 正常化 PEG，示意 | 1.79x | 21.44／假设未来 EPS 增长 12%；不是已实现增长事实 |",
+      "fetched_value": 21.44406779661017,
+      "fetched_source": "financial_rigor verify-valuation：63.26/2.95；2.95为本文正常化假设",
+      "fetched_value2": 21.44406779661017,
+      "fetched_source2": "Decimal独立除法复算；不是外部事实核验",
+      "verification_type": "model_calculation"
+    },
+    {
+      "id": 74,
+      "label": "悲观 · 相对现价",
+      "reported_value": -5.6,
+      "unit": "%",
+      "line_number": 247,
+      "raw_text": "| 悲观 | +4% | 18x | 3.32 | 59.73 | -5.6% | -1.90% | 44.88 |",
+      "fetched_value": -5.57970534302877,
+      "fetched_source": "financial_rigor three-scenario：2.95×1.04^3×18/63.26−1",
+      "fetched_value2": -5.57970534302877,
+      "fetched_source2": "Decimal独立复算相同作者假设",
+      "verification_type": "model_calculation"
+    },
+    {
+      "id": 70,
+      "label": "悲观 · EPS年增长假设",
+      "reported_value": 4.0,
+      "unit": "%",
+      "line_number": 247,
+      "raw_text": "| 悲观 | +4% | 18x | 3.32 | 59.73 | -5.6% | -1.90% | 44.88 |",
+      "fetched_value": 4.0,
+      "fetched_source": "作者悲观EPS增长假设，不存在外部实际取数",
+      "fetched_value2": null,
+      "fetched_source2": "仅检查报告与计算输入一致，不视为事实认证",
+      "verification_type": "assumption_consistency"
+    },
+    {
+      "id": 81,
+      "label": "基准 · 相对现价",
+      "reported_value": 50.7,
+      "unit": "%",
+      "line_number": 248,
+      "raw_text": "| 基准 | +12% | 23x | 4.14 | 95.32 | +50.7% | +14.65% | 71.62 |",
+      "fetched_value": 50.68663420803035,
+      "fetched_source": "financial_rigor three-scenario：2.95×1.12^3×23/63.26−1",
+      "fetched_value2": 50.68663420803035,
+      "fetched_source2": "Decimal独立复算相同作者假设",
+      "verification_type": "model_calculation"
+    },
+    {
+      "id": 89,
+      "label": "乐观 · 年化价格回报",
+      "reported_value": 28.97,
+      "unit": "%",
+      "line_number": 249,
+      "raw_text": "| 乐观 | +18% | 28x | 4.85 | 135.71 | +114.5% | +28.97% | 101.96 |",
+      "fetched_value": 28.973047103463923,
+      "fetched_source": "三年目标价与现价解年化；financial_rigor目标价输入",
+      "fetched_value2": 28.973047103463923,
+      "fetched_source2": "Decimal独立幂运算",
+      "verification_type": "model_calculation"
+    },
+    {
+      "id": 93,
+      "label": "悲观 · 2036利润，B",
+      "reported_value": 15.36,
+      "unit": "",
+      "line_number": 279,
+      "raw_text": "| 悲观 | 30% | +2% | 15.36 | 1.0% | 9.0个百分点 | 10.67x | -2.50% |",
+      "fetched_value": 15.35932969193394,
+      "fetched_source": "financial_rigor calc：12.6×1.02^10；非实际2036盈利",
+      "fetched_value2": 15.35932969193394,
+      "fetched_source2": "Decimal独立复算作者假设",
+      "verification_type": "model_calculation"
+    },
+    {
+      "id": 114,
+      "label": "r：10% · 概率加权十年回报近似",
+      "reported_value": 4.75,
+      "unit": "%",
+      "line_number": 288,
+      "raw_text": "| r：10% | +4.75% | -5.25个百分点 | 未通过 |",
+      "fetched_value": 4.753355958157093,
+      "fetched_source": "terminal_value flip，r=10%，ROIC25%，g1/2.5/3.5%，p30/50/20%，k2%",
+      "fetched_value2": 4.753355958157093,
+      "fetched_source2": "Decimal从总利润、永续PE及几何回报独立重建，非外部事实",
+      "verification_type": "model_calculation"
+    },
+    {
+      "id": 118,
+      "label": "区间内复核：9% · 概率加权十年回报近似",
+      "reported_value": 6.21,
+      "unit": "%",
+      "line_number": 290,
+      "raw_text": "| 区间内复核：9% | +6.21% | -2.79个百分点 | 未通过 |",
+      "fetched_value": 6.214378052895164,
+      "fetched_source": "terminal_value flip区间内r=9%，其余同基准",
+      "fetched_value2": 6.214378052895164,
+      "fetched_source2": "Decimal独立重建，非外部事实",
+      "verification_type": "model_calculation"
+    },
+    {
+      "id": 122,
+      "label": "空仓者 · 建议与条件",
+      "reported_value": 63.26,
+      "unit": "",
+      "line_number": 330,
+      "raw_text": "| 空仓者 | 63.26 美元不新增；55—60 美元启动完整复核，45—50 美元才在经营条件满足时研究性分批；低于 45 先查论文破坏 |",
+      "fetched_value": 63.26,
+      "fetched_source": "https://stockanalysis.com/stocks/nflx/history/",
+      "fetched_value2": 63.25,
+      "fetched_source2": "https://chartexchange.com/symbol/nasdaq-nflx/historical/",
+      "verification_type": "market_fact"
+    },
+    {
+      "id": 123,
+      "label": "条件小仓 · 建议与条件",
+      "reported_value": 45.0,
+      "unit": "",
+      "line_number": 332,
+      "raw_text": "| 条件小仓 | 45—50 美元，且随后连续两次正式披露验证收入同比约≥10%、滚动经营率约≥30%、剔终止费及税款时点的年化 FCF 约≥9B、广告目标不再下修；核内容现金／摊销约≤1.15及留存无持续恶化 |",
+      "fetched_value": 45.0,
+      "fetched_source": "作者条件买入带下沿，核对报告第七/八步及触发登记",
+      "fetched_value2": null,
+      "fetched_source2": "这是行动阈值一致性，不是外部公允价值认证",
+      "verification_type": "policy_consistency"
+    }
+  ],
+  "limitations": [
+    "模型计算及阈值按一致性和独立算术复核，不能算外部财务事实验证。",
+    "巴西往期现金税0.729B仅有发行人原始披露；镜像不算独立源。",
+    "地区序列第三方均整理自发行人披露，非独立审计。"
+  ],
+  "terminal_config": {
+    "Netflix": {
+      "roic": 0.25,
+      "g": [
+        0.01,
+        0.025,
+        0.035
+      ],
+      "p": [
+        0.3,
+        0.5,
+        0.2
+      ],
+      "irr10": [
+        -2.5047349601899875,
+        6.205251007573921,
+        12.010754712135643
+      ],
+      "k": 0.02
+    }
+  },
+  "valuation_model": {
+    "mcap_b": "259.76617662378",
+    "three_year": [
+      {
+        "label": "bear",
+        "growth": ".04",
+        "pe": "18",
+        "eps": "3.31834880",
+        "target": "59.73027840",
+        "pv": "44.87624222389181066867017280",
+        "cagr": "-1.895608027453646615221702540"
+      },
+      {
+        "label": "base",
+        "growth": ".12",
+        "pe": "23",
+        "eps": "4.14453760",
+        "target": "95.32436480",
+        "pv": "71.61860616078136739293764087",
+        "cagr": "14.64582507245379606441231110"
+      },
+      {
+        "label": "bull",
+        "growth": ".18",
+        "pe": "28",
+        "eps": "4.84694440",
+        "target": "135.71444320",
+        "pv": "101.9642698722764838467317806",
+        "cagr": "28.97304710346392330600879210"
+      }
+    ],
+    "long_term": [
+      {
+        "label": "bear",
+        "growth": ".02",
+        "g": ".01",
+        "profit": "15.359329691933939841024",
+        "pe": "10.66666666666666666666666667",
+        "irr_pct": "-2.504734960189987576819985310"
+      },
+      {
+        "label": "base",
+        "growth": ".10",
+        "g": ".025",
+        "profit": "32.681154997260000000000",
+        "pe": "12",
+        "irr_pct": "6.205251007573920931517265400"
+      },
+      {
+        "label": "bull",
+        "growth": ".15",
+        "g": ".035",
+        "profit": "50.974027469919667968750",
+        "pe": "13.23076923076923076923076923",
+        "irr_pct": "12.01075471213564385581516060"
+      }
+    ],
+    "reverse_fcf_growth": "0.1335340850868763610612096906",
+    "fcf_pv_6pct": "151.2564301093753648172398466",
+    "fcf_pv_9pct": "188.5406486954378648222388973",
+    "fcf_pv_12pct": "235.1400409402611549253292291",
+    "fcf_model_start_b": "8.575 (rounded from conservative 8.575063)"
+  },
+  "normalization": {
+    "ttm_gaap_net_income_b": "14.766653",
+    "termination_fee_b": "2.8",
+    "financing_cost_b": "0.085",
+    "assumed_tax_rate_range": [
+      "0.17",
+      "0.21"
+    ],
+    "ttm_fcf_b": "11.375063",
+    "conservative_fcf_b": "8.575063",
+    "brazil_cash_tax_b": "0.729",
+    "ttm_sbc_b": "0.540064"
+  },
+  "verdict": "PASS",
+  "report_sha256": "a1ee119c63bc67fe2ac37fd86c34cbad3ae1bfca27c578021c96b580cd79490e"
+}

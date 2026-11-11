@@ -18,7 +18,7 @@
 
 > 📖 **想读报告，用 [阅读站](https://xbtlin.github.io/ai-berkshire/)**：成品报告按公司、专题、时间整理，电脑和手机都好读，可搜索、记住阅读进度。
 >
-> 📊 全部 2071 份报告（含底稿）· 199 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-11-10。
+> 📊 全部 2073 份报告（含底稿）· 200 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-11-11。
 
 <!-- REPORTS-BANNER:END -->
 
@@ -657,18 +657,18 @@ $investment-research 腾讯
 
 <!-- REPORTS-INDEX:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-**📊 [全部研究索引 →](reports/README.md)** ｜ 2071 份报告 · 199 家公司 · 28 个专题 · 更新至 2026-11-10
+**📊 [全部研究索引 →](reports/README.md)** ｜ 2073 份报告 · 200 家公司 · 28 个专题 · 更新至 2026-11-11
 
 最近更新：
 
 | 日期 | 报告 | 归属 |
 |------|------|------|
+| 2026-11-11 | [英伟达（NASDAQ: NVDA）研究报告](reports/英伟达/英伟达-research-20261111.md) | 英伟达 |
+| 2026-11-11 | [标的跟踪表](reports/标的跟踪表.md) | 综合与横评 |
+| 2026-11-11 | [奈飞（Netflix，NFLX）研究报告](reports/Netflix/奈飞-research-20261111.md) | Netflix |
 | 2026-11-10 | [每日监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
 | 2026-11-10 | [每日监控](reports/daily-monitor/daily-monitor-20261110.md) | daily-monitor |
-| 2026-11-07 | [标的跟踪表](reports/标的跟踪表.md) | 综合与横评 |
 | 2026-11-07 | [关键数据交叉验证记录](reports/多氟多/多氟多-validation-20261107.md) | 多氟多 |
-| 2026-11-07 | [多氟多（002407.SZ）研究报告](reports/多氟多/多氟多-research-20261107.md) | 多氟多 |
-| 2026-11-07 | [nVent Electric（NVT）研究报告](reports/nVent/nVent-research-20261107.md) | nVent |
 
 <!-- REPORTS-INDEX:END -->
 

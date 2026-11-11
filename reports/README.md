@@ -4,7 +4,7 @@
 > 新增报告先 `git add`，再运行 `python3 tools/reports_index.py`，将报告与索引一并提交。
 > 只收录成品报告；证据、审计、复算、底稿等中间产物不在此列，完整清单见 `index.json`。
 
-**2071 份报告** · **199 家公司** · **28 个专题** · 最近更新 2026-11-10
+**2073 份报告** · **200 家公司** · **28 个专题** · 最近更新 2026-11-11
 
 [最近更新](#最近更新) · [按公司](#按公司) · [专题研究](#专题研究) · [大师研究](#大师研究) · [筛选池](#筛选池)
 
@@ -14,10 +14,12 @@
 
 | 日期 | 报告 | 归属 | 类型 |
 |------|------|------|------|
+| 2026-11-11 | [英伟达（NASDAQ: NVDA）研究报告](英伟达/英伟达-research-20261111.md) | 英伟达 | 研究 |
+| 2026-11-11 | [标的跟踪表](标的跟踪表.md) | 综合与横评 | 研究 |
+| 2026-11-11 | [奈飞（Netflix，NFLX）研究报告](Netflix/奈飞-research-20261111.md) | Netflix | 研究 |
 | 2026-11-10 | [每日监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
 | 2026-11-10 | [每日监控](daily-monitor/daily-monitor-20261110.md) | daily-monitor | 研究 |
 | 2026-11-09 | [每日监控](daily-monitor/daily-monitor-20261109.md) | daily-monitor | 研究 |
-| 2026-11-07 | [标的跟踪表](标的跟踪表.md) | 综合与横评 | 研究 |
 | 2026-11-07 | [关键数据交叉验证记录](多氟多/多氟多-validation-20261107.md) | 多氟多 | 研究 |
 | 2026-11-07 | [多氟多（002407.SZ）研究报告](多氟多/多氟多-research-20261107.md) | 多氟多 | 研究 |
 | 2026-11-07 | [nVent Electric（NVT）研究报告](nVent/nVent-research-20261107.md) | nVent | 研究 |
@@ -52,8 +54,6 @@
 | 2026-10-31 | [Sea Limited（NYSE:SE）研究报告](SE/SE-research-20261031.md) | SE | 研究 |
 | 2026-10-31 | [Reddit（NYSE:RDDT）研究报告](Reddit/Reddit-research-20261031.md) | Reddit | 研究 |
 | 2026-10-31 | [Rocket Lab Corporation（NASDAQ:RKLB）研究报告](RKLB/RKLB-research-20261031.md) | RKLB | 研究 |
-| 2026-10-31 | [诺和诺德（NYSE:NVO）研究报告](Novo%20Nordisk/诺和诺德-research-20261031.md) | Novo Nordisk | 研究 |
-| 2026-10-31 | [AppLovin（NASDAQ:APP）研究报告](AppLovin/AppLovin-research-20261031.md) | AppLovin | 研究 |
 
 ---
 
@@ -710,8 +710,9 @@
 </details>
 
 <details markdown="1">
-<summary><b>英伟达</b> · 35 份 · 最近 2026-09-07</summary>
+<summary><b>英伟达</b> · 36 份 · 最近 2026-11-11</summary>
 
+- `2026-11-11` [英伟达（NASDAQ: NVDA）研究报告](英伟达/英伟达-research-20261111.md) — 研究
 - `2026-09-07` [英伟达（NVDA）商业模式与十年利润研究](英伟达/英伟达商业模式与十年利润研究-20260907.md) — 研究
 - `2026-08-28` [英伟达这个季度扩张的资产，86.8% 没花在自己身上](英伟达/英伟达-三大报表解析-公众号版-20260828.md) — 公众号
 - `2026-08-28` [英伟达 FY2027 Q2 三大报表解析：从 SEC 原件到逐项含义](英伟达/英伟达-三大报表解析-FY2027Q2-20260828.md) — 财报
@@ -2448,6 +2449,13 @@
 </details>
 
 <details markdown="1">
+<summary><b>Netflix</b> · 1 份 · 最近 2026-11-11</summary>
+
+- `2026-11-11` [奈飞（Netflix，NFLX）研究报告](Netflix/奈飞-research-20261111.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>NewbornTown</b> · 1 份 · 最近 2026-06-23</summary>
 
 - `2026-06-23` [赤子城科技（09911.HK）投资研究报告](NewbornTown/NewbornTown-research-20260623.md) — 研究
@@ -2977,9 +2985,9 @@
 ## 专题研究
 
 <details markdown="1">
-<summary><b>综合与横评</b> · 93 份 · 最近 2026-11-07</summary>
+<summary><b>综合与横评</b> · 93 份 · 最近 2026-11-11</summary>
 
-- `2026-11-07` [标的跟踪表](标的跟踪表.md) — 研究
+- `2026-11-11` [标的跟踪表](标的跟踪表.md) — 研究
 - `2026-11-06` [重点标的看板](重点标的看板.md) — 研究
 - `2026-10-31` [每日监控重点标的研究更新](每日监控重点标的研究更新-20261031.md) — 研究
 - `2026-10-31` [四只美股持仓复检与操作建议](四只美股持仓复检-20261031.md) — 研究
