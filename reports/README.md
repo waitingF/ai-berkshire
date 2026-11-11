@@ -4,7 +4,7 @@
 > 新增报告先 `git add`，再运行 `python3 tools/reports_index.py`，将报告与索引一并提交。
 > 只收录成品报告；证据、审计、复算、底稿等中间产物不在此列，完整清单见 `index.json`。
 
-**2026 份报告** · **194 家公司** · **28 个专题** · 最近更新 2026-10-31
+**2071 份报告** · **199 家公司** · **28 个专题** · 最近更新 2026-11-10
 
 [最近更新](#最近更新) · [按公司](#按公司) · [专题研究](#专题研究) · [大师研究](#大师研究) · [筛选池](#筛选池)
 
@@ -14,54 +14,55 @@
 
 | 日期 | 报告 | 归属 | 类型 |
 |------|------|------|------|
+| 2026-11-10 | [每日监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
+| 2026-11-10 | [每日监控](daily-monitor/daily-monitor-20261110.md) | daily-monitor | 研究 |
+| 2026-11-09 | [每日监控](daily-monitor/daily-monitor-20261109.md) | daily-monitor | 研究 |
+| 2026-11-07 | [标的跟踪表](标的跟踪表.md) | 综合与横评 | 研究 |
+| 2026-11-07 | [关键数据交叉验证记录](多氟多/多氟多-validation-20261107.md) | 多氟多 | 研究 |
+| 2026-11-07 | [多氟多（002407.SZ）研究报告](多氟多/多氟多-research-20261107.md) | 多氟多 | 研究 |
+| 2026-11-07 | [nVent Electric（NVT）研究报告](nVent/nVent-research-20261107.md) | nVent | 研究 |
+| 2026-11-07 | [Adobe 程序化验算记录](Adobe/Adobe-validation-20261107.md) | Adobe | 研究 |
+| 2026-11-07 | [Adobe（ADBE）研究报告](Adobe/Adobe-research-20261107.md) | Adobe | 研究 |
+| 2026-11-06 | [重点标的看板](重点标的看板.md) | 综合与横评 | 研究 |
+| 2026-11-06 | [智谱（02513.HK）研究报告](智谱/智谱-research-20261106.md) | 智谱 | 研究 |
+| 2026-11-06 | [英特尔（Intel，NASDAQ: INTC）研究报告](Intel/Intel-research-20261106.md) | Intel | 研究 |
+| 2026-11-06 | [Alphabet／Google（GOOGL / GOOG）研究报告](Google/Google-research-20261106.md) | Google | 研究 |
+| 2026-11-04 | [现代牙科（03600.HK）研究报告](现代牙科/现代牙科研究报告-20261104.md) | 现代牙科 | 研究 |
+| 2026-11-04 | [京东健康投资研究：药品供应链值多少钱，服务增长有多少来自京东集团](京东健康/京东健康研究报告-20261104.md) | 京东健康 | 研究 |
+| 2026-11-04 | [谷歌（Alphabet）研究报告：搜索还在增长，AI 投入何时变成股东现金？](Google/谷歌研究报告-20261104.md) | Google | 研究 |
+| 2026-11-03 | [华曦达（00901.HK）研究报告](华曦达/华曦达-research-20261103.md) | 华曦达 | 研究 |
+| 2026-11-03 | [上海复旦（688385.SH / 01385.HK）研究报告](上海复旦/上海复旦-research-20261103.md) | 上海复旦 | 研究 |
+| 2026-11-02 | [DeepSeek Super-agent 深度技术研究](DeepSeek/DeepSeek-Super-agent-深度技术研究-20261102.md) | DeepSeek | 研究 |
+| 2026-11-01 | [《持械入宋》研究报告](持械入宋深度调研-20261101/持械入宋研究报告-20261101.md) | 持械入宋深度调研 | 研究 |
 | 2026-10-31 | [贵州茅台（600519）2026年三季报研究报告](茅台/贵州茅台-earnings-2026Q3-20261031.md) | 茅台 | 财报 |
 | 2026-10-31 | [茅台三季报：三个亮眼数字，三种不同含义](茅台/茅台-公众号-20261031.md) | 茅台 | 公众号 |
-| 2026-10-30 | [每日监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
-| 2026-10-30 | [每日监控](daily-monitor/daily-monitor-20261030.md) | daily-monitor | 研究 |
-| 2026-10-29 | [每日监控](daily-monitor/daily-monitor-20261029.md) | daily-monitor | 研究 |
-| 2026-10-28 | [泡泡玛特（09992.HK）2026Q3业绩分析](泡泡玛特/泡泡玛特-earnings-2026H1及Q3更新-20261028.md) | 泡泡玛特 | 财报 |
-| 2026-10-27 | [腾讯控股（00700.HK）投资研究报告](腾讯/腾讯投资研究报告-workbuddy-20261027.md) | 腾讯 | 研究 |
-| 2026-10-25 | [腾讯与快手估值及三年、十年回报研究报告](腾讯快手比较/估值-20261025/腾讯与快手估值及三年十年回报研究报告-20261025.md) | 腾讯快手比较 | 估值仓位 |
-| 2026-10-25 | [腾讯估值证据与经营分析底稿](腾讯快手比较/估值-20261025/tencent_research.md) | 腾讯快手比较 | 估值仓位 |
-| 2026-10-25 | [快手估值研究底稿：低利润倍数背后的现金消耗与可灵归属](腾讯快手比较/估值-20261025/kuaishou_research.md) | 腾讯快手比较 | 估值仓位 |
-| 2026-10-24 | [恒生科技与纳斯达克估值对比研究报告](恒生科技/恒生科技与纳斯达克估值对比-20261024.md) | 恒生科技 | 横评对比 |
-| 2026-10-23 | [恒生科技估值全景：指数与十家公司的历史位置（2026-10-23）](恒生科技/恒生科技估值全景-20261023.md) | 恒生科技 | 估值仓位 |
-| 2026-10-23 | [纳指崩盘 78%：苹果从底部涨了 1000 倍](市场复盘/纳指崩盘复盘-公众号-20261023.md) | 市场复盘 | 公众号 |
-| 2026-10-22 | [泡泡玛特-公众号-段永平发言实录](泡泡玛特/泡泡玛特-公众号-段永平发言实录-20261022.md) | 泡泡玛特 | 公众号 |
-| 2026-10-21 | [网易研究：三成市值是净现金的游戏现金流，125美元处在观望区，115美元以下分批](网易/网易研究报告-20261021.md) | 网易 | 研究 |
-| 2026-10-21 | [理想汽车：市值约等于净现金，经营业务只被定价约230亿元](理想汽车/理想汽车研究报告-20261021.md) | 理想汽车 | 研究 |
-| 2026-10-21 | [滴滴全球研究：国内出行赚的钱正被海外外卖烧掉，场外价格已打到基准价值一半](滴滴/滴滴研究报告-20261021.md) | 滴滴 | 研究 |
-| 2026-10-21 | [泡泡玛特机构调研汇总：短期修复分歧、营业额与利润展望](泡泡玛特/泡泡玛特-机构调研汇总与经营展望-20261021.md) | 泡泡玛特 | 研究 |
-| 2026-10-21 | [汽车之家：市值约等于净现金，收入一年少三成，买的是现金怎么回到股东手里](汽车之家/汽车之家研究报告-20261021.md) | 汽车之家 | 研究 |
-| 2026-10-21 | [唯品会（VIPS）研究报告：会计净现金占市值55%，股价已按利润长期萎缩定价](唯品会/唯品会研究报告-20261021.md) | 唯品会 | 研究 |
-| 2026-10-21 | [京东集团研究：市值八成是子公司和现金，外卖亏损决定剩下两成值多少](京东/京东研究报告-20261021.md) | 京东 | 研究 |
-| 2026-10-20 | [阿里巴巴投资研究：AI扩张能否重新变成每股现金流](阿里巴巴/阿里巴巴研究报告-20261020.md) | 阿里巴巴 | 研究 |
-| 2026-10-20 | [贵州茅台（600519）研究报告](茅台/茅台研究报告-20261020.md) | 茅台 | 研究 |
-| 2026-10-20 | [腾讯控股（0700.HK）研究报告](腾讯/腾讯研究报告-20261020.md) | 腾讯 | 研究 |
-| 2026-10-20 | [美团（03690.HK）研究报告](美团/美团研究报告-20261020.md) | 美团 | 研究 |
-| 2026-10-20 | [拼多多：便宜来自真实利润，也来自股东拿不到现金的疑问](拼多多/拼多多研究报告-20261020.md) | 拼多多 | 研究 |
-| 2026-10-20 | [快手科技（01024.HK）研究报告](快手/快手研究报告-20261020.md) | 快手 | 研究 |
-| 2026-10-20 | [八家中国公司投资研究导读：从竞争优势走到股东现金](中国八家公司-investment-research-20261020/八家公司研究导读-20261020.md) | 中国八家公司-investment-research | 横评对比 |
-| 2026-10-20 | [Sea Cloud 战略研究报告](SE/Sea-Cloud-20261020/最终报告.md) | SE | 研究 |
-| 2026-10-20 | [Sea Cloud 风险与管理层研究](SE/Sea-Cloud-20261020/04-风险管理层评估-李录视角.md) | SE | 组织管理 |
-| 2026-10-20 | [Sea Cloud 行业竞争研究](SE/Sea-Cloud-20261020/03-行业竞争分析-芒格视角.md) | SE | 研究 |
-| 2026-10-20 | [MiniMax 投资研究报告：模型效率能否长成每股收益](MINIMAX/MiniMax研究报告-20261020.md) | MiniMax | 研究 |
-| 2026-10-19 | [苹果（AAPL）投资研究报告](苹果/苹果投资研究报告-20261019.md) | 苹果 | 研究 |
-| 2026-10-19 | [特斯拉（TSLA）独立投资研究：特斯拉已有汽车、储能和有限无人运营业务，但当前市值主要依靠尚未完整证明的自动驾驶与新业务现金](美股七姐妹-investment-team-20261019/07-特斯拉-TSLA-研究报告.md) | 美股七姐妹-investment-team | 研究 |
-| 2026-10-19 | [英伟达（NVDA）独立投资研究：英伟达仍拥有最强的AI计算系统优势之一，但不能再按完全不承担客户资本风险的供应商估值](美股七姐妹-investment-team-20261019/06-英伟达-NVDA-研究报告.md) | 美股七姐妹-investment-team | 研究 |
-| 2026-10-19 | [Meta（META）独立投资研究：Meta的AI广告回报证据比许多纯AI叙事更直接，但前沿模型、数据中心和硬件投入远超已证明的收益范围](美股七姐妹-investment-team-20261019/05-Meta-META-研究报告.md) | 美股七姐妹-investment-team | 研究 |
-| 2026-10-19 | [Alphabet（谷歌）独立投资研究报告](美股七姐妹-20261019/谷歌/谷歌投资研究报告-20261019.md) | 美股七姐妹 | 研究 |
-| 2026-10-19 | [苹果（AAPL）独立投资研究报告](美股七姐妹-20261019/苹果/苹果投资研究报告-20261019.md) | 美股七姐妹 | 研究 |
-| 2026-10-19 | [英伟达（NVIDIA / NASDAQ: NVDA）独立投资研究报告](美股七姐妹-20261019/英伟达/英伟达投资研究报告-20261019.md) | 美股七姐妹 | 研究 |
-| 2026-10-19 | [特斯拉（TSLA）独立投资研究：产品进步能否变成普通股东的现金回报？](美股七姐妹-20261019/特斯拉/特斯拉投资研究报告-20261019.md) | 美股七姐妹 | 研究 |
+| 2026-10-31 | [美团（03690.HK）研究报告](美团/美团-research-20261031.md) | 美团 | 研究 |
+| 2026-10-31 | [每日监控重点标的研究更新](每日监控重点标的研究更新-20261031.md) | 综合与横评 | 研究 |
+| 2026-10-31 | [标普500（VOO）研究报告](标普500/标普500-research-20261031.md) | 标普500 | 研究 |
+| 2026-10-31 | [拼多多（NASDAQ:PDD）研究报告](拼多多/拼多多-research-20261031.md) | 拼多多 | 研究 |
+| 2026-10-31 | [微软（NASDAQ:MSFT）研究报告](微软/微软-research-20261031.md) | 微软 | 研究 |
+| 2026-10-31 | [哔哩哔哩（BILI / 9626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20261031.md) | 哔哩哔哩 | 研究 |
+| 2026-10-31 | [乐动机器人（01236.HK）研究报告](乐动机器人/乐动机器人-research-20261031.md) | 乐动机器人 | 研究 |
+| 2026-10-31 | [中芯国际：港股价格回落，扩产后的普通股现金回报仍待证明](中芯国际/中芯国际-research-20261031.md) | 中芯国际 | 研究 |
+| 2026-10-31 | [中国核电（601985.SH）研究报告](中国核电/中国核电-research-20261031.md) | 中国核电 | 研究 |
+| 2026-10-31 | [中国平安：分红仍有支撑，营运利润增长需要拆开看](中国平安/中国平安-research-20261031.md) | 中国平安 | 研究 |
+| 2026-10-31 | [上海复旦：扣非改善，现金回款与上市子公司权益决定安全边际](上海复旦/上海复旦-research-20261031.md) | 上海复旦 | 研究 |
+| 2026-10-31 | [lululemon（NASDAQ:LULU）研究报告](lululemon/lululemon-research-20261031.md) | lululemon | 研究 |
+| 2026-10-31 | [SK海力士（KRX:000660）研究报告](SK海力士/SK海力士-research-20261031.md) | SK海力士 | 研究 |
+| 2026-10-31 | [Sea Limited（NYSE:SE）研究报告](SE/SE-research-20261031.md) | SE | 研究 |
+| 2026-10-31 | [Reddit（NYSE:RDDT）研究报告](Reddit/Reddit-research-20261031.md) | Reddit | 研究 |
+| 2026-10-31 | [Rocket Lab Corporation（NASDAQ:RKLB）研究报告](RKLB/RKLB-research-20261031.md) | RKLB | 研究 |
+| 2026-10-31 | [诺和诺德（NYSE:NVO）研究报告](Novo%20Nordisk/诺和诺德-research-20261031.md) | Novo Nordisk | 研究 |
+| 2026-10-31 | [AppLovin（NASDAQ:APP）研究报告](AppLovin/AppLovin-research-20261031.md) | AppLovin | 研究 |
 
 ---
 
 ## 按公司
 
 <details markdown="1">
-<summary><b>拼多多</b> · 87 份 · 最近 2026-10-20</summary>
+<summary><b>拼多多</b> · 88 份 · 最近 2026-10-31</summary>
 
+- `2026-10-31` [拼多多（NASDAQ:PDD）研究报告](拼多多/拼多多-research-20261031.md) — 研究
 - `2026-10-20` [拼多多：便宜来自真实利润，也来自股东拿不到现金的疑问](拼多多/拼多多研究报告-20261020.md) — 研究
 - `2026-10-08` [拼多多（PDD）研究报告](拼多多/拼多多-thesis-drift-20261008.md) — 研究
 - `2026-10-02` [拼多多控股（PDD Holdings，PDD.US）投资研究报告](拼多多/拼多多投资研究报告-20261002.md) — 研究
@@ -272,8 +273,9 @@
 </details>
 
 <details markdown="1">
-<summary><b>美团</b> · 66 份 · 最近 2026-10-20</summary>
+<summary><b>美团</b> · 67 份 · 最近 2026-10-31</summary>
 
+- `2026-10-31` [美团（03690.HK）研究报告](美团/美团-research-20261031.md) — 研究
 - `2026-10-20` [美团（03690.HK）研究报告](美团/美团研究报告-20261020.md) — 研究
 - `2026-10-08` [美团（03690.HK）研究报告](美团/美团-research-20261008.md) — 研究
 - `2026-10-02` [美团（3690.HK）投资研究报告](美团/美团投资研究报告-20261002.md) — 研究
@@ -344,6 +346,68 @@
 - `2026-04-09` [美团(3690.HK) — 财务估值分析（巴菲特视角）](美团/02-财务估值分析-巴菲特视角.md) — 估值仓位
 - `2026-04-09` [美团(3690.HK) 2025年报精读](美团/美团-earnings-2025FY.md) — 财报
 - `2026-04-08` [美团（03690.HK）投资研究报告](美团/美团-research-20260408.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>daily-monitor</b> · 56 份 · 最近 2026-11-10</summary>
+
+- `2026-11-10` [每日监控](daily-monitor/daily-monitor-latest.md) — 研究
+- `2026-11-10` [每日监控](daily-monitor/daily-monitor-20261110.md) — 研究
+- `2026-11-09` [每日监控](daily-monitor/daily-monitor-20261109.md) — 研究
+- `2026-11-06` [每日监控](daily-monitor/daily-monitor-20261106.md) — 研究
+- `2026-11-05` [每日监控](daily-monitor/daily-monitor-20261105.md) — 研究
+- `2026-11-04` [每日监控](daily-monitor/daily-monitor-20261104.md) — 研究
+- `2026-11-03` [每日监控](daily-monitor/daily-monitor-20261103.md) — 研究
+- `2026-11-02` [每日监控](daily-monitor/daily-monitor-20261102.md) — 研究
+- `2026-10-30` [每日监控](daily-monitor/daily-monitor-20261030.md) — 研究
+- `2026-10-29` [每日监控](daily-monitor/daily-monitor-20261029.md) — 研究
+- `2026-10-28` [每日监控](daily-monitor/daily-monitor-20261028.md) — 研究
+- `2026-10-26` [每日监控](daily-monitor/daily-monitor-20261026.md) — 研究
+- `2026-10-23` [每日监控](daily-monitor/daily-monitor-20261023.md) — 研究
+- `2026-10-22` [每日监控](daily-monitor/daily-monitor-20261022.md) — 研究
+- `2026-10-21` [每日监控](daily-monitor/daily-monitor-20261021.md) — 研究
+- `2026-10-20` [每日监控](daily-monitor/daily-monitor-20261020.md) — 研究
+- `2026-10-19` [每日监控](daily-monitor/daily-monitor-20261019.md) — 研究
+- `2026-10-16` [每日监控](daily-monitor/daily-monitor-20261016.md) — 研究
+- `2026-10-15` [每日监控](daily-monitor/daily-monitor-20261015.md) — 研究
+- `2026-10-14` [每日监控](daily-monitor/daily-monitor-20261014.md) — 研究
+- `2026-10-13` [每日监控](daily-monitor/daily-monitor-20261013.md) — 研究
+- `2026-10-12` [每日监控](daily-monitor/daily-monitor-20261012.md) — 研究
+- `2026-10-09` [每日监控](daily-monitor/daily-monitor-20261009.md) — 研究
+- `2026-10-08` [每日监控](daily-monitor/daily-monitor-20261008.md) — 研究
+- `2026-10-08` [价格监控研究报告更新记录](daily-monitor/价格监控报告更新-20261008.md) — 研究
+- `2026-09-30` [每日监控](daily-monitor/daily-monitor-20260930.md) — 研究
+- `2026-09-28` [每日监控](daily-monitor/daily-monitor-20260928.md) — 研究
+- `2026-09-25` [每日监控](daily-monitor/daily-monitor-20260925.md) — 研究
+- `2026-09-24` [每日监控](daily-monitor/daily-monitor-20260924.md) — 研究
+- `2026-09-22` [每日监控](daily-monitor/daily-monitor-20260922.md) — 研究
+- `2026-09-21` [每日监控](daily-monitor/daily-monitor-20260921.md) — 研究
+- `2026-09-19` [每日监控](daily-monitor/daily-monitor-20260919.md) — 研究
+- `2026-09-18` [每日监控](daily-monitor/daily-monitor-20260918.md) — 研究
+- `2026-09-17` [每日监控](daily-monitor/daily-monitor-20260917.md) — 研究
+- `2026-09-16` [每日监控](daily-monitor/daily-monitor-20260916.md) — 研究
+- `2026-09-15` [每日监控](daily-monitor/daily-monitor-20260915.md) — 研究
+- `2026-09-14` [每日监控](daily-monitor/daily-monitor-20260914.md) — 研究
+- `2026-09-12` [每日监控](daily-monitor/daily-monitor-20260912.md) — 研究
+- `2026-09-11` [每日监控](daily-monitor/daily-monitor-20260911.md) — 研究
+- `2026-09-10` [每日监控](daily-monitor/daily-monitor-20260910.md) — 研究
+- `2026-09-09` [每日监控](daily-monitor/daily-monitor-20260909.md) — 研究
+- `2026-09-08` [每日监控](daily-monitor/daily-monitor-20260908.md) — 研究
+- `2026-09-07` [每日监控](daily-monitor/daily-monitor-20260907.md) — 研究
+- `2026-09-05` [每日监控](daily-monitor/daily-monitor-20260905.md) — 研究
+- `2026-09-04` [每日监控](daily-monitor/daily-monitor-20260904.md) — 研究
+- `2026-09-03` [每日监控](daily-monitor/daily-monitor-20260903.md) — 研究
+- `2026-09-02` [每日监控](daily-monitor/daily-monitor-20260902.md) — 研究
+- `2026-09-01` [每日监控](daily-monitor/daily-monitor-20260901.md) — 研究
+- `2026-08-31` [每日监控](daily-monitor/daily-monitor-20260831.md) — 研究
+- `2026-08-31` [P0 标的财报复检与最终决策（2026-08-31）](daily-monitor/P0-财报复检决策-20260831.md) — 财报
+- `2026-08-30` [每日监控](daily-monitor/daily-monitor-20260830.md) — 研究
+- `2026-08-29` [每日监控](daily-monitor/daily-monitor-20260829.md) — 研究
+- `2026-08-28` [每日监控](daily-monitor/daily-monitor-20260828.md) — 研究
+- `2026-08-27` [每日监控](daily-monitor/daily-monitor-20260827.md) — 研究
+- `2026-08-26` [每日监控](daily-monitor/daily-monitor-20260826.md) — 研究
+- `2026-08-25` [每日监控](daily-monitor/daily-monitor-20260825.md) — 研究
 
 </details>
 
@@ -469,61 +533,6 @@
 - `2026-04-09` [TODO](快手/TODO.md) — 研究
 - `2026-04-08` [快手（1024.HK）投资风险与管理层质量深度评估](快手/快手-风险评估-李录视角-20260408.md) — 研究
 - `2026-04-08` [快手科技 (1024.HK) 财务分析报告](快手/02-财务估值分析-巴菲特视角.md) — 估值仓位
-
-</details>
-
-<details markdown="1">
-<summary><b>daily-monitor</b> · 49 份 · 最近 2026-10-30</summary>
-
-- `2026-10-30` [每日监控](daily-monitor/daily-monitor-latest.md) — 研究
-- `2026-10-30` [每日监控](daily-monitor/daily-monitor-20261030.md) — 研究
-- `2026-10-29` [每日监控](daily-monitor/daily-monitor-20261029.md) — 研究
-- `2026-10-28` [每日监控](daily-monitor/daily-monitor-20261028.md) — 研究
-- `2026-10-26` [每日监控](daily-monitor/daily-monitor-20261026.md) — 研究
-- `2026-10-23` [每日监控](daily-monitor/daily-monitor-20261023.md) — 研究
-- `2026-10-22` [每日监控](daily-monitor/daily-monitor-20261022.md) — 研究
-- `2026-10-21` [每日监控](daily-monitor/daily-monitor-20261021.md) — 研究
-- `2026-10-20` [每日监控](daily-monitor/daily-monitor-20261020.md) — 研究
-- `2026-10-19` [每日监控](daily-monitor/daily-monitor-20261019.md) — 研究
-- `2026-10-16` [每日监控](daily-monitor/daily-monitor-20261016.md) — 研究
-- `2026-10-15` [每日监控](daily-monitor/daily-monitor-20261015.md) — 研究
-- `2026-10-14` [每日监控](daily-monitor/daily-monitor-20261014.md) — 研究
-- `2026-10-13` [每日监控](daily-monitor/daily-monitor-20261013.md) — 研究
-- `2026-10-12` [每日监控](daily-monitor/daily-monitor-20261012.md) — 研究
-- `2026-10-09` [每日监控](daily-monitor/daily-monitor-20261009.md) — 研究
-- `2026-10-08` [每日监控](daily-monitor/daily-monitor-20261008.md) — 研究
-- `2026-10-08` [价格监控研究报告更新记录](daily-monitor/价格监控报告更新-20261008.md) — 研究
-- `2026-09-30` [每日监控](daily-monitor/daily-monitor-20260930.md) — 研究
-- `2026-09-28` [每日监控](daily-monitor/daily-monitor-20260928.md) — 研究
-- `2026-09-25` [每日监控](daily-monitor/daily-monitor-20260925.md) — 研究
-- `2026-09-24` [每日监控](daily-monitor/daily-monitor-20260924.md) — 研究
-- `2026-09-22` [每日监控](daily-monitor/daily-monitor-20260922.md) — 研究
-- `2026-09-21` [每日监控](daily-monitor/daily-monitor-20260921.md) — 研究
-- `2026-09-19` [每日监控](daily-monitor/daily-monitor-20260919.md) — 研究
-- `2026-09-18` [每日监控](daily-monitor/daily-monitor-20260918.md) — 研究
-- `2026-09-17` [每日监控](daily-monitor/daily-monitor-20260917.md) — 研究
-- `2026-09-16` [每日监控](daily-monitor/daily-monitor-20260916.md) — 研究
-- `2026-09-15` [每日监控](daily-monitor/daily-monitor-20260915.md) — 研究
-- `2026-09-14` [每日监控](daily-monitor/daily-monitor-20260914.md) — 研究
-- `2026-09-12` [每日监控](daily-monitor/daily-monitor-20260912.md) — 研究
-- `2026-09-11` [每日监控](daily-monitor/daily-monitor-20260911.md) — 研究
-- `2026-09-10` [每日监控](daily-monitor/daily-monitor-20260910.md) — 研究
-- `2026-09-09` [每日监控](daily-monitor/daily-monitor-20260909.md) — 研究
-- `2026-09-08` [每日监控](daily-monitor/daily-monitor-20260908.md) — 研究
-- `2026-09-07` [每日监控](daily-monitor/daily-monitor-20260907.md) — 研究
-- `2026-09-05` [每日监控](daily-monitor/daily-monitor-20260905.md) — 研究
-- `2026-09-04` [每日监控](daily-monitor/daily-monitor-20260904.md) — 研究
-- `2026-09-03` [每日监控](daily-monitor/daily-monitor-20260903.md) — 研究
-- `2026-09-02` [每日监控](daily-monitor/daily-monitor-20260902.md) — 研究
-- `2026-09-01` [每日监控](daily-monitor/daily-monitor-20260901.md) — 研究
-- `2026-08-31` [每日监控](daily-monitor/daily-monitor-20260831.md) — 研究
-- `2026-08-31` [P0 标的财报复检与最终决策（2026-08-31）](daily-monitor/P0-财报复检决策-20260831.md) — 财报
-- `2026-08-30` [每日监控](daily-monitor/daily-monitor-20260830.md) — 研究
-- `2026-08-29` [每日监控](daily-monitor/daily-monitor-20260829.md) — 研究
-- `2026-08-28` [每日监控](daily-monitor/daily-monitor-20260828.md) — 研究
-- `2026-08-27` [每日监控](daily-monitor/daily-monitor-20260827.md) — 研究
-- `2026-08-26` [每日监控](daily-monitor/daily-monitor-20260826.md) — 研究
-- `2026-08-25` [每日监控](daily-monitor/daily-monitor-20260825.md) — 研究
 
 </details>
 
@@ -949,31 +958,10 @@
 </details>
 
 <details markdown="1">
-<summary><b>Novo Nordisk</b> · 13 份 · 最近 2026-10-07</summary>
+<summary><b>lululemon</b> · 15 份 · 最近 2026-10-31</summary>
 
-- `2026-10-07` [诺和诺德（NVO）近两周下跌归因报告](Novo%20Nordisk/诺和诺德-news-20261007.md) — 研究
-- `2026-09-26` [诺和诺德（NYSE: NVO / CPH: NOVO.B）研究报告](Novo%20Nordisk/诺和诺德-research-20260926.md) — 研究
-- `2026-08-31` [Novo Nordisk（NYSE: NVO / NOVO-B）2026Q2 财报精读](Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) — 财报
-- `2026-06-20` [Novo Nordisk (NVO) — 风险与管理层评估](Novo%20Nordisk/04-风险管理层评估-李录视角.md) — 组织管理
-- `2026-06-20` [Novo Nordisk (NVO) — 财务估值分析](Novo%20Nordisk/02-财务估值分析-巴菲特视角.md) — 估值仓位
-- `2026-06-20` [Novo Nordisk (NVO) — 行业竞争分析](Novo%20Nordisk/03-行业竞争分析-芒格视角.md) — 研究
-- `2026-06-20` [Novo Nordisk (NVO) — 商业模式分析](Novo%20Nordisk/01-商业模式分析-段永平视角.md) — 研究
-
-*《看懂诺和诺德》*
-
-- `2026-05-22` [竞争与威胁——礼来、仿制药与口服制剂](Novo%20Nordisk/《看懂诺和诺德》/04-竞争与威胁-礼来-仿制药与口服制剂.md) — 深度系列
-- `2026-05-22` [增长天花板——市场规模、产能扩张与新适应症](Novo%20Nordisk/《看懂诺和诺德》/03-增长天花板-市场规模-产能扩张与新适应症.md) — 深度系列
-- `2026-05-22` [减肥药革命的核心玩家](Novo%20Nordisk/《看懂诺和诺德》/01-开篇-减肥药革命的核心玩家.md) — 深度系列
-- `2026-05-22` [估值判断——高成长药企的低谷定价](Novo%20Nordisk/《看懂诺和诺德》/05-估值判断-高成长药企的低谷定价.md) — 深度系列
-- `2026-05-22` [GLP-1 帝国——司美格鲁肽的商业模式与护城河](Novo%20Nordisk/《看懂诺和诺德》/02-GLP-1帝国-司美格鲁肽的商业模式与护城河.md) — 深度系列
-
-- `2026-05-16` [Novo Nordisk (NVO) — 四大师综合研究报告](Novo%20Nordisk/最终报告.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>lululemon</b> · 13 份 · 最近 2026-10-07</summary>
-
+- `2026-10-31` [lululemon（NASDAQ:LULU）研究报告](lululemon/lululemon-research-20261031.md) — 研究
+- `2026-10-08` [lululemon（LULU）研究报告](lululemon/lululemon-research-20261008.md) — 研究
 - `2026-10-07` [露露乐檬（lululemon，LULU）近两周下跌归因报告](lululemon/lululemon-news-20261007.md) — 研究
 - `2026-09-04` [lululemon（LULU）研究报告](lululemon/lululemon-research-20260904.md) — 研究
 - `2026-09-04` [lululemon（LULU）FY2026 Q2 财报精读](lululemon/lululemon-earnings-2026Q2.md) — 财报
@@ -995,8 +983,33 @@
 </details>
 
 <details markdown="1">
-<summary><b>中国平安</b> · 13 份 · 最近 2026-09-27</summary>
+<summary><b>Novo Nordisk</b> · 14 份 · 最近 2026-10-31</summary>
 
+- `2026-10-31` [诺和诺德（NYSE:NVO）研究报告](Novo%20Nordisk/诺和诺德-research-20261031.md) — 研究
+- `2026-10-07` [诺和诺德（NVO）近两周下跌归因报告](Novo%20Nordisk/诺和诺德-news-20261007.md) — 研究
+- `2026-09-26` [诺和诺德（NYSE: NVO / CPH: NOVO.B）研究报告](Novo%20Nordisk/诺和诺德-research-20260926.md) — 研究
+- `2026-08-31` [Novo Nordisk（NYSE: NVO / NOVO-B）2026Q2 财报精读](Novo%20Nordisk/Novo%20Nordisk-earnings-2026Q2.md) — 财报
+- `2026-06-20` [Novo Nordisk (NVO) — 风险与管理层评估](Novo%20Nordisk/04-风险管理层评估-李录视角.md) — 组织管理
+- `2026-06-20` [Novo Nordisk (NVO) — 财务估值分析](Novo%20Nordisk/02-财务估值分析-巴菲特视角.md) — 估值仓位
+- `2026-06-20` [Novo Nordisk (NVO) — 行业竞争分析](Novo%20Nordisk/03-行业竞争分析-芒格视角.md) — 研究
+- `2026-06-20` [Novo Nordisk (NVO) — 商业模式分析](Novo%20Nordisk/01-商业模式分析-段永平视角.md) — 研究
+
+*《看懂诺和诺德》*
+
+- `2026-05-22` [竞争与威胁——礼来、仿制药与口服制剂](Novo%20Nordisk/《看懂诺和诺德》/04-竞争与威胁-礼来-仿制药与口服制剂.md) — 深度系列
+- `2026-05-22` [增长天花板——市场规模、产能扩张与新适应症](Novo%20Nordisk/《看懂诺和诺德》/03-增长天花板-市场规模-产能扩张与新适应症.md) — 深度系列
+- `2026-05-22` [减肥药革命的核心玩家](Novo%20Nordisk/《看懂诺和诺德》/01-开篇-减肥药革命的核心玩家.md) — 深度系列
+- `2026-05-22` [估值判断——高成长药企的低谷定价](Novo%20Nordisk/《看懂诺和诺德》/05-估值判断-高成长药企的低谷定价.md) — 深度系列
+- `2026-05-22` [GLP-1 帝国——司美格鲁肽的商业模式与护城河](Novo%20Nordisk/《看懂诺和诺德》/02-GLP-1帝国-司美格鲁肽的商业模式与护城河.md) — 深度系列
+
+- `2026-05-16` [Novo Nordisk (NVO) — 四大师综合研究报告](Novo%20Nordisk/最终报告.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>中国平安</b> · 14 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [中国平安：分红仍有支撑，营运利润增长需要拆开看](中国平安/中国平安-research-20261031.md) — 研究
 
 *《看懂平安集团》*
 
@@ -1014,6 +1027,77 @@
 - `2026-07-22` [中国保险/综合金融行业格局与中国平安竞争态势](中国平安/03-行业竞争分析-芒格视角.md) — 研究
 - `2026-06-25` [中国平安（601318.SS / 2318.HK）投资研究报告](中国平安/pingan-investment-research-20260625.md) — 研究
 - `2026-04-10` [中国平安集团（601318.SH / 2318.HK）深度研究报告](中国平安/平安集团-research-20260410.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>Adobe</b> · 13 份 · 最近 2026-11-07</summary>
+
+- `2026-11-07` [Adobe（ADBE）研究报告](Adobe/Adobe-research-20261107.md) — 研究
+- `2026-11-07` [Adobe 程序化验算记录](Adobe/Adobe-validation-20261107.md) — 研究
+- `2026-09-12` [Adobe（ADBE）FY2026 Q3 财报精读](Adobe/Adobe-earnings-2026Q3.md) — 财报
+- `2026-09-12` [Adobe 风险与管理层评估](Adobe/04-风险管理层评估-李录视角.md) — 组织管理
+- `2026-06-20` [Adobe 财务与估值分析](Adobe/02-财务估值分析-巴菲特视角.md) — 估值仓位
+- `2026-06-20` [Adobe 行业竞争分析](Adobe/03-行业竞争分析-芒格视角.md) — 研究
+- `2026-06-20` [Adobe 商业模式分析](Adobe/01-商业模式分析-段永平视角.md) — 研究
+- `2026-06-07` [Adobe (ADBE) 投资研究报告](Adobe/Adobe-research-20260607.md) — 研究
+
+*《看懂Adobe》*
+
+- `2026-05-22` [订阅制印钞机的运转逻辑](Adobe/《看懂Adobe》/02-商业模式-订阅制印钞机的运转逻辑.md) — 深度系列
+- `2026-05-22` [创意软件帝国的关键数据](Adobe/《看懂Adobe》/01-开篇-创意软件帝国的关键数据.md) — 深度系列
+- `2026-05-22` [PE 十年最低是机会还是陷阱](Adobe/《看懂Adobe》/04-风险与估值-PE十年最低是机会还是陷阱.md) — 深度系列
+- `2026-05-22` [Firefly 是救星还是掘墓人](Adobe/《看懂Adobe》/03-AI冲击-Firefly是救星还是掘墓人.md) — 深度系列
+
+- `2026-05-16` [Adobe (ADBE) 投资研究最终报告](Adobe/最终报告.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>微软</b> · 13 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [微软（NASDAQ:MSFT）研究报告](微软/微软-research-20261031.md) — 研究
+- `2026-07-30` [微软（MSFT）FY2026 Q4 财报精读](微软/微软-earnings-FY2026Q4.md) — 财报
+- `2026-07-20` [微软（MSFT）研究报告](微软/微软研究报告-20260720.md) — 研究
+- `2026-07-18` [微软（MSFT）财务与估值分析 — 巴菲特视角](微软/02-财务估值分析-巴菲特视角.md) — 估值仓位
+- `2026-07-18` [微软（MSFT）行业格局与竞争态势分析](微软/03-行业竞争分析-芒格视角.md) — 研究
+- `2026-07-18` [微软（MSFT）投资风险与管理层质量评估](微软/04-风险管理层评估-李录视角.md) — 组织管理
+- `2026-07-18` [微软（MSFT）投研团队最终报告](微软/最终报告.md) — 研究
+- `2026-07-18` [微软（MSFT）商业模式、护城河与用户价值分析](微软/01-商业模式分析-段永平视角.md) — 研究
+- `2026-07-18` [微软（MSFT）买入前 Checklist 研究报告](微软/微软-checklist-20260718.md) — 研究
+- `2026-07-14` [微软（MSFT）投资论文追踪档案](微软/微软-thesis.md) — 研究
+- `2026-07-14` [微软（MSFT）买入前 Checklist 研究报告](微软/微软-checklist-20260714.md) — 研究
+- `2026-07-13` [微软（MSFT）投资研究报告](微软/微软-research-20260713.md) — 研究
+- `2026-06-23` [微软（MSFT）投资研究报告](微软/微软-research-20260623.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>智谱</b> · 13 份 · 最近 2026-11-06</summary>
+
+- `2026-11-06` [智谱（02513.HK）研究报告](智谱/智谱-research-20261106.md) — 研究
+- `2026-09-01` [智谱（02513.HK）三大报表解析 · 2026年中期](智谱/智谱-三大报表解析-2026中期-20260901.md) — 研究
+- `2026-07-20` [智谱（02513.HK）新闻脉搏 · 异动归因报告](智谱/智谱-news-20260720.md) — 研究
+
+*《看懂智谱AI》*
+
+- `2026-07-14` [收 1 元烧 4 元的生意怎么读](智谱/《看懂智谱AI》-20260714/03-商业模式与账本-收1元烧4元的生意怎么读.md) — 深度系列
+- `2026-07-14` [半年二十倍的公司，你以为你看懂了智谱，其实没有](智谱/《看懂智谱AI》-20260714/01-开篇-半年二十倍的公司,你以为你看懂了.md) — 深度系列
+- `2026-07-14` [全球第六的模型，和一份"租来的"定价权](智谱/《看懂智谱AI》-20260714/02-技术与护城河-全球第六的模型和租来的定价权.md) — 深度系列
+- `2026-07-14` [930 倍市销率，与 2027 年 1 月的大考](智谱/《看懂智谱AI》-20260714/04-终章-930倍市销率与2027年1月的大考.md) — 深度系列
+
+*《看懂智谱AI》*
+
+- `2026-07-06` [烧钱机器的终局推演](智谱/《看懂智谱AI》/04-商业化与风险-烧钱机器的终局推演.md) — 深度系列
+- `2026-07-06` [五强争霸与大厂围猎](智谱/《看懂智谱AI》/03-竞争格局-五强争霸与大厂围猎.md) — 深度系列
+
+- `2026-07-04` [智谱（Z.ai，02513.HK）投资研究报告](智谱/智谱投资研究报告_20260704.md) — 研究
+- `2026-04-10` [智谱AI（Zhipu AI）深度研究报告](智谱/智谱AI-研究报告-20260410.md) — 研究
+
+*《看懂智谱AI》*
+
+- `2026-04-08` [GLM大模型的真实水位](智谱/《看懂智谱AI》/02-技术与产品-GLM大模型的真实水位.md) — 深度系列
+- `2026-01-08` [清华实验室走出的大模型独角兽](智谱/《看懂智谱AI》/01-开篇-清华实验室走出的大模型独角兽.md) — 深度系列
 
 </details>
 
@@ -1041,20 +1125,28 @@
 </details>
 
 <details markdown="1">
-<summary><b>微软</b> · 12 份 · 最近 2026-07-30</summary>
+<summary><b>Accenture</b> · 12 份 · 最近 2026-10-31</summary>
 
-- `2026-07-30` [微软（MSFT）FY2026 Q4 财报精读](微软/微软-earnings-FY2026Q4.md) — 财报
-- `2026-07-20` [微软（MSFT）研究报告](微软/微软研究报告-20260720.md) — 研究
-- `2026-07-18` [微软（MSFT）财务与估值分析 — 巴菲特视角](微软/02-财务估值分析-巴菲特视角.md) — 估值仓位
-- `2026-07-18` [微软（MSFT）行业格局与竞争态势分析](微软/03-行业竞争分析-芒格视角.md) — 研究
-- `2026-07-18` [微软（MSFT）投资风险与管理层质量评估](微软/04-风险管理层评估-李录视角.md) — 组织管理
-- `2026-07-18` [微软（MSFT）投研团队最终报告](微软/最终报告.md) — 研究
-- `2026-07-18` [微软（MSFT）商业模式、护城河与用户价值分析](微软/01-商业模式分析-段永平视角.md) — 研究
-- `2026-07-18` [微软（MSFT）买入前 Checklist 研究报告](微软/微软-checklist-20260718.md) — 研究
-- `2026-07-14` [微软（MSFT）投资论文追踪档案](微软/微软-thesis.md) — 研究
-- `2026-07-14` [微软（MSFT）买入前 Checklist 研究报告](微软/微软-checklist-20260714.md) — 研究
-- `2026-07-13` [微软（MSFT）投资研究报告](微软/微软-research-20260713.md) — 研究
-- `2026-06-23` [微软（MSFT）投资研究报告](微软/微软-research-20260623.md) — 研究
+- `2026-10-31` [Accenture（NYSE:ACN）研究报告](Accenture/Accenture-research-20261031.md) — 研究
+- `2026-07-21` [Accenture（NYSE:ACN）财报精读 — FY2026 Q3](Accenture/Accenture-earnings-FY2026Q3.md) — 财报
+- `2026-07-21` [Accenture（ACN）投资论文追踪档案](Accenture/Accenture-thesis.md) — 研究
+
+*《看懂埃森哲》*
+
+- `2026-07-13` [咨询加外包的双轮驱动](Accenture/《看懂埃森哲》/02-商业模式-咨询加外包的双轮驱动.md) — 深度系列
+
+- `2026-06-20` [Accenture (ACN) 风险与管理层评估](Accenture/04-风险管理层评估-李录视角.md) — 组织管理
+- `2026-06-20` [Accenture (ACN) 财务与估值分析](Accenture/02-财务估值分析-巴菲特视角.md) — 估值仓位
+- `2026-06-20` [Accenture (ACN) 行业竞争分析](Accenture/03-行业竞争分析-芒格视角.md) — 研究
+- `2026-06-20` [Accenture (ACN) 商业模式分析](Accenture/01-商业模式分析-段永平视角.md) — 研究
+
+*《看懂埃森哲》*
+
+- `2026-05-22` [全球最大IT咨询公司的真面目](Accenture/《看懂埃森哲》/01-开篇-全球最大IT咨询公司的真面目.md) — 深度系列
+- `2026-05-22` [AI时代的护城河攻防战](Accenture/《看懂埃森哲》/03-竞争与增长-AI时代的护城河攻防战.md) — 深度系列
+- `2026-05-22` [14 倍 PE 是恐慌还是理性](Accenture/《看懂埃森哲》/04-风险与估值-14倍PE是恐慌还是理性.md) — 深度系列
+
+- `2026-05-16` [Accenture (ACN) 投资研究最终报告](Accenture/最终报告.md) — 研究
 
 </details>
 
@@ -1084,76 +1176,19 @@
 </details>
 
 <details markdown="1">
-<summary><b>智谱</b> · 12 份 · 最近 2026-09-01</summary>
+<summary><b>Google</b> · 11 份 · 最近 2026-11-06</summary>
 
-- `2026-09-01` [智谱（02513.HK）三大报表解析 · 2026年中期](智谱/智谱-三大报表解析-2026中期-20260901.md) — 研究
-- `2026-07-20` [智谱（02513.HK）新闻脉搏 · 异动归因报告](智谱/智谱-news-20260720.md) — 研究
-
-*《看懂智谱AI》*
-
-- `2026-07-14` [收 1 元烧 4 元的生意怎么读](智谱/《看懂智谱AI》-20260714/03-商业模式与账本-收1元烧4元的生意怎么读.md) — 深度系列
-- `2026-07-14` [半年二十倍的公司，你以为你看懂了智谱，其实没有](智谱/《看懂智谱AI》-20260714/01-开篇-半年二十倍的公司,你以为你看懂了.md) — 深度系列
-- `2026-07-14` [全球第六的模型，和一份"租来的"定价权](智谱/《看懂智谱AI》-20260714/02-技术与护城河-全球第六的模型和租来的定价权.md) — 深度系列
-- `2026-07-14` [930 倍市销率，与 2027 年 1 月的大考](智谱/《看懂智谱AI》-20260714/04-终章-930倍市销率与2027年1月的大考.md) — 深度系列
-
-*《看懂智谱AI》*
-
-- `2026-07-06` [烧钱机器的终局推演](智谱/《看懂智谱AI》/04-商业化与风险-烧钱机器的终局推演.md) — 深度系列
-- `2026-07-06` [五强争霸与大厂围猎](智谱/《看懂智谱AI》/03-竞争格局-五强争霸与大厂围猎.md) — 深度系列
-
-- `2026-07-04` [智谱（Z.ai，02513.HK）投资研究报告](智谱/智谱投资研究报告_20260704.md) — 研究
-- `2026-04-10` [智谱AI（Zhipu AI）深度研究报告](智谱/智谱AI-研究报告-20260410.md) — 研究
-
-*《看懂智谱AI》*
-
-- `2026-04-08` [GLM大模型的真实水位](智谱/《看懂智谱AI》/02-技术与产品-GLM大模型的真实水位.md) — 深度系列
-- `2026-01-08` [清华实验室走出的大模型独角兽](智谱/《看懂智谱AI》/01-开篇-清华实验室走出的大模型独角兽.md) — 深度系列
-
-</details>
-
-<details markdown="1">
-<summary><b>Accenture</b> · 11 份 · 最近 2026-07-21</summary>
-
-- `2026-07-21` [Accenture（NYSE:ACN）财报精读 — FY2026 Q3](Accenture/Accenture-earnings-FY2026Q3.md) — 财报
-- `2026-07-21` [Accenture（ACN）投资论文追踪档案](Accenture/Accenture-thesis.md) — 研究
-
-*《看懂埃森哲》*
-
-- `2026-07-13` [咨询加外包的双轮驱动](Accenture/《看懂埃森哲》/02-商业模式-咨询加外包的双轮驱动.md) — 深度系列
-
-- `2026-06-20` [Accenture (ACN) 风险与管理层评估](Accenture/04-风险管理层评估-李录视角.md) — 组织管理
-- `2026-06-20` [Accenture (ACN) 财务与估值分析](Accenture/02-财务估值分析-巴菲特视角.md) — 估值仓位
-- `2026-06-20` [Accenture (ACN) 行业竞争分析](Accenture/03-行业竞争分析-芒格视角.md) — 研究
-- `2026-06-20` [Accenture (ACN) 商业模式分析](Accenture/01-商业模式分析-段永平视角.md) — 研究
-
-*《看懂埃森哲》*
-
-- `2026-05-22` [全球最大IT咨询公司的真面目](Accenture/《看懂埃森哲》/01-开篇-全球最大IT咨询公司的真面目.md) — 深度系列
-- `2026-05-22` [AI时代的护城河攻防战](Accenture/《看懂埃森哲》/03-竞争与增长-AI时代的护城河攻防战.md) — 深度系列
-- `2026-05-22` [14 倍 PE 是恐慌还是理性](Accenture/《看懂埃森哲》/04-风险与估值-14倍PE是恐慌还是理性.md) — 深度系列
-
-- `2026-05-16` [Accenture (ACN) 投资研究最终报告](Accenture/最终报告.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>Adobe</b> · 11 份 · 最近 2026-09-12</summary>
-
-- `2026-09-12` [Adobe（ADBE）FY2026 Q3 财报精读](Adobe/Adobe-earnings-2026Q3.md) — 财报
-- `2026-09-12` [Adobe 风险与管理层评估](Adobe/04-风险管理层评估-李录视角.md) — 组织管理
-- `2026-06-20` [Adobe 财务与估值分析](Adobe/02-财务估值分析-巴菲特视角.md) — 估值仓位
-- `2026-06-20` [Adobe 行业竞争分析](Adobe/03-行业竞争分析-芒格视角.md) — 研究
-- `2026-06-20` [Adobe 商业模式分析](Adobe/01-商业模式分析-段永平视角.md) — 研究
-- `2026-06-07` [Adobe (ADBE) 投资研究报告](Adobe/Adobe-research-20260607.md) — 研究
-
-*《看懂Adobe》*
-
-- `2026-05-22` [订阅制印钞机的运转逻辑](Adobe/《看懂Adobe》/02-商业模式-订阅制印钞机的运转逻辑.md) — 深度系列
-- `2026-05-22` [创意软件帝国的关键数据](Adobe/《看懂Adobe》/01-开篇-创意软件帝国的关键数据.md) — 深度系列
-- `2026-05-22` [PE 十年最低是机会还是陷阱](Adobe/《看懂Adobe》/04-风险与估值-PE十年最低是机会还是陷阱.md) — 深度系列
-- `2026-05-22` [Firefly 是救星还是掘墓人](Adobe/《看懂Adobe》/03-AI冲击-Firefly是救星还是掘墓人.md) — 深度系列
-
-- `2026-05-16` [Adobe (ADBE) 投资研究最终报告](Adobe/最终报告.md) — 研究
+- `2026-11-06` [Alphabet／Google（GOOGL / GOOG）研究报告](Google/Google-research-20261106.md) — 研究
+- `2026-11-04` [谷歌（Alphabet）研究报告：搜索还在增长，AI 投入何时变成股东现金？](Google/谷歌研究报告-20261104.md) — 研究
+- `2026-07-23` [Alphabet（Google）财报精读 — 2026Q2](Google/Google-earnings-2026Q2.md) — 财报
+- `2026-07-23` [Alphabet（Google）巴菲特买入前 Checklist](Google/Google-checklist-20260723.md) — 研究
+- `2026-07-18` [Alphabet（Google）投资研究 — 最终报告](Google/最终报告.md) — 研究
+- `2026-07-18` [Alphabet（Google）巴菲特买入前 Checklist](Google/Google-checklist-20260718.md) — 研究
+- `2026-07-18` [Alphabet（Google）商业模式、护城河与用户价值分析](Google/01-商业模式分析-段永平视角.md) — 研究
+- `2026-07-18` [Alphabet（GOOGL/GOOG）财务与估值分析｜巴菲特视角](Google/02-财务估值分析-巴菲特视角.md) — 估值仓位
+- `2026-07-18` [Alphabet（GOOGL/GOOG）行业格局与竞争态势分析](Google/03-行业竞争分析-芒格视角.md) — 研究
+- `2026-07-18` [Alphabet（GOOGL/GOOG）投资风险与管理层质量评估](Google/04-风险管理层评估-李录视角.md) — 组织管理
+- `2026-06-23` [Alphabet (Google) 投资研究报告](Google/Google-Alphabet投资研究报告-20260623.md) — 研究
 
 </details>
 
@@ -1424,17 +1459,40 @@
 </details>
 
 <details markdown="1">
-<summary><b>Google</b> · 9 份 · 最近 2026-07-23</summary>
+<summary><b>SE</b> · 9 份 · 最近 2026-10-31</summary>
 
-- `2026-07-23` [Alphabet（Google）财报精读 — 2026Q2](Google/Google-earnings-2026Q2.md) — 财报
-- `2026-07-23` [Alphabet（Google）巴菲特买入前 Checklist](Google/Google-checklist-20260723.md) — 研究
-- `2026-07-18` [Alphabet（Google）投资研究 — 最终报告](Google/最终报告.md) — 研究
-- `2026-07-18` [Alphabet（Google）巴菲特买入前 Checklist](Google/Google-checklist-20260718.md) — 研究
-- `2026-07-18` [Alphabet（Google）商业模式、护城河与用户价值分析](Google/01-商业模式分析-段永平视角.md) — 研究
-- `2026-07-18` [Alphabet（GOOGL/GOOG）财务与估值分析｜巴菲特视角](Google/02-财务估值分析-巴菲特视角.md) — 估值仓位
-- `2026-07-18` [Alphabet（GOOGL/GOOG）行业格局与竞争态势分析](Google/03-行业竞争分析-芒格视角.md) — 研究
-- `2026-07-18` [Alphabet（GOOGL/GOOG）投资风险与管理层质量评估](Google/04-风险管理层评估-李录视角.md) — 组织管理
-- `2026-06-23` [Alphabet (Google) 投资研究报告](Google/Google-Alphabet投资研究报告-20260623.md) — 研究
+- `2026-10-31` [Sea Limited（NYSE:SE）研究报告](SE/SE-research-20261031.md) — 研究
+
+*Sea-Cloud*
+
+- `2026-10-20` [Sea Cloud 风险与管理层研究](SE/Sea-Cloud-20261020/04-风险管理层评估-李录视角.md) — 组织管理
+- `2026-10-20` [Sea Cloud 财务与资本配置研究](SE/Sea-Cloud-20261020/02-财务估值分析-巴菲特视角.md) — 估值仓位
+- `2026-10-20` [Sea Cloud 行业竞争研究](SE/Sea-Cloud-20261020/03-行业竞争分析-芒格视角.md) — 研究
+- `2026-10-20` [Sea Cloud 战略研究报告](SE/Sea-Cloud-20261020/最终报告.md) — 研究
+- `2026-10-20` [Sea Cloud 商业模式研究](SE/Sea-Cloud-20261020/01-商业模式分析-段永平视角.md) — 研究
+
+- `2026-10-08` [Sea Limited（SE）研究报告](SE/SE-thesis-drift-20261008.md) — 研究
+- `2026-09-01` [Sea Limited（SE）研究报告](SE/SE-research-20260901.md) — 研究
+- `2026-07-16` [Sea Limited（SE / Shopee）投资研究报告](SE/SE-research-20260716.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>SK海力士</b> · 9 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [SK海力士（KRX:000660）研究报告](SK海力士/SK海力士-research-20261031.md) — 研究
+- `2026-07-20` [SK海力士（000660.KS）研究报告](SK海力士/SK海力士研究报告-20260720.md) — 研究
+
+*《看懂海力士》*
+
+- `2026-07-14` [海力士的最大变量，和账上看不见的资产](SK海力士/《看懂海力士》-20260714/02-变量与资产.md) — 深度系列
+- `2026-07-14` [多少钱值得买，什么信号必须卖](SK海力士/《看懂海力士》-20260714/03-估值与决策.md) — 深度系列
+- `2026-07-14` [你以为你看懂了海力士，其实没有](SK海力士/《看懂海力士》-20260714/01-生意与护城河.md) — 深度系列
+
+- `2026-07-13` [SK海力士投资论文](SK海力士/SK海力士-thesis-20260713.md) — 研究
+- `2026-07-08` [海力士（SK Hynix）新闻脉搏 · 异动归因报告](SK海力士/海力士-news-20260708.md) — 研究
+- `2026-07-04` [SK海力士（SK hynix, KRX: 000660）投资研究报告](SK海力士/海力士投资研究报告_20260704.md) — 研究
+- `2026-06-05` [SK海力士（000660.KS）深度投资研究报告](SK海力士/SK海力士-research-20260605.md) — 研究
 
 </details>
 
@@ -1534,42 +1592,6 @@
 </details>
 
 <details markdown="1">
-<summary><b>SE</b> · 8 份 · 最近 2026-10-20</summary>
-
-
-*Sea-Cloud*
-
-- `2026-10-20` [Sea Cloud 风险与管理层研究](SE/Sea-Cloud-20261020/04-风险管理层评估-李录视角.md) — 组织管理
-- `2026-10-20` [Sea Cloud 财务与资本配置研究](SE/Sea-Cloud-20261020/02-财务估值分析-巴菲特视角.md) — 估值仓位
-- `2026-10-20` [Sea Cloud 行业竞争研究](SE/Sea-Cloud-20261020/03-行业竞争分析-芒格视角.md) — 研究
-- `2026-10-20` [Sea Cloud 战略研究报告](SE/Sea-Cloud-20261020/最终报告.md) — 研究
-- `2026-10-20` [Sea Cloud 商业模式研究](SE/Sea-Cloud-20261020/01-商业模式分析-段永平视角.md) — 研究
-
-- `2026-10-08` [Sea Limited（SE）研究报告](SE/SE-thesis-drift-20261008.md) — 研究
-- `2026-09-01` [Sea Limited（SE）研究报告](SE/SE-research-20260901.md) — 研究
-- `2026-07-16` [Sea Limited（SE / Shopee）投资研究报告](SE/SE-research-20260716.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>SK海力士</b> · 8 份 · 最近 2026-07-20</summary>
-
-- `2026-07-20` [SK海力士（000660.KS）研究报告](SK海力士/SK海力士研究报告-20260720.md) — 研究
-
-*《看懂海力士》*
-
-- `2026-07-14` [海力士的最大变量，和账上看不见的资产](SK海力士/《看懂海力士》-20260714/02-变量与资产.md) — 深度系列
-- `2026-07-14` [多少钱值得买，什么信号必须卖](SK海力士/《看懂海力士》-20260714/03-估值与决策.md) — 深度系列
-- `2026-07-14` [你以为你看懂了海力士，其实没有](SK海力士/《看懂海力士》-20260714/01-生意与护城河.md) — 深度系列
-
-- `2026-07-13` [SK海力士投资论文](SK海力士/SK海力士-thesis-20260713.md) — 研究
-- `2026-07-08` [海力士（SK Hynix）新闻脉搏 · 异动归因报告](SK海力士/海力士-news-20260708.md) — 研究
-- `2026-07-04` [SK海力士（SK hynix, KRX: 000660）投资研究报告](SK海力士/海力士投资研究报告_20260704.md) — 研究
-- `2026-06-05` [SK海力士（000660.KS）深度投资研究报告](SK海力士/SK海力士-research-20260605.md) — 研究
-
-</details>
-
-<details markdown="1">
 <summary><b>网易</b> · 8 份 · 最近 2026-10-21</summary>
 
 - `2026-10-21` [网易研究：三成市值是净现金的游戏现金流，125美元处在观望区，115美元以下分批](网易/网易研究报告-20261021.md) — 研究
@@ -1584,6 +1606,26 @@
 - `2026-05-19` [丁磊与风险——一个产品天才的资本困境](网易/《看懂网易》/04-丁磊与风险-一个产品天才的资本困境.md) — 深度系列
 
 - `2026-04-10` [网易公司各业务线未来3-5年发展展望](网易/网易-业务前景展望-20260410.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>DeepSeek</b> · 7 份 · 最近 2026-11-02</summary>
+
+- `2026-11-02` [DeepSeek Super-agent 深度技术研究](DeepSeek/DeepSeek-Super-agent-深度技术研究-20261102.md) — 研究
+- `2026-08-14` [看懂 DeepSeek Harness：一切皆插件的开源智能体框架](DeepSeek/DeepSeek-Harness-开源框架深度研究-20260814.md) — 深度系列
+
+*《看懂DeepSeek》*
+
+- `2026-05-22` [风险与判断——芯片限制、监管与长期价值](DeepSeek/《看懂DeepSeek》/04-风险与判断-芯片限制、监管与长期价值.md) — 深度系列
+- `2026-05-22` [技术路线——MoE架构、开源策略与训练效率突破](DeepSeek/《看懂DeepSeek》/02-技术路线-MoE架构、开源策略与训练效率突破.md) — 深度系列
+- `2026-05-21` [商业与竞争——幻方背景、变现路径与全球对手](DeepSeek/《看懂DeepSeek》/03-商业与竞争-幻方背景、变现路径与全球对手.md) — 深度系列
+
+- `2026-04-10` [DeepSeek（深度求索）深度研究报告](DeepSeek/DeepSeek-研究报告-20260410.md) — 研究
+
+*《看懂DeepSeek》*
+
+- `2025-01-27` [DeepSeek——震动全球AI行业的中国实验室](DeepSeek/《看懂DeepSeek》/01-开篇-震动全球AI行业的中国实验室.md) — 深度系列
 
 </details>
 
@@ -1729,25 +1771,6 @@
 </details>
 
 <details markdown="1">
-<summary><b>DeepSeek</b> · 6 份 · 最近 2026-08-14</summary>
-
-- `2026-08-14` [看懂 DeepSeek Harness：一切皆插件的开源智能体框架](DeepSeek/DeepSeek-Harness-开源框架深度研究-20260814.md) — 深度系列
-
-*《看懂DeepSeek》*
-
-- `2026-05-22` [风险与判断——芯片限制、监管与长期价值](DeepSeek/《看懂DeepSeek》/04-风险与判断-芯片限制、监管与长期价值.md) — 深度系列
-- `2026-05-22` [技术路线——MoE架构、开源策略与训练效率突破](DeepSeek/《看懂DeepSeek》/02-技术路线-MoE架构、开源策略与训练效率突破.md) — 深度系列
-- `2026-05-21` [商业与竞争——幻方背景、变现路径与全球对手](DeepSeek/《看懂DeepSeek》/03-商业与竞争-幻方背景、变现路径与全球对手.md) — 深度系列
-
-- `2026-04-10` [DeepSeek（深度求索）深度研究报告](DeepSeek/DeepSeek-研究报告-20260410.md) — 研究
-
-*《看懂DeepSeek》*
-
-- `2025-01-27` [DeepSeek——震动全球AI行业的中国实验室](DeepSeek/《看懂DeepSeek》/01-开篇-震动全球AI行业的中国实验室.md) — 深度系列
-
-</details>
-
-<details markdown="1">
 <summary><b>Keyence</b> · 6 份 · 最近 2026-07-20</summary>
 
 - `2026-07-20` [Keyence（基恩士，6861.T）投资研究报告](Keyence/最终报告.md) — 研究
@@ -1864,6 +1887,17 @@
 </details>
 
 <details markdown="1">
+<summary><b>AppLovin</b> · 5 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [AppLovin（NASDAQ:APP）研究报告](AppLovin/AppLovin-research-20261031.md) — 研究
+- `2026-10-07` [AppLovin（APP）近两周下跌归因报告](AppLovin/AppLovin-news-20261007.md) — 研究
+- `2026-08-31` [AppLovin（NASDAQ: APP）2026Q2 财报精读](AppLovin/AppLovin-earnings-2026Q2.md) — 财报
+- `2026-08-07` [AppLovin（APP）买入前 Checklist](AppLovin/AppLovin-checklist-20260807.md) — 研究
+- `2026-08-06` [AppLovin（NASDAQ: APP）投资研究报告](AppLovin/AppLovin-research-20260806.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>宇树科技</b> · 5 份 · 最近 2026-07-13</summary>
 
 
@@ -1975,12 +2009,52 @@
 </details>
 
 <details markdown="1">
-<summary><b>AppLovin</b> · 4 份 · 最近 2026-10-07</summary>
+<summary><b>Reddit</b> · 4 份 · 最近 2026-10-31</summary>
 
-- `2026-10-07` [AppLovin（APP）近两周下跌归因报告](AppLovin/AppLovin-news-20261007.md) — 研究
-- `2026-08-31` [AppLovin（NASDAQ: APP）2026Q2 财报精读](AppLovin/AppLovin-earnings-2026Q2.md) — 财报
-- `2026-08-07` [AppLovin（APP）买入前 Checklist](AppLovin/AppLovin-checklist-20260807.md) — 研究
-- `2026-08-06` [AppLovin（NASDAQ: APP）投资研究报告](AppLovin/AppLovin-research-20260806.md) — 研究
+- `2026-10-31` [Reddit（NYSE:RDDT）研究报告](Reddit/Reddit-research-20261031.md) — 研究
+- `2026-10-08` [Reddit（RDDT）研究报告](Reddit/Reddit-thesis-drift-20261008.md) — 研究
+- `2026-08-31` [Reddit（NYSE: RDDT）2026Q2 财报精读](Reddit/Reddit-earnings-2026Q2.md) — 财报
+- `2026-07-31` [Reddit（RDDT）投资研究：稀缺社区资产，还是被 AI 抽干流量的高估值广告平台？](Reddit/Reddit-research-20260731.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>上海复旦</b> · 4 份 · 最近 2026-11-03</summary>
+
+- `2026-11-03` [上海复旦（688385.SH / 01385.HK）研究报告](上海复旦/上海复旦-research-20261103.md) — 研究
+- `2026-10-31` [上海复旦：扣非改善，现金回款与上市子公司权益决定安全边际](上海复旦/上海复旦-research-20261031.md) — 研究
+- `2026-09-12` [上海复旦（688385.SH / 01385.HK）2026H1 财报精读](上海复旦/上海复旦-earnings-2026H1.md) — 财报
+- `2026-08-02` [上海复旦微电子（688385.SH / 01385.HK）研究报告](上海复旦/上海复旦-research-20260802.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>中芯国际</b> · 4 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [中芯国际：港股价格回落，扩产后的普通股现金回报仍待证明](中芯国际/中芯国际-research-20261031.md) — 研究
+- `2026-10-08` [中芯国际（00981.HK / 688981.SH）研究报告](中芯国际/中芯国际-research-20261008.md) — 研究
+- `2026-08-23` [中芯国际 2026Q2 财报精读：经营显著超指引，FCF 改善仍待穿越资本开支周期](中芯国际/中芯国际-earnings-2026Q2.md) — 财报
+- `2026-07-31` [中芯国际投资研究：战略稀缺性很强，但价格决定回报](中芯国际/中芯国际-research-20260731.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>哔哩哔哩</b> · 4 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [哔哩哔哩（BILI / 9626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20261031.md) — 研究
+- `2026-09-12` [哔哩哔哩（BILI / 9626.HK）投资论文](哔哩哔哩/哔哩哔哩-thesis.md) — 研究
+- `2026-09-12` [哔哩哔哩（BILI / 9626.HK）2026Q2 财报精读](哔哩哔哩/哔哩哔哩-earnings-2026Q2.md) — 财报
+- `2026-08-03` [哔哩哔哩（BILI / 9626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20260803.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>多氟多</b> · 4 份 · 最近 2026-11-07</summary>
+
+- `2026-11-07` [多氟多（002407.SZ）研究报告](多氟多/多氟多-research-20261107.md) — 研究
+- `2026-11-07` [关键数据交叉验证记录](多氟多/多氟多-validation-20261107.md) — 研究
+- `2026-09-12` [多氟多（002407.SZ）2026H1 财报精读](多氟多/多氟多-earnings-2026H1.md) — 财报
+- `2026-08-10` [多氟多（002407.SZ）研究报告](多氟多/多氟多-research-20260810.md) — 研究
 
 </details>
 
@@ -1998,6 +2072,24 @@
 </details>
 
 <details markdown="1">
+<summary><b>Albemarle</b> · 3 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [Albemarle（NYSE:ALB）研究报告](Albemarle/Albemarle-research-20261031.md) — 研究
+- `2026-10-08` [Albemarle（ALB）研究报告](Albemarle/Albemarle-thesis-drift-20261008.md) — 研究
+- `2026-09-01` [Albemarle（NYSE: ALB）投资研究](Albemarle/Albemarle-research-20260901.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>Intel</b> · 3 份 · 最近 2026-11-06</summary>
+
+- `2026-11-06` [英特尔（Intel，NASDAQ: INTC）研究报告](Intel/Intel-research-20261106.md) — 研究
+- `2026-08-26` [英特尔（NASDAQ: INTC）研究报告](Intel/Intel-research-20260826.md) — 研究
+- `2026-06-23` [英特尔（NASDAQ: INTC）投资研究报告](Intel/Intel-investment-research-20260623.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>PayPal</b> · 3 份 · 最近 2026-06-08</summary>
 
 - `2026-06-08` [PayPal vs 蚂蚁集团：两大支付巨头的异同](PayPal/PayPal-vs-蚂蚁集团-对比分析-20260608.md) — 横评对比
@@ -2011,11 +2103,11 @@
 </details>
 
 <details markdown="1">
-<summary><b>Reddit</b> · 3 份 · 最近 2026-10-08</summary>
+<summary><b>RKLB</b> · 3 份 · 最近 2026-10-31</summary>
 
-- `2026-10-08` [Reddit（RDDT）研究报告](Reddit/Reddit-thesis-drift-20261008.md) — 研究
-- `2026-08-31` [Reddit（NYSE: RDDT）2026Q2 财报精读](Reddit/Reddit-earnings-2026Q2.md) — 财报
-- `2026-07-31` [Reddit（RDDT）投资研究：稀缺社区资产，还是被 AI 抽干流量的高估值广告平台？](Reddit/Reddit-research-20260731.md) — 研究
+- `2026-10-31` [Rocket Lab Corporation（NASDAQ:RKLB）研究报告](RKLB/RKLB-research-20261031.md) — 研究
+- `2026-08-31` [Rocket Lab（NASDAQ: RKLB）投资研究报告](RKLB/RKLB-research-20260831.md) — 研究
+- `2026-06-24` [Rocket Lab USA (RKLB) 投资研究报告](RKLB/RKLB-investment-research.md) — 研究
 
 </details>
 
@@ -2038,15 +2130,6 @@
 </details>
 
 <details markdown="1">
-<summary><b>中芯国际</b> · 3 份 · 最近 2026-10-08</summary>
-
-- `2026-10-08` [中芯国际（00981.HK / 688981.SH）研究报告](中芯国际/中芯国际-research-20261008.md) — 研究
-- `2026-08-23` [中芯国际 2026Q2 财报精读：经营显著超指引，FCF 改善仍待穿越资本开支周期](中芯国际/中芯国际-earnings-2026Q2.md) — 财报
-- `2026-07-31` [中芯国际投资研究：战略稀缺性很强，但价格决定回报](中芯国际/中芯国际-research-20260731.md) — 研究
-
-</details>
-
-<details markdown="1">
 <summary><b>云迹科技</b> · 3 份 · 最近 2026-10-08</summary>
 
 - `2026-10-08` [云迹科技（02670.HK）研究报告](云迹科技/云迹科技-earnings-refresh-20261008.md) — 财报
@@ -2061,15 +2144,6 @@
 - `2026-10-08` [华虹半导体（01347.HK / 688347.SH）研究报告](华虹宏力/华虹半导体-research-20261008.md) — 研究
 - `2026-08-31` [华虹半导体（01347.HK / 688347.SH）2026H1 财报 Review](华虹宏力/华虹半导体-earnings-2026H1.md) — 财报
 - `2026-08-14` [华虹宏力（688347.SH / 01347.HK）研究报告](华虹宏力/华虹宏力-research-20260814.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>哔哩哔哩</b> · 3 份 · 最近 2026-09-12</summary>
-
-- `2026-09-12` [哔哩哔哩（BILI / 9626.HK）投资论文](哔哩哔哩/哔哩哔哩-thesis.md) — 研究
-- `2026-09-12` [哔哩哔哩（BILI / 9626.HK）2026Q2 财报精读](哔哩哔哩/哔哩哔哩-earnings-2026Q2.md) — 财报
-- `2026-08-03` [哔哩哔哩（BILI / 9626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20260803.md) — 研究
 
 </details>
 
@@ -2127,18 +2201,10 @@
 </details>
 
 <details markdown="1">
-<summary><b>Albemarle</b> · 2 份 · 最近 2026-10-08</summary>
+<summary><b>AZZ</b> · 2 份 · 最近 2026-10-31</summary>
 
-- `2026-10-08` [Albemarle（ALB）研究报告](Albemarle/Albemarle-thesis-drift-20261008.md) — 研究
-- `2026-09-01` [Albemarle（NYSE: ALB）投资研究](Albemarle/Albemarle-research-20260901.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>Intel</b> · 2 份 · 最近 2026-08-26</summary>
-
-- `2026-08-26` [英特尔（NASDAQ: INTC）研究报告](Intel/Intel-research-20260826.md) — 研究
-- `2026-06-23` [英特尔（NASDAQ: INTC）投资研究报告](Intel/Intel-investment-research-20260623.md) — 研究
+- `2026-10-31` [AZZ Inc.（NYSE:AZZ）研究报告](AZZ/AZZ-research-20261031.md) — 研究
+- `2026-09-01` [AZZ Inc.（NYSE: AZZ）研究报告](AZZ/AZZ-research-20260901.md) — 研究
 
 </details>
 
@@ -2155,14 +2221,6 @@
 
 - `2026-08-17` [Prosus N.V.（AMS:PRX）投资研究报告](Prosus/Prosus-investment-research-20260817.md) — 研究
 - `2026-08-17` [Prosus N.V.（AMS:PRX）—— 红队多头论证](Prosus/Prosus-多头论证-20260817.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>RKLB</b> · 2 份 · 最近 2026-08-31</summary>
-
-- `2026-08-31` [Rocket Lab（NASDAQ: RKLB）投资研究报告](RKLB/RKLB-research-20260831.md) — 研究
-- `2026-06-24` [Rocket Lab USA (RKLB) 投资研究报告](RKLB/RKLB-investment-research.md) — 研究
 
 </details>
 
@@ -2191,10 +2249,10 @@
 </details>
 
 <details markdown="1">
-<summary><b>上海复旦</b> · 2 份 · 最近 2026-09-12</summary>
+<summary><b>nVent</b> · 2 份 · 最近 2026-11-07</summary>
 
-- `2026-09-12` [上海复旦（688385.SH / 01385.HK）2026H1 财报精读](上海复旦/上海复旦-earnings-2026H1.md) — 财报
-- `2026-08-02` [上海复旦微电子（688385.SH / 01385.HK）研究报告](上海复旦/上海复旦-research-20260802.md) — 研究
+- `2026-11-07` [nVent Electric（NVT）研究报告](nVent/nVent-research-20261107.md) — 研究
+- `2026-08-29` [nVent Electric（NYSE: NVT）研究报告](nVent/nVent-research-20260829.md) — 研究
 
 </details>
 
@@ -2203,6 +2261,22 @@
 
 - `2026-08-31` [中国广核（003816.SZ / 01816.HK）2026H1 财报精读](中国广核/中国广核-earnings-2026H1.md) — 财报
 - `2026-06-24` [中国广核 / 中广核电力投资研究最终报告](中国广核/最终报告.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>中国核电</b> · 2 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [中国核电（601985.SH）研究报告](中国核电/中国核电-research-20261031.md) — 研究
+- `2026-10-16` [中国核电（601985.SH）研究报告](中国核电/中国核电-research-20261016.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>乐动机器人</b> · 2 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [乐动机器人（01236.HK）研究报告](乐动机器人/乐动机器人-research-20261031.md) — 研究
+- `2026-09-28` [乐动机器人（01236.HK）研究报告](乐动机器人/乐动机器人-research-20260928.md) — 研究
 
 </details>
 
@@ -2243,14 +2317,6 @@
 
 - `2026-10-21` [唯品会（VIPS）研究报告：会计净现金占市值55%，股价已按利润长期萎缩定价](唯品会/唯品会研究报告-20261021.md) — 研究
 - `2026-08-26` [唯品会 2026 年二季度三大报表逐项解析](唯品会/唯品会-三大报表逐项解析-2026Q2-20260826.md) — 财报
-
-</details>
-
-<details markdown="1">
-<summary><b>多氟多</b> · 2 份 · 最近 2026-09-12</summary>
-
-- `2026-09-12` [多氟多（002407.SZ）2026H1 财报精读](多氟多/多氟多-earnings-2026H1.md) — 财报
-- `2026-08-10` [多氟多（002407.SZ）研究报告](多氟多/多氟多-research-20260810.md) — 研究
 
 </details>
 
@@ -2315,13 +2381,6 @@
 
 - `2026-07-07` [赛力斯（601127.SH / 09927.HK）投资研究报告](赛力斯/赛力斯-research-20260707.md) — 研究
 - `2026-06-25` [赛力斯（601127.SH / 9927.HK）投资研究报告](赛力斯/sailis-touzi-yanjiu-baogao.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>AZZ</b> · 1 份 · 最近 2026-09-01</summary>
-
-- `2026-09-01` [AZZ Inc.（NYSE: AZZ）研究报告](AZZ/AZZ-research-20260901.md) — 研究
 
 </details>
 
@@ -2445,13 +2504,6 @@
 </details>
 
 <details markdown="1">
-<summary><b>nVent</b> · 1 份 · 最近 2026-08-29</summary>
-
-- `2026-08-29` [nVent Electric（NYSE: NVT）研究报告](nVent/nVent-research-20260829.md) — 研究
-
-</details>
-
-<details markdown="1">
 <summary><b>openrouter</b> · 1 份 · 最近 2026-07-02</summary>
 
 - `2026-07-02` [OpenRouter 模型使用量多维度拆解：价格归一化前后的真实排名](openrouter/openrouter-model-ranking-analysis-20260702.md) — 研究
@@ -2501,13 +2553,6 @@
 </details>
 
 <details markdown="1">
-<summary><b>中国核电</b> · 1 份 · 最近 2026-10-16</summary>
-
-- `2026-10-16` [中国核电（601985.SH）研究报告](中国核电/中国核电-research-20261016.md) — 研究
-
-</details>
-
-<details markdown="1">
 <summary><b>中国神华</b> · 1 份 · 最近 2026-06-23</summary>
 
 - `2026-06-23` [中国神华（601088.SH / 1088.HK）投资研究报告](china-shenhua/china-shenhua-investment-research-20260623.md) — 研究
@@ -2543,13 +2588,6 @@
 </details>
 
 <details markdown="1">
-<summary><b>乐动机器人</b> · 1 份 · 最近 2026-09-28</summary>
-
-- `2026-09-28` [乐动机器人（01236.HK）研究报告](乐动机器人/乐动机器人-research-20260928.md) — 研究
-
-</details>
-
-<details markdown="1">
 <summary><b>九坤</b> · 1 份 · 最近 2026-04-10</summary>
 
 - `2026-04-10` [九坤投资（Ubiquant）未上市公司深度研究报告](九坤/九坤投资研究报告_20260410.md) — 研究
@@ -2571,6 +2609,13 @@
 </details>
 
 <details markdown="1">
+<summary><b>京东健康</b> · 1 份 · 最近 2026-11-04</summary>
+
+- `2026-11-04` [京东健康投资研究：药品供应链值多少钱，服务增长有多少来自京东集团](京东健康/京东健康研究报告-20261104.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>京东集团</b> · 1 份 · 最近 2026-08-11</summary>
 
 - `2026-08-11` [京东集团（JD / 9618.HK）研究报告](京东集团/京东集团-research-20260811.md) — 研究
@@ -2588,6 +2633,13 @@
 <summary><b>华工科技</b> · 1 份 · 最近 2026-06-23</summary>
 
 - `2026-06-23` [华工科技（000988.SZ）投资研究报告](hgtech/hgtech-investment-research-20260623.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>华曦达</b> · 1 份 · 最近 2026-11-03</summary>
+
+- `2026-11-03` [华曦达（00901.HK）研究报告](华曦达/华曦达-research-20261103.md) — 研究
 
 </details>
 
@@ -2753,6 +2805,13 @@
 </details>
 
 <details markdown="1">
+<summary><b>持械入宋深度调研</b> · 1 份 · 最近 2026-11-01</summary>
+
+- `2026-11-01` [《持械入宋》研究报告](持械入宋深度调研-20261101/持械入宋研究报告-20261101.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>春秋电子</b> · 1 份 · 最近 2026-07-17</summary>
 
 - `2026-07-17` [春秋电子（603890.SH）研究报告](春秋电子/春秋电子-research-20260717.md) — 研究
@@ -2770,6 +2829,13 @@
 <summary><b>杰瑞股份</b> · 1 份 · 最近 2026-06-24</summary>
 
 - `2026-06-24` [杰瑞股份（002353.SZ）四大维度综合分析报告](Jereh/Jereh-research-20260624.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>标普500</b> · 1 份 · 最近 2026-10-31</summary>
+
+- `2026-10-31` [标普500（VOO）研究报告](标普500/标普500-research-20261031.md) — 研究
 
 </details>
 
@@ -2819,6 +2885,13 @@
 <summary><b>浦发银行</b> · 1 份 · 最近 2026-08-05</summary>
 
 - `2026-08-05` [浦发银行（600000.SH）投资研究报告](浦发银行/浦发银行投资研究报告-20260805.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>现代牙科</b> · 1 份 · 最近 2026-11-04</summary>
+
+- `2026-11-04` [现代牙科（03600.HK）研究报告](现代牙科/现代牙科研究报告-20261104.md) — 研究
 
 </details>
 
@@ -2904,10 +2977,12 @@
 ## 专题研究
 
 <details markdown="1">
-<summary><b>综合与横评</b> · 91 份 · 最近 2026-10-16</summary>
+<summary><b>综合与横评</b> · 93 份 · 最近 2026-11-07</summary>
 
-- `2026-10-16` [重点标的看板](重点标的看板.md) — 研究
-- `2026-10-16` [标的跟踪表](标的跟踪表.md) — 研究
+- `2026-11-07` [标的跟踪表](标的跟踪表.md) — 研究
+- `2026-11-06` [重点标的看板](重点标的看板.md) — 研究
+- `2026-10-31` [每日监控重点标的研究更新](每日监控重点标的研究更新-20261031.md) — 研究
+- `2026-10-31` [四只美股持仓复检与操作建议](四只美股持仓复检-20261031.md) — 研究
 - `2026-09-28` [除了你自己，没人关心你的成本价](公众号-除了你自己没人关心你的成本价-20260928.md) — 公众号
 - `2026-09-22` [快手与 MiniMax：护城河与五年盈利推演](快手与MiniMax-护城河与五年盈利推演-20260922.md) — 研究
 - `2026-09-08` [全球太空领域产业链投资研究报告](全球太空领域产业链投资研究报告.md) — 研究
