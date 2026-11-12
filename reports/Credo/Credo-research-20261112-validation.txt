@@ -1,0 +1,416 @@
+CRDO 2026-11-12 — verification; limitations in report.
+ROE printed by verify-valuation is EPS / period-end BVPS, a proxy, not average-equity GAAP ROE; not used in report.
+tools/financial_rigor.py verify-market-cap --price 141.41 --shares 187951918 --reported 26580000000 --currency USD
+============================================================
+市值验算 (Market Cap Verification)
+============================================================
+  股价 (Price):       141.41 USD
+  总股本 (Shares):    187.95M
+  计算市值:           26.58B USD
+  报告市值:           26.58B USD
+  偏差:               0.01%
+
+  ✅ 验证通过, 偏差仅 0.01%
+
+tools/financial_rigor.py cross-validate --field 股价 --values {"StockAnalysis收盘": 141.41, "Yahoo收盘": 141.41} --unit USD --tolerance 1
+============================================================
+交叉验证: 股价 (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 141.41 USD
+
+  ✅ StockAnalysis收盘     : 141.41 USD  (偏差 0.00%)
+  ✅ Yahoo收盘             : 141.41 USD  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 141.41 USD
+
+tools/financial_rigor.py cross-validate --field 总股本 --values {"SEC封面20260825": 187951918, "StockAnalysis快照": 187950000} --unit 股 --tolerance 1
+============================================================
+交叉验证: 总股本 (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 187.95M 股
+
+  ✅ SEC封面20260825       : 187.95M 股  (偏差 0.00%)
+  ✅ StockAnalysis快照     : 187.95M 股  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 187.95M 股
+
+tools/financial_rigor.py cross-validate --field FY2026收入 --values {"SEC10K": 1335.116, "Macrotrends索引": 1335, "StockAnalysis": 1335} --unit USDm --tolerance 1
+============================================================
+交叉验证: FY2026收入 (Cross-Validation)
+============================================================
+  数据来源数: 3
+  参考中位数: 1,335.00 USDm
+
+  ✅ SEC10K              : 1,335.12 USDm  (偏差 0.01%)
+  ✅ Macrotrends索引       : 1,335.00 USDm  (偏差 0.00%)
+  ✅ StockAnalysis       : 1,335.00 USDm  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 1,335.00 USDm
+
+tools/financial_rigor.py cross-validate --field FY2026净利 --values {"SEC10K": 472.279, "StockAnalysis": 472.28} --unit USDm --tolerance 1
+============================================================
+交叉验证: FY2026净利 (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 472.28 USDm
+
+  ✅ SEC10K              : 472.28 USDm  (偏差 0.00%)
+  ✅ StockAnalysis       : 472.28 USDm  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 472.28 USDm
+
+tools/financial_rigor.py cross-validate --field FY2026现金及短投 --values {"SEC10K": 1443.286, "StockAnalysis": 1443, "FinanceCharts": 1443} --unit USDm --tolerance 1
+============================================================
+交叉验证: FY2026现金及短投 (Cross-Validation)
+============================================================
+  数据来源数: 3
+  参考中位数: 1,443.00 USDm
+
+  ✅ SEC10K              : 1,443.29 USDm  (偏差 0.02%)
+  ✅ StockAnalysis       : 1,443.00 USDm  (偏差 0.00%)
+  ✅ FinanceCharts       : 1,443.00 USDm  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 1,443.00 USDm
+
+tools/financial_rigor.py cross-validate --field Q1现金及短投 --values {"SEC10Q": 764.258, "StockAnalysis": 764.26} --unit USDm --tolerance 1
+============================================================
+交叉验证: Q1现金及短投 (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 764.26 USDm
+
+  ✅ SEC10Q              : 764.26 USDm  (偏差 0.00%)
+  ✅ StockAnalysis       : 764.26 USDm  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 764.26 USDm
+
+tools/financial_rigor.py cross-validate --field Q1净利 --values {"SEC10Q": 129.425, "StockAnalysis季度": 129.43} --unit USDm --tolerance 1
+============================================================
+交叉验证: Q1净利 (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 129.43 USDm
+
+  ✅ SEC10Q              : 129.43 USDm  (偏差 0.00%)
+  ✅ StockAnalysis季度     : 129.43 USDm  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 129.43 USDm
+
+tools/financial_rigor.py cross-validate --field Q1收入 --values {"SEC10Q": 479.003, "StockAnalysis季度": 479} --unit USDm --tolerance 1
+============================================================
+交叉验证: Q1收入 (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 479.00 USDm
+
+  ✅ SEC10Q              : 479.00 USDm  (偏差 0.00%)
+  ✅ StockAnalysis季度     : 479.00 USDm  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 479.00 USDm
+
+tools/financial_rigor.py verify-valuation --price 141.41 --eps 2.83 --bvps 14.53 --fcf-per-share 2.333564906743862012623888201023838447874 --dividend 0 --revenue-per-share 8.465170331488716172611763397913289717001
+============================================================
+估值指标验算 (Valuation Verification)
+============================================================
+  当前股价: 141.41
+
+  PE (TTM):  141.41 / 2.83 = 49.97x
+  盈利收益率: 2.00%
+  PB:        141.41 / 14.53 = 9.73x
+  ROE:       2.83 / 14.53 = 19.48%
+  P/FCF:     141.41 / 2.333564906743862 = 60.60x
+  FCF Yield: 1.65%
+  股息率:    0.0 / 141.41 = 0.00%
+  PS:        141.41 / 8.465170331488716 = 16.70x
+
+  ✅ 以上指标均使用精确十进制计算, 无浮点误差
+
+tools/financial_rigor.py three-scenario --price 141.41 --eps 2.5 --shares 2 --growth 0.5 0.3 0 --pe 35 25 16 --years 3 --currency USD
+============================================================
+三情景估值模型 (Three-Scenario Valuation)
+============================================================
+  当前股价: 141.41 USD
+  当前EPS:  2.5
+  预测期:   3年
+
+  情景                年增速     目标PE      目标EPS       目标股价      涨跌幅
+  ------------ -------- -------- ---------- ---------- --------
+  乐观 (Bull)         50%      35x       8.44     295.3  +108.8%
+  中性 (Base)         30%      25x       5.49     137.3    -2.9%
+  悲观 (Bear)          0%      16x       2.50      40.0   -71.7%
+
+  ✅ 所有计算使用精确十进制, 结果可审计复现
+
+tools/terminal_value.py audit --currency USD --r .10 --roic .20 --g .01,.025,.04 --rf .0488 --beta 1 --discrete-risks 大客户订单流失:情景,光学路线切换:情景,并购整合失败:情景,台湾供应中断:未建模,出口监管:未建模
+
+========================================================================
+估值口径准出检查   币种=USD   r=10.00%   ROIC=20%   g=1.0%/2.5%/4.0%
+========================================================================
+
+【C1】币种一致性 — r 与 g 必须用同一个币种
+     USD 口径基准：美国10年期国债 4.70% + 中国总ERP 5.18%（含1.01%国别溢价）
+     r 合理区间 [9.0%, 11.5%]   g 上限 4.0%   Rf 4.70%
+     → ✓ 通过
+
+【C2】分母宽度 — r-g 至少 5 个百分点
+     悲观  g= 1.0%  r-g= 9.0pct  PE=     10.6x  g+0.5pct → 10.9x (+3%)  
+     基准  g= 2.5%  r-g= 7.5pct  PE=     11.7x  g+0.5pct → 12.1x (+4%)  
+     乐观  g= 4.0%  r-g= 6.0pct  PE=     13.3x  g+0.5pct → 14.1x (+6%)  
+     → ✓ 通过
+
+【C3】离散风险归属 — 退市/VIE/地缘/监管必须归情景，不得进 r 或 β
+     ✓ 大客户订单流失 → 情景
+     ✓ 光学路线切换 → 情景
+     ✓ 并购整合失败 → 情景
+     ⚠ 台湾供应中断 → 未建模
+     ⚠ 出口监管 → 未建模
+     β = 1.0（默认值，无需理由）
+     → ✓ 通过
+
+========================================================================
+⚠ C3: 「台湾供应中断」未建模，必须写进报告的「限制」章节
+⚠ C3: 「出口监管」未建模，必须写进报告的「限制」章节
+
+【准出】三条硬约束全部通过，可以把估值写进报告。
+       但上述 2 条警告必须在报告里显式写出。
+
+
+tools/terminal_value.py pe --roic .2 --g 0.01 --r .1
+
+PE(终值) = (1 - g/ROIC) / (r - g)
+
+  ROIC = 20.0%   g = 1.00%   r = 10.00%
+
+  留存率 g/ROIC   = 0.0100 / 0.20 = 0.0500  (5.0%)
+  分子 1 - 留存率 = 0.9500                    （即派息率 95.0%）
+  分母 r - g      = 0.1000 - 0.0100 = 0.0900  (9.0pct)
+
+  退出 PE = 0.9500 / 0.0900 = 10.6x
+
+
+tools/terminal_value.py irr --profit 800 --mcap 26578.28072438 --pe 10.555555555555554 --years 10 --payout=-.015
+
+IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率
+
+  2036 市值 = 800 x 10.6x = 8,444
+  今日市值 = 26,578
+  总倍数   = 0.3177
+  几何年化 = -10.83%
+  股息-稀释 = -1.50%
+
+  IRR = -12.33%
+
+
+tools/terminal_value.py pe --roic .2 --g 0.025 --r .1
+
+PE(终值) = (1 - g/ROIC) / (r - g)
+
+  ROIC = 20.0%   g = 2.50%   r = 10.00%
+
+  留存率 g/ROIC   = 0.0250 / 0.20 = 0.1250  (12.5%)
+  分子 1 - 留存率 = 0.8750                    （即派息率 87.5%）
+  分母 r - g      = 0.1000 - 0.0250 = 0.0750  (7.5pct)
+
+  退出 PE = 0.8750 / 0.0750 = 11.7x
+
+
+tools/terminal_value.py irr --profit 3000 --mcap 26578.28072438 --pe 11.666666666666664 --years 10 --payout=-.015
+
+IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率
+
+  2036 市值 = 3,000 x 11.7x = 35,000
+  今日市值 = 26,578
+  总倍数   = 1.3169
+  几何年化 = +2.79%
+  股息-稀释 = -1.50%
+
+  IRR = +1.29%
+
+
+tools/terminal_value.py pe --roic .2 --g 0.04 --r .1
+
+PE(终值) = (1 - g/ROIC) / (r - g)
+
+  ROIC = 20.0%   g = 4.00%   r = 10.00%
+
+  留存率 g/ROIC   = 0.0400 / 0.20 = 0.2000  (20.0%)
+  分子 1 - 留存率 = 0.8000                    （即派息率 80.0%）
+  分母 r - g      = 0.1000 - 0.0400 = 0.0600  (6.0pct)
+
+  退出 PE = 0.8000 / 0.0600 = 13.3x
+
+
+tools/terminal_value.py irr --profit 7500 --mcap 26578.28072438 --pe 13.333333333333332 --years 10 --payout=-.015
+
+IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率
+
+  2036 市值 = 7,500 x 13.3x = 100,000
+  今日市值 = 26,578
+  总倍数   = 3.7625
+  几何年化 = +14.17%
+  股息-稀释 = -1.50%
+
+  IRR = +12.67%
+
+
+tools/terminal_value.py flip --config /tmp/crdo-20261112/terminal-config.json --name Credo --r .1 --delta .02 --currency USD --g-shift 0 --rf .0488
+
+Credo  |  基准 r = 10.00%   Δr = ±2pp   币种 USD   g平移 +0.0%   Rf = 4.88%   持有期 10 年
+币种合理区间：r ∈ [9.0%, 11.5%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。
+判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。
+角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。
+
+档位               r       期望IRR        相对 r      压力测试
+------------------------------------------------------
+r−2pp        8.00%      +1.35%     -6.65pp  未通过（区间外，仅供参考）
+基准 r        10.00%      -1.77%    -11.77pp  未通过
+r+2pp       12.00%      -4.08%    -16.08pp  未通过（区间外，仅供参考）
+------------------------------------------------------
+
+【稳定】Δr±2pp 区间内压力测试始终未通过——相对折现率扰动更稳健。
+        注意：两侧档位都在区间外，区间内只有基准一档参与判定；可用更小的 --delta 在区间内复核。
+        未通过仍只约束仓位，不自动等于回避；须与其他五个维度并列决策。
+
+提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。
+
+
+tools/terminal_value.py flip --config /tmp/crdo-20261112/terminal-config.json --name Credo --r .1 --delta .01 --currency USD --g-shift 0 --rf .0488
+
+Credo  |  基准 r = 10.00%   Δr = ±1pp   币种 USD   g平移 +0.0%   Rf = 4.88%   持有期 10 年
+币种合理区间：r ∈ [9.0%, 11.5%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。
+判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。
+角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。
+
+档位               r       期望IRR        相对 r      压力测试
+------------------------------------------------------
+r−1pp        9.00%      -0.35%     -9.35pp  未通过
+基准 r        10.00%      -1.77%    -11.77pp  未通过
+r+1pp       11.00%      -3.00%    -14.00pp  未通过
+------------------------------------------------------
+
+【稳定】Δr±1pp 区间内压力测试始终未通过——相对折现率扰动更稳健。
+        未通过仍只约束仓位，不自动等于回避；须与其他五个维度并列决策。
+
+提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。
+
+
+FINAL RANDOM SAMPLE AUDIT
+======================================================================
+报告数据抽检 — 准出/打回判决
+报告：reports/Credo/Credo-research-20261112.md
+======================================================================
+
+  ✅ 通过 [ 7] Q2 收入与毛利率指引可兑现 · 对估值和行动的影响           报告:        12.00 
+                                                    公司IR确认12/1美东盘后，研究复检12/2北京；原日期已核，不是数值财务项: 12.00 (偏差 0.00%)
+  ✅ 通过 [24] FY2023 · 现金及短投                       报告:       217.81 
+                                                    https://data.sec.gov/api/xbrl/companyfacts/CIK0001807794.json FY2023 cash+shortinvestments: 217.81 (偏差 0.00%)  |  https://stockanalysis.com/stocks/crdo/financials/ FY2023: 217.81 (偏差 0.00%)
+  ✅ 通过 [30] FY2024 · 简单 FCF                      报告:        17.09 
+                                                    https://data.sec.gov/api/xbrl/companyfacts/CIK0001807794.json FY2024 CFO32737000-PP&E15652000 /1e6: 17.09 (偏差 0.03%)  |  https://stockanalysis.com/stocks/crdo/financials/cash-flow-statement/ FY2024: 17.09 (偏差 0.00%)
+  ✅ 通过 [31] FY2024 · 现金及短投                       报告:       410.00 
+                                                    https://data.sec.gov/api/xbrl/companyfacts/CIK0001807794.json FY2024 cash+shortinvestments: 410.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/crdo/financials/ FY2024: 410.00 (偏差 0.00%)
+  ✅ 通过 [46] FY2026 Q2 · 期末                       报告:      2025.00 
+                                                    https://www.sec.gov/Archives/edgar/data/1807794/000162828025054428/credoq22026ex-991.htm quarter ended2025-11-01: 2025.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/crdo/financials/?p=quarterly period endingNov25: 2025.00 (偏差 0.00%)
+  ✅ 通过 [53] FY2026 Q3 · GAAP 毛利率                 报告:        68.50 %
+                                                    https://www.sec.gov/Archives/edgar/data/1807794/000162828026013205/credoq32026ex-9911.htm GAAP GM: 68.50 (偏差 0.00%)  |  https://stockanalysis.com/stocks/crdo/financials/?p=quarterly GP/revenue (rounding): 68.52 (偏差 0.02%)
+  ✅ 通过 [54] FY2026 Q4 · 期末                       报告:      2026.00 
+                                                    https://www.sec.gov/Archives/edgar/data/1807794/000162828026039474/credoq42026ex-991.htm quarter ended2026-05-02: 2026.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/crdo/financials/?p=quarterly periodMay26: 2026.00 (偏差 0.00%)
+  ✅ 通过 [60] FY2027 Q1 · GAAP 净利润（US$m）           报告:       129.43 
+                                                    https://www.sec.gov/Archives/edgar/data/1807794/000162828026060111/crdo-20260801.htm: 129.43 (偏差 0.00%)  |  https://stockanalysis.com/stocks/crdo/financials/?p=quarterly Q1FY27 NI: 129.43 (偏差 0.00%)
+  ✅ 通过 [63] 已发行普通股 · 时点与解释                       报告:         8.00 
+                                                    https://www.sec.gov/Archives/edgar/data/1807794/000162828026060111/crdo-20260801.htm cover asof2026-08-25; extracted month only, not share count: 8.00 (偏差 0.00%)
+  ✅ 通过 [64] Q1 摊薄加权股数 · 数值                       报告:       194.38 
+                                                    https://data.sec.gov/api/xbrl/companyfacts/CIK0001807794.json WeightedAverageNumberOfDilutedSharesOutstanding20260801=194378000: 194.38 (偏差 0.00%)  |  https://stockanalysis.com/stocks/crdo/financials/income-statement/?p=quarterly dilutedshares rounded to whole million: 194.00 (偏差 0.19%)
+  ✅ 通过 [78] 光 DSP＋硅光 PIC＋模块 · 新证据                报告:         9.00 
+                                                    Issuer 2026-09-15 1.6T optical transceiver release (P1); extracted month: 9.00 (偏差 0.00%)
+  ✅ 通过 [88] P/S · 本次计算                           报告:        16.70 x
+                                                    financial_rigor Decimal: 141.41*187.951918/1591.045: 16.70 (偏差 0.03%)  |  https://stockanalysis.com/stocks/crdo/statistics/ PS: 16.70 (偏差 0.00%)
+  ✅ 通过 [91] 简单 FCF 收益率 · 本次计算                    报告:         1.65 %
+                                                    financial_rigor Decimal: 438.598/(141.41*187.951918)*100: 1.65 (偏差 0.01%)  |  https://stockanalysis.com/stocks/crdo/financials/ratios/ FCFyield: 1.65 (偏差 0.00%)
+  ✅ 通过 [98] [Marvell](https://stockanalysis.com  报告:        29.92 x
+                                                    https://stockanalysis.com/stocks/mrvl/statistics/ forwardPE; copy check only, not independently audited: 29.92 (偏差 0.00%)
+  ✅ 通过 [112] 基准 · 较现价                             报告:        -2.90 %
+                                                    financial_rigor: (2.5*(1+.3)^3*25/141.41-1)*100; hypothesis, not external fact: -2.90 (偏差 0.08%)
+  ✅ 通过 [111] 基准 · 三年价格                            报告:       137.31 
+                                                    financial_rigor: 2.5*(1+.3)^3*25; hypothesis, not external fact: 137.31 (偏差 0.00%)
+  ✅ 通过 [122] 币种与 r · 理由与限制                        报告:        11.00 
+                                                    https://www.federalreserve.gov/releases/h15/ released2026-11-10 observing11-09; extracted month: 11.00 (偏差 0.00%)
+  ✅ 通过 [127] 十年末净利 · 理由与限制                        报告:         4.00 B
+                                                    model: terminal bear profit0.8B/netmargin20%=revenue4B; assumption consistency only: 4.00 (偏差 0.00%)
+  ✅ 通过 [130] 现金与稀释 · 理由与限制                        报告:         1.50 %
+                                                    model annualdilution1.5%; consistency only, not externally forecast: 1.50 (偏差 0.00%)
+  ✅ 通过 [139] 乐观 · 留存率 g/ROIC                      报告:        20.00 %
+                                                    terminal_value: g4%/ROIC20%=retention20%; hypothetical parameters: 20.00 (偏差 0.00%)
+  ✅ 通过 [143] US$90–100 · 本次行动含义                   报告:        90.00 
+                                                    Report90–100 research band, consistent with triggers.json; threshold is judgment, not external fact: 90.00 (偏差 0.00%)
+  ✅ 通过 [146] 空仓者 · 建议                             报告:       120.00 
+                                                    reports/Credo/Credo-research-20260903.md old120–140; original historical text checked, not current price: 120.00 (偏差 0.00%)
+  ✅ 通过 [150] 加仓信号 · 建议                            报告:        90.00 
+                                                    Report90–100 band consistent with triggers.json and tracking table; conditional judgment: 90.00 (偏差 0.00%)
+
+----------------------------------------------------------------------
+  抽检总数: 23  |  通过: 23  |  警告: 0  |  不通过: 0
+
+【准出】所有抽检数据通过，报告可发布。
+======================================================================
+
+FINAL TERMINAL AUDIT (final report parameters)
+
+========================================================================
+估值口径准出检查   币种=USD   r=10.00%   ROIC=20%   g=1.0%/2.5%/4.0%
+========================================================================
+
+【C1】币种一致性 — r 与 g 必须用同一个币种
+     USD 口径基准：美国10年期国债 4.70% + 中国总ERP 5.18%（含1.01%国别溢价）
+     r 合理区间 [9.0%, 11.5%]   g 上限 4.0%   Rf 4.70%
+     → ✓ 通过
+
+【C2】分母宽度 — r-g 至少 5 个百分点
+     悲观  g= 1.0%  r-g= 9.0pct  PE=     10.6x  g+0.5pct → 10.9x (+3%)  
+     基准  g= 2.5%  r-g= 7.5pct  PE=     11.7x  g+0.5pct → 12.1x (+4%)  
+     乐观  g= 4.0%  r-g= 6.0pct  PE=     13.3x  g+0.5pct → 14.1x (+6%)  
+     → ✓ 通过
+
+【C3】离散风险归属 — 退市/VIE/地缘/监管必须归情景，不得进 r 或 β
+     ✓ 大客户订单流失 → 情景
+     ✓ 光学路线切换 → 情景
+     ✓ 并购整合失败 → 情景
+     ⚠ 台湾供应中断 → 未建模
+     ⚠ 出口监管 → 未建模
+     β = 1.0（默认值，无需理由）
+     → ✓ 通过
+
+========================================================================
+⚠ C3: 「台湾供应中断」未建模，必须写进报告的「限制」章节
+⚠ C3: 「出口监管」未建模，必须写进报告的「限制」章节
+
+【准出】三条硬约束全部通过，可以把估值写进报告。
+       但上述 2 条警告必须在报告里显式写出。
+
+
+TARGETED MONITOR RUNTIME (temporary state and reports; zero notifications)
+{"status": "OK", "date": "2026-11-12", "items": 1, "notifications": 0, "report": "/private/tmp/crdo-20261112/monitor-reports/daily-monitor-latest.md", "state_file": "/private/tmp/crdo-20261112/monitor-state.json"}
+
+CONFIG CHECKS (snapshot before concurrent SLDP update)
+trigger_scanner.py --check: PASS;94 targets,144 zones,239 events,112 unique codes
+daily_monitor.py --check: PASS;94 targets,monitoring-state schema1
+Local report links: PASS; final random sample unchanged after editorial finalization; SVG XML: PASS.
+
+Latest shared-state recheck after concurrent research: trigger_scanner PASS (94 targets,145 zones,242 events,112 unique codes); daily_monitor config PASS; ledger119 entries with one CRDO new event. Unrelated research preserved.
