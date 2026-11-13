@@ -1,0 +1,52 @@
+======================================================================
+报告数据抽检 — 准出/打回判决
+报告：reports/英伟达/英伟达-management-20261113.md
+======================================================================
+
+  ✅ 通过 [ 2] 11月12日收盘价 · 原始／首选来源                  报告:       166.19
+                                                    StockAnalysis https://stockanalysis.com/stocks/nvda/history/: 166.19 (偏差 0.00%)  |  Investing https://www.investing.com/equities/nvidia-corp-historical-data: 166.19 (偏差 0.00%)
+  ✅ 通过 [ 8] Q2经营现金流 · 原始／首选来源                    报告:     24077.00
+                                                    https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm: 24077.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/nvda/financials/cash-flow-statement/?p=quarterly: 24077.00 (偏差 0.00%)
+  ✅ 通过 [ 9] Q2经营现金流 · 独立对照                       报告:     24077.00
+                                                    https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm: 24077.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/nvda/financials/cash-flow-statement/?p=quarterly: 24077.00 (偏差 0.00%)
+  ✅ 通过 [16] Harvey C. Jones · 已公开职责与履历           报告:      1993.00
+                                                    SEC 2026-11-12 8-K https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm: 1993.00 (偏差 0.00%)
+  ✅ 通过 [48] 能力受损 · 一年后价格                         报告:       104.70
+                                                    Decimal independent recomputation 8.18*0.8*16: 104.70 (偏差 0.00%)  |  financial_rigor.py three-scenario output: 104.70 (偏差 0.00%)
+  ✅ 通过 [101] Q2收入                                 报告:     96221.00
+                                                    https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm: 96221.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/nvda/financials/?p=quarterly: 96221.00 (偏差 0.00%)
+  ✅ 通过 [102] Q2净利润                                报告:     59688.00
+                                                    https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm: 59688.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/nvda/financials/?p=quarterly: 59688.00 (偏差 0.00%)
+  ✅ 通过 [103] 7月26日期末百万股                           报告:     24147.00
+                                                    https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm: 24147.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/nvda/financials/balance-sheet/: 24147.00 (偏差 0.00%)
+  ✅ 通过 [104] TTM EPS                              报告:         7.91
+                                                    公司四季公告展示EPS之和: 7.91 (偏差 0.00%)  |  https://stockanalysis.com/stocks/nvda/financials/income-statement/?p=trailing: 7.91 (偏差 0.00%)
+  ✅ 通过 [105] 模型年化EPS                              报告:         8.18
+                                                    公司Q1/Q2调整后EPS年化；非预测: 8.18 (偏差 0.00%)  |  AP季度报道索引对照，正文部分受限: 8.18 (偏差 0.00%)
+  ✅ 通过 [106] 市值美元                                 报告: 4012989930000.00
+                                                    Decimal: 166.19*24147000000: 4012989930000.00 (偏差 0.00%)  |  financial_rigor.py verify-market-cap: 4012989930000.00 (偏差 0.00%)
+  ✅ 通过 [107] 过渡摩擦现值                               报告:       148.73
+                                                    Decimal: 163.60/1.1: 148.73 (偏差 0.00%)
+  ✅ 通过 [108] 盈利与倍数双冲击百分比                          报告:       -19.25
+                                                    Decimal: (.95*.85-1)*100: -19.25 (偏差 0.00%)
+  ✅ 通过 [109] 当日跌幅百分比                              报告:        -4.34
+                                                    StockAnalysis prices + Decimal: -4.34 (偏差 0.00%)  |  Investing historical change: -4.34 (偏差 0.00%)
+  ✅ 通过 [110] 自11月6日跌幅百分比                          报告:       -10.96
+                                                    StockAnalysis prices + Decimal: -10.96 (偏差 0.03%)  |  Investing historical prices + Decimal: -10.96 (偏差 0.03%)
+  ✅ 通过 [111] TTM PE                               报告:        21.01
+                                                    Decimal: 166.19/7.91: 21.01 (偏差 0.00%)
+
+----------------------------------------------------------------------
+  抽检总数: 16  |  通过: 16  |  警告: 0  |  不通过: 0
+
+【准出】所有抽检数据通过，报告可发布。
+======================================================================
+{
+  "verdict": "PASS",
+  "pass_count": 16,
+  "warn_count": 0,
+  "fail_count": 0,
+  "total": 16,
+  "fail_items": [],
+  "warn_items": []
+}

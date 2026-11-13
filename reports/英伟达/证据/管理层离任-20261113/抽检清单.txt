@@ -1,0 +1,136 @@
+======================================================================
+报告数据抽检清单
+文件：reports/英伟达/英伟达-management-20261113.md
+总提取数据点：58  |  抽样比例：15%  |  抽检数量：9
+随机种子：42（可用于复现同一批样本）
+======================================================================
+
+ ID     行号  数据标签                                          报告值  单位
+───  ─────  ───────────────────────────────────  ────────────  ──────
+  2     34  11月12日收盘价 · 原始／首选来源                        166.19
+  8     37  Q2经营现金流 · 原始／首选来源                        24077.00
+  9     37  Q2经营现金流 · 独立对照                           24077.00
+ 15     49  Colette Kress · 可以承担的组织功能／尚待验证事项             1.00
+ 16     50  Harvey C. Jones · 已公开职责与履历                1993.00
+ 18     51  Ian Buck · 可以承担的组织功能／尚待验证事项                 17.00
+ 41    149  过渡摩擦 · 一年后PE                                20.00  倍
+ 48    150  能力受损 · 一年后价格                               104.70
+ 55    167  治理结构 · Skill权重                              15.00  %
+
+↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：
+  美股：macrotrends.net（主）+ stockanalysis.com（副）
+  港股：aastocks.com（主）+ macrotrends ADR（副）
+  A股： eastmoney.com（主）+ cninfo.com.cn（副）
+
+抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：
+
+[
+  {
+    "id": 2,
+    "label": "11月12日收盘价 · 原始／首选来源",
+    "reported_value": 166.19,
+    "unit": "",
+    "line_number": 34,
+    "raw_text": "| 11月12日收盘价 | StockAnalysis：166.19 | Investing：166.19 | 差异0%；不混入盘后价。[S7][S8] |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 8,
+    "label": "Q2经营现金流 · 原始／首选来源",
+    "reported_value": 24077.0,
+    "unit": "",
+    "line_number": 37,
+    "raw_text": "| Q2经营现金流 | SEC：24,077 | StockAnalysis：24,077 | 差异0%。[S9][S11] |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 9,
+    "label": "Q2经营现金流 · 独立对照",
+    "reported_value": 24077.0,
+    "unit": "",
+    "line_number": 37,
+    "raw_text": "| Q2经营现金流 | SEC：24,077 | StockAnalysis：24,077 | 差异0%。[S9][S11] |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 15,
+    "label": "Colette Kress · 可以承担的组织功能／尚待验证事项",
+    "reported_value": 1.0,
+    "unit": "",
+    "line_number": 49,
+    "raw_text": "| Colette Kress | 临时CEO兼CFO；2013年加入 | 稳定经营披露、资本安排及客户沟通；技术投资取舍如何授权尚待披露。[S1][S2] |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 16,
+    "label": "Harvey C. Jones · 已公开职责与履历",
+    "reported_value": 1993.0,
+    "unit": "",
+    "line_number": 50,
+    "raw_text": "| Harvey C. Jones | 新任董事长；1993年起任董事 | 监督、继任搜寻与治理协调；董事长身份不等于技术架构负责人。[S1] |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 18,
+    "label": "Ian Buck · 可以承担的组织功能／尚待验证事项",
+    "reported_value": 17.0,
+    "unit": "",
+    "line_number": 51,
+    "raw_text": "| Ian Buck | Hyperscale／HPC副总裁，负责相关AI硬件、软件产品及大客户共研 | 核心产品与客户技术协同的重要载体；不是已经获董事会确认的正式CEO候选。[S17] |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 41,
+    "label": "过渡摩擦 · 一年后PE",
+    "reported_value": 20.0,
+    "unit": "倍",
+    "line_number": 149,
+    "raw_text": "| 过渡摩擦 | 0% | 8.180 | 20倍 | 163.60 | -1.56% | 148.73 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 48,
+    "label": "能力受损 · 一年后价格",
+    "reported_value": 104.7,
+    "unit": "",
+    "line_number": 150,
+    "raw_text": "| 能力受损 | -20% | 6.544 | 16倍 | 104.70 | -37.00% | 95.19 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 55,
+    "label": "治理结构 · Skill权重",
+    "reported_value": 15.0,
+    "unit": "%",
+    "line_number": 167,
+    "raw_text": "| 治理结构 | 15% | 制衡已调整，继任仍未完成 | 程序到位不等于风险已经消除 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  }
+]

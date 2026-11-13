@@ -1,0 +1,121 @@
+{
+  "report": "reports/英伟达/英伟达-management-20261113.md",
+  "seed": 42,
+  "extracted_count": 58,
+  "sampled_count": 9,
+  "sample_classification": [
+    {
+      "id": 2,
+      "label": "11月12日收盘价 · 原始／首选来源",
+      "reported_value": 166.19,
+      "unit": "",
+      "raw_text": "| 11月12日收盘价 | StockAnalysis：166.19 | Investing：166.19 | 差异0%；不混入盘后价。[S7][S8] |",
+      "line_number": 34,
+      "fetched_value": 166.19,
+      "fetched_source": "StockAnalysis https://stockanalysis.com/stocks/nvda/history/",
+      "fetched_value2": 166.19,
+      "fetched_source2": "Investing https://www.investing.com/equities/nvidia-corp-historical-data",
+      "kind": "external_fact"
+    },
+    {
+      "id": 8,
+      "label": "Q2经营现金流 · 原始／首选来源",
+      "reported_value": 24077.0,
+      "unit": "",
+      "raw_text": "| Q2经营现金流 | SEC：24,077 | StockAnalysis：24,077 | 差异0%。[S9][S11] |",
+      "line_number": 37,
+      "fetched_value": 24077,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+      "fetched_value2": 24077,
+      "fetched_source2": "https://stockanalysis.com/stocks/nvda/financials/cash-flow-statement/?p=quarterly",
+      "kind": "external_fact"
+    },
+    {
+      "id": 9,
+      "label": "Q2经营现金流 · 独立对照",
+      "reported_value": 24077.0,
+      "unit": "",
+      "raw_text": "| Q2经营现金流 | SEC：24,077 | StockAnalysis：24,077 | 差异0%。[S9][S11] |",
+      "line_number": 37,
+      "fetched_value": 24077,
+      "fetched_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+      "fetched_value2": 24077,
+      "fetched_source2": "https://stockanalysis.com/stocks/nvda/financials/cash-flow-statement/?p=quarterly",
+      "kind": "external_fact"
+    },
+    {
+      "id": 15,
+      "label": "Colette Kress · 可以承担的组织功能／尚待验证事项",
+      "reported_value": 1.0,
+      "unit": "",
+      "raw_text": "| Colette Kress | 临时CEO兼CFO；2013年加入 | 稳定经营披露、资本安排及客户沟通；技术投资取舍如何授权尚待披露。[S1][S2] |",
+      "line_number": 49,
+      "fetched_value": null,
+      "fetched_source": "",
+      "exclusion_reason": "来源脚注S1被误抽取为数值1",
+      "kind": "excluded_nonfinancial_or_assumption"
+    },
+    {
+      "id": 16,
+      "label": "Harvey C. Jones · 已公开职责与履历",
+      "reported_value": 1993.0,
+      "unit": "",
+      "raw_text": "| Harvey C. Jones | 新任董事长；1993年起任董事 | 监督、继任搜寻与治理协调；董事长身份不等于技术架构负责人。[S1] |",
+      "line_number": 50,
+      "fetched_value": 1993,
+      "fetched_source": "SEC 2026-11-12 8-K https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+      "kind": "biography_year_single_primary"
+    },
+    {
+      "id": 18,
+      "label": "Ian Buck · 可以承担的组织功能／尚待验证事项",
+      "reported_value": 17.0,
+      "unit": "",
+      "raw_text": "| Ian Buck | Hyperscale／HPC副总裁，负责相关AI硬件、软件产品及大客户共研 | 核心产品与客户技术协同的重要载体；不是已经获董事会确认的正式CEO候选。[S17] |",
+      "line_number": 51,
+      "fetched_value": null,
+      "fetched_source": "",
+      "exclusion_reason": "来源脚注S17被误抽取为数值17",
+      "kind": "excluded_nonfinancial_or_assumption"
+    },
+    {
+      "id": 41,
+      "label": "过渡摩擦 · 一年后PE",
+      "reported_value": 20.0,
+      "unit": "倍",
+      "raw_text": "| 过渡摩擦 | 0% | 8.180 | 20倍 | 163.60 | -1.56% | 148.73 |",
+      "line_number": 149,
+      "fetched_value": null,
+      "fetched_source": "",
+      "exclusion_reason": "作者自设20倍PE参数，不是可外部核验的事实",
+      "kind": "excluded_nonfinancial_or_assumption"
+    },
+    {
+      "id": 48,
+      "label": "能力受损 · 一年后价格",
+      "reported_value": 104.7,
+      "unit": "",
+      "raw_text": "| 能力受损 | -20% | 6.544 | 16倍 | 104.70 | -37.00% | 95.19 |",
+      "line_number": 150,
+      "fetched_value": 104.704,
+      "fetched_source": "Decimal independent recomputation 8.18*0.8*16",
+      "fetched_value2": 104.704,
+      "fetched_source2": "financial_rigor.py three-scenario output",
+      "kind": "model_calculation_not_prediction"
+    },
+    {
+      "id": 55,
+      "label": "治理结构 · Skill权重",
+      "reported_value": 15.0,
+      "unit": "%",
+      "raw_text": "| 治理结构 | 15% | 制衡已调整，继任仍未完成 | 程序到位不等于风险已经消除 |",
+      "line_number": 167,
+      "fetched_value": null,
+      "fetched_source": "",
+      "exclusion_reason": "skill约定权重15%，按原skill人工核对，不是财务事实",
+      "kind": "excluded_nonfinancial_or_assumption"
+    }
+  ],
+  "supplemental_count": 11,
+  "limitation": "来源脚注误识别排除；作者参数只核表达与计算，不验证其未来真实性。外部资料由本次web读数填入，工具不自行联网核验。"
+}
