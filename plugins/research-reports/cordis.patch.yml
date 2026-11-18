@@ -1,0 +1,25 @@
+# Research-report browser: the Host rows serve the project's reports/ tree as
+# JSON, and the Client rows add the sidebar panel with pinning, drag ordering and
+# an in-panel reader.
+#
+# reportsDir       directory scanned for .md reports (absolute, or relative to
+#                  the process working directory).
+# bucketOverrides  extra top-level directories that are not 标的, mapped to the
+#                  section they belong in. `daily-monitor: 监控` and
+#                  `trigger-scan: 归档` are built in; entries here add or replace.
+# statePath        where the reader stores pins and manual ordering. Default
+#                  `~/.dsh/storages/research-reports/ui-state.json`; it is local
+#                  UI state, never part of the report tree.
+# maxReportBytes   bytes of one report read for the reader (default 400 KiB).
+# routePath / reportRoutePath / assetRoutePath / stateRoutePath
+#                  override the four served paths, e.g. to namespace them.
+- insert:
+    - id: research-reports
+      name: '@local/research-reports'
+      config:
+        reportsDir: /Users/kongwei/stock/ai-berkshire/reports
+        # bucketOverrides:
+        #   daily-monitor: 监控
+        #   trigger-scan: 归档
+        # statePath: /Users/kongwei/.dsh/storages/research-reports/ui-state.json
+        # maxReportBytes: 409600
