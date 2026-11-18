@@ -1,0 +1,55 @@
+$ python3 tools/financial_rigor.py verify-market-cap --price 39.57 --shares 10725000 --reported 424368437.30 --currency USD_NAV
+============================================================
+市值验算 (Market Cap Verification)
+============================================================
+  股价 (Price):       39.57 USD_NAV
+  总股本 (Shares):    10.72M
+  计算市值:           424.39M USD_NAV
+  报告市值:           424.37M USD_NAV
+  偏差:               0.00%
+
+  ✅ 验证通过, 偏差仅 0.00%
+
+$ python3 tools/financial_rigor.py cross-validate --field Nov16 closing price --values {"ProcureAM": 39.54, "Investing": 39.54} --unit USD --tolerance 1
+============================================================
+交叉验证: Nov16 closing price (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 39.54 USD
+
+  ✅ ProcureAM           : 39.54 USD  (偏差 0.00%)
+  ✅ Investing           : 39.54 USD  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 39.54 USD
+
+$ python3 tools/financial_rigor.py cross-validate --field expense ratio --values {"Prospectus": 0.75, "StockAnalysis": 0.75} --unit percent --tolerance 1
+============================================================
+交叉验证: expense ratio (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 0.75 percent
+
+  ✅ Prospectus          : 0.75 percent  (偏差 0.00%)
+  ✅ StockAnalysis       : 0.75 percent  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 1.0%, 数据一致
+
+  共识值 (加权中位数): 0.75 percent
+
+$ python3 tools/financial_rigor.py calc --expr 39.57*1.2*(0.9925*0.9925*0.9925)/(1.1*1.1*1.1)
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 39.57*1.2*(0.9925*0.9925*0.9925)/(1.1*1.1*1.1)
+  结果:   34.88
+  精确值: 34.878739964453416
+
+$ python3 tools/financial_rigor.py calc --expr 14.97+5.73+5.60+5.31+4.98+4.79+4.45+3.53+3.24+3.24
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 14.97+5.73+5.60+5.31+4.98+4.79+4.45+3.53+3.24+3.24
+  结果:   55.84
+  精确值: 55.84000000000001

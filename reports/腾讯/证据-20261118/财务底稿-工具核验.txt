@@ -1,0 +1,510 @@
+$ python3 tools/financial_rigor.py cross-validate --field 2021_revenue --values {"Tencent_primary": 560118, "StockAnalysis": 560118} --unit CNY million
+============================================================
+交叉验证: 2021_revenue (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 560,118.00 CNY million
+
+  ✅ Tencent_primary     : 560,118.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 560,118.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 560,118.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2021_ifrs_profit_equity_holders --values {"Tencent_primary": 224822, "StockAnalysis": 224822} --unit CNY million
+============================================================
+交叉验证: 2021_ifrs_profit_equity_holders (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 224,822.00 CNY million
+
+  ✅ Tencent_primary     : 224,822.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 224,822.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 224,822.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2021_operating_cash_flow --values {"Tencent_primary": 175186, "StockAnalysis": 175186} --unit CNY million
+============================================================
+交叉验证: 2021_operating_cash_flow (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 175,186.00 CNY million
+
+  ✅ Tencent_primary     : 175,186.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 175,186.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 175,186.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2021_cash_equivalents --values {"Tencent_primary": 167966, "StockAnalysis": 167966} --unit CNY million
+============================================================
+交叉验证: 2021_cash_equivalents (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 167,966.00 CNY million
+
+  ✅ Tencent_primary     : 167,966.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 167,966.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 167,966.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2022_revenue --values {"Tencent_primary": 554552, "StockAnalysis": 554552} --unit CNY million
+============================================================
+交叉验证: 2022_revenue (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 554,552.00 CNY million
+
+  ✅ Tencent_primary     : 554,552.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 554,552.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 554,552.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2022_ifrs_profit_equity_holders --values {"Tencent_primary": 188243, "StockAnalysis": 188243} --unit CNY million
+============================================================
+交叉验证: 2022_ifrs_profit_equity_holders (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 188,243.00 CNY million
+
+  ✅ Tencent_primary     : 188,243.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 188,243.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 188,243.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2022_operating_cash_flow --values {"Tencent_primary": 146091, "StockAnalysis": 146091} --unit CNY million
+============================================================
+交叉验证: 2022_operating_cash_flow (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 146,091.00 CNY million
+
+  ✅ Tencent_primary     : 146,091.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 146,091.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 146,091.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2022_cash_equivalents --values {"Tencent_primary": 156739, "StockAnalysis": 156739} --unit CNY million
+============================================================
+交叉验证: 2022_cash_equivalents (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 156,739.00 CNY million
+
+  ✅ Tencent_primary     : 156,739.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 156,739.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 156,739.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2023_revenue --values {"Tencent_primary": 609015, "StockAnalysis": 609015} --unit CNY million
+============================================================
+交叉验证: 2023_revenue (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 609,015.00 CNY million
+
+  ✅ Tencent_primary     : 609,015.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 609,015.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 609,015.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2023_ifrs_profit_equity_holders --values {"Tencent_primary": 115216, "StockAnalysis": 115216} --unit CNY million
+============================================================
+交叉验证: 2023_ifrs_profit_equity_holders (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 115,216.00 CNY million
+
+  ✅ Tencent_primary     : 115,216.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 115,216.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 115,216.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2023_operating_cash_flow --values {"Tencent_primary": 221962, "StockAnalysis": 221962} --unit CNY million
+============================================================
+交叉验证: 2023_operating_cash_flow (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 221,962.00 CNY million
+
+  ✅ Tencent_primary     : 221,962.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 221,962.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 221,962.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2023_cash_equivalents --values {"Tencent_primary": 172320, "StockAnalysis": 172320} --unit CNY million
+============================================================
+交叉验证: 2023_cash_equivalents (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 172,320.00 CNY million
+
+  ✅ Tencent_primary     : 172,320.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 172,320.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 172,320.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2024_revenue --values {"Tencent_primary": 660257, "StockAnalysis": 660257} --unit CNY million
+============================================================
+交叉验证: 2024_revenue (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 660,257.00 CNY million
+
+  ✅ Tencent_primary     : 660,257.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 660,257.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 660,257.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2024_ifrs_profit_equity_holders --values {"Tencent_primary": 194073, "StockAnalysis": 194073} --unit CNY million
+============================================================
+交叉验证: 2024_ifrs_profit_equity_holders (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 194,073.00 CNY million
+
+  ✅ Tencent_primary     : 194,073.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 194,073.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 194,073.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2024_operating_cash_flow --values {"Tencent_primary": 258521, "StockAnalysis": 258521} --unit CNY million
+============================================================
+交叉验证: 2024_operating_cash_flow (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 258,521.00 CNY million
+
+  ✅ Tencent_primary     : 258,521.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 258,521.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 258,521.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2024_cash_equivalents --values {"Tencent_primary": 132519, "StockAnalysis": 132519} --unit CNY million
+============================================================
+交叉验证: 2024_cash_equivalents (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 132,519.00 CNY million
+
+  ✅ Tencent_primary     : 132,519.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 132,519.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 132,519.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2025_revenue --values {"Tencent_primary": 751766, "StockAnalysis": 751766} --unit CNY million
+============================================================
+交叉验证: 2025_revenue (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 751,766.00 CNY million
+
+  ✅ Tencent_primary     : 751,766.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 751,766.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 751,766.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2025_ifrs_profit_equity_holders --values {"Tencent_primary": 224842, "StockAnalysis": 224842} --unit CNY million
+============================================================
+交叉验证: 2025_ifrs_profit_equity_holders (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 224,842.00 CNY million
+
+  ✅ Tencent_primary     : 224,842.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 224,842.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 224,842.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2025_operating_cash_flow --values {"Tencent_primary": 303052, "StockAnalysis": 303052} --unit CNY million
+============================================================
+交叉验证: 2025_operating_cash_flow (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 303,052.00 CNY million
+
+  ✅ Tencent_primary     : 303,052.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 303,052.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 303,052.00 CNY million
+
+$ python3 tools/financial_rigor.py cross-validate --field 2025_cash_equivalents --values {"Tencent_primary": 141041, "StockAnalysis": 141041} --unit CNY million
+============================================================
+交叉验证: 2025_cash_equivalents (Cross-Validation)
+============================================================
+  数据来源数: 2
+  参考中位数: 141,041.00 CNY million
+
+  ✅ Tencent_primary     : 141,041.00 CNY million  (偏差 0.00%)
+  ✅ StockAnalysis       : 141,041.00 CNY million  (偏差 0.00%)
+
+  ✅ 所有来源偏差 ≤ 2.0%, 数据一致
+
+  共识值 (加权中位数): 141,041.00 CNY million
+
+$ python3 tools/financial_rigor.py calc --expr 751766 + 401243 - 364526
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 751766 + 401243 - 364526
+  结果:   788,483.00
+  精确值: 788483
+
+$ python3 tools/financial_rigor.py calc --expr 224842 + 114115 - 103449
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 224842 + 114115 - 103449
+  结果:   235,508.00
+  精确值: 235508
+
+$ python3 tools/financial_rigor.py calc --expr 259626 + 136320 - 124381
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 259626 + 136320 - 124381
+  结果:   271,565.00
+  精确值: 271565
+
+$ python3 tools/financial_rigor.py calc --expr 34711 + 14949 - 18904
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 34711 + 14949 - 18904
+  结果:   30,756.00
+  精确值: 30756
+
+$ python3 tools/financial_rigor.py calc --expr 259626 + 136320 - 124381 - (34711 + 14949 - 18904)
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 259626 + 136320 - 124381 - (34711 + 14949 - 18904)
+  结果:   240,809.00
+  精确值: 240809
+
+$ python3 tools/financial_rigor.py calc --expr 206930 + 304224
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 206930 + 304224
+  结果:   511,154.00
+  精确值: 511154
+
+$ python3 tools/financial_rigor.py calc --expr 206930 + 304224 - 298942 - 154021
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 206930 + 304224 - 298942 - 154021
+  结果:   58,191.00
+  精确值: 58191
+
+$ python3 tools/financial_rigor.py calc --expr 58500 + 34000 + 56700 - 13800
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 58500 + 34000 + 56700 - 13800
+  结果:   135,400.00
+  精确值: 135400
+
+2021 gross_profit margin
+$ python3 tools/financial_rigor.py calc --expr 245944 / 560118 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 245944 / 560118 * 100
+  结果:   43.91
+  精确值: 43.90931910775944
+
+2022 gross_profit margin
+$ python3 tools/financial_rigor.py calc --expr 238746 / 554552 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 238746 / 554552 * 100
+  结果:   43.05
+  精确值: 43.05204922171411
+
+2023 gross_profit margin
+$ python3 tools/financial_rigor.py calc --expr 293109 / 609015 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 293109 / 609015 * 100
+  结果:   48.13
+  精确值: 48.128371222383684
+
+2024 gross_profit margin
+$ python3 tools/financial_rigor.py calc --expr 349246 / 660257 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 349246 / 660257 * 100
+  结果:   52.90
+  精确值: 52.89546343317829
+
+2025 gross_profit margin
+$ python3 tools/financial_rigor.py calc --expr 422593 / 751766 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 422593 / 751766 * 100
+  结果:   56.21
+  精确值: 56.21336958574875
+
+2021 ifrs_operating_profit margin
+$ python3 tools/financial_rigor.py calc --expr 124656 / 560118 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 124656 / 560118 * 100
+  结果:   22.26
+  精确值: 22.25531048814714
+
+2022 ifrs_operating_profit margin
+$ python3 tools/financial_rigor.py calc --expr 110827 / 554552 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 110827 / 554552 * 100
+  结果:   19.98
+  精确值: 19.984960833249183
+
+2023 ifrs_operating_profit margin
+$ python3 tools/financial_rigor.py calc --expr 160074 / 609015 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 160074 / 609015 * 100
+  结果:   26.28
+  精确值: 26.2840816728652
+
+2024 ifrs_operating_profit margin
+$ python3 tools/financial_rigor.py calc --expr 208099 / 660257 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 208099 / 660257 * 100
+  结果:   31.52
+  精确值: 31.5178786442249
+
+2025 ifrs_operating_profit margin
+$ python3 tools/financial_rigor.py calc --expr 241562 / 751766 * 100
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 241562 / 751766 * 100
+  结果:   32.13
+  精确值: 32.13260509254209
+
+2021 full cash reinvestment proxy including land, before cash interest
+$ python3 tools/financial_rigor.py calc --expr 175186 - 29302 - 31159 - 4423 - 1704
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 175186 - 29302 - 31159 - 4423 - 1704
+  结果:   108,598.00
+  精确值: 108598
+
+2022 full cash reinvestment proxy including land, before cash interest
+$ python3 tools/financial_rigor.py calc --expr 146091 - 22679 - 27645 - 5969 - 526
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 146091 - 22679 - 27645 - 5969 - 526
+  结果:   89,272.00
+  精确值: 89272
+
+2023 full cash reinvestment proxy including land, before cash interest
+$ python3 tools/financial_rigor.py calc --expr 221962 - 21008 - 26042 - 6652 - 357
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 221962 - 21008 - 26042 - 6652 - 357
+  结果:   167,903.00
+  精确值: 167903
+
+2024 full cash reinvestment proxy including land, before cash interest
+$ python3 tools/financial_rigor.py calc --expr 258521 - 62927 - 26394 - 6369 - 6727
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 258521 - 62927 - 26394 - 6369 - 6727
+  结果:   156,104.00
+  精确值: 156104
+
+2025 full cash reinvestment proxy including land, before cash interest
+$ python3 tools/financial_rigor.py calc --expr 303052 - 87482 - 25399 - 6783 + 6
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 303052 - 87482 - 25399 - 6783 + 6
+  结果:   183,394.00
+  精确值: 183394
+
+$ python3 tools/financial_rigor.py calc --expr 14534 + 9114 - 8049
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 14534 + 9114 - 8049
+  结果:   15,599.00
+  精确值: 15599
+
+$ python3 tools/financial_rigor.py calc --expr 6500 + 5162 - 4267
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 6500 + 5162 - 4267
+  结果:   7,395.00
+  精确值: 7395
+
+$ python3 tools/financial_rigor.py calc --expr 2372 + 1662 - 1865
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 2372 + 1662 - 1865
+  结果:   2,169.00
+  精确值: 2169
+
+$ python3 tools/financial_rigor.py calc --expr 25660 + 11046 - 13397
+============================================================
+精确计算 (Exact Calculator)
+============================================================
+  表达式: 25660 + 11046 - 13397
+  结果:   23,309.00
+  精确值: 23309

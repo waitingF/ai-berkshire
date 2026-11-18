@@ -1,0 +1,423 @@
+{
+  "cutoff": "2026-11-18 Asia/Shanghai",
+  "primary_sources": {
+    "2022": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2023/2023-4/2023-04-29/9161696.PDF",
+    "2023": "https://static.cninfo.com.cn/finalpage/2024-04-27/1219854483.PDF",
+    "2024": "https://www.sailungroup.com/upload/file/20250807/1754570828658063150.pdf",
+    "2025": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225201460.PDF",
+    "2026Q1": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225201459.PDF",
+    "2026H1": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534298.PDF",
+    "2026Q3": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225646273.PDF"
+  },
+  "second_sources": {
+    "annual_and_cumulative_statements": "https://datacenter-web.eastmoney.com/api/data/v1/get?columns=ALL&filter=(SECUCODE%3D%22601058.SH%22)&pageSize=100&pageNumber=1&reportName=RPT_F10_FINANCE_MAINFINADATA",
+    "full_balance": "https://datacenter-web.eastmoney.com/api/data/v1/get?columns=ALL&filter=(SECUCODE%3D%22601058.SH%22)&pageSize=100&pageNumber=1&reportName=RPT_F10_FINANCE_GBALANCE",
+    "segments": "https://datacenter-web.eastmoney.com/api/data/v1/get?columns=ALL&filter=(SECUCODE%3D%22601058.SH%22)&pageSize=100&pageNumber=1&reportName=RPT_F10_FN_MAINOP",
+    "shareholders": "https://datacenter-web.eastmoney.com/api/data/v1/get?columns=ALL&filter=(SECUCODE%3D%22601058.SH%22)&pageSize=100&pageNumber=1&reportName=RPT_F10_EH_HOLDERS",
+    "quote_eastmoney": "https://push2.eastmoney.com/api/qt/stock/get?secid=1.601058&fields=f43,f84,f86,f116",
+    "quote_tencent": "https://qt.gtimg.cn/q=sh601058"
+  },
+  "financials": [
+    {
+      "period": "2021-12-31",
+      "revenue": 17998428484.24,
+      "parent_profit": 1312965471.12,
+      "cost": 14602288025.5,
+      "operating_profit": 1348729404.51,
+      "cfo": 836670626.36,
+      "cash_capex": 2590615358.86,
+      "cash": 4841006537.81,
+      "gross_profit": "3396140458.74",
+      "gross_margin_pct": "18.869094386289163",
+      "operating_margin_pct": "7.49359537523507",
+      "fcf": "-1753944732.5",
+      "cfo_to_profit_pct": "63.72373415473708"
+    },
+    {
+      "period": "2022-12-31",
+      "revenue": 21902213873.16,
+      "parent_profit": 1332116148.15,
+      "cost": 17868770696.74,
+      "operating_profit": 1597735825.45,
+      "cfo": 2199015670.7,
+      "cash_capex": 3597586421.99,
+      "cash": 4903349071.41,
+      "gross_profit": "4033443176.42",
+      "gross_margin_pct": "18.41568710715025",
+      "operating_margin_pct": "7.294859938373355",
+      "fcf": "-1398570751.29",
+      "cfo_to_profit_pct": "165.07687214466412"
+    },
+    {
+      "period": "2023-12-31",
+      "revenue": 25978259490.19,
+      "parent_profit": 3091415514.32,
+      "cost": 18846747382.01,
+      "operating_profit": 3516784601.82,
+      "cfo": 5313396049.12,
+      "cash_capex": 2026093409.28,
+      "cash": 5216027852.04,
+      "gross_profit": "7131512108.18",
+      "gross_margin_pct": "27.4518472296923",
+      "operating_margin_pct": "13.537414248818402",
+      "fcf": "3287302639.84",
+      "cfo_to_profit_pct": "171.87582919563488"
+    },
+    {
+      "period": "2024-12-31",
+      "revenue": 31802388102.78,
+      "parent_profit": 4062674002.7,
+      "cost": 23030341853.6,
+      "operating_profit": 4705739769.52,
+      "cfo": 2288784605.99,
+      "cash_capex": 4024462509.92,
+      "cash": 5517001448.39,
+      "gross_profit": "8772046249.18",
+      "gross_margin_pct": "27.582979683255903",
+      "operating_margin_pct": "14.79681259882697",
+      "fcf": "-1735677903.93",
+      "cfo_to_profit_pct": "56.33690038799332"
+    },
+    {
+      "period": "2025-12-31",
+      "revenue": 36792433957.12,
+      "parent_profit": 3522493083.51,
+      "cost": 27711170618.66,
+      "operating_profit": 4194580156.74,
+      "cfo": 4178797505.36,
+      "cash_capex": 4817731140.36,
+      "cash": 4579350244.4,
+      "gross_profit": "9081263338.46",
+      "gross_margin_pct": "24.68242070922468",
+      "operating_margin_pct": "11.40065960743071",
+      "fcf": "-638933635.0",
+      "cfo_to_profit_pct": "118.63181577055144"
+    },
+    {
+      "period": "2026-03-31",
+      "revenue": 9460829799.47,
+      "parent_profit": 1056350920.31,
+      "cost": 6919443853.39,
+      "operating_profit": 1252337215.25,
+      "cfo": 176000013.02,
+      "cash_capex": 1409655160.85,
+      "cash": 5963505024.93,
+      "gross_profit": "2541385946.08",
+      "gross_margin_pct": "26.86218862347962",
+      "operating_margin_pct": "13.237075835780878",
+      "fcf": "-1233655147.83",
+      "cfo_to_profit_pct": "16.66113122411542"
+    },
+    {
+      "period": "2026-06-30",
+      "revenue": 20027010258.02,
+      "parent_profit": 2159849687.42,
+      "cost": 14622669845.15,
+      "operating_profit": 2552622456.73,
+      "cfo": 1032804763.59,
+      "cash_capex": 2598304756.31,
+      "cash": 5206941521.1,
+      "gross_profit": "5404340412.87",
+      "gross_margin_pct": "26.98525812511522",
+      "operating_margin_pct": "12.74589878290884",
+      "fcf": "-1565499992.72",
+      "cfo_to_profit_pct": "47.81836299097803"
+    },
+    {
+      "period": "2026-09-30",
+      "revenue": 30885123603.56,
+      "parent_profit": 2712102333.87,
+      "cost": 23202634110.97,
+      "operating_profit": 3270488730.27,
+      "cfo": 2093678281.22,
+      "cash_capex": 3680405510.85,
+      "cash": 5493223488.91,
+      "gross_profit": "7682489492.59",
+      "gross_margin_pct": "24.87440099383145",
+      "operating_margin_pct": "10.589203955437705",
+      "fcf": "-1586727229.63",
+      "cfo_to_profit_pct": "77.19761363991205"
+    }
+  ],
+  "quarters": [
+    {
+      "quarter": "2025Q4",
+      "revenue": "9205355633.94",
+      "parent_profit": "650833149.82",
+      "cost": "6947348068.36",
+      "operating_profit": "759608174.52",
+      "cfo": "1672594687.18",
+      "capex": "1922666940.75",
+      "fcf": "-250072253.57",
+      "gross_margin_pct": "24.529281163834256"
+    },
+    {
+      "quarter": "2026Q1",
+      "revenue": "9460829799.47",
+      "parent_profit": "1056350920.31",
+      "cost": "6919443853.39",
+      "operating_profit": "1252337215.25",
+      "cfo": "176000013.02",
+      "capex": "1409655160.85",
+      "fcf": "-1233655147.83",
+      "gross_margin_pct": "26.86218862347962"
+    },
+    {
+      "quarter": "2026Q2",
+      "revenue": "10566180458.55",
+      "parent_profit": "1103498767.11",
+      "cost": "7703225991.76",
+      "operating_profit": "1300285241.48",
+      "cfo": "856804750.57",
+      "capex": "1188649595.46",
+      "fcf": "-331844844.89",
+      "gross_margin_pct": "27.095453063867925"
+    },
+    {
+      "quarter": "2026Q3",
+      "revenue": "10858113345.54",
+      "parent_profit": "552252646.45",
+      "cost": "8579964265.82",
+      "operating_profit": "717866273.54",
+      "cfo": "1060873517.63",
+      "capex": "1082100754.54",
+      "fcf": "-21227236.91",
+      "gross_margin_pct": "20.98107661268572"
+    }
+  ],
+  "cash_debt": [
+    {
+      "REPORT_DATE": "2026-09-30 00:00:00",
+      "MONETARYFUNDS": "5493223488.91",
+      "TRADE_FINASSET_NOTFVTPL": "46386143.49",
+      "SHORT_LOAN": "8245645716.33",
+      "NONCURRENT_LIAB_1YEAR": "1746146291.23",
+      "LONG_LOAN": "5410030814.75",
+      "LEASE_LIAB": "198272471.56",
+      "ACCOUNTS_RECE": "8083148901.95",
+      "INVENTORY": "8572666468.32",
+      "PARENT_HOLDER_EQUITY": null,
+      "TOTAL_ASSETS": "53307321428.98"
+    },
+    {
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "MONETARYFUNDS": "5206941521.1",
+      "TRADE_FINASSET_NOTFVTPL": "130216002.15",
+      "SHORT_LOAN": "6991362920.55",
+      "NONCURRENT_LIAB_1YEAR": "1708389160.71",
+      "LONG_LOAN": "5782322078.92",
+      "LEASE_LIAB": "191018468.47",
+      "ACCOUNTS_RECE": "7423441027.96",
+      "INVENTORY": "8184553480.07",
+      "PARENT_HOLDER_EQUITY": null,
+      "TOTAL_ASSETS": "51358782567.39"
+    },
+    {
+      "REPORT_DATE": "2026-03-31 00:00:00",
+      "MONETARYFUNDS": "5963505024.93",
+      "TRADE_FINASSET_NOTFVTPL": "108916054.38",
+      "SHORT_LOAN": "6921194503.48",
+      "NONCURRENT_LIAB_1YEAR": "1468589584.85",
+      "LONG_LOAN": "5980835123.32",
+      "LEASE_LIAB": "179823023.28",
+      "ACCOUNTS_RECE": "6671957046.38",
+      "INVENTORY": "7614125528.76",
+      "PARENT_HOLDER_EQUITY": null,
+      "TOTAL_ASSETS": "49546714480.81"
+    },
+    {
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "MONETARYFUNDS": "4579350244.4",
+      "TRADE_FINASSET_NOTFVTPL": "136879077.28",
+      "SHORT_LOAN": "5957332669.92",
+      "NONCURRENT_LIAB_1YEAR": "1553740915.39",
+      "LONG_LOAN": "4346901214.16",
+      "LEASE_LIAB": "196195885.43",
+      "ACCOUNTS_RECE": "6146813876.52",
+      "INVENTORY": "7139237400.97",
+      "PARENT_HOLDER_EQUITY": null,
+      "TOTAL_ASSETS": "46770401485.61"
+    }
+  ],
+  "regions": [
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "境外市场",
+      "MAIN_BUSINESS_INCOME": "15241563879.42",
+      "GROSS_RPOFIT_RATIO": "0.273318",
+      "MAIN_BUSINESS_COST": "11075764916.21"
+    },
+    {
+      "MAINOP_TYPE": "2",
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "其他(补充)",
+      "MAIN_BUSINESS_INCOME": "215592959.74",
+      "GROSS_RPOFIT_RATIO": "0.311198",
+      "MAIN_BUSINESS_COST": "148500934.44"
+    },
+    {
+      "MAINOP_TYPE": "2",
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "轮胎产品",
+      "MAIN_BUSINESS_INCOME": "19811417298.28",
+      "GROSS_RPOFIT_RATIO": "0.269403",
+      "MAIN_BUSINESS_COST": "14474168910.71"
+    },
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "其他(补充)",
+      "MAIN_BUSINESS_INCOME": "215592959.74",
+      "GROSS_RPOFIT_RATIO": "0.311198",
+      "MAIN_BUSINESS_COST": "148500934.44"
+    },
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "境内市场",
+      "MAIN_BUSINESS_INCOME": "4569853418.86",
+      "GROSS_RPOFIT_RATIO": "0.256343",
+      "MAIN_BUSINESS_COST": "3398403994.5"
+    },
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "境内",
+      "MAIN_BUSINESS_INCOME": "8177187453.66",
+      "GROSS_RPOFIT_RATIO": "0.207687",
+      "MAIN_BUSINESS_COST": "6478893658.39"
+    },
+    {
+      "MAINOP_TYPE": "2",
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "轮胎产品",
+      "MAIN_BUSINESS_INCOME": "36403390314.91",
+      "GROSS_RPOFIT_RATIO": "0.246287",
+      "MAIN_BUSINESS_COST": "27437713847.95"
+    },
+    {
+      "MAINOP_TYPE": "2",
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "其他(补充)",
+      "MAIN_BUSINESS_INCOME": "389043642.21",
+      "GROSS_RPOFIT_RATIO": "0.297105",
+      "MAIN_BUSINESS_COST": "273456770.71"
+    },
+    {
+      "MAINOP_TYPE": "1",
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "其他(补充)",
+      "MAIN_BUSINESS_INCOME": "389043642.21",
+      "GROSS_RPOFIT_RATIO": "0.297105",
+      "MAIN_BUSINESS_COST": "273456770.71"
+    },
+    {
+      "MAINOP_TYPE": "1",
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "轮胎及橡胶制品",
+      "MAIN_BUSINESS_INCOME": "36403390314.91",
+      "GROSS_RPOFIT_RATIO": "0.246287",
+      "MAIN_BUSINESS_COST": "27437713847.95"
+    },
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "境外",
+      "MAIN_BUSINESS_INCOME": "28226202861.25",
+      "GROSS_RPOFIT_RATIO": "0.257469",
+      "MAIN_BUSINESS_COST": "20958820189.56"
+    },
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "其他(补充)",
+      "MAIN_BUSINESS_INCOME": "389043642.21",
+      "GROSS_RPOFIT_RATIO": "0.297105",
+      "MAIN_BUSINESS_COST": "273456770.71"
+    },
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2025-06-30 00:00:00",
+      "ITEM_NAME": "境外市场",
+      "MAIN_BUSINESS_INCOME": "13412783507.44",
+      "GROSS_RPOFIT_RATIO": "0.253325",
+      "MAIN_BUSINESS_COST": "10014984122.53"
+    },
+    {
+      "MAINOP_TYPE": "2",
+      "REPORT_DATE": "2025-06-30 00:00:00",
+      "ITEM_NAME": "其他(补充)",
+      "MAIN_BUSINESS_INCOME": "194342963.7",
+      "GROSS_RPOFIT_RATIO": "0.202475",
+      "MAIN_BUSINESS_COST": "154993446.12"
+    },
+    {
+      "MAINOP_TYPE": "2",
+      "REPORT_DATE": "2025-06-30 00:00:00",
+      "ITEM_NAME": "轮胎产品",
+      "MAIN_BUSINESS_INCOME": "17392336732.69",
+      "GROSS_RPOFIT_RATIO": "0.245813",
+      "MAIN_BUSINESS_COST": "13117072447.39"
+    },
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2025-06-30 00:00:00",
+      "ITEM_NAME": "其他(补充)",
+      "MAIN_BUSINESS_INCOME": "194342963.7",
+      "GROSS_RPOFIT_RATIO": "0.202475",
+      "MAIN_BUSINESS_COST": "154993446.12"
+    },
+    {
+      "MAINOP_TYPE": "3",
+      "REPORT_DATE": "2025-06-30 00:00:00",
+      "ITEM_NAME": "境内市场",
+      "MAIN_BUSINESS_INCOME": "3979553225.25",
+      "GROSS_RPOFIT_RATIO": "0.220493",
+      "MAIN_BUSINESS_COST": "3102088324.86"
+    }
+  ],
+  "holders": [
+    {
+      "END_DATE": "2026-09-30 00:00:00",
+      "HOLDER_NAME": "瑞元鼎实投资有限公司",
+      "HOLD_NUM": 556365180,
+      "HOLD_NUM_RATIO": 16.92,
+      "TOTAL_SHARES_NUM": 3288100259
+    },
+    {
+      "END_DATE": "2026-09-30 00:00:00",
+      "HOLDER_NAME": "袁仲雪",
+      "HOLD_NUM": 224690895,
+      "HOLD_NUM_RATIO": 6.83,
+      "TOTAL_SHARES_NUM": 3288100259
+    },
+    {
+      "END_DATE": "2026-09-30 00:00:00",
+      "HOLDER_NAME": "香港中央结算有限公司",
+      "HOLD_NUM": 124479571,
+      "HOLD_NUM_RATIO": 3.79,
+      "TOTAL_SHARES_NUM": 3288100259
+    }
+  ],
+  "quote": {
+    "f43": 1250,
+    "f57": "601058",
+    "f58": "赛轮轮胎",
+    "f60": 1232,
+    "f84": 3288100259.0,
+    "f85": 3288100259.0,
+    "f86": 1794903100,
+    "f116": 41101253237.5,
+    "f117": 41101253237.5,
+    "f162": 1137,
+    "f167": 182,
+    "f168": 114,
+    "f170": 146
+  },
+  "notes": [
+    "2023营业成本采用后续重列比较数；2022利润采用追溯调整数",
+    "所有FCF为CFO减现金购建长期资产代理；不代表维持性FCF",
+    "完整原始PDF/文本只存临时目录，不提交仓库"
+  ]
+}

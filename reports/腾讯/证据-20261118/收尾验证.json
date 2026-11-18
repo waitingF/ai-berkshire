@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "trigger_scanner --check PASS",
+    "daily_monitor --check PASS"
+  ],
+  "targeted_runtime": "OK",
+  "sources": {
+    "quotes": "OK",
+    "hkex": "OK"
+  },
+  "events": [
+    "Q3发布TODAY",
+    "11/19复检UPCOMING"
+  ],
+  "temporary_runtime_only": true,
+  "notification_candidates": 2,
+  "notification_send_performed": false,
+  "focus_board": "updated",
+  "ordinary_ledger": "focus-target diversion; no Tencent duplicate row",
+  "report_sha256": "a020f63077e81f4fc18d6cc72886f63001ea721945ec19d9eb85ba4fea773745"
+}

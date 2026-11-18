@@ -1,0 +1,86 @@
+{
+  "price": "39.54",
+  "nav": "39.57",
+  "aum": "424368437.30",
+  "shares": "10725000",
+  "fee": ".0075",
+  "premium_discount_pct": "-0.0758150113722517058377558756633800",
+  "assets_implied_by_rounded_nav": "424388250.00",
+  "top10_pct": "55.84",
+  "fee_only_drag10_pct": "7.251871648973736762497855186462400",
+  "three_year": [
+    {
+      "case": "bear",
+      "gross_NAV_multiplier": ".60",
+      "future_nav": "23.2118014463437500",
+      "pv10": "17.43936998222670924117205108940646"
+    },
+    {
+      "case": "base",
+      "gross_NAV_multiplier": "1.20",
+      "future_nav": "46.4236028926875000",
+      "pv10": "34.87873996445341848234410217881292"
+    },
+    {
+      "case": "bull",
+      "gross_NAV_multiplier": "1.65",
+      "future_nav": "63.8324539774453125",
+      "pv10": "47.95826745112345041322314049586777"
+    }
+  ],
+  "ten_year": [
+    {
+      "case": "bear",
+      "gross_annual_totalreturn_assumption": "-.02",
+      "weight": ".25",
+      "future_nav": "29.98692693980483808313791905507711",
+      "pv10": "11.56125845225539941922853015759871"
+    },
+    {
+      "case": "base",
+      "gross_annual_totalreturn_assumption": ".08",
+      "weight": ".5",
+      "future_nav": "79.23348521210480798527131194838188",
+      "pv10": "30.54793852164104763628197966299001"
+    },
+    {
+      "case": "bull",
+      "gross_annual_totalreturn_assumption": ".14",
+      "weight": ".25",
+      "future_nav": "136.0566326024612441287596427685852",
+      "pv10": "52.45572168225818069868579962974297"
+    }
+  ],
+  "sensitivity": [
+    {
+      "r": ".08",
+      "expected_PV": "37.57779107384535183619592361519149",
+      "passes": false
+    },
+    {
+      "r": ".09",
+      "expected_PV": "34.26918870232168110873217333432428",
+      "passes": false
+    },
+    {
+      "r": ".10",
+      "expected_PV": "31.27821429444891884761957227833043",
+      "passes": false
+    },
+    {
+      "r": ".11",
+      "expected_PV": "28.57189296326734150907717775910277",
+      "passes": false
+    },
+    {
+      "r": ".12",
+      "expected_PV": "26.12092641026707328029191521958647",
+      "passes": false
+    }
+  ],
+  "overlap_example": {
+    "UFO_3pct_ASTindirect_pct": "0.081900",
+    "UFO_3pct_SPCXindirect_pct": "0.449100",
+    "ASTtotal_with_direct05pct": "0.581900"
+  }
+}

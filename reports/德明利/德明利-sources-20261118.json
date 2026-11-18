@@ -1,0 +1,1718 @@
+{
+  "company": "深圳市德明利技术股份有限公司",
+  "exchange": "SZSE",
+  "ticker": "001309",
+  "cutoff": "2026-11-18 Asia/Shanghai",
+  "retrieved_at": "2026-11-18",
+  "units": "All raw accounting amounts CNY; ratio units explicitly stated. PDF pages 1-based.",
+  "sources": {
+    "a22": {
+      "url": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216688469.PDF",
+      "publication_date": "2023-04-29"
+    },
+    "a23": {
+      "url": "https://static.cninfo.com.cn/finalpage/2024-02-27/1219187780.PDF",
+      "publication_date": "2024-02-27"
+    },
+    "a24": {
+      "url": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223313672.PDF",
+      "publication_date": "2025-04-26"
+    },
+    "a25": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-02-28/1224989020.PDF",
+      "publication_date": "2026-02-28"
+    },
+    "h1": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522456.PDF",
+      "publication_date": "2026-08-28",
+      "audit_status": "已审计",
+      "audit_opinion": "标准无保留意见",
+      "audit_report_number": "大信审字[2026]第5-00331号",
+      "audit_signed": "2026-08-26",
+      "audit_firm": "大信会计师事务所（特殊普通合伙）",
+      "audit_evidence_pdf_pages_1based": [
+        69,
+        96
+      ]
+    },
+    "q3": {
+      "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-10-26/e8eabd45-e97f-4bed-b05d-27f58665dc50.PDF",
+      "publication_date": "2026-10-26",
+      "audit_status": "未经审计"
+    },
+    "prospect": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-09-15/1225564381.PDF",
+      "publication_date": "2026-09-15"
+    },
+    "stock": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-09-29/1225585295.PDF",
+      "publication_date": "2026-09-29"
+    },
+    "q1": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225259081.PDF",
+      "publication_date": "2026-04-30",
+      "audit_status": "未经审计"
+    },
+    "q325": {
+      "url": "https://static.cninfo.com.cn/finalpage/2025-10-31/1224772122.PDF",
+      "publication_date": "2025-10-31",
+      "audit_status": "未经审计"
+    },
+    "holder": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-11-05/1225658356.PDF",
+      "publication_date": "2026-11-05",
+      "title": "关于控股股东承诺延长一年不减持公司股票的公告",
+      "pdf_pages_1based": [
+        1
+      ]
+    }
+  },
+  "eastmoney_sources": {
+    "GINCOME": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_F10_FINANCE_GINCOME&columns=ALL&filter=(SECURITY_CODE=%22001309%22)&pageSize=30&sortColumns=REPORT_DATE&sortTypes=-1",
+    "GBALANCE": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_F10_FINANCE_GBALANCE&columns=ALL&filter=(SECURITY_CODE=%22001309%22)&pageSize=30&sortColumns=REPORT_DATE&sortTypes=-1",
+    "GCASHFLOW": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_F10_FINANCE_GCASHFLOW&columns=ALL&filter=(SECURITY_CODE=%22001309%22)&pageSize=30&sortColumns=REPORT_DATE&sortTypes=-1",
+    "MAINOP": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_F10_FN_MAINOP&columns=ALL&filter=(SECUCODE=%22001309.SZ%22)&pageSize=100&sortColumns=REPORT_DATE&sortTypes=-1"
+  },
+  "annual": [
+    {
+      "period": "2021-12-31",
+      "metrics": {
+        "revenue": {
+          "value_cny": "1079781478.82",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            8,
+            20,
+            104,
+            173
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "1079781478.82",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "98168895.61",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            8,
+            105,
+            173,
+            180
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "98168895.61",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "105288334.64",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            105
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "105288334.64",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "860693926.89",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            22,
+            104,
+            173
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "860693926.89",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "45780184.88",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            23,
+            25,
+            105,
+            175
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "45780184.88",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "10624304.33",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            8,
+            25,
+            108,
+            181
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "10624304.33",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "57147506.09",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            25,
+            28,
+            108
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "57147506.09",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "117625279.29",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            26,
+            100,
+            139
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "117625279.29",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "565548306.51",
+          "official_source": "a22",
+          "official_pdf_pages_1based": [
+            26,
+            100
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "565548306.51",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      },
+      "derived": {
+        "gross_margin_pct": "20.28998980140147242167344587",
+        "operating_margin_pct": "9.750892815374138035912120740",
+        "simple_fcf_cny": "-46523201.76"
+      }
+    },
+    {
+      "period": "2022-12-31",
+      "metrics": {
+        "revenue": {
+          "value_cny": "1190656505.59",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            12,
+            26,
+            111,
+            185
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "1190656505.59",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "67499910.91",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            12,
+            112,
+            120,
+            185
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "67499910.91",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "62687432.82",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            112
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "62687432.82",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "985990621.65",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            111,
+            185
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "985990621.65",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "66928204.39",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            29,
+            30,
+            112,
+            188,
+            197
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "66928204.39",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "-330737128.81",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            12,
+            31,
+            115,
+            194
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "-330737128.81",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "122344892.58",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            115
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "122344892.58",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "108871742.47",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            32,
+            107,
+            147
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "108871742.47",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "755446830.37",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            32,
+            107
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "755446830.37",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      },
+      "derived": {
+        "gross_margin_pct": "17.18933067422186124301996054",
+        "operating_margin_pct": "5.264946903299941511723429007",
+        "simple_fcf_cny": "-453082021.39"
+      }
+    },
+    {
+      "period": "2023-12-31",
+      "metrics": {
+        "revenue": {
+          "value_cny": "1775912799.26",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "1775912799.26",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "24998465.34",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "24998465.34",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "8878186.28",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            112
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "8878186.28",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "1480090194.09",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            111,
+            185
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "1480090194.09",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "108013431.85",
+          "official_source": "a23",
+          "official_pdf_pages_1based": [
+            24,
+            29,
+            30,
+            112,
+            188,
+            197
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "108013431.85",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "-1015413532.56",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "-1015413532.56",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "102157019.72",
+          "official_source": "a24",
+          "official_pdf_pages_1based": [
+            132
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "102157019.72",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "274357248.35",
+          "official_source": "a24",
+          "official_pdf_pages_1based": [
+            38,
+            123,
+            162
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "274357248.35",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "1932009606.99",
+          "official_source": "a24",
+          "official_pdf_pages_1based": [
+            38,
+            123,
+            176
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "1932009606.99",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      },
+      "derived": {
+        "gross_margin_pct": "16.65749609402361822583714554",
+        "operating_margin_pct": "0.4999224220749704559455160959",
+        "simple_fcf_cny": "-1117570552.28"
+      }
+    },
+    {
+      "period": "2024-12-31",
+      "metrics": {
+        "revenue": {
+          "value_cny": "4772546275.05",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15,
+            33,
+            34,
+            133,
+            202
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "4772546275.05",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "350553740.48",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15,
+            134,
+            142,
+            201
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "350553740.48",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "377008978.91",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            134
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "377008978.91",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "3925342690.48",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            133,
+            202
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "3925342690.48",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "203219613.59",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            37,
+            38,
+            134,
+            204,
+            213
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "203219613.59",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "-1263366719.31",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15,
+            38,
+            136,
+            209
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "-1263366719.31",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "123665366.78",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            137
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "123665366.78",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "915856114.95",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            39,
+            129,
+            163
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "915856114.95",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "4436396769.32",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            39,
+            129,
+            176
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "4436396769.32",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      },
+      "derived": {
+        "gross_margin_pct": "17.75160544799797037643183491",
+        "operating_margin_pct": "7.899535325219035876973041651",
+        "simple_fcf_cny": "-1387032086.09"
+      }
+    },
+    {
+      "period": "2025-12-31",
+      "metrics": {
+        "revenue": {
+          "value_cny": "10789100246.68",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15,
+            25,
+            33,
+            34,
+            126,
+            133,
+            202
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "10789100246.68",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "688329031.23",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15,
+            25,
+            134,
+            139,
+            201
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "688329031.23",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "716618900.76",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            27,
+            134
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "716618900.76",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "9191419966.83",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            34,
+            133,
+            202
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "9191419966.83",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "291693469.46",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            26,
+            37,
+            38,
+            134,
+            204,
+            213
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "291693469.46",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "-2240893168.11",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            15,
+            38,
+            136,
+            209
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "-2240893168.11",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "493681576.64",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            137,
+            138
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "493681576.64",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "706166895.85",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            39,
+            129,
+            137,
+            163,
+            209,
+            210
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "706166895.85",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "7058432849.59",
+          "official_source": "a25",
+          "official_pdf_pages_1based": [
+            39,
+            127,
+            129,
+            176
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "7058432849.59",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      },
+      "derived": {
+        "gross_margin_pct": "14.80828098099871607522747204",
+        "operating_margin_pct": "6.642063604706208116624424817",
+        "simple_fcf_cny": "-2734574744.75"
+      }
+    }
+  ],
+  "cumulative_2025_2026": [
+    {
+      "period": "2025-09-30",
+      "metrics": {
+        "revenue": {
+          "value_cny": "6659109690.74",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            2,
+            4,
+            15
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "6659109690.74",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "-27076510.69",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            2,
+            16
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "-27076510.69",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "-60408849.42",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            16
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "-60408849.42",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "6182146138.64",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            4,
+            15
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "6182146138.64",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "175952906.16",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            15
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "175952906.16",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "-1494566940.86",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            2,
+            17
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "-1494566940.86",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "161997496.83",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            17
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "161997496.83",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "694519409.56",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            13,
+            18
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "694519409.56",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "5939523298.72",
+          "official_source": "q325",
+          "official_pdf_pages_1based": [
+            3,
+            13
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "5939523298.72",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      }
+    },
+    {
+      "period": "2026-03-31",
+      "metrics": {
+        "revenue": {
+          "value_cny": "7538357736.63",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            2,
+            3,
+            13
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "7538357736.63",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "3346185437.62",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            2,
+            14
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "3346185437.62",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "3913581870.1",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            14
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "3913581870.1",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "3209819693.31",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            3,
+            13
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "3209819693.31",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "167897947.51",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            4,
+            13
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "167897947.51",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "-240787273.84",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            2,
+            15
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "-240787273.84",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "75311794.62",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            15
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "75311794.62",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "1850644373.14",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            3,
+            11
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "1850644373.14",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "12191711008.35",
+          "official_source": "q1",
+          "official_pdf_pages_1based": [
+            3,
+            11
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "12191711008.35",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      }
+    },
+    {
+      "period": "2026-06-30",
+      "metrics": {
+        "revenue": {
+          "value_cny": "16910558920.73",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            11,
+            32,
+            33,
+            101,
+            178
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "16910558920.73",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "6017114995.48",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            11,
+            102,
+            177,
+            185
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "6017114995.48",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "7028086645.79",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            102
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "7028086645.79",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "8941551072.89",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            32,
+            33,
+            101,
+            178
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "8941551072.89",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "342868515.56",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            26,
+            33,
+            101,
+            180,
+            190
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "342868515.56",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "-6735565797.74",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            11,
+            33,
+            105,
+            185
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "-6735565797.74",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "310514027.51",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            37,
+            105,
+            106
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "310514027.51",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "3832462455.6",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            34,
+            96,
+            137
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "3832462455.6",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "21412341064.08",
+          "official_source": "h1",
+          "official_pdf_pages_1based": [
+            34,
+            96,
+            151
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "21412341064.08",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      }
+    },
+    {
+      "period": "2026-09-30",
+      "metrics": {
+        "revenue": {
+          "value_cny": "28555260110.13",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            2,
+            4,
+            17
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "TOTAL_OPERATE_INCOME",
+          "second_source_value_cny": "28555260110.13",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "parent_profit": {
+          "value_cny": "8745688431",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            2,
+            17,
+            18
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "PARENT_NETPROFIT",
+          "second_source_value_cny": "8745688431",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "operating_profit": {
+          "value_cny": "10212007023.26",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            17
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_PROFIT",
+          "second_source_value_cny": "10212007023.26",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cost": {
+          "value_cny": "16756129362.04",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            4,
+            17
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "OPERATE_COST",
+          "second_source_value_cny": "16756129362.04",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "rd_expense": {
+          "value_cny": "477978650.57",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            4,
+            17
+          ],
+          "second_source": "GINCOME",
+          "second_source_field": "RESEARCH_EXPENSE",
+          "second_source_value_cny": "477978650.57",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cfo": {
+          "value_cny": "-13690577650",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            2,
+            19
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "NETCASH_OPERATE",
+          "second_source_value_cny": "-13690577650",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "capex": {
+          "value_cny": "500131017.67",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            19
+          ],
+          "second_source": "GCASHFLOW",
+          "second_source_field": "CONSTRUCT_LONG_ASSET",
+          "second_source_value_cny": "500131017.67",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "cash": {
+          "value_cny": "950969238.51",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            3,
+            15,
+            19
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "MONETARYFUNDS",
+          "second_source_value_cny": "950969238.51",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        },
+        "inventory": {
+          "value_cny": "28986149073.34",
+          "official_source": "q3",
+          "official_pdf_pages_1based": [
+            3,
+            15
+          ],
+          "second_source": "GBALANCE",
+          "second_source_field": "INVENTORY",
+          "second_source_value_cny": "28986149073.34",
+          "verification": "官方PDF精确数字与东方财富字段一致"
+        }
+      }
+    }
+  ],
+  "derived_quarters": [
+    {
+      "period": "2025Q4",
+      "derivation": "2025-12-31 minus 2025-09-30",
+      "values_cny": {
+        "revenue": "4129990555.94",
+        "parent_profit": "715405541.92",
+        "operating_profit": "777027750.18",
+        "cost": "3009273828.19",
+        "rd_expense": "115740563.30",
+        "cfo": "-746326227.25",
+        "capex": "331684079.81"
+      },
+      "gross_margin_pct": "27.13606030256214552422664880",
+      "operating_margin_pct": "18.81427426177602534346002546",
+      "simple_fcf_cny": "-1078010307.06"
+    },
+    {
+      "period": "2026Q1",
+      "derivation": "2026-03-31",
+      "values_cny": {
+        "revenue": "7538357736.63",
+        "parent_profit": "3346185437.62",
+        "operating_profit": "3913581870.1",
+        "cost": "3209819693.31",
+        "rd_expense": "167897947.51",
+        "cfo": "-240787273.84",
+        "capex": "75311794.62"
+      },
+      "gross_margin_pct": "57.42017286188198101414888225",
+      "operating_margin_pct": "51.91557640045821073882123432",
+      "simple_fcf_cny": "-316099068.46"
+    },
+    {
+      "period": "2026Q2",
+      "derivation": "2026-06-30 minus 2026-03-31",
+      "values_cny": {
+        "revenue": "9372201184.10",
+        "parent_profit": "2670929557.86",
+        "operating_profit": "3114504775.69",
+        "cost": "5731731379.58",
+        "rd_expense": "174970568.05",
+        "cfo": "-6494778523.90",
+        "capex": "235202232.89"
+      },
+      "gross_margin_pct": "38.84327420004684276098818705",
+      "operating_margin_pct": "33.23130515992099615218928919",
+      "simple_fcf_cny": "-6729980756.79"
+    },
+    {
+      "period": "2026Q3",
+      "derivation": "2026-09-30 minus 2026-06-30",
+      "values_cny": {
+        "revenue": "11644701189.40",
+        "parent_profit": "2728573435.52",
+        "operating_profit": "3183920377.47",
+        "cost": "7814578289.15",
+        "rd_expense": "135110135.01",
+        "cfo": "-6955011852.26",
+        "capex": "189616990.16"
+      },
+      "gross_margin_pct": "32.89155159890667241409429446",
+      "operating_margin_pct": "27.34222480838130762589613384",
+      "simple_fcf_cny": "-7144628842.42"
+    }
+  ],
+  "products_2026H1": [
+    {
+      "name": "其他",
+      "revenue_cny": "75017996.03",
+      "cost_cny": "53237637.4",
+      "gross_profit_cny": "21780358.63",
+      "gross_margin_pct": "29.03351166737371456815226793",
+      "revenue_share_pct": "0.4436163013987570849597268857",
+      "official_source": "h1",
+      "official_pdf_pages_1based": [
+        178
+      ],
+      "second_source": "MAINOP",
+      "second_source_revenue_cny": "75017996.03",
+      "second_source_cost_cny": "53237637.4"
+    },
+    {
+      "name": "移动存储类产品",
+      "revenue_cny": "705438258.47",
+      "cost_cny": "448909698.57",
+      "gross_profit_cny": "256528559.90",
+      "gross_margin_pct": "36.36442407537913925356144287",
+      "revenue_share_pct": "4.171584521699223842044338922",
+      "official_source": "h1",
+      "official_pdf_pages_1based": [
+        33,
+        34
+      ],
+      "second_source": "MAINOP",
+      "second_source_revenue_cny": "705438258.47",
+      "second_source_cost_cny": "448909698.57"
+    },
+    {
+      "name": "内存条类产品",
+      "revenue_cny": "2518888059.06",
+      "cost_cny": "1549947856.41",
+      "gross_profit_cny": "968940202.65",
+      "gross_margin_pct": "38.46698145893746567340559697",
+      "revenue_share_pct": "14.89535662817266536932618158",
+      "official_source": "h1",
+      "official_pdf_pages_1based": [
+        33,
+        34
+      ],
+      "second_source": "MAINOP",
+      "second_source_revenue_cny": "2518888059.06",
+      "second_source_cost_cny": "1549947856.41"
+    },
+    {
+      "name": "嵌入式存储类产品",
+      "revenue_cny": "5591686270.23",
+      "cost_cny": "2069500853.1",
+      "gross_profit_cny": "3522185417.13",
+      "gross_margin_pct": "62.98968230535444061488243665",
+      "revenue_share_pct": "33.06624160940871158533721844",
+      "official_source": "h1",
+      "official_pdf_pages_1based": [
+        33,
+        34
+      ],
+      "second_source": "MAINOP",
+      "second_source_revenue_cny": "5591686270.23",
+      "second_source_cost_cny": "2069500853.1"
+    },
+    {
+      "name": "固态硬盘类产品",
+      "revenue_cny": "8019528336.94",
+      "cost_cny": "4819955027.41",
+      "gross_profit_cny": "3199573309.53",
+      "gross_margin_pct": "39.89727543940391672019154996",
+      "revenue_share_pct": "47.42320093932064211833253417",
+      "official_source": "h1",
+      "official_pdf_pages_1based": [
+        33,
+        34
+      ],
+      "second_source": "MAINOP",
+      "second_source_revenue_cny": "8019528336.94",
+      "second_source_cost_cny": "4819955027.41"
+    }
+  ],
+  "balance_2026Q3": {
+    "MONETARYFUNDS": {
+      "value_cny": "950969238.51",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        3,
+        15,
+        19
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "MONETARYFUNDS",
+      "second_source_value_cny": "950969238.51",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "INVENTORY": {
+      "value_cny": "28986149073.34",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        3,
+        15
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "INVENTORY",
+      "second_source_value_cny": "28986149073.34",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "SHORT_LOAN": {
+      "value_cny": "10149666217.81",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        4,
+        16
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "SHORT_LOAN",
+      "second_source_value_cny": "10149666217.81",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "LONG_LOAN": {
+      "value_cny": "9100060000",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        4,
+        16
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "LONG_LOAN",
+      "second_source_value_cny": "9100060000",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "NONCURRENT_LIAB_1YEAR": {
+      "value_cny": "1060732546.06",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        16
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "NONCURRENT_LIAB_1YEAR",
+      "second_source_value_cny": "1060732546.06",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "LEASE_LIAB": {
+      "value_cny": "110963745.91",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        16
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "LEASE_LIAB",
+      "second_source_value_cny": "110963745.91",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "NOTE_PAYABLE": {
+      "value_cny": null,
+      "official_source": "q3",
+      "official_pdf_pages_1based": [],
+      "second_source": "GBALANCE",
+      "second_source_field": "NOTE_PAYABLE",
+      "second_source_value_cny": null,
+      "verification": "官方列为空，东方财富null；不据此推断其他负债不存在"
+    },
+    "TOTAL_CURRENT_LIAB": {
+      "value_cny": "18815680701.93",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        16
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "TOTAL_CURRENT_LIAB",
+      "second_source_value_cny": "18815680701.93",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "TOTAL_ASSETS": {
+      "value_cny": "40224438948.57",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        2,
+        16,
+        17
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "TOTAL_ASSETS",
+      "second_source_value_cny": "40224438948.57",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "TOTAL_LIABILITIES": {
+      "value_cny": "28197149675.4",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        16
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "TOTAL_LIABILITIES",
+      "second_source_value_cny": "28197149675.4",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "TOTAL_PARENT_EQUITY": {
+      "value_cny": "12027289273.17",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        2,
+        17
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "TOTAL_PARENT_EQUITY",
+      "second_source_value_cny": "12027289273.17",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "PREPAYMENT": {
+      "value_cny": "150581397.42",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        3,
+        15
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "PREPAYMENT",
+      "second_source_value_cny": "150581397.42",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "ACCOUNTS_RECE": {
+      "value_cny": "5137401743.7",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        3,
+        15
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "ACCOUNTS_RECE",
+      "second_source_value_cny": "5137401743.7",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "ACCOUNTS_PAYABLE": {
+      "value_cny": "5924861100.66",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        4,
+        16
+      ],
+      "second_source": "GBALANCE",
+      "second_source_field": "ACCOUNTS_PAYABLE",
+      "second_source_value_cny": "5924861100.66",
+      "verification": "官方PDF精确数字与东方财富字段一致"
+    },
+    "END_CCE": {
+      "value_cny": "950969238.51",
+      "official_source": "q3",
+      "official_pdf_pages_1based": [
+        19
+      ],
+      "second_source": "GCASHFLOW",
+      "second_source_field": "END_CCE",
+      "second_source_value_cny": "950969238.51"
+    }
+  },
+  "balance_2026Q3_derived": {
+    "interest_bearing_debt_including_current_portion_and_leases_cny": "20421422509.78",
+    "net_debt_using_all_cash_cny": "19470453271.27",
+    "cash_minus_end_cce_cny": "0.00",
+    "restricted_cash_note": "Q3没有单独受限资金附注；货币资金与现金等价物期末余额相同，差额为0，不能把附注缺失理解为所有资金可自由支配。H1明确保函保证金5,102,040元（PDF p37、167）；不将H1受限数套用到Q3。",
+    "inventory_assets_pct": "72.06104008163045583801067664",
+    "cash_short_borrowings_pct": "9.369463173491347023818291631"
+  },
+  "share_capital": {
+    "current_shares": "317580018",
+    "pre_split_shares": "226842870",
+    "share_dividend_ratio": "1.4",
+    "cash_dividend_per_old_share_cny": "1.5",
+    "ex_date": "2026-10-13",
+    "official_source": "stock",
+    "official_pdf_pages_1based": [
+      2,
+      3
+    ],
+    "second_source": "https://static.cninfo.com.cn/finalpage/2026-11-05/1225658354.PDF",
+    "second_source_date": "2026-11-05",
+    "second_source_value": "317580018",
+    "eastmoney_current_shares": "317580018",
+    "eastmoney_source": "RPT_F10_FINANCE_MAINFINADATA TOTAL_SHARE",
+    "warning": "Q3期末资产负债表股本226842870为9月末口径，EPS已经按10月除权后股本调整；当前PB应归母权益/当前股本自行重算，不能采用东方财富BPS53.02。"
+  },
+  "management": {
+    "actual_controllers": [
+      "李虎",
+      "田华（夫妻）"
+    ],
+    "li_hu_shares_after_split": "111174181",
+    "holding_pct_reported": "35.01",
+    "li_hu_pledged_shares_latest": "7000000",
+    "pledged_as_holder_pct": "6.30",
+    "latest_disclosure_date": "2026-11-17",
+    "official_announcement_mirror": "https://www.cfi.net.cn/p20261116000711.html",
+    "note": "2026-11-17披露更正公告，正文签署11月16日；更正质押起始日，其余不变。Q3原79,410,129股不能当当前股数。",
+    "holding_two_channel_check": {
+      "official_source": "holder",
+      "official_pdf_page_1based": 1,
+      "official_shares": "111174181",
+      "official_holding_pct": "35.01",
+      "second_source_url": "https://finance.eastmoney.com/a/202611043922265767.html",
+      "second_source_publisher": "东方财富转载证券日报",
+      "second_source_publication_date": "2026-11-04 21:39",
+      "second_source_shares": "111174181",
+      "second_source_holding_pct": "35.01",
+      "difference_pct": "0",
+      "limitation": "两条采集渠道一致；媒体底层仍根据公司公告，并非独立审计持股。普通股持有比例为经济权益口径，未另推定一致行动人合计或未披露投票权。"
+    },
+    "non_sale_undertaking_end": "2028-07-26"
+  },
+  "concentration_2026H1": {
+    "top5_customers_revenue_pct": "41.34",
+    "top5_suppliers_purchase_pct": "66.59",
+    "official_source": "prospect",
+    "official_pdf_pages_1based": [
+      5,
+      136
+    ],
+    "verification": "一手募资说明书核实；未找到独立东方财富集中度二源，不声称双源验证",
+    "h1_top5_receivable_balance_pct": "73.28",
+    "h1_top5_receivable_source": "h1 PDF p141-142；这是应收集中度，不是收入集中度",
+    "source_status": "单一底层发行人来源：已读募集说明书及问询回复；未取得可独立核验同期间集中度的第三方数据库或可靠采集值，不标双源通过。"
+  },
+  "limitations": [
+    "2022归母采用2023年报追溯后67,499,910.91元；2022原年报67,191,551.64元，经解释第16号递延税调整，差额308,359.27元，不能误判经营差异。",
+    "年度2021源为2022年报比较列；2022源为2023年报比较列；2023-2025最新财年收入归母等源自2025年报比较列及合并表。",
+    "Q3正式披露未经审计；无法把57.42% Q1毛利率等同于稳态。",
+    "产品其他项成本来自H1合并附注p178，分部主表没有展示；四大产品收入和成本主表p33-34完整。",
+    "2026H1已审计，标准无保留意见；2026Q1/Q3与2025Q3未经审计。审计与周期盈利可持续性为不同判断。"
+  ],
+  "products_2025": [
+    {
+      "name": "其他",
+      "revenue_cny": "18477187.27",
+      "cost_cny": "14941273.5",
+      "gross_margin_pct": "19.13664519567322651268447094",
+      "official_source": "a25",
+      "official_revenue_pdf_pages_1based": [
+        34,
+        202
+      ],
+      "official_cost_pdf_pages_1based": [
+        35,
+        202
+      ],
+      "second_source": "MAINOP",
+      "second_source_report_date": "2025-12-31",
+      "second_source_revenue_cny": "18477187.27",
+      "second_source_cost_cny": "14941273.5",
+      "verification": "年报产品表与东方财富主营构成接口精确一致；毛利率按两者计算"
+    },
+    {
+      "name": "内存条类产品",
+      "revenue_cny": "1051378892.35",
+      "cost_cny": "778969764.75",
+      "gross_margin_pct": "25.90970102044963314979946202",
+      "official_source": "a25",
+      "official_revenue_pdf_pages_1based": [
+        27,
+        34,
+        202
+      ],
+      "official_cost_pdf_pages_1based": [
+        35,
+        202
+      ],
+      "second_source": "MAINOP",
+      "second_source_report_date": "2025-12-31",
+      "second_source_revenue_cny": "1051378892.35",
+      "second_source_cost_cny": "778969764.75",
+      "verification": "年报产品表与东方财富主营构成接口精确一致；毛利率按两者计算"
+    },
+    {
+      "name": "移动存储类产品",
+      "revenue_cny": "1474305760.07",
+      "cost_cny": "1168592038.76",
+      "gross_margin_pct": "20.73611387745542826108074082",
+      "official_source": "a25",
+      "official_revenue_pdf_pages_1based": [
+        34,
+        202
+      ],
+      "official_cost_pdf_pages_1based": [
+        34,
+        35,
+        202
+      ],
+      "second_source": "MAINOP",
+      "second_source_report_date": "2025-12-31",
+      "second_source_revenue_cny": "1474305760.07",
+      "second_source_cost_cny": "1168592038.76",
+      "verification": "年报产品表与东方财富主营构成接口精确一致；毛利率按两者计算"
+    },
+    {
+      "name": "嵌入式存储类产品",
+      "revenue_cny": "3663425044.13",
+      "cost_cny": "3228885886.32",
+      "gross_margin_pct": "11.86155449000582797683665187",
+      "official_source": "a25",
+      "official_revenue_pdf_pages_1based": [
+        27,
+        34,
+        202
+      ],
+      "official_cost_pdf_pages_1based": [
+        34,
+        35,
+        202
+      ],
+      "second_source": "MAINOP",
+      "second_source_report_date": "2025-12-31",
+      "second_source_revenue_cny": "3663425044.13",
+      "second_source_cost_cny": "3228885886.32",
+      "verification": "年报产品表与东方财富主营构成接口精确一致；毛利率按两者计算"
+    },
+    {
+      "name": "固态硬盘类产品",
+      "revenue_cny": "4581513362.86",
+      "cost_cny": "4000031003.5",
+      "gross_margin_pct": "12.69192760789004597411770256",
+      "official_source": "a25",
+      "official_revenue_pdf_pages_1based": [
+        34,
+        202
+      ],
+      "official_cost_pdf_pages_1based": [
+        34,
+        35,
+        202
+      ],
+      "second_source": "MAINOP",
+      "second_source_report_date": "2025-12-31",
+      "second_source_revenue_cny": "4581513362.86",
+      "second_source_cost_cny": "4000031003.5",
+      "verification": "年报产品表与东方财富主营构成接口精确一致；毛利率按两者计算"
+    }
+  ],
+  "enterprise_2026H1": {
+    "revenue_cny_rounded": "4815000000",
+    "revenue_yi_cny_disclosed": "48.15",
+    "official_source": "h1",
+    "official_pdf_pages_1based": [
+      22,
+      25
+    ],
+    "second_source_url": "https://www.stcn.com/article/detail/4143915.html",
+    "second_source_publisher": "证券时报网",
+    "second_source_author": "文穗",
+    "second_source_publication_date": "2026-08-27 22:51",
+    "second_source_revenue_yi_cny": "48.15",
+    "collected_by": "网页检索加requests抓取HTML正文均核对",
+    "verification": "两条采集渠道一致；底层同来自公司半年报，无额外独立审计保证",
+    "scope": "企业级应用口径，与四类产品相交叉，不可相加；不等同企业级SSD独立收入"
+  },
+  "rd_2026H1": {
+    "value_cny": "342868515.56",
+    "official_source": "h1",
+    "official_pdf_pages_1based": [
+      25,
+      33,
+      101
+    ],
+    "second_source": "GINCOME",
+    "second_source_field": "RESEARCH_EXPENSE",
+    "second_source_report_date": "2026-06-30",
+    "second_source_value_cny": "342868515.56",
+    "additional_provider_field": "RPT_F10_FINANCE_MAINFINADATA RDEXPEND=342868515.56",
+    "verification": "半年报合并研发费用与东方财富完整利润表精确一致；研发附注费用化支出同额"
+  }
+}

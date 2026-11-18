@@ -1,0 +1,18 @@
+2026-11-18 Archrock monitoring validation
+
+trigger_scanner.py --check: PASS
+daily_monitor.py --check: PASS
+Archrock target identity preserved: Archrock / US usAROC
+Active price zones: USD 20-22 conditional review; USD >=32 valuation review
+Research checkpoints: 2026-12-31 / 2027-03-01 / 2027-03-31
+
+Targeted daily_monitor.py --no-ai run: PASS
+Temporary state and report directory: /tmp/aroc-monitor-20261118.VNd1Xs
+Data source status: quotes=OK; sec=OK
+Scanned targets: 1; notification candidates: 0
+No formal daily-monitor report or production state was written by this validation.
+Production state SHA-256 before/after matched: f6867e81d7d50c7299e11ce9ef50f5274837e9871389acb7282ae6978f6616de
+
+Report links and Archrock ledger/trigger uniqueness: PASS
+Ledger counts recalculated from current shared main table.
+Configuration changes are local; no commit or push was performed.

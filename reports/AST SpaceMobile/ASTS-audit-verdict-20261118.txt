@@ -1,0 +1,36 @@
+======================================================================
+报告数据抽检 — 准出/打回判决
+报告：ASTS research 20261118
+======================================================================
+
+  ✅ 通过 [ 2] 受限现金 · 数值                            报告:       434.57 
+                                                    https://www.sec.gov/Archives/edgar/data/1780312/000119312526453759/asts-20260930.htm: 434.57 (偏差 0.00%)  |  independent Decimal addition of disclosed current/noncurrent restricted cash; not independent external source: 434.57 (偏差 0.00%)
+  ✅ 通过 [ 8] 前九月现金购建固定资产 · 数值                     报告:      1154.20 
+                                                    https://www.sec.gov/Archives/edgar/data/1780312/000119312526453759/asts-20260930.htm: 1154.20 (偏差 0.00%)  |  https://stockanalysis.com/stocks/asts/financials/cash-flow-statement/?p=quarterly ; Q1 261.60 + Q2 597.62 + Q3 294.98: 1154.20 (偏差 0.00%)
+  ✅ 通过 [ 9] 前九月简化FCF · 数值                        报告:     -1468.67 
+                                                    SEC CFO minus cash PPE: -1468.67 (偏差 0.00%)  |  StockAnalysis quarterly FCF: -309.66 -694.77 -464.25: -1468.68 (偏差 0.00%)
+  ✅ 通过 [16] 情景EV/S · 顺利扩张                        报告:         8.00 x
+                                                    ASTS-valuation-20261118.json: declared three_year assumption: 8.00 (偏差 0.00%)
+  ✅ 通过 [15] 情景EV/S · 基准                          报告:         5.00 x
+                                                    ASTS-valuation-20261118.json: declared three_year assumption: 5.00 (偏差 0.00%)
+  ✅ 通过 [18] 净债务，B美元 · 基准                         报告:         1.50 
+                                                    ASTS-valuation-20261118.json: declared three_year assumption: 1.50 (偏差 0.00%)
+  ✅ 通过 [41] 工具十年年化回报 · 失败尾部                      报告:      -100.00 %
+                                                    terminal_value.py irr, profit=0, payout=0: -100.00 (偏差 0.00%)  |  independent identity: zero terminal wealth / positive initial price: -100.00 (偏差 0.00%)
+  ✅ 通过 [48] 条件式首次研究带 · 研究建议                      报告:         8.00 
+                                                    author price-band lower-bound judgement, consistent with registered target: 8.00 (偏差 0.00%)
+
+----------------------------------------------------------------------
+  抽检总数: 8  |  通过: 8  |  警告: 0  |  不通过: 0
+
+【准出】所有抽检数据通过，报告可发布。
+======================================================================
+{
+  "verdict": "PASS",
+  "pass_count": 8,
+  "warn_count": 0,
+  "fail_count": 0,
+  "total": 8,
+  "fail_items": [],
+  "warn_items": []
+}

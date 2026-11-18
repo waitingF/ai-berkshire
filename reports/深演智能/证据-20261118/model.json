@@ -1,0 +1,430 @@
+{
+  "cutoff": "2026-11-18",
+  "quote_timestamp": "2026-11-17 16:08:19 Asia/Hong_Kong",
+  "price_HKD": "42.06",
+  "shares": "906791750",
+  "FX_CNY_per_HKD": "0.85562",
+  "FX_source": "CFETS 2026-11-17 middle rate; static conversion not forecast",
+  "three_year": [
+    {
+      "name": "悲观",
+      "growth": "0",
+      "pe": "15",
+      "p": ".35",
+      "profit_CNY": "28962000",
+      "exit_price_HKD": "0.5599268845847546309680900549308829434296",
+      "present_value_HKD": "0.4444880135973576745860085915914772133866"
+    },
+    {
+      "name": "基准",
+      "growth": ".5",
+      "pe": "30",
+      "p": ".5",
+      "profit_CNY": "97746750.000",
+      "exit_price_HKD": "3.779506470947093759034607870783459868149",
+      "present_value_HKD": "3.000294091782164303455557993242471190359"
+    },
+    {
+      "name": "乐观",
+      "growth": "1",
+      "pe": "50",
+      "p": ".15",
+      "profit_CNY": "231696000",
+      "exit_price_HKD": "14.93138358892679015914906813149021182478",
+      "present_value_HKD": "11.85301369592953798896022910910605902363"
+    }
+  ],
+  "ten_year": [
+    {
+      "name": "悲观",
+      "p": ".35",
+      "terminal_profit_CNY": "30000000",
+      "g": "0",
+      "pe_at_8": "12.5",
+      "pe_at_10": "1E+1",
+      "irr_at_8_pct": "-36.02101422636422365000807432657857041349",
+      "irr_at_10_pct": "-37.43285331381972838632141926300203399756"
+    },
+    {
+      "name": "基准",
+      "p": ".5",
+      "terminal_profit_CNY": "300000000",
+      "g": ".005",
+      "pe_at_8": "12.88888888888888888888888888888888888889",
+      "pe_at_10": "10.17543859649122807017543859649122807018",
+      "irr_at_8_pct": "-19.20808582721115624391517830686629740414",
+      "irr_at_10_pct": "-21.09551971443231747918725229146364183835"
+    },
+    {
+      "name": "乐观",
+      "p": ".15",
+      "terminal_profit_CNY": "1500000000",
+      "g": ".01",
+      "pe_at_8": "13.33333333333333333333333333333333333333",
+      "pe_at_10": "10.37037037037037037037037037037037037037",
+      "irr_at_8_pct": "-4.778016447220518428527281571169689544680",
+      "irr_at_10_pct": "-7.141262015314368930532841735714962951280"
+    }
+  ],
+  "terminal_r": ".08",
+  "terminal_roic": ".15",
+  "terminal_risks": "客户流失及媒体限制:情景,AI商业化不达预期:情景,监管或数据合规重击导致停业:未建模,新增股权融资稀释:未建模,交易停牌或流动性枯竭:未建模",
+  "formulas": {
+    "market_cap_HKD": {
+      "expression": "42.06*906791750",
+      "decimal_result": "38139661005.00"
+    },
+    "market_cap_CNY": {
+      "expression": "38139661005.00*0.85562",
+      "decimal_result": "32633056749.0981000"
+    },
+    "TTM_revenue_CNY": {
+      "expression": "576563000-277344000+398247000",
+      "decimal_result": "697466000"
+    },
+    "TTM_gross_profit_CNY": {
+      "expression": "147201000-75029000+97754000",
+      "decimal_result": "169926000"
+    },
+    "TTM_attributable_profit_CNY": {
+      "expression": "9095000-3775000+8178000",
+      "decimal_result": "13498000"
+    },
+    "TTM_adjusted_group_profit_proxy_CNY": {
+      "expression": "24867000-13367000+17462000",
+      "decimal_result": "28962000"
+    },
+    "broad_liquid_assets_CNY": {
+      "expression": "471318000+43514000+15119000",
+      "decimal_result": "529951000"
+    },
+    "broad_net_cash_after_leases_CNY": {
+      "expression": "529951000-8685000",
+      "decimal_result": "521266000"
+    },
+    "cash_equivalents_minus_leases_CNY": {
+      "expression": "471318000-8685000",
+      "decimal_result": "462633000"
+    },
+    "TTM_simple_FCF_CNY": {
+      "expression": "31864000-33049000-141896000-(368000-156000+207000)",
+      "decimal_result": "-143500000"
+    },
+    "H1_simple_FCF_CNY": {
+      "expression": "-141896000-207000",
+      "decimal_result": "-142103000"
+    },
+    "H1_cash_after_capex_lease_principal_interest_CNY": {
+      "expression": "-142103000-3056000-76000",
+      "decimal_result": "-145235000"
+    },
+    "TTM_attributable_EPS_HKD": {
+      "expression": "13498000/906791750/0.85562",
+      "decimal_result": "0.01739726328321022491266091099016425654400"
+    },
+    "TTM_adjusted_group_EPS_proxy_HKD": {
+      "expression": "28962000/906791750/0.85562",
+      "decimal_result": "0.03732845897231697539787267032872552956197"
+    },
+    "BVPS_HKD": {
+      "expression": "803149000/906791750/0.85562",
+      "decimal_result": "1.035160365139058299627996592149906095648"
+    },
+    "TTM_FCF_per_share_HKD": {
+      "expression": "-143500000/906791750/0.85562",
+      "decimal_result": "-0.1849538658423964494715395411978493713190"
+    },
+    "EV_CNY": {
+      "expression": "32633056749.0981000-521266000",
+      "decimal_result": "32111790749.0981000"
+    },
+    "PS_TTM": {
+      "expression": "32633056749.0981000/697466000",
+      "decimal_result": "46.78802514975367974926376339491817522288"
+    },
+    "EV_sales_TTM": {
+      "expression": "32111790749.0981000/697466000",
+      "decimal_result": "46.04065395173112381105315527925375573863"
+    },
+    "market_cap_to_gross_profit": {
+      "expression": "32633056749.0981000/169926000",
+      "decimal_result": "192.0427524281045867024469474947918505702"
+    },
+    "PE_GAAP_TTM": {
+      "expression": "32633056749.0981000/13498000",
+      "decimal_result": "2417.621629063424210994221366128315305971"
+    },
+    "PE_adjusted_group_proxy_TTM": {
+      "expression": "32633056749.0981000/28962000",
+      "decimal_result": "1126.754255545131551688419308058835715765"
+    },
+    "PB": {
+      "expression": "32633056749.0981000/803149000",
+      "decimal_result": "40.63138564462895427872038687715479942078"
+    },
+    "FCF_yield_pct": {
+      "expression": "-143500000/32633056749.0981000*100",
+      "decimal_result": "-0.4397381498868198988862090851113869979055"
+    },
+    "H1_gross_margin_pct": {
+      "expression": "97754000/398247000*100",
+      "decimal_result": "24.54607316564845435119410817909488332618"
+    },
+    "H1_net_margin_pct": {
+      "expression": "8178000/398247000*100",
+      "decimal_result": "2.053499461389539657549209410240378458595"
+    },
+    "H1_adjusted_margin_pct": {
+      "expression": "17462000/398247000*100",
+      "decimal_result": "4.384716017948660002460784387578563052578"
+    },
+    "H1_software_share_pct": {
+      "expression": "28196000/398247000*100",
+      "decimal_result": "7.080028223690322839845623444746601983191"
+    },
+    "H1_RD_share_pct": {
+      "expression": "33678000/398247000*100",
+      "decimal_result": "8.456560878048045559665232883110230585541"
+    },
+    "H1_receivables_growth_pct": {
+      "expression": "(334988000/218648000-1)*100",
+      "decimal_result": "53.20881050821411583915700120742014562220"
+    },
+    "founder_joint_economic_share_pct": {
+      "expression": "(17102230+12051502)/90679175*100",
+      "decimal_result": "32.15041601337903658695615614059126585569"
+    },
+    "IPO_split_adjusted_price_HKD": {
+      "expression": "55.5/10",
+      "decimal_result": "5.55"
+    },
+    "old_watch_split_adjusted_price_HKD": {
+      "expression": "80/10",
+      "decimal_result": "8"
+    },
+    "old_price_split_adjusted_price_HKD": {
+      "expression": "327/10",
+      "decimal_result": "32.7"
+    },
+    "IPO_to_current_pct": {
+      "expression": "(42.06/5.55-1)*100",
+      "decimal_result": "657.8378378378378378378378378378378378378"
+    },
+    "FY2025_capex_in_10k_CNY": {
+      "expression": "368000/10000",
+      "decimal_result": "36.8"
+    },
+    "social_insurance_shortfall_million_CNY": {
+      "expression": "10.8+11.0+10.5",
+      "decimal_result": "32.3"
+    },
+    "ERP_model_pct": {
+      "expression": "8-1.61",
+      "decimal_result": "6.39"
+    },
+    "悲观_year3_profit_CNY": {
+      "expression": "28962000*(1+0)**3",
+      "decimal_result": "28962000"
+    },
+    "悲观_year3_price_HKD": {
+      "expression": "28962000*15/906791750/0.85562",
+      "decimal_result": "0.5599268845847546309680900549308829434296"
+    },
+    "悲观_year3_price_PV_HKD": {
+      "expression": "0.5599268845847546309680900549308829434296/1.08**3",
+      "decimal_result": "0.4444880135973576745860085915914772133866"
+    },
+    "悲观_terminal_PE_r8": {
+      "expression": "(1-0/.15)/(.08-0)",
+      "decimal_result": "12.5"
+    },
+    "悲观_terminal_PE_r10": {
+      "expression": "(1-0/.15)/(.10-0)",
+      "decimal_result": "1E+1"
+    },
+    "悲观_IRR_r8_pct": {
+      "expression": "((30000000*12.5/32633056749.0981000)**(1/10)-1)*100",
+      "decimal_result": "-36.02101422636422365000807432657857041349"
+    },
+    "悲观_IRR_r10_pct": {
+      "expression": "((30000000*1E+1/32633056749.0981000)**(1/10)-1)*100",
+      "decimal_result": "-37.43285331381972838632141926300203399756"
+    },
+    "基准_year3_profit_CNY": {
+      "expression": "28962000*(1+.5)**3",
+      "decimal_result": "97746750.000"
+    },
+    "基准_year3_price_HKD": {
+      "expression": "97746750.000*30/906791750/0.85562",
+      "decimal_result": "3.779506470947093759034607870783459868149"
+    },
+    "基准_year3_price_PV_HKD": {
+      "expression": "3.779506470947093759034607870783459868149/1.08**3",
+      "decimal_result": "3.000294091782164303455557993242471190359"
+    },
+    "基准_terminal_PE_r8": {
+      "expression": "(1-.005/.15)/(.08-.005)",
+      "decimal_result": "12.88888888888888888888888888888888888889"
+    },
+    "基准_terminal_PE_r10": {
+      "expression": "(1-.005/.15)/(.10-.005)",
+      "decimal_result": "10.17543859649122807017543859649122807018"
+    },
+    "基准_IRR_r8_pct": {
+      "expression": "((300000000*12.88888888888888888888888888888888888889/32633056749.0981000)**(1/10)-1)*100",
+      "decimal_result": "-19.20808582721115624391517830686629740414"
+    },
+    "基准_IRR_r10_pct": {
+      "expression": "((300000000*10.17543859649122807017543859649122807018/32633056749.0981000)**(1/10)-1)*100",
+      "decimal_result": "-21.09551971443231747918725229146364183835"
+    },
+    "乐观_year3_profit_CNY": {
+      "expression": "28962000*(1+1)**3",
+      "decimal_result": "231696000"
+    },
+    "乐观_year3_price_HKD": {
+      "expression": "231696000*50/906791750/0.85562",
+      "decimal_result": "14.93138358892679015914906813149021182478"
+    },
+    "乐观_year3_price_PV_HKD": {
+      "expression": "14.93138358892679015914906813149021182478/1.08**3",
+      "decimal_result": "11.85301369592953798896022910910605902363"
+    },
+    "乐观_terminal_PE_r8": {
+      "expression": "(1-.01/.15)/(.08-.01)",
+      "decimal_result": "13.33333333333333333333333333333333333333"
+    },
+    "乐观_terminal_PE_r10": {
+      "expression": "(1-.01/.15)/(.10-.01)",
+      "decimal_result": "10.37037037037037037037037037037037037037"
+    },
+    "乐观_IRR_r8_pct": {
+      "expression": "((1500000000*13.33333333333333333333333333333333333333/32633056749.0981000)**(1/10)-1)*100",
+      "decimal_result": "-4.778016447220518428527281571169689544680"
+    },
+    "乐观_IRR_r10_pct": {
+      "expression": "((1500000000*10.37037037037037037037037037037037037037/32633056749.0981000)**(1/10)-1)*100",
+      "decimal_result": "-7.141262015314368930532841735714962951280"
+    },
+    "weighted_3year_PV_HKD": {
+      "expression": ".35*0.4444880135973576745860085915914772133866+.5*3.000294091782164303455557993242471190359+.15*11.85301369592953798896022910910605902363",
+      "decimal_result": "3.433669905039588036176916370044161473409"
+    },
+    "required_year10_profit_for_8pct_CNY": {
+      "expression": "32633056749.0981000*1.08**10/12.88888888888888888888888888888888888889",
+      "decimal_result": "5466128427.391756740460659216997552551724"
+    },
+    "required_10year_profit_CAGR_pct": {
+      "expression": "((5466128427.391756740460659216997552551724/28962000)**(1/10)-1)*100",
+      "decimal_result": "68.88268623452589149180052625852572989070"
+    },
+    "required_year10_revenue_at_10pct_margin_CNY": {
+      "expression": "5466128427.391756740460659216997552551724/.1",
+      "decimal_result": "54661284273.91756740460659216997552551724"
+    },
+    "price_2_0_margin_to_base_PV_pct": {
+      "expression": "(1-2/3.000294091782164303455557993242471190359)*100",
+      "decimal_result": "33.33986806566662523306401491609695463021"
+    },
+    "price_2_4_margin_to_base_PV_pct": {
+      "expression": "(1-2.4/3.000294091782164303455557993242471190359)*100",
+      "decimal_result": "20.00784167879995027967681789931634555625"
+    },
+    "EV_if_HKD_8_CNY": {
+      "expression": "8*906791750*0.85562-521266000",
+      "decimal_result": "5685687257.08000"
+    },
+    "PE_if_HKD_8_adjusted": {
+      "expression": "8*906791750*0.85562/28962000",
+      "decimal_result": "214.3136957765347696982252606864166839307"
+    }
+  },
+  "cross_checks": [
+    [
+      "总股本",
+      {
+        "HKEX_October_monthly_return": 906791750,
+        "Tencent_quote": 906791750
+      },
+      "股"
+    ],
+    [
+      "股价_20261117",
+      {
+        "Tencent_160819": 42.06,
+        "HSTong_close": 42.06
+      },
+      "HKD"
+    ],
+    [
+      "2025收入",
+      {
+        "HKEX_prospectus": 576563000,
+        "ETNet": 576563000
+      },
+      "CNY"
+    ],
+    [
+      "2025归母净利润",
+      {
+        "HKEX_prospectus": 9095000,
+        "ETNet": 9095000
+      },
+      "CNY"
+    ],
+    [
+      "2026H1收入",
+      {
+        "HKEX_interim": 398247000,
+        "ETNet": 398247000
+      },
+      "CNY"
+    ],
+    [
+      "2026H1归母净利润",
+      {
+        "HKEX_interim": 8178000,
+        "ETNet": 8178000
+      },
+      "CNY"
+    ],
+    [
+      "2026H1现金等价物",
+      {
+        "HKEX_interim": 471318000,
+        "ETNet": 471318000
+      },
+      "CNY"
+    ],
+    [
+      "2025经营现金流",
+      {
+        "HKEX_prospectus": 31864000,
+        "ETNet": 31864000
+      },
+      "CNY"
+    ],
+    [
+      "2026H1经营现金流",
+      {
+        "HKEX_interim": -141896000,
+        "GuanDian_rounded": -142000000
+      },
+      "CNY"
+    ],
+    [
+      "2026H1归母权益",
+      {
+        "HKEX_interim": 803149000,
+        "ETNet": 803149000
+      },
+      "CNY"
+    ]
+  ],
+  "limitations": [
+    "Group adjusted earnings used as optimistic owner-earnings proxy; not actual FCF",
+    "No interim dividends; k=0; financing dilution and bankruptcy are additional downside",
+    "Current net cash is not added to PE valuations: substantial operating funding need, not demonstrated surplus cash",
+    "Exact arithmetic uses Decimal; financial_rigor calc uses floating eval internally, cross-checked against Decimal without changing shared tool"
+  ]
+}
