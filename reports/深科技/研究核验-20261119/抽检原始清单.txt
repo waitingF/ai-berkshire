@@ -1,0 +1,344 @@
+======================================================================
+报告数据抽检清单
+文件：reports/深科技/深科技-research-20261119.md
+总提取数据点：161  |  抽样比例：15%  |  抽检数量：25
+随机种子：20261119（可用于复现同一批样本）
+======================================================================
+
+ ID     行号  数据标签                                          报告值  单位
+───  ─────  ───────────────────────────────────  ────────────  ──────
+  6     32  高端制造 · H1毛利率                                11.90  %
+  2     32  高端制造 · 2025收入占比                             54.20  %
+ 13     33  存储半导体 · H1毛利率                               22.72  %
+  8     33  存储半导体 · 2025收入                              40.91  
+ 15     34  计量智能终端 · 2025收入                             30.21  
+ 47     85  现金等价物＋交易资产－上述债务 · 亿元                       -45.57  
+ 56    172  2026年9月 · 决策                                18.50  亿元
+ 58    173  2026年11月 · 决策                               17.03  %
+ 60    199  另6.3亿元2.5D／3DS研发线 · 可以支持                   100.00  
+ 66    220  TTM归母／扣非归母 · 口径                           2025.00  
+ 71    224  PB／PS · 复算结果                                 3.01  
+ 73    225  简单FCF收益率 · 复算结果                             -4.01  %
+ 77    237  深科技 · TTM归母PE                               33.65  x
+ 85    238  长电科技 · 2025毛利率                              14.15  %
+ 93    240  华天科技 · 11月19日收盘元                            14.73  
+114    256  乐观 · 第三年EPS元                                 1.36  
+124    267  基准 · 初始正常化归母现金亿元                             7.50  
+125    267  基准 · 十年现金年增速                                10.00  %
+133    268  改善 · 今日每股值元                                 19.73  
+130    268  改善 · 十年现金年增速                                12.00  %
+145    287  基准 · 公式退出PE                                 11.54  x
+142    287  基准 · 2036归母亿元                               28.53  
+152    288  乐观 · 公式退出PE                                 11.11  x
+157    346  2027-04-30前 · 核查任务                        2026.00  
+158    349  2028-12-31 · 核查任务                            2.50  
+
+↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：
+  美股：macrotrends.net（主）+ stockanalysis.com（副）
+  港股：aastocks.com（主）+ macrotrends ADR（副）
+  A股： eastmoney.com（主）+ cninfo.com.cn（副）
+
+抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：
+
+[
+  {
+    "id": 6,
+    "label": "高端制造 · H1毛利率",
+    "reported_value": 11.9,
+    "unit": "%",
+    "line_number": 32,
+    "raw_text": "| 高端制造 | 85.35 | 54.20% | 9.71% | 47.22 | +20.78% | 11.90% | 35.95% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 2,
+    "label": "高端制造 · 2025收入占比",
+    "reported_value": 54.2,
+    "unit": "%",
+    "line_number": 32,
+    "raw_text": "| 高端制造 | 85.35 | 54.20% | 9.71% | 47.22 | +20.78% | 11.90% | 35.95% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 13,
+    "label": "存储半导体 · H1毛利率",
+    "reported_value": 22.72,
+    "unit": "%",
+    "line_number": 33,
+    "raw_text": "| 存储半导体 | 40.91 | 25.98% | 20.40% | 21.38 | +1.83% | 22.72% | 31.07% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 8,
+    "label": "存储半导体 · 2025收入",
+    "reported_value": 40.91,
+    "unit": "",
+    "line_number": 33,
+    "raw_text": "| 存储半导体 | 40.91 | 25.98% | 20.40% | 21.38 | +1.83% | 22.72% | 31.07% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 15,
+    "label": "计量智能终端 · 2025收入",
+    "reported_value": 30.21,
+    "unit": "",
+    "line_number": 34,
+    "raw_text": "| 计量智能终端 | 30.21 | 19.18% | 39.26% | 13.57 | −19.18% | 36.25% | 31.48% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 47,
+    "label": "现金等价物＋交易资产－上述债务 · 亿元",
+    "reported_value": -45.57,
+    "unit": "",
+    "line_number": 85,
+    "raw_text": "| 现金等价物＋交易资产－上述债务 | −45.57 | 严格流动性对照，不等于立即需要清偿全部债务 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 56,
+    "label": "2026年9月 · 决策",
+    "reported_value": 18.5,
+    "unit": "亿元",
+    "line_number": 172,
+    "raw_text": "| 2026年9月 | 18.5亿元厂房与先进封装研发项目 | 长期能力布局；厂房税前回收12.01年，研发线不直接产生经济效益，需审慎跟踪 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 58,
+    "label": "2026年11月 · 决策",
+    "reported_value": 17.034,
+    "unit": "%",
+    "line_number": 173,
+    "raw_text": "| 2026年11月 | 股东会批准挂牌出售昂纳全部17.034%权益 | 资本回收方向可理解；尚未核实成交与到账，不把预计处置收益计入正常化利润 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 60,
+    "label": "另6.3亿元2.5D／3DS研发线 · 可以支持",
+    "reported_value": 100.0,
+    "unit": "",
+    "line_number": 199,
+    "raw_text": "| 另6.3亿元2.5D／3DS研发线 | 计划建成后各100片／月，工艺验证用途 | 直接产生商业利润或等于1万片／月量产线 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 66,
+    "label": "TTM归母／扣非归母 · 口径",
+    "reported_value": 2025.0,
+    "unit": "",
+    "line_number": 220,
+    "raw_text": "| TTM归母／扣非归母 | 12.2750／12.0033亿元 | 2025全年＋2026前三季−2025前三季 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 71,
+    "label": "PB／PS · 复算结果",
+    "reported_value": 3.01,
+    "unit": "",
+    "line_number": 224,
+    "raw_text": "| PB／PS | 3.01／2.38倍 | Q3归母净资产、TTM收入；PB用当前股数摊薄 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 73,
+    "label": "简单FCF收益率 · 复算结果",
+    "reported_value": -4.01,
+    "unit": "%",
+    "line_number": 225,
+    "raw_text": "| 简单FCF收益率 | −4.01% | 合并TTM简单FCF／市值，非归母可分配收益率 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 77,
+    "label": "深科技 · TTM归母PE",
+    "reported_value": 33.65,
+    "unit": "x",
+    "line_number": 237,
+    "raw_text": "| 深科技 | 26.06 | 413.03 | 33.65x | 3.01x | 18.32% | 9.09% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 85,
+    "label": "长电科技 · 2025毛利率",
+    "reported_value": 14.15,
+    "unit": "%",
+    "line_number": 238,
+    "raw_text": "| 长电科技 | 55.47 | 992.59 | 44.53x | 3.36x | 14.15% | 5.56% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 93,
+    "label": "华天科技 · 11月19日收盘元",
+    "reported_value": 14.73,
+    "unit": "",
+    "line_number": 240,
+    "raw_text": "| 华天科技 | 14.73 | 528.07 | 41.63x | 2.44x | 13.26% | 4.14% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 114,
+    "label": "乐观 · 第三年EPS元",
+    "reported_value": 1.356,
+    "unit": "",
+    "line_number": 256,
+    "raw_text": "| 乐观 | +25% | 30x | 1.356 | **40.67** | 0.22 | **32.85** | +16.61% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 124,
+    "label": "基准 · 初始正常化归母现金亿元",
+    "reported_value": 7.5,
+    "unit": "",
+    "line_number": 267,
+    "raw_text": "| 基准 | 7.5 | +10% | 8% | 1.5% | **14.12** |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 125,
+    "label": "基准 · 十年现金年增速",
+    "reported_value": 10.0,
+    "unit": "%",
+    "line_number": 267,
+    "raw_text": "| 基准 | 7.5 | +10% | 8% | 1.5% | **14.12** |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 133,
+    "label": "改善 · 今日每股值元",
+    "reported_value": 19.73,
+    "unit": "",
+    "line_number": 268,
+    "raw_text": "| 改善 | 9.0 | +12% | 8% | 1.5% | 19.73 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 130,
+    "label": "改善 · 十年现金年增速",
+    "reported_value": 12.0,
+    "unit": "%",
+    "line_number": 268,
+    "raw_text": "| 改善 | 9.0 | +12% | 8% | 1.5% | 19.73 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 145,
+    "label": "基准 · 公式退出PE",
+    "reported_value": 11.54,
+    "unit": "x",
+    "line_number": 287,
+    "raw_text": "| 基准 | 50% | +10% | 28.53 | 1.5% | 6.5pp | 11.54x | -2.24% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 142,
+    "label": "基准 · 2036归母亿元",
+    "reported_value": 28.53,
+    "unit": "",
+    "line_number": 287,
+    "raw_text": "| 基准 | 50% | +10% | 28.53 | 1.5% | 6.5pp | 11.54x | -2.24% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 152,
+    "label": "乐观 · 公式退出PE",
+    "reported_value": 11.11,
+    "unit": "x",
+    "line_number": 288,
+    "raw_text": "| 乐观 | 20% | +18% | 57.57 | 2.0% | 6.0pp | 11.11x | +4.47% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 157,
+    "label": "2027-04-30前 · 核查任务",
+    "reported_value": 2026.0,
+    "unit": "",
+    "line_number": 346,
+    "raw_text": "| 2027-04-30前 | 2026年报及2027Q1实际披露后核现金、库存、分部和资本开支 | 研究披露窗口，非已确认预约日；提前披露即提前复检 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 158,
+    "label": "2028-12-31 · 核查任务",
+    "reported_value": 2.5,
+    "unit": "",
+    "line_number": 349,
+    "raw_text": "| 2028-12-31 | 新厂房与2.5D／3DS研发线进展、真实商业化证据 | 同上；不预设HBM销售额 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  }
+]

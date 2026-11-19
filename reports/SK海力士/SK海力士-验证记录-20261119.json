@@ -1,0 +1,527 @@
+{
+  "as_of": "2026-11-19",
+  "currency": "USD",
+  "price_KRW": "1183000",
+  "issued_shares": "706799093",
+  "USD_KRW": "1332.46",
+  "raw_tool_outputs": {
+    "market_cap": {
+      "exit_code": 0,
+      "stdout": "============================================================\n市值验算 (Market Cap Verification)\n============================================================\n  股价 (Price):       1183000.0 KRW\n  总股本 (Shares):    706.80M\n  计算市值:           836.14T KRW\n  报告市值:           836.14T KRW\n  偏差:               0.00%\n\n  ✅ 验证通过, 偏差仅 0.00%\n",
+      "stderr": ""
+    },
+    "FY2025_revenue": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: FY2025_revenue (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 97.15M million_KRW\n\n  ✅ official            : 97.15M million_KRW  (偏差 0.00%)\n  ✅ StockAnalysis       : 97.15M million_KRW  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 97.15M million_KRW\n",
+      "stderr": ""
+    },
+    "FY2025_parent_profit": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: FY2025_parent_profit (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 42.92M million_KRW\n\n  ✅ official            : 42.92M million_KRW  (偏差 0.00%)\n  ✅ StockAnalysis       : 42.92M million_KRW  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 42.92M million_KRW\n",
+      "stderr": ""
+    },
+    "FY2025_cash_equivalents": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: FY2025_cash_equivalents (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 14.92M million_KRW\n\n  ✅ official            : 14.92M million_KRW  (偏差 0.00%)\n  ✅ StockAnalysis       : 14.92M million_KRW  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 14.92M million_KRW\n",
+      "stderr": ""
+    },
+    "Q3_cash_pool_definition": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: Q3_cash_pool_definition (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 114.46M million_KRW\n\n  ✅ official_cash_short_term: 114.46M million_KRW  (偏差 0.00%)\n  ✅ SA_includes_other_current_assets: 114.46M million_KRW  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 114.46M million_KRW\n",
+      "stderr": ""
+    },
+    "issued_shares": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: issued_shares (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 706.80M shares\n\n  ✅ SEC                 : 706.80M shares  (偏差 0.00%)\n  ✅ Google_rounded      : 706.80M shares  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 706.80M shares\n",
+      "stderr": ""
+    },
+    "quote": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: quote (Cross-Validation)\n============================================================\n  数据来源数: 3\n  参考中位数: 1.18M KRW\n\n  ✅ Google              : 1.18M KRW  (偏差 0.00%)\n  ✅ Investing_header    : 1.18M KRW  (偏差 0.00%)\n  ✅ SA_1610_KST         : 1.18M KRW  (偏差 0.08%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 1.18M KRW\n",
+      "stderr": ""
+    },
+    "FX_11_18": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: FX_11_18 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 1,332.41 KRW_per_USD\n\n  ✅ Investing           : 1,332.46 KRW_per_USD  (偏差 0.00%)\n  ✅ ForexInvestors      : 1,332.37 KRW_per_USD  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 1,332.41 KRW_per_USD\n",
+      "stderr": ""
+    },
+    "TTM_parent_profit": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: TTM_parent_profit (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 188.90M million_KRW\n\n  ✅ official_bridge     : 188.90M million_KRW  (偏差 0.00%)\n  ✅ SA                  : 188.90M million_KRW  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 188.90M million_KRW\n",
+      "stderr": ""
+    },
+    "current_valuation": {
+      "exit_code": 0,
+      "stdout": "============================================================\n估值指标验算 (Valuation Verification)\n============================================================\n  当前股价: 1183000.0\n\n  PE (TTM):  1183000.0 / 267267.7269550486 = 4.43x\n  盈利收益率: 22.59%\n  PB:        1183000.0 / 436467.6497964889 = 2.71x\n  ROE:       267267.7269550486 / 436467.6497964889 = 61.23%\n  P/FCF:     1183000.0 / 173020.4936751383 = 6.84x\n  FCF Yield: 14.63%\n  股息率:    20000.0 / 1183000.0 = 1.69%\n\n  ✅ 以上指标均使用精确十进制计算, 无浮点误差\n",
+      "stderr": ""
+    },
+    "three_scenario": {
+      "exit_code": 0,
+      "stdout": "============================================================\n三情景估值模型 (Three-Scenario Valuation)\n============================================================\n  当前股价: 887.831529651922 USD\n  当前EPS:  127.41808744448629\n  预测期:   3年\n\n  情景                年增速     目标PE      目标EPS       目标股价      涨跌幅\n  ------------ -------- -------- ---------- ---------- --------\n  乐观 (Bull)         14%      12x     191.13    2293.5  +158.3%\n  中性 (Base)          0%      10x     127.42    1274.2   +43.5%\n  悲观 (Bear)        -21%       8x      63.71     509.7   -42.6%\n\n  ✅ 所有计算使用精确十进制, 结果可审计复现\n",
+      "stderr": ""
+    },
+    "terminal_audit_pre": {
+      "exit_code": 0,
+      "stdout": "\n========================================================================\n估值口径准出检查   币种=USD   r=10.00%   ROIC=18%   g=0.0%/2.0%/3.0%\n========================================================================\n\n【C1】币种一致性 — r 与 g 必须用同一个币种\n     USD 口径基准：美国10年期国债 4.70% + 中国总ERP 5.18%（含1.01%国别溢价）\n     r 合理区间 [9.0%, 11.5%]   g 上限 4.0%   Rf 4.70%\n     → ✓ 通过\n\n【C2】分母宽度 — r-g 至少 5 个百分点\n     悲观  g= 0.0%  r-g=10.0pct  PE=     10.0x  g+0.5pct → 10.2x (+2%)  \n     基准  g= 2.0%  r-g= 8.0pct  PE=     11.1x  g+0.5pct → 11.5x (+3%)  \n     乐观  g= 3.0%  r-g= 7.0pct  PE=     11.9x  g+0.5pct → 12.4x (+4%)  \n     → ✓ 通过\n\n【C3】离散风险归属 — 退市/VIE/地缘/监管必须归情景，不得进 r 或 β\n     ✓ 周期与HBM竞争 → 情景\n     ✓ 扩产回报 → 情景\n     ✓ 中国设备许可 → 情景\n     ⚠ 永久架构替代 → 未建模\n     ⚠ 战争及主要产能全损 → 未建模\n     β = 1.0（默认值，无需理由）\n     → ✓ 通过\n\n========================================================================\n⚠ C3: 「永久架构替代」未建模，必须写进报告的「限制」章节\n⚠ C3: 「战争及主要产能全损」未建模，必须写进报告的「限制」章节\n\n【准出】三条硬约束全部通过，可以把估值写进报告。\n       但上述 2 条警告必须在报告里显式写出。\n\n",
+      "stderr": ""
+    },
+    "exit_PE_悲观": {
+      "exit_code": 0,
+      "stdout": "\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 18.0%   g = 0.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0000 / 0.18 = 0.0000  (0.0%)\n  分子 1 - 留存率 = 1.0000                    （即派息率 100.0%）\n  分母 r - g      = 0.1000 - 0.0000 = 0.1000  (10.0pct)\n\n  退出 PE = 1.0000 / 0.1000 = 10.0x\n\n",
+      "stderr": ""
+    },
+    "irr_悲观": {
+      "exit_code": 0,
+      "stdout": "\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 75 x 10.0x = 750\n  今日市值 = 628\n  总倍数   = 1.1960\n  几何年化 = +1.81%\n  股息-稀释 = +1.00%\n\n  IRR = +2.81%\n\n",
+      "stderr": ""
+    },
+    "exit_PE_基准": {
+      "exit_code": 0,
+      "stdout": "\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 18.0%   g = 2.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0200 / 0.18 = 0.1111  (11.1%)\n  分子 1 - 留存率 = 0.8889                    （即派息率 88.9%）\n  分母 r - g      = 0.1000 - 0.0200 = 0.0800  (8.0pct)\n\n  退出 PE = 0.8889 / 0.0800 = 11.1x\n\n",
+      "stderr": ""
+    },
+    "irr_基准": {
+      "exit_code": 0,
+      "stdout": "\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 135 x 11.1x = 1,501\n  今日市值 = 628\n  总倍数   = 2.3919\n  几何年化 = +9.11%\n  股息-稀释 = +1.00%\n\n  IRR = +10.11%\n\n",
+      "stderr": ""
+    },
+    "exit_PE_乐观": {
+      "exit_code": 0,
+      "stdout": "\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 18.0%   g = 3.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0300 / 0.18 = 0.1667  (16.7%)\n  分子 1 - 留存率 = 0.8333                    （即派息率 83.3%）\n  分母 r - g      = 0.1000 - 0.0300 = 0.0700  (7.0pct)\n\n  退出 PE = 0.8333 / 0.0700 = 11.9x\n\n",
+      "stderr": ""
+    },
+    "irr_乐观": {
+      "exit_code": 0,
+      "stdout": "\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 225 x 11.9x = 2,680\n  今日市值 = 628\n  总倍数   = 4.2713\n  几何年化 = +15.63%\n  股息-稀释 = +1.00%\n\n  IRR = +16.63%\n\n",
+      "stderr": ""
+    },
+    "flip_.02": {
+      "exit_code": 0,
+      "stdout": "\nSK海力士  |  基准 r = 10.00%   Δr = ±2pp   币种 USD   g平移 +0.0%   Rf = 5.07%   持有期 10 年\n币种合理区间：r ∈ [9.0%, 11.5%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。\n判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。\n角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。\n\n档位               r       期望IRR        相对 r      压力测试\n------------------------------------------------------\nr−2pp        8.00%     +12.30%     +4.30pp  通过（区间外，仅供参考）\n基准 r        10.00%      +9.22%     -0.78pp  未通过\nr+2pp       12.00%      +6.89%     -5.11pp  未通过（区间外，仅供参考）\n------------------------------------------------------\n\n【稳定】Δr±2pp 区间内压力测试始终未通过——相对折现率扰动更稳健。\n        注意：两侧档位都在区间外，区间内只有基准一档参与判定；可用更小的 --delta 在区间内复核。\n        未通过仍只约束仓位，不自动等于回避；须与其他五个维度并列决策。\n\n提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。\n\n",
+      "stderr": ""
+    },
+    "flip_.01": {
+      "exit_code": 0,
+      "stdout": "\nSK海力士  |  基准 r = 10.00%   Δr = ±1pp   币种 USD   g平移 +0.0%   Rf = 5.07%   持有期 10 年\n币种合理区间：r ∈ [9.0%, 11.5%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。\n判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。\n角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。\n\n档位               r       期望IRR        相对 r      压力测试\n------------------------------------------------------\nr−1pp        9.00%     +10.64%     +1.64pp  通过\n基准 r        10.00%      +9.22%     -0.78pp  未通过\nr+1pp       11.00%      +7.99%     -3.01pp  未通过\n------------------------------------------------------\n\n【翻转】结论在币种合理区间内随 Δr±1pp 翻转。报告必须写明：本结论对折现率敏感；不得用单一基准 r 的未通过一票否决买入。\n        正确用法：收紧仓位上限，并完成与三年三情景/thesis 的「估值分歧对账」。\n\n提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。\n\n",
+      "stderr": ""
+    },
+    "calc_DCF_悲观": {
+      "exit_code": 0,
+      "stdout": "============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (35/1.1**1+40/1.1**2+45/1.1**3+50/1.1**4+55/1.1**5+56.65/1.1**6+58.3495/1.1**7+60.099985/1.1**8+61.90298455/1.1**9+63.7600740865/1.1**10+63.7600740865*(1+0)/(0.10-0)/1.1**10+33.1973783275)*1e12/706799093\n  结果:   830,220.14\n  精确值: 830220.1390400687\n",
+      "stderr": ""
+    },
+    "calc_DCF_基准": {
+      "exit_code": 0,
+      "stdout": "============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (70/1.1**1+80/1.1**2+90/1.1**3+100/1.1**4+110/1.1**5+114.40/1.1**6+118.9760/1.1**7+123.735040/1.1**8+128.68444160/1.1**9+133.8318192640/1.1**10+133.8318192640*(1+.02)/(0.10-.02)/1.1**10+33.1973783275)*1e12/706799093\n  结果:   1.86M\n  精确值: 1859891.7580654235\n",
+      "stderr": ""
+    },
+    "calc_DCF_乐观": {
+      "exit_code": 0,
+      "stdout": "============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (110/1.1**1+130/1.1**2+150/1.1**3+170/1.1**4+190/1.1**5+199.50/1.1**6+209.4750/1.1**7+219.948750/1.1**8+230.94618750/1.1**9+242.4934968750/1.1**10+242.4934968750*(1+.03)/(0.10-.03)/1.1**10+33.1973783275)*1e12/706799093\n  结果:   3.50M\n  精确值: 3504862.5398352896\n",
+      "stderr": ""
+    },
+    "reverse_DCF_scale": {
+      "exit_code": 0,
+      "stdout": "============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (836.143327019-33.1973783275)/1281.37242935131761580710994661331526544030\n  结果:   0.63\n  精确值: 0.6266296435751967\n",
+      "stderr": ""
+    },
+    "Q3_pure_cash": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: Q3_pure_cash (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 38.32M million_KRW\n\n  ✅ official            : 38.32M million_KRW  (偏差 0.00%)\n  ✅ StockAnalysis       : 38.32M million_KRW  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 38.32M million_KRW\n"
+    },
+    "Q3_total_debt_including_lease": {
+      "exit_code": 0,
+      "stdout": "============================================================\n交叉验证: Q3_total_debt_including_lease (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 18.13M million_KRW\n\n  ✅ official            : 18.13M million_KRW  (偏差 0.00%)\n  ✅ StockAnalysis       : 18.13M million_KRW  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 2.0%, 数据一致\n\n  共识值 (加权中位数): 18.13M million_KRW\n"
+    },
+    "calc_DCF_cash_bridge_final_悲观": {
+      "exit_code": 0,
+      "stdout": "============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (553.601462936354850630144873726971918648895+35.5255493275)*1e12/706799093\n  结果:   833,514.10\n  精确值: 833514.1033689114\n"
+    },
+    "calc_DCF_cash_bridge_final_基准": {
+      "exit_code": 0,
+      "stdout": "============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (1281.37242935131761580710994661331526544030+35.5255493275)*1e12/706799093\n  结果:   1.86M\n  精确值: 1863185.7223942666\n"
+    },
+    "calc_DCF_cash_bridge_final_乐观": {
+      "exit_code": 0,
+      "stdout": "============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (2444.03628591776084484819048515525359888062+35.5255493275)*1e12/706799093\n  结果:   3.51M\n  精确值: 3508156.5041641337\n"
+    }
+  },
+  "derived": {
+    "mcap_TKRW": "836.143327019",
+    "mcap_USDbn": "627.518519894781081608453537066778740074749",
+    "ordinary_USD": "887.831529651922008915839875118202422586794",
+    "ADS_theoretical_USD": "88.7831529651922008915839875118202422586794",
+    "net_cash_including_lease_TKRW": "96.331841",
+    "cash_adjustment_TKRW": "35.5255493275",
+    "SK_Square_issued_pct": "20.6706547089471151882194053692708968996937",
+    "CEO_pct": "0.00202490356053696860077889205780290948958532",
+    "Q3_CFO": "53.891813",
+    "Q3_FCF": "40.926263",
+    "9M_FCF": "113.674748",
+    "9M_FCF_after_lease": "113.251145",
+    "9M_FCF_after_lease_and_dividends": "99.233796",
+    "TTM_NI": "188.904587",
+    "TTM_Revenue": "269.337169",
+    "TTM_CFO": "166.496050",
+    "price_change_vs_old_pct": "-16.5726375176304654442877291960507757404795",
+    "Q3_OP_margin": "79.6572511164528103359232208486768636340378",
+    "TTM_FCF_full": "122.290728",
+    "TTM_FCF_after_lease": "121.717615",
+    "TTM_FCF_ex_invest_dividends": "106.769986",
+    "P_FCF_full": "6.83734033392130922632172080944681268068009",
+    "FCF_yield_full_pct": "14.6255700486169330740545134693073550583788",
+    "PE_TTM": "4.42627328588373558128580541032600759451119",
+    "PS_TTM": "3.10444833931925674914924200454486844331537",
+    "PB_9_30_snapshot": "2.71039560561153970827378792103944369732432",
+    "EV_Revenue_9_30_cash_snapshot": "2.74678570642806452012570162568241741636484",
+    "one_dividend_yield_pct": "1.69061707523245984784446322907861369399831",
+    "three_year_eps_normalised": "169779.504796280206884758976338980672687422",
+    "three_year_eps_USD": "127.418087444486293685933518708989892895413",
+    "scenarios3": {
+      "悲观": {
+        "profit_TKRW": "60",
+        "PE_assumption": "8",
+        "target_KRW": "679118.019185120827539035905355922690749689",
+        "PV_KRW": "510231.419372742920765616758344044095228917",
+        "PV_with_announced_dividend": "528413.237554561102583798576525862277047099",
+        "price_gain_pct": "-42.5935740333794735808084610857208207312182"
+      },
+      "基准": {
+        "profit_TKRW": "120",
+        "PE_assumption": "10",
+        "target_KRW": "1697795.04796280206884758976338980672687422",
+        "PV_KRW": "1275578.54843185730191404189586011023807229",
+        "PV_with_announced_dividend": "1293760.36661367548373222371404192841989047",
+        "price_gain_pct": "43.5160649165513160479788472856979481719540"
+      },
+      "乐观": {
+        "profit_TKRW": "180",
+        "PE_assumption": "12",
+        "target_KRW": "3056031.08633304372392566157410165210837360",
+        "PV_KRW": "2296041.38717734314344527541254819842853013",
+        "PV_with_announced_dividend": "2314223.20535916132526345723073001661034831",
+        "price_gain_pct": "158.328916849792368886361925114256306709518"
+      }
+    },
+    "scenarios10": {
+      "悲观": {
+        "profit_TKRW": "100",
+        "profit_USDbn": "75.0491571979646668567911982348438227038710",
+        "g": "0",
+        "probability": "0.30",
+        "exit_PE": "1E+1",
+        "irr_proxy_pct": "2.80566080243872473258239274746213837547500"
+      },
+      "基准": {
+        "profit_TKRW": "180",
+        "profit_USDbn": "135.088482956336400342224156822718880866968",
+        "g": "0.02",
+        "probability": "0.50",
+        "exit_PE": "11.1111111111111111111111111111111111111111",
+        "irr_proxy_pct": "10.1126055840251300160407475522532269172570"
+      },
+      "乐观": {
+        "profit_TKRW": "300",
+        "profit_USDbn": "225.147471593894000570373594704531468111613",
+        "g": "0.03",
+        "probability": "0.20",
+        "exit_PE": "11.9047619047619047619047619047619047619048",
+        "irr_proxy_pct": "16.6261656695721324940428094922149915111760"
+      }
+    },
+    "sensitivity": {
+      ".08": {
+        "mean_irr_proxy_pct": 12.296032310147307,
+        "covers_r": true,
+        "in_currency_band": false
+      },
+      ".09": {
+        "mean_irr_proxy_pct": 10.639346505650572,
+        "covers_r": true,
+        "in_currency_band": true
+      },
+      ".10": {
+        "mean_irr_proxy_pct": 9.223234166658608,
+        "covers_r": false,
+        "in_currency_band": true
+      },
+      ".11": {
+        "mean_irr_proxy_pct": 7.987970332355484,
+        "covers_r": false,
+        "in_currency_band": true
+      },
+      ".12": {
+        "mean_irr_proxy_pct": 6.8936036618585295,
+        "covers_r": false,
+        "in_currency_band": false
+      }
+    },
+    "DCF": {
+      "悲观": {
+        "TV_TKRW": "637.600740865",
+        "PV_operating_TKRW": "553.601462936354850630144873726971918648895",
+        "cash_bridge_TKRW": "35.5255493275",
+        "PV_KRW": "833514.103368911440623686360229910366691564",
+        "flow_definition": "Unlevered operating FCFF, excludes investment income; all lease cash treated as operating use, so lease liability is not subtracted again in bridge.",
+        "operating_FCFF_TKRW": [
+          "35",
+          "40",
+          "45",
+          "50",
+          "55",
+          "56.65",
+          "58.3495",
+          "60.099985",
+          "61.90298455",
+          "63.7600740865"
+        ]
+      },
+      "基准": {
+        "TV_TKRW": "1706.3556956160",
+        "PV_operating_TKRW": "1281.37242935131761580710994661331526544030",
+        "cash_bridge_TKRW": "35.5255493275",
+        "PV_KRW": "1863185.72239426687522236244099610816201245",
+        "flow_definition": "Unlevered operating FCFF, excludes investment income; all lease cash treated as operating use, so lease liability is not subtracted again in bridge.",
+        "operating_FCFF_TKRW": [
+          "70",
+          "80",
+          "90",
+          "100",
+          "110",
+          "114.40",
+          "118.9760",
+          "123.735040",
+          "128.68444160",
+          "133.8318192640"
+        ]
+      },
+      "乐观": {
+        "TV_TKRW": "3568.1185968750",
+        "PV_operating_TKRW": "2444.03628591776084484819048515525359888062",
+        "cash_bridge_TKRW": "35.5255493275",
+        "PV_KRW": "3508156.50416413429784663077539525591734258",
+        "flow_definition": "Unlevered operating FCFF, excludes investment income; all lease cash treated as operating use, so lease liability is not subtracted again in bridge.",
+        "operating_FCFF_TKRW": [
+          "110",
+          "130",
+          "150",
+          "170",
+          "190",
+          "199.50",
+          "209.4750",
+          "219.948750",
+          "230.94618750",
+          "242.4934968750"
+        ]
+      }
+    },
+    "reverse_DCF_scale": "0.624812708118595151275719748462240141183504",
+    "reverse_DCF_year1": "43.7368895683016605893003823923568098828453",
+    "reverse_DCF_year5": "68.7293978930454666403291723308464155301854",
+    "reverse_DCF_year10": "83.6198214267782117631188644077140645034366",
+    "normalised_profit_implied_TKRW": "109.58022302116890000000000000",
+    "FX_terminal_factor_.8": "11.6653112032495636704907848070286503309728",
+    "FX_terminal_factor_1.2": "7.26796981760389915789747159762718471723802"
+  },
+  "discrete_risks": "周期与HBM竞争:情景,扩产回报:情景,中国设备许可:情景,永久架构替代:未建模,战争及主要产能全损:未建模",
+  "limitation": "New buyback execution unknown; issued-share conservative denominator, not current free float. USD model converts all KRW cash flows at fixed 1332.46; not a KRW discount-rate model.",
+  "annual_TKRW": {
+    "2021": {
+      "revenue": "42.997792",
+      "gross_profit": "18.952192",
+      "operating_profit": "12.410340",
+      "parent_profit": "9.602316",
+      "CFO": "19.797648",
+      "cash_PPE": "12.486635",
+      "cash_intangibles_gross": ".973893",
+      "cash_equivalents": "5.057982",
+      "debt_including_lease": "19.149571",
+      "gross_margin_pct": "44.07712842557124793756851515",
+      "operating_margin_pct": "28.86273788198240505000814926",
+      "FCF_full": "6.337120"
+    },
+    "2022": {
+      "revenue": "44.621568",
+      "gross_profit": "15.627855",
+      "operating_profit": "6.809417",
+      "parent_profit": "2.229560",
+      "CFO": "14.780517",
+      "cash_PPE": "19.010261",
+      "cash_intangibles_gross": ".738621",
+      "cash_equivalents": "4.977007",
+      "debt_including_lease": "24.791685",
+      "gross_margin_pct": "35.02309690237689540627527926",
+      "operating_margin_pct": "15.26037139707865039614923438",
+      "FCF_full": "-4.968365"
+    },
+    "2023": {
+      "revenue": "32.765719",
+      "gross_profit": "-.533448",
+      "operating_profit": "-7.730313",
+      "parent_profit": "-9.112428",
+      "CFO": "4.278191",
+      "cash_PPE": "8.325138",
+      "cash_intangibles_gross": ".454710",
+      "cash_equivalents": "7.587329",
+      "debt_including_lease": "32.498506",
+      "gross_margin_pct": "-1.628067432306307699214535777",
+      "operating_margin_pct": "-23.59268539170466547674415446",
+      "FCF_full": "-4.501657"
+    },
+    "2024": {
+      "revenue": "66.192960",
+      "gross_profit": "31.828146",
+      "operating_profit": "23.467319",
+      "parent_profit": "19.788681",
+      "CFO": "29.795885",
+      "cash_PPE": "15.945534",
+      "cash_intangibles_gross": ".717106",
+      "cash_equivalents": "11.205117",
+      "debt_including_lease": "25.452109",
+      "gross_margin_pct": "48.08388384504938289509941843",
+      "operating_margin_pct": "35.45289257347004877860122889",
+      "FCF_full": "13.133245"
+    },
+    "2025": {
+      "revenue": "97.146675",
+      "gross_profit": "58.690790",
+      "operating_profit": "47.206319",
+      "parent_profit": "42.919287",
+      "CFO": "53.373126",
+      "cash_PPE": "27.518924",
+      "cash_intangibles_gross": "1.060419",
+      "cash_equivalents": "14.923766",
+      "debt_including_lease": "24.757848",
+      "gross_margin_pct": "60.41461532265515006046269726",
+      "operating_margin_pct": "48.59283037736494841434356863",
+      "FCF_full": "24.793783"
+    }
+  },
+  "quarterly_TKRW": {
+    "2025Q4": {
+      "revenue": "32.826653",
+      "gross_profit": "22.576375",
+      "operating_profit": "19.169574",
+      "parent_profit": "15.219783",
+      "DRAM": "24.659358",
+      "NAND": "7.744258",
+      "other": ".423037",
+      "gross_margin_pct": "68.77452599264384340371222129",
+      "operating_margin_pct": "58.39637077834283013866811216",
+      "DRAM_share_pct": "75.11992770021360386634604509"
+    },
+    "2026Q1": {
+      "revenue": "52.576287",
+      "gross_profit": "41.679414",
+      "operating_profit": "37.610283",
+      "parent_profit": "40.330176",
+      "DRAM": "40.658636",
+      "NAND": "11.574235",
+      "other": ".343416",
+      "gross_margin_pct": "79.27416783920096906044354178",
+      "operating_margin_pct": "71.53468825213922010125971809",
+      "DRAM_share_pct": "77.33264998344215520582501385"
+    },
+    "2026Q2": {
+      "revenue": "79.318746",
+      "gross_profit": "65.991356",
+      "operating_profit": "60.542608",
+      "parent_profit": "93.820236",
+      "DRAM": "56.982743",
+      "NAND": "21.959898",
+      "other": ".376105",
+      "gross_margin_pct": "83.19767939851192302006388250",
+      "operating_margin_pct": "76.32824654086185376657366721",
+      "DRAM_share_pct": "71.84019651546180520806519054"
+    },
+    "2026Q3": {
+      "revenue": "104.615483",
+      "gross_profit": "89.652936",
+      "operating_profit": "83.333818",
+      "parent_profit": "39.534392",
+      "DRAM": "78.228825",
+      "NAND": "25.997382",
+      "other": ".389276",
+      "gross_margin_pct": "85.69757881823286138247815574",
+      "operating_margin_pct": "79.65725111645281033592322085",
+      "DRAM_share_pct": "74.77748298499945748948078747"
+    }
+  },
+  "FY2025_revenue_structure_TKRW": {
+    "DRAM": "74.904134",
+    "NAND": "20.690084",
+    "other": "1.552457"
+  },
+  "sources": {
+    "SEC_Q3": "https://www.sec.gov/Archives/edgar/data/2120882/000119312526461909/d166755d6k.htm",
+    "SEC_H1": "https://www.sec.gov/Archives/edgar/data/2120882/000119312526354777/d147827d6k.htm",
+    "FY25_filing_mirror": "https://files.quartr.com/reports/eb5ee-2026-04-01-09-00-51.pdf",
+    "FY22_filing_mirror": "https://files.quartr.com/reports/ab896-2026-05-12-05-16-41.pdf",
+    "Independent_income": "https://stockanalysis.com/quote/krx/000660/financials/",
+    "Independent_cashflow": "https://stockanalysis.com/quote/krx/000660/financials/cash-flow-statement/",
+    "Independent_balance": "https://stockanalysis.com/quote/krx/000660/financials/balance-sheet/"
+  },
+  "balance_20260930_TKRW": {
+    "cash_equivalents": "38.324414",
+    "short_financial": "37.925282",
+    "short_investments": "38.209906",
+    "cash_pool": "114.459602",
+    "borrowing": "15.799590",
+    "lease": "2.328171",
+    "total_debt": "18.127761",
+    "parent_equity": "308.494939"
+  },
+  "calculation_notes": [
+    "All financial derived values independently computed with Decimal, precision42; financial_rigor CLI raw logs retained.",
+    "Tool ROE EPS/end-BVPS is not conventional average-equity ROE; not used as actual ROE.",
+    "Tool dividend yield uses one announced DPS20000, not annualized sustainable dividend.",
+    "No fake KRW r/g: all valuation profits/cash and market cap converted to USD using fixed USDKRW1332.46; KRW is display unit only.",
+    "EV snapshot uses full debt including lease; operating DCF treats lease as operating cash expense and bridge deducts borrowing only.",
+    "No financial source verification is implied for forward scenario assumptions."
+  ],
+  "monitor_validation": {
+    "temp_runtime": "/var/folders/10/3xzg987j4kv26f_fc9wltps40000gn/T/skh-monitor-20261119-wt3p59rr",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"OK\", \"date\": \"2026-11-19\", \"items\": 4, \"notifications\": 3, \"report\": \"/private/var/folders/10/3xzg987j4kv26f_fc9wltps40000gn/T/skh-monitor-20261119-wt3p59rr/reports/daily-monitor-latest.md\", \"state_file\": \"/private/var/folders/10/3xzg987j4kv26f_fc9wltps40000gn/T/skh-monitor-20261119-wt3p59rr/state.json\"}\n",
+    "stderr": "",
+    "notifications_meaning": "3 candidates in temporary local report; no notification/send tool invoked."
+  },
+  "prepush_validation": {
+    "passed": true,
+    "notifications_sent": false,
+    "legacy_archive_outputs": "Generated by prepush, relocated to temporary runtime; original clean tracked latest restored. Historical archive unchanged.",
+    "SK_rows": [
+      {
+        "name": "SK hynix",
+        "market": "KR",
+        "zone": "跨周期条件式首笔评估带",
+        "dir": "range",
+        "low": 900000,
+        "high": 1100000,
+        "price": 1179500.0,
+        "status": "FAR",
+        "msg": "现价 1179500.00，区间 [900000.00, 1100000.00]",
+        "action": "有条件小额评估；118.3万现价观望，合理小仓持有不加",
+        "note": "KRX普通股韩元90万—110万；最新正式材料确认HBM4交付/资格无结构损坏、滚动完整现金扣租赁/投资股息仍正、新厂预算与资金可解释、许可/治理无重大红线才首笔研究预算0.5%—1%、总参考≤3%；低于90万先查永久损失。r合理区间内翻转只限仓，不是自动买点。"
+      },
+      {
+        "name": "SK hynix",
+        "market": "KR",
+        "zone": "价格与正常化现金复核线",
+        "dir": "above",
+        "low": 2000000,
+        "high": null,
+        "price": 1179500.0,
+        "status": "FAR",
+        "msg": "现价 1179500.00，警戒线 2000000.00",
+        "action": "不追高，复核机会成本与仓位",
+        "note": "KRX普通股韩元；≥200万且正常化利润/经营现金模型未提高，复核机会成本、超配与减仓，非自动清仓；不套SKHY ADS溢价。"
+      }
+    ]
+  },
+  "Q3_QoQ_pct": {
+    "revenue": "31.89250747862302311234219460",
+    "DRAM": "37.28511630266728297021433310",
+    "NAND": "18.38571381342481645406549700"
+  }
+}

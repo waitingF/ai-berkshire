@@ -1,0 +1,835 @@
+{
+  "cutoff": "2026-11-19",
+  "quote_date": "2026-11-18",
+  "sources": {
+    "fy2025": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225057736.PDF",
+    "fy2023": "https://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-04-10/688008_20240410_UZ0Y.pdf",
+    "fy2022": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216669836.PDF",
+    "q32026": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225643270.PDF",
+    "h12026": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530486.PDF",
+    "q12026": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225206629.PDF",
+    "eastmoney_income": "https://datacenter-web.eastmoney.com/api/data/v1/get?columns=ALL&filter=(SECURITY_CODE%3D%22688008%22)&pageNumber=1&pageSize=50&sortColumns=REPORT_DATE&sortTypes=-1&reportName=RPT_DMSK_FN_INCOME",
+    "eastmoney_balance": "https://datacenter-web.eastmoney.com/api/data/v1/get?columns=ALL&filter=(SECURITY_CODE%3D%22688008%22)&pageNumber=1&pageSize=50&sortColumns=REPORT_DATE&sortTypes=-1&reportName=RPT_DMSK_FN_BALANCE",
+    "eastmoney_cashflow": "https://datacenter-web.eastmoney.com/api/data/v1/get?columns=ALL&filter=(SECURITY_CODE%3D%22688008%22)&pageNumber=1&pageSize=50&sortColumns=REPORT_DATE&sortTypes=-1&reportName=RPT_DMSK_FN_CASHFLOW"
+  },
+  "facts": {
+    "annual": [
+      {
+        "year": 2021,
+        "revenue": "2562017472.42",
+        "parent_net_profit": "829137544.38",
+        "core_profit": "617398698.55",
+        "cost_of_sales": "1330196520.14",
+        "statutory_operating_profit": "915010160.57",
+        "CFO": "680414534.55",
+        "capex": "153467706.66",
+        "cash": "5104338407.64",
+        "FCF": "526946827.89",
+        "gross_margin_pct": "48.08011520376015281695188058",
+        "statutory_operating_margin_pct": "35.71443873510006091451743793",
+        "source": "fy2022",
+        "two_source_verification": {
+          "revenue": true,
+          "parent_net_profit": true,
+          "core_profit": true,
+          "cost_of_sales": true,
+          "statutory_operating_profit": true,
+          "CFO": true,
+          "capex": true,
+          "cash": true
+        }
+      },
+      {
+        "year": 2022,
+        "revenue": "3672258476.69",
+        "parent_net_profit": "1299378059.37",
+        "core_profit": "883144528.39",
+        "cost_of_sales": "1966746655.26",
+        "statutory_operating_profit": "1414522013.07",
+        "CFO": "688835385.81",
+        "capex": "226859643.86",
+        "cash": "5870437916.39",
+        "FCF": "461975741.95",
+        "gross_margin_pct": "46.44313117543042999268252034",
+        "statutory_operating_margin_pct": "38.51912990462978520627572736",
+        "source": "fy2023",
+        "two_source_verification": {
+          "revenue": true,
+          "parent_net_profit": true,
+          "core_profit": true,
+          "cost_of_sales": true,
+          "statutory_operating_profit": true,
+          "CFO": true,
+          "capex": true,
+          "cash": true
+        }
+      },
+      {
+        "year": 2023,
+        "revenue": "2285738498.23",
+        "parent_net_profit": "450909813.13",
+        "core_profit": "369932113.14",
+        "cost_of_sales": "939216263.95",
+        "statutory_operating_profit": "472035780.76",
+        "CFO": "731249699.11",
+        "capex": "423986776.59",
+        "cash": "5743574648.73",
+        "FCF": "307262922.52",
+        "gross_margin_pct": "58.90972372048255344399812997",
+        "statutory_operating_margin_pct": "20.65134664903832331161146923",
+        "source": "fy2023",
+        "two_source_verification": {
+          "revenue": true,
+          "parent_net_profit": true,
+          "core_profit": true,
+          "cost_of_sales": true,
+          "statutory_operating_profit": true,
+          "CFO": true,
+          "capex": true,
+          "cash": true
+        }
+      },
+      {
+        "year": 2024,
+        "revenue": "3638911068.29",
+        "parent_net_profit": "1411778923.59",
+        "core_profit": "1248290398.82",
+        "cost_of_sales": "1523614938.54",
+        "statutory_operating_profit": "1412893172.57",
+        "CFO": "1691321506.14",
+        "capex": "379121899.19",
+        "cash": "6843296852.61",
+        "FCF": "1312199606.95",
+        "gross_margin_pct": "58.12992101354160461337026955",
+        "statutory_operating_margin_pct": "38.82736197875668035593788870",
+        "source": "fy2025",
+        "two_source_verification": {
+          "revenue": true,
+          "parent_net_profit": true,
+          "core_profit": true,
+          "cost_of_sales": true,
+          "statutory_operating_profit": true,
+          "CFO": true,
+          "capex": true,
+          "cash": true
+        }
+      },
+      {
+        "year": 2025,
+        "revenue": "5456316783.63",
+        "parent_net_profit": "2235569970.18",
+        "core_profit": "2021628734.94",
+        "cost_of_sales": "2060961088.35",
+        "statutory_operating_profit": "2321777105.55",
+        "CFO": "2022020556.92",
+        "capex": "265828735.88",
+        "cash": "8478984375.78",
+        "FCF": "1756191821.04",
+        "gross_margin_pct": "62.22797960460654083124518602",
+        "statutory_operating_margin_pct": "42.55209507841952953203298211",
+        "source": "fy2025",
+        "two_source_verification": {
+          "revenue": true,
+          "parent_net_profit": true,
+          "core_profit": true,
+          "cost_of_sales": true,
+          "statutory_operating_profit": true,
+          "CFO": true,
+          "capex": true,
+          "cash": true
+        }
+      }
+    ],
+    "quarterly": [
+      {
+        "period": "2025Q4",
+        "revenue": "1398628292.82",
+        "parent_net_profit": "603285984.25",
+        "core_profit": "554204845.47",
+        "source": "fy2025 p15"
+      },
+      {
+        "period": "2026Q1",
+        "source": "q12026/h12026/q32026; Q2 = H1-Q1",
+        "revenue": "1460718316.43",
+        "parent_net_profit": "847375292.29",
+        "core_profit": "603835353.11"
+      },
+      {
+        "period": "2026Q2",
+        "source": "q12026/h12026/q32026; Q2 = H1-Q1",
+        "revenue": "1874779205.38",
+        "parent_net_profit": "1149999225.58",
+        "core_profit": "718643183.22"
+      },
+      {
+        "period": "2026Q3",
+        "source": "q12026/h12026/q32026; Q2 = H1-Q1",
+        "revenue": "2078918669.66",
+        "parent_net_profit": "1239743093.95",
+        "core_profit": "1004796167.13"
+      }
+    ],
+    "cumulative": {
+      "2025-09-30": {
+        "revenue": "4057688490.81",
+        "parent_net_profit": "1632283985.93",
+        "core_profit": "1467423889.47",
+        "CFO": "1600671441.66",
+        "capex": "227859052.56",
+        "cash": "8898709817.45"
+      },
+      "2025-12-31": {
+        "revenue": "5456316783.63",
+        "parent_net_profit": "2235569970.18",
+        "core_profit": "2021628734.94",
+        "CFO": "2022020556.92",
+        "capex": "265828735.88",
+        "cash": "8478984375.78"
+      },
+      "2026-03-31": {
+        "revenue": "1460718316.43",
+        "parent_net_profit": "847375292.29",
+        "core_profit": "603835353.11",
+        "CFO": "626635472.56",
+        "capex": "102890815.85",
+        "cash": "14623848228.96"
+      },
+      "2026-06-30": {
+        "revenue": "3335497521.81",
+        "parent_net_profit": "1997374517.87",
+        "core_profit": "1322478536.33",
+        "CFO": "1328028043.56",
+        "capex": "255293531.99",
+        "cash": "15109529544.43"
+      },
+      "2026-09-30": {
+        "revenue": "5414416191.47",
+        "parent_net_profit": "3237117611.82",
+        "core_profit": "2327274703.46",
+        "CFO": "2898317055.1",
+        "capex": "402522170.67",
+        "cash": 15798925948
+      }
+    },
+    "balance": {
+      "date": "2026-09-30",
+      "parent_equity": "22150204322.87",
+      "shares": "1220538021",
+      "cash": "15798925948.00",
+      "trading_financial_assets": "3068522482.21",
+      "short_term_debt": "0",
+      "long_term_debt": "107079875.18",
+      "lease_liabilities": "11267900.95",
+      "current_portion_noncurrent_liabilities": "17953972.91",
+      "accounts_receivable": "530411100.01",
+      "inventory": "1165852898.44",
+      "total_assets": "23956066226.53",
+      "total_liabilities": "1656469844.38",
+      "interest_income_9M": "342785781.09",
+      "interest_expense_9M": "2228222.84",
+      "investment_gains_9M": "263936837.60",
+      "FV_gains_9M": "639936759.04",
+      "FX_loss_9M_rounded": "238000000",
+      "cash_restricted_last_disclosed_H1": "29770400.78",
+      "strict_net_cash_before_restrictions": "15662624198.96",
+      "bvps_using_legal_shares": "18.14790194304811418898027102"
+    },
+    "TTM": {
+      "revenue": "6813044484.29",
+      "parent_net_profit": "3840403596.07",
+      "core_profit": "2881479548.93",
+      "CFO": "3319666170.36",
+      "capex": "440491853.99",
+      "FCF": "2879174316.37"
+    }
+  },
+  "model": {
+    "shares": "1220538021",
+    "price_A": "137.79",
+    "price_H": "157.10",
+    "FX_CNY_per_HKD": "0.85544",
+    "marketcap_A_yi": "1681.7793391359",
+    "marketcap_H_equiv_yiCNY": "1640.27645719894104",
+    "mixed_marketcap_yiCNY": "1679.20275522754",
+    "H_equiv_CNY": "134.3896240",
+    "H_premium_pct": "-2.467795921329559474562740400",
+    "ttm": {
+      "revenue": "68.1304448429",
+      "parent_net_profit": "38.4040359607",
+      "core_profit": "28.8147954893",
+      "CFO": "33.1966617036",
+      "capex": "4.4049185399",
+      "FCF": "28.7917431637"
+    },
+    "ratios": {
+      "A": {
+        "PE": "43.79173430774086240035333506",
+        "PE_core": "58.36513189067772184016546721",
+        "PS": "24.68469629126693341512792467",
+        "PB": "7.592613208535820860161807940",
+        "P_FCF": "58.41186237227381925640194092",
+        "FCF_yield_pct": "1.711981024721901271222772239",
+        "EV_sales_strict": "22.38577923075514796874780057"
+      },
+      "H_CNY": {
+        "PE": "42.71104367461495600130069066",
+        "PE_core": "56.92479954640095901935136973",
+        "PS": "24.07552836299845899769270417",
+        "PB": "7.405243009453244472955235853",
+        "P_FCF": "56.97037681507821028312516462",
+        "FCF_yield_pct": "1.755298202162026855300865986",
+        "EV_sales_strict": "21.77661130248667355131258008"
+      }
+    },
+    "annual": [
+      {
+        "year": 2021,
+        "revenue": "25.6201747242",
+        "parent_net_profit": "8.2913754438",
+        "core_profit": "6.1739869855",
+        "CFO": "6.8041453455",
+        "capex": "1.5346770666",
+        "cash": "51.0433840764",
+        "FCF": "5.2694682789",
+        "gross_margin_pct": "48.08011520376015281695188058",
+        "statutory_operating_margin_pct": "35.71443873510006091451743793"
+      },
+      {
+        "year": 2022,
+        "revenue": "36.7225847669",
+        "parent_net_profit": "12.9937805937",
+        "core_profit": "8.8314452839",
+        "CFO": "6.8883538581",
+        "capex": "2.2685964386",
+        "cash": "58.7043791639",
+        "FCF": "4.6197574195",
+        "gross_margin_pct": "46.44313117543042999268252034",
+        "statutory_operating_margin_pct": "38.51912990462978520627572736"
+      },
+      {
+        "year": 2023,
+        "revenue": "22.8573849823",
+        "parent_net_profit": "4.5090981313",
+        "core_profit": "3.6993211314",
+        "CFO": "7.3124969911",
+        "capex": "4.2398677659",
+        "cash": "57.4357464873",
+        "FCF": "3.0726292252",
+        "gross_margin_pct": "58.90972372048255344399812997",
+        "statutory_operating_margin_pct": "20.65134664903832331161146923"
+      },
+      {
+        "year": 2024,
+        "revenue": "36.3891106829",
+        "parent_net_profit": "14.1177892359",
+        "core_profit": "12.4829039882",
+        "CFO": "16.9132150614",
+        "capex": "3.7912189919",
+        "cash": "68.4329685261",
+        "FCF": "13.1219960695",
+        "gross_margin_pct": "58.12992101354160461337026955",
+        "statutory_operating_margin_pct": "38.82736197875668035593788870"
+      },
+      {
+        "year": 2025,
+        "revenue": "54.5631678363",
+        "parent_net_profit": "22.3556997018",
+        "core_profit": "20.2162873494",
+        "CFO": "20.2202055692",
+        "capex": "2.6582873588",
+        "cash": "84.7898437578",
+        "FCF": "17.5619182104",
+        "gross_margin_pct": "62.22797960460654083124518602",
+        "statutory_operating_margin_pct": "42.55209507841952953203298211"
+      }
+    ],
+    "quarters": [
+      {
+        "period": "2025Q4",
+        "revenue": "13.9862829282",
+        "parent_net_profit": "6.0328598425",
+        "core_profit": "5.5420484547"
+      },
+      {
+        "period": "2026Q1",
+        "revenue": "14.6071831643",
+        "parent_net_profit": "8.4737529229",
+        "core_profit": "6.0383535311"
+      },
+      {
+        "period": "2026Q2",
+        "revenue": "18.7477920538",
+        "parent_net_profit": "11.4999922558",
+        "core_profit": "7.1864318322"
+      },
+      {
+        "period": "2026Q3",
+        "revenue": "20.7891866966",
+        "parent_net_profit": "12.3974309395",
+        "core_profit": "10.0479616713"
+      }
+    ],
+    "quality": {
+      "9M_FCF_yi": "24.9579488443",
+      "9M_CFO_core_pct": "124.5369552116482574952140497",
+      "TTM_FCF_core_pct": "99.91999830223136519687865241",
+      "Q3_CFO_yi": "15.7028901154",
+      "Q3_FCF_yi": "14.2306037286",
+      "AR_qoq_pct": "-45.57717189031384002924049123",
+      "inventory_ytd_pct": "30.09784032818411015318236390",
+      "Q3_FCF_core_pct": "141.6267716192318234525071222",
+      "interest_aftertax_annual_yi": "4.11342937308",
+      "founder_economic_pct_each": "1.856615527751756944243525536"
+    },
+    "three_year": {
+      "bull": {
+        "growth": ".35",
+        "PE": 45,
+        "EPS_2029": "7.256922641986258943423770655",
+        "price_2029": "326.5615188893816524540696795",
+        "PV_today_including_dividends": "260.6639604047446181778610345",
+        "total_return_pct": "138.3057688434441196415339861",
+        "H_PV": "304.7133175964937554683683654"
+      },
+      "base": {
+        "growth": ".20",
+        "PE": 32,
+        "EPS_2029": "5.096768714261954155052085837",
+        "price_2029": "163.0965988563825329616667468",
+        "PV_today_including_dividends": "130.9002366067660965059209937",
+        "total_return_pct": "19.6723991990583735841982341",
+        "H_PV": "153.0209443172707571611346134"
+      },
+      "bear": {
+        "growth": ".05",
+        "PE": 22,
+        "EPS_2029": "3.414436853499707568716534067",
+        "price_2029": "75.11761077699356651176374947",
+        "PV_today_including_dividends": "61.05967933701795847921092239",
+        "total_return_pct": "-44.17765383772874191758200924",
+        "H_PV": "71.37809704598564303657874590"
+      }
+    },
+    "dcf": {
+      "profit_2026_yi": "32",
+      "cash_added_yi": "148",
+      "first5_growth": ".20",
+      "next5_growth": ".08",
+      "fcf_conversion": ".90",
+      "exit_PE": "15",
+      "PV": "115.0705659278140707790812542",
+      "PV_75_conversion": "109.0131854162160576992852339",
+      "reverse_first5_growth_pct": "25.16694196817782448103806754",
+      "cash_schedule_IRR_A_pct": "5.526471768932236500685768550",
+      "cash_schedule_IRR_H_pct": "5.860899595407800380434960950",
+      "CCE_based_cash_proxy_yi": "148.0216240646",
+      "cash_conservative_net_proxy_yi": "149.2093686716"
+    },
+    "pressure": {
+      "澜起A": {
+        "scenarios": [
+          {
+            "profit2036_yi": "35",
+            "g": "0",
+            "PE_r8": 12.5,
+            "IRR_r8_pct": -12.598093813956911
+          },
+          {
+            "profit2036_yi": "120",
+            "g": "0.02",
+            "PE_r8": 15.000000000000002,
+            "IRR_r8_pct": 0.6816557842258542
+          },
+          {
+            "profit2036_yi": "250",
+            "g": "0.03",
+            "PE_r8": 17.0,
+            "IRR_r8_pct": 9.713985520210011
+          }
+        ],
+        "weighted_IRR_r8_pct": -1.4958031480321439
+      },
+      "澜起H折人民币": {
+        "scenarios": [
+          {
+            "profit2036_yi": "35",
+            "g": "0",
+            "PE_r8": 12.5,
+            "IRR_r8_pct": -12.379424652363157
+          },
+          {
+            "profit2036_yi": "120",
+            "g": "0.02",
+            "PE_r8": 15.000000000000002,
+            "IRR_r8_pct": 0.9335492979822391
+          },
+          {
+            "profit2036_yi": "250",
+            "g": "0.03",
+            "PE_r8": 17.0,
+            "IRR_r8_pct": 9.988476847409956
+          }
+        ],
+        "weighted_IRR_r8_pct": -1.2493573772358364
+      }
+    },
+    "old_new": {
+      "A_change_from_aug_pct": "-38.58804653028479743281187325",
+      "H_change_from_aug_pct": "-49.48553054662379421221864952"
+    },
+    "price_band_discount_to_DCF": {
+      "95": "17.44196334308872183062163091",
+      "105": "8.751643694992797812792328900"
+    }
+  },
+  "terminal_config": {
+    "澜起A": {
+      "roic": 0.2,
+      "g": [
+        0,
+        0.02,
+        0.03
+      ],
+      "p": [
+        0.3,
+        0.5,
+        0.2
+      ],
+      "irr10": [
+        -14.526811907553572,
+        -2.173509057415479,
+        6.083829328514834
+      ],
+      "k": 0
+    },
+    "澜起H折人民币": {
+      "roic": 0.2,
+      "g": [
+        0,
+        0.02,
+        0.03
+      ],
+      "p": [
+        0.3,
+        0.5,
+        0.2
+      ],
+      "irr10": [
+        -14.312968168961238,
+        -1.928758826104282,
+        6.349238437196569
+      ],
+      "k": 0
+    }
+  },
+  "limits": [
+    "Models are assumptions, not guidance.",
+    "Cashflow currency CNY, H share prices translated at fixed historical FX.",
+    "Vendor and issuer channels share the same underlying financial disclosures.",
+    "10y terminal-only proxy omits interim distributions and cash accumulation; actual cash schedule model is separately presented."
+  ],
+  "assumptions": {
+    "cashflow_currency": "CNY",
+    "r": 0.08,
+    "rf_historical_calibration": 0.017,
+    "beta": 1,
+    "ERP": 0.063,
+    "rf_note": "tool historical calibration, not 2026-11-19 live sovereign yield",
+    "ROIC_steady": 0.2,
+    "g_terminal": [
+      0,
+      0.02,
+      0.03
+    ],
+    "profit_2026_core_yi": 36,
+    "cash_added_DCF_yi": 148,
+    "annual_dividend_assumed": 0.6,
+    "DCF_first5_growth": 0.2,
+    "DCF_next5_growth": 0.08,
+    "DCF_FCF_conversion": 0.9,
+    "discrete_risks": {
+      "客户去库存": "情景",
+      "技术路线丢失": "情景",
+      "一般合规整改": "情景",
+      "极端禁售与巨额罚款": "未建模"
+    }
+  },
+  "terminal_tool_records": [
+    {
+      "arguments": [
+        "pe",
+        "--roic",
+        ".20",
+        "--g",
+        "0",
+        "--r",
+        ".08"
+      ],
+      "output": "PE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 20.0%   g = 0.00%   r = 8.00%\n\n  留存率 g/ROIC   = 0.0000 / 0.20 = 0.0000  (0.0%)\n  分子 1 - 留存率 = 1.0000                    （即派息率 100.0%）\n  分母 r - g      = 0.0800 - 0.0000 = 0.0800  (8.0pct)\n\n  退出 PE = 1.0000 / 0.0800 = 12.5x"
+    },
+    {
+      "arguments": [
+        "pe",
+        "--roic",
+        ".20",
+        "--g",
+        ".02",
+        "--r",
+        ".08"
+      ],
+      "output": "PE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 20.0%   g = 2.00%   r = 8.00%\n\n  留存率 g/ROIC   = 0.0200 / 0.20 = 0.1000  (10.0%)\n  分子 1 - 留存率 = 0.9000                    （即派息率 90.0%）\n  分母 r - g      = 0.0800 - 0.0200 = 0.0600  (6.0pct)\n\n  退出 PE = 0.9000 / 0.0600 = 15.0x"
+    },
+    {
+      "arguments": [
+        "pe",
+        "--roic",
+        ".20",
+        "--g",
+        ".03",
+        "--r",
+        ".08"
+      ],
+      "output": "PE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 20.0%   g = 3.00%   r = 8.00%\n\n  留存率 g/ROIC   = 0.0300 / 0.20 = 0.1500  (15.0%)\n  分子 1 - 留存率 = 0.8500                    （即派息率 85.0%）\n  分母 r - g      = 0.0800 - 0.0300 = 0.0500  (5.0pct)\n\n  退出 PE = 0.8500 / 0.0500 = 17.0x"
+    },
+    {
+      "arguments": [
+        "pe",
+        "--roic",
+        ".20",
+        "--g",
+        "0",
+        "--r",
+        ".10"
+      ],
+      "output": "PE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 20.0%   g = 0.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0000 / 0.20 = 0.0000  (0.0%)\n  分子 1 - 留存率 = 1.0000                    （即派息率 100.0%）\n  分母 r - g      = 0.1000 - 0.0000 = 0.1000  (10.0pct)\n\n  退出 PE = 1.0000 / 0.1000 = 10.0x"
+    },
+    {
+      "arguments": [
+        "pe",
+        "--roic",
+        ".20",
+        "--g",
+        ".02",
+        "--r",
+        ".10"
+      ],
+      "output": "PE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 20.0%   g = 2.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0200 / 0.20 = 0.1000  (10.0%)\n  分子 1 - 留存率 = 0.9000                    （即派息率 90.0%）\n  分母 r - g      = 0.1000 - 0.0200 = 0.0800  (8.0pct)\n\n  退出 PE = 0.9000 / 0.0800 = 11.2x"
+    },
+    {
+      "arguments": [
+        "pe",
+        "--roic",
+        ".20",
+        "--g",
+        ".03",
+        "--r",
+        ".10"
+      ],
+      "output": "PE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 20.0%   g = 3.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0300 / 0.20 = 0.1500  (15.0%)\n  分子 1 - 留存率 = 0.8500                    （即派息率 85.0%）\n  分母 r - g      = 0.1000 - 0.0300 = 0.0700  (7.0pct)\n\n  退出 PE = 0.8500 / 0.0700 = 12.1x"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "35",
+        "--mcap",
+        "1681.7793391359",
+        "--pe",
+        "12.5",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 35 x 12.5x = 438\n  今日市值 = 1,682\n  总倍数   = 0.2601\n  几何年化 = -12.60%\n  股息-稀释 = +0.00%\n\n  IRR = -12.60%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "35",
+        "--mcap",
+        "1681.7793391359",
+        "--pe",
+        "10.0",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 35 x 10.0x = 350\n  今日市值 = 1,682\n  总倍数   = 0.2081\n  几何年化 = -14.53%\n  股息-稀释 = +0.00%\n\n  IRR = -14.53%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "120",
+        "--mcap",
+        "1681.7793391359",
+        "--pe",
+        "15.000000000000002",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 120 x 15.0x = 1,800\n  今日市值 = 1,682\n  总倍数   = 1.0703\n  几何年化 = +0.68%\n  股息-稀释 = +0.00%\n\n  IRR = +0.68%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "120",
+        "--mcap",
+        "1681.7793391359",
+        "--pe",
+        "11.25",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 120 x 11.2x = 1,350\n  今日市值 = 1,682\n  总倍数   = 0.8027\n  几何年化 = -2.17%\n  股息-稀释 = +0.00%\n\n  IRR = -2.17%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "250",
+        "--mcap",
+        "1681.7793391359",
+        "--pe",
+        "17.0",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 250 x 17.0x = 4,250\n  今日市值 = 1,682\n  总倍数   = 2.5271\n  几何年化 = +9.71%\n  股息-稀释 = +0.00%\n\n  IRR = +9.71%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "250",
+        "--mcap",
+        "1681.7793391359",
+        "--pe",
+        "12.14285714285714",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 250 x 12.1x = 3,036\n  今日市值 = 1,682\n  总倍数   = 1.8051\n  几何年化 = +6.08%\n  股息-稀释 = +0.00%\n\n  IRR = +6.08%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "35",
+        "--mcap",
+        "1640.27645719894104",
+        "--pe",
+        "12.5",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 35 x 12.5x = 438\n  今日市值 = 1,640\n  总倍数   = 0.2667\n  几何年化 = -12.38%\n  股息-稀释 = +0.00%\n\n  IRR = -12.38%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "35",
+        "--mcap",
+        "1640.27645719894104",
+        "--pe",
+        "10.0",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 35 x 10.0x = 350\n  今日市值 = 1,640\n  总倍数   = 0.2134\n  几何年化 = -14.31%\n  股息-稀释 = +0.00%\n\n  IRR = -14.31%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "120",
+        "--mcap",
+        "1640.27645719894104",
+        "--pe",
+        "15.000000000000002",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 120 x 15.0x = 1,800\n  今日市值 = 1,640\n  总倍数   = 1.0974\n  几何年化 = +0.93%\n  股息-稀释 = +0.00%\n\n  IRR = +0.93%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "120",
+        "--mcap",
+        "1640.27645719894104",
+        "--pe",
+        "11.25",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 120 x 11.2x = 1,350\n  今日市值 = 1,640\n  总倍数   = 0.8230\n  几何年化 = -1.93%\n  股息-稀释 = +0.00%\n\n  IRR = -1.93%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "250",
+        "--mcap",
+        "1640.27645719894104",
+        "--pe",
+        "17.0",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 250 x 17.0x = 4,250\n  今日市值 = 1,640\n  总倍数   = 2.5910\n  几何年化 = +9.99%\n  股息-稀释 = +0.00%\n\n  IRR = +9.99%"
+    },
+    {
+      "arguments": [
+        "irr",
+        "--profit",
+        "250",
+        "--mcap",
+        "1640.27645719894104",
+        "--pe",
+        "12.14285714285714",
+        "--years",
+        "10",
+        "--payout",
+        "0"
+      ],
+      "output": "IRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 250 x 12.1x = 3,036\n  今日市值 = 1,640\n  总倍数   = 1.8507\n  几何年化 = +6.35%\n  股息-稀释 = +0.00%\n\n  IRR = +6.35%"
+    }
+  ],
+  "terminal_sensitivity": {
+    "A_2pp": "\n澜起A  |  基准 r = 8.00%   Δr = ±2pp   币种 CNY   g平移 +0.0%   Rf = 1.70%   持有期 10 年\n币种合理区间：r ∈ [6.0%, 9.0%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。\n判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。\n角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。\n\n档位               r       期望IRR        相对 r      压力测试\n------------------------------------------------------\nr−2pp        6.00%      +2.50%     -3.50pp  未通过\n基准 r         8.00%      -1.50%     -9.50pp  未通过\nr+2pp       10.00%      -4.23%    -14.23pp  未通过（区间外，仅供参考）\n------------------------------------------------------\n\n【稳定】Δr±2pp 区间内压力测试始终未通过——相对折现率扰动更稳健。\n        未通过仍只约束仓位，不自动等于回避；须与其他五个维度并列决策。\n\n提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。\n\n",
+    "H_2pp": "\n澜起H折人民币  |  基准 r = 8.00%   Δr = ±2pp   币种 CNY   g平移 +0.0%   Rf = 1.70%   持有期 10 年\n币种合理区间：r ∈ [6.0%, 9.0%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。\n判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。\n角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。\n\n档位               r       期望IRR        相对 r      压力测试\n------------------------------------------------------\nr−2pp        6.00%      +2.76%     -3.24pp  未通过\n基准 r         8.00%      -1.25%     -9.25pp  未通过\nr+2pp       10.00%      -3.99%    -13.99pp  未通过（区间外，仅供参考）\n------------------------------------------------------\n\n【稳定】Δr±2pp 区间内压力测试始终未通过——相对折现率扰动更稳健。\n        未通过仍只约束仓位，不自动等于回避；须与其他五个维度并列决策。\n\n提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。\n\n",
+    "A_1pp": "\n澜起A  |  基准 r = 8.00%   Δr = ±1pp   币种 CNY   g平移 +0.0%   Rf = 1.70%   持有期 10 年\n币种合理区间：r ∈ [6.0%, 9.0%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。\n判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。\n角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。\n\n档位               r       期望IRR        相对 r      压力测试\n------------------------------------------------------\nr−1pp        7.00%      +0.28%     -6.72pp  未通过\n基准 r         8.00%      -1.50%     -9.50pp  未通过\nr+1pp        9.00%      -2.97%    -11.97pp  未通过\n------------------------------------------------------\n\n【稳定】Δr±1pp 区间内压力测试始终未通过——相对折现率扰动更稳健。\n        未通过仍只约束仓位，不自动等于回避；须与其他五个维度并列决策。\n\n提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。\n\n"
+  },
+  "final_terminal_audit": {
+    "exit_code": 0,
+    "result": "PASS",
+    "unmodeled_warning": "极端禁售与巨额罚款",
+    "output": "\n========================================================================\n估值口径准出检查   币种=CNY   r=8.00%   ROIC=20%   g=0.0%/2.0%/3.0%\n========================================================================\n\n【C1】币种一致性 — r 与 g 必须用同一个币种\n     CNY 口径基准：中国10年期国债 1.70%（观测）/ 2.5-3.0%（合成）+ ERP 5.18%\n     r 合理区间 [6.0%, 9.0%]   g 上限 2.0%   Rf 1.70%\n     → ✓ 通过\n\n【C2】分母宽度 — r-g 至少 5 个百分点\n     悲观  g= 0.0%  r-g= 8.0pct  PE=     12.5x  g+0.5pct → 13.0x (+4%)  \n     基准  g= 2.0%  r-g= 6.0pct  PE=     15.0x  g+0.5pct → 15.9x (+6%)  \n     乐观  g= 3.0%  r-g= 5.0pct  PE=     17.0x  g+0.5pct → 18.3x (+8%)  \n     → ✓ 通过\n\n【C3】离散风险归属 — 退市/VIE/地缘/监管必须归情景，不得进 r 或 β\n     ✓ 客户去库存 → 情景\n     ✓ 技术路线丢失 → 情景\n     ✓ 一般合规整改 → 情景\n     ⚠ 极端禁售与巨额罚款 → 未建模\n     β = 1.0（默认值，无需理由）\n     → ✓ 通过\n\n========================================================================\n⚠ C3: 「极端禁售与巨额罚款」未建模，必须写进报告的「限制」章节\n\n【准出】三条硬约束全部通过，可以把估值写进报告。\n       但上述 1 条警告必须在报告里显式写出。\n\n"
+  }
+}
