@@ -28,7 +28,10 @@ function internals() {
   return plugin.__internals
 }
 
-const { orderBucket, bucketLists, sectionsOf, moveWithin, moveAcross, togglePinLists } = internals()
+const {
+  orderBucket, bucketLists, sectionsOf,
+  moveWithin, moveAcross, moveToListEdge, togglePinLists,
+} = internals()
 
 function group(name, bucket = '公司', latest = '2026-01-01') {
   return {
@@ -129,6 +132,28 @@ test('unpinning returns to the date order, or to the front of a manual one', () 
     pinned: ['腾讯'],
     rest: ['茅台', '德明利'],
   })
+})
+
+test('moveToListEdge sends a name to either end of its own zone', () => {
+  const list = ['A', 'B', 'C', 'D']
+  assert.deepEqual(moveToListEdge(list, 'C', 'first'), ['C', 'A', 'B', 'D'])
+  assert.deepEqual(moveToListEdge(list, 'B', 'last'), ['A', 'C', 'D', 'B'])
+  assert.deepEqual(list, ['A', 'B', 'C', 'D'], 'input list must not be mutated')
+})
+
+test('moveToListEdge is a no-op at the edge and for unknown names', () => {
+  assert.deepEqual(moveToListEdge(['A', 'B'], 'A', 'first'), ['A', 'B'])
+  assert.deepEqual(moveToListEdge(['A', 'B'], 'B', 'last'), ['A', 'B'])
+  assert.deepEqual(moveToListEdge(['A', 'B'], '已删除', 'first'), ['A', 'B'])
+})
+
+test('the right-click move never changes the pin state', () => {
+  // Unpinned zone: the pins stay exactly as they were, only the order changes.
+  const lists = bucketLists('公司', companies, { buckets: { 公司: { pins: ['茅台'], order: [] } } })
+  assert.deepEqual(lists.pinned, ['茅台'])
+  const rest = moveToListEdge(lists.rest, '德明利', 'first')
+  assert.deepEqual(rest, ['德明利', '腾讯'])
+  assert.deepEqual(lists.pinned, ['茅台'], 'pins are untouched by a move')
 })
 
 test('a drop sequence survives pin, unpin and reorder round trips', () => {

@@ -11,8 +11,11 @@
 #                  `~/.dsh/storages/research-reports/ui-state.json`; it is local
 #                  UI state, never part of the report tree.
 # maxReportBytes   bytes of one report read for the reader (default 400 KiB).
-# routePath / reportRoutePath / assetRoutePath / stateRoutePath
-#                  override the four served paths, e.g. to namespace them.
+# monitorDir       directory under reportsDir holding the daily monitor's files
+#                  (default `daily-monitor`). The panel reads
+#                  `daily-monitor-latest.json` and opens `daily-monitor-latest.md`.
+# routePath / reportRoutePath / assetRoutePath / stateRoutePath / monitorRoutePath
+#                  override the five served paths, e.g. to namespace them.
 - insert:
     - id: research-reports
       name: '@local/research-reports'

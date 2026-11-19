@@ -25,6 +25,38 @@ window.__ModuleLoader__.load({
     const REPORT_URL = '/plugin/research-reports/report.json'
     const ASSET_URL = '/plugin/research-reports/asset'
     const STATE_URL = '/plugin/research-reports/state.json'
+    const MONITOR_URL = '/plugin/research-reports/monitor.json'
+    /** Monitor status → locale key, and the tone its chip is drawn in. */
+    const STATUS_LABEL = {
+      TRIGGERED: 'statusTriggered',
+      NEAR: 'statusNear',
+      FAR: 'statusFar',
+      WARN: 'statusWarn',
+      TODAY: 'statusToday',
+      OVERDUE: 'statusOverdue',
+      REVIEW: 'statusReview',
+      GAP: 'statusGap',
+      OPEN: 'statusOpen',
+      UPCOMING_7D: 'statusUpcoming7',
+      UPCOMING_14D: 'statusUpcoming14',
+      DONE: 'statusDone',
+    }
+    const STATUS_TONE = {
+      TRIGGERED: 'error',
+      OVERDUE: 'error',
+      WARN: 'error',
+      NEAR: 'warn',
+      TODAY: 'warn',
+      GAP: 'warn',
+      REVIEW: 'brand',
+      OPEN: 'muted',
+      UPCOMING_7D: 'muted',
+      UPCOMING_14D: 'muted',
+      FAR: 'muted',
+      DONE: 'success',
+    }
+    /** How many events the monitor view lists before pointing at the report. */
+    const MONITOR_EVENT_ROWS = 12
     const APPROX_SOURCE = '文件时间'
     const BUCKET_ORDER = ['公司', '专题', '大师研究', '筛选池', '监控', '归档', '其他']
     const BUCKET_LABEL = {
@@ -78,6 +110,54 @@ window.__ModuleLoader__.load({
       pin: '置顶',
       unpin: '取消置顶',
       pinHint: '置顶在本分类最前',
+      rowMenuHint: '右键更多操作',
+      menuLabel: '标的操作',
+      moveTop: '移到最前',
+      moveBottom: '移到最后',
+      moveTopInPins: '移到置顶块最前',
+      moveBottomInPins: '移到置顶块最后',
+      movedTop: '已移到最前',
+      movedBottom: '已移到最后',
+      monitor: '每日监控',
+      monitorHint: '进入或接近价格区间的标的，以及待处理的正式披露',
+      backToReports: '返回报告',
+      monitorPrice: '价格区间',
+      monitorTriggered: '进入区间',
+      monitorNear: '接近',
+      monitorEvents: '财报与正式披露',
+      monitorSources: '数据源',
+      monitorOpenReport: '打开完整监控报告',
+      monitorAttentionOnly: '只看进入与接近',
+      monitorAll: '显示全部',
+      monitorNoData: '未找到每日监控数据',
+      monitorNoDataHint: '确认 reports/daily-monitor/daily-monitor-latest.json 存在（由每日监控任务生成）；仍可直接打开最新监控报告。',
+      monitorEmpty: '当前没有进入或接近价格区间的标的',
+      monitorEmptySearch: '没有匹配的监控项',
+      monitorError: '读取监控数据失败',
+      monitorTarget: '标的',
+      monitorMarket: '市场',
+      monitorCondition: '条件',
+      monitorPriceLabel: '现价',
+      monitorGap: '距边界',
+      monitorStatus: '状态',
+      monitorToday: '今天到期',
+      monitorOverdue: '逾期',
+      monitorReview: '待复核',
+      monitorEventsTotal: '共',
+      monitorMoreEvents: '其余 {n} 条见完整报告',
+      monitorResearchDate: '研究日期',
+      statusTriggered: '进入区间',
+      statusNear: '接近',
+      statusFar: '未接近',
+      statusWarn: '越警戒线',
+      statusToday: '今天到期',
+      statusOverdue: '逾期',
+      statusReview: '待复核',
+      statusGap: '缺口',
+      statusOpen: '待处理',
+      statusUpcoming7: '7 天内',
+      statusUpcoming14: '14 天内',
+      statusDone: '已完成',
       reorderHint: '拖拽标的或按 Alt+↑/↓ 调整顺序，置顶的排在本分类最前',
       reorderHintOffSearch: '清空搜索后可拖拽排序',
       reorderHintOffReader: '阅读中：Alt+↑/↓ 仍可调整顺序',
@@ -145,6 +225,54 @@ window.__ModuleLoader__.load({
       pin: 'Pin to top',
       unpin: 'Unpin',
       pinHint: 'Pinned to the top of this section',
+      rowMenuHint: 'Right-click for more',
+      menuLabel: 'Target actions',
+      moveTop: 'Move to the front',
+      moveBottom: 'Move to the end',
+      moveTopInPins: 'Move to the front of the pinned block',
+      moveBottomInPins: 'Move to the end of the pinned block',
+      movedTop: 'Moved to the front',
+      movedBottom: 'Moved to the end',
+      monitor: 'Daily monitor',
+      monitorHint: 'Targets that reached or approach their price zone, plus formal disclosures awaiting review',
+      backToReports: 'Back to reports',
+      monitorPrice: 'Price zones',
+      monitorTriggered: 'In zone',
+      monitorNear: 'Near',
+      monitorEvents: 'Earnings and formal disclosures',
+      monitorSources: 'Sources',
+      monitorOpenReport: 'Open the full monitor report',
+      monitorAttentionOnly: 'Only reached or near',
+      monitorAll: 'Show all',
+      monitorNoData: 'No daily-monitor data found',
+      monitorNoDataHint: 'Check that reports/daily-monitor/daily-monitor-latest.json exists (written by the daily-monitor run); the latest monitor report can still be opened.',
+      monitorEmpty: 'No target has reached or approached its zone',
+      monitorEmptySearch: 'No matching monitoring item',
+      monitorError: 'Could not read the monitor data',
+      monitorTarget: 'Target',
+      monitorMarket: 'Market',
+      monitorCondition: 'Condition',
+      monitorPriceLabel: 'Price',
+      monitorGap: 'Distance',
+      monitorStatus: 'Status',
+      monitorToday: 'due today',
+      monitorOverdue: 'overdue',
+      monitorReview: 'to review',
+      monitorEventsTotal: 'total',
+      monitorMoreEvents: '{n} more in the full report',
+      monitorResearchDate: 'Research date',
+      statusTriggered: 'In zone',
+      statusNear: 'Near',
+      statusFar: 'Not near',
+      statusWarn: 'Above warning',
+      statusToday: 'Due today',
+      statusOverdue: 'Overdue',
+      statusReview: 'To review',
+      statusGap: 'Gap',
+      statusOpen: 'Open',
+      statusUpcoming7: 'Within 7 days',
+      statusUpcoming14: 'Within 14 days',
+      statusDone: 'Done',
       reorderHint: 'Drag a target or press Alt+↑/↓ to reorder; pinned ones stay on top of their section',
       reorderHintOffSearch: 'Clear the search to reorder',
       reorderHintOffReader: 'Reading: Alt+↑/↓ still reorders',
@@ -200,6 +328,7 @@ window.__ModuleLoader__.load({
 .rr-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--dsw-alias-label-secondary); cursor: pointer; }
 .rr-toggle input { width: 14px; height: 14px; accent-color: var(--dsw-alias-brand-primary); cursor: pointer; }
 .rr-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   height: 30px; padding: 0 12px; border-radius: 8px; cursor: pointer; font: inherit; font-size: 13px;
   border: 1px solid var(--dsw-alias-border-l2, var(--dsw-alias-border-l1));
   background: var(--dsw-alias-bg-layer-1);
@@ -207,6 +336,7 @@ window.__ModuleLoader__.load({
 }
 .rr-button:hover { background: var(--dsw-alias-interactive-bg-hover, var(--dsw-alias-bg-layer-2)); }
 .rr-button-danger { border-color: var(--dsw-alias-state-warn-primary); color: var(--dsw-alias-state-warn-primary); }
+.rr-button-active { border-color: var(--dsw-alias-brand-primary); color: var(--dsw-alias-brand-primary); }
 .rr-button:disabled { opacity: .55; cursor: default; }
 .rr-button-quiet { border-color: transparent; background: transparent; color: var(--dsw-alias-label-secondary); }
 .rr-button-quiet:hover { background: var(--dsw-alias-interactive-bg-hover, var(--dsw-alias-bg-layer-2)); color: var(--dsw-alias-label-primary); }
@@ -316,6 +446,24 @@ window.__ModuleLoader__.load({
 .rr-copy:hover { background: var(--dsw-alias-interactive-bg-hover, var(--dsw-alias-bg-layer-2)); color: var(--dsw-alias-label-primary); }
 .rr-copy-done { color: var(--dsw-alias-state-success-primary); }
 .rr-copy-failed { color: var(--dsw-alias-state-error-primary); }
+/* Right-click actions for one 标的 */
+.rr-menu {
+  position: fixed; z-index: 40; display: flex; flex-direction: column; gap: 2px;
+  padding: 4px; border-radius: 10px;
+  border: 1px solid var(--dsw-alias-border-l2, var(--dsw-alias-border-l1));
+  background: var(--dsw-alias-bg-overlay, var(--dsw-alias-bg-layer-2));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .16);
+}
+.rr-menu-item {
+  display: flex; align-items: center; width: 100%; height: 30px; padding: 0 10px;
+  border: 0; border-radius: 8px; background: transparent; color: inherit; font: inherit;
+  font-size: 13px; text-align: left; white-space: nowrap; cursor: pointer;
+}
+.rr-menu-item:hover:not(:disabled), .rr-menu-item:focus-visible {
+  background: var(--dsw-alias-interactive-bg-hover, var(--dsw-alias-bg-layer-1));
+}
+.rr-menu-item:disabled { opacity: .45; cursor: default; }
+
 @media (hover: none) {
   .rr-copy, .rr-pin { opacity: 1; }
   .rr-grip { display: none; }
@@ -327,6 +475,61 @@ window.__ModuleLoader__.load({
 .rr-state-text { max-width: 560px; font-size: 12px; color: var(--dsw-alias-label-secondary); text-align: center; line-height: 1.6; overflow-wrap: anywhere; }
 .rr-state-path { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: var(--dsw-alias-label-secondary); overflow-wrap: anywhere; text-align: center; }
 .rr-error .rr-state-title { color: var(--dsw-alias-state-error-primary); }
+
+/* Daily monitor */
+.rr-monitor-head {
+  display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; margin-bottom: 14px;
+  border: 0.5px solid var(--dsw-alias-border-l1); border-radius: 12px;
+  background: var(--dsw-alias-bg-layer-1);
+}
+.rr-monitor-titleline { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.rr-monitor-title { margin: 0; font-size: 16px; font-weight: 600; }
+.rr-monitor-date { font-size: 12px; color: var(--dsw-alias-label-secondary); font-variant-numeric: tabular-nums; }
+.rr-monitor-summary { font-size: 12px; color: var(--dsw-alias-label-secondary); }
+.rr-monitor-sources { font-size: 11px; color: var(--dsw-alias-label-secondary); overflow-wrap: anywhere; }
+.rr-monitor-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.rr-monitor-card { margin-bottom: 16px; }
+.rr-monitor-cardhead { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.rr-monitor-cardtitle { margin: 0; font-size: 14px; font-weight: 600; }
+.rr-monitor-cardhead .rr-button { margin-left: auto; }
+.rr-status {
+  display: inline-flex; align-items: center; padding: 0 7px; height: 20px; border-radius: 999px;
+  font-size: 11px; border: 0.5px solid var(--dsw-alias-border-l1); color: var(--dsw-alias-label-secondary);
+  white-space: nowrap;
+}
+.rr-status-error { border-color: var(--dsw-alias-state-error-primary); color: var(--dsw-alias-state-error-primary); }
+.rr-status-warn { border-color: var(--dsw-alias-state-warn-primary); color: var(--dsw-alias-state-warn-primary); }
+.rr-status-success { border-color: var(--dsw-alias-state-success-primary); color: var(--dsw-alias-state-success-primary); }
+.rr-status-brand { border-color: var(--dsw-alias-brand-primary); color: var(--dsw-alias-brand-primary); }
+.rr-monitor-table { font-size: 12.5px; }
+.rr-monitor-table td { vertical-align: top; }
+.rr-monitor-target { display: flex; align-items: baseline; gap: 6px; }
+.rr-monitor-priority {
+  flex: 0 0 auto; padding: 0 5px; border-radius: 5px; font-size: 10px;
+  color: var(--dsw-alias-label-secondary); border: 0.5px solid var(--dsw-alias-border-l1);
+}
+.rr-link-button {
+  padding: 0; border: 0; background: transparent; font: inherit; font-size: 13px; font-weight: 600;
+  color: var(--dsw-alias-brand-primary); cursor: pointer; text-align: left;
+}
+.rr-link-button:hover { text-decoration: underline; }
+.rr-monitor-zone { margin-top: 2px; font-size: 11px; color: var(--dsw-alias-label-secondary); }
+.rr-monitor-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rr-monitor-counts { display: flex; gap: 6px; flex-wrap: wrap; }
+.rr-monitor-counts-inline { display: inline-flex; margin-left: 4px; }
+.rr-monitor-counts-inline .rr-status { height: 18px; padding: 0 6px; }
+.rr-monitor-events { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.rr-monitor-event {
+  display: flex; align-items: baseline; gap: 8px; padding: 6px 8px; border-radius: 8px;
+  font-size: 12.5px;
+}
+.rr-monitor-event:hover { background: var(--dsw-alias-interactive-bg-hover, var(--dsw-alias-bg-layer-1)); }
+.rr-monitor-event-name { flex: 0 0 auto; font-weight: 600; }
+.rr-monitor-event-title {
+  flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  color: var(--dsw-alias-label-secondary);
+}
+.rr-monitor-event-date { flex: 0 0 auto; font-size: 11px; color: var(--dsw-alias-label-secondary); font-variant-numeric: tabular-nums; }
 
 /* Reader */
 .rr-doc { display: flex; flex-direction: column; min-height: 100%; }
@@ -559,6 +762,17 @@ window.__ModuleLoader__.load({
     function bucketLabel(t, bucket) {
       const key = BUCKET_LABEL[bucket]
       return key ? t(key) : bucket
+    }
+
+    /** Move one name to the start or the end of a list, without changing pin state. */
+    function moveToListEdge(list, name, edge) {
+      const from = list.indexOf(name)
+      if (from < 0) return list.slice()
+      const next = list.slice()
+      next.splice(from, 1)
+      if (edge === 'first') next.unshift(name)
+      else next.push(name)
+      return next
     }
 
     /**
@@ -794,6 +1008,228 @@ window.__ModuleLoader__.load({
       return { state, refresh }
     }
 
+    /** One monitor status as a chip; only the tones this panel names are drawn. */
+    function statusChip(t, status) {
+      if (!status) return null
+      const labelKey = STATUS_LABEL[status]
+      const tone = STATUS_TONE[status] || 'muted'
+      return h('span', { className: 'rr-status rr-status-' + tone, title: status },
+        labelKey ? t(labelKey) : status)
+    }
+
+    /** The daily monitor's own summary document, fetched once per open/refresh. */
+    function useMonitorData() {
+      const [state, setState] = React.useState({ status: 'loading', data: null, error: '' })
+      const [nonce, setNonce] = React.useState(0)
+      const refresh = React.useCallback(() => setNonce(n => n + 1), [])
+
+      React.useEffect(() => {
+        const controller = new AbortController()
+        let alive = true
+        setState(previous => (previous.data
+          ? { ...previous, status: 'refreshing', error: '' }
+          : { status: 'loading', data: null, error: '' }))
+        fetch(MONITOR_URL, { cache: 'no-store', signal: controller.signal, headers: { accept: 'application/json' } })
+          .then(async (response) => {
+            if (!response.ok) throw new Error('HTTP ' + response.status)
+            return response.json()
+          })
+          .then((payload) => {
+            if (alive) setState({ status: 'ready', data: payload, error: '' })
+          })
+          .catch((error) => {
+            if (!alive || (error && error.name === 'AbortError')) return
+            setState(previous => ({
+              status: 'error',
+              data: previous.data,
+              error: error && error.message ? error.message : String(error),
+            }))
+          })
+        return () => {
+          alive = false
+          controller.abort()
+        }
+      }, [nonce])
+
+      return { state, refresh }
+    }
+
+    /**
+     * The daily monitor, in the same form the project's Pages site shows it: the
+     * price zones that are reached or nearly reached, then the disclosures still
+     * waiting on a human. Every 标的 links to its research report.
+     */
+    function MonitorView(props) {
+      const { t, state, refresh, openReport, needle } = props
+      const [filter, setFilter] = React.useState('auto')
+      const payload = state.data
+      const matches = (value) => !needle || String(value || '').toLowerCase().includes(needle)
+
+      if (state.status === 'loading') {
+        return h('section', { className: 'rr-reports rr-monitor' },
+          h('div', { className: 'rr-state' }, h('div', { className: 'rr-state-title' }, t('loading'))))
+      }
+
+      if (state.status === 'error' && !payload) {
+        return h('section', { className: 'rr-reports rr-monitor' },
+          h('div', { className: 'rr-state rr-error' },
+            h('div', { className: 'rr-state-title' }, t('monitorError')),
+            h('div', { className: 'rr-state-text' }, state.error),
+            h('button', { type: 'button', className: 'rr-button', onClick: refresh }, t('retry'))))
+      }
+
+      if (!payload || !payload.ok) {
+        return h('section', { className: 'rr-reports rr-monitor' },
+          h('div', { className: 'rr-state' },
+            h('div', { className: 'rr-state-title' }, t('monitorNoData')),
+            h('div', { className: 'rr-state-text' }, payload && payload.error ? payload.error : t('monitorNoDataHint')),
+            h('div', { className: 'rr-monitor-actions' },
+              payload && payload.reportPath
+                ? h('button', {
+                  type: 'button',
+                  className: 'rr-button',
+                  onClick: () => openReport(payload.reportPath),
+                }, t('monitorOpenReport'))
+                : null,
+              h('button', { type: 'button', className: 'rr-button rr-button-quiet', onClick: refresh }, t('refresh')))))
+      }
+
+      const counts = payload.counts || {}
+      const priceRows = Array.isArray(payload.price) ? payload.price : []
+      const attention = priceRows.filter(row => row.status === 'TRIGGERED' || row.status === 'NEAR')
+      // Default to the zones that matter; fall back to every zone when there are
+      // none. A search is an explicit question, so it always looks at every zone.
+      const attentionOnly = filter === 'auto' ? attention.length > 0 : filter === 'attention'
+      const showAll = !attentionOnly || Boolean(needle)
+      const visible = (showAll ? priceRows : attention)
+        .filter(row => matches(row.name) || matches(row.targetId) || matches(row.zoneLabel) || matches(row.market))
+      const eventRows = (Array.isArray(payload.events) ? payload.events : [])
+        .filter(row => matches(row.name) || matches(row.targetId) || matches(row.title))
+      const shownEvents = eventRows.slice(0, MONITOR_EVENT_ROWS)
+      const hiddenEvents = eventRows.length - shownEvents.length
+      const sources = Array.isArray(payload.sources) ? payload.sources : []
+
+      const head = h('div', { className: 'rr-monitor-head' },
+        h('div', { className: 'rr-monitor-titleline' },
+          h('h2', { className: 'rr-monitor-title' }, t('monitor')),
+          payload.date
+            ? h('span', { className: 'rr-monitor-date' },
+              payload.date + (payload.timezone ? ' · ' + payload.timezone : ''))
+            : null,
+          payload.status
+            ? h('span', {
+              className: 'rr-status ' + (payload.status === 'OK' ? 'rr-status-success' : 'rr-status-warn'),
+              title: payload.generatedAt ? t('generated') + ' ' + payload.generatedAt.slice(0, 16).replace('T', ' ') : undefined,
+            }, payload.status)
+            : null,
+        ),
+        payload.summary ? h('div', { className: 'rr-monitor-summary' }, payload.summary) : null,
+        sources.length
+          ? h('div', { className: 'rr-monitor-sources' },
+            t('monitorSources') + '：' + sources.map(row => row.source + ' ' + row.status).join(' · '))
+          : null,
+        h('div', { className: 'rr-monitor-actions' },
+          payload.reportPath
+            ? h('button', {
+              type: 'button',
+              className: 'rr-button',
+              onClick: () => openReport(payload.reportPath),
+            }, t('monitorOpenReport'))
+            : null,
+          h('button', {
+            type: 'button',
+            className: 'rr-button rr-button-quiet',
+            onClick: refresh,
+            disabled: state.status === 'refreshing',
+          }, state.status === 'refreshing' ? t('refreshing') : t('refresh'))),
+      )
+
+      const priceHead = h('div', { className: 'rr-monitor-cardhead' },
+        h('h3', { className: 'rr-monitor-cardtitle' }, t('monitorPrice')),
+        h('span', { className: 'rr-monitor-counts' },
+          h('span', { className: 'rr-status rr-status-error' }, t('monitorTriggered') + ' ' + (counts.triggered || 0)),
+          h('span', { className: 'rr-status rr-status-warn' }, t('monitorNear') + ' ' + (counts.near || 0)),
+        ),
+        h('button', {
+          type: 'button',
+          className: 'rr-button rr-button-quiet',
+          onClick: () => setFilter(attentionOnly ? 'all' : 'attention'),
+        }, attentionOnly ? t('monitorAll') + ' · ' + priceRows.length : t('monitorAttentionOnly')),
+      )
+
+      const priceTable = visible.length
+        ? h('div', { className: 'rr-doc-tablewrap' },
+          h('table', { className: 'rr-doc-table rr-monitor-table' },
+            h('thead', null, h('tr', null,
+              h('th', null, t('monitorTarget')),
+              h('th', null, t('monitorMarket')),
+              h('th', { className: 'rr-monitor-num' }, t('monitorCondition')),
+              h('th', { className: 'rr-monitor-num' }, t('monitorPriceLabel')),
+              h('th', { className: 'rr-monitor-num' }, t('monitorGap')),
+              h('th', null, t('monitorStatus')),
+            )),
+            h('tbody', null, visible.map((row, rowIndex) => h('tr', {
+              key: row.targetId + '|' + row.name + '|' + row.zoneLabel + '|' + row.market + '|' + rowIndex,
+              title: [row.note, row.whyNow].filter(Boolean).join('\n'),
+            },
+            h('td', null,
+              h('div', { className: 'rr-monitor-target' },
+                row.priority ? h('span', { className: 'rr-monitor-priority' }, row.priority) : null,
+                row.researchPath
+                  ? h('button', {
+                    type: 'button',
+                    className: 'rr-link-button',
+                    onClick: () => openReport(row.researchPath),
+                    title: row.researchDate ? t('monitorResearchDate') + ' ' + row.researchDate : undefined,
+                  }, row.name)
+                  : h('span', null, row.name),
+              ),
+              row.zoneLabel ? h('div', { className: 'rr-monitor-zone' }, row.zoneLabel) : null,
+            ),
+            h('td', null, row.market || '-'),
+            h('td', { className: 'rr-monitor-num' }, row.condition || '-'),
+            h('td', { className: 'rr-monitor-num' }, row.price || '-'),
+            h('td', { className: 'rr-monitor-num' }, row.gap || '-'),
+            h('td', null, statusChip(t, row.status)),
+            )))))
+        : h('div', { className: 'rr-hint' }, needle ? t('monitorEmptySearch') : t('monitorEmpty'))
+
+      const eventsHead = h('div', { className: 'rr-monitor-cardhead' },
+        h('h3', { className: 'rr-monitor-cardtitle' }, t('monitorEvents')),
+        h('span', { className: 'rr-monitor-counts' },
+          counts.today ? h('span', { className: 'rr-status rr-status-warn' }, t('monitorToday') + ' ' + counts.today) : null,
+          counts.overdue ? h('span', { className: 'rr-status rr-status-error' }, t('monitorOverdue') + ' ' + counts.overdue) : null,
+          counts.review ? h('span', { className: 'rr-status rr-status-brand' }, t('monitorReview') + ' ' + counts.review) : null,
+          h('span', { className: 'rr-status' }, t('monitorEventsTotal') + ' ' + eventRows.length),
+        ),
+      )
+
+      const eventsList = shownEvents.length
+        ? h('ul', { className: 'rr-monitor-events' },
+          shownEvents.map((row, rowIndex) => h('li', { key: row.targetId + '|' + row.title + '|' + row.status + '|' + rowIndex, className: 'rr-monitor-event', title: row.title },
+            statusChip(t, row.status),
+            row.researchPath
+              ? h('button', {
+                type: 'button',
+                className: 'rr-link-button rr-monitor-event-name',
+                onClick: () => openReport(row.researchPath),
+              }, row.name)
+              : h('span', { className: 'rr-monitor-event-name' }, row.name),
+            h('span', { className: 'rr-monitor-event-title' }, row.title),
+            row.date ? h('span', { className: 'rr-monitor-event-date' }, row.date) : null,
+          )))
+        : h('div', { className: 'rr-hint' }, needle ? t('monitorEmptySearch') : t('monitorEmpty'))
+
+      return h('section', { className: 'rr-reports rr-monitor', 'aria-label': t('monitor') },
+        head,
+        h('div', { className: 'rr-monitor-card' }, priceHead, priceTable),
+        h('div', { className: 'rr-monitor-card' }, eventsHead, eventsList,
+          hiddenEvents > 0
+            ? h('div', { className: 'rr-hint' }, t('monitorMoreEvents').replace('{n}', String(hiddenEvents)))
+            : null),
+      )
+    }
+
     const EMPTY_PREFS = { version: 1, buckets: {} }
 
     /** Read pins and ordering once, then keep the panel's copy authoritative. */
@@ -918,7 +1354,7 @@ window.__ModuleLoader__.load({
 
     function GroupRow(props) {
       const {
-        group, drag, dropHint, onSelect, onTogglePin, onMoveByKeyboard,
+        group, drag, dropHint, onSelect, onTogglePin, onMoveByKeyboard, onOpenMenu,
         onDragStart, onDragEnd, onDragOver, onDropRow, t,
       } = props
       const pinned = Boolean(group.pinned)
@@ -941,13 +1377,26 @@ window.__ModuleLoader__.load({
         'aria-label': group.name
           + (pinned ? ', ' + t('pinHint') : '')
           + ', ' + group.shown.length + ' ' + t('reports'),
-        title: (group.ticker ? group.ticker + ' · ' : '') + group.name + (pinned ? ' · ' + t('pinHint') : ''),
+        title: (group.ticker ? group.ticker + ' · ' : '') + group.name
+          + (pinned ? ' · ' + t('pinHint') : '')
+          + ' · ' + t('rowMenuHint'),
         'aria-keyshortcuts': 'Alt+ArrowUp Alt+ArrowDown',
+        'aria-haspopup': 'menu',
         onClick: () => onSelect(group.name),
+        onContextMenu: (event) => {
+          event.preventDefault()
+          event.stopPropagation()
+          onOpenMenu(event, group)
+        },
         onKeyDown: (event) => {
           // The pin button is a real button inside this row; its own key events
           // must not also select the row.
           if (event.target !== event.currentTarget) return
+          if (event.key === 'ContextMenu' || (event.shiftKey && event.key === 'F10')) {
+            event.preventDefault()
+            onOpenMenu(event, group)
+            return
+          }
           if (event.altKey && (event.key === 'ArrowUp' || event.key === 'ArrowDown')) {
             event.preventDefault()
             onMoveByKeyboard(group, event.key === 'ArrowUp' ? -1 : 1)
@@ -1006,12 +1455,15 @@ window.__ModuleLoader__.load({
       const [query, setQuery] = React.useState('')
       const [showDrafts, setShowDrafts] = React.useState(false)
       const [selected, setSelected] = React.useState('')
+      const [pane, setPane] = React.useState('reports')
       const [docStack, setDocStack] = React.useState([])
       const [copyState, setCopyState] = React.useState({ path: '', ok: true })
       const [toast, setToast] = React.useState('')
       const [resetArmed, setResetArmed] = React.useState(false)
       const [drag, setDrag] = React.useState(null)
       const [dropHint, setDropHint] = React.useState(null)
+      const [menu, setMenu] = React.useState(null)
+      const menuRef = React.useRef(null)
       const copyTimer = React.useRef(null)
       const toastTimer = React.useRef(null)
       const resetTimer = React.useRef(null)
@@ -1032,6 +1484,7 @@ window.__ModuleLoader__.load({
       const savedAt = saveState.at || 0
 
       const { doc, retry: retryDoc } = useReportDoc(t, docPath)
+      const { state: monitorState, refresh: refreshMonitor } = useMonitorData()
 
       /** Remember where each report was left, so 「返回上一篇」 lands there. */
       React.useEffect(() => {
@@ -1065,16 +1518,20 @@ window.__ModuleLoader__.load({
         stopDragScroll()
       }, [stopDragScroll])
 
-      /** Escape steps back out of the reader from anywhere in the page. */
+      /** Escape steps out of the reader, or leaves the monitor view. */
       React.useEffect(() => {
-        if (!docPath) return undefined
+        if (!docPath && pane !== 'monitor') return undefined
         const onKeyDown = (event) => {
           if (event.key !== 'Escape') return
-          setDocStack(previous => (previous.length > 1 ? previous.slice(0, -1) : []))
+          if (docPath) {
+            setDocStack(previous => (previous.length > 1 ? previous.slice(0, -1) : []))
+            return
+          }
+          setPane('reports')
         }
         window.addEventListener('keydown', onKeyDown)
         return () => window.removeEventListener('keydown', onKeyDown)
-      }, [docPath])
+      }, [docPath, pane])
 
       const view = React.useMemo(() => buildView(state.data, showDrafts), [state.data, showDrafts])
       const needle = query.trim().toLowerCase()
@@ -1100,6 +1557,13 @@ window.__ModuleLoader__.load({
 
       /** Leave the reader entirely, back to the report list of the active 标的. */
       const closeDoc = React.useCallback(() => setDocStack([]), [])
+
+      /** Open a report from the monitor view: that is a reports-view action. */
+      const openFromMonitor = React.useCallback((path) => {
+        if (!path) return
+        setPane('reports')
+        openDoc(path)
+      }, [openDoc])
 
       /** Step back one report when the reader was entered through an in-report link. */
       const backDoc = React.useCallback(() => {
@@ -1267,11 +1731,75 @@ window.__ModuleLoader__.load({
         setDropHint(null)
       }, [applyLists, drag, dropHint, prefs, savedOrder, stopDragScroll, view.groups])
 
+      /** Right-click (or ContextMenu / Shift+F10) opens the 标的 actions. */
+      const openMenu = React.useCallback((event, group) => {
+        const rect = event.currentTarget.getBoundingClientRect()
+        const fromKeyboard = event.type === 'keydown'
+        menuAnchor.current = event.currentTarget
+        setMenu({
+          name: group.name,
+          bucket: group.bucket,
+          pinned: Boolean(group.pinned),
+          x: fromKeyboard ? rect.left + 6 : event.clientX,
+          y: fromKeyboard ? rect.bottom - 4 : event.clientY,
+        })
+        setDropHint(null)
+      }, [])
+
+      const menuAnchor = React.useRef(null)
+      const closeMenu = React.useCallback((restoreFocus) => {
+        setMenu(null)
+        if (restoreFocus !== false && menuAnchor.current && menuAnchor.current.focus) {
+          try {
+            menuAnchor.current.focus()
+          } catch {}
+        }
+      }, [])
+
+      /** Move one 标的 to either end of its own zone; pin state is untouched. */
+      const moveToEdge = React.useCallback((group, edge) => {
+        const lists = bucketLists(group.bucket, view.groups, prefs)
+        const pinned = Boolean(group.pinned)
+        const list = pinned ? lists.pinned : lists.rest
+        const next = moveToListEdge(list, group.name, edge)
+        if (next.join('\u0000') === list.join('\u0000')) return
+        applyLists(group.bucket, pinned
+          ? { pinned: next, rest: savedOrder(group.bucket) }
+          : { pinned: lists.pinned, rest: next })
+        showToast(edge === 'first' ? t('movedTop') : t('movedBottom'))
+      }, [applyLists, prefs, savedOrder, showToast, t, view.groups])
+
       const metaBits = []
       if (view.groups.length) metaBits.push(count(view.groups.length) + ' ' + t('groups'))
       if (view.visibleReports) metaBits.push(count(view.visibleReports) + ' ' + t('reports'))
       if (view.latest) metaBits.push(t('latest') + ' ' + view.latest)
       if (view.hiddenDrafts) metaBits.push(count(view.hiddenDrafts) + ' ' + t('drafts'))
+
+      React.useEffect(() => {
+        if (!menu) return undefined
+        const onPointerDown = (event) => {
+          if (menuRef.current && menuRef.current.contains(event.target)) return
+          closeMenu(false)
+        }
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') return
+          // Capture phase: closing the menu must not also step out of the reader.
+          event.preventDefault()
+          event.stopPropagation()
+          closeMenu(true)
+        }
+        const onViewportChange = () => closeMenu(false)
+        document.addEventListener('mousedown', onPointerDown, true)
+        document.addEventListener('keydown', onKeyDown, true)
+        window.addEventListener('scroll', onViewportChange, true)
+        window.addEventListener('resize', onViewportChange)
+        return () => {
+          document.removeEventListener('mousedown', onPointerDown, true)
+          document.removeEventListener('keydown', onKeyDown, true)
+          window.removeEventListener('scroll', onViewportChange, true)
+          window.removeEventListener('resize', onViewportChange)
+        }
+      }, [menu, closeMenu])
 
       /** Confirm a landed write once, so pinning and dragging show a result. */
       React.useEffect(() => {
@@ -1300,6 +1828,21 @@ window.__ModuleLoader__.load({
             'aria-label': t('search'),
             onChange: event => setQuery(event.currentTarget.value),
           }),
+          h('button', {
+            type: 'button',
+            className: 'rr-button' + (pane === 'monitor' ? ' rr-button-active' : ''),
+            onClick: () => setPane(current => (current === 'monitor' ? 'reports' : 'monitor')),
+            title: t('monitorHint'),
+            'aria-pressed': pane === 'monitor' ? 'true' : 'false',
+          },
+          pane === 'monitor' ? t('backToReports') : t('monitor'),
+          monitorState.data && monitorState.data.ok
+            ? h('span', { className: 'rr-monitor-counts rr-monitor-counts-inline' },
+              h('span', { className: 'rr-status rr-status-error' },
+                t('monitorTriggered') + ' ' + (monitorState.data.counts.triggered || 0)),
+              h('span', { className: 'rr-status rr-status-warn' },
+                t('monitorNear') + ' ' + (monitorState.data.counts.near || 0)))
+            : null),
           h('label', { className: 'rr-toggle' },
             h('input', { type: 'checkbox', checked: showDrafts, onChange: event => setShowDrafts(event.currentTarget.checked) }),
             t('showDrafts'),
@@ -1340,7 +1883,8 @@ window.__ModuleLoader__.load({
         ))
       }
 
-      const shell = (children) => h('div', { className: 'rr-root' }, h('style', null, CSS), header, notices, children)
+      const shell = (children, overlay) => h('div', { className: 'rr-root' },
+        h('style', null, CSS), header, notices, children, overlay || null)
 
       if (state.status === 'loading') {
         return shell(h('div', { className: 'rr-state' }, h('div', { className: 'rr-state-title' }, t('loading'))))
@@ -1409,11 +1953,13 @@ window.__ModuleLoader__.load({
                   t,
                   onSelect: (name) => {
                     // Switching or re-picking a 标的 always returns to its list.
+                    setPane('reports')
                     closeDoc()
                     setSelected(name)
                   },
                   onTogglePin: togglePin,
                   onMoveByKeyboard: moveByKeyboard,
+                  onOpenMenu: openMenu,
                   onDragStart,
                   onDragEnd,
                   onDragOver,
@@ -1543,6 +2089,81 @@ window.__ModuleLoader__.load({
           : h('div', { className: 'rr-hint' }, t('emptySelection')),
       )
 
+      const menuView = (() => {
+        if (!menu) return null
+        const lists = bucketLists(menu.bucket, view.groups, prefs)
+        const zone = menu.pinned ? lists.pinned : lists.rest
+        const index = zone.indexOf(menu.name)
+        const subject = { name: menu.name, bucket: menu.bucket, pinned: menu.pinned }
+        const items = [
+          {
+            key: 'pin',
+            label: menu.pinned ? t('unpin') : t('pin'),
+            onRun: () => togglePin(subject),
+          },
+          {
+            key: 'top',
+            label: menu.pinned ? t('moveTopInPins') : t('moveTop'),
+            disabled: index <= 0,
+            onRun: () => moveToEdge(subject, 'first'),
+          },
+          {
+            key: 'bottom',
+            label: menu.pinned ? t('moveBottomInPins') : t('moveBottom'),
+            disabled: index === zone.length - 1,
+            onRun: () => moveToEdge(subject, 'last'),
+          },
+        ]
+        const width = 196
+        const height = items.length * 32 + 12
+        const viewportWidth = typeof window === 'undefined' ? 1024 : window.innerWidth
+        const viewportHeight = typeof window === 'undefined' ? 768 : window.innerHeight
+        const left = Math.max(8, Math.min(menu.x, viewportWidth - width - 8))
+        const top = Math.max(8, Math.min(menu.y, viewportHeight - height - 8))
+        const runItem = (item) => {
+          if (item.disabled) return
+          item.onRun()
+          closeMenu(true)
+        }
+        return h('div', {
+          className: 'rr-menu',
+          role: 'menu',
+          'aria-label': t('menuLabel'),
+          ref: menuRef,
+          style: { left: left + 'px', top: top + 'px', minWidth: width + 'px' },
+          onContextMenu: (event) => event.preventDefault(),
+          onKeyDown: (event) => {
+            if (event.key === 'Escape') {
+              event.preventDefault()
+              event.stopPropagation()
+              closeMenu(true)
+              return
+            }
+            if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+              event.preventDefault()
+              const buttons = menuRef.current
+                ? [...menuRef.current.querySelectorAll('[role="menuitem"]:not(:disabled)')]
+                : []
+              if (!buttons.length) return
+              const current = buttons.indexOf(document.activeElement)
+              const step = event.key === 'ArrowDown' ? 1 : -1
+              buttons[(current + step + buttons.length) % buttons.length].focus()
+              return
+            }
+            if (event.key === 'Tab') closeMenu(false)
+          },
+        },
+        items.map((item, itemIndex) => h('button', {
+          key: item.key,
+          type: 'button',
+          role: 'menuitem',
+          className: 'rr-menu-item',
+          disabled: Boolean(item.disabled),
+          autoFocus: itemIndex === 0,
+          onClick: () => runItem(item),
+        }, item.label)))
+      })()
+
       const note = h('div', { className: 'rr-note' },
         t('source'),
         data.reportsDir ? ' · ' + data.reportsDir : '',
@@ -1553,7 +2174,17 @@ window.__ModuleLoader__.load({
         toast ? ' · ' + toast : '',
       )
 
-      return shell(h('div', { className: 'rr-main' }, h('div', { className: 'rr-body' }, nav, docPath ? docView : listView), note))
+      const content = pane === 'monitor'
+        ? h(MonitorView, {
+          t,
+          state: monitorState,
+          refresh: refreshMonitor,
+          openReport: openFromMonitor,
+          needle,
+        })
+        : (docPath ? docView : listView)
+
+      return shell(h('div', { className: 'rr-main' }, h('div', { className: 'rr-body' }, nav, content), note), menuView)
     }
 
     /** Sidebar entry glyph: a report sheet with ruled lines, drawn in the row's own color. */
@@ -1613,7 +2244,10 @@ window.__ModuleLoader__.load({
        * Pure ordering helpers, exposed for the package's Node unit test. They
        * take and return plain data, so the test never renders anything.
        */
-      __internals: { buildView, orderBucket, bucketLists, sectionsOf, moveWithin, moveAcross, togglePinLists },
+      __internals: {
+        buildView, orderBucket, bucketLists, sectionsOf,
+        moveWithin, moveAcross, moveToListEdge, togglePinLists,
+      },
     }
   },
 })

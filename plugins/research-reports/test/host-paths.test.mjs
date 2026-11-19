@@ -11,7 +11,10 @@ import { tmpdir } from 'node:os'
 import path from 'node:path'
 import { after, before, test } from 'node:test'
 
-import { fileFor, normalizeViewState, safeTarget } from '../index.js'
+import {
+  buildMonitorPayload, fileFor, monitorCondition, monitorGap, monitorLinkToPath,
+  normalizeViewState, safeTarget,
+} from '../index.js'
 
 let root
 let reportsDir
@@ -104,4 +107,98 @@ test('normalizeViewState keeps only the documented shape', () => {
   assert.equal({}.pins, undefined, 'Object.prototype must stay clean')
   assert.deepEqual(normalizeViewState(null), { version: 1, buckets: {} })
   assert.deepEqual(normalizeViewState('nope'), { version: 1, buckets: {} })
+})
+
+test('monitor zone wording matches the monitor report', () => {
+  assert.equal(monitorCondition({ low: 65, high: 90, direction: 'range' }), '[65.00, 90.00]')
+  assert.equal(monitorCondition({ high: 160, low: null, direction: 'below' }), '≤ 160.00')
+  assert.equal(monitorCondition({ low: 22.2, direction: 'above' }), '≥ 22.20')
+  assert.equal(monitorCondition({ low: 22.2 }), '≥ 22.20')
+  assert.equal(monitorCondition({ high: null, low: null }), '')
+})
+
+test('monitor distance wording matches the monitor report', () => {
+  assert.equal(monitorGap({ status: 'TRIGGERED', metadata: { price: 77.39, low: 65, high: 90 } }), '区间内')
+  assert.equal(monitorGap({ status: 'TRIGGERED', metadata: { price: 38.59, low: 45, high: 55 } }), '低于下界 14.2%')
+  assert.equal(monitorGap({ status: 'NEAR', metadata: { price: 166.67, high: 160, direction: 'below' } }), '4.2%')
+  assert.equal(monitorGap({ status: 'FAR', metadata: { price: 120, low: 90, high: 110 } }), '9.1%')
+  assert.equal(monitorGap({ status: 'WARN', metadata: { price: 200, low: 150, direction: 'above' } }), '已越警戒线')
+  assert.equal(monitorGap({ status: 'FAR', metadata: {} }), '')
+})
+
+test('monitor research links resolve into the reports tree', () => {
+  assert.equal(
+    monitorLinkToPath('../%E6%8B%BC%E5%A4%9A%E5%A4%9A/%E6%8B%BC%E5%A4%9A%E5%A4%9A-research-20261031.md'),
+    'reports/拼多多/拼多多-research-20261031.md',
+  )
+  assert.equal(monitorLinkToPath('../Qualcomm/Qualcomm-earnings-FY2026Q3.md'), 'reports/Qualcomm/Qualcomm-earnings-FY2026Q3.md')
+  assert.equal(monitorLinkToPath('reports/x/y.md'), 'reports/x/y.md')
+  assert.equal(monitorLinkToPath('https://example.com/x.md'), '')
+  assert.equal(monitorLinkToPath('../x/y.txt'), '')
+  assert.equal(monitorLinkToPath('../../etc/passwd.md'), '')
+  assert.equal(monitorLinkToPath(''), '')
+})
+
+test('the monitor payload keeps zones and events, and counts them', () => {
+  const raw = {
+    schema: 1,
+    date: '2026-11-18',
+    timezone: 'Asia/Shanghai',
+    status: 'DEGRADED',
+    summary: 'P0 4 · P1 13',
+    source_health: [{ source: 'quotes', status: 'OK', safe_message: null }],
+    items: [
+      {
+        section: 'price', priority: 'P0', name: 'PDD Holdings', target_id: '拼多多', status: 'TRIGGERED',
+        title: '65—90美元条件式研究分批带：TRIGGERED', why_now: '现价 77.39 ≤ 区间上界 90.00',
+        metadata: { price: 77.39, market: 'US', zone_label: '65—90美元', low: 65, high: 90, direction: 'range', research_link: '../%E6%8B%BC%E5%A4%9A%E5%A4%9A/x.md', research_date: '2026-10-31' },
+      },
+      {
+        section: 'price', priority: 'P1', name: 'Qualcomm', target_id: 'Qualcomm', status: 'NEAR',
+        title: '理想买入带：NEAR', why_now: '现价 166.67，距触发线 160.00 5% 内',
+        metadata: { price: 166.67, market: 'US', zone_label: '理想买入带', low: null, high: 160, direction: 'below', research_link: '../Qualcomm/y.md' },
+      },
+      {
+        section: 'price', priority: 'P2', name: 'Far Co', target_id: 'Far', status: 'FAR',
+        metadata: { price: 300, low: 100, high: 200, direction: 'range' },
+      },
+      {
+        section: 'price', priority: 'P0', name: 'Warning Co', target_id: 'Warn', status: 'WARN',
+        metadata: { price: 500, low: 400, direction: 'above' },
+      },
+      {
+        section: 'disclosures', priority: 'P0', name: '腾讯控股', target_id: '腾讯', status: 'TODAY',
+        title: '2026Q3正式业绩：今天到期', metadata: { date: '2026-11-18', research_link: '../腾讯/z.md' },
+        source_urls: ['https://example.com/a.pdf'],
+      },
+      {
+        section: 'other', priority: 'P1', name: 'Accenture', target_id: 'Accenture', status: 'DONE',
+        title: '已完成', metadata: { date: '2026-11-13' },
+      },
+    ],
+  }
+  const payload = buildMonitorPayload(raw, { monitorDir: 'daily-monitor', reportPath: 'reports/daily-monitor/daily-monitor-latest.md' })
+  assert.equal(payload.ok, true)
+  assert.equal(payload.date, '2026-11-18')
+  assert.equal(payload.reportPath, 'reports/daily-monitor/daily-monitor-latest.md')
+  assert.deepEqual(payload.sources, [{ source: 'quotes', status: 'OK' }])
+  assert.equal(payload.counts.triggered, 1)
+  assert.equal(payload.counts.near, 1)
+  assert.equal(payload.counts.far, 1)
+  assert.equal(payload.counts.events, 1, 'only unfinished events are counted')
+  assert.deepEqual(payload.price.map(row => row.status), ['TRIGGERED', 'NEAR', 'FAR'], 'warnings are left out and statuses rank')
+  assert.equal(payload.price[0].researchPath, 'reports/拼多多/x.md')
+  assert.equal(payload.price[0].condition, '[65.00, 90.00]')
+  assert.equal(payload.price[1].gap, '4.2%')
+  assert.equal(payload.events[0].status, 'TODAY')
+  assert.equal(payload.events[0].url, 'https://example.com/a.pdf')
+  assert.equal(payload.events[0].researchPath, 'reports/腾讯/z.md')
+})
+
+test('a monitor payload without items is reported as missing', () => {
+  const payload = buildMonitorPayload(null, {})
+  assert.equal(payload.ok, false)
+  assert.deepEqual(payload.price, [])
+  assert.deepEqual(payload.events, [])
+  assert.equal(payload.counts.triggered, 0)
 })

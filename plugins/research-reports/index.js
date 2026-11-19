@@ -34,6 +34,24 @@ const DEFAULT_ROUTE = '/plugin/research-reports/data.json'
 const DEFAULT_REPORT_ROUTE = '/plugin/research-reports/report.json'
 const DEFAULT_ASSET_ROUTE = '/plugin/research-reports/asset'
 const DEFAULT_STATE_ROUTE = '/plugin/research-reports/state.json'
+const DEFAULT_MONITOR_ROUTE = '/plugin/research-reports/monitor.json'
+/** Files the daily-monitor tool writes beside the reports it renders. */
+const MONITOR_DIR = 'daily-monitor'
+const MONITOR_JSON_NAME = 'daily-monitor-latest.json'
+const MONITOR_MD_NAME = 'daily-monitor-latest.md'
+const MAX_MONITOR_BYTES = 16 * 1024 * 1024
+const MAX_MONITOR_ROWS = 400
+/** How the monitor's own statuses rank when the panel orders them. */
+const EVENT_STATUS_RANK = {
+  TODAY: 0,
+  REVIEW: 1,
+  OVERDUE: 2,
+  GAP: 3,
+  OPEN: 4,
+  UPCOMING_7D: 5,
+  UPCOMING_14D: 6,
+  DONE: 7,
+}
 const HEAD_BYTES = 32 * 1024
 const SKIP_DIRS = new Set(['_index', '__pycache__', 'node_modules', '.git'])
 /**
@@ -114,14 +132,19 @@ function normalizeConfig(config) {
   const maxReportBytes = Number.isFinite(raw.maxReportBytes) && raw.maxReportBytes > 0
     ? Math.min(Math.floor(raw.maxReportBytes), 8 * 1024 * 1024)
     : DEFAULT_MAX_REPORT_BYTES
+  const monitorDir = typeof raw.monitorDir === 'string' && raw.monitorDir.trim()
+    ? raw.monitorDir.trim().replace(/^\.\//, '')
+    : MONITOR_DIR
   return {
     reportsDir,
     routePath: route(raw.routePath, DEFAULT_ROUTE),
     reportRoutePath: route(raw.reportRoutePath, DEFAULT_REPORT_ROUTE),
     assetRoutePath: route(raw.assetRoutePath, DEFAULT_ASSET_ROUTE),
     stateRoutePath: route(raw.stateRoutePath, DEFAULT_STATE_ROUTE),
+    monitorRoutePath: route(raw.monitorRoutePath, DEFAULT_MONITOR_ROUTE),
     bucketOverrides: overrides,
     statePath,
+    monitorDir,
     maxReportBytes: Math.min(maxReportBytes, MAX_INPUT_CHARS * 4),
   }
 }
@@ -372,6 +395,191 @@ export function normalizeViewState(raw) {
   return state
 }
 
+/** One finite number from a monitor payload field, or null. */
+function asNumber(value) {
+  if (typeof value === 'number') return Number.isFinite(value) ? value : null
+  if (typeof value === 'string' && value.trim()) {
+    const parsed = Number(value)
+    return Number.isFinite(parsed) ? parsed : null
+  }
+  return null
+}
+
+/** Prices keep the monitor's own two-decimal form. */
+export function formatMonitorPrice(value) {
+  const number = asNumber(value)
+  return number === null ? '' : number.toFixed(2)
+}
+
+/** The zone in words: `[65.00, 90.00]`, `≤ 60.00`, `≥ 22.20`, or empty. */
+export function monitorCondition(metadata) {
+  const source = metadata && typeof metadata === 'object' ? metadata : {}
+  const low = asNumber(source.low)
+  const high = asNumber(source.high)
+  const direction = typeof source.direction === 'string' ? source.direction : 'range'
+  if (direction === 'below' && high !== null) return `≤ ${high.toFixed(2)}`
+  if (direction === 'above' && low !== null) return `≥ ${low.toFixed(2)}`
+  if (low !== null && high !== null) return `[${low.toFixed(2)}, ${high.toFixed(2)}]`
+  if (low !== null) return `≥ ${low.toFixed(2)}`
+  if (high !== null) return `≤ ${high.toFixed(2)}`
+  return ''
+}
+
+/** Distance to the condition, worded the way the monitor report words it. */
+export function monitorGap(item) {
+  const source = item && typeof item === 'object' ? item : {}
+  const metadata = source.metadata && typeof source.metadata === 'object' ? source.metadata : {}
+  const status = typeof source.status === 'string' ? source.status : ''
+  const price = asNumber(metadata.price)
+  const low = asNumber(metadata.low)
+  const high = asNumber(metadata.high)
+  const direction = typeof metadata.direction === 'string' ? metadata.direction : 'range'
+  if (status === 'WARN') return '已越警戒线'
+  if (status === 'TRIGGERED') {
+    if (direction === 'range' && price !== null && low !== null && low > 0 && price < low) {
+      return `低于下界 ${(((low - price) / low) * 100).toFixed(1)}%`
+    }
+    return '区间内'
+  }
+  let boundary = null
+  if (direction === 'below') boundary = high
+  else if (direction === 'above') boundary = low
+  else if (price !== null) {
+    if (low !== null && price < low) boundary = low
+    else if (high !== null && price > high) boundary = high
+    else boundary = high === null ? low : high
+  }
+  if (price === null || boundary === null || boundary <= 0) return ''
+  return `${((Math.abs(price - boundary) / boundary) * 100).toFixed(1)}%`
+}
+
+/**
+ * The monitor links to research reports relative to its own directory, e.g.
+ * `../拼多多/拼多多-research-20261031.md`; the panel needs `reports/...`.
+ */
+export function monitorLinkToPath(link, monitorDir = MONITOR_DIR) {
+  const raw = typeof link === 'string' ? link.trim() : ''
+  if (!raw) return ''
+  if (/^[a-z][a-z0-9+.-]*:/i.test(raw) || raw.startsWith('//')) return ''
+  let decoded = raw
+  try {
+    decoded = decodeURIComponent(raw)
+  } catch {
+    return ''
+  }
+  const dir = String(monitorDir || MONITOR_DIR).replace(/^\/+|\/+$/g, '')
+  const joined = decoded.startsWith('reports/')
+    ? normalizePath(decoded)
+    : normalizePath(`reports/${dir}/${decoded}`)
+  if (!joined || !joined.startsWith('reports/') || !/\.md$/i.test(joined)) return ''
+  return joined
+}
+
+function monitorRow(item, monitorDir) {
+  const metadata = item && item.metadata && typeof item.metadata === 'object' ? item.metadata : {}
+  return {
+    name: String(item.name || item.target_id || ''),
+    targetId: String(item.target_id || ''),
+    priority: String(item.priority || ''),
+    status: String(item.status || ''),
+    resolved: Boolean(item.resolved),
+    needsHumanReview: Boolean(item.needs_human_review),
+    researchPath: monitorLinkToPath(metadata.research_link, monitorDir),
+    researchDate: String(metadata.research_date || ''),
+  }
+}
+
+/**
+ * Reduce the daily monitor's JSON document to what the panel shows: the price
+ * zones that are triggered or near, and the events still waiting on a human.
+ */
+export function buildMonitorPayload(raw, options = {}) {
+  const monitorDir = options.monitorDir || MONITOR_DIR
+  const payload = {
+    ok: false,
+    date: '',
+    timezone: '',
+    status: '',
+    summary: '',
+    sources: [],
+    reportPath: options.reportPath || '',
+    counts: { triggered: 0, near: 0, far: 0, warn: 0, events: 0, today: 0, overdue: 0, review: 0 },
+    price: [],
+    events: [],
+  }
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.items)) return payload
+  payload.ok = true
+  payload.date = String(raw.date || '')
+  payload.timezone = String(raw.timezone || '')
+  payload.status = String(raw.status || '')
+  payload.summary = String(raw.summary || '')
+  if (Array.isArray(raw.source_health)) {
+    payload.sources = raw.source_health
+      .filter(row => row && typeof row === 'object')
+      .map(row => ({ source: String(row.source || ''), status: String(row.status || '') }))
+      .filter(row => row.source)
+  }
+
+  for (const item of raw.items) {
+    if (!item || typeof item !== 'object') continue
+    const metadata = item.metadata && typeof item.metadata === 'object' ? item.metadata : {}
+    const status = String(item.status || '')
+    if (item.section === 'price') {
+      // The monitor's ascending price warnings live on their own sheet; the
+      // reader shows the zones that are reached or nearly reached.
+      if (metadata.direction === 'above') continue
+      if (status === 'TRIGGERED') payload.counts.triggered += 1
+      else if (status === 'NEAR') payload.counts.near += 1
+      else if (status === 'WARN') payload.counts.warn += 1
+      else payload.counts.far += 1
+      if (payload.price.length >= MAX_MONITOR_ROWS) continue
+      payload.price.push({
+        ...monitorRow(item, monitorDir),
+        market: String(metadata.market || ''),
+        zoneLabel: String(metadata.zone_label || item.title || ''),
+        condition: monitorCondition(metadata),
+        price: formatMonitorPrice(metadata.price),
+        gap: monitorGap(item),
+        whyNow: String(item.why_now || ''),
+        note: String(metadata.note || ''),
+      })
+      continue
+    }
+    if (status === 'DONE') continue
+    if (item.resolved) continue
+    payload.counts.events += 1
+    if (status === 'TODAY') payload.counts.today += 1
+    else if (status === 'OVERDUE') payload.counts.overdue += 1
+    else if (status === 'REVIEW') payload.counts.review += 1
+    if (payload.events.length >= MAX_MONITOR_ROWS) continue
+    const sources = Array.isArray(item.source_urls) ? item.source_urls : []
+    payload.events.push({
+      ...monitorRow(item, monitorDir),
+      kind: item.section === 'disclosures' ? 'disclosure' : 'event',
+      title: String(item.title || ''),
+      date: String(metadata.date || metadata.published_at || ''),
+      url: typeof sources[0] === 'string' ? sources[0] : '',
+    })
+  }
+
+  const priceRank = { TRIGGERED: 0, WARN: 1, NEAR: 2, FAR: 3 }
+  payload.price.sort((a, b) => {
+    const left = priceRank[a.status] === undefined ? 9 : priceRank[a.status]
+    const right = priceRank[b.status] === undefined ? 9 : priceRank[b.status]
+    if (left !== right) return left - right
+    const priority = a.priority.localeCompare(b.priority)
+    return priority === 0 ? a.name.localeCompare(b.name, 'zh-Hans-CN') : priority
+  })
+  payload.events.sort((a, b) => {
+    const left = EVENT_STATUS_RANK[a.status] === undefined ? 9 : EVENT_STATUS_RANK[a.status]
+    const right = EVENT_STATUS_RANK[b.status] === undefined ? 9 : EVENT_STATUS_RANK[b.status]
+    if (left !== right) return left - right
+    const priority = a.priority.localeCompare(b.priority)
+    return priority === 0 ? a.name.localeCompare(b.name, 'zh-Hans-CN') : priority
+  })
+  return payload
+}
+
 export function apply(ctx, config) {
   const options = normalizeConfig(config)
   /** Parsed head per absolute path, reused while the file keeps its mtime and size. */
@@ -379,6 +587,7 @@ export function apply(ctx, config) {
   /** Parsed Markdown per absolute path, most recently used last. */
   const docCache = new Map()
   let cached = null
+  let monitorCache = null
   let stateCache = null
   let stateWriteChain = Promise.resolve()
   /** Real path of the reports root, resolved once per plugin instance. */
@@ -655,6 +864,34 @@ export function apply(ctx, config) {
    * to `resource` routes, so this one is a plain Node handler that owns its
    * response for every method.
    */
+  /** The daily monitor's own summary document, cached until its file moves. */
+  async function loadMonitor() {
+    const dir = path.join(options.reportsDir, options.monitorDir)
+    const mdInfo = await stat(path.join(dir, MONITOR_MD_NAME)).catch(() => null)
+    const reportPath = mdInfo && mdInfo.isFile()
+      ? `reports/${options.monitorDir}/${MONITOR_MD_NAME}`
+      : ''
+    const info = await stat(path.join(dir, MONITOR_JSON_NAME)).catch(() => null)
+    const missing = { ...buildMonitorPayload(null, { monitorDir: options.monitorDir, reportPath }), exists: false }
+    if (!info || !info.isFile()) return missing
+    const stamp = `${info.mtimeMs}:${info.size}`
+    if (monitorCache && monitorCache.stamp === stamp) return monitorCache.value
+    if (info.size > MAX_MONITOR_BYTES) return { ...missing, exists: true, error: '监控数据过大' }
+    let raw
+    try {
+      raw = JSON.parse(await readFile(path.join(dir, MONITOR_JSON_NAME), 'utf8'))
+    } catch (error) {
+      return { ...missing, exists: true, error: '监控数据无法解析' }
+    }
+    const value = {
+      ...buildMonitorPayload(raw, { monitorDir: options.monitorDir, reportPath }),
+      exists: true,
+      generatedAt: new Date(info.mtimeMs).toISOString(),
+    }
+    monitorCache = { stamp, value }
+    return value
+  }
+
   async function handleState(req, res) {
     const send = (status, payload, extra) => {
       const body = JSON.stringify(payload)
@@ -783,10 +1020,29 @@ export function apply(ctx, config) {
     }
   })
 
+  route(options.monitorRoutePath, async (request) => {
+    if (!readOnlyMethod(request.method)) {
+      return new Response('Method Not Allowed', { status: 405, headers: { allow: 'GET, HEAD' } })
+    }
+    try {
+      const body = JSON.stringify(await loadMonitor())
+      return new Response(request.method === 'HEAD' ? null : body, {
+        headers: {
+          'content-type': 'application/json; charset=utf-8',
+          'cache-control': 'no-store',
+          'x-content-type-options': 'nosniff',
+        },
+      })
+    } catch (error) {
+      return failure(error && error.message ? error.message : String(error), 500)
+    }
+  })
+
   routeHandler(options.stateRoutePath, (req, res) => handleState(req, res))
 
   ctx.effect(() => () => {
     cached = null
+    monitorCache = null
     headCache.clear()
     docCache.clear()
     stateCache = null
