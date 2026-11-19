@@ -91,7 +91,11 @@ class DailyMonitorCliTest(unittest.TestCase):
             self.assertEqual(disclosure_summaries, [])
             self.assertTrue(state.exists())
             state_payload = json.loads(state.read_text(encoding="utf-8"))
-            self.assertGreaterEqual(len(state_payload["documents"]), 3)
+            self.assertEqual(state_payload["documents"], {})
+            self.assertEqual(state_payload["event_states"], {})
+            self.assertEqual(state_payload["sources"], {})
+            self.assertEqual(state_payload["completeness"], {})
+            self.assertTrue(all(item["section"] == "price" for item in report_payload["items"]))
             self.assertEqual(
                 (REPO / "data" / "monitoring-state.json").read_text(encoding="utf-8"),
                 initial_state,
@@ -103,11 +107,11 @@ class DailyMonitorCliTest(unittest.TestCase):
         self.assertEqual(completed.returncode, 2)
         self.assertIn("--today 仅能与 --offline-fixtures 一起使用", completed.stderr)
 
-    def test_check_ai_requires_key_without_printing_secret(self):
-        completed = run_cli("--check-ai")
-
-        self.assertEqual(completed.returncode, 1)
-        self.assertIn("DEEPSEEK_API_KEY", completed.stderr)
+    def test_removed_ai_flags_are_not_accepted(self):
+        for flag in ("--check-ai", "--no-ai"):
+            completed = run_cli(flag)
+            self.assertEqual(completed.returncode, 2)
+            self.assertIn("unrecognized arguments", completed.stderr)
 
     def test_check_is_read_only_and_validates_configuration(self):
         initial_state = (REPO / "data" / "monitoring-state.json").read_text(encoding="utf-8")
@@ -127,8 +131,6 @@ class DailyMonitorCliTest(unittest.TestCase):
         self.assertEqual(completed.returncode, 0)
         for flag in (
             "--check",
-            "--check-ai",
-            "--no-ai",
             "--offline-fixtures",
             "--today",
             "--watch",

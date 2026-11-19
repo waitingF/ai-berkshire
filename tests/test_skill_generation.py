@@ -34,10 +34,9 @@ class SkillGenerationSetTest(unittest.TestCase):
         for requirement in (
             "python3 tools/daily_monitor.py --check",
             "--offline-fixtures",
-            "--check-ai",
             "价格监控",
-            "财报与正式披露监控",
-            "其他监控",
+            "仅更新 `price_states`",
+            "不联网",
             "不构成买卖或仓位结论",
         ):
             with self.subTest(requirement=requirement):

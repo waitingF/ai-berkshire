@@ -1,11 +1,11 @@
-"""Render and atomically persist the unified three-section daily monitor."""
+"""Render and atomically persist the price monitor."""
 
 from __future__ import annotations
 
 import json
 import os
-from dataclasses import asdict
-from datetime import date, datetime
+from dataclasses import asdict, replace
+from datetime import date
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -13,12 +13,19 @@ from .models import MonitorItem, ReportPaths, RunResult
 from .transitions import PRIORITY_RANK
 
 
-SECTION_HEADINGS = (
-    ("price", "## 一、价格监控"),
-    ("disclosures", "## 二、财报与正式披露监控"),
-    ("other", "## 三、其他监控"),
-)
-SECTION_ORDER = {name: index for index, (name, _) in enumerate(SECTION_HEADINGS)}
+def price_result(result: RunResult) -> RunResult:
+    """Exclude retired monitoring data, including when rendering old snapshots."""
+    def included(item: MonitorItem) -> bool:
+        return item.section == "price" or item.metadata.get("service") == "quotes"
+
+    health = tuple(row for row in result.source_health if row.source == "quotes")
+    return replace(
+        result,
+        status="DEGRADED" if any(row.status not in {"OK", "RECOVERED"} for row in health) else "OK",
+        items=tuple(item for item in result.items if included(item)),
+        notification_items=tuple(item for item in result.notification_items if included(item)),
+        source_health=health,
+    )
 
 
 def _is_above_price(item: MonitorItem) -> bool:
@@ -37,27 +44,6 @@ def _sorted_items(items: Iterable[MonitorItem]) -> list[MonitorItem]:
     )
 
 
-def _workflow_owners(items: Iterable[MonitorItem]) -> set[str]:
-    owners: set[str] = set()
-    selected: dict[str, MonitorItem] = {}
-    for item in items:
-        if not item.next_workflow:
-            continue
-        current = selected.get(item.target_id)
-        candidate_key = (
-            PRIORITY_RANK.get(item.priority, -1),
-            -SECTION_ORDER.get(item.section, 99),
-        )
-        current_key = (
-            PRIORITY_RANK.get(current.priority, -1),
-            -SECTION_ORDER.get(current.section, 99),
-        ) if current else (-1, -99)
-        if current is None or candidate_key > current_key:
-            selected[item.target_id] = item
-    owners.update(item.fingerprint for item in selected.values())
-    return owners
-
-
 def _summary(result: RunResult) -> str:
     changed = [
         item
@@ -70,9 +56,8 @@ def _summary(result: RunResult) -> str:
     p0 = sum(item.priority == "P0" for item in changed)
     p1 = sum(item.priority == "P1" for item in changed)
     prices = sum(item.section == "price" for item in changed)
-    disclosures = sum(item.section == "disclosures" for item in changed)
     errors = sum(health.status not in {"OK", "RECOVERED"} for health in result.source_health)
-    return f"P0 {p0} · P1 {p1} · 新增价格 {prices} · 新增披露 {disclosures} · 异常 {errors}"
+    return f"P0 {p0} · P1 {p1} · 新增价格 {prices} · 异常 {errors}"
 
 
 def _as_number(value: Any) -> float | None:
@@ -201,170 +186,32 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
     return lines
 
 
-def _item_date(item: MonitorItem) -> str:
-    return str(item.metadata.get("published_at") or item.metadata.get("date") or "-")
-
-
-def _item_evidence(item: MonitorItem) -> str:
-    if item.verified_facts:
-        rows = []
-        for fact in item.verified_facts:
-            page = f"，第 {fact.page} 页" if fact.page else ""
-            rows.append(
-                f"{fact.fact}（{fact.confidence}{page}；[正式来源]({fact.official_url})）"
-            )
-        return "<br>".join(rows)
-    if item.source_urls:
-        return "<br>".join(
-            f"[正式来源{index if len(item.source_urls) > 1 else ''}]({url})"
-            for index, url in enumerate(item.source_urls, start=1)
-        )
-    return "-"
-
-
-def _item_workflow(item: MonitorItem, *, show_workflow: bool) -> str:
-    if not show_workflow or not item.next_workflow:
-        return "-"
-    return f"`{item.next_workflow} {item.target_id}`"
-
-
-def _item_notes(item: MonitorItem) -> str:
-    notes = []
-    metadata_note = str(item.metadata.get("note") or "").strip()
-    if metadata_note:
-        notes.append(metadata_note)
-    notes.extend(item.limitations)
-    if item.resolved:
-        notes.append("已解除")
-    if item.needs_human_review:
-        notes.append("待人工确认")
-    return "<br>".join(notes) or "-"
-
-
-def _render_disclosure_table(
-    items: Iterable[MonitorItem], *, workflow_owners: set[str]
-) -> list[str]:
-    rows = list(items)
-    summaries = [
-        item for item in rows if item.metadata.get("kind") == "disclosure_summary"
-    ]
-    regular = [item for item in rows if item not in summaries]
-    lines: list[str] = []
-    if summaries:
-        lines.extend(
-            [
-                "| 优先级 | 标的 | 市场 | 更新摘要 | 公告数 | 最新时间 | 状态 |",
-                "|---|---|---|---|---:|---|---|",
-            ]
-        )
-        for item in summaries:
-            updates = []
-            for update in item.metadata.get("updates") or []:
-                summary = str(update.get("summary") or "新增公告")
-                urls = update.get("source_urls") or []
-                updates.append(f"[{summary}]({urls[0]})" if urls else summary)
-            latest = str(item.metadata.get("latest_time") or "")
-            try:
-                latest = datetime.fromisoformat(latest).strftime("%H:%M")
-            except ValueError:
-                latest = latest or "-"
-            cells = (
-                item.priority,
-                _target_name(item),
-                item.metadata.get("market") or "-",
-                "<br>".join(updates) or "-",
-                item.metadata.get("announcement_count") or 0,
-                latest,
-                item.status,
-            )
-            lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
-        lines.append("")
-    if regular:
-        lines.extend(
-            [
-                "| 优先级 | 标的 | 披露/事项 | 日期 | 状态 | 为什么现在 | 核验事实/正式来源 | 下一流程 | 备注 |",
-                "|---|---|---|---|---|---|---|---|---|",
-            ]
-        )
-    for item in regular:
-        cells = (
-            item.priority,
-            _target_name(item),
-            item.title,
-            _item_date(item),
-            item.status,
-            item.why_now,
-            _item_evidence(item),
-            _item_workflow(item, show_workflow=item.fingerprint in workflow_owners),
-            _item_notes(item),
-        )
-        lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
-    if regular:
-        lines.append("")
-    return lines
-
-
-def _render_other_table(
-    items: Iterable[MonitorItem], *, workflow_owners: set[str]
-) -> list[str]:
-    lines = [
-        "| 优先级 | 标的/数据源 | 事项 | 日期 | 状态 | 为什么现在 | 下一流程 | 备注 |",
-        "|---|---|---|---|---|---|---|---|",
-    ]
-    for item in items:
-        cells = (
-            item.priority,
-            _target_name(item),
-            item.title,
-            _item_date(item),
-            item.status,
-            item.why_now,
-            _item_workflow(item, show_workflow=item.fingerprint in workflow_owners),
-            _item_notes(item),
-        )
-        lines.append("| " + " | ".join(_markdown_cell(cell) for cell in cells) + " |")
-    lines.append("")
-    return lines
-
-
 def render_markdown(result: RunResult, *, run_date: date | None = None) -> str:
+    result = price_result(result)
     day = run_date or date.today()
-    workflow_owners = _workflow_owners(result.items)
     health = "、".join(
         f"{row.source}={row.status}" + (f"（{row.safe_message}）" if row.safe_message else "")
         for row in result.source_health
     ) or "无外部数据源"
     lines = [
-        "# 每日监控",
+        "# 每日监控 · 价格监控",
         "",
         f"**数据截止日**：{day.isoformat()}（Asia/Shanghai）",
         f"**运行状态**：{result.status}",
         f"**摘要**：{_summary(result)}",
         f"**数据源状态**：{health}",
         "",
-        "> 价格条件、正式披露与其他研究缺口在同一份报告中展示；优先级表示研究处理顺序，不代表交易信号。",
+        "> 根据已登记价格区间与腾讯行情快照更新；优先级表示研究复核紧迫度，不代表交易信号。",
         "",
     ]
-    for section, heading in SECTION_HEADINGS:
-        lines.extend([heading, ""])
-        rows = _sorted_items(item for item in result.items if item.section == section)
-        if section == "other":
-            rows = [item for item in rows if not item.resolved]
-        if not rows:
-            lines.extend(["无新增或持续事项。", ""])
-            continue
-        if section == "price":
-            lines.extend(_render_price_table(rows))
-            continue
-        if section == "disclosures":
-            lines.extend(_render_disclosure_table(rows, workflow_owners=workflow_owners))
-            continue
-        lines.extend(_render_other_table(rows, workflow_owners=workflow_owners))
+    lines.extend(["## 一、价格监控", ""])
+    rows = _sorted_items(item for item in result.items if item.section == "price")
+    lines.extend(_render_price_table(rows))
     lines.extend(
         [
             "---",
             "",
-            "价格达到条件只触发研究复核；正式披露的模型判断也只用于研究分流。",
+            "价格达到条件只触发研究复核。",
             "本报告用于学习和研究，不构成投资建议，也不会自动作出买卖或仓位结论。",
             "",
         ]
@@ -385,6 +232,7 @@ def _json_value(value: Any) -> Any:
 
 
 def report_payload(result: RunResult, *, run_date: date) -> dict[str, Any]:
+    result = price_result(result)
     return {
         "schema": 1,
         "date": run_date.isoformat(),

@@ -85,8 +85,7 @@ class BuildGitHubPagesTest(unittest.TestCase):
             (daily_dir / "daily-monitor-latest.md").write_text(
                 "# 每日监控\n\n"
                 "## 一、价格监控\n\n无。\n\n"
-                "## 二、财报与正式披露监控\n\n腾讯正式披露。\n\n"
-                "## 三、其他监控\n\n无。\n",
+                "腾讯行情快照。\n",
                 encoding="utf-8",
             )
             (root / "README.md").write_text(
@@ -174,7 +173,8 @@ class BuildGitHubPagesTest(unittest.TestCase):
             self.assertIn("每日监控", report_html)
             self.assertIn("组合", report_html)
             self.assertIn("价格监控", daily_monitor_html)
-            self.assertIn("财报与正式披露监控", daily_monitor_html)
+            self.assertNotIn("财报与正式披露监控", daily_monitor_html)
+            self.assertNotIn("其他监控", daily_monitor_html)
             self.assertIn("reports/portfolio-latest.html", daily_monitor_html)
             self.assertIn("腾讯", index_html)
             self.assertIn("reports/%E8%85%BE%E8%AE%AF/index.html", index_html)

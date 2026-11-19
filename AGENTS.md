@@ -16,7 +16,7 @@ DeepSeek Harness users.
   `skills/*.md`.
 - `tools/*.py`: shared financial validation and data tools used by both systems.
 - `reports/`: research outputs. Do not rewrite unrelated reports while changing
-  tooling or skills. `reports/daily-monitor/` holds the active unified weekday
+  tooling or skills. `reports/daily-monitor/` holds the active weekday price
   monitor. `reports/trigger-scan/` is a historical archive and is not updated
   or composed into the active Pages entry.
 - `scripts/sync-codex-skills.py`: regenerates Codex skills from `skills/*.md`.
@@ -73,24 +73,25 @@ DeepSeek Harness users.
 
 - Any research report containing an explicit buy/wait/avoid price band or a
   review/earnings checkpoint must register it in `data/triggers.json`
-  (zones/events; see `skills/trigger-monitor.md`). **Not registered = not
-  monitored.**
+  (zones/events; see `skills/trigger-monitor.md`). **Unregistered price zones are not
+  monitored; registered events are retained for manual review only.**
 - After updating `data/triggers.json`, bump the `updated` field and run
   `python3 tools/trigger_scanner.py --check`.
 - Before pushing any change touching `data/triggers.json` or
   `tools/trigger_scanner.py`, run `bash scripts/prepush-check.sh` (local
   validation, no notifications) and get explicit user confirmation to commit.
-- Daily monitor: `python3 tools/daily_monitor.py` writes the exact three sections
-  `价格监控`, `财报与正式披露监控`, and `其他监控`. GitHub Actions
-  `.github/workflows/daily-monitor.yml` runs weekdays at 17:30 Asia/Shanghai.
-- Official disclosure scope is CNINFO, HKEXnews, and SEC EDGAR. AKShare is
-  fallback-only; do not add general web search to this runtime pipeline.
+- Daily monitor: `python3 tools/daily_monitor.py` refreshes only `价格监控`
+  from registered price zones and Tencent quotes. Announcement collection, AI
+  triage, research-gap checks and event monitoring are removed from this flow.
+  Keep existing announcement/event state intact. Schedules are configured in
+  `.github/workflows/daily-monitor.yml` and local launchd settings.
 - `data/triggers.json` remains human-authored configuration while
   `data/monitoring-state.json` is machine-authored runtime state. Do not merge
   them. Do not commit downloaded PDFs, full announcement text, extracted text,
   complete model prompts, or secrets.
 - Pages pins `reports/daily-monitor/daily-monitor-latest.md` as "每日监控".
-  Historical trigger-scan files remain browsable only as an archive.
+  The active page displays prices only; historical combined daily reports and
+  trigger-scan files remain browsable as archives.
 
 ## Editing Rules
 

@@ -35,22 +35,22 @@ reports/
 ├── AI产业研究/AI-轮动判断-20260509.md — AI 主题综合判断可归入 AI产业研究/
 ├── 重点标的看板.md            — thesis/指定标的一页总览（活文档）
 ├── 标的跟踪表.md          — 全部买卖建议的条件监控+复盘（活文档）
-├── daily-monitor/             — 当前统一每日监控（价格 / 正式披露 / 其他）
+├── daily-monitor/             — 当前每日价格监控（公告与事件监控已移除）
 ├── trigger-scan/              — 历史触发扫描归档（不再更新、不再作为 Pages 活动入口）
 ├── portfolio-latest.md       — 组合报告放根目录
 └── 多公司对比-checklist-20260408.md — 多公司报告放根目录
 ```
 
-## 每日监控（价格 + 正式披露 + 其他）
+## 每日监控（价格）
 
 - **数据源**：`data/triggers.json`（结构化触发区间 + 事件），设计见 `docs/2026-08-21-标的触发监控-design.md`
 - **扫描**：`python3 tools/daily_monitor.py`；`--watch` 定点扫描，`--check` 只读校验
-- **正式披露**：A 股巨潮、港股 HKEXnews、美股 SEC EDGAR；AKShare 仅备用，不做一般网络搜索
-- **自动任务**：GitHub Actions `.github/workflows/daily-monitor.yml` 工作日 17:30（Asia/Shanghai）运行
-- **Secrets/变量**：`DEEPSEEK_API_KEY`、`EDGAR_IDENTITY`、可选变量 `DEEPSEEK_MODEL`；Server酱仍使用 `SERVERCHAN_SENDKEY`
+- **范围**：仅价格区间与腾讯行情；公告采集、AI 判断、研报缺口检查和事件监控已从运行流程移除
+- **自动任务**：沿用 GitHub Actions 与本机 launchd 配置；运行时间以各自配置为准
+- **主动刷新**：直接运行 `python3 tools/daily_monitor.py`，不依赖 DeepSeek 或 SEC 凭证；Server酱通知仍使用 `SERVERCHAN_SENDKEY`
 - **报告**：`reports/daily-monitor/daily-monitor-{YYYYMMDD}.md` + latest Markdown/JSON
-- **状态**：`data/monitoring-state.json` 为机器状态，与人工配置 `data/triggers.json` 分离
-- **登记规则**：研究报告产出**明确买卖/观望建议价位带或复检节点**时，必须登记到 `data/triggers.json`（新报告用 `/trigger-monitor` skill 协助登记：新增 zone/event 或新建 target），并更新 `updated` 字段；复检完成的事件标 `"done": true`。**没有登记 = 该触发点不在监控内**。改完先跑 `bash scripts/prepush-check.sh` 本地验证（零通知），确认后再提交。
+- **状态**：`data/monitoring-state.json` 为机器状态，与人工配置 `data/triggers.json` 分离；只更新价格与行情健康度，已有公告、事件和研究状态保留
+- **登记规则**：研究报告产出**明确买卖/观望建议价位带或复检节点**时，必须登记到 `data/triggers.json`（新报告用 `/trigger-monitor` skill 协助登记：新增 zone/event 或新建 target），并更新 `updated` 字段；复检完成的事件标 `"done": true`。**未登记价格不在监控内；已登记事件仅供人工复核，当前每日监控不提醒事件**。改完先跑 `bash scripts/prepush-check.sh` 本地验证（零通知），确认后再提交。
 
 ## 报告命名规范
 

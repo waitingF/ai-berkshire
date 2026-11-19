@@ -7,7 +7,7 @@ description: Use when a research report contains an explicit price band, review 
 
 对所有研究流程的产出执行**触发点登记**：凡报告含明确买卖/观望建议价位带、或复检/财报节点，必须登记到 `data/triggers.json`，并说明每日扫描与本地预检方式。
 
-**核心原则：没有登记 = 该触发点不在监控内。**
+**核心原则：未登记价格不在监控内；事件登记仅供人工复核，当前每日监控不自动扫描或提醒事件。**
 
 ## 何时登记（强制时机）
 
@@ -15,7 +15,7 @@ description: Use when a research report contains an explicit price band, review 
 |------|------|
 | 研究报告产出时 | 含**明确买卖/观望价位带**或**复检节点** → 立即登记 |
 | 复检/财报完成后 | 对应事件加 `"done": true`（保留留档，不再提醒） |
-| 每日完整性检查 | 查看每日监控“其他监控”的覆盖缺口，人工核验后补漏登记 |
+| 人工复核 | 根据研究报告与台账补漏登记；当前每日监控不执行研报完整性检查 |
 | 价位带修正 | 直接改 JSON 后跑 `--check` |
 
 **不登记的场景**：只有分析、无明确价位/节点建议的报告；估值类触发（PE/PS 线依赖财务数据，仅在 note 注明，不设 zone）。
@@ -82,15 +82,15 @@ description: Use when a research report contains an explicit price band, review 
 
 ```bash
 runtime_dir=$(mktemp -d)
-python3 tools/daily_monitor.py --no-ai --watch 标的名 \
+python3 tools/daily_monitor.py --watch 标的名 \
   --state-file "$runtime_dir/state.json" \
   --report-dir "$runtime_dir/reports"
 ```
 
 ## 每日扫描与提醒
 
-- **扫描**：`python3 tools/daily_monitor.py`（写入统一 `reports/daily-monitor/` 报告；价格只是三个业务部分之一）
-- **GitHub Actions**：`.github/workflows/daily-monitor.yml` 工作日 17:30（Asia/Shanghai）运行；只通知状态变化，未配置 `SERVERCHAN_SENDKEY` 则跳过通知
+- **扫描**：`python3 tools/daily_monitor.py`（主动刷新 `reports/daily-monitor/` 中的日期报告与 latest Markdown/JSON，只运行价格监控）
+- **GitHub Actions**：`.github/workflows/daily-monitor.yml` 按 workflow 中的工作日配置运行；只通知价格状态与行情源健康度变化，未配置 `SERVERCHAN_SENDKEY` 则跳过通知
 
 ## 提交前本地预检
 

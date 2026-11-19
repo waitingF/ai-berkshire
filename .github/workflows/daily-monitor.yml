@@ -46,10 +46,6 @@ jobs:
 
       - name: 运行每日监控
         id: run_monitor
-        env:
-          EDGAR_IDENTITY: ${{ secrets.EDGAR_IDENTITY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
         run: |
           set +e
           python3 tools/daily_monitor.py --json > daily-monitor-run.json

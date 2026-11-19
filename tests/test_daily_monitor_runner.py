@@ -1,29 +1,17 @@
 import json
 import tempfile
 import unittest
-from dataclasses import replace
 from datetime import date
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
 
 from tools.daily_monitoring.config import load_targets
-from tools.daily_monitoring.deepseek import DeepSeekAnalysis
-from tools.daily_monitoring.documents import ExtractedDocument
-from tools.daily_monitoring.models import Disclosure, FallbackClue, MonitorItem, VerifiedFact
-from tools.daily_monitoring.http import SourceError
-from tools.daily_monitoring.runner import (
-    MonitorOptions,
-    MonitorServices,
-    _aggregate_todays_disclosures,
-    _watched,
-    run_monitor,
-)
+from tools.daily_monitoring.runner import MonitorOptions, MonitorServices, _watched, production_services, run_monitor
 from tools.daily_monitoring.state import empty_state
 from tools.daily_monitoring.transitions import price_state_key
 
 
-OFFICIAL_URL = (
-    "https://www.sec.gov/Archives/edgar/data/1/000000000126000001/report.htm"
-)
 REPO = Path(__file__).resolve().parents[1]
 LIVE_TRIGGERS = REPO / "data" / "triggers.json"
 BACKFILLED_LEDGER_TARGET_IDS = (
@@ -60,7 +48,7 @@ def write_triggers(root, *, with_zone=False, links=()):
         "group": "重点",
         "codes": {"US": "usEXM"},
         "zones": [],
-        "events": [],
+        "events": [{"label": "旧财报节点", "type": "财报", "date": "2026-08-25"}],
         "links": list(links),
         "disclosure_sources": {"sec": {"cik": "1"}},
     }
@@ -80,69 +68,6 @@ def write_triggers(root, *, with_zone=False, links=()):
     return path
 
 
-def disclosure():
-    return Disclosure(
-        target_id="样例公司",
-        source="sec",
-        document_id="0000000001-26-000001",
-        title="Quarterly results",
-        published_at="2026-08-25T08:00:00-04:00",
-        document_type="10-Q",
-        official_url=OFFICIAL_URL,
-        download_url=OFFICIAL_URL,
-    )
-
-
-class FakeAI:
-    def __init__(self, result):
-        self.result = result
-        self.calls = 0
-
-    def analyze(self, request):
-        self.calls += 1
-        return self.result
-
-
-def ai_result(*, degraded=False):
-    return DeepSeekAnalysis(
-        status="DEGRADED" if degraded else "OK",
-        priority="P0",
-        why_now="新财报需要核验现金流假设。",
-        verified_facts=() if degraded else (
-            VerifiedFact("经营现金流发生变化。", OFFICIAL_URL, None, "high"),
-        ),
-        thesis_impacts=() if degraded else ("复核现金流假设。",),
-        next_workflow=None if degraded else "/earnings-review",
-        needs_human_review=degraded,
-        limitations=("模型超时",) if degraded else (),
-        needs_retry=degraded,
-    )
-
-
-def services(
-    ai, *, collector=None, extraction_status="EXTRACTED", quote_price=90.0
-):
-    def default_collector(target_id, config, *, since, until, http):
-        return [disclosure()]
-
-    def extractor(document, target, http):
-        return ExtractedDocument(
-            status=extraction_status,
-            sha256="a" * 64,
-            pages_used=(),
-            chunks=("UNTRUSTED DATA: cash flow changed.",) if extraction_status == "EXTRACTED" else (),
-            limitation="需要 OCR" if extraction_status == "OCR_REQUIRED" else None,
-        )
-
-    return MonitorServices(
-        quote_provider=lambda codes: {code: {"price": quote_price} for code in codes},
-        collectors={"sec": collector or default_collector},
-        http=object(),
-        document_extractor=extractor,
-        deepseek=ai,
-    )
-
-
 def options(root, triggers):
     return MonitorOptions(
         root=root,
@@ -153,7 +78,123 @@ def options(root, triggers):
     )
 
 
+def services(*, quote_price=90.0):
+    return MonitorServices(
+        quote_provider=lambda codes: {code: {"price": quote_price} for code in codes}
+    )
+
+
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_production_curl_failure_marks_quotes_degraded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            config = options(root, write_triggers(root, with_zone=True))
+            failed_curl = SimpleNamespace(returncode=7, stdout=b"", stderr=b"connection failed")
+            with patch("tools.trigger_scanner.subprocess.run", return_value=failed_curl):
+                run = run_monitor(config, production_services())
+
+            self.assertEqual(run.status, "DEGRADED")
+            self.assertEqual(run.source_health[0].status, "FAILED")
+            self.assertEqual(run.next_state["services"]["quotes"]["status"], "FAILED")
+            payload = json.loads(run.report_paths.latest_json.read_text())
+            self.assertEqual(payload["status"], "DEGRADED")
+
+    def test_partial_quote_failure_keeps_valid_prices_and_recovers_once(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root, with_zone=True)
+            payload = json.loads(triggers.read_text())
+            other = json.loads(json.dumps(payload["targets"][0]))
+            other.update(id="另一公司", name="Other Co", codes={"US": "usOTHER"})
+            payload["targets"].append(other)
+            triggers.write_text(json.dumps(payload))
+            config = options(root, triggers)
+            partial = MonitorServices(quote_provider=lambda codes: {"usEXM": {"price": 90}})
+
+            first = run_monitor(config, partial)
+            repeated = run_monitor(config, partial)
+            recovered = run_monitor(config, services())
+            stable = run_monitor(config, services())
+
+            self.assertEqual(first.status, "DEGRADED")
+            prices = {item.target_id: item for item in first.items if item.section == "price"}
+            self.assertEqual(prices["样例公司"].metadata["price"], 90)
+            self.assertEqual(prices["样例公司"].status, "TRIGGERED")
+            self.assertEqual(prices["另一公司"].status, "NO_DATA")
+            self.assertFalse(repeated.notification_items)
+            self.assertEqual(recovered.status, "OK")
+            self.assertTrue(any(item.status == "RECOVERED" for item in recovered.notification_items))
+            self.assertFalse(stable.notification_items)
+
+    def test_invalid_quote_prices_are_no_data(self):
+        for invalid in (None, float("nan"), float("inf"), -1, 0, True, "90"):
+            with self.subTest(price=invalid), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                config = options(root, write_triggers(root, with_zone=True))
+                run = run_monitor(config, services(quote_price=invalid))
+                self.assertEqual(run.status, "DEGRADED")
+                prices = [item for item in run.items if item.section == "price"]
+                self.assertEqual(prices[0].status, "NO_DATA")
+                self.assertIsNone(prices[0].metadata["price"])
+
+    def test_script_refreshes_latest_prices_and_suppresses_unchanged_notifications(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            config = options(root, write_triggers(root, with_zone=True))
+            run_monitor(config, services(quote_price=120))
+            changed = run_monitor(config, services(quote_price=90))
+            repeated = run_monitor(config, services(quote_price=90))
+
+            self.assertEqual(len(changed.notification_items), 1)
+            self.assertEqual(repeated.notification_items, ())
+            payload = json.loads(repeated.report_paths.latest_json.read_text())
+            self.assertEqual(payload["items"][0]["metadata"]["price"], 90)
+            self.assertIn("90.00", repeated.report_paths.latest.read_text())
+
+    def test_quote_failure_and_recovery_preserve_report_and_notify_once(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            config = options(root, write_triggers(root, with_zone=True))
+
+            def fail_quotes(codes):
+                raise RuntimeError("example credential must not appear in the report")
+
+            failed = run_monitor(config, MonitorServices(quote_provider=fail_quotes))
+            first_payload = json.loads(failed.report_paths.latest_json.read_text())
+            repeated = run_monitor(config, MonitorServices(quote_provider=fail_quotes))
+            recovered = run_monitor(config, services())
+
+            self.assertEqual(first_payload["status"], "DEGRADED")
+            self.assertNotIn("example credential", json.dumps(first_payload))
+            self.assertTrue(failed.notification_items)
+            self.assertFalse(repeated.notification_items)
+            self.assertEqual(recovered.status, "OK")
+            self.assertTrue(any(item.status == "RECOVERED" for item in recovered.notification_items))
+
+    def test_price_refresh_preserves_research_state_and_skips_research_services(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            config = options(root, write_triggers(root, with_zone=True))
+            state = empty_state()
+            state['event_states'] = {'event': {'status': 'UPCOMING_7D'}}
+            state['sources'] = {'sec': {'cursor': '2026-08-24'}}
+            state['documents'] = {'pending': {'target_id': '样例公司', 'status': 'PENDING_AI'}}
+            state['completeness'] = {'gap': {'target_id': '样例公司'}}
+            state['services']['akshare_clues'] = {'old': {}}
+            config.state_file.parent.mkdir(parents=True)
+            config.state_file.write_text(json.dumps(state), encoding='utf-8')
+            deps = services()
+            with patch('urllib.request.urlopen', side_effect=AssertionError('不应访问公告或 AI')):
+                run = run_monitor(config, deps)
+            for key in ('event_states', 'sources', 'documents', 'completeness'):
+                self.assertEqual(run.next_state[key], state[key])
+            self.assertEqual(run.next_state['services']['akshare_clues'], {'old': {}})
+            self.assertEqual({row.source for row in run.source_health}, {'quotes'})
+            self.assertTrue(all((item.section == 'price' for item in run.items)))
+            markdown = run.report_paths.latest.read_text()
+            self.assertNotIn('财报与正式披露监控', markdown)
+            self.assertNotIn('其他监控', markdown)
+
     def test_above_zone_is_excluded_from_daily_monitor_and_price_state(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -172,8 +213,6 @@ class DailyMonitorRunnerTest(unittest.TestCase):
             result = run_monitor(
                 options(root, triggers),
                 services(
-                    FakeAI(ai_result()),
-                    collector=lambda *args, **kwargs: [],
                     quote_price=105,
                 ),
             )
@@ -225,8 +264,6 @@ class DailyMonitorRunnerTest(unittest.TestCase):
             result = run_monitor(
                 options(root, triggers),
                 services(
-                    FakeAI(ai_result()),
-                    collector=lambda *args, **kwargs: [],
                 ),
             )
 
@@ -259,10 +296,6 @@ class DailyMonitorRunnerTest(unittest.TestCase):
 
         services = MonitorServices(
             quote_provider=quote_provider,
-            collectors={},
-            http=object(),
-            document_extractor=lambda *args, **kwargs: None,
-            deepseek=None,
         )
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -273,7 +306,6 @@ class DailyMonitorRunnerTest(unittest.TestCase):
                     state_file=root / "state.json",
                     report_dir=root / "reports",
                     today=date(2026, 8, 30),
-                    no_ai=True,
                     watch=BACKFILLED_LEDGER_TARGET_IDS,
                 ),
                 services,
@@ -287,89 +319,6 @@ class DailyMonitorRunnerTest(unittest.TestCase):
         )
         self.assertEqual(result.status, "OK")
 
-    def test_disclosure_summary_uses_highest_priority_in_group(self):
-        def disclosure_item(fingerprint, priority, published_at):
-            return MonitorItem(
-                fingerprint=fingerprint,
-                section="disclosures",
-                priority=priority,
-                target_id="样例公司",
-                name="样例公司",
-                title=f"{priority} announcement",
-                why_now="有新的正式披露。",
-                status="DONE",
-                notify=True,
-                metadata={
-                    "kind": "official_disclosure",
-                    "market": "H",
-                    "published_at": published_at,
-                },
-            )
-
-        items = _aggregate_todays_disclosures(
-            [
-                disclosure_item("p0", "P0", "2026-08-26T18:00:00+08:00"),
-                disclosure_item("p1", "P1", "2026-08-26T19:00:00+08:00"),
-            ],
-            today=date(2026, 8, 26),
-        )
-
-        self.assertEqual(len(items), 1)
-        self.assertEqual(items[0].priority, "P0")
-
-    def test_disclosure_summary_requires_review_when_any_item_needs_human_review(self):
-        item = MonitorItem(
-            fingerprint="review",
-            section="disclosures",
-            priority="P0",
-            target_id="样例公司",
-            name="样例公司",
-            title="Interim results",
-            why_now="有新的正式披露。",
-            status="DONE",
-            needs_human_review=True,
-            notify=True,
-            metadata={
-                "kind": "official_disclosure",
-                "market": "H",
-                "published_at": "2026-08-26T18:00:00+08:00",
-            },
-        )
-
-        summaries = _aggregate_todays_disclosures(
-            [item], today=date(2026, 8, 26)
-        )
-
-        self.assertEqual(summaries[0].status, "REVIEW")
-
-    def test_raw_hkex_timestamp_is_interpreted_in_shanghai_date(self):
-        item = MonitorItem(
-            fingerprint="hkex",
-            section="disclosures",
-            priority="P0",
-            target_id="样例公司",
-            name="样例公司",
-            title="INTERIM RESULTS FOR THE SIX MONTHS ENDED 30 JUNE 2026",
-            why_now="有新的正式披露。",
-            status="DONE",
-            notify=True,
-            metadata={
-                "kind": "official_disclosure",
-                "market": "H",
-                "published_at": "26/08/2026 18:25",
-            },
-        )
-
-        summaries = _aggregate_todays_disclosures(
-            [item], today=date(2026, 8, 26)
-        )
-
-        self.assertEqual(len(summaries), 1)
-        self.assertEqual(
-            summaries[0].metadata["latest_time"],
-            "2026-08-26T18:25:00+08:00",
-        )
-
     def test_watch_matches_exact_identity_not_substring(self):
         target = {
             "id": "腾讯音乐",
@@ -381,235 +330,12 @@ class DailyMonitorRunnerTest(unittest.TestCase):
         self.assertTrue(_watched(target, ("腾讯音乐",)))
         self.assertTrue(_watched(target, ("usTME",)))
 
-    def test_watch_mode_excludes_unrelated_global_gaps(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            reports = root / "reports"
-            reports.mkdir()
-            (reports / "标的跟踪表.md").write_text(
-                "| ID | 标的 | 复检日 | 状态 |\n"
-                "| --- | --- | --- | --- |\n"
-                "| unrelated | 无关公司 | 2026-01-01 | 待触发 |\n",
-                encoding="utf-8",
-            )
-            run_options = replace(options(root, triggers), watch=("样例公司",))
-
-            result = run_monitor(
-                run_options,
-                services(FakeAI(ai_result()), collector=lambda *args, **kwargs: []),
-            )
-
-            self.assertFalse(any(item.target_id == "unrelated" for item in result.items))
-
-    def test_watch_mode_preserves_unrelated_gap_state(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            run_options = replace(options(root, triggers), watch=("样例公司",))
-            state = empty_state()
-            state["completeness"]["unrelated-gap"] = {
-                "target_id": "unrelated",
-                "name": "无关公司",
-                "title": "旧缺口",
-                "priority": "P0",
-                "updated_at": "2026-08-24",
-            }
-            run_options.state_file.parent.mkdir(parents=True)
-            run_options.state_file.write_text(
-                json.dumps(state, ensure_ascii=False), encoding="utf-8"
-            )
-
-            result = run_monitor(
-                run_options,
-                services(FakeAI(ai_result()), collector=lambda *args, **kwargs: []),
-            )
-
-            self.assertIn("unrelated-gap", result.next_state["completeness"])
-            self.assertFalse(any(item.target_id == "unrelated" for item in result.items))
-
-    def test_ai_failure_writes_report_and_keeps_document_pending(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            ai = FakeAI(ai_result(degraded=True))
-
-            result = run_monitor(options(root, triggers), services(ai))
-
-            key = "sec:0000000001-26-000001"
-            self.assertEqual(result.status, "DEGRADED")
-            self.assertTrue(result.report_paths.latest.exists())
-            self.assertEqual(result.next_state["documents"][key]["status"], "PENDING_AI")
-            self.assertEqual(ai.calls, 1)
-
-    def test_identical_second_run_does_not_call_ai_or_notify(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            first_ai = FakeAI(ai_result())
-            first = run_monitor(options(root, triggers), services(first_ai))
-            second_ai = FakeAI(ai_result())
-
-            second = run_monitor(options(root, triggers), services(second_ai))
-
-            self.assertEqual(first.next_state["documents"]["sec:0000000001-26-000001"]["status"], "DONE")
-            self.assertEqual(second_ai.calls, 0)
-            self.assertEqual(second.notification_items, ())
-
-    def test_aggregates_todays_disclosures_for_same_target_and_market(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            older = disclosure()
-            newer = replace(
-                older,
-                document_id="0000000001-26-000002",
-                title="Latest disclosure",
-                published_at="2026-08-25T09:00:00-04:00",
-            )
-
-            result = run_monitor(
-                options(root, triggers),
-                services(
-                    FakeAI(ai_result()),
-                    collector=lambda *args, **kwargs: [older, newer],
-                ),
-            )
-
-            disclosures = [
-                item for item in result.items if item.section == "disclosures"
-            ]
-            self.assertEqual(len(disclosures), 1)
-            self.assertEqual(disclosures[0].title, "2 项公告更新")
-            self.assertEqual(disclosures[0].metadata["market"], "US")
-            self.assertEqual(disclosures[0].metadata["announcement_count"], 2)
-            self.assertEqual(
-                disclosures[0].metadata.get("latest_time"),
-                "2026-08-25T21:00:00+08:00",
-            )
-            self.assertEqual(
-                [update["title"] for update in disclosures[0].metadata["updates"]],
-                ["Quarterly results", "Latest disclosure"],
-            )
-            self.assertEqual(
-                disclosures[0].metadata["updates"][0].get("verified_facts"),
-                [
-                    {
-                        "fact": "经营现金流发生变化。",
-                        "official_url": OFFICIAL_URL,
-                        "page": None,
-                        "confidence": "high",
-                    }
-                ],
-            )
-            self.assertEqual(disclosures[0].status, "DONE")
-            self.assertEqual(len(result.notification_items), 1)
-
-    def test_excludes_disclosures_not_published_today_from_daily_items(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            yesterday = replace(
-                disclosure(),
-                document_id="0000000001-26-000000",
-                title="Yesterday disclosure",
-                published_at="2026-08-24T23:59:00+08:00",
-            )
-            today = replace(
-                disclosure(),
-                title="Today disclosure",
-                published_at="2026-08-25T00:01:00+08:00",
-            )
-
-            result = run_monitor(
-                options(root, triggers),
-                services(
-                    FakeAI(ai_result()),
-                    collector=lambda *args, **kwargs: [yesterday, today],
-                ),
-            )
-
-            disclosures = [
-                item for item in result.items if item.section == "disclosures"
-            ]
-            self.assertEqual(len(disclosures), 1)
-            self.assertEqual(disclosures[0].title, "1 项公告更新")
-            self.assertEqual(disclosures[0].metadata["announcement_count"], 1)
-            self.assertEqual(
-                disclosures[0].metadata["updates"][0]["title"],
-                "Today disclosure",
-            )
-
-    def test_ignores_placeholder_when_group_has_substantive_disclosure(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            substantive = replace(
-                disclosure(),
-                title="INTERIM RESULTS FOR THE SIX MONTHS ENDED 30 JUNE 2026",
-            )
-            placeholder = replace(
-                disclosure(),
-                document_id="0000000001-26-000002",
-                title=(
-                    "An announcement has just been published by the issuer in "
-                    "the Chinese section of this website"
-                ),
-                published_at="2026-08-25T09:00:00-04:00",
-            )
-
-            result = run_monitor(
-                options(root, triggers),
-                services(
-                    FakeAI(ai_result()),
-                    collector=lambda *args, **kwargs: [substantive, placeholder],
-                ),
-            )
-
-            summary = next(
-                item for item in result.items if item.section == "disclosures"
-            )
-            self.assertEqual(summary.metadata["announcement_count"], 1)
-            self.assertEqual(
-                [update["summary"] for update in summary.metadata["updates"]],
-                ["2026年中期业绩"],
-            )
-
-    def test_keeps_placeholder_as_pending_summary_when_it_is_the_only_disclosure(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            placeholder = replace(
-                disclosure(),
-                title=(
-                    "An announcement has just been published by the issuer in "
-                    "the Chinese section of this website"
-                ),
-            )
-
-            result = run_monitor(
-                options(root, triggers),
-                services(
-                    FakeAI(ai_result()),
-                    collector=lambda *args, **kwargs: [placeholder],
-                ),
-            )
-
-            summary = next(
-                item for item in result.items if item.section == "disclosures"
-            )
-            self.assertEqual(summary.metadata["announcement_count"], 1)
-            self.assertEqual(
-                summary.metadata["updates"][0]["summary"],
-                "新增公告，内容待确认",
-            )
-
     def test_first_price_observation_uses_current_priority_without_notification(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             triggers = write_triggers(root, with_zone=True)
 
-            result = run_monitor(options(root, triggers), services(FakeAI(ai_result())))
+            result = run_monitor(options(root, triggers), services())
 
             price = next(row for row in result.items if row.section == "price")
             self.assertEqual(price.priority, "P0")
@@ -622,131 +348,12 @@ class DailyMonitorRunnerTest(unittest.TestCase):
 
             result = run_monitor(
                 options(root, triggers),
-                services(FakeAI(ai_result()), quote_price=104.0),
+                services(quote_price=104.0),
             )
 
             price = next(row for row in result.items if row.section == "price")
             self.assertEqual((price.priority, price.status), ("P1", "NEAR"))
             self.assertFalse(price.notify)
-
-    def test_source_failure_does_not_advance_cursor_and_still_writes_report(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-
-            def failing_collector(*args, **kwargs):
-                raise RuntimeError("internal details")
-
-            result = run_monitor(
-                options(root, triggers),
-                services(FakeAI(ai_result()), collector=failing_collector),
-            )
-
-            self.assertEqual(result.status, "DEGRADED")
-            self.assertNotIn("cursor", result.next_state["sources"]["sec"])
-            self.assertTrue(result.report_paths.latest.exists())
-            self.assertTrue(any(row.source == "sec" and row.status == "FAILED" for row in result.source_health))
-
-    def test_ocr_document_is_not_sent_to_ai(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            ai = FakeAI(ai_result())
-
-            result = run_monitor(
-                options(root, triggers), services(ai, extraction_status="OCR_REQUIRED")
-            )
-
-            record = result.next_state["documents"]["sec:0000000001-26-000001"]
-            self.assertEqual(record["status"], "OCR_REQUIRED")
-            self.assertEqual(ai.calls, 0)
-            disclosure_item = next(row for row in result.items if row.section == "disclosures")
-            self.assertTrue(disclosure_item.needs_human_review)
-
-    def test_extraction_source_error_keeps_safe_failure_reason(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = write_triggers(root)
-            runtime_services = services(FakeAI(ai_result()))
-
-            def failing_extractor(*args, **kwargs):
-                raise SourceError(
-                    "sec", "连接中断或响应不完整", retryable=True
-                )
-
-            runtime_services.document_extractor = failing_extractor
-
-            result = run_monitor(options(root, triggers), runtime_services)
-
-            disclosure_summary = next(
-                row for row in result.items if row.section == "disclosures"
-            )
-            self.assertEqual(
-                disclosure_summary.metadata["updates"][0]["limitations"],
-                ["正文提取失败（连接中断或响应不完整）"],
-            )
-            self.assertEqual(disclosure_summary.status, "REVIEW")
-
-    def test_cninfo_failure_uses_akshare_only_as_unverified_clue(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            triggers = root / "data" / "triggers.json"
-            triggers.parent.mkdir(parents=True)
-            triggers.write_text(
-                json.dumps(
-                    {
-                        "schema": 1,
-                        "targets": [
-                            {
-                                "id": "样例A股",
-                                "name": "样例A股",
-                                "group": "重点",
-                                "codes": {"A": "sh600000"},
-                                "zones": [],
-                                "events": [],
-                            }
-                        ],
-                    }
-                ),
-                encoding="utf-8",
-            )
-
-            def failing_collector(*args, **kwargs):
-                raise RuntimeError("cninfo unavailable")
-
-            fallback_calls = []
-
-            def fallback(target_id, config, *, since, until):
-                fallback_calls.append(target_id)
-                return [
-                    FallbackClue(
-                        target_id=target_id,
-                        source="akshare",
-                        title="疑似业绩公告",
-                        published_at="2026-08-25",
-                        url="https://example.com/unverified",
-                        verified=False,
-                        needs_human_review=True,
-                    )
-                ]
-
-            runtime_services = MonitorServices(
-                quote_provider=lambda codes: {},
-                collectors={"cninfo": failing_collector},
-                http=object(),
-                document_extractor=lambda *args: None,
-                deepseek=FakeAI(ai_result()),
-                fallback_provider=fallback,
-            )
-
-            result = run_monitor(options(root, triggers), runtime_services)
-
-            clue = next(row for row in result.items if row.metadata.get("fallback"))
-            self.assertEqual(fallback_calls, ["样例A股"])
-            self.assertEqual(clue.section, "disclosures")
-            self.assertEqual(clue.verified_facts, ())
-            self.assertEqual(clue.source_urls, ())
-            self.assertTrue(clue.needs_human_review)
 
 
 if __name__ == "__main__":

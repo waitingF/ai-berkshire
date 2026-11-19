@@ -59,7 +59,7 @@ HOME_PINNED_REPORTS = (
         "title": "每日监控",
         "nav_label": "每日监控",
         "eyebrow": "自动监控",
-        "description": "价格、正式披露与研究完整性的工作日增量监控。",
+        "description": "已登记价格区间与腾讯行情快照的工作日监控，支持脚本主动刷新。",
     },
     {
         "filename": "portfolio-latest.md",
