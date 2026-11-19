@@ -56,7 +56,7 @@ window.__ModuleLoader__.load({
       DONE: 'success',
     }
     /** How many events the monitor view lists before pointing at the report. */
-    const MONITOR_EVENT_ROWS = 12
+    const MONITOR_EVENT_ROWS = 20
     const APPROX_SOURCE = '文件时间'
     const BUCKET_ORDER = ['公司', '专题', '大师研究', '筛选池', '监控', '归档', '其他']
     const BUCKET_LABEL = {
@@ -121,12 +121,24 @@ window.__ModuleLoader__.load({
       monitor: '每日监控',
       monitorHint: '进入或接近价格区间的标的，以及待处理的正式披露',
       backToReports: '返回报告',
+      backToMonitor: '返回监控',
+      monitorLoading: '正在读取监控数据…',
+      monitorStale: '数据截至',
+      monitorDaysAgo: '天前',
+      monitorDisclaimer: '价格达到条件只触发研究复核；优先级表示研究处理顺序，不代表交易信号，也不构成投资建议。',
+      monitorLegend: 'P0=到达或进入条件 · P1=距对应边界≤5% · P2=其他价格区间',
+      monitorPinnedOnly: '只看置顶',
+      monitorMatch: '匹配',
+      monitorSearchAllHint: '搜索时显示全部价格区间',
+      monitorKindDisclosure: '披露',
+      monitorKindOther: '其他',
+      monitorOpenAnnouncement: '打开公告',
+      monitorViewReport: '打开完整监控报告',
       monitorPrice: '价格区间',
       monitorTriggered: '进入区间',
       monitorNear: '接近',
       monitorEvents: '财报与正式披露',
       monitorSources: '数据源',
-      monitorOpenReport: '打开完整监控报告',
       monitorAttentionOnly: '只看进入与接近',
       monitorAll: '显示全部',
       monitorNoData: '未找到每日监控数据',
@@ -236,12 +248,24 @@ window.__ModuleLoader__.load({
       monitor: 'Daily monitor',
       monitorHint: 'Targets that reached or approach their price zone, plus formal disclosures awaiting review',
       backToReports: 'Back to reports',
+      backToMonitor: 'Back to the monitor',
+      monitorLoading: 'Reading the monitor data…',
+      monitorStale: 'Data as of',
+      monitorDaysAgo: 'days ago',
+      monitorDisclaimer: 'A reached price triggers a research review only; priority orders the review work, not a trading signal, and this view is not investment advice.',
+      monitorLegend: 'P0=condition reached · P1=within 5% of the boundary · P2=other zones',
+      monitorPinnedOnly: 'Pinned only',
+      monitorMatch: 'match',
+      monitorSearchAllHint: 'A search always shows every price zone',
+      monitorKindDisclosure: 'Disclosure',
+      monitorKindOther: 'Other',
+      monitorOpenAnnouncement: 'Open the announcement',
+      monitorViewReport: 'Open the full monitor report',
       monitorPrice: 'Price zones',
       monitorTriggered: 'In zone',
       monitorNear: 'Near',
       monitorEvents: 'Earnings and formal disclosures',
       monitorSources: 'Sources',
-      monitorOpenReport: 'Open the full monitor report',
       monitorAttentionOnly: 'Only reached or near',
       monitorAll: 'Show all',
       monitorNoData: 'No daily-monitor data found',
@@ -516,6 +540,15 @@ window.__ModuleLoader__.load({
 .rr-monitor-zone { margin-top: 2px; font-size: 11px; color: var(--dsw-alias-label-secondary); }
 .rr-monitor-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .rr-monitor-counts { display: flex; gap: 6px; flex-wrap: wrap; }
+.rr-monitor-disclaimer { font-size: 11px; line-height: 1.5; color: var(--dsw-alias-label-secondary); }
+.rr-monitor-legend { margin: -2px 0 8px; font-size: 11px; color: var(--dsw-alias-label-secondary); }
+.rr-monitor-pinned { display: inline-flex; color: var(--dsw-alias-brand-primary); }
+.rr-monitor-kind {
+  flex: 0 0 auto; padding: 0 5px; border-radius: 5px; font-size: 10px;
+  color: var(--dsw-alias-label-secondary); border: 0.5px solid var(--dsw-alias-border-l1);
+}
+.rr-monitor-event-link { flex: 0 0 auto; font-size: 12px; }
+.rr-monitor-more { margin: 6px 0 0; font-size: 12px; font-weight: 400; }
 .rr-monitor-counts-inline { display: inline-flex; margin-left: 4px; }
 .rr-monitor-counts-inline .rr-status { height: 18px; padding: 0 6px; }
 .rr-monitor-events { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
@@ -1060,14 +1093,15 @@ window.__ModuleLoader__.load({
      * waiting on a human. Every 标的 links to its research report.
      */
     function MonitorView(props) {
-      const { t, state, refresh, openReport, needle } = props
+      const { t, state, refresh, openReport, needle, pinned } = props
       const [filter, setFilter] = React.useState('auto')
+      const [pinnedOnly, setPinnedOnly] = React.useState(false)
       const payload = state.data
       const matches = (value) => !needle || String(value || '').toLowerCase().includes(needle)
 
       if (state.status === 'loading') {
         return h('section', { className: 'rr-reports rr-monitor' },
-          h('div', { className: 'rr-state' }, h('div', { className: 'rr-state-title' }, t('loading'))))
+          h('div', { className: 'rr-state' }, h('div', { className: 'rr-state-title' }, t('monitorLoading'))))
       }
 
       if (state.status === 'error' && !payload) {
@@ -1089,25 +1123,55 @@ window.__ModuleLoader__.load({
                   type: 'button',
                   className: 'rr-button',
                   onClick: () => openReport(payload.reportPath),
-                }, t('monitorOpenReport'))
+                }, t('monitorViewReport'))
                 : null,
               h('button', { type: 'button', className: 'rr-button rr-button-quiet', onClick: refresh }, t('refresh')))))
       }
 
       const counts = payload.counts || {}
       const priceRows = Array.isArray(payload.price) ? payload.price : []
+      const events = Array.isArray(payload.events) ? payload.events : []
+      const pinnedSet = new Set(Array.isArray(pinned) ? pinned : [])
+      /** The 标的 a monitor row belongs to, taken from its research link. */
+      const targetDir = (row) => {
+        const parts = String(row.researchPath || '').split('/')
+        return parts.length > 2 ? parts[1] : ''
+      }
+      const isPinned = (row) => {
+        const dir = targetDir(row)
+        return Boolean((dir && pinnedSet.has(dir)) || pinnedSet.has(row.name) || pinnedSet.has(row.targetId))
+      }
+      const matchesZone = (row) => matches(row.name) || matches(row.targetId)
+        || matches(row.zoneLabel) || matches(row.market)
+      const matchesEvent = (row) => matches(row.name) || matches(row.targetId) || matches(row.title)
+
       const attention = priceRows.filter(row => row.status === 'TRIGGERED' || row.status === 'NEAR')
-      // Default to the zones that matter; fall back to every zone when there are
-      // none. A search is an explicit question, so it always looks at every zone.
+      // Default to the zones that matter; a search always looks at every zone.
       const attentionOnly = filter === 'auto' ? attention.length > 0 : filter === 'attention'
-      const showAll = !attentionOnly || Boolean(needle)
-      const visible = (showAll ? priceRows : attention)
-        .filter(row => matches(row.name) || matches(row.targetId) || matches(row.zoneLabel) || matches(row.market))
-      const eventRows = (Array.isArray(payload.events) ? payload.events : [])
-        .filter(row => matches(row.name) || matches(row.targetId) || matches(row.title))
+      const showAll = Boolean(needle) || !attentionOnly
+      let visible = pinnedOnly ? priceRows.filter(isPinned) : (showAll ? priceRows : attention)
+      visible = visible.filter(matchesZone)
+      if (!pinnedOnly) {
+        // Pinned 标的 first; the sort is stable, so the monitor's own order holds.
+        visible = visible.slice().sort((a, b) => (isPinned(b) ? 1 : 0) - (isPinned(a) ? 1 : 0))
+      }
+
+      const eventRows = events.filter(matchesEvent)
       const shownEvents = eventRows.slice(0, MONITOR_EVENT_ROWS)
       const hiddenEvents = eventRows.length - shownEvents.length
       const sources = Array.isArray(payload.sources) ? payload.sources : []
+
+      // How far the monitor run is behind today: the view answers "today", so a
+      // run from an earlier day must say so instead of looking current.
+      const staleDays = (() => {
+        const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(payload.date || ''))
+        if (!match) return 0
+        const runAt = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]))
+        const now = new Date()
+        const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+        const days = Math.round((midnight - runAt) / 86400000)
+        return Number.isFinite(days) && days > 0 ? days : 0
+      })()
 
       const head = h('div', { className: 'rr-monitor-head' },
         h('div', { className: 'rr-monitor-titleline' },
@@ -1122,8 +1186,15 @@ window.__ModuleLoader__.load({
               title: payload.generatedAt ? t('generated') + ' ' + payload.generatedAt.slice(0, 16).replace('T', ' ') : undefined,
             }, payload.status)
             : null,
+          staleDays
+            ? h('span', {
+              className: 'rr-status rr-status-warn',
+              title: t('monitorStale') + ' ' + payload.date + ' · ' + t('refresh'),
+            }, t('monitorStale') + ' ' + staleDays + ' ' + t('monitorDaysAgo'))
+            : null,
         ),
         payload.summary ? h('div', { className: 'rr-monitor-summary' }, payload.summary) : null,
+        h('div', { className: 'rr-monitor-disclaimer' }, t('monitorDisclaimer')),
         sources.length
           ? h('div', { className: 'rr-monitor-sources' },
             t('monitorSources') + '：' + sources.map(row => row.source + ' ' + row.status).join(' · '))
@@ -1134,7 +1205,7 @@ window.__ModuleLoader__.load({
               type: 'button',
               className: 'rr-button',
               onClick: () => openReport(payload.reportPath),
-            }, t('monitorOpenReport'))
+            }, t('monitorViewReport'))
             : null,
           h('button', {
             type: 'button',
@@ -1144,17 +1215,32 @@ window.__ModuleLoader__.load({
           }, state.status === 'refreshing' ? t('refreshing') : t('refresh'))),
       )
 
-      const priceHead = h('div', { className: 'rr-monitor-cardhead' },
-        h('h3', { className: 'rr-monitor-cardtitle' }, t('monitorPrice')),
-        h('span', { className: 'rr-monitor-counts' },
+      const priceCounts = needle
+        ? h('span', { className: 'rr-monitor-counts' },
+          h('span', { className: 'rr-status' }, t('monitorMatch') + ' ' + visible.length + ' / ' + priceRows.length))
+        : h('span', { className: 'rr-monitor-counts' },
           h('span', { className: 'rr-status rr-status-error' }, t('monitorTriggered') + ' ' + (counts.triggered || 0)),
           h('span', { className: 'rr-status rr-status-warn' }, t('monitorNear') + ' ' + (counts.near || 0)),
-        ),
+        )
+
+      const priceHead = h('div', { className: 'rr-monitor-cardhead' },
+        h('h3', { className: 'rr-monitor-cardtitle' }, t('monitorPrice')),
+        priceCounts,
         h('button', {
           type: 'button',
-          className: 'rr-button rr-button-quiet',
-          onClick: () => setFilter(attentionOnly ? 'all' : 'attention'),
-        }, attentionOnly ? t('monitorAll') + ' · ' + priceRows.length : t('monitorAttentionOnly')),
+          className: 'rr-button rr-button-quiet' + (pinnedOnly ? ' rr-button-active' : ''),
+          onClick: () => setPinnedOnly(value => !value),
+          'aria-pressed': pinnedOnly ? 'true' : 'false',
+        }, t('monitorPinnedOnly')),
+        pinnedOnly
+          ? null
+          : h('button', {
+            type: 'button',
+            className: 'rr-button rr-button-quiet',
+            onClick: () => setFilter(attentionOnly ? 'all' : 'attention'),
+            disabled: Boolean(needle),
+            title: needle ? t('monitorSearchAllHint') : undefined,
+          }, attentionOnly ? t('monitorAll') + ' · ' + priceRows.length : t('monitorAttentionOnly')),
       )
 
       const priceTable = visible.length
@@ -1174,7 +1260,10 @@ window.__ModuleLoader__.load({
             },
             h('td', null,
               h('div', { className: 'rr-monitor-target' },
-                row.priority ? h('span', { className: 'rr-monitor-priority' }, row.priority) : null,
+                isPinned(row) ? h('span', { className: 'rr-monitor-pinned', title: t('pinHint') }, pinIcon(true)) : null,
+                row.priority
+                  ? h('span', { className: 'rr-monitor-priority', title: t('monitorLegend') }, row.priority)
+                  : null,
                 row.researchPath
                   ? h('button', {
                     type: 'button',
@@ -1184,7 +1273,13 @@ window.__ModuleLoader__.load({
                   }, row.name)
                   : h('span', null, row.name),
               ),
-              row.zoneLabel ? h('div', { className: 'rr-monitor-zone' }, row.zoneLabel) : null,
+              row.zoneLabel || row.researchDate
+                ? h('div', { className: 'rr-monitor-zone' },
+                  [
+                    row.zoneLabel,
+                    row.researchDate ? t('monitorResearchDate') + ' ' + row.researchDate : '',
+                  ].filter(Boolean).join(' · '))
+                : null,
             ),
             h('td', null, row.market || '-'),
             h('td', { className: 'rr-monitor-num' }, row.condition || '-'),
@@ -1194,39 +1289,69 @@ window.__ModuleLoader__.load({
             )))))
         : h('div', { className: 'rr-hint' }, needle ? t('monitorEmptySearch') : t('monitorEmpty'))
 
-      const eventsHead = h('div', { className: 'rr-monitor-cardhead' },
-        h('h3', { className: 'rr-monitor-cardtitle' }, t('monitorEvents')),
-        h('span', { className: 'rr-monitor-counts' },
+      const eventCounts = needle
+        ? h('span', { className: 'rr-monitor-counts' },
+          h('span', { className: 'rr-status' }, t('monitorMatch') + ' ' + eventRows.length + ' / ' + events.length))
+        : h('span', { className: 'rr-monitor-counts' },
           counts.today ? h('span', { className: 'rr-status rr-status-warn' }, t('monitorToday') + ' ' + counts.today) : null,
           counts.overdue ? h('span', { className: 'rr-status rr-status-error' }, t('monitorOverdue') + ' ' + counts.overdue) : null,
           counts.review ? h('span', { className: 'rr-status rr-status-brand' }, t('monitorReview') + ' ' + counts.review) : null,
-          h('span', { className: 'rr-status' }, t('monitorEventsTotal') + ' ' + eventRows.length),
-        ),
+          h('span', { className: 'rr-status' }, t('monitorEventsTotal') + ' ' + events.length),
+        )
+
+      const eventsHead = h('div', { className: 'rr-monitor-cardhead' },
+        h('h3', { className: 'rr-monitor-cardtitle' }, t('monitorEvents')),
+        eventCounts,
       )
 
       const eventsList = shownEvents.length
         ? h('ul', { className: 'rr-monitor-events' },
-          shownEvents.map((row, rowIndex) => h('li', { key: row.targetId + '|' + row.title + '|' + row.status + '|' + rowIndex, className: 'rr-monitor-event', title: row.title },
-            statusChip(t, row.status),
-            row.researchPath
-              ? h('button', {
-                type: 'button',
-                className: 'rr-link-button rr-monitor-event-name',
-                onClick: () => openReport(row.researchPath),
-              }, row.name)
-              : h('span', { className: 'rr-monitor-event-name' }, row.name),
-            h('span', { className: 'rr-monitor-event-title' }, row.title),
-            row.date ? h('span', { className: 'rr-monitor-event-date' }, row.date) : null,
+          shownEvents.map((row, rowIndex) => h('li', {
+            key: row.targetId + '|' + row.title + '|' + row.status + '|' + rowIndex,
+            className: 'rr-monitor-event',
+            title: row.title,
+          },
+          statusChip(t, row.status),
+          h('span', { className: 'rr-monitor-kind' },
+            row.kind === 'event' ? t('monitorKindOther') : t('monitorKindDisclosure')),
+          row.researchPath
+            ? h('button', {
+              type: 'button',
+              className: 'rr-link-button rr-monitor-event-name',
+              onClick: () => openReport(row.researchPath),
+            }, row.name)
+            : h('span', { className: 'rr-monitor-event-name' }, row.name),
+          h('span', { className: 'rr-monitor-event-title' }, row.title),
+          row.date ? h('span', { className: 'rr-monitor-event-date' }, row.date) : null,
+          row.url
+            ? h('a', {
+              className: 'rr-doc-link rr-monitor-event-link',
+              href: row.url,
+              target: '_blank',
+              rel: 'noreferrer noopener',
+              title: t('monitorOpenAnnouncement'),
+            }, '↗')
+            : null,
           )))
         : h('div', { className: 'rr-hint' }, needle ? t('monitorEmptySearch') : t('monitorEmpty'))
 
+      const moreLine = hiddenEvents > 0
+        ? (payload.reportPath
+          ? h('button', {
+            type: 'button',
+            className: 'rr-link-button rr-monitor-more',
+            onClick: () => openReport(payload.reportPath),
+          }, t('monitorMoreEvents').replace('{n}', String(hiddenEvents)))
+          : h('div', { className: 'rr-hint' }, t('monitorMoreEvents').replace('{n}', String(hiddenEvents))))
+        : null
+
       return h('section', { className: 'rr-reports rr-monitor', 'aria-label': t('monitor') },
         head,
-        h('div', { className: 'rr-monitor-card' }, priceHead, priceTable),
-        h('div', { className: 'rr-monitor-card' }, eventsHead, eventsList,
-          hiddenEvents > 0
-            ? h('div', { className: 'rr-hint' }, t('monitorMoreEvents').replace('{n}', String(hiddenEvents)))
-            : null),
+        h('div', { className: 'rr-monitor-card' },
+          priceHead,
+          h('div', { className: 'rr-monitor-legend' }, t('monitorLegend')),
+          priceTable),
+        h('div', { className: 'rr-monitor-card' }, eventsHead, eventsList, moreLine),
       )
     }
 
@@ -1558,12 +1683,11 @@ window.__ModuleLoader__.load({
       /** Leave the reader entirely, back to the report list of the active 标的. */
       const closeDoc = React.useCallback(() => setDocStack([]), [])
 
-      /** Open a report from the monitor view: that is a reports-view action. */
-      const openFromMonitor = React.useCallback((path) => {
-        if (!path) return
-        setPane('reports')
-        openDoc(path)
-      }, [openDoc])
+      /** Toggle the monitor pane; leaving it also leaves any open report. */
+      const toggleMonitor = React.useCallback(() => {
+        setDocStack([])
+        setPane(current => (current === 'monitor' ? 'reports' : 'monitor'))
+      }, [])
 
       /** Step back one report when the reader was entered through an in-report link. */
       const backDoc = React.useCallback(() => {
@@ -1831,7 +1955,7 @@ window.__ModuleLoader__.load({
           h('button', {
             type: 'button',
             className: 'rr-button' + (pane === 'monitor' ? ' rr-button-active' : ''),
-            onClick: () => setPane(current => (current === 'monitor' ? 'reports' : 'monitor')),
+            onClick: toggleMonitor,
             title: t('monitorHint'),
             'aria-pressed': pane === 'monitor' ? 'true' : 'false',
           },
@@ -1899,7 +2023,7 @@ window.__ModuleLoader__.load({
       }
 
       const data = state.data || {}
-      if (!view.groups.length) {
+      if (!view.groups.length && pane !== 'monitor') {
         return shell(h('div', { className: 'rr-state' },
           h('div', { className: 'rr-state-title' }, t('emptyDir')),
           h('div', { className: 'rr-state-text' }, t('emptyDirHint')),
@@ -1908,7 +2032,7 @@ window.__ModuleLoader__.load({
         ))
       }
 
-      if (!sections.length) {
+      if (!sections.length && pane !== 'monitor') {
         return shell(h('div', { className: 'rr-state' },
           h('div', { className: 'rr-state-title' }, t('emptySearch')),
           view.hiddenDrafts ? h('div', { className: 'rr-state-text' }, t('showThem')) : null,
@@ -1983,7 +2107,9 @@ window.__ModuleLoader__.load({
             type: 'button',
             className: 'rr-button rr-button-quiet',
             onClick: backDoc,
-          }, '← ' + (docStack.length > 1 ? t('backToPrevious') : t('backToList'))),
+          }, '← ' + (docStack.length > 1
+            ? t('backToPrevious')
+            : (pane === 'monitor' ? t('backToMonitor') : t('backToList')))),
           h('div', { className: 'rr-doc-headline' },
             h('div', { className: 'rr-doc-title' }, doc.payload ? doc.payload.title : t('reading')),
             h('div', { className: 'rr-doc-meta' },
@@ -2174,15 +2300,20 @@ window.__ModuleLoader__.load({
         toast ? ' · ' + toast : '',
       )
 
-      const content = pane === 'monitor'
+      const pinnedNames = Object.values(prefs.buckets || {})
+        .flatMap(bucket => (bucket && Array.isArray(bucket.pins) ? bucket.pins : []))
+      const monitorPanel = pane === 'monitor'
         ? h(MonitorView, {
           t,
           state: monitorState,
           refresh: refreshMonitor,
-          openReport: openFromMonitor,
+          openReport: openDoc,
           needle,
+          pinned: pinnedNames,
         })
-        : (docPath ? docView : listView)
+        : null
+
+      const content = docPath ? docView : (monitorPanel || listView)
 
       return shell(h('div', { className: 'rr-main' }, h('div', { className: 'rr-body' }, nav, content), note), menuView)
     }
