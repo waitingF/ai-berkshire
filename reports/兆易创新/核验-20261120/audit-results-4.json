@@ -1,0 +1,142 @@
+{
+  "report": "04-风险管理层评估-李录视角.md",
+  "random_seed": 42,
+  "raw_samples": [
+    {
+      "id": 21,
+      "label": "风险维度评分",
+      "reported_value": 3.0,
+      "unit": "",
+      "line_number": 7,
+      "raw_text": "风险维度评分：3/5；管理层与股东利益一致性：3/5。评分为主观研究判断，分数越高表示风险越容易控制。",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 1,
+      "label": "朱一明个人减持 · 核实结果",
+      "reported_value": 2026.0,
+      "unit": "",
+      "line_number": 27,
+      "raw_text": "| 朱一明个人减持 | 2026年5月6日至6月12日，实际减持11,110,637股，金额4,400,014,389.48元；非未经证实的媒体传闻 | 应降低对“创始人利益完全绑定”的评价；减持本身不能证明财务造假或内幕交易 |",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 4,
+      "label": "朱一明个人增持计划 · 风险判断",
+      "reported_value": 11.0,
+      "unit": "",
+      "line_number": 29,
+      "raw_text": "| 朱一明个人增持计划 | 不低于10亿元，实施区间2026年12月13日至2027年7月29日 | 截至11月20日尚未进入计划实施期，不能写“已增持10亿元” |",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 9,
+      "label": "扣非归母净利润 · 金额",
+      "reported_value": 94.34,
+      "unit": "亿元",
+      "line_number": 57,
+      "raw_text": "| 扣非归母净利润 | 94.34亿元 |",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    }
+  ],
+  "excluded": [
+    {
+      "id": 21,
+      "label": "风险维度评分",
+      "reported_value": 3.0,
+      "unit": "",
+      "line_number": 7,
+      "raw_text": "风险维度评分：3/5；管理层与股东利益一致性：3/5。评分为主观研究判断，分数越高表示风险越容易控制。",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": "",
+      "classification": "subjective_score",
+      "reason": "主观评价不是可向财报核验的事实；未将其算作事实通过。"
+    },
+    {
+      "id": 1,
+      "label": "朱一明个人减持 · 核实结果",
+      "reported_value": 2026.0,
+      "unit": "",
+      "line_number": 27,
+      "raw_text": "| 朱一明个人减持 | 2026年5月6日至6月12日，实际减持11,110,637股，金额4,400,014,389.48元；非未经证实的媒体传闻 | 应降低对“创始人利益完全绑定”的评价；减持本身不能证明财务造假或内幕交易 |",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": "",
+      "classification": "metadata_or_parser_false_positive",
+      "reason": "抽取器取到日期/年份/月份；人工核对原句并以补充关键数据检查代替，不作为财务指标通过。"
+    },
+    {
+      "id": 4,
+      "label": "朱一明个人增持计划 · 风险判断",
+      "reported_value": 11.0,
+      "unit": "",
+      "line_number": 29,
+      "raw_text": "| 朱一明个人增持计划 | 不低于10亿元，实施区间2026年12月13日至2027年7月29日 | 截至11月20日尚未进入计划实施期，不能写“已增持10亿元” |",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": "",
+      "classification": "metadata_or_parser_false_positive",
+      "reason": "抽取器取到日期/年份/月份；人工核对原句并以补充关键数据检查代替，不作为财务指标通过。"
+    }
+  ],
+  "checked": [
+    {
+      "id": 9,
+      "label": "扣非归母净利润 · 金额",
+      "reported_value": 94.34,
+      "unit": "亿元",
+      "line_number": 57,
+      "raw_text": "| 扣非归母净利润 | 94.34亿元 |",
+      "fetched_value": 94.3396092189,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225641959.PDF",
+      "fetched_value2": 94.3396092189,
+      "fetched_source2": "东方财富GINCOME",
+      "audit_kind": "disclosed_fact",
+      "audit_note": ""
+    },
+    {
+      "id": 1000,
+      "label": "朱一明实际减持股数",
+      "reported_value": 11110637,
+      "unit": "",
+      "line_number": 0,
+      "raw_text": "人工补充关键数据；原文位置和日期另列",
+      "fetched_value": 11110637.0,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-07-30/1225447353.PDF",
+      "fetched_value2": 11110637.0,
+      "fetched_source2": "https://static.cninfo.com.cn/finalpage/2026-07-30/1225447344.PDF",
+      "audit_kind": "disclosed_fact",
+      "audit_note": ""
+    },
+    {
+      "id": 1001,
+      "label": "增持计划起始日年",
+      "reported_value": 2026,
+      "unit": "",
+      "line_number": 0,
+      "raw_text": "人工补充关键数据；原文位置和日期另列",
+      "fetched_value": 2026.0,
+      "fetched_source": "https://static.cninfo.com.cn/finalpage/2026-07-30/1225447344.PDF；已人工核完整日期2026-12-13",
+      "fetched_value2": null,
+      "fetched_source2": "",
+      "audit_kind": "disclosed_fact",
+      "audit_note": ""
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "cutoff": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "units": "CNY unless ratio/EPS",
+  "sources": {
+    "RPT_F10_FINANCE_GINCOME": {
+      "url": "https://datacenter.eastmoney.com/securities/api/data/v1/get?columns=ALL&filter=%28SECUCODE%3D%22603986.SH%22%29&pageSize=20&sortColumns=REPORT_DATE&sortTypes=-1&source=HSF10&client=PC&reportName=RPT_F10_FINANCE_GINCOME",
+      "data": [
+        {
+          "REPORT_DATE": "2026-09-30 00:00:00",
+          "OPERATE_INCOME": 20297371376.5,
+          "OPERATE_COST": 6855493449.93,
+          "OPERATE_PROFIT": 12466833361.42,
+          "PARENT_NETPROFIT": 11065687391.96,
+          "DEDUCT_PARENT_NETPROFIT": 9433960921.89,
+          "BASIC_EPS": 15.83,
+          "FAIRVALUE_CHANGE_INCOME": 1877893903.42
+        },
+        {
+          "REPORT_DATE": "2026-06-30 00:00:00",
+          "OPERATE_INCOME": 11565760432.15,
+          "OPERATE_COST": 4264243719.27,
+          "OPERATE_PROFIT": 7714523622.98,
+          "PARENT_NETPROFIT": 6856786413.68,
+          "DEDUCT_PARENT_NETPROFIT": 4883033478.93,
+          "BASIC_EPS": 9.83,
+          "FAIRVALUE_CHANGE_INCOME": 2227945059.17
+        },
+        {
+          "REPORT_DATE": "2026-03-31 00:00:00",
+          "OPERATE_INCOME": 4188075574.04,
+          "OPERATE_COST": 1797659470.9,
+          "OPERATE_PROFIT": 1621456006.2,
+          "PARENT_NETPROFIT": 1461248353.08,
+          "DEDUCT_PARENT_NETPROFIT": 1410064284.2,
+          "BASIC_EPS": 2.19,
+          "FAIRVALUE_CHANGE_INCOME": 40858139.94
+        },
+        {
+          "REPORT_DATE": "2025-12-31 00:00:00",
+          "OPERATE_INCOME": 9203463124.58,
+          "OPERATE_COST": 5502180091.92,
+          "OPERATE_PROFIT": 1715542904.73,
+          "PARENT_NETPROFIT": 1648022651.7,
+          "DEDUCT_PARENT_NETPROFIT": 1469196552.72,
+          "BASIC_EPS": 2.48,
+          "FAIRVALUE_CHANGE_INCOME": 151929920.93
+        },
+        {
+          "REPORT_DATE": "2025-09-30 00:00:00",
+          "OPERATE_INCOME": 6831634443.78,
+          "OPERATE_COST": 4195422101.55,
+          "OPERATE_PROFIT": 1124921840.53,
+          "PARENT_NETPROFIT": 1083227880.04,
+          "DEDUCT_PARENT_NETPROFIT": 1042132191.94,
+          "BASIC_EPS": 1.64,
+          "FAIRVALUE_CHANGE_INCOME": 9613876
+        },
+        {
+          "REPORT_DATE": "2024-12-31 00:00:00",
+          "OPERATE_INCOME": 7355977677.11,
+          "OPERATE_COST": 4560624797.99,
+          "OPERATE_PROFIT": 1117347446.08,
+          "PARENT_NETPROFIT": 1102542801.68,
+          "DEDUCT_PARENT_NETPROFIT": 1030479348.71,
+          "BASIC_EPS": 1.66,
+          "FAIRVALUE_CHANGE_INCOME": -275080.89
+        },
+        {
+          "REPORT_DATE": "2023-12-31 00:00:00",
+          "OPERATE_INCOME": 5760823414.65,
+          "OPERATE_COST": 3777808042.97,
+          "OPERATE_PROFIT": 119779324.78,
+          "PARENT_NETPROFIT": 161141224.88,
+          "DEDUCT_PARENT_NETPROFIT": 27400630.3,
+          "BASIC_EPS": 0.24,
+          "FAIRVALUE_CHANGE_INCOME": -11990376.69
+        }
+      ]
+    },
+    "RPT_F10_FINANCE_GCASHFLOW": {
+      "url": "https://datacenter.eastmoney.com/securities/api/data/v1/get?columns=ALL&filter=%28SECUCODE%3D%22603986.SH%22%29&pageSize=20&sortColumns=REPORT_DATE&sortTypes=-1&source=HSF10&client=PC&reportName=RPT_F10_FINANCE_GCASHFLOW",
+      "data": [
+        {
+          "REPORT_DATE": "2026-09-30 00:00:00",
+          "NETCASH_OPERATE": 10124072228.88,
+          "CONSTRUCT_LONG_ASSET": 1404275936.57,
+          "END_CASH_EQUIVALENT": null
+        },
+        {
+          "REPORT_DATE": "2026-06-30 00:00:00",
+          "NETCASH_OPERATE": 6048341057.06,
+          "CONSTRUCT_LONG_ASSET": 945105427.08,
+          "END_CASH_EQUIVALENT": null
+        },
+        {
+          "REPORT_DATE": "2026-03-31 00:00:00",
+          "NETCASH_OPERATE": 1783057278.72,
+          "CONSTRUCT_LONG_ASSET": 327042913.51,
+          "END_CASH_EQUIVALENT": null
+        },
+        {
+          "REPORT_DATE": "2025-12-31 00:00:00",
+          "NETCASH_OPERATE": 2128504212.49,
+          "CONSTRUCT_LONG_ASSET": 1048563639.29,
+          "END_CASH_EQUIVALENT": null
+        },
+        {
+          "REPORT_DATE": "2025-09-30 00:00:00",
+          "NETCASH_OPERATE": 1795645619.05,
+          "CONSTRUCT_LONG_ASSET": 714995741.42,
+          "END_CASH_EQUIVALENT": null
+        },
+        {
+          "REPORT_DATE": "2024-12-31 00:00:00",
+          "NETCASH_OPERATE": 2032230237.01,
+          "CONSTRUCT_LONG_ASSET": 499017219.78,
+          "END_CASH_EQUIVALENT": null
+        },
+        {
+          "REPORT_DATE": "2023-12-31 00:00:00",
+          "NETCASH_OPERATE": 1186749309.93,
+          "CONSTRUCT_LONG_ASSET": 348363732.56,
+          "END_CASH_EQUIVALENT": null
+        }
+      ]
+    },
+    "RPT_F10_FINANCE_GBALANCE": {
+      "url": "https://datacenter.eastmoney.com/securities/api/data/v1/get?columns=ALL&filter=%28SECUCODE%3D%22603986.SH%22%29&pageSize=20&sortColumns=REPORT_DATE&sortTypes=-1&source=HSF10&client=PC&reportName=RPT_F10_FINANCE_GBALANCE",
+      "data": [
+        {
+          "REPORT_DATE": "2026-09-30 00:00:00",
+          "MONETARYFUNDS": 18860394865.64,
+          "INVENTORY": 6291974702.44,
+          "ACCOUNTS_RECE": 599663920.58,
+          "ACCOUNTS_PAYABLE": 1814292666.42,
+          "CONTRACT_LIAB": 1236173215.75,
+          "TOTAL_ASSETS": 87654926728.13,
+          "TOTAL_LIABILITIES": 10537547812.63,
+          "TOTAL_PARENT_EQUITY": 76828535308.48,
+          "SHARE_CAPITAL": 703971427,
+          "OTHER_EQUITY_INVEST": 51764683980.73,
+          "OTHER_NONCURRENT_FINASSET": 2782331751.53,
+          "DEFER_TAX_LIAB": 5047091705.75,
+          "OTHER_COMPRE_INCOME": 43674535575.97
+        },
+        {
+          "REPORT_DATE": "2026-06-30 00:00:00",
+          "MONETARYFUNDS": 16964598373.16,
+          "INVENTORY": 4184224748.31,
+          "ACCOUNTS_RECE": 435689503.57,
+          "ACCOUNTS_PAYABLE": 1649350170.94,
+          "CONTRACT_LIAB": 452362115.12,
+          "TOTAL_ASSETS": 42405173401.79,
+          "TOTAL_LIABILITIES": 4861841803.29,
+          "TOTAL_PARENT_EQUITY": 37283402722.23,
+          "SHARE_CAPITAL": 701749599,
+          "OTHER_EQUITY_INVEST": 11437360730.29,
+          "OTHER_NONCURRENT_FINASSET": 2984128403.73,
+          "DEFER_TAX_LIAB": 1147423982.39,
+          "OTHER_COMPRE_INCOME": 7691326143.39
+        },
+        {
+          "REPORT_DATE": "2026-03-31 00:00:00",
+          "MONETARYFUNDS": 14693983869.58,
+          "INVENTORY": 3401438660.14,
+          "ACCOUNTS_RECE": 286540329.23,
+          "ACCOUNTS_PAYABLE": 990648650.99,
+          "CONTRACT_LIAB": 359959730.27,
+          "TOTAL_ASSETS": 27773679160.67,
+          "TOTAL_LIABILITIES": 2258791840.78,
+          "TOTAL_PARENT_EQUITY": 25273306654.79,
+          "SHARE_CAPITAL": 701102451,
+          "OTHER_EQUITY_INVEST": 3627793088.98,
+          "OTHER_NONCURRENT_FINASSET": 647471865.38,
+          "DEFER_TAX_LIAB": 93452555.93,
+          "OTHER_COMPRE_INCOME": 751360340.66
+        },
+        {
+          "REPORT_DATE": "2025-12-31 00:00:00",
+          "MONETARYFUNDS": 9186269982.61,
+          "INVENTORY": 3065974388.37,
+          "ACCOUNTS_RECE": 192618022.79,
+          "ACCOUNTS_PAYABLE": 812928595.58,
+          "CONTRACT_LIAB": 218174401.41,
+          "TOTAL_ASSETS": 21396579783.85,
+          "TOTAL_LIABILITIES": 2173743141.7,
+          "TOTAL_PARENT_EQUITY": 19007782130.79,
+          "SHARE_CAPITAL": 667849351,
+          "OTHER_EQUITY_INVEST": 3594205489.31,
+          "OTHER_NONCURRENT_FINASSET": 603451765.83,
+          "DEFER_TAX_LIAB": 93627951.1,
+          "OTHER_COMPRE_INCOME": 777709963.95
+        },
+        {
+          "REPORT_DATE": "2025-09-30 00:00:00",
+          "MONETARYFUNDS": 10013617507.43,
+          "INVENTORY": 2566955009.89,
+          "ACCOUNTS_RECE": 236164305.53,
+          "ACCOUNTS_PAYABLE": 781944174.57,
+          "CONTRACT_LIAB": 219270080.69,
+          "TOTAL_ASSETS": 20756260682.52,
+          "TOTAL_LIABILITIES": 2356254809.82,
+          "TOTAL_PARENT_EQUITY": 18194504408.02,
+          "SHARE_CAPITAL": 667277972,
+          "OTHER_EQUITY_INVEST": 3483575242.56,
+          "OTHER_NONCURRENT_FINASSET": 224149874.95,
+          "DEFER_TAX_LIAB": 103662066.61,
+          "OTHER_COMPRE_INCOME": 674480214.89
+        },
+        {
+          "REPORT_DATE": "2024-12-31 00:00:00",
+          "MONETARYFUNDS": 9128009982.71,
+          "INVENTORY": 2346367580.17,
+          "ACCOUNTS_RECE": 212015844.83,
+          "ACCOUNTS_PAYABLE": 733599134.21,
+          "CONTRACT_LIAB": 94531914.31,
+          "TOTAL_ASSETS": 19228833821.39,
+          "TOTAL_LIABILITIES": 2550053927.35,
+          "TOTAL_PARENT_EQUITY": 16498507838.97,
+          "SHARE_CAPITAL": 664124105,
+          "OTHER_EQUITY_INVEST": 3365869151.98,
+          "OTHER_NONCURRENT_FINASSET": 210894218.37,
+          "DEFER_TAX_LIAB": 119791412.46,
+          "OTHER_COMPRE_INCOME": 627257556.21
+        },
+        {
+          "REPORT_DATE": "2023-12-31 00:00:00",
+          "MONETARYFUNDS": 7265862312.09,
+          "INVENTORY": 1990866219.55,
+          "ACCOUNTS_RECE": 114147449.12,
+          "ACCOUNTS_PAYABLE": 501844428.24,
+          "CONTRACT_LIAB": 88090894.74,
+          "TOTAL_ASSETS": 16455783581.8,
+          "TOTAL_LIABILITIES": 1256206998.01,
+          "TOTAL_PARENT_EQUITY": 15199576583.79,
+          "SHARE_CAPITAL": 666906348,
+          "OTHER_EQUITY_INVEST": 1744389444.28,
+          "OTHER_NONCURRENT_FINASSET": 145611765,
+          "DEFER_TAX_LIAB": 124542458.5,
+          "OTHER_COMPRE_INCOME": 496336620.1
+        }
+      ]
+    },
+    "RPT_F10_FINANCE_MAINFINADATA": {
+      "url": "https://datacenter.eastmoney.com/securities/api/data/v1/get?columns=ALL&filter=%28SECUCODE%3D%22603986.SH%22%29&pageSize=20&sortColumns=REPORT_DATE&sortTypes=-1&source=HSF10&client=PC&reportName=RPT_F10_FINANCE_MAINFINADATA",
+      "data": [
+        {
+          "REPORT_DATE": "2026-09-30 00:00:00",
+          "EPSJB": 15.83,
+          "EPSKCJB": null,
+          "ROEJQ": 22.15,
+          "XSJLL": 54.7926373502,
+          "XSMLL": 66.2247227842,
+          "ZCFZL": 12.0216264002
+        },
+        {
+          "REPORT_DATE": "2026-06-30 00:00:00",
+          "EPSJB": 9.83,
+          "EPSKCJB": 7,
+          "ROEJQ": 23.13,
+          "XSJLL": 59.5291512331,
+          "XSMLL": 63.1304509177,
+          "ZCFZL": 11.4652091084
+        },
+        {
+          "REPORT_DATE": "2026-03-31 00:00:00",
+          "EPSJB": 2.19,
+          "EPSKCJB": null,
+          "ROEJQ": 6.12,
+          "XSJLL": 35.1597107365,
+          "XSMLL": 57.0767184326,
+          "ZCFZL": 8.1328506307
+        },
+        {
+          "REPORT_DATE": "2025-12-31 00:00:00",
+          "EPSJB": 2.48,
+          "EPSKCJB": 2.21,
+          "ROEJQ": 9.3,
+          "XSJLL": 18.2251456286,
+          "XSMLL": 40.2161988651,
+          "ZCFZL": 10.1593019242
+        },
+        {
+          "REPORT_DATE": "2025-09-30 00:00:00",
+          "EPSJB": 1.64,
+          "EPSKCJB": null,
+          "ROEJQ": 6.3,
+          "XSJLL": 16.1659681605,
+          "XSMLL": 38.5883109514,
+          "ZCFZL": 11.3520197393
+        },
+        {
+          "REPORT_DATE": "2024-12-31 00:00:00",
+          "EPSJB": 1.66,
+          "EPSKCJB": 1.55,
+          "ROEJQ": 6.94,
+          "XSJLL": 14.965805161,
+          "XSMLL": 38.001106064,
+          "ZCFZL": 13.2616150882
+        },
+        {
+          "REPORT_DATE": "2023-12-31 00:00:00",
+          "EPSJB": 0.24,
+          "EPSKCJB": 0.04,
+          "ROEJQ": 1.06,
+          "XSJLL": 2.7971908403,
+          "XSMLL": 34.4224293811,
+          "ZCFZL": 7.6338327602
+        }
+      ]
+    }
+  }
+}

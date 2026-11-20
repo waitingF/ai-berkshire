@@ -1,0 +1,76 @@
+{
+  "report": "README.md",
+  "random_seed": 42,
+  "raw_samples": [
+    {
+      "id": 1,
+      "label": "研究日期与数据截止",
+      "reported_value": 2026.0,
+      "unit": "",
+      "line_number": 3,
+      "raw_text": "研究日期与数据截止：2026-11-20，Asia/Shanghai。财务截止2026-09-30，三季报未经审计。统一A股行情快照为当日13:46:32的206.32元，非收盘价。",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    },
+    {
+      "id": 2,
+      "label": "三季报未经审计。统一A股行情快照为当日13",
+      "reported_value": 46.0,
+      "unit": "",
+      "line_number": 3,
+      "raw_text": "研究日期与数据截止：2026-11-20，Asia/Shanghai。财务截止2026-09-30，三季报未经审计。统一A股行情快照为当日13:46:32的206.32元，非收盘价。",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": ""
+    }
+  ],
+  "excluded": [
+    {
+      "id": 1,
+      "label": "研究日期与数据截止",
+      "reported_value": 2026.0,
+      "unit": "",
+      "line_number": 3,
+      "raw_text": "研究日期与数据截止：2026-11-20，Asia/Shanghai。财务截止2026-09-30，三季报未经审计。统一A股行情快照为当日13:46:32的206.32元，非收盘价。",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": "",
+      "classification": "metadata_or_parser_false_positive",
+      "reason": "抽取器取到日期/年份/月份；人工核对原句并以补充关键数据检查代替，不作为财务指标通过。"
+    },
+    {
+      "id": 2,
+      "label": "三季报未经审计。统一A股行情快照为当日13",
+      "reported_value": 46.0,
+      "unit": "",
+      "line_number": 3,
+      "raw_text": "研究日期与数据截止：2026-11-20，Asia/Shanghai。财务截止2026-09-30，三季报未经审计。统一A股行情快照为当日13:46:32的206.32元，非收盘价。",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": "",
+      "classification": "metadata_or_parser_false_positive",
+      "reason": "抽取器取到日期/年份/月份；人工核对原句并以补充关键数据检查代替，不作为财务指标通过。"
+    }
+  ],
+  "checked": [
+    {
+      "id": 1000,
+      "label": "统一行情",
+      "reported_value": 206.32,
+      "unit": "",
+      "line_number": 0,
+      "raw_text": "人工补充关键数据；原文位置和日期另列",
+      "fetched_value": 206.32,
+      "fetched_source": "腾讯快照",
+      "fetched_value2": 206.32,
+      "fetched_source2": "东方财富同时间快照",
+      "audit_kind": "disclosed_fact",
+      "audit_note": ""
+    }
+  ]
+}

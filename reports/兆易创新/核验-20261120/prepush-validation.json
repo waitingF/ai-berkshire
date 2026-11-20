@@ -1,0 +1,17 @@
+{
+  "command": "bash scripts/prepush-check.sh",
+  "exit_code": 0,
+  "last_lines": [
+    "✅ 本地预检通过（本次未发送任何通知：微信推送需 GitHub Secret，仅在 Actions 中发送）",
+    "   确认数据 OK 后，再执行提交与推送。"
+  ],
+  "stderr": "",
+  "notifications": "none; standard local validation only",
+  "scanner_summary": {
+    "scanned_targets": 94,
+    "triggered": 17,
+    "near": 6,
+    "events_total": 54
+  },
+  "archive_side_effects": "The helper generated trigger-scan archive reports; restored tracked latest from clean initial HEAD and removed only newly generated dated archive. No archive change retained."
+}
