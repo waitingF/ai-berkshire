@@ -1,0 +1,203 @@
+{
+  "price_hkd": "43.54",
+  "shares": "330835596",
+  "fx_cny_per_hkd": "0.8492",
+  "mcap_hkd": "14404581849.84",
+  "mcap_cny_m": "12232.370906884128",
+  "ttm_revenue_cny_m": "2053.833",
+  "ttm_parent_profit_cny_m": "67.873",
+  "ttm_cfo_cny_m": "-621.935",
+  "ttm_cash_capex_cny_m": "156.787",
+  "ttm_simple_fcf_cny_m": "-778.722",
+  "ps_ttm": "5.955874166441053386521688959131536010961",
+  "pe_ttm": "180.2244030304263551043861329247270637809",
+  "pb_june_equity": "5.044526288675781069578700801689155752037",
+  "hypothetical_shares_3y": "363919155.60",
+  "normalized_eps_hkd": "0.6645845274039829211154524164574784900460",
+  "cash_less_bank_debt_cny_m": "337.594",
+  "cash_less_bank_debt_and_lease_cny_m": "312.248",
+  "potential_cb_dilution_pct": "3.575272172345082238369537478669616917522",
+  "cb_redemption_cny_equivalent_m": "1290.1900",
+  "h1_gross_margin_pct": "60.07201498209449432845822376142813858231",
+  "h1_subscription_pct": "9.482317343677128004459055180807862497298",
+  "h1_recv_revenue_pct": "101.6824867298641911602746993084948517147",
+  "h1_receivables_provision_pct": "20.75780824390668467556581360789382915830",
+  "top_customer_pct": "24.90762868645044936976549630256219875266",
+  "h1_rd_pct": "41.01151888118251827002722795058225209173",
+  "h1_growth_pct": "388.7770729611564608658293108241300007582",
+  "h1_pretax_ex_fv_m": "-34.404",
+  "capex_authority_to_equity": "4.948698492296526013658407838738411797697",
+  "liu_deemed_pct_at_june": "26.82784340582719232461712954067940525699",
+  "liu_deemed_if_same_shares_pct_current": "26.16763191346556311915118105973094866128",
+  "fuqian_june_pct": "11.23443509950603357980005825952760200066",
+  "fuqian_current_pct": "10.95796475298262645232407216543893299801",
+  "from_oct8_change_pct": "-48.50384387936132465996451803666469544648",
+  "reverse_dcf_fcfe_year1_m": "244.4011488181924162236299481635819467721",
+  "reverse_dcf_fcfe_year10_m": "1261.056245678337249386091844653228610897",
+  "reverse_2036_profit_to_meet_r_after_dilution_m": "2379.571485665797963827246960000000000001",
+  "three_year": [
+    {
+      "case": "bull",
+      "growth": "0.5",
+      "pe": "30",
+      "revenue_cny_m": "6931.686375",
+      "profit_cny_m": "693.1686375",
+      "eps_hkd": "2.242972779988442358764651905543989903905",
+      "future_price_hkd": "67.28918339965327076293955716631969711715",
+      "present_price_hkd": "53.41632325456395649397604941948611834860",
+      "total_return_pct": "54.54566697210213771919971788314124280470"
+    },
+    {
+      "case": "base",
+      "growth": "0.3",
+      "pe": "22",
+      "revenue_cny_m": "4512.271101",
+      "profit_cny_m": "451.2271101",
+      "eps_hkd": "1.460092206706550477690648958957080242631",
+      "future_price_hkd": "32.12202854754411050919427709705576533788",
+      "present_price_hkd": "25.49950190801080763634408269275498315320",
+      "total_return_pct": "-26.22409612415224963437235393418519674350"
+    },
+    {
+      "case": "bear",
+      "growth": "0.1",
+      "pe": "12",
+      "revenue_cny_m": "2733.651723",
+      "profit_cny_m": "273.3651723",
+      "eps_hkd": "0.8845620059747012680046671663049038702512",
+      "future_price_hkd": "10.61474407169641521605600599565884644301",
+      "present_price_hkd": "8.426326074290326055523807025462047232232",
+      "total_return_pct": "-75.62070723083046574171794672563425254247"
+    }
+  ],
+  "three_year_base_price_margin_at_20_pct": "21.56709541955056427803051011761449569871",
+  "three_year_base_price_margin_at_25_pct": "1.958869274438205347538137647018119623380",
+  "terminal_scenarios": [
+    {
+      "case": "bear",
+      "profit2036_cny_m": 150,
+      "g": 0,
+      "pe_r8": 12.5,
+      "spread": 0.08,
+      "irr_pct_r8": -19.10104364594458,
+      "irr_pct_anchor_r10": -20.93039410335919
+    },
+    {
+      "case": "base",
+      "profit2036_cny_m": 900,
+      "g": 0.01,
+      "pe_r8": 13.333333333333332,
+      "spread": 0.07,
+      "irr_pct_r8": -2.1916076082765894,
+      "irr_pct_anchor_r10": -4.66867994155322
+    },
+    {
+      "case": "bull",
+      "profit2036_cny_m": 2500,
+      "g": 0.01,
+      "pe_r8": 13.333333333333332,
+      "spread": 0.07,
+      "irr_pct_r8": 8.544416186791539,
+      "irr_pct_anchor_r10": 5.800894240662837
+    }
+  ],
+  "terminal_config": {
+    "迅策科技": {
+      "roic": 0.15,
+      "g": [
+        0,
+        0.01,
+        0.01
+      ],
+      "p": [
+        0.35,
+        0.5,
+        0.15
+      ],
+      "irr10": [
+        -20.93039410335919,
+        -4.66867994155322,
+        5.800894240662837
+      ],
+      "k": -0.02
+    }
+  },
+  "terminal_risk_attribution": "回款及减值:情景,算力回报不足:情景,摊薄:情景,转债再融资失败:未建模,数据合规停业:未建模",
+  "history": [
+    {
+      "year": "2022",
+      "revenue": "287.899",
+      "gross_profit": "224.614",
+      "gross_margin_pct": "78.01833281810634979628272415",
+      "parent_profit": "-75.141",
+      "cfo": "-184.965",
+      "cash_bank": "748.569"
+    },
+    {
+      "year": "2023",
+      "revenue": "530.458",
+      "gross_profit": "419.178",
+      "gross_margin_pct": "79.02190182823145282001591078",
+      "parent_profit": "-55.267",
+      "cfo": "-193.980",
+      "cash_bank": "596.968"
+    },
+    {
+      "year": "2024",
+      "revenue": "631.978",
+      "gross_profit": "484.627",
+      "gross_margin_pct": "76.68415672697467316900271845",
+      "parent_profit": "-84.011",
+      "cfo": "-170.223",
+      "cash_bank": "343.818"
+    },
+    {
+      "year": "2025",
+      "revenue": "1284.657",
+      "gross_profit": "792.082",
+      "gross_margin_pct": "61.65708045026804820274983906",
+      "parent_profit": "-94.061",
+      "cfo": "-88.840",
+      "cash_bank": "1083.856"
+    },
+    {
+      "year": "2026H1",
+      "revenue": "967.021",
+      "gross_profit": "580.909",
+      "gross_margin_pct": "60.07201498209449432845822376",
+      "parent_profit": "72.505",
+      "cfo": "-661.209",
+      "cash_bank": "633.828"
+    }
+  ],
+  "capital_cost": {
+    "currency": "CNY",
+    "r": ".08",
+    "roic": ".15",
+    "g": [
+      "0",
+      ".01",
+      ".01"
+    ],
+    "rf": ".0159",
+    "beta": "1",
+    "erp": ".0641",
+    "k": "-.02"
+  },
+  "three_year_base_price_margin_at_18_pct": "29.41038587759550785022745911",
+  "three_year_assumptions": {
+    "normalized_parent_margin": ".10",
+    "share_increase_three_years": ".10",
+    "interim_dividends": "0",
+    "r_cny": ".08",
+    "fixed_fx_cny_per_hkd": ".8492"
+  },
+  "reverse_dcf_assumptions": {
+    "cashflow_years": 10,
+    "annual_fcfe_growth": ".20",
+    "perpetual_g": ".01",
+    "r": ".08",
+    "additional_funding": "0",
+    "additional_dilution": "0"
+  }
+}

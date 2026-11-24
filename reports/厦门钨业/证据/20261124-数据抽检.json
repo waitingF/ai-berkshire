@@ -1,0 +1,251 @@
+{
+  "seed": 20261124,
+  "extracted_points": 108,
+  "raw_sample_count": 17,
+  "excluded_extraction_noise": [
+    {
+      "id": 23,
+      "label": "累计CFO（亿元） · 判断",
+      "reported_value": 3.0,
+      "unit": "",
+      "raw_text": "| 累计CFO（亿元） | -24.63 | -6.40 | Q3单季+18.23亿元，改善是真实的 |",
+      "line_number": 68,
+      "exclusion_reason": "抽取器将Q3、年份或日期识别为财务量；不作为通过项"
+    },
+    {
+      "id": 106,
+      "label": "历史对照先用公司自身",
+      "reported_value": 2022.0,
+      "unit": "",
+      "raw_text": "历史对照先用公司自身：2022年盈利增长而经营现金流为负，2023年现金集中回流，已说明营运资本时点能显著改变单年FCF。反面也要防止把2026必然类比为2023——价格、库存量和产能基数已经不同。伯克希尔2007年股东信对航空业的历史讨论",
+      "line_number": 141,
+      "exclusion_reason": "抽取器将Q3、年份或日期识别为财务量；不作为通过项"
+    },
+    {
+      "id": 55,
+      "label": "PB · 使用限制",
+      "reported_value": 3.0,
+      "unit": "",
+      "raw_text": "| PB | 2.67倍 | Q3归母每股净资产约11.9807元 |",
+      "line_number": 201,
+      "exclusion_reason": "抽取器将Q3、年份或日期识别为财务量；不作为通过项"
+    },
+    {
+      "id": 102,
+      "label": "下一复检 · 具体动作",
+      "reported_value": 2026.0,
+      "unit": "",
+      "raw_text": "| 下一复检 | 2026-12-31检查分红决策、矿山及仲裁/融资；2027-04-30检查2026年报与2027Q1披露，后者是法定窗口研究检查，并非已确认预约日，提前披露即提前复核 |",
+      "line_number": 283,
+      "exclusion_reason": "抽取器将Q3、年份或日期识别为财务量；不作为通过项"
+    },
+    {
+      "id": 108,
+      "label": "ing.com/equities/xiamen-tungst)",
+      "reported_value": 11.0,
+      "unit": "",
+      "raw_text": "- [S3] [腾讯厦钨行情](https://qt.gtimg.cn/q=sh600549)；[Investing厦钨行情](https://cn.investing.com/equities/xiamen-tungst)：11月24日价",
+      "line_number": 306,
+      "exclusion_reason": "抽取器将Q3、年份或日期识别为财务量；不作为通过项"
+    }
+  ],
+  "checks": [
+    {
+      "id": 1,
+      "label": "钨钼 · 2025收入（亿元）",
+      "reported_value": 201.52,
+      "unit": "",
+      "raw_text": "| 钨钼 | 201.52 | 243.07 | +67.28% | 43.82 | 原料与产品均价上升；切削工具等深加工销量增长 |",
+      "line_number": 27,
+      "fetched_value": 201.52,
+      "fetched_source": "2025年报钨钼分部；同一公司原始来源，缺独立第二分部源",
+      "check_type": "single_source_fact"
+    },
+    {
+      "id": 6,
+      "label": "电池材料 · 前三季利润总额（亿元）",
+      "reported_value": 8.53,
+      "unit": "",
+      "raw_text": "| 电池材料 | 198.80 | 224.39 | +71.83% | 8.53 | 动力正极销量增长，但钴酸锂销量下降 |",
+      "line_number": 28,
+      "fetched_value": 8.53,
+      "fetched_source": "2026Q3公司分部税前利润；独立第二分部源缺失",
+      "check_type": "single_source_fact"
+    },
+    {
+      "id": 18,
+      "label": "累计归母净利（亿元） · 2026H1",
+      "reported_value": 22.01,
+      "unit": "",
+      "raw_text": "| 累计归母净利（亿元） | 22.01 | 32.26 | Q3单季10.26亿元；同比+27.44%，增速明显低于H1 |",
+      "line_number": 67,
+      "fetched_value2": 22.007484897,
+      "fetched_source2": "巨潮2026H1原报表",
+      "fetched_value": 22.007484897,
+      "fetched_source": "东方财富合并利润表2026H1",
+      "check_type": "external_fact"
+    },
+    {
+      "id": 21,
+      "label": "累计CFO（亿元） · 2026H1",
+      "reported_value": -24.63,
+      "unit": "",
+      "raw_text": "| 累计CFO（亿元） | -24.63 | -6.40 | Q3单季+18.23亿元，改善是真实的 |",
+      "line_number": 68,
+      "fetched_value2": -24.6266055826,
+      "fetched_source2": "巨潮2026H1合并现金流",
+      "fetched_value": -24.6266055826,
+      "fetched_source": "东方财富合并现金流2026H1",
+      "check_type": "external_fact"
+    },
+    {
+      "id": 57,
+      "label": "宽口径EV/TTM收入代理 · 数值",
+      "reported_value": 1.08,
+      "unit": "倍",
+      "raw_text": "| 宽口径EV/TTM收入代理 | 1.08倍 | 市值＋净债代理＋账面少数权益；未扣非经营股权资产，非严格可比EV |",
+      "line_number": 203,
+      "fetched_value": 1.0839049982881677,
+      "fetched_source": "Decimal重算；价格/现金/债务/少数权益及收入输入见核验记录",
+      "check_type": "derived"
+    },
+    {
+      "id": 60,
+      "label": "过去已实施每股现金分红合计 · 数值",
+      "reported_value": 0.82,
+      "unit": "",
+      "raw_text": "| 过去已实施每股现金分红合计 | 0.82元 | 2025年度0.40元＋2026H1的0.42元；对应现价约2.57%，非未来承诺 |",
+      "line_number": 205,
+      "fetched_value": 0.82,
+      "fetched_source": "2025年度分配0.40+2026H1分配0.42元，原公告与年报/H1核",
+      "check_type": "derived_fact"
+    },
+    {
+      "id": 63,
+      "label": "悲观：需求、价格和回款承压 · 第三年PE",
+      "reported_value": 10.0,
+      "unit": "倍",
+      "raw_text": "| 悲观：需求、价格和回款承压 | -5% | 10倍 | 16.20元 | -49.29% | 2.05元 | 14.63元 |",
+      "line_number": 218,
+      "fetched_value": 10,
+      "fetched_source": "三年悲观PE模型输入，假设一致性检查，不是外部验证",
+      "check_type": "assumption"
+    },
+    {
+      "id": 78,
+      "label": "乐观：深加工增长和资本回报改善 · 三年每股股息假设合计",
+      "reported_value": 3.02,
+      "unit": "",
+      "raw_text": "| 乐观：深加工增长和资本回报改善 | +15% | 22倍 | 63.23元 | +97.89% | 3.02元 | 52.77元 |",
+      "line_number": 220,
+      "fetched_value": 3.0184509848351344,
+      "fetched_source": "Decimal逐年EPS乘40%分配率后相加；非外部预测证实",
+      "check_type": "model_arithmetic"
+    },
+    {
+      "id": 87,
+      "label": "基准 · 永续g",
+      "reported_value": 1.0,
+      "unit": "%",
+      "raw_text": "| 基准 | 50% | 53.73 | 1% | 7个百分点 | 12.86倍 | +4.14% |",
+      "line_number": 237,
+      "fetched_value": 1,
+      "fetched_source": "terminal_value配置基准g=0.01；假设一致性检查",
+      "check_type": "assumption"
+    },
+    {
+      "id": 89,
+      "label": "基准 · 退出PE（r为8%）",
+      "reported_value": 12.86,
+      "unit": "倍",
+      "raw_text": "| 基准 | 50% | 53.73 | 1% | 7个百分点 | 12.86倍 | +4.14% |",
+      "line_number": 237,
+      "fetched_value": 12.857142857142856,
+      "fetched_source": "terminal_value.py pe，ROIC10% g1% r8%；内部算式",
+      "check_type": "model_arithmetic"
+    },
+    {
+      "id": 98,
+      "label": "空仓者 · 具体动作",
+      "reported_value": 25.0,
+      "unit": "",
+      "raw_text": "| 空仓者 | 现价不新增长期价值仓；25—28元且下列经营条件满足后，重新估值再研究性分批 |",
+      "line_number": 278,
+      "fetched_value": 25,
+      "fetched_source": "人工判断价位下沿与triggers.json登记一致性，不是外部公允价值",
+      "check_type": "policy_consistency"
+    },
+    {
+      "id": 100,
+      "label": "减仓/卖出信号 · 具体动作",
+      "reported_value": 25.0,
+      "unit": "",
+      "raw_text": "| 减仓/卖出信号 | 深加工单位盈利持续恶化、回款再次逆转并伴净债增加、矿山资本回报或治理出现永久损害；价格低于25元先核论文损坏，不能机械补仓 |",
+      "line_number": 281,
+      "fetched_value": 25,
+      "fetched_source": "人工判断价位下沿与triggers.json登记一致性，不是外部公允价值",
+      "check_type": "policy_consistency"
+    },
+    {
+      "id": 201,
+      "label": "补抽 2022-12-31 归母净利润",
+      "reported_value": 14.46,
+      "unit": "亿元",
+      "fetched_value": 14.4618667024,
+      "fetched_source": "东方财富PARENT_NETPROFIT",
+      "fetched_value2": 14.4618667024,
+      "fetched_source2": "2022年报（2021比较期追溯后）原报表核对",
+      "check_type": "external_fact",
+      "note": "随机种子20261124，从20项历史财务事实中补抽，替换抽取噪声"
+    },
+    {
+      "id": 202,
+      "label": "补抽 2021-12-31 收入",
+      "reported_value": 318.52,
+      "unit": "亿元",
+      "fetched_value": 318.5219574028,
+      "fetched_source": "东方财富OPERATE_INCOME",
+      "fetched_value2": 318.5219574028,
+      "fetched_source2": "2022年报（2021比较期追溯后）原报表核对",
+      "check_type": "external_fact",
+      "note": "随机种子20261124，从20项历史财务事实中补抽，替换抽取噪声"
+    },
+    {
+      "id": 203,
+      "label": "补抽 2021-12-31 归母净利润",
+      "reported_value": 11.79,
+      "unit": "亿元",
+      "fetched_value": 11.788606668,
+      "fetched_source": "东方财富PARENT_NETPROFIT",
+      "fetched_value2": 11.788606668,
+      "fetched_source2": "2022年报（2021比较期追溯后）原报表核对",
+      "check_type": "external_fact",
+      "note": "随机种子20261124，从20项历史财务事实中补抽，替换抽取噪声"
+    },
+    {
+      "id": 204,
+      "label": "补抽 2022-12-31 收入",
+      "reported_value": 482.23,
+      "unit": "亿元",
+      "fetched_value": 482.2278704491,
+      "fetched_source": "东方财富OPERATE_INCOME",
+      "fetched_value2": 482.2278704491,
+      "fetched_source2": "2022年报（2021比较期追溯后）原报表核对",
+      "check_type": "external_fact",
+      "note": "随机种子20261124，从20项历史财务事实中补抽，替换抽取噪声"
+    },
+    {
+      "id": 205,
+      "label": "补抽 2024-12-31 经营现金流",
+      "reported_value": 30.58,
+      "unit": "亿元",
+      "fetched_value": 30.5842975561,
+      "fetched_source": "东方财富NETCASH_OPERATE",
+      "fetched_value2": 30.5842975561,
+      "fetched_source2": "2025年报（2024比较期追溯后）原报表核对",
+      "check_type": "external_fact",
+      "note": "随机种子20261124，从20项历史财务事实中补抽，替换抽取噪声"
+    }
+  ],
+  "limitations": "单一公司分部来源不能算独立多源；假设、价位、模型核验只证明一致性；严谨度不等于预测可靠度。"
+}

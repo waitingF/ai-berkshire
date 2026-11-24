@@ -1,0 +1,1167 @@
+{
+  "date": "2026-11-24",
+  "currency": "CNY",
+  "sources": {
+    "primary_annual": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225064958.pdf",
+    "primary_q3": "https://static.cninfo.com.cn/finalpage/2026-10-26/1225620808.PDF",
+    "secondary_api": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_DMSK_FN_INCOME&columns=ALL&filter=%28SECUCODE%3D%22300433.SZ%22%29&pageSize=30&sortColumns=REPORT_DATE&sortTypes=-1&source=WEB&client=WEB",
+    "quote": "https://qt.gtimg.cn/q=sz300433,hk06613",
+    "fx": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do",
+    "segments_secondary": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ300433"
+  },
+  "shares": "5278740870",
+  "fx_CNY_per_HKD": "0.85587",
+  "price_A": "23.98",
+  "price_H": "11.97",
+  "price_H_CNY": "10.2447639",
+  "mcap": {
+    "A": "126584206062.60",
+    "H_CNY": "54079453902.4305930",
+    "H_HKD": "63186528213.90"
+  },
+  "ttm": {
+    "TOTAL_OPERATE_INCOME": "68649021150.16",
+    "PARENT_NETPROFIT": "2594646439.00",
+    "DEDUCT_PARENT_NETPROFIT": "2130189376.80",
+    "OPERATE_PROFIT": "3099963758.11",
+    "NETCASH_OPERATE": "10334303597.13",
+    "CONSTRUCT_LONG_ASSET": "10612656197.41",
+    "FCF": "-278352600.28"
+  },
+  "eps_current_shares": "0.4915275257677121021475714150749741197279",
+  "bvps": "10.06408338448899841526034218838251099831",
+  "fcfps": "-0.05273087032211149247036253931517574189998",
+  "revps": "13.00480982885602414501547601066464169892",
+  "debt_and_lease": "14475870408.39",
+  "netdebt_less_cash_and_current_CD": "5815779004.28",
+  "annual": [
+    {
+      "year": 2021,
+      "revenue": "452.6814620865",
+      "profit": "20.7024293438",
+      "gross_margin": "20.92267859407105189037507794273792408569",
+      "op_margin": "4.777480377243166072854262661849639161389",
+      "net_margin": "4.573288521332049914835650332786802403262",
+      "ocf": "60.3900962165",
+      "capex": "68.434246338",
+      "fcf": "-8.0441501215",
+      "cash": "102.1708684101"
+    },
+    {
+      "year": 2022,
+      "revenue": "466.9854563287",
+      "profit": "24.4803737032",
+      "gross_margin": "19.20584271399030358648126123037889521248",
+      "op_margin": "6.351656347584860455587414200429438968050",
+      "net_margin": "5.242213300529180694903822241489922609543",
+      "ocf": "91.8053195514",
+      "capex": "68.5236189305",
+      "fcf": "23.2817006209",
+      "cash": "116.8592798876"
+    },
+    {
+      "year": 2023,
+      "revenue": "544.9073353884",
+      "profit": "30.2134031113",
+      "gross_margin": "16.59629940135417210435245756908283402015",
+      "op_margin": "6.013443595348883507994058559507384233481",
+      "net_margin": "5.544686435495392603686624098624246267660",
+      "ocf": "93.0019913187",
+      "capex": "54.4343256916",
+      "fcf": "38.5676656271",
+      "cash": "105.1899337515"
+    },
+    {
+      "year": 2024,
+      "revenue": "698.9677643783",
+      "profit": "36.239009673",
+      "gross_margin": "15.89167984938455260860617278505033436051",
+      "op_margin": "5.538353834247555863683793029356960583656",
+      "net_margin": "5.184646777699819821728084961354906574947",
+      "ocf": "108.8884104218",
+      "capex": "63.3182063801",
+      "fcf": "45.5702040417",
+      "cash": "109.8807951319"
+    },
+    {
+      "year": 2025,
+      "revenue": "744.0973169921",
+      "profit": "40.178274088",
+      "gross_margin": "15.99021758677611616618089662821997392495",
+      "op_margin": "6.189040180034533597736749822768303737346",
+      "net_margin": "5.399599376384603783047155335847115448144",
+      "ocf": "114.6499829464",
+      "capex": "94.430290031",
+      "fcf": "20.2196929154",
+      "cash": "98.1532744621"
+    }
+  ],
+  "quarterly": [
+    {
+      "date": "2025-12-31",
+      "revenue": "207.4719550455",
+      "profit": "11.7487456439",
+      "deduct": "11.3209461498",
+      "gross_margin": "15.71263464194510108024719726986113628814",
+      "ocf": "56.2132992046",
+      "capex": "29.3195460608",
+      "fcf": "26.8937531438"
+    },
+    {
+      "date": "2026-03-31",
+      "revenue": "141.3955360148",
+      "profit": "-1.4960074651",
+      "deduct": "-1.7437014432",
+      "gross_margin": "14.55459805162867340335196744563697457750",
+      "ocf": "20.1396215211",
+      "capex": "25.3406626332",
+      "fcf": "-5.2010411121"
+    },
+    {
+      "date": "2026-06-30",
+      "revenue": "147.2683201339",
+      "profit": "7.2641341951",
+      "deduct": "4.5214585001",
+      "gross_margin": "18.22254490646733280466582451307413636347",
+      "ocf": "-0.0273065279",
+      "capex": "26.5501446063",
+      "fcf": "-26.5774511342"
+    },
+    {
+      "date": "2026-09-30",
+      "revenue": "190.3544003074",
+      "profit": "8.4295920161",
+      "deduct": "7.2031905613",
+      "gross_margin": "16.78070497394129734332616002919574439585",
+      "ocf": "27.0174217735",
+      "capex": "24.9162086738",
+      "fcf": "2.1012130997"
+    }
+  ],
+  "three": [
+    {
+      "name": "悲观",
+      "growth": "-0.10",
+      "pe": "14",
+      "eps": "0.3583235662846621224655795615896561332816",
+      "target_CNY": "5.016529927985269714518113862255185865942",
+      "target_HKD": "5.861322312950880057156009513425153196095",
+      "div_annual_CNY": "0",
+      "pv_CNY": "3.982283194877297123880786927690762544091",
+      "pv_HKD": "4.652906627031321490273974935084490102575",
+      "return_A": "-0.7908035893250513046489527163363141840725",
+      "return_H": "-0.5103323046824661606385956964557098415961"
+    },
+    {
+      "name": "基准",
+      "growth": "0.10",
+      "pe": "22",
+      "eps": "0.6542231367968248079584175534647905533578",
+      "target_CNY": "14.39290900953014577508518617622539217387",
+      "target_HKD": "16.81669997725138838268099848835149283638",
+      "div_annual_CNY": "0.1",
+      "pv_CNY": "11.68326491255949437259086694119401273773",
+      "pv_HKD": "13.65074709074917262270072200356831380669",
+      "return_A": "-0.3872848619879005097962808099989411103474",
+      "return_H": "0.434187176293066722121842766549787660199"
+    },
+    {
+      "name": "乐观",
+      "growth": "0.20",
+      "pe": "28",
+      "eps": "0.8493595645266065125110034052495552788898",
+      "target_CNY": "23.78206780674498235030809534698754780891",
+      "target_HKD": "27.78700948361898693762848954512665218890",
+      "div_annual_CNY": "0.2",
+      "pv_CNY": "19.39439158057157695592968499703705911264",
+      "pv_HKD": "22.66044093211770123491848644891988165567",
+      "return_A": "0.016766797612384585083740423143767631731",
+      "return_H": "1.379954096037780075176558763544326073626"
+    }
+  ],
+  "reverse_growth_pct": {
+    "A": "40.83695939673281018616470865155937272700",
+    "H": "6.072034472730384264555417158722472080500"
+  },
+  "cash_dcf": [
+    {
+      "name": "悲观",
+      "next_year_owner_cash_yi": "10",
+      "growth": "0",
+      "g": "0",
+      "explicit_pv_yi": "67.10081398941443994157025021344929701754",
+      "terminal_pv_yi": "57.89918601058556005842974978655070298245",
+      "value_yi": "125.0000000000000000000000000000000000000",
+      "price_CNY": "2.367988940514141964312788856407721336016",
+      "price_HKD": "2.766762406106233381603267851902416647407"
+    },
+    {
+      "name": "基准",
+      "next_year_owner_cash_yi": "25",
+      "growth": "0.08",
+      "g": "0.01",
+      "explicit_pv_yi": "231.4814814814814814814814814814814814818",
+      "terminal_pv_yi": "333.9947089947089947089947089947089947090",
+      "value_yi": "565.4761904761904761904761904761904761908",
+      "price_CNY": "10.71233092137349936236737815993969175817",
+      "price_HKD": "12.51630612286153196439573552051093245256"
+    },
+    {
+      "name": "乐观",
+      "next_year_owner_cash_yi": "35",
+      "growth": "0.12",
+      "g": "0.02",
+      "explicit_pv_yi": "383.7825819489568273446239794760013508819",
+      "terminal_pv_yi": "764.2608533261523594592359875390008201782",
+      "value_yi": "1148.043435275109186803859967015002171060",
+      "price_CNY": "21.74843326369057374858144849635330121935",
+      "price_HKD": "25.41090733836981521560686610858343115117"
+    }
+  ],
+  "terminal": [
+    {
+      "market": "A",
+      "mcap_CNY_yi": "1265.842060626",
+      "scenarios": [
+        {
+          "g": 0,
+          "p": 0.3,
+          "profit_yi": 20,
+          "pe": 12.5,
+          "spread": 0.08,
+          "irr": -14.43912973901966,
+          "irr10_anchor": -16.315436739379415
+        },
+        {
+          "g": 0.01,
+          "p": 0.5,
+          "profit_yi": 55,
+          "pe": 12.244897959183673,
+          "spread": 0.07,
+          "irr": -5.581485460252019,
+          "irr10_anchor": -7.911536648077297
+        },
+        {
+          "g": 0.02,
+          "p": 0.2,
+          "profit_yi": 100,
+          "pe": 11.904761904761905,
+          "spread": 0.06,
+          "irr": -0.07793322520121783,
+          "irr10_anchor": -2.8964132229721686
+        }
+      ],
+      "sensitivity": {
+        "0.06": -3.9647105283933697,
+        "0.07": -5.7002119113767264,
+        "0.08": -7.138068296872155,
+        "0.09": -8.363472350067871,
+        "0.1": -9.429681990446905
+      }
+    },
+    {
+      "market": "H",
+      "mcap_CNY_yi": "540.79453902430593",
+      "scenarios": [
+        {
+          "g": 0,
+          "p": 0.3,
+          "profit_yi": 20,
+          "pe": 12.5,
+          "spread": 0.08,
+          "irr": -5.773411958534992,
+          "irr10_anchor": -7.816272036138917
+        },
+        {
+          "g": 0.01,
+          "p": 0.5,
+          "profit_yi": 55,
+          "pe": 12.244897959183673,
+          "spread": 0.07,
+          "irr": 3.8704937963558104,
+          "irr10_anchor": 1.333612278848693
+        },
+        {
+          "g": 0.02,
+          "p": 0.2,
+          "profit_yi": 100,
+          "pe": 11.904761904761905,
+          "spread": 0.06,
+          "irr": 9.862576725128923,
+          "irr10_anchor": 6.7939103150651645
+        }
+      ],
+      "sensitivity": {
+        "0.06": 5.630784069819375,
+        "0.07": 3.741228421813286,
+        "0.08": 2.1757386556431966,
+        "0.09": 0.8415598572228942,
+        "0.1": -0.31929340840429554
+      }
+    }
+  ],
+  "terminal_config": {
+    "蓝思科技A": {
+      "roic": 0.07,
+      "g": [
+        0,
+        0.01,
+        0.02
+      ],
+      "p": [
+        0.3,
+        0.5,
+        0.2
+      ],
+      "irr10": [
+        -16.315436739379415,
+        -7.911536648077297,
+        -2.8964132229721686
+      ],
+      "k": 0.005340283569641367
+    },
+    "蓝思科技H": {
+      "roic": 0.07,
+      "g": [
+        0,
+        0.01,
+        0.02
+      ],
+      "p": [
+        0.3,
+        0.5,
+        0.2
+      ],
+      "irr10": [
+        -7.816272036138917,
+        1.333612278848693,
+        6.7939103150651645
+      ],
+      "k": 0.016522167807107784
+    }
+  },
+  "verified_secondary_financial_inputs": {
+    "INCOME": [
+      {
+        "REPORT_DATE": "2026-09-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 47901825645.61,
+        "PARENT_NETPROFIT": 1419771874.61,
+        "OPERATE_COST": 39965985843.63,
+        "OPERATE_PROFIT": 1624739858.05,
+        "DEDUCT_PARENT_NETPROFIT": 998094761.82
+      },
+      {
+        "REPORT_DATE": "2026-06-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 28866385614.87,
+        "PARENT_NETPROFIT": 576812673,
+        "OPERATE_COST": 24124826844.94,
+        "OPERATE_PROFIT": 742561677.04,
+        "DEDUCT_PARENT_NETPROFIT": 277775705.69
+      },
+      {
+        "REPORT_DATE": "2026-03-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 14139553601.48,
+        "PARENT_NETPROFIT": -149600746.51,
+        "OPERATE_COST": 12081598408.49,
+        "OPERATE_PROFIT": -110313851.72,
+        "DEDUCT_PARENT_NETPROFIT": -174370144.32
+      },
+      {
+        "REPORT_DATE": "2025-12-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 74409731699.21,
+        "PARENT_NETPROFIT": 4017827408.8,
+        "OPERATE_COST": 62511453694.77,
+        "OPERATE_PROFIT": 4605248192.72,
+        "DEDUCT_PARENT_NETPROFIT": 3834709701.45
+      },
+      {
+        "REPORT_DATE": "2025-09-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 53662536194.66,
+        "PARENT_NETPROFIT": 2842952844.41,
+        "OPERATE_COST": 45024189218.3,
+        "OPERATE_PROFIT": 3130024292.66,
+        "DEDUCT_PARENT_NETPROFIT": 2702615086.47
+      },
+      {
+        "REPORT_DATE": "2025-06-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 32960157729.2,
+        "PARENT_NETPROFIT": 1142689297.22,
+        "OPERATE_COST": 28273235058.22,
+        "OPERATE_PROFIT": 1212875169.02,
+        "DEDUCT_PARENT_NETPROFIT": 940082395.82
+      },
+      {
+        "REPORT_DATE": "2025-03-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 17063199840.42,
+        "PARENT_NETPROFIT": 428884756.44,
+        "OPERATE_COST": 14879495232.11,
+        "OPERATE_PROFIT": 434113159.49,
+        "DEDUCT_PARENT_NETPROFIT": 378425242.52
+      },
+      {
+        "REPORT_DATE": "2024-12-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 69896776437.83,
+        "PARENT_NETPROFIT": 3623900967.3,
+        "OPERATE_COST": 58789004501.29,
+        "OPERATE_PROFIT": 3871130797.86,
+        "DEDUCT_PARENT_NETPROFIT": 3285538155.95
+      },
+      {
+        "REPORT_DATE": "2024-09-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 46227754593.23,
+        "PARENT_NETPROFIT": 2370944432.86,
+        "OPERATE_COST": 38369002968.32,
+        "OPERATE_PROFIT": 2456501944.62,
+        "DEDUCT_PARENT_NETPROFIT": 2099529018.71
+      },
+      {
+        "REPORT_DATE": "2024-06-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 28866648854.29,
+        "PARENT_NETPROFIT": 861261932.2,
+        "OPERATE_COST": 24728718134.15,
+        "OPERATE_PROFIT": 784519428.98,
+        "DEDUCT_PARENT_NETPROFIT": 662753220.37
+      },
+      {
+        "REPORT_DATE": "2024-03-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 15498274781.55,
+        "PARENT_NETPROFIT": 309201697.61,
+        "OPERATE_COST": 13558285279.8,
+        "OPERATE_PROFIT": 236451217.73,
+        "DEDUCT_PARENT_NETPROFIT": 235066728.16
+      },
+      {
+        "REPORT_DATE": "2023-12-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 54490733538.84,
+        "PARENT_NETPROFIT": 3021340311.13,
+        "OPERATE_COST": 45447288254.74,
+        "OPERATE_PROFIT": 3276769526.05,
+        "DEDUCT_PARENT_NETPROFIT": 2245531016.47
+      },
+      {
+        "REPORT_DATE": "2023-09-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 33807875101.12,
+        "PARENT_NETPROFIT": 1649488614.87,
+        "OPERATE_COST": 27711560787.19,
+        "OPERATE_PROFIT": 1777277335.06,
+        "DEDUCT_PARENT_NETPROFIT": 1438475419.44
+      },
+      {
+        "REPORT_DATE": "2023-06-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 20177276288.48,
+        "PARENT_NETPROFIT": 554289907.33,
+        "OPERATE_COST": 16865354882.37,
+        "OPERATE_PROFIT": 542237092.25,
+        "DEDUCT_PARENT_NETPROFIT": 453285550.59
+      },
+      {
+        "REPORT_DATE": "2023-03-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 9838823197.11,
+        "PARENT_NETPROFIT": 64548639.71,
+        "OPERATE_COST": 8269962707.54,
+        "OPERATE_PROFIT": 23493620.15,
+        "DEDUCT_PARENT_NETPROFIT": -15584411.84
+      },
+      {
+        "REPORT_DATE": "2022-12-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 46698545632.87,
+        "PARENT_NETPROFIT": 2448037370.32,
+        "OPERATE_COST": 37729696408.9,
+        "OPERATE_PROFIT": 2966131137.92,
+        "DEDUCT_PARENT_NETPROFIT": 1961577512.23
+      },
+      {
+        "REPORT_DATE": "2022-09-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 31576393550.61,
+        "PARENT_NETPROFIT": 759337020.95,
+        "OPERATE_COST": 26302232151.66,
+        "OPERATE_PROFIT": 814114267.49,
+        "DEDUCT_PARENT_NETPROFIT": 540772940.83
+      },
+      {
+        "REPORT_DATE": "2022-06-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 19183179350.09,
+        "PARENT_NETPROFIT": -304714094.42,
+        "OPERATE_COST": 16584168345.68,
+        "OPERATE_PROFIT": -440102396.64,
+        "DEDUCT_PARENT_NETPROFIT": -491687653.81
+      },
+      {
+        "REPORT_DATE": "2022-03-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 9334205910.6,
+        "PARENT_NETPROFIT": -411424612.93,
+        "OPERATE_COST": 8284843390.04,
+        "OPERATE_PROFIT": -532857970.25,
+        "DEDUCT_PARENT_NETPROFIT": -426195242.25
+      },
+      {
+        "REPORT_DATE": "2021-12-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 45268146208.65,
+        "PARENT_NETPROFIT": 2070242934.38,
+        "OPERATE_COST": 35796837471.92,
+        "OPERATE_PROFIT": 2162676802.26,
+        "DEDUCT_PARENT_NETPROFIT": 1235486690.52
+      },
+      {
+        "REPORT_DATE": "2021-09-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 33925953054.03,
+        "PARENT_NETPROFIT": 3296969508.76,
+        "OPERATE_COST": 25687003519.51,
+        "OPERATE_PROFIT": 3724874893.51,
+        "DEDUCT_PARENT_NETPROFIT": 2638291111.62
+      },
+      {
+        "REPORT_DATE": "2021-06-30 00:00:00",
+        "TOTAL_OPERATE_INCOME": 21391139203.04,
+        "PARENT_NETPROFIT": 2308191530.51,
+        "OPERATE_COST": 16287009072.75,
+        "OPERATE_PROFIT": 2693282926.7,
+        "DEDUCT_PARENT_NETPROFIT": 1883488869.54
+      },
+      {
+        "REPORT_DATE": "2021-03-31 00:00:00",
+        "TOTAL_OPERATE_INCOME": 11990397912.99,
+        "PARENT_NETPROFIT": 1205793235.94,
+        "OPERATE_COST": 9442127182.89,
+        "OPERATE_PROFIT": 1362789984.93,
+        "DEDUCT_PARENT_NETPROFIT": 1064168931.03
+      }
+    ],
+    "CASHFLOW": [
+      {
+        "REPORT_DATE": "2026-09-30 00:00:00",
+        "NETCASH_OPERATE": 4712973676.67,
+        "CONSTRUCT_LONG_ASSET": 7680701591.33
+      },
+      {
+        "REPORT_DATE": "2026-06-30 00:00:00",
+        "NETCASH_OPERATE": 2011231499.32,
+        "CONSTRUCT_LONG_ASSET": 5189080723.95
+      },
+      {
+        "REPORT_DATE": "2026-03-31 00:00:00",
+        "NETCASH_OPERATE": 2013962152.11,
+        "CONSTRUCT_LONG_ASSET": 2534066263.32
+      },
+      {
+        "REPORT_DATE": "2025-12-31 00:00:00",
+        "NETCASH_OPERATE": 11464998294.64,
+        "CONSTRUCT_LONG_ASSET": 9443029003.1
+      },
+      {
+        "REPORT_DATE": "2025-09-30 00:00:00",
+        "NETCASH_OPERATE": 5843668374.18,
+        "CONSTRUCT_LONG_ASSET": 6511074397.02
+      },
+      {
+        "REPORT_DATE": "2025-06-30 00:00:00",
+        "NETCASH_OPERATE": 4325275724.15,
+        "CONSTRUCT_LONG_ASSET": 4260785607.17
+      },
+      {
+        "REPORT_DATE": "2025-03-31 00:00:00",
+        "NETCASH_OPERATE": 2630443216.69,
+        "CONSTRUCT_LONG_ASSET": 2405744439.08
+      },
+      {
+        "REPORT_DATE": "2024-12-31 00:00:00",
+        "NETCASH_OPERATE": 10888841042.18,
+        "CONSTRUCT_LONG_ASSET": 6331820638.01
+      },
+      {
+        "REPORT_DATE": "2024-09-30 00:00:00",
+        "NETCASH_OPERATE": 6289572443.46,
+        "CONSTRUCT_LONG_ASSET": 4339795618.42
+      },
+      {
+        "REPORT_DATE": "2024-06-30 00:00:00",
+        "NETCASH_OPERATE": 3367717990.78,
+        "CONSTRUCT_LONG_ASSET": 2943171115.01
+      },
+      {
+        "REPORT_DATE": "2024-03-31 00:00:00",
+        "NETCASH_OPERATE": 2029853982.28,
+        "CONSTRUCT_LONG_ASSET": 1566026069.22
+      },
+      {
+        "REPORT_DATE": "2023-12-31 00:00:00",
+        "NETCASH_OPERATE": 9300199131.87,
+        "CONSTRUCT_LONG_ASSET": 5443432569.16
+      },
+      {
+        "REPORT_DATE": "2023-09-30 00:00:00",
+        "NETCASH_OPERATE": 4194598853.24,
+        "CONSTRUCT_LONG_ASSET": 4000353160.42
+      },
+      {
+        "REPORT_DATE": "2023-06-30 00:00:00",
+        "NETCASH_OPERATE": 4362529372.53,
+        "CONSTRUCT_LONG_ASSET": 2505695991.46
+      },
+      {
+        "REPORT_DATE": "2023-03-31 00:00:00",
+        "NETCASH_OPERATE": 3150259291.58,
+        "CONSTRUCT_LONG_ASSET": 1224145283.66
+      },
+      {
+        "REPORT_DATE": "2022-12-31 00:00:00",
+        "NETCASH_OPERATE": 9180531955.14,
+        "CONSTRUCT_LONG_ASSET": 6852361893.05
+      },
+      {
+        "REPORT_DATE": "2022-09-30 00:00:00",
+        "NETCASH_OPERATE": 4520283428.66,
+        "CONSTRUCT_LONG_ASSET": 6221488948.02
+      },
+      {
+        "REPORT_DATE": "2022-06-30 00:00:00",
+        "NETCASH_OPERATE": 3417769155.7,
+        "CONSTRUCT_LONG_ASSET": 4130948329.03
+      },
+      {
+        "REPORT_DATE": "2022-03-31 00:00:00",
+        "NETCASH_OPERATE": 3597209896.43,
+        "CONSTRUCT_LONG_ASSET": 2053287909.82
+      },
+      {
+        "REPORT_DATE": "2021-12-31 00:00:00",
+        "NETCASH_OPERATE": 6039009621.65,
+        "CONSTRUCT_LONG_ASSET": 6843424633.8
+      },
+      {
+        "REPORT_DATE": "2021-09-30 00:00:00",
+        "NETCASH_OPERATE": 3691540594.91,
+        "CONSTRUCT_LONG_ASSET": 4814983213.6
+      },
+      {
+        "REPORT_DATE": "2021-06-30 00:00:00",
+        "NETCASH_OPERATE": 3303401553.96,
+        "CONSTRUCT_LONG_ASSET": 2516092120.36
+      },
+      {
+        "REPORT_DATE": "2021-03-31 00:00:00",
+        "NETCASH_OPERATE": 1432040035.81,
+        "CONSTRUCT_LONG_ASSET": 1413124673.46
+      }
+    ],
+    "BALANCE": [
+      {
+        "REPORT_DATE": "2026-09-30 00:00:00",
+        "MONETARYFUNDS": 8554481404.17,
+        "TOTAL_ASSETS": 91164790702.65,
+        "TOTAL_LIABILITIES": 37978533386.33,
+        "TOTAL_EQUITY": 53186257316.32
+      },
+      {
+        "REPORT_DATE": "2026-06-30 00:00:00",
+        "MONETARYFUNDS": 7372325052.97,
+        "TOTAL_ASSETS": 84546990456.61,
+        "TOTAL_LIABILITIES": 31723915856.7,
+        "TOTAL_EQUITY": 52823074599.91
+      },
+      {
+        "REPORT_DATE": "2026-03-31 00:00:00",
+        "MONETARYFUNDS": 9791289035.52,
+        "TOTAL_ASSETS": 82734378422.73,
+        "TOTAL_LIABILITIES": 28050976827.62,
+        "TOTAL_EQUITY": 54683401595.11
+      },
+      {
+        "REPORT_DATE": "2025-12-31 00:00:00",
+        "MONETARYFUNDS": 9815327446.21,
+        "TOTAL_ASSETS": 84338601429.52,
+        "TOTAL_LIABILITIES": 29251557296.86,
+        "TOTAL_EQUITY": 55087044132.66
+      },
+      {
+        "REPORT_DATE": "2025-09-30 00:00:00",
+        "MONETARYFUNDS": 7266625858.24,
+        "TOTAL_ASSETS": 83538535143.98,
+        "TOTAL_LIABILITIES": 29634590067.91,
+        "TOTAL_EQUITY": 53903945076.07
+      },
+      {
+        "REPORT_DATE": "2025-06-30 00:00:00",
+        "MONETARYFUNDS": 6229476226.95,
+        "TOTAL_ASSETS": 77253554716.43,
+        "TOTAL_LIABILITIES": 29257717371.86,
+        "TOTAL_EQUITY": 47995837344.57
+      },
+      {
+        "REPORT_DATE": "2025-03-31 00:00:00",
+        "MONETARYFUNDS": 9964715811.41,
+        "TOTAL_ASSETS": 79142092274.47,
+        "TOTAL_LIABILITIES": 29831609453.7,
+        "TOTAL_EQUITY": 49310482820.77
+      },
+      {
+        "REPORT_DATE": "2024-12-31 00:00:00",
+        "MONETARYFUNDS": 10988079513.19,
+        "TOTAL_ASSETS": 81016048312.53,
+        "TOTAL_LIABILITIES": 32170136422.55,
+        "TOTAL_EQUITY": 48845911889.98
+      },
+      {
+        "REPORT_DATE": "2024-09-30 00:00:00",
+        "MONETARYFUNDS": 9512434571.56,
+        "TOTAL_ASSETS": 80946556667.12,
+        "TOTAL_LIABILITIES": 33462582845.5,
+        "TOTAL_EQUITY": 47483973821.62
+      },
+      {
+        "REPORT_DATE": "2024-06-30 00:00:00",
+        "MONETARYFUNDS": 7993557684.15,
+        "TOTAL_ASSETS": 73910235384.37,
+        "TOTAL_LIABILITIES": 28003171597.95,
+        "TOTAL_EQUITY": 45907063786.42
+      },
+      {
+        "REPORT_DATE": "2024-03-31 00:00:00",
+        "MONETARYFUNDS": 9850041768.05,
+        "TOTAL_ASSETS": 75238341825.87,
+        "TOTAL_LIABILITIES": 28418769446.31,
+        "TOTAL_EQUITY": 46819572379.56
+      },
+      {
+        "REPORT_DATE": "2023-12-31 00:00:00",
+        "MONETARYFUNDS": 10518993375.15,
+        "TOTAL_ASSETS": 77469744108.46,
+        "TOTAL_LIABILITIES": 30948112466.42,
+        "TOTAL_EQUITY": 46521631642.04
+      },
+      {
+        "REPORT_DATE": "2023-09-30 00:00:00",
+        "MONETARYFUNDS": 7044646299.59,
+        "TOTAL_ASSETS": 75466140574.7,
+        "TOTAL_LIABILITIES": 30446092342.91,
+        "TOTAL_EQUITY": 45020048231.79
+      },
+      {
+        "REPORT_DATE": "2023-06-30 00:00:00",
+        "MONETARYFUNDS": 8863058796.88,
+        "TOTAL_ASSETS": 72851637879.23,
+        "TOTAL_LIABILITIES": 28835338861.85,
+        "TOTAL_EQUITY": 44016299017.38
+      },
+      {
+        "REPORT_DATE": "2023-03-31 00:00:00",
+        "MONETARYFUNDS": 9985610319.21,
+        "TOTAL_ASSETS": 72935712876.26,
+        "TOTAL_LIABILITIES": 28528349248.13,
+        "TOTAL_EQUITY": 44407363628.13
+      },
+      {
+        "REPORT_DATE": "2022-12-31 00:00:00",
+        "MONETARYFUNDS": 11685927988.76,
+        "TOTAL_ASSETS": 78345772710.32,
+        "TOTAL_LIABILITIES": 33964527565.03,
+        "TOTAL_EQUITY": 44381245145.29
+      },
+      {
+        "REPORT_DATE": "2022-09-30 00:00:00",
+        "MONETARYFUNDS": 9177173430.76,
+        "TOTAL_ASSETS": 76294008818.24,
+        "TOTAL_LIABILITIES": 33615745215.37,
+        "TOTAL_EQUITY": 42678263602.87
+      },
+      {
+        "REPORT_DATE": "2022-06-30 00:00:00",
+        "MONETARYFUNDS": 9833666624.64,
+        "TOTAL_ASSETS": 74284352789.3,
+        "TOTAL_LIABILITIES": 32726131281.82,
+        "TOTAL_EQUITY": 41558221507.48
+      },
+      {
+        "REPORT_DATE": "2022-03-31 00:00:00",
+        "MONETARYFUNDS": 11920868451.92,
+        "TOTAL_ASSETS": 74716307446.74,
+        "TOTAL_LIABILITIES": 32600015410.88,
+        "TOTAL_EQUITY": 42116292035.86
+      },
+      {
+        "REPORT_DATE": "2021-12-31 00:00:00",
+        "MONETARYFUNDS": 10217086841.01,
+        "TOTAL_ASSETS": 76611178698.62,
+        "TOTAL_LIABILITIES": 33811752947.76,
+        "TOTAL_EQUITY": 42799425750.86
+      },
+      {
+        "REPORT_DATE": "2021-09-30 00:00:00",
+        "MONETARYFUNDS": 8180064567.19,
+        "TOTAL_ASSETS": 74774783641.42,
+        "TOTAL_LIABILITIES": 30778742948.27,
+        "TOTAL_EQUITY": 43996040693.15
+      },
+      {
+        "REPORT_DATE": "2021-06-30 00:00:00",
+        "MONETARYFUNDS": 12346234862.78,
+        "TOTAL_ASSETS": 73617753840.83,
+        "TOTAL_LIABILITIES": 30638430060.42,
+        "TOTAL_EQUITY": 42979323780.41
+      },
+      {
+        "REPORT_DATE": "2021-03-31 00:00:00",
+        "MONETARYFUNDS": 15633820413.21,
+        "TOTAL_ASSETS": 75451180806.06,
+        "TOTAL_LIABILITIES": 31912618688.55,
+        "TOTAL_EQUITY": 43538562117.51
+      }
+    ]
+  },
+  "verified_segment_inputs": [
+    {
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "智能手机与电脑类",
+      "MAIN_BUSINESS_INCOME": 22381707505.34,
+      "MAIN_BUSINESS_COST": 18762909513.29,
+      "GROSS_RPOFIT_RATIO": 0.161686
+    },
+    {
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "智能汽车及座舱类",
+      "MAIN_BUSINESS_INCOME": 3372251654.66,
+      "MAIN_BUSINESS_COST": 2949748888.06,
+      "GROSS_RPOFIT_RATIO": 0.125288
+    },
+    {
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "智能头显与智能穿戴类",
+      "MAIN_BUSINESS_INCOME": 1777486706.17,
+      "MAIN_BUSINESS_COST": 1551446646.52,
+      "GROSS_RPOFIT_RATIO": 0.127168
+    },
+    {
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "其他业务收入",
+      "MAIN_BUSINESS_INCOME": 800718667.59,
+      "MAIN_BUSINESS_COST": 366606705.27,
+      "GROSS_RPOFIT_RATIO": 0.542153
+    },
+    {
+      "REPORT_DATE": "2026-06-30 00:00:00",
+      "ITEM_NAME": "其他智能终端",
+      "MAIN_BUSINESS_INCOME": 534221081.11,
+      "MAIN_BUSINESS_COST": 494115091.8,
+      "GROSS_RPOFIT_RATIO": 0.075074
+    },
+    {
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "智能手机与电脑类",
+      "MAIN_BUSINESS_INCOME": 61184201306.8,
+      "MAIN_BUSINESS_COST": 51756428511.66,
+      "GROSS_RPOFIT_RATIO": 0.154088
+    },
+    {
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "智能汽车及座舱类",
+      "MAIN_BUSINESS_INCOME": 6461658629.81,
+      "MAIN_BUSINESS_COST": 5995338355.22,
+      "GROSS_RPOFIT_RATIO": 0.072167
+    },
+    {
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "智能头显与智能穿戴类",
+      "MAIN_BUSINESS_INCOME": 3978169293.51,
+      "MAIN_BUSINESS_COST": 3186001351.09,
+      "GROSS_RPOFIT_RATIO": 0.199129
+    },
+    {
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "其他(补充)",
+      "MAIN_BUSINESS_INCOME": 1734207399.08,
+      "MAIN_BUSINESS_COST": 699270985.48,
+      "GROSS_RPOFIT_RATIO": 0.596778
+    },
+    {
+      "REPORT_DATE": "2025-12-31 00:00:00",
+      "ITEM_NAME": "其他智能终端",
+      "MAIN_BUSINESS_INCOME": 1051495070.01,
+      "MAIN_BUSINESS_COST": 874414491.32,
+      "GROSS_RPOFIT_RATIO": 0.168408
+    }
+  ],
+  "primary_debt_cash_inputs": {
+    "cash": "8554481404.17",
+    "current_CD": "105609999.94",
+    "short_debt": "1823903762.13",
+    "current_noncurrent_debt_includes_lease": "4053954857.16",
+    "long_debt": "8317447649.38",
+    "noncurrent_lease": "280564139.72",
+    "trading_financial_assets_excluded": "148963388.07",
+    "parent_equity": "53125688280.79",
+    "control_group_shares": "3095088573"
+  },
+  "owner_cash_dcf_assumption": "After-interest cash to equity after recurring reinvestment, lease principal and NCI distributions; excludes discretionary future acquisitions; financing not a source of distributable cash. NOT observed FCF.",
+  "limitations": [
+    "FX held constant for H mapping; not a future HKD return forecast",
+    "ROIC incremental lower bound not reverse-inferred because maintenance capex is unavailable",
+    "Extreme permanent supply cutoff and governance loss not modeled",
+    "IRR proxy adds dividend yield minus dilution to terminal geometric capital return; not a full cashflow IRR"
+  ],
+  "annual_35_primary_pdf_matches": [
+    {
+      "year": "2021",
+      "field": "TOTAL_OPERATE_INCOME",
+      "primary_exact": "45268146208.65",
+      "secondary_exact": "45268146208.65",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2021",
+      "field": "PARENT_NETPROFIT",
+      "primary_exact": "2070242934.38",
+      "secondary_exact": "2070242934.38",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2021",
+      "field": "OPERATE_COST",
+      "primary_exact": "35796837471.92",
+      "secondary_exact": "35796837471.92",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2021",
+      "field": "OPERATE_PROFIT",
+      "primary_exact": "2162676802.26",
+      "secondary_exact": "2162676802.26",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2021",
+      "field": "NETCASH_OPERATE",
+      "primary_exact": "6039009621.65",
+      "secondary_exact": "6039009621.65",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2021",
+      "field": "CONSTRUCT_LONG_ASSET",
+      "primary_exact": "6843424633.80",
+      "secondary_exact": "6843424633.8",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2021",
+      "field": "MONETARYFUNDS",
+      "primary_exact": "10217086841.01",
+      "secondary_exact": "10217086841.01",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2022",
+      "field": "TOTAL_OPERATE_INCOME",
+      "primary_exact": "46698545632.87",
+      "secondary_exact": "46698545632.87",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2022",
+      "field": "PARENT_NETPROFIT",
+      "primary_exact": "2448037370.32",
+      "secondary_exact": "2448037370.32",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2022",
+      "field": "OPERATE_COST",
+      "primary_exact": "37729696408.90",
+      "secondary_exact": "37729696408.9",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2022",
+      "field": "OPERATE_PROFIT",
+      "primary_exact": "2966131137.92",
+      "secondary_exact": "2966131137.92",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2022",
+      "field": "NETCASH_OPERATE",
+      "primary_exact": "9180531955.14",
+      "secondary_exact": "9180531955.14",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2022",
+      "field": "CONSTRUCT_LONG_ASSET",
+      "primary_exact": "6852361893.05",
+      "secondary_exact": "6852361893.05",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2022",
+      "field": "MONETARYFUNDS",
+      "primary_exact": "11685927988.76",
+      "secondary_exact": "11685927988.76",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2023",
+      "field": "TOTAL_OPERATE_INCOME",
+      "primary_exact": "54490733538.84",
+      "secondary_exact": "54490733538.84",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2023",
+      "field": "PARENT_NETPROFIT",
+      "primary_exact": "3021340311.13",
+      "secondary_exact": "3021340311.13",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2023",
+      "field": "OPERATE_COST",
+      "primary_exact": "45447288254.74",
+      "secondary_exact": "45447288254.74",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2023",
+      "field": "OPERATE_PROFIT",
+      "primary_exact": "3276769526.05",
+      "secondary_exact": "3276769526.05",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2023",
+      "field": "NETCASH_OPERATE",
+      "primary_exact": "9300199131.87",
+      "secondary_exact": "9300199131.87",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2023",
+      "field": "CONSTRUCT_LONG_ASSET",
+      "primary_exact": "5443432569.16",
+      "secondary_exact": "5443432569.16",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2023",
+      "field": "MONETARYFUNDS",
+      "primary_exact": "10518993375.15",
+      "secondary_exact": "10518993375.15",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2024",
+      "field": "TOTAL_OPERATE_INCOME",
+      "primary_exact": "69896776437.83",
+      "secondary_exact": "69896776437.83",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2024",
+      "field": "PARENT_NETPROFIT",
+      "primary_exact": "3623900967.30",
+      "secondary_exact": "3623900967.3",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2024",
+      "field": "OPERATE_COST",
+      "primary_exact": "58789004501.29",
+      "secondary_exact": "58789004501.29",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2024",
+      "field": "OPERATE_PROFIT",
+      "primary_exact": "3871130797.86",
+      "secondary_exact": "3871130797.86",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2024",
+      "field": "NETCASH_OPERATE",
+      "primary_exact": "10888841042.18",
+      "secondary_exact": "10888841042.18",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2024",
+      "field": "CONSTRUCT_LONG_ASSET",
+      "primary_exact": "6331820638.01",
+      "secondary_exact": "6331820638.01",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2024",
+      "field": "MONETARYFUNDS",
+      "primary_exact": "10988079513.19",
+      "secondary_exact": "10988079513.19",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2025",
+      "field": "TOTAL_OPERATE_INCOME",
+      "primary_exact": "74409731699.21",
+      "secondary_exact": "74409731699.21",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2025",
+      "field": "PARENT_NETPROFIT",
+      "primary_exact": "4017827408.80",
+      "secondary_exact": "4017827408.8",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2025",
+      "field": "OPERATE_COST",
+      "primary_exact": "62511453694.77",
+      "secondary_exact": "62511453694.77",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2025",
+      "field": "OPERATE_PROFIT",
+      "primary_exact": "4605248192.72",
+      "secondary_exact": "4605248192.72",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2025",
+      "field": "NETCASH_OPERATE",
+      "primary_exact": "11464998294.64",
+      "secondary_exact": "11464998294.64",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2025",
+      "field": "CONSTRUCT_LONG_ASSET",
+      "primary_exact": "9443029003.10",
+      "secondary_exact": "9443029003.1",
+      "primary_pdf_text_match": true
+    },
+    {
+      "year": "2025",
+      "field": "MONETARYFUNDS",
+      "primary_exact": "9815327446.21",
+      "secondary_exact": "9815327446.21",
+      "primary_pdf_text_match": true
+    }
+  ],
+  "roic_proxy_2025": {
+    "formula": "(operating_profit + interest_expense)*0.85 / (parent_equity + debt_including_current_and_noncurrent_lease - cash)",
+    "op_profit": "4605248192.72",
+    "interest_expense": "264428821.09",
+    "tax_rate_assumed": "0.15",
+    "parent_equity": "55023095090.56",
+    "short_debt": "643694648.33",
+    "current_noncurrent_debt": "4700787537.97",
+    "long_debt": "4366577213.85",
+    "noncurrent_lease": "121293768.21",
+    "cash": "9815327446.21",
+    "note": "期末资本和正常税率近似，不是已披露ROIC，未准确剔非经营收益"
+  },
+  "discrete_risks": {
+    "订单与汇率": "情景",
+    "并购整合": "情景",
+    "极端永久断供": "未建模",
+    "重大治理损失": "未建模"
+  }
+}
