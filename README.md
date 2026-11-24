@@ -392,7 +392,7 @@ $investment-research 腾讯
 
 ### 4. 每日监控与提交前刷新
 
-[每日监控](reports/daily-monitor/daily-monitor-latest.md) 展示全部已登记标的，按 P0 → P1 → P2 排序，同级内按距触发边界百分比从大到小排列；没有价格区间的标的标为未评级，放在末尾。
+[每日监控](reports/daily-monitor/daily-monitor-latest.md) 展示全部已登记标的，按 P0 → P1 → P2 排序。已达到价格条件的 P0 内部按距触发边界百分比从大到小排列，尚未达到条件的 P1/P2 内部从小到大排列，方便优先关注接近价格区间的标的；没有价格区间的标的标为未评级，放在末尾。
 
 每个新 clone 执行一次，启用提交前自动刷新：
 

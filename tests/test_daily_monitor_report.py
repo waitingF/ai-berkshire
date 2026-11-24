@@ -162,15 +162,15 @@ class DailyMonitorReportTest(unittest.TestCase):
         self.assertNotIn("### [P0] 腾讯控股", markdown)
         self.assertIn("| P2 | Far Away Co | - | US | 等待带 | [80.00, 100.00] | 120.00 | 20.0% | FAR |", markdown)
 
-    def test_priority_then_unrounded_price_gap_descending_in_markdown_and_json(self):
+    def test_p0_gap_descending_and_p1_p2_gap_ascending_in_markdown_and_json(self):
         specs = [
-            ("p2-small", "P2", 110, "A"),
+            ("p2-small", "P2", 110, "Z"),
             ("p0-small", "P0", 95, "A"),
             ("p1-missing", "P1", None, "A"),
-            ("p1-small", "P1", 104.01, "B"),
+            ("p1-small", "P1", 104.01, "Z"),
             ("p0-large", "P0", 70, "Z"),
-            ("p2-large", "P2", 180, "Z"),
-            ("p1-large", "P1", 104.04, "Z"),
+            ("p2-large", "P2", 180, "A"),
+            ("p1-large", "P1", 104.04, "B"),
             ("unrated", "-", 90, "A"),
         ]
         run = result([
@@ -179,8 +179,8 @@ class DailyMonitorReportTest(unittest.TestCase):
             } if priority != "-" else {"price": price})
             for key, priority, price, name in specs
         ])
-        expected = ["p0-large", "p0-small", "p1-large", "p1-small", "p1-missing",
-                    "p2-large", "p2-small", "unrated"]
+        expected = ["p0-large", "p0-small", "p1-small", "p1-large", "p1-missing",
+                    "p2-small", "p2-large", "unrated"]
 
         payload = report_payload(run, run_date=date(2026, 11, 24))
         markdown = render_markdown(run, run_date=date(2026, 11, 24))
@@ -188,7 +188,7 @@ class DailyMonitorReportTest(unittest.TestCase):
         self.assertEqual([row["fingerprint"] for row in payload["items"]], expected)
         rows = [line for line in markdown.splitlines() if line.startswith(("| P", "| - |"))]
         self.assertEqual([row.split(" | ")[7] for row in rows],
-                         ["30.0%", "5.0%", "4.0%", "4.0%", "-", "80.0%", "10.0%", "-"])
+                         ["30.0%", "5.0%", "4.0%", "4.0%", "-", "10.0%", "80.0%", "-"])
 
     def test_zero_gap_precedes_missing_gap_and_nonfinite_values_are_missing(self):
         run = result([
