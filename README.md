@@ -20,7 +20,7 @@
 
 > 📖 **想读报告，用 [阅读站](https://xbtlin.github.io/ai-berkshire/)**：成品报告按公司、专题、时间整理，电脑和手机都好读，可搜索、记住阅读进度。
 >
-> 📊 全部 2137 份报告（含底稿）· 202 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-11-24。
+> 📊 全部 2151 份报告（含底稿）· 201 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-11-24。
 
 <!-- REPORTS-BANNER:END -->
 
@@ -672,7 +672,7 @@ bash scripts/install-git-hooks.sh
 
 <!-- REPORTS-INDEX:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-**📊 [全部研究索引 →](reports/README.md)** ｜ 2137 份报告 · 202 家公司 · 28 个专题 · 更新至 2026-11-24
+**📊 [全部研究索引 →](reports/README.md)** ｜ 2151 份报告 · 201 家公司 · 28 个专题 · 更新至 2026-11-24
 
 最近更新：
 
@@ -680,10 +680,10 @@ bash scripts/install-git-hooks.sh
 |------|------|------|
 | 2026-11-24 | [迅策科技（03317.HK）研究报告](reports/迅策/迅策科技-research-20261124.md) | 迅策 |
 | 2026-11-24 | [蓝思科技（300433.SZ / 06613.HK）研究报告](reports/蓝思科技/蓝思科技-research-20261124.md) | 蓝思科技 |
+| 2026-11-24 | [海康威视（002415.SZ）研究报告](reports/海康威视/海康威视-research-20261124.md) | 海康威视 |
 | 2026-11-24 | [标的跟踪表](reports/标的跟踪表.md) | 综合与横评 |
-| 2026-11-24 | [厦门钨业（600549.SH）研究报告](reports/厦门钨业/厦门钨业-research-20261124.md) | 厦门钨业 |
-| 2026-11-24 | [亨通光电（600487.SH）研究报告](reports/亨通光电/亨通光电-research-20261124.md) | 亨通光电 |
-| 2026-11-24 | [每日监控 · 价格监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
+| 2026-11-24 | [思格新能（06656.HK）研究报告](reports/思格新能/思格新能-research-20261124.md) | 思格新能 |
+| 2026-11-24 | [小米集团（1810.HK）研究报告](reports/小米/小米-research-20261124.md) | 小米 |
 
 <!-- REPORTS-INDEX:END -->
 

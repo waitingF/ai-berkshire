@@ -1,0 +1,18 @@
+{
+  "report_sha256": "f61c031edbd5adb36133d096b4a9a27e37562ce73ed1e2aa2af67f78055f2ee1",
+  "audit_sample_unchanged": true,
+  "current_target_id": "东方电气",
+  "local_links_checked": true,
+  "temporary_monitor_prices": {
+    "A": "20.50 FAR",
+    "H": "14.42 TRIGGERED"
+  },
+  "checks": [
+    "report_audit 40/40 PASS",
+    "terminal audit C1/C2/C3 PASS with disclosed tail warnings",
+    "trigger_scanner --check PASS",
+    "daily_monitor --check PASS",
+    "isolated daily_monitor --watch 东方电气 PASS"
+  ],
+  "scope": "仅新增本公司研究/证据/图表，修改东方电气target与跟踪表接续行和汇总；未提交推送"
+}

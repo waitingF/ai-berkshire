@@ -4,13 +4,13 @@
 
 | 文件 | 内容 |
 |---|---|
-| `model.py` | Decimal 模型：市值、五年历史与滚动十二月、现金桥（季节性应付款、上市子公司净现金与非流动金融资产去重）、市场隐含核心价值、三年三情景、反向估值、敏感性。运行 `python3 reports/京东/research-20261021/model.py` |
+| `model.py` | Decimal 模型：市值、五年历史与滚动十二月、现金桥（季节性应付款、上市子公司净现金与非流动金融资产去重）、市场隐含核心价值、三年三情景、反向估值、敏感性。运行 `python3 reports/京东集团/research-20261021/model.py` |
 | `inputs.json` | 全部输入，单位人民币百万元（另注者除外）；情景假设与事实输入分开 |
 | `results.json` | 模型输出 |
 | `financial-rigor.txt` | `tools/financial_rigor.py` 的 calc / verify-market-cap / cross-validate / verify-valuation / three-scenario 实际输出 |
 | `terminal-value.txt` | `tools/terminal_value.py` 的 audit（【准出】）/ pe / irr / flip（±2pp 与 ±1pp）实际输出 |
-| `audit-extract.txt` | `python3 tools/report_audit.py extract --report reports/京东/京东研究报告-20261021.md --seed 42` 的输出（160 点抽 24 点） |
-| `audit.py`、`audit-classified.json`、`audit-verdict.txt` | 16 个事实或事实推算点进入判决，全部通过，判决【准出】；5 个模型假设/输出点、3 个提取噪声点（股票代码、年份）单独分类不进判决。运行 `python3 reports/京东/research-20261021/audit.py` |
+| `audit-extract.txt` | `python3 tools/report_audit.py extract --report reports/京东集团/京东研究报告-20261021.md --seed 42` 的输出（160 点抽 24 点） |
+| `audit.py`、`audit-classified.json`、`audit-verdict.txt` | 16 个事实或事实推算点进入判决，全部通过，判决【准出】；5 个模型假设/输出点、3 个提取噪声点（股票代码、年份）单独分类不进判决。运行 `python3 reports/京东集团/research-20261021/audit.py` |
 | `sources.md` | 来源链接、访问日期、定位与缺口 |
 
 ## 核验边界

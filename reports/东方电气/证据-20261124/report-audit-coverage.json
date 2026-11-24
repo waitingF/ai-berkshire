@@ -1,0 +1,21 @@
+{
+  "extracted": 241,
+  "random_sample": 37,
+  "random_fraction": 0.15352697095435686,
+  "mandatory": 3,
+  "by_type": {
+    "ASSUMPTION": 5,
+    "FACT": 15,
+    "FACT_DERIVED": 6,
+    "METADATA": 2,
+    "MODEL": 7,
+    "POLICY": 2,
+    "SINGLE_PRIMARY_DECISION": 3
+  },
+  "notes": [
+    "extract工具默认最多30项，另随机补抽7项达到至少15%；未更换种子避开错误",
+    "模型/假设/政策核对只证明输入与算术一致，不证明未来能实现",
+    "单原始来源资本决议及分部成本限制按项标识，不伪称两个独立审计",
+    "metadata为解析器捕获的年份，不计作财务验证证据"
+  ]
+}

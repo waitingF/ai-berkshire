@@ -1,0 +1,42 @@
+{
+  "seed": 20261124,
+  "extracted": 93,
+  "sampled": 14,
+  "noise": [
+    {
+      "id": 87,
+      "label": "已核准至 11 月 24 日的实时法定股本。汇率采用当日中间价",
+      "reported_value": 1.0,
+      "unit": "",
+      "line_number": 5,
+      "raw_text": "**行情与估值：**11 月 24 日港股收盘 **97.05 港元**；以 9 月底披露的 26.91 亿流通普通股作研究代理，复算市值约 **2,611.62 亿港元／2,235.20 亿元人民币**，近似 TTM 归母 PE **13",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": "",
+      "classification": "extraction_noise",
+      "reason": "分别把汇率句中的1和9月底的9误提为独立财务数字"
+    },
+    {
+      "id": 89,
+      "label": "解释部分季节性流出，但不能直接把流出全部加回",
+      "reported_value": 9.0,
+      "unit": "",
+      "line_number": 122,
+      "raw_text": "Q3 公司 FCF **−238.61 亿元**，同期去年为 −112.49 亿元；TTM 为 +188.03 亿元，2026 前三季累计仅 +14.93 亿元。Q3 应付账款较六月底回落 **313.65 亿元**，解释部分季节性流出，但",
+      "fetched_value": null,
+      "fetched_source": "",
+      "fetched_value2": null,
+      "fetched_source2": "",
+      "classification": "extraction_noise",
+      "reason": "分别把汇率句中的1和9月底的9误提为独立财务数字"
+    }
+  ],
+  "random_checked": 12,
+  "supplemental_facts": 16,
+  "limitations": [
+    "模型输入仅验证转录一致，非预测正确性",
+    "精确流通股及控制权无同日同口径独立验证",
+    "最新全毛资本开支和少数现金分配仍有缺口"
+  ]
+}

@@ -1,0 +1,318 @@
+======================================================================
+报告数据抽检清单
+文件：reports/小米/小米-research-20261124.md
+总提取数据点：153  |  抽样比例：15%  |  抽检数量：23
+随机种子：20261124（可用于复现同一批样本）
+======================================================================
+
+ ID     行号  数据标签                                          报告值  单位
+───  ─────  ───────────────────────────────────  ────────────  ──────
+152      4  股｜复算市值                                    6821.30  亿港元
+  1     36  营业收入 · 2026Q3                             1072.40  
+  7     39  归母净利润 · 2026Q3                              38.76  
+ 12     41  手机毛利率 · 同比或含义                                2.00  
+ 15     43  经营现金流 · 2026Q3                            -230.34  
+ 19     45  公司定义现金资源 · 2026Q3                         1969.00  
+ 20     53  智能手机 · 2026Q3收入（亿元）                        455.79  
+ 36     87  IoT与生活消费品 · 2025Q4                         246.00  
+ 37     87  IoT与生活消费品 · 2026Q1                         246.80  
+ 42     88  互联网 · 2026Q2                                90.40  
+ 45     89  手机×AIoT其他 · 2026Q1                           8.50  
+ 64     97  汽车/AI分部经营结果 · 2025Q4                        11.00  
+ 65     97  汽车/AI分部经营结果 · 2026Q1                       -31.00  
+ 66     97  汽车/AI分部经营结果 · 2026Q2                       -26.00  
+ 75    225  滚动收入 · 使用限制                                  9.00  
+ 91    243  基准 · 退出PE                                   22.00  倍
+113    274  悲观 · 含中间现金的近似IRR                            -2.86  %
+109    274  悲观 · r−g                                     7.50  
+120    275  基准 · 含中间现金的近似IRR                             4.77  %
+116    275  基准 · r−g                                     6.50  
+126    276  乐观 · 仅终值年化回报                                 9.56  %
+143    336  已持仓者 · 建议与执行条件                               1.00  
+147    346  CFO及营运资金改善 · 本次结果                          230.34  亿元
+
+↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：
+  美股：macrotrends.net（主）+ stockanalysis.com（副）
+  港股：aastocks.com（主）+ macrotrends ADR（副）
+  A股： eastmoney.com（主）+ cninfo.com.cn（副）
+
+抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：
+
+[
+  {
+    "id": 152,
+    "label": "股｜复算市值",
+    "reported_value": 6821.3,
+    "unit": "亿港元",
+    "line_number": 4,
+    "raw_text": "**行情：11月24日收盘 HK$26.50｜总股本：257.4075亿股｜复算市值：6,821.30亿港元，约5,798.79亿元人民币**",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 1,
+    "label": "营业收入 · 2026Q3",
+    "reported_value": 1072.4,
+    "unit": "",
+    "line_number": 36,
+    "raw_text": "| 营业收入 | 1,072.40 | -5.2% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 7,
+    "label": "归母净利润 · 2026Q3",
+    "reported_value": 38.76,
+    "unit": "",
+    "line_number": 39,
+    "raw_text": "| 归母净利润 | 38.76 | 精确值38.7558亿元，与期间利润略有区别 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 12,
+    "label": "手机毛利率 · 同比或含义",
+    "reported_value": 2.0,
+    "unit": "",
+    "line_number": 41,
+    "raw_text": "| 手机毛利率 | 9.2% | Q2为8.5%，达到旧报告的9%门槛 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 15,
+    "label": "经营现金流 · 2026Q3",
+    "reported_value": -230.34,
+    "unit": "",
+    "line_number": 43,
+    "raw_text": "| 经营现金流 | -230.34 | 前九个月累计-209.84亿元 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 19,
+    "label": "公司定义现金资源 · 2026Q3",
+    "reported_value": 1969.0,
+    "unit": "",
+    "line_number": 45,
+    "raw_text": "| 公司定义现金资源 | 1,969 | 含受限、长期存款及理财，不能全部分派 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 20,
+    "label": "智能手机 · 2026Q3收入（亿元）",
+    "reported_value": 455.79,
+    "unit": "",
+    "line_number": 53,
+    "raw_text": "| 智能手机 | 455.79 | -0.8% | 9.2% | 产品结构上移抵消大部分出货下滑 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 36,
+    "label": "IoT与生活消费品 · 2025Q4",
+    "reported_value": 246.0,
+    "unit": "",
+    "line_number": 87,
+    "raw_text": "| IoT与生活消费品 | 246.0 / -20.3% / 20.1% | 246.8 / -23.7% / 25.2% | 312.8 / -19.2% / 20.1% | 271.5 / -1.4% / 21.7% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 37,
+    "label": "IoT与生活消费品 · 2026Q1",
+    "reported_value": 246.8,
+    "unit": "",
+    "line_number": 87,
+    "raw_text": "| IoT与生活消费品 | 246.0 / -20.3% / 20.1% | 246.8 / -23.7% / 25.2% | 312.8 / -19.2% / 20.1% | 271.5 / -1.4% / 21.7% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 42,
+    "label": "互联网 · 2026Q2",
+    "reported_value": 90.4,
+    "unit": "",
+    "line_number": 88,
+    "raw_text": "| 互联网 | 98.9 / +5.9% / 76.8% | 94.7 / +4.3% / 76.1% | 90.4 / -0.6% / 76.8% | 94.5 / +0.7% / 73.8% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 45,
+    "label": "手机×AIoT其他 · 2026Q1",
+    "reported_value": 8.5,
+    "unit": "",
+    "line_number": 89,
+    "raw_text": "| 手机×AIoT其他 | 8.8 / +6.4% / -34.4% | 8.5 / +24.5% / -9.6% | 15.9 / +16.3% / 0.2% | 11.7 / -2.9% / -1.3% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 64,
+    "label": "汽车/AI分部经营结果 · 2025Q4",
+    "reported_value": 11.0,
+    "unit": "",
+    "line_number": 97,
+    "raw_text": "| 汽车/AI分部经营结果 | +11 | -31 | -26 | -34 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 65,
+    "label": "汽车/AI分部经营结果 · 2026Q1",
+    "reported_value": -31.0,
+    "unit": "",
+    "line_number": 97,
+    "raw_text": "| 汽车/AI分部经营结果 | +11 | -31 | -26 | -34 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 66,
+    "label": "汽车/AI分部经营结果 · 2026Q2",
+    "reported_value": -26.0,
+    "unit": "",
+    "line_number": 97,
+    "raw_text": "| 汽车/AI分部经营结果 | +11 | -31 | -26 | -34 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 75,
+    "label": "滚动收入 · 使用限制",
+    "reported_value": 9.0,
+    "unit": "",
+    "line_number": 225,
+    "raw_text": "| 滚动收入 | 4,322.19亿元 | 财报期间截至9月，不是2026全年预测 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 91,
+    "label": "基准 · 退出PE",
+    "reported_value": 22.0,
+    "unit": "倍",
+    "line_number": 243,
+    "raw_text": "| 基准 | 50% | +15% | 304.18 | 22倍 | 30.58 | 24.28 | +4.89% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 113,
+    "label": "悲观 · 含中间现金的近似IRR",
+    "reported_value": -2.86,
+    "unit": "%",
+    "line_number": 274,
+    "raw_text": "| 悲观 | 30% | 200 | 0.5% | 7.5个百分点 | 3.33% | 12.89倍 | -7.79% | -2.86% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 109,
+    "label": "悲观 · r−g",
+    "reported_value": 7.5,
+    "unit": "",
+    "line_number": 274,
+    "raw_text": "| 悲观 | 30% | 200 | 0.5% | 7.5个百分点 | 3.33% | 12.89倍 | -7.79% | -2.86% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 120,
+    "label": "基准 · 含中间现金的近似IRR",
+    "reported_value": 4.77,
+    "unit": "%",
+    "line_number": 275,
+    "raw_text": "| 基准 | 50% | 500 | 1.5% | 6.5个百分点 | 10.00% | 13.85倍 | +1.79% | +4.77% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 116,
+    "label": "基准 · r−g",
+    "reported_value": 6.5,
+    "unit": "",
+    "line_number": 275,
+    "raw_text": "| 基准 | 50% | 500 | 1.5% | 6.5个百分点 | 10.00% | 13.85倍 | +1.79% | +4.77% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 126,
+    "label": "乐观 · 仅终值年化回报",
+    "reported_value": 9.56,
+    "unit": "%",
+    "line_number": 276,
+    "raw_text": "| 乐观 | 20% | 1,000 | 2.0% | 6.0个百分点 | 13.33% | 14.44倍 | +9.56% | +11.00% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 143,
+    "label": "已持仓者 · 建议与执行条件",
+    "reported_value": 1.0,
+    "unit": "",
+    "line_number": 336,
+    "raw_text": "| 已持仓者 | **暂停加仓并复核风险暴露。**若H1“Q3现金和汽车亏损修复”是主要持仓前提，现已未兑现，应执行原先的降风险复核；有独立长期论文的合理小仓可有条件持有，超配优先收缩 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 147,
+    "label": "CFO及营运资金改善 · 本次结果",
+    "reported_value": 230.34,
+    "unit": "亿元",
+    "line_number": 346,
+    "raw_text": "| CFO及营运资金改善 | 单季流出230.34亿元、库存明显上升 | 未兑现，明显削弱 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  }
+]

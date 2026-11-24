@@ -1,7 +1,7 @@
 """京东集团（JD / 9618）估值模型：现金桥、分部加总、三年三情景、反向估值、十年压力测试输入。
 
 全部计算用 Decimal。输入在同目录 inputs.json，输出写 results.json。
-复跑：python3 reports/京东/research-20261021/model.py
+复跑：python3 reports/京东集团/research-20261021/model.py
 
 口径约定（避免现金与少数股东权益重复归属）：
 1. 上市子公司（京东物流、京东健康、京东工业）一律按"京东持股比例 × 市值"计价；

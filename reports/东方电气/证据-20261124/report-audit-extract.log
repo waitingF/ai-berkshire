@@ -1,0 +1,409 @@
+======================================================================
+报告数据抽检清单
+文件：/Users/kongwei/stock/ai-berkshire/reports/东方电气/东方电气-research-20261124.md
+总提取数据点：241  |  抽样比例：15%  |  抽检数量：30
+随机种子：875（可用于复现同一批样本）
+======================================================================
+
+ ID     行号  数据标签                                          报告值  单位
+───  ─────  ───────────────────────────────────  ────────────  ──────
+ 10     11  正常化PE，按每股1.15元假设 · H股                       10.73  倍
+ 12     12  PB，按9月底归母净资产 · H股                            0.91  倍
+ 20     45  营业收入 · 2023                                595.67  
+ 29     47  扣非归母净利润 · 2022                              23.85  
+ 45     50  合并经营现金流 · 2023                             -34.96  
+ 57     52  合并简化FCF · 2025                             -22.70  
+ 67     70  归母净利润 · 2025Q4                               8.65  
+ 85     74  现金资本开支 · 2026Q2                              3.28  
+ 92     84  归母净利润 · 金额/每股值                              47.04  亿元
+106    105  存货 · 金额                                    312.61  
+114    130  制造服务 · 2025毛利率                              31.88  %
+119    131  新兴产业 · 2026H1收入，亿元                          29.07  
+122    135  煤电 · 2025毛利率                                20.69  %
+129    136  风电 · H1收入同比                                -33.72  %
+137    138  核能 · 2025毛利率                                24.11  %
+155    226  2025利润分配 · 股东评价与待验证项                        47.84  %
+156    227  2026燃机产能一期 · 已知事实                            7.39  亿元
+157    228  2026风电增资 · 已知事实                             33.00  亿元
+158    229  氢能B轮融资 · 已知事实                               11.70  亿元
+163    276  正常化PE · 解释                                   1.15  
+180    294  基准 · EPS增速                                   8.00  %
+186    295  乐观 · EPS增速                                  15.00  %
+192    307  资本成本r · 本文取值                                 8.00  %
+196    310  十年EPS年增速 · 本文取值                             -2.00  %
+207    321  悲观 · H股现金现值，港元                               9.63  
+202    321  悲观 · r−g                                     8.00  
+213    322  基准 · A股现金现值，元                               16.10  
+216    323  乐观 · r−g                                     6.00  
+231    339  10%，r+2pp · 工具近似期望IRR H                      5.67  %
+232    363  A股 · 研究价格带                                  13.00  
+
+↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：
+  美股：macrotrends.net（主）+ stockanalysis.com（副）
+  港股：aastocks.com（主）+ macrotrends ADR（副）
+  A股： eastmoney.com（主）+ cninfo.com.cn（副）
+
+抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：
+
+[
+  {
+    "id": 10,
+    "label": "正常化PE，按每股1.15元假设 · H股",
+    "reported_value": 10.73,
+    "unit": "倍",
+    "line_number": 11,
+    "raw_text": "| 正常化PE，按每股1.15元假设 | 17.83倍 | 10.73倍 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 12,
+    "label": "PB，按9月底归母净资产 · H股",
+    "reported_value": 0.91,
+    "unit": "倍",
+    "line_number": 12,
+    "raw_text": "| PB，按9月底归母净资产 | 1.51倍 | 0.91倍 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 20,
+    "label": "营业收入 · 2023",
+    "reported_value": 595.67,
+    "unit": "",
+    "line_number": 45,
+    "raw_text": "| 营业收入 | 467.56 | 541.90 | 595.67 | 685.93 | 775.83 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 29,
+    "label": "扣非归母净利润 · 2022",
+    "reported_value": 23.85,
+    "unit": "",
+    "line_number": 47,
+    "raw_text": "| 扣非归母净利润 | 17.63 | 23.85 | 25.76 | 19.80 | 31.92 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 45,
+    "label": "合并经营现金流 · 2023",
+    "reported_value": -34.96,
+    "unit": "",
+    "line_number": 50,
+    "raw_text": "| 合并经营现金流 | -44.21 | 84.09 | -34.96 | 100.59 | 20.14 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 57,
+    "label": "合并简化FCF · 2025",
+    "reported_value": -22.7,
+    "unit": "",
+    "line_number": 52,
+    "raw_text": "| 合并简化FCF | -51.39 | 76.60 | -46.06 | 70.60 | -22.70 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 67,
+    "label": "归母净利润 · 2025Q4",
+    "reported_value": 8.65,
+    "unit": "",
+    "line_number": 70,
+    "raw_text": "| 归母净利润 | 8.65 | 15.85 | 11.28 | 11.25 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 85,
+    "label": "现金资本开支 · 2026Q2",
+    "reported_value": 3.28,
+    "unit": "",
+    "line_number": 74,
+    "raw_text": "| 现金资本开支 | 29.92 | 5.45 | 3.28 | 4.23 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 92,
+    "label": "归母净利润 · 金额/每股值",
+    "reported_value": 47.0355,
+    "unit": "亿元",
+    "line_number": 84,
+    "raw_text": "| 归母净利润 | 47.0355亿元 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 106,
+    "label": "存货 · 金额",
+    "reported_value": 312.61,
+    "unit": "",
+    "line_number": 105,
+    "raw_text": "| 存货 | 312.61 | 项目在制品与交付节奏 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 114,
+    "label": "制造服务 · 2025毛利率",
+    "reported_value": 31.88,
+    "unit": "%",
+    "line_number": 130,
+    "raw_text": "| 制造服务 | 129.01 | 31.88% | 62.71 | 32.63% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 119,
+    "label": "新兴产业 · 2026H1收入，亿元",
+    "reported_value": 29.07,
+    "unit": "",
+    "line_number": 131,
+    "raw_text": "| 新兴产业 | 77.09 | 14.95% | 29.07 | 11.02% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 122,
+    "label": "煤电 · 2025毛利率",
+    "reported_value": 20.69,
+    "unit": "%",
+    "line_number": 135,
+    "raw_text": "| 煤电 | 244.92 | 20.69% | 149.56 | +15.95% | 19.89% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 129,
+    "label": "风电 · H1收入同比",
+    "reported_value": -33.72,
+    "unit": "%",
+    "line_number": 136,
+    "raw_text": "| 风电 | 182.24 | 2.83% | 52.87 | -33.72% | 3.67% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 137,
+    "label": "核能 · 2025毛利率",
+    "reported_value": 24.11,
+    "unit": "%",
+    "line_number": 138,
+    "raw_text": "| 核能 | 56.60 | 24.11% | 27.40 | +2.04% | 15.05% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 155,
+    "label": "2025利润分配 · 股东评价与待验证项",
+    "reported_value": 47.84,
+    "unit": "%",
+    "line_number": 226,
+    "raw_text": "| 2025利润分配 | 每股0.53元，现金总额18.33亿元 | 按实际派息/归母利润为47.84%，修正旧稿46.09% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 156,
+    "label": "2026燃机产能一期 · 已知事实",
+    "reported_value": 7.39,
+    "unit": "亿元",
+    "line_number": 227,
+    "raw_text": "| 2026燃机产能一期 | 董事会批准总投资7.39亿元 | 有商业基础，仍需核扩产节奏、客户付款与资本回报 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 157,
+    "label": "2026风电增资 · 已知事实",
+    "reported_value": 33.0,
+    "unit": "亿元",
+    "line_number": 228,
+    "raw_text": "| 2026风电增资 | 董事会同意上市公司增资33亿元（八月决议） | 对低毛利业务的大额支持，是当前资本配置重点风险 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 158,
+    "label": "氢能B轮融资 · 已知事实",
+    "reported_value": 11.7,
+    "unit": "亿元",
+    "line_number": 229,
+    "raw_text": "| 氢能B轮融资 | 总融资不超过11.70亿元；公司及东锅合计持股拟保持52.95% | 不等于上市公司独自支付全额，仍须核估值、实际出资和亏损 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 163,
+    "label": "正常化PE · 解释",
+    "reported_value": 1.15,
+    "unit": "",
+    "line_number": 276,
+    "raw_text": "| 正常化PE | 17.83倍 | 10.73倍 | EPS假设1.15元 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 180,
+    "label": "基准 · EPS增速",
+    "reported_value": 8.0,
+    "unit": "%",
+    "line_number": 294,
+    "raw_text": "| 基准 | +8% | 15倍 | 1.4487 | 21.73 | 18.98 | 21.77 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 186,
+    "label": "乐观 · EPS增速",
+    "reported_value": 15.0,
+    "unit": "%",
+    "line_number": 295,
+    "raw_text": "| 乐观 | +15% | 20倍 | 1.7490 | 34.98 | 29.73 | 34.28 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 192,
+    "label": "资本成本r · 本文取值",
+    "reported_value": 8.0,
+    "unit": "%",
+    "line_number": 307,
+    "raw_text": "| 资本成本r | 8% | 当日人民币10年国债1.5853%+β1×ERP6.4147%；ERP为所需溢价判断，不是观测事实 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 196,
+    "label": "十年EPS年增速 · 本文取值",
+    "reported_value": -2.0,
+    "unit": "%",
+    "line_number": 310,
+    "raw_text": "| 十年EPS年增速 | -2% / +5% / +10% | 比三年景气恢复更重视中周期；乐观需要服务与自主燃机商业化 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 207,
+    "label": "悲观 · H股现金现值，港元",
+    "reported_value": 9.63,
+    "unit": "",
+    "line_number": 321,
+    "raw_text": "| 悲观 | 32.50 | 8个百分点 | 12.50倍 | -2.21% | +2.93% | 8.94 | 9.63 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 202,
+    "label": "悲观 · r−g",
+    "reported_value": 8.0,
+    "unit": "",
+    "line_number": 321,
+    "raw_text": "| 悲观 | 32.50 | 8个百分点 | 12.50倍 | -2.21% | +2.93% | 8.94 | 9.63 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 213,
+    "label": "基准 · A股现金现值，元",
+    "reported_value": 16.1,
+    "unit": "",
+    "line_number": 322,
+    "raw_text": "| 基准 | 64.78 | 7个百分点 | 12.86倍 | +5.02% | +10.55% | 16.10 | 17.65 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 216,
+    "label": "乐观 · r−g",
+    "reported_value": 6.0,
+    "unit": "",
+    "line_number": 323,
+    "raw_text": "| 乐观 | 103.16 | 6个百分点 | 13.33倍 | +10.35% | +16.16% | 24.79 | 27.48 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 231,
+    "label": "10%，r+2pp · 工具近似期望IRR H",
+    "reported_value": 5.67,
+    "unit": "%",
+    "line_number": 339,
+    "raw_text": "| 10%，r+2pp | -0.44% | 区间外，仅供参考 | +5.67% | 区间外，仅供参考 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 232,
+    "label": "A股 · 研究价格带",
+    "reported_value": 13.0,
+    "unit": "",
+    "line_number": 363,
+    "raw_text": "| A股 | 13—15元 | 主业、订单与质量未出现实质恶化时，研究小额分批；现价20.50元观望 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  }
+]

@@ -1,5 +1,5 @@
 """京东研究报告数据抽检：填入取数结果，模型假设与非数据噪声单独分类，不进判决。
-复跑：python3 reports/京东/research-20261021/audit.py
+复跑：python3 reports/京东集团/research-20261021/audit.py
 """
 from pathlib import Path
 from decimal import Decimal as D

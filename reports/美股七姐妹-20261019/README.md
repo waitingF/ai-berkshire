@@ -12,7 +12,7 @@
 | 微软 Microsoft（MSFT） | [微软投资研究报告](微软/微软投资研究报告-20261019.md) | 持有或小额参与，重视AI资本开支兑现 |
 | 谷歌 Alphabet（GOOGL / GOOG） | [谷歌投资研究报告](谷歌/谷歌投资研究报告-20261019.md) | 接近基准估值，持有并关注搜索与云的变化 |
 | 亚马逊 Amazon（AMZN） | [亚马逊投资研究报告](亚马逊/亚马逊投资研究报告-20261019.md) | 持有或小额观察，投资收益与经营盈利须分开 |
-| Meta（META） | [Meta投资研究报告](Meta/Meta投资研究报告-20261019.md) | 持有或小额观察，现价安全边际有限 |
+| Meta（META） | [Meta投资研究报告](../Meta/研究存档-20261019/Meta投资研究报告-20261019.md) | 持有或小额观察，现价安全边际有限 |
 | 英伟达 NVIDIA（NVDA） | [英伟达投资研究报告](英伟达/英伟达投资研究报告-20261019.md) | 持有或小额参与，关注高增长与终值风险 |
 | 特斯拉 Tesla（TSLA） | [特斯拉投资研究报告](特斯拉/特斯拉投资研究报告-20261019.md) | 观察，当前价格要求较高的远期商业化成果 |
 
@@ -36,7 +36,7 @@
 | 微软 | [reproduce.py](微软/reproduce.py) | [audit_report.py](微软/audit_report.py) |
 | 谷歌 | [recalculate.py](谷歌/recalculate.py) | [audit_report.py](谷歌/audit_report.py) |
 | 亚马逊 | [recalculate.py](亚马逊/recalculate.py) | [audit_report.py](亚马逊/audit_report.py) |
-| Meta | [model.py](Meta/model.py) | [audit_meta.py](Meta/audit_meta.py) |
+| Meta | [model.py](../Meta/研究存档-20261019/model.py) | [audit_meta.py](../Meta/研究存档-20261019/audit_meta.py) |
 | 英伟达 | [model.py](英伟达/model.py) | [audit_report.py](英伟达/audit_report.py) |
 | 特斯拉 | [reproduce.py](特斯拉/reproduce.py) | [audit_report.py](特斯拉/audit_report.py) |
 

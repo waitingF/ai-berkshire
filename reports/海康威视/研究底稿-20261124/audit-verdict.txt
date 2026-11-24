@@ -1,0 +1,86 @@
+抽取120点，固定种子20261124，随机15%为18项；另补14项关键数值。随机样本含6项外部事实（含市场报价），4项主观模型输入，8项模型输出。年度其他境内主业只有一个披露源，另做加总核对，未声称双源；正文已标缺口。模型样本只验证输入一致性和计算，不验证预测。定向项以巨潮与东方财富对应原始表互核，公式项由双源输入重算。
+
+======================================================================
+报告数据抽检 — 准出/打回判决
+报告：/Users/kongwei/stock/ai-berkshire/reports/海康威视/海康威视-research-20261124.md
+======================================================================
+
+  ✅ 通过 [ 1] 11月24日收盘价 · 截止日数据                    报告:        34.85 
+                                                    腾讯2026-11-24收盘快照 https://qt.gtimg.cn/q=sz002415: 34.85 (偏差 0.00%)  |  新浪同日收盘快照 https://hq.sinajs.cn/list=sz002415: 34.85 (偏差 0.00%)
+  ✅ 通过 [ 6] 公共服务PBG · 2025收入（亿元）                 报告:       129.12 
+                                                    https://static.cninfo.com.cn/finalpage/2026-04-18/1225123062.PDF: 129.12 (偏差 0.00%)  |  华安证券研究整理 https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/829873569593/index.phtml: 129.12 (偏差 0.00%)
+  ✅ 通过 [18] 其他境内主业 · 2025收入（亿元）                  报告:        10.53 
+                                                    https://static.cninfo.com.cn/finalpage/2026-04-18/1225123062.PDF: 10.53 (偏差 0.00%)  |  重加总核对：总收入减其余事业群；不算独立第二信源: 10.53 (偏差 0.00%)
+  ✅ 通过 [23] 境外主业 · 2026H1收入（亿元）                  报告:       129.45 
+                                                    https://static.cninfo.com.cn/finalpage/2026-07-25/1225440236.PDF: 129.45 (偏差 0.00%)  |  券商独立整理 https://data.cfi.cn/ybdata.aspx?id=20260803000169: 129.45 (偏差 0.00%)
+  ✅ 通过 [21] 境外主业 · 2025收入（亿元）                    报告:       272.17 
+                                                    https://static.cninfo.com.cn/finalpage/2026-04-18/1225123062.PDF: 272.17 (偏差 0.00%)  |  券商独立整理 https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/829873569593/index.phtml: 272.17 (偏差 0.00%)
+  ✅ 通过 [55] 现金等价物减上述债务 · 口径                      报告:       366.01 亿元
+                                                    https://static.cninfo.com.cn/finalpage/2026-10-17/1225607861.PDF: 366.01 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1 （季度现金流量表现金等价物；非货币资金）: 366.01 (偏差 0.00%)
+  ✅ 通过 [60] 悲观：利润回落、倍数收缩 · 三年末股价                 报告:        23.30 
+                                                    Decimal独立重算：(FY25+9M26-9M25归母)/最新股本×0.95^3×14: 23.30 (偏差 0.02%)  |  model.json；与独立重算核对: 23.30 (偏差 0.02%)
+  ✅ 通过 [57] 悲观：利润回落、倍数收缩 · 概率假设                  报告:        25.00 %
+                                                    模型主观概率25/50/25，非外部事实: 25.00 (偏差 0.00%)  |  model.json three_year[0].probability: 25.00 (偏差 0.00%)
+  ✅ 通过 [63] 基准：适度增长、维持估值 · 概率假设                  报告:        50.00 %
+                                                    模型主观概率25/50/25，非外部事实: 50.00 (偏差 0.00%)  |  model.json three_year[1].probability: 50.00 (偏差 0.00%)
+  ✅ 通过 [78] 租赁等年度现金预留 · 每股金额 / 比例                报告:        -0.03 
+                                                    主观租赁预留，非TTM已披露现金: -0.03 (偏差 0.00%)  |  FCFE桥接固定输入；FY25实付租赁234056678.63元仅参考: -0.03 (偏差 0.00%)
+  ✅ 通过 [87] 悲观 · r8%退出PE                         报告:        12.50 倍
+                                                    独立公式(1-g/ROIC)/(r-g): 12.50 (偏差 0.00%)  |  model.json terminal[0]: 12.50 (偏差 0.00%)
+  ✅ 通过 [89] 基准 · 概率假设                            报告:        50.00 %
+                                                    十年主观概率，非外部事实: 50.00 (偏差 0.00%)  |  model.json terminal[1].probability: 50.00 (偏差 0.00%)
+  ✅ 通过 [102] 乐观 · 十年回报代理                          报告:         9.34 %
+                                                    Decimal独立计算终值CAGR+固定股息率: 9.34 (偏差 0.03%)  |  terminal_value工具；浮点与Decimal核对: 9.34 (偏差 0.03%)
+  ✅ 通过 [98] 乐观 · 终点归母利润（亿元）                      报告:       421.10 
+                                                    独立计算TTM归母×1.09^10: 421.10 (偏差 0.00%)  |  model.json terminal[2]: 421.10 (偏差 0.00%)
+  ✅ 通过 [100] 乐观 · r−g                             报告:         7.00 
+                                                    r-g=8%-1%: 7.00 (偏差 0.00%)  |  model.json terminal[2].spread: 7.00 (偏差 0.00%)
+  ✅ 通过 [106] r＝8% · 相对该档r                         报告:        -3.37 
+                                                    Decimal独立加权回报代理减r8%: -3.37 (偏差 0.02%)  |  terminal_value flip近似值的未取整复核: -3.37 (偏差 0.13%)
+  ✅ 通过 [108] r+2pp＝10% · 相对该档r                    报告:        -7.81 
+                                                    Decimal独立加权回报代理减r10%: -7.81 (偏差 0.02%)  |  model.json的r10锚点加权: -7.81 (偏差 0.02%)
+  ✅ 通过 [113] 三年盈利与股息估值 · 本轮含义                     报告:        36.38 
+                                                    Decimal独立折现未来三年每股股息及第三年股价: 36.38 (偏差 0.00%)  |  model.json three_year[1]: 36.38 (偏差 0.00%)
+  ✅ 通过 [1001] 定向补检 FY25收入                          报告:       925.08 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-04-18/1225123062.PDF: 925.08 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 925.08 (偏差 0.00%)
+  ✅ 通过 [1002] 定向补检 FY25归母                          报告:       141.95 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-04-18/1225123062.PDF: 141.95 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 141.95 (偏差 0.00%)
+  ✅ 通过 [1003] 定向补检 FY25货币                          报告:       465.08 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-04-18/1225123062.PDF: 465.08 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 465.08 (偏差 0.00%)
+  ✅ 通过 [1004] 定向补检 FY25 CFO                        报告:       253.39 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-04-18/1225123062.PDF: 253.39 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 253.39 (偏差 0.00%)
+  ✅ 通过 [1005] 定向补检 FY25 capex                      报告:        36.22 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-04-18/1225123062.PDF: 36.22 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 36.22 (偏差 0.00%)
+  ✅ 通过 [1006] 定向补检 9M26货币                          报告:       370.84 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-10-17/1225607861.PDF: 370.84 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 370.84 (偏差 0.00%)
+  ✅ 通过 [1007] 定向补检 9M26 CFO                        报告:        72.13 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-10-17/1225607861.PDF: 72.13 (偏差 0.01%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 72.13 (偏差 0.01%)
+  ✅ 通过 [1008] 定向补检 9M26存货                          报告:       333.34 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-10-17/1225607861.PDF: 333.34 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 333.34 (偏差 0.00%)
+  ✅ 通过 [1009] 定向补检 9M26应收                          报告:       283.66 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-10-17/1225607861.PDF: 283.66 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 283.66 (偏差 0.00%)
+  ✅ 通过 [1010] 定向补检 TTM归母                           报告:       177.88 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-10-17/1225607861.PDF: 177.88 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 177.88 (偏差 0.00%)
+  ✅ 通过 [1011] 定向补检 TTM EPS                         报告:         1.94 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-10-17/1225607861.PDF: 1.94 (偏差 0.00%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 1.94 (偏差 0.00%)
+  ✅ 通过 [1012] 定向补检 PE                              报告:        17.96 按正文口径
+                                                    独立原表/公式复核：https://static.cninfo.com.cn/finalpage/2026-10-17/1225607861.PDF: 17.96 (偏差 0.02%)  |  https://datapc.eastmoney.com/emdatacenter/profit/report?code=002415&from=f10&reporttype=1；已读本地当日取回结构化JSON；公式项由双源财务输入重算: 17.96 (偏差 0.02%)
+  ✅ 通过 [1013] 定向补检 实付股息                            报告:         1.30 按正文口径
+                                                    年度、中期实付公告：2026-05-20 0.75元；2026-08-19 0.55元 https://static.cninfo.com.cn/finalpage/2026-08-12/1225468251.PDF: 1.30 (偏差 0.00%)  |  东方财富分红接口本地已读 /tmp/hik-em-bonus.json；两个实付事件相加，非每股收益: 1.30 (偏差 0.00%)
+  ✅ 通过 [1014] 定向补检 现金DCF                           报告:        28.24 按正文口径
+                                                    Decimal独立现金DCF公式；FCFE1.45、十年g5%、永续g1%、r8%皆研究假设: 28.24 (偏差 0.02%)  |  model.json cash_dcf_fcfe145_growth5；不冒称公司披露或外部事实: 28.24 (偏差 0.02%)
+
+----------------------------------------------------------------------
+  抽检总数: 32  |  通过: 32  |  警告: 0  |  不通过: 0
+
+【准出】所有抽检数据通过，报告可发布。
+======================================================================
+{
+  "verdict": "PASS",
+  "pass_count": 32,
+  "warn_count": 0,
+  "fail_count": 0,
+  "total": 32,
+  "fail_items": [],
+  "warn_items": []
+}

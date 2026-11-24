@@ -1,0 +1,148 @@
+{
+  "price": "144.94",
+  "shares": "743701257",
+  "mcap_bn": "107.79206018958",
+  "normalized_eps": "10.75700750092990632124210595491840079006",
+  "k": "0.01148446044300269697269771992474419784557",
+  "reserve_per_share": "1.344625937616238290155263244364800098758",
+  "stress_mcap_bn": "108.79206018958",
+  "three": [
+    {
+      "name": "悲观",
+      "g": "-0.03",
+      "pe": "11",
+      "eps3": "9.817630306896200391926996568193241604266",
+      "target": "107.9939333758582043111969622501256576469",
+      "pv": "83.97072596009841558752840486241631007923",
+      "total_return": "-0.2201329282747467620312062767343338095288"
+    },
+    {
+      "name": "基准",
+      "g": "0.08",
+      "pe": "16",
+      "eps3": "13.55073143301141415174453577668216849605",
+      "target": "216.8117029281826264279125724269146959368",
+      "pv": "165.7271268258568093641742427112435364427",
+      "total_return": "0.530645114724593807285170225106352255670"
+    },
+    {
+      "name": "乐观",
+      "g": "0.12",
+      "pe": "20",
+      "eps3": "15.11282103426645142809002943503159898518",
+      "target": "302.2564206853290285618005887006319797036",
+      "pv": "229.9230079356587643858782369063729757867",
+      "total_return": "1.120162968713460939435632597630964397017"
+    }
+  ],
+  "ten": [
+    {
+      "name": "悲观",
+      "growth": "0",
+      "g": "0.01",
+      "p": "0.20",
+      "pe": "10.66666666666666666666666666666666666667",
+      "profit_equiv": "8",
+      "irr": "-0.01251029589100508273794162568884325651863"
+    },
+    {
+      "name": "基准",
+      "growth": "0.09",
+      "g": "0.03",
+      "p": "0.55",
+      "pe": "12.57142857142857142857142857142857142857",
+      "profit_equiv": "18.93890939673693787208",
+      "irr": "0.09295387063116905977888463577821445855257"
+    },
+    {
+      "name": "乐观",
+      "growth": "0.12",
+      "g": "0.04",
+      "p": "0.25",
+      "pe": "14",
+      "profit_equiv": "24.84678566675367329792",
+      "irr": "0.1347439720658290787097854222059876821236"
+    }
+  ],
+  "weighted_pv": "165.4248169301556193642710736902604510060",
+  "weighted_irr": "0.08230856268539923600824458009174622143108",
+  "reverse_growth_3yr": "0.031954145754525164138711986088189316689",
+  "calculated": {
+    "market_cap_bn": "107.79206018958",
+    "financial_debt_mn": "20061",
+    "net_cash_mn": "-4247",
+    "net_cash_plus_lease_mn": "-4762",
+    "TTM_revenue_mn": "28126",
+    "TTM_NI_mn": "7178",
+    "TTM_op_mn": "9219",
+    "TTM_CFO_mn": "9561",
+    "TTM_capex_mn": "324",
+    "TTM_FCF_mn": "9237",
+    "TTM_SBC_mn": "594",
+    "owner_cash_mn": "8643",
+    "owner_cash_yield": "8.018215798825132",
+    "fcf_yield": "8.569276794370907",
+    "PS": "3.8324703189070615",
+    "PE_mcap_NI": "15.017004763106716",
+    "PE_eps": "15.771490750816104",
+    "div_yield": "1.159100317372706",
+    "EV_financial_bn": "112.03906018958",
+    "EV_sales_financial": "3.9834693944954847",
+    "2025_FCF_margin": "33.75933424973066",
+    "2025_op_margin": "32.78597169075306",
+    "2023_25_rev_CAGR": "12.243675277636479",
+    "2025_merchant_mix": "65.96203142995132",
+    "2025_agency_mix": "29.602110190585872",
+    "2025_other_mix": "4.435858379462793",
+    "fogel_pct": "0.06868051627982963",
+    "group_pct": "0.16761863684560946",
+    "9M_FCF": "7820",
+    "9M_returns": "10878",
+    "9M_returns_over_FCF": "139.10485933503836"
+  },
+  "terminal_sensitivity_percent": {
+    "0.08": 11.925061138904004,
+    "0.09": 9.90281551858068,
+    "0.1": 8.230856268539922,
+    "0.11": 6.807736128477211,
+    "0.12": 5.570493210055538
+  },
+  "assumptions": {
+    "currency": "USD",
+    "r": "0.10",
+    "roic": "0.25",
+    "rf": "0.0492",
+    "beta": "1.0",
+    "ERP": "0.0508",
+    "normalized_owner_earnings_USD": "8000000000",
+    "FTC_initial_reserve_USD": "1000000000",
+    "dividend_annual_USD": "1.68",
+    "probabilities": [
+      "0.20",
+      "0.55",
+      "0.25"
+    ],
+    "terminal_g": [
+      "0.01",
+      "0.03",
+      "0.04"
+    ],
+    "ten_year_per_share_growth": [
+      "0",
+      "0.09",
+      "0.12"
+    ],
+    "price_band_USD": [
+      130,
+      145
+    ],
+    "upper_review_USD": 200,
+    "note": "Terminal profit is a current-share-count equivalent, not company-level 2036 net income. Buyback effects only enter per-share growth. FTC reserve treated as immediate extra investment in terminal model; dividend k uses total investment. IRR is terminal tool approximation, not dated cash-flow root."
+  },
+  "sources": {
+    "official_2025": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000009/bkng-20251231.htm",
+    "official_2026Q3": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000045/bkng-20260930.htm",
+    "independent_financials": "https://stockanalysis.com/stocks/bkng/financials/",
+    "independent_cashflow": "https://stockanalysis.com/stocks/bkng/financials/cash-flow-statement/"
+  }
+}

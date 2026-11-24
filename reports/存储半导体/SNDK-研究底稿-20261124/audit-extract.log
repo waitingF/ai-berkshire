@@ -1,0 +1,409 @@
+======================================================================
+报告数据抽检清单
+文件：reports/存储半导体/Sandisk-research-20261124.md
+总提取数据点：198  |  抽样比例：15%  |  抽检数量：30
+随机种子：42（可用于复现同一批样本）
+======================================================================
+
+ ID     行号  数据标签                                          报告值  单位
+───  ─────  ───────────────────────────────────  ────────────  ──────
+196      6  写作时第三方页面显示 11/24 09                         50.00  
+  7     36  毛利 · FY2023                                430.00  
+  9     36  毛利 · FY2025                               2212.00  
+  8     36  毛利 · FY2024                               1072.00  
+ 23     39  GAAP 经营利润率 · FY2024                         -7.02  %
+ 24     39  GAAP 经营利润率 · FY2025                        -18.72  %
+ 29     40  GAAP 净利润 · FY2025                        -1641.00  
+ 27     40  GAAP 净利润 · FY2023                        -2143.00  
+ 36     42  简单 FCF：CFO 减直接 PPE 支出 · FY2022             741.00  
+ 51     54  季末 · FY26Q2                               2026.00  
+ 58     55  总收入 · FY27Q1                             11031.00  
+ 56     55  总收入 · FY26Q3                              5950.00  
+ 57     55  总收入 · FY26Q4                              8965.00  
+ 60     56  数据中心收入 · FY26Q3                           1467.00  
+ 63     57  Edge 收入 · FY26Q2                          1678.00  
+ 71     59  GAAP 毛利率 · FY26Q2                           50.90  %
+108    166  2026-01 · 决策                              2034.00  
+109    168  FY26Q4—FY27Q1 · 决策                          95.00  亿美元
+115    202  股价 / TTM 稀释 EPS · 固定 11/23 收盘口径              5.64  倍
+130    226  基准 · 主观概率                                   50.00  %
+140    227  乐观 · 情景 PE                                  18.00  倍
+144    239  币种和 r · 本报告选择                               10.00  %
+152    259  悲观 · Y5                                      2.00  
+155    259  悲观 · Y8                                      2.00  
+164    260  基准 · Y7                                      9.50  
+167    260  基准 · Y10                                    10.67  
+174    261  乐观 · Y7                                     24.00  
+189    270  概率算术加权 · 10% 折现每股价值                        114.55  
+187    270  概率算术加权 · 不计中间现金的终值本体年化                       0.63  %
+190    308  估值 · 结论                                    119.16  
+
+↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：
+  美股：macrotrends.net（主）+ stockanalysis.com（副）
+  港股：aastocks.com（主）+ macrotrends ADR（副）
+  A股： eastmoney.com（主）+ cninfo.com.cn（副）
+
+抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：
+
+[
+  {
+    "id": 196,
+    "label": "写作时第三方页面显示 11/24 09",
+    "reported_value": 50.0,
+    "unit": "",
+    "line_number": 6,
+    "raw_text": "盘中补充：写作时第三方页面显示 11/24 09:50 EST 为 81.04 美元，已经进入下文 75—85 美元研究带；这只是带时间戳的单源快照，执行前须核实时价。全篇估值保持前收盘统一基准，避免各页刷新时间不同造成倍数混乱。[盘中页面",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 7,
+    "label": "毛利 · FY2023",
+    "reported_value": 430.0,
+    "unit": "",
+    "line_number": 36,
+    "raw_text": "| 毛利 | 3,244 | 430 | 1,072 | 2,212 | 14,472 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 9,
+    "label": "毛利 · FY2025",
+    "reported_value": 2212.0,
+    "unit": "",
+    "line_number": 36,
+    "raw_text": "| 毛利 | 3,244 | 430 | 1,072 | 2,212 | 14,472 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 8,
+    "label": "毛利 · FY2024",
+    "reported_value": 1072.0,
+    "unit": "",
+    "line_number": 36,
+    "raw_text": "| 毛利 | 3,244 | 430 | 1,072 | 2,212 | 14,472 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 23,
+    "label": "GAAP 经营利润率 · FY2024",
+    "reported_value": -7.02,
+    "unit": "%",
+    "line_number": 39,
+    "raw_text": "| GAAP 经营利润率 | 12.30% | -33.44% | -7.02% | -18.72% | 61.19% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 24,
+    "label": "GAAP 经营利润率 · FY2025",
+    "reported_value": -18.72,
+    "unit": "%",
+    "line_number": 39,
+    "raw_text": "| GAAP 经营利润率 | 12.30% | -33.44% | -7.02% | -18.72% | 61.19% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 29,
+    "label": "GAAP 净利润 · FY2025",
+    "reported_value": -1641.0,
+    "unit": "",
+    "line_number": 40,
+    "raw_text": "| GAAP 净利润 | 1,064 | -2,143 | -672 | -1,641 | 11,433 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 27,
+    "label": "GAAP 净利润 · FY2023",
+    "reported_value": -2143.0,
+    "unit": "",
+    "line_number": 40,
+    "raw_text": "| GAAP 净利润 | 1,064 | -2,143 | -672 | -1,641 | 11,433 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 36,
+    "label": "简单 FCF：CFO 减直接 PPE 支出 · FY2022",
+    "reported_value": 741.0,
+    "unit": "",
+    "line_number": 42,
+    "raw_text": "| 简单 FCF：CFO 减直接 PPE 支出 | 741 | -932 | -475 | -120 | 11,494 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 51,
+    "label": "季末 · FY26Q2",
+    "reported_value": 2026.0,
+    "unit": "",
+    "line_number": 54,
+    "raw_text": "| 季末 | 2026-01-02 | 2026-04-03 | 2026-07-03 | 2026-10-02 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 58,
+    "label": "总收入 · FY27Q1",
+    "reported_value": 11031.0,
+    "unit": "",
+    "line_number": 55,
+    "raw_text": "| 总收入 | 3,025 | 5,950 | 8,965 | 11,031 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 56,
+    "label": "总收入 · FY26Q3",
+    "reported_value": 5950.0,
+    "unit": "",
+    "line_number": 55,
+    "raw_text": "| 总收入 | 3,025 | 5,950 | 8,965 | 11,031 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 57,
+    "label": "总收入 · FY26Q4",
+    "reported_value": 8965.0,
+    "unit": "",
+    "line_number": 55,
+    "raw_text": "| 总收入 | 3,025 | 5,950 | 8,965 | 11,031 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 60,
+    "label": "数据中心收入 · FY26Q3",
+    "reported_value": 1467.0,
+    "unit": "",
+    "line_number": 56,
+    "raw_text": "| 数据中心收入 | 440 | 1,467 | 2,977 | 4,802 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 63,
+    "label": "Edge 收入 · FY26Q2",
+    "reported_value": 1678.0,
+    "unit": "",
+    "line_number": 57,
+    "raw_text": "| Edge 收入 | 1,678 | 3,663 | 5,432 | 5,832 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 71,
+    "label": "GAAP 毛利率 · FY26Q2",
+    "reported_value": 50.9,
+    "unit": "%",
+    "line_number": 59,
+    "raw_text": "| GAAP 毛利率 | 50.9% | 78.4% | 84.6% | 85.0% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 108,
+    "label": "2026-01 · 决策",
+    "reported_value": 2034.0,
+    "unit": "",
+    "line_number": 166,
+    "raw_text": "| 2026-01 | JV 延至 2034 年末 | 提高供给连续性，也锁定资金责任 | 正面但有代价 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 109,
+    "label": "FY26Q4—FY27Q1 · 决策",
+    "reported_value": 95.0,
+    "unit": "亿美元",
+    "line_number": 168,
+    "raw_text": "| FY26Q4—FY27Q1 | 回购合计 95 亿美元 | 约回购 600 万拆前股 | 时点有争议，不能只凭回购规模赞扬 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 115,
+    "label": "股价 / TTM 稀释 EPS · 固定 11/23 收盘口径",
+    "reported_value": 5.64,
+    "unit": "倍",
+    "line_number": 202,
+    "raw_text": "| 股价 / TTM 稀释 EPS | 5.64 倍 | EPS 15.54 美元 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 130,
+    "label": "基准 · 主观概率",
+    "reported_value": 50.0,
+    "unit": "%",
+    "line_number": 226,
+    "raw_text": "| 基准 | 50% | -10% | 11.33 | 14 倍 | 158.60 美元 | 119.16 美元 | +21.83% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 140,
+    "label": "乐观 · 情景 PE",
+    "reported_value": 18.0,
+    "unit": "倍",
+    "line_number": 227,
+    "raw_text": "| 乐观 | 20% | +5% | 17.99 | 18 倍 | 323.81 美元 | 243.28 美元 | +54.55% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 144,
+    "label": "币种和 r · 本报告选择",
+    "reported_value": 10.0,
+    "unit": "%",
+    "line_number": 239,
+    "raw_text": "| 币种和 r | USD，10% | 11/23 美国十年国债 4.92% + β 1 × 研究假设 ERP 5.08%；合理区间 9%—11.5% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 152,
+    "label": "悲观 · Y5",
+    "reported_value": 2.0,
+    "unit": "",
+    "line_number": 259,
+    "raw_text": "| 悲观 | 14 | 7 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 155,
+    "label": "悲观 · Y8",
+    "reported_value": 2.0,
+    "unit": "",
+    "line_number": 259,
+    "raw_text": "| 悲观 | 14 | 7 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 164,
+    "label": "基准 · Y7",
+    "reported_value": 9.5,
+    "unit": "",
+    "line_number": 260,
+    "raw_text": "| 基准 | 20 | 16 | 12 | 8 | 8.5 | 9 | 9.5 | 10 | 10.3 | 10.667 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 167,
+    "label": "基准 · Y10",
+    "reported_value": 10.667,
+    "unit": "",
+    "line_number": 260,
+    "raw_text": "| 基准 | 20 | 16 | 12 | 8 | 8.5 | 9 | 9.5 | 10 | 10.3 | 10.667 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 174,
+    "label": "乐观 · Y7",
+    "reported_value": 24.0,
+    "unit": "",
+    "line_number": 261,
+    "raw_text": "| 乐观 | 24 | 26 | 26 | 24 | 24 | 24 | 24 | 24 | 24 | 23.333 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 189,
+    "label": "概率算术加权 · 10% 折现每股价值",
+    "reported_value": 114.55,
+    "unit": "",
+    "line_number": 270,
+    "raw_text": "| 概率算术加权 | +0.63% | +11.47% | 114.55 美元 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 187,
+    "label": "概率算术加权 · 不计中间现金的终值本体年化",
+    "reported_value": 0.63,
+    "unit": "%",
+    "line_number": 270,
+    "raw_text": "| 概率算术加权 | +0.63% | +11.47% | 114.55 美元 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 190,
+    "label": "估值 · 结论",
+    "reported_value": 119.16,
+    "unit": "",
+    "line_number": 308,
+    "raw_text": "| 估值 | 三年基准现值 119.16、现金基准 110.40 美元；终值本体压力未过，完整现金流在合理 r 内翻转 | 中低 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  }
+]
