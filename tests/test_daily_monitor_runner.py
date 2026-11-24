@@ -85,6 +85,46 @@ def services(*, quote_price=90.0):
 
 
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_target_without_price_zones_is_displayed_unrated_without_price_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            config = options(root, write_triggers(root))
+
+            run = run_monitor(config, services(quote_price=123))
+
+            price = next(row for row in run.items if row.section == "price")
+            self.assertEqual((price.priority, price.status), ("-", "NO_ZONE"))
+            self.assertEqual(price.metadata["price"], 123)
+            self.assertEqual(run.next_state["price_states"], {})
+            self.assertFalse(run.notification_items)
+            self.assertIn("未登记价格区间", run.report_paths.latest.read_text())
+
+    def test_all_registered_targets_appear_in_report_including_unrated_and_p2(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            run = run_monitor(MonitorOptions(
+                root=REPO, triggers_file=LIVE_TRIGGERS,
+                state_file=root / "state.json", report_dir=root / "reports",
+                today=date(2026, 11, 24),
+            ), services(quote_price=100_000))
+            payload = json.loads(run.report_paths.latest_json.read_text())
+
+            self.assertEqual({row["target_id"] for row in payload["items"]},
+                             {target["id"] for target in load_targets(LIVE_TRIGGERS)})
+            self.assertIn("| P2 |", run.report_paths.latest.read_text())
+            self.assertIn("| - |", run.report_paths.latest.read_text())
+
+    def test_missing_quote_for_unrated_target_marks_source_degraded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            run = run_monitor(options(root, write_triggers(root)),
+                              MonitorServices(quote_provider=lambda codes: {}))
+
+            self.assertEqual(run.status, "DEGRADED")
+            price = next(row for row in run.items if row.section == "price")
+            self.assertEqual(price.status, "NO_ZONE")
+            self.assertIsNone(price.metadata["price"])
+
     def test_production_curl_failure_marks_quotes_degraded(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

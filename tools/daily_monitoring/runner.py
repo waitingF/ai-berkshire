@@ -100,6 +100,11 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
         for target in load_targets(options.triggers_file)
         if _watched(target, options.watch)
     ]
+    zones_by_target = {
+        target["id"]: [zone for zone in target.get("zones") or []
+                       if zone.get("dir", "range") != "above"]
+        for target in targets
+    }
     state = copy.deepcopy(load_state(options.state_file))
     state["updated_at"] = options.today.isoformat()
     items: list[MonitorItem] = []
@@ -118,8 +123,11 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
         required_codes = {
             str((target.get("codes") or {}).get(zone.get("market")))
             for target in targets
-            for zone in target.get("zones") or []
-            if zone.get("dir", "range") != "above"
+            for zone in zones_by_target[target["id"]]
+        } | {
+            str(code)
+            for target in targets if not zones_by_target[target["id"]]
+            for code in (target.get("codes") or {}).values()
         }
         missing = sum(_quote_price(quotes.get(code)) is None for code in required_codes)
         if missing:
@@ -160,9 +168,21 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
             )
 
     for target in targets:
-        for zone in target.get("zones") or []:
-            if zone.get("dir", "range") == "above":
-                continue
+        zones = zones_by_target[target["id"]]
+        if not zones:
+            for market, code in (target.get("codes") or {"-": None}).items():
+                items.append(MonitorItem(
+                    fingerprint=hashlib.sha256(
+                        f"no-zone\0{target['id']}\0{market}".encode()
+                    ).hexdigest(),
+                    section="price", priority="-", target_id=target["id"],
+                    name=str(target.get("name") or target["id"]),
+                    title="未登记价格区间", status="NO_ZONE",
+                    why_now="仅展示行情；未登记有效价格区间，无法判断价格优先级。",
+                    metadata={"market": market, "price": _quote_price(quotes.get(str(code))),
+                              "zone_label": "未登记价格区间"},
+                ))
+        for zone in zones:
             code = (target.get("codes") or {}).get(zone.get("market"))
             price = _quote_price(quotes.get(str(code)))
             from tools.trigger_scanner import judge_zone

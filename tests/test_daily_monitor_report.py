@@ -147,12 +147,12 @@ class DailyMonitorReportTest(unittest.TestCase):
             markdown,
         )
         self.assertIn(
-            "P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与上涨警戒线事项不展示",
+            "P2=尚未接近或条件已解除",
             markdown,
         )
         self.assertNotIn("above", markdown)
         self.assertIn(
-            "| P0 | 腾讯控股 | - | H | 加仓带 | [400.00, 430.00] | 410.00 | 区间内 | TRIGGERED |",
+            "| P0 | 腾讯控股 | - | H | 加仓带 | [400.00, 430.00] | 410.00 | 4.7% | TRIGGERED |",
             markdown,
         )
         self.assertIn(
@@ -160,7 +160,50 @@ class DailyMonitorReportTest(unittest.TestCase):
             markdown,
         )
         self.assertNotIn("### [P0] 腾讯控股", markdown)
-        self.assertNotIn("Far Away Co", markdown)
+        self.assertIn("| P2 | Far Away Co | - | US | 等待带 | [80.00, 100.00] | 120.00 | 20.0% | FAR |", markdown)
+
+    def test_priority_then_unrounded_price_gap_descending_in_markdown_and_json(self):
+        specs = [
+            ("p2-small", "P2", 110, "A"),
+            ("p0-small", "P0", 95, "A"),
+            ("p1-missing", "P1", None, "A"),
+            ("p1-small", "P1", 104.01, "B"),
+            ("p0-large", "P0", 70, "Z"),
+            ("p2-large", "P2", 180, "Z"),
+            ("p1-large", "P1", 104.04, "Z"),
+            ("unrated", "-", 90, "A"),
+        ]
+        run = result([
+            item(key, "price", priority, name=name, metadata={
+                "direction": "range", "low": 80, "high": 100, "price": price,
+            } if priority != "-" else {"price": price})
+            for key, priority, price, name in specs
+        ])
+        expected = ["p0-large", "p0-small", "p1-large", "p1-small", "p1-missing",
+                    "p2-large", "p2-small", "unrated"]
+
+        payload = report_payload(run, run_date=date(2026, 11, 24))
+        markdown = render_markdown(run, run_date=date(2026, 11, 24))
+
+        self.assertEqual([row["fingerprint"] for row in payload["items"]], expected)
+        rows = [line for line in markdown.splitlines() if line.startswith(("| P", "| - |"))]
+        self.assertEqual([row.split(" | ")[7] for row in rows],
+                         ["30.0%", "5.0%", "4.0%", "4.0%", "-", "80.0%", "10.0%", "-"])
+
+    def test_zero_gap_precedes_missing_gap_and_nonfinite_values_are_missing(self):
+        run = result([
+            item(key, "price", "P1", name=key, metadata={
+                "direction": "below", "high": 100, "price": price,
+            }) for key, price in [("A missing", None), ("B infinite", float("inf")),
+                                  ("Z at boundary", 100)]
+        ])
+
+        payload = report_payload(run, run_date=date(2026, 11, 24))
+        markdown = render_markdown(run, run_date=date(2026, 11, 24))
+
+        self.assertEqual(payload["items"][0]["name"], "Z at boundary")
+        self.assertIn("100.00 | 0.0%", markdown)
+        self.assertNotIn("inf", markdown.replace("B infinite", ""))
 
     def test_price_section_shows_linked_report_date_and_missing_date(self):
         markdown = render_markdown(
@@ -215,7 +258,7 @@ class DailyMonitorReportTest(unittest.TestCase):
         self.assertNotIn("Walmart", markdown)
         self.assertNotIn("| WARN |", markdown)
         self.assertIn("P0 0 · P1 0 · 新增价格 0", markdown)
-        self.assertIn("无 P0/P1 建仓或关注价格事项", markdown)
+        self.assertIn("无已登记标的的价格监控记录", markdown)
 
     def test_above_near_is_absent_from_markdown_summary_and_json(self):
         run = result(

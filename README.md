@@ -390,6 +390,18 @@ cd ai-berkshire
 $investment-research 腾讯
 ```
 
+### 4. 每日监控与提交前刷新
+
+[每日监控](reports/daily-monitor/daily-monitor-latest.md) 展示全部已登记标的，按 P0 → P1 → P2 排序，同级内按距触发边界百分比从大到小排列；没有价格区间的标的标为未评级，放在末尾。
+
+每个新 clone 执行一次，启用提交前自动刷新：
+
+```bash
+bash scripts/install-git-hooks.sh
+```
+
+此后本地每次正常 `git commit` 都会联网刷新行情，并自动暂存最新日报和当日日报；推送到 main 后，GitHub Pages 自动发布。刷新使用临时状态，保留定时监控的通知基线，不发送通知。行情缺失时报告标为 `DEGRADED`；程序失败会阻止提交。详细规则见 [每日监控工作流](skills/daily-monitor.md)。
+
 ---
 
 ## 各 Skill 详细介绍

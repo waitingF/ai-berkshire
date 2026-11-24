@@ -9,5 +9,5 @@ git -C "$repo_path" rev-parse --git-dir >/dev/null
 git -C "$repo_path" config --local core.hooksPath .githooks
 
 echo "✅ 已启用 Git hooks：core.hooksPath=.githooks"
-echo "   pre-commit：相关监控文件快速校验"
+echo "   pre-commit：相关监控文件快速校验；每次提交前刷新并暂存每日监控"
 echo "   pre-push：完整离线校验"

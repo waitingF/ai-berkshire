@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 from dataclasses import asdict, replace
 from datetime import date
@@ -33,15 +34,17 @@ def _is_above_price(item: MonitorItem) -> bool:
 
 
 def _sorted_items(items: Iterable[MonitorItem]) -> list[MonitorItem]:
-    return sorted(
-        items,
-        key=lambda item: (
+    def sort_key(item: MonitorItem) -> tuple:
+        gap = _price_gap_ratio(item)
+        return (
             -PRIORITY_RANK.get(item.priority, -1),
+            -(gap if gap is not None else -1),
             item.name.casefold(),
             item.title.casefold(),
             item.fingerprint,
-        ),
-    )
+        )
+
+    return sorted(items, key=sort_key)
 
 
 def _summary(result: RunResult) -> str:
@@ -67,7 +70,7 @@ def _as_number(value: Any) -> float | None:
         number = float(value)
     except (TypeError, ValueError):
         return None
-    return number if number == number else None
+    return number if math.isfinite(number) else None
 
 
 def _format_price(value: Any) -> str:
@@ -92,22 +95,8 @@ def _price_condition(metadata: dict[str, Any]) -> str:
     return "-"
 
 
-def _price_gap(item: MonitorItem) -> str:
-    if item.status == "WARN":
-        return "已越警戒线"
-    if item.status == "TRIGGERED":
-        price = _as_number(item.metadata.get("price"))
-        low = _as_number(item.metadata.get("low"))
-        direction = item.metadata.get("direction", "range")
-        if (
-            direction == "range"
-            and price is not None
-            and low is not None
-            and low > 0
-            and price < low
-        ):
-            return f"低于下界 {(low - price) / low:.1%}"
-        return "区间内"
+def _price_gap_ratio(item: MonitorItem) -> float | None:
+    """Use the trigger boundary for both display and sorting, including P0 rows."""
     price = _as_number(item.metadata.get("price"))
     low = _as_number(item.metadata.get("low"))
     high = _as_number(item.metadata.get("high"))
@@ -117,16 +106,16 @@ def _price_gap(item: MonitorItem) -> str:
         boundary = high
     elif direction == "above":
         boundary = low
-    elif price is not None:
-        if low is not None and price < low:
-            boundary = low
-        elif high is not None and price > high:
-            boundary = high
-        else:
-            boundary = low if high is None else high
-    if price is None or boundary is None or boundary <= 0:
-        return "-"
-    return f"{abs(price - boundary) / boundary:.1%}"
+    else:
+        boundary = high if high is not None else low
+    if price is None or price <= 0 or boundary is None or boundary <= 0:
+        return None
+    return abs(price - boundary) / boundary
+
+
+def _price_gap(item: MonitorItem) -> str:
+    gap = _price_gap_ratio(item)
+    return f"{gap:.1%}" if gap is not None else "-"
 
 
 def _markdown_cell(value: Any) -> str:
@@ -147,15 +136,16 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
     visible = [
         item
         for item in items
-        if item.priority != "P2" and item.status != "WARN" and not _is_above_price(item)
+        if item.status != "WARN" and not _is_above_price(item)
     ]
     lines = [
-        "> 价格优先级：P0=到达建仓或研究复核条件；P1=距对应边界≤5%；P2 与上涨警戒线事项不展示。优先级只表示复核紧迫度，不代表交易信号。",
+        "> 价格优先级：P0=达到研究复核条件；P1=距对应边界≤5%或行情待核验；P2=尚未接近或条件已解除；-=未登记价格区间，不评级。展示全部已登记标的，上涨警戒线不参与。",
+        "> 排序：P0 → P1 → P2 → 未评级，同级按距边界百分比从大到小；距离=|现价−触发边界|÷触发边界，区间条件取上界。缺失距离排同级末尾，同一标的多个价格区间分别展示。优先级只表示复核紧迫度，不代表交易信号。",
         "> 最新研究报告日期仅比较标的已登记的本地报告；优先取报告中的日期标注，其次取文件名，无法判定显示 -。",
         "",
     ]
     if not visible:
-        lines.extend(["无 P0/P1 建仓或关注价格事项。", ""])
+        lines.extend(["无已登记标的的价格监控记录。", ""])
         return lines
     lines.extend(
         [
@@ -165,7 +155,7 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
     )
     for item in visible:
         metadata = item.metadata
-        status = item.status
+        status = "未登记价格区间" if item.status == "NO_ZONE" else item.status
         if item.resolved:
             status += "（已解除）"
         elif item.needs_human_review:

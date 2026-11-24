@@ -1,24 +1,32 @@
 #!/usr/bin/env bash
-# 相关文件提交前执行快速、离线、只读校验。
+# 校验监控变更；每次提交前联网刷新并暂存价格日报。
 
 set -euo pipefail
 repo_root="$(git rev-parse --show-toplevel)"
 cd "$repo_root"
 
-relevant_pattern='^(data/triggers\.json|tools/daily_monitor\.py|tools/daily_monitoring/|tools/trigger_scanner\.py|skills/trigger-monitor\.md|codex-skills/trigger-monitor/|cursor-skills/trigger-monitor/|dsh-skills/trigger-monitor/|scripts/(validate-monitoring\.sh|sync-codex-skills\.py|sync-cursor-skills\.py|generate-dsh-skills\.py)|\.github/workflows/validate-monitoring\.yml)'
+relevant_pattern='^(data/triggers\.json|tools/daily_monitor\.py|tools/daily_monitoring/|tools/trigger_scanner\.py|skills/(trigger-monitor|daily-monitor)\.md|(codex-skills|cursor-skills|dsh-skills)/(trigger-monitor|daily-monitor)/|scripts/(validate-monitoring\.sh|sync-codex-skills\.py|sync-cursor-skills\.py|generate-dsh-skills\.py|refresh-daily-monitor-before-commit\.py|install-git-hooks\.sh|run-local-python\.sh)|\.githooks/|\.github/workflows/validate-monitoring\.yml)'
 staged_paths="$(git diff --cached --name-only --diff-filter=ACMRTD)"
 relevant_paths="$(printf '%s\n' "$staged_paths" | grep -E "$relevant_pattern" || true)"
 
-if [[ -z "$relevant_paths" ]]; then
-  exit 0
+if ! git diff --quiet -- data/triggers.json tools/daily_monitor.py tools/daily_monitoring/ \
+    tools/trigger_scanner.py scripts/run-local-python.sh \
+    scripts/refresh-daily-monitor-before-commit.py .githooks/pre-commit; then
+  echo "提交已阻止：监控配置或代码存在未暂存修改，刷新结果会与提交版本不一致。" >&2
+  echo "请先完整暂存相关文件，再重新提交。" >&2
+  exit 1
 fi
 
-while IFS= read -r path; do
-  if ! git diff --quiet -- "$path"; then
-    echo "提交已阻止：$path 同时存在未暂存修改，无法准确校验将提交版本。" >&2
-    echo "请先完整暂存该文件，再重新提交。" >&2
-    exit 1
-  fi
-done <<< "$relevant_paths"
+if [[ -n "$relevant_paths" ]]; then
+  while IFS= read -r path; do
+    if ! git diff --quiet -- "$path"; then
+      echo "提交已阻止：$path 同时存在未暂存修改，无法准确校验将提交版本。" >&2
+      echo "请先完整暂存该文件，再重新提交。" >&2
+      exit 1
+    fi
+  done <<< "$relevant_paths"
 
-bash scripts/validate-monitoring.sh --fast
+  bash scripts/validate-monitoring.sh --fast
+fi
+
+bash scripts/run-local-python.sh scripts/refresh-daily-monitor-before-commit.py

@@ -18,6 +18,7 @@ PRE_PUSH = ROOT / ".githooks" / "pre-push"
 INSTALLER = ROOT / "scripts" / "install-git-hooks.sh"
 WORKFLOW = ROOT / ".github" / "workflows" / "validate-monitoring.yml"
 DAILY_WORKFLOW = ROOT / ".github" / "workflows" / "daily-monitor.yml"
+REFRESHER = ROOT / "scripts" / "refresh-daily-monitor-before-commit.py"
 
 
 def run(command, *, cwd, env=None, stdin=None):
@@ -93,6 +94,13 @@ class LocalGitHookTest(unittest.TestCase):
         (repo / "data" / "triggers.json").write_text("{}\n", encoding="utf-8")
         run(["git", "add", "."], cwd=repo)
         run(["git", "commit", "-qm", "baseline"], cwd=repo)
+        (repo / "scripts" / "run-local-python.sh").write_text(
+            (ROOT / "scripts" / "run-local-python.sh").read_text(), encoding="utf-8"
+        )
+        (repo / "scripts" / REFRESHER.name).write_text(
+            "from pathlib import Path\nPath('refresh-ran.txt').write_text('refreshed')\n",
+            encoding="utf-8",
+        )
         return repo
 
     def install_stub_validator(self, repo, *, exit_code):
@@ -117,6 +125,20 @@ class LocalGitHookTest(unittest.TestCase):
 
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertFalse(marker.exists())
+            self.assertTrue((repo / "refresh-ran.txt").exists())
+
+    def test_pre_commit_blocks_unstaged_monitor_inputs_even_for_unrelated_commit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = self.make_repo(tmp)
+            (repo / "README.md").write_text("changed\n")
+            run(["git", "add", "README.md"], cwd=repo)
+            (repo / "data" / "triggers.json").write_text('{"unstaged":true}\n')
+
+            result = run(["bash", str(PRE_COMMIT)], cwd=repo)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("未暂存", result.stderr)
+            self.assertFalse((repo / "refresh-ran.txt").exists())
 
     def test_pre_commit_does_not_run_document_whitespace_check(self):
         self.assertTrue(PRE_COMMIT.exists(), "缺少 pre-commit hook")
@@ -236,6 +258,72 @@ class LocalGitHookTest(unittest.TestCase):
 
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(configured.stdout.strip(), ".githooks")
+
+
+class DailyMonitorCommitRefreshTest(unittest.TestCase):
+    def test_real_commit_refreshes_and_includes_only_generated_outputs(self):
+        self.assertTrue(REFRESHER.exists(), "缺少提交前刷新脚本")
+        for monitor_exit, commit_args in ((0, ()), (2, ()), (0, ("--only", "README.md"))):
+            with self.subTest(monitor_exit=monitor_exit, commit_args=commit_args), tempfile.TemporaryDirectory() as tmp:
+                repo = LocalGitHookTest().make_repo(tmp)
+                baseline = repo / "data" / "monitoring-state.json"
+                baseline.write_text('{"notification_baseline":"preserved"}\n')
+                (repo / "scripts" / REFRESHER.name).write_text(REFRESHER.read_text())
+                (repo / ".githooks").mkdir()
+                (repo / ".githooks" / "pre-commit").write_bytes(PRE_COMMIT.read_bytes())
+                (repo / ".githooks" / "pre-commit").chmod(0o755)
+                run(["git", "config", "core.hooksPath", ".githooks"], cwd=repo)
+                (repo / "tools").mkdir()
+                (repo / "tools" / "daily_monitor.py").write_text(
+                    "import json, sys\nfrom pathlib import Path\n"
+                    "assert sys.argv[1] == '--state-file' and sys.argv[3] == '--json'\n"
+                    "state = Path(sys.argv[2])\n"
+                    "assert 'preserved' in state.read_text()\n"
+                    "directory = Path('reports/daily-monitor')\n"
+                    "directory.mkdir(parents=True, exist_ok=True)\n"
+                    "for name in ('daily-monitor-latest.md', 'daily-monitor-20261124.md'):\n"
+                    "    (directory / name).write_text('fresh monitor\\n')\n"
+                    f"status = {'OK' if monitor_exit == 0 else 'DEGRADED'!r}\n"
+                    "(directory / 'daily-monitor-latest.json').write_text(json.dumps({'date': '2026-11-24', 'status': status}))\n"
+                    "state.write_text('{}\\n')\n"
+                    "print(json.dumps({'date': '2026-11-24', 'status': status}))\n"
+                    f"sys.exit({monitor_exit})\n"
+                )
+                archive = repo / "reports" / "daily-monitor" / "daily-monitor-20261123.md"
+                archive.parent.mkdir(parents=True)
+                archive.write_text("unrelated archive\n")
+                (repo / "README.md").write_text("changed\n")
+                run(["git", "add", "README.md"], cwd=repo)
+
+                committed = run(["git", "commit", "-qm", "test refresh", *commit_args], cwd=repo)
+                paths = run(["git", "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"], cwd=repo)
+
+                self.assertEqual(committed.returncode, 0, committed.stderr)
+                self.assertEqual(set(paths.stdout.splitlines()), {
+                    "README.md",
+                    "reports/daily-monitor/daily-monitor-latest.md",
+                    "reports/daily-monitor/daily-monitor-latest.json",
+                    "reports/daily-monitor/daily-monitor-20261124.md",
+                })
+                self.assertEqual(run(["git", "show", "HEAD:reports/daily-monitor/daily-monitor-latest.md"], cwd=repo).stdout, "fresh monitor\n")
+                self.assertIn("preserved", baseline.read_text())
+
+    def test_refresh_failure_preserves_index_and_prevents_commit(self):
+        self.assertTrue(REFRESHER.exists(), "缺少提交前刷新脚本")
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = LocalGitHookTest().make_repo(tmp)
+            (repo / "scripts" / REFRESHER.name).write_text(REFRESHER.read_text())
+            (repo / "tools").mkdir()
+            (repo / "tools" / "daily_monitor.py").write_text("raise SystemExit(1)\n")
+            (repo / "README.md").write_text("changed\n")
+            run(["git", "add", "README.md"], cwd=repo)
+            before = run(["git", "diff", "--cached"], cwd=repo).stdout
+
+            result = run([sys.executable, str(repo / "scripts" / REFRESHER.name)], cwd=repo)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertEqual(run(["git", "diff", "--cached"], cwd=repo).stdout, before)
+            self.assertIn("提交已阻止", result.stderr)
 
 
 class GithubQualityGateTest(unittest.TestCase):
