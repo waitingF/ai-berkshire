@@ -36,9 +36,10 @@ PRICE_PATTERN = re.compile(
 )
 DATE_PATTERN = re.compile(r"\b(20\d{2}-\d{2}-\d{2})\b")
 REPORT_DATE_LABEL_PATTERN = re.compile(
-    r"数据截止(?:日|日期)?|研究日期|研究日及信息截止|报告日期|建立日期|"
+    r"(?:数据截止(?:日|日期)?|研究日期|研究日及信息截止|报告日期|建立日期|"
     r"更新日期|最后更新|最新追踪更新|财报发布日期|发布日期|"
-    r"^\s*>?\s*(?:\*\*)?日期[:：]"
+    r"^\s*>?\s*(?:\*\*)?日期)"
+    r"[\s*]*(?:[:：]|\|)[\s*]*"
 )
 SEPARATED_DATE_PATTERN = re.compile(
     r"(?<!\d)(20\d{2})(?:-|/|\.|年)(\d{1,2})(?:-|/|\.|月)(\d{1,2})日?(?!\d)"
@@ -140,12 +141,15 @@ def _report_recency(path: Path) -> date:
         text = path.read_text(encoding="utf-8")
     except (OSError, UnicodeError):
         text = ""
-    labeled_dates = [
-        parsed
-        for line in text.splitlines()
-        if REPORT_DATE_LABEL_PATTERN.search(line)
-        for parsed in _dates_in(line)
-    ]
+    labeled_dates: list[date] = []
+    for line in text.splitlines():
+        for label in REPORT_DATE_LABEL_PATTERN.finditer(line):
+            # Only the value immediately after a metadata label belongs to it.
+            # A review schedule can mention "发布日期" alongside future dates.
+            for pattern in (SEPARATED_DATE_PATTERN, COMPACT_DATE_PATTERN):
+                matched = pattern.match(line, label.end())
+                if matched:
+                    labeled_dates.extend(_dates_in(matched[0]))
     if labeled_dates:
         return max(labeled_dates)
     filename_dates = _dates_in(path.stem)

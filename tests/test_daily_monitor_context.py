@@ -60,6 +60,92 @@ class ResearchContextTest(unittest.TestCase):
                 (quote("../Booking/最终报告.md", safe="/-._~"), date(2026, 5, 16)),
             )
 
+    def test_primary_report_ignores_future_review_schedule(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            link = "reports/上海复旦/上海复旦-research-20261103.md"
+            write(
+                root / link,
+                "# 上海复旦\n"
+                "> **研究日期 / 数据截止：2026-11-03（北京时间）**\n\n"
+                "- 2027-03-31检查2026全年业绩公告安排，正式披露后立即复检。"
+                "**截至本次研究未确认具体发布日期**，该日期仅是日历检查点。\n",
+            )
+
+            selected = primary_research_report(
+                root, root / "reports/daily-monitor", {"links": [link]}
+            )
+
+            self.assertEqual(selected[1], date(2026, 11, 3))
+
+    def test_primary_report_only_reads_the_date_bound_to_each_label(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            link = "reports/公司/最终报告.md"
+            write(
+                root / link,
+                "# 报告\n**数据截止：2026-11-03**；下次复检：2027-03-31。\n",
+            )
+
+            selected = primary_research_report(
+                root, root / "reports/daily-monitor", {"links": [link]}
+            )
+
+            self.assertEqual(selected[1], date(2026, 11, 3))
+
+    def test_primary_report_uses_filename_when_schedule_has_no_date_label(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            older = "reports/公司/公司-research-20261103.md"
+            newer = "reports/公司/公司-research-20261119.md"
+            write(
+                root / older,
+                "# 旧报告\n| 复检节点 | 2027-03-31检查全年报告；"
+                "这是研究日期，不是已确认财报发布日期。 |\n",
+            )
+            write(root / newer, "# 新报告\n**数据截止日**：2026-11-19\n")
+
+            selected = primary_research_report(
+                root, root / "reports/daily-monitor", {"links": [older, newer]}
+            )
+
+            self.assertEqual(
+                selected,
+                (quote("../公司/公司-research-20261119.md", safe="/-._~"), date(2026, 11, 19)),
+            )
+
+    def test_primary_report_reads_date_from_metadata_table_cell(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            link = "reports/公司/最终报告.md"
+            write(
+                root / link,
+                "# 报告\n| **数据截止日** | **2026年11月3日**；下次复检：2027-03-31 |\n",
+            )
+
+            selected = primary_research_report(
+                root, root / "reports/daily-monitor", {"links": [link]}
+            )
+
+            self.assertEqual(selected[1], date(2026, 11, 3))
+
+    def test_primary_report_ignores_dates_in_a_textual_cutoff_description(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            link = "reports/蓝思科技/蓝思科技-research-20260803.md"
+            write(
+                root / link,
+                "# 报告\n**研究日期：** 2026-08-03\n"
+                "**数据截止：** 行情截至 2026-07-31；"
+                "半年报预约披露日为 2026-08-22，尚未披露。\n",
+            )
+
+            selected = primary_research_report(
+                root, root / "reports/daily-monitor", {"links": [link]}
+            )
+
+            self.assertEqual(selected[1], date(2026, 8, 3))
+
     def test_primary_report_keeps_undated_link_without_inventing_date(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
