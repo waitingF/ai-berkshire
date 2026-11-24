@@ -14,11 +14,13 @@
 
 > 📮 **仓库是全量框架，公众号是精选。** 真正值得深研的公司，加上报告之外我自己的判断与取舍，都在微信公众号「**复利炼丹炉**」——[扫码关注 ↓](#精选研究首发于公众号)
 
+> 🎓 **互动财报课程：[复利学堂 · 看懂一家公司](apps/financial-academy/)**。12 章、72 个知识点、48 道章节题与 24 道结业题，含互动实验、错题复习及出师门槛；源码、题库和本地运行说明均已入库。
+
 <!-- REPORTS-BANNER:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
 > 📖 **想读报告，用 [阅读站](https://xbtlin.github.io/ai-berkshire/)**：成品报告按公司、专题、时间整理，电脑和手机都好读，可搜索、记住阅读进度。
 >
-> 📊 全部 2073 份报告（含底稿）· 200 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-11-11。
+> 📊 全部 2137 份报告（含底稿）· 202 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-11-24。
 
 <!-- REPORTS-BANNER:END -->
 
@@ -191,6 +193,7 @@ AI Berkshire 确保：**同样的输入 → 结构一致、深度一致的输出
 | Skill | 用途 | 适合场景 |
 |-------|------|---------|
 | [`/investment-research`](skills/investment-research.md) | 四大师综合深度分析 | 对一家上市公司进行全方位投资研究 |
+| [`/investment-research-lite`](skills/investment-research-lite.md) | 四大师综合深度分析（精简版） | 流程同上、规则合并，token 约为原版一半 |
 | [`/company-valuation`](skills/company-valuation.md) | 公司内在价值与估值复核 | 腾讯等重点公司及美股七姐妹：现金流、SOTP、反向估值与可复算验证 |
 | [`/investment-team`](skills/investment-team.md) | 多Agent并行投研团队 | 4个Agent并行研究，最快速、最全面 |
 | [`/management-deep-dive`](skills/management-deep-dive.md) | 管理层纵深研究 | "买股票就是买人"——当管理层是核心变量时深挖 |
@@ -657,18 +660,18 @@ $investment-research 腾讯
 
 <!-- REPORTS-INDEX:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-**📊 [全部研究索引 →](reports/README.md)** ｜ 2073 份报告 · 200 家公司 · 28 个专题 · 更新至 2026-11-11
+**📊 [全部研究索引 →](reports/README.md)** ｜ 2137 份报告 · 202 家公司 · 28 个专题 · 更新至 2026-11-24
 
 最近更新：
 
 | 日期 | 报告 | 归属 |
 |------|------|------|
-| 2026-11-11 | [英伟达（NASDAQ: NVDA）研究报告](reports/英伟达/英伟达-research-20261111.md) | 英伟达 |
-| 2026-11-11 | [标的跟踪表](reports/标的跟踪表.md) | 综合与横评 |
-| 2026-11-11 | [奈飞（Netflix，NFLX）研究报告](reports/Netflix/奈飞-research-20261111.md) | Netflix |
-| 2026-11-10 | [每日监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
-| 2026-11-10 | [每日监控](reports/daily-monitor/daily-monitor-20261110.md) | daily-monitor |
-| 2026-11-07 | [关键数据交叉验证记录](reports/多氟多/多氟多-validation-20261107.md) | 多氟多 |
+| 2026-11-24 | [迅策科技（03317.HK）研究报告](reports/迅策/迅策科技-research-20261124.md) | 迅策 |
+| 2026-11-24 | [蓝思科技（300433.SZ / 06613.HK）研究报告](reports/蓝思科技/蓝思科技-research-20261124.md) | 蓝思科技 |
+| 2026-11-24 | [标的跟踪表](reports/标的跟踪表.md) | 综合与横评 |
+| 2026-11-24 | [厦门钨业（600549.SH）研究报告](reports/厦门钨业/厦门钨业-research-20261124.md) | 厦门钨业 |
+| 2026-11-24 | [亨通光电（600487.SH）研究报告](reports/亨通光电/亨通光电-research-20261124.md) | 亨通光电 |
+| 2026-11-24 | [每日监控 · 价格监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
 
 <!-- REPORTS-INDEX:END -->
 
