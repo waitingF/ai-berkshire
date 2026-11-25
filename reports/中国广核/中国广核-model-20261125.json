@@ -1,0 +1,575 @@
+{
+  "inputs": {
+    "asof": "2026-11-25",
+    "share_asof": "2026-11-23",
+    "shares": "50971915257",
+    "A_shares": "39808290257",
+    "H_shares": "11163625000",
+    "fx_CNY_per_HKD": "0.85539",
+    "A_price": "4.63",
+    "H_price": "3.28",
+    "normal_profit_CNY": "11000000000",
+    "normal_EPS_CNY": "0.2158051143367496711758884183",
+    "r_CNY": "0.08",
+    "terminal_reinvestment_return_equity_proxy": "0.10",
+    "conditional_probabilities": [
+      "0.3",
+      "0.5",
+      "0.2"
+    ],
+    "tail_probability": "0.05",
+    "tail_recovery": "0.2"
+  },
+  "market": {
+    "A_equivalent_cap": "235999967639.91",
+    "H_equivalent_cap_HKD": "167187882042.96",
+    "H_equivalent_cap_CNY": "143010842420.7275544",
+    "actual_AH_cap_CNY": "215633934349.0100000",
+    "H_discount": "0.3940217710583153347732181425",
+    "A_PE_normal": "21.45454251271909090909090909",
+    "H_PE_normal": "13.00098567461159585454545455",
+    "EPS_FY25_current_shares": "0.1915831278978460222703732492",
+    "A_PE_FY25": "24.16705505752448516310381879",
+    "H_PE_FY25": "14.64470922249487073711209326",
+    "BVPS_9M_current_shares_stale": "2.498471546219772449622865463",
+    "A_PB_stale": "1.853132971238061250842082710",
+    "H_PB_stale": "1.122958235904282224581774070",
+    "A_yield_FY25": "0.01857451403887688984881209503",
+    "H_yield_FY25": "0.03065211446839681457523725449",
+    "debt_lower_proxy_9M": "356141155112.09",
+    "debt_proxy_9M": "360360417160.54",
+    "net_debt_proxy_9M": "336072750914.51",
+    "net_debt_CCE_proxy_9M": "344008459061.22",
+    "net_debt_2025_restated": "290122202429.24",
+    "liability_ratio_9M": "0.6807599434167578043282256175",
+    "FCF_proxy_9M": "-11156459015.37",
+    "FCF_proxy_Q3": "2325537603.38",
+    "first9months_1pct_market_tariff_revenue_CNY_assuming_VAT13pct": "354711504.4247787610619469027"
+  },
+  "three_year": [
+    {
+      "case": "bear",
+      "growth": "-0.03",
+      "exit_pe": "11",
+      "prob": "0.3",
+      "EPS3": "0.1969595011170643326411116104",
+      "target_CNY": "2.166554512287707659052227714",
+      "dividends_total_CNY": "0.27420367234642167568100255505",
+      "PV_CNY": "1.95579840800252692298834133577",
+      "PV_HKD": "2.286440580323042031106678048",
+      "H_20pct_exit_discount_PV_HKD": "1.884312703265393066375049296",
+      "IRR_A": "-0.1979225940659762190332833286",
+      "IRR_H": "-0.04707640591256387143448438874"
+    },
+    {
+      "case": "base",
+      "growth": "0.04",
+      "exit_pe": "15",
+      "prob": "0.5",
+      "EPS3": "0.2427514041332935821175945498",
+      "target_CNY": "3.641271061999403731763918247",
+      "dividends_total_CNY": "0.3152715906195637580179617381",
+      "PV_CNY": "3.16084267854792473340812408235",
+      "PV_HKD": "3.695206488909064559333314725",
+      "H_20pct_exit_discount_PV_HKD": "3.019360765365679691133663542",
+      "IRR_A": "-0.0523100672825227849472990289",
+      "IRR_H": "0.1251641680466765795148112186"
+    },
+    {
+      "case": "bull",
+      "growth": "0.08",
+      "exit_pe": "18",
+      "prob": "0.2",
+      "EPS3": "0.2718522921913756017763207512",
+      "target_CNY": "4.893341259444760831973773522",
+      "dividends_total_CNY": "0.3404866054668525283976264223",
+      "PV_CNY": "4.17582896241610613725344089469",
+      "PV_HKD": "4.881783703826448914826501239",
+      "H_20pct_exit_discount_PV_HKD": "3.973544875207574698114594032",
+      "IRR_A": "0.04263389326225177752289612350",
+      "IRR_H": "0.2374503928885521463782989646"
+    }
+  ],
+  "ten_year": {
+    "A": {
+      "curves": [
+        {
+          "case": "bear",
+          "profit_growth": "-0.01",
+          "terminal_g": "0",
+          "prob": "0.3",
+          "profit10_CNY": "9948202825.096849390110000000",
+          "anchor_IRR10_pct_ex_div": "-8.27594020561559500"
+        },
+        {
+          "case": "base",
+          "profit_growth": "0.04",
+          "terminal_g": "0.005",
+          "prob": "0.5",
+          "profit10_CNY": "16282687134.10178318336000000",
+          "anchor_IRR10_pct_ex_div": "-3.64341193317193600"
+        },
+        {
+          "case": "bull",
+          "profit_growth": "0.07",
+          "terminal_g": "0.01",
+          "prob": "0.2",
+          "profit10_CNY": "21638664930.18521854739000000",
+          "anchor_IRR10_pct_ex_div": "-0.863894969705736300"
+        }
+      ],
+      "sensitivity": [
+        {
+          "r": "0.06",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "16.66666666666666666666666667",
+              "spread": "0.06",
+              "IRR_ex_div": "-0.0346870248914907366827465289",
+              "IRR_cash_div": "-0.01147712036845434698614524814",
+              "terminal_CNY": "3.252837951689699505781707967"
+            },
+            {
+              "case": "base",
+              "pe": "17.27272727272727272727272727",
+              "spread": "0.055",
+              "IRR_ex_div": "0.017694681883042603525635690",
+              "IRR_cash_div": "0.04169019617417263989280623850",
+              "terminal_CNY": "5.517674050826678080114190989"
+            },
+            {
+              "case": "bull",
+              "pe": "18",
+              "spread": "0.05",
+              "IRR_ex_div": "0.051378525741662209285799701",
+              "IRR_cash_div": "0.0756170926799369882734650255",
+              "terminal_CNY": "7.641383824396205066715568717"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "0.00871693862240652261515382653",
+          "conditional_expected_IRR_with_cash": "0.032525380512537413505252549908",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "0.02346610761294977299777821854",
+          "reasonable_band": true,
+          "covers_r_with_tail": false
+        },
+        {
+          "r": "0.07",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "14.28571428571428571428571429",
+              "spread": "0.07",
+              "IRR_ex_div": "-0.0494532861659548337111807425",
+              "IRR_cash_div": "-0.02456450938204095970549486854",
+              "terminal_CNY": "2.788146815734028147812892544"
+            },
+            {
+              "case": "base",
+              "pe": "14.61538461538461538461538462",
+              "spread": "0.065",
+              "IRR_ex_div": "0.000834893442020245838732606",
+              "IRR_cash_div": "0.02670960071391215942664946950",
+              "terminal_CNY": "4.668801119930266067788930839"
+            },
+            {
+              "case": "bull",
+              "pe": "15",
+              "spread": "0.06",
+              "IRR_ex_div": "0.032383316768525660122521166",
+              "IRR_cash_div": "0.0586913329278305839028377005",
+              "terminal_CNY": "6.367819853663504222262973930"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "-0.00794187577507119516948368655",
+          "conditional_expected_IRR_with_cash": "0.017723714127909908582243814288",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "0.009404524547553643320919919705",
+          "reasonable_band": true,
+          "covers_r_with_tail": false
+        },
+        {
+          "r": "0.08",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "12.5",
+              "spread": "0.08",
+              "IRR_ex_div": "-0.0620617005088322560150922354",
+              "IRR_cash_div": "-0.03559229584907675595008971074",
+              "terminal_CNY": "2.439628463767274629336280975"
+            },
+            {
+              "case": "base",
+              "pe": "12.66666666666666666666666667",
+              "spread": "0.075",
+              "IRR_ex_div": "-0.0133851506399368781652219267",
+              "IRR_cash_div": "0.01425060230400618001595106650",
+              "terminal_CNY": "4.046294303939563925417073393"
+            },
+            {
+              "case": "bull",
+              "pe": "12.85714285714285714285714286",
+              "spread": "0.07",
+              "IRR_ex_div": "0.016591089600867131166605643",
+              "IRR_cash_div": "0.04482796663001603306550076850",
+              "terminal_CNY": "5.458131303140146476225406227"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "-0.02199286755244468965381750537",
+          "conditional_expected_IRR_with_cash": "0.005413205723283269836048773730",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "-0.002290458436841663487965368821",
+          "reasonable_band": true,
+          "covers_r_with_tail": false
+        },
+        {
+          "r": "0.09",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "11.11111111111111111111111111",
+              "spread": "0.09",
+              "IRR_ex_div": "-0.0730442178491765308205301225",
+              "IRR_cash_div": "-0.04507579220084604550893676854",
+              "terminal_CNY": "2.168558634459799670521138644"
+            },
+            {
+              "case": "base",
+              "pe": "11.17647058823529411764705882",
+              "spread": "0.085",
+              "IRR_ex_div": "-0.0256569729840153991489373453",
+              "IRR_cash_div": "0.003643033885964381462332831500",
+              "terminal_CNY": "3.570259679946674051838594169"
+            },
+            {
+              "case": "bull",
+              "pe": "11.25",
+              "spread": "0.08",
+              "IRR_ex_div": "0.003106637455148840985088097",
+              "IRR_cash_div": "0.03315903512897121885437848050",
+              "terminal_CNY": "4.775864890247628166697230448"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "-0.03412042435573089062361009000",
+          "conditional_expected_IRR_with_cash": "-0.005069413691477379150638918710",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "-0.01224894688086428002531867664",
+          "reasonable_band": true,
+          "covers_r_with_tail": false
+        },
+        {
+          "r": "0.10",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "1E+1",
+              "spread": "0.10",
+              "IRR_ex_div": "-0.0827594020561558930624017909",
+              "IRR_cash_div": "-0.0533613779716022426918612777",
+              "terminal_CNY": "1.951702771013819703469024780"
+            },
+            {
+              "case": "base",
+              "pe": "1E+1",
+              "spread": "0.095",
+              "IRR_ex_div": "-0.0364341193317193220049473359",
+              "IRR_cash_div": "-0.00555134655602659838336942295",
+              "terminal_CNY": "3.194442871531234677960847415"
+            },
+            {
+              "case": "bull",
+              "pe": "1E+1",
+              "spread": "0.09",
+              "IRR_ex_div": "-0.0086389496970573793704746629",
+              "IRR_cash_div": "0.02313467229331878820172568950",
+              "terminal_CNY": "4.245213235775669481508649287"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "-0.04477267022211790479528913780",
+          "conditional_expected_IRR_with_cash": "-0.014157152210830214358897956885",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "-0.02088229847424947347316476290",
+          "reasonable_band": false,
+          "covers_r_with_tail": false
+        }
+      ]
+    },
+    "H": {
+      "curves": [
+        {
+          "case": "bear",
+          "profit_growth": "-0.01",
+          "terminal_g": "0",
+          "prob": "0.3",
+          "profit10_CNY": "9948202825.096849390110000000",
+          "anchor_IRR10_pct_ex_div": "-3.56436009368370500"
+        },
+        {
+          "case": "base",
+          "profit_growth": "0.04",
+          "terminal_g": "0.005",
+          "prob": "0.5",
+          "profit10_CNY": "16282687134.10178318336000000",
+          "anchor_IRR10_pct_ex_div": "1.30612677027166500"
+        },
+        {
+          "case": "bull",
+          "profit_growth": "0.07",
+          "terminal_g": "0.01",
+          "prob": "0.2",
+          "profit10_CNY": "21638664930.18521854739000000",
+          "anchor_IRR10_pct_ex_div": "4.228418888644891500"
+        }
+      ],
+      "sensitivity": [
+        {
+          "r": "0.06",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "16.66666666666666666666666667",
+              "spread": "0.06",
+              "IRR_ex_div": "0.014898104958916326988376341",
+              "IRR_cash_div": "0.04580758244113235436463705250",
+              "terminal_CNY": "3.252837951689699505781707967"
+            },
+            {
+              "case": "base",
+              "pe": "17.27272727272727272727272727",
+              "spread": "0.055",
+              "IRR_ex_div": "0.069970497344413529693046004",
+              "IRR_cash_div": "0.1019724628533966093932547014",
+              "terminal_CNY": "5.517674050826678080114190989"
+            },
+            {
+              "case": "bull",
+              "pe": "18",
+              "spread": "0.05",
+              "IRR_ex_div": "0.105384575660311349491705428",
+              "IRR_cash_div": "0.1377646868089226157386648894",
+              "terminal_CNY": "7.641383824396205066715568717"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "0.0605315952919439328413769899",
+          "conditional_expected_IRR_with_cash": "0.09228144352082253415375144433",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "0.08023436747082063761385216824",
+          "reasonable_band": true,
+          "covers_r_with_tail": true
+        },
+        {
+          "r": "0.07",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "14.28571428571428571428571429",
+              "spread": "0.07",
+              "IRR_ex_div": "-0.0006266533020997591497059009",
+              "IRR_cash_div": "0.03231200401608461887757751450",
+              "terminal_CNY": "2.788146815734028147812892544"
+            },
+            {
+              "case": "base",
+              "pe": "14.61538461538461538461538462",
+              "spread": "0.065",
+              "IRR_ex_div": "0.052244673927528019578509274",
+              "IRR_cash_div": "0.0865198815100939098390844915",
+              "terminal_CNY": "4.668801119930266067788930839"
+            },
+            {
+              "case": "bull",
+              "pe": "15",
+              "spread": "0.06",
+              "IRR_ex_div": "0.085413641789907447196933305",
+              "IRR_cash_div": "0.1202996021171707334770983294",
+              "terminal_CNY": "6.367819853663504222262973930"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "0.04301706933111557148372952773",
+          "conditional_expected_IRR_with_cash": "0.077013462383306487278235165980",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "0.06572978539018039308211170382",
+          "reasonable_band": true,
+          "covers_r_with_tail": false
+        },
+        {
+          "r": "0.08",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "12.5",
+              "spread": "0.08",
+              "IRR_ex_div": "-0.0138827227356269629488180676",
+              "IRR_cash_div": "0.02095829854432141296757763650",
+              "terminal_CNY": "2.439628463767274629336280975"
+            },
+            {
+              "case": "base",
+              "pe": "12.66666666666666666666666667",
+              "spread": "0.075",
+              "IRR_ex_div": "0.037294190339976249396131341",
+              "IRR_cash_div": "0.0736900252975875935802020315",
+              "terminal_CNY": "4.046294303939563925417073393"
+            },
+            {
+              "case": "bull",
+              "pe": "12.85714285714285714285714286",
+              "spread": "0.07",
+              "IRR_ex_div": "0.068810216953795894640773915",
+              "IRR_cash_div": "0.1060202779049845553521564114",
+              "terminal_CNY": "5.458131303140146476225406227"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "0.02824432174005921474157503322",
+          "conditional_expected_IRR_with_cash": "0.064336557793087131750805588980",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "0.05368672602947200533105360566",
+          "reasonable_band": true,
+          "covers_r_with_tail": false
+        },
+        {
+          "r": "0.09",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "11.11111111111111111111111111",
+              "spread": "0.09",
+              "IRR_ex_div": "-0.0254293778866580814854421170",
+              "IRR_cash_div": "0.01120909491539766864157857250",
+              "terminal_CNY": "2.168558634459799670521138644"
+            },
+            {
+              "case": "base",
+              "pe": "11.17647058823529411764705882",
+              "spread": "0.085",
+              "IRR_ex_div": "0.024392002590974149332875126",
+              "IRR_cash_div": "0.0627839783522720350076019395",
+              "terminal_CNY": "3.570259679946674051838594169"
+            },
+            {
+              "case": "bull",
+              "pe": "11.25",
+              "spread": "0.08",
+              "IRR_ex_div": "0.054633110375941869260421436",
+              "IRR_cash_div": "0.0940214322277421716984386895",
+              "terminal_CNY": "4.775864890247628166697230448"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "0.01549381000467802407288921510",
+          "conditional_expected_IRR_with_cash": "0.053559004096303752435962279400",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "0.04344805001752779498195246156",
+          "reasonable_band": true,
+          "covers_r_with_tail": false
+        },
+        {
+          "r": "0.10",
+          "cases": [
+            {
+              "case": "bear",
+              "pe": "1E+1",
+              "spread": "0.10",
+              "IRR_ex_div": "-0.0356436009368370239612167234",
+              "IRR_cash_div": "0.002703402132168256455605887500",
+              "terminal_CNY": "1.951702771013819703469024780"
+            },
+            {
+              "case": "base",
+              "pe": "1E+1",
+              "spread": "0.095",
+              "IRR_ex_div": "0.013061267702716661697307685",
+              "IRR_cash_div": "0.0533449880984393805190203265",
+              "terminal_CNY": "3.194442871531234677960847415"
+            },
+            {
+              "case": "bull",
+              "pe": "1E+1",
+              "spread": "0.09",
+              "IRR_ex_div": "0.042284188886448873092422329",
+              "IRR_cash_div": "0.0837299396782020549570689895",
+              "terminal_CNY": "4.245213235775669481508649287"
+            }
+          ],
+          "conditional_expected_IRR_ex_div": "0.00429439134759699827877329128",
+          "conditional_expected_IRR_with_cash": "0.0442295026245105781876057274000",
+          "tail_IRR": "-0.1486600774792153966442340773",
+          "expected_IRR_with_tail": "0.03458502361932427944601373716",
+          "reasonable_band": false,
+          "covers_r_with_tail": false
+        }
+      ]
+    }
+  },
+  "financials": [
+    {
+      "year": 2021,
+      "revenue_100m": "806.7874475795",
+      "profit_100m": "97.6417470656",
+      "gross_margin": "0.3319759712365974934019911103",
+      "op_margin": "0.2274890957206106220315375637",
+      "CFO_100m": "349.1110128922",
+      "capex_100m": "144.4081587268",
+      "FCF_proxy_100m": "204.7028541654"
+    },
+    {
+      "year": 2022,
+      "revenue_100m": "828.2240358643",
+      "profit_100m": "99.6379312297",
+      "gross_margin": "0.3325359961623054546067591429",
+      "op_margin": "0.2275419611803894135380766025",
+      "CFO_100m": "313.6840848865",
+      "capex_100m": "118.396831327",
+      "FCF_proxy_100m": "195.2872535595"
+    },
+    {
+      "year": 2023,
+      "revenue_100m": "825.4864315032",
+      "profit_100m": "107.2457011668",
+      "gross_margin": "0.3596790799835805986158750595",
+      "op_margin": "0.2494831365194906343692429667",
+      "CFO_100m": "331.1989427261",
+      "capex_100m": "142.4609666935",
+      "FCF_proxy_100m": "188.7379760326"
+    },
+    {
+      "year": 2024,
+      "revenue_100m": "789.4466962305",
+      "profit_100m": "108.3812042243",
+      "gross_margin": "0.3742980201599631577318406969",
+      "op_margin": "0.2787439505453950489385371260",
+      "CFO_100m": "375.057280417",
+      "capex_100m": "319.3277476931",
+      "FCF_proxy_100m": "55.7295327239"
+    },
+    {
+      "year": 2025,
+      "revenue_100m": "756.9655897353",
+      "profit_100m": "97.6535895988",
+      "gross_margin": "0.3199299357073621457241388740",
+      "op_margin": "0.2434119311899384200356804855",
+      "CFO_100m": "299.7052939201",
+      "capex_100m": "340.5677238798",
+      "FCF_proxy_100m": "-40.8624299597"
+    }
+  ],
+  "limitations": [
+    "Normal profit 110亿元 is a judgement, not reported FY2026 or a fully comparable TTM.",
+    "terminal_value roic argument is an incremental retained-equity-return proxy for this PE model, not measured operating ROIC. A strict NOPAT/FCFF-WACC valuation is unavailable.",
+    "CNY cash flows; H entry price translated at spot fixing. Future FX, personal dividend taxes and trading costs unmodelled.",
+    "Ten-year returns do not include the separate three-year 20% H exit-price haircut.",
+    "5% tail weight is a subjective stress allocation, not an estimated accident probability. Extreme related-party losses unmodelled.",
+    "Book equity and debt are September balances; November shares include subsequently converted debt. Do not treat mixed-date book multiples as live balances."
+  ],
+  "weighted_three_year_PV_CNY": "3.0023266541579416710512526206",
+  "reverse_3yr_growth": {
+    "A_no_haircut": "0.1851977753728501157473843866",
+    "H_no_haircut": "-0.001745672411597004836084060450",
+    "H_20pct_exit_haircut": "0.0701729897537977149271257185"
+  },
+  "reverse_DDM10_growth": {
+    "A": "0.1074186176951738169694922154",
+    "H": "0.04611198161097757500072949250"
+  }
+}

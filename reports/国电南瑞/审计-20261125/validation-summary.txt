@@ -1,0 +1,10 @@
+核验日期：2026-11-25
+15%固定种子随机抽检15项＋关键字段补验12项：27通过，0警告，0失败。
+最终terminal_value audit：C1/C2/C3准出；未建模风险已在报告披露。
+trigger_scanner --check：通过。
+daily_monitor --check：通过。
+prepush-check.sh：通过，零通知；其生成的历史trigger-scan文件已还原，未纳入本次研究。
+国电南瑞单标的daily_monitor以临时状态/报告目录试跑：OK，items=1，notifications=0。
+本地链接、标的唯一性、台账去重及重算、Python语法检查：通过。
+正式monitoring-state及daily-monitor输出未修改。
+未提交、推送或发布网站。
