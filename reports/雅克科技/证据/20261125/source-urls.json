@@ -1,0 +1,21 @@
+{
+  "income": "https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FINANCE_GINCOME&columns=ALL&filter=(SECUCODE%3D%22002409.SZ%22)&pageNumber=1&pageSize=40&sortTypes=-1&sortColumns=REPORT_DATE&source=HSF10&client=PC",
+  "cash": "https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FINANCE_GCASHFLOW&columns=ALL&filter=(SECUCODE%3D%22002409.SZ%22)&pageNumber=1&pageSize=40&sortTypes=-1&sortColumns=REPORT_DATE&source=HSF10&client=PC",
+  "balance": "https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FINANCE_GBALANCE&columns=ALL&filter=(SECUCODE%3D%22002409.SZ%22)&pageNumber=1&pageSize=40&sortTypes=-1&sortColumns=REPORT_DATE&source=HSF10&client=PC",
+  "quote": "https://push2.eastmoney.com/api/qt/stock/get?secid=0.002409&fields=f43,f57,f58,f116,f162,f167,f84,f86,f173",
+  "peers": "https://push2.eastmoney.com/api/qt/ulist.np/get?secids=0.002409,1.688146,0.300666&fields=f2,f12,f14,f20,f9,f115,f23,f297",
+  "history": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_VALUEANALYSIS_DET&columns=ALL&filter=(SECURITY_CODE%3D%22002409%22)&pageNumber=1&pageSize=5000&sortTypes=-1&sortColumns=TRADE_DATE&source=WEB&client=WEB",
+  "qq": "https://qt.gtimg.cn/q=sz002409",
+  "segment_business": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ002409",
+  "shareholders": "https://emweb.securities.eastmoney.com/PC_HSF10/ShareholderResearch/PageAjax?code=SZ002409",
+  "main_financials": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_F10_FINANCE_MAINFINADATA&columns=ALL&filter=(SECUCODE%3D%22002409.SZ%22)&pageNumber=1&pageSize=10&sortTypes=-1&sortColumns=REPORT_DATE&source=HSF10&client=PC",
+  "qq_peers": "https://qt.gtimg.cn/q=sh688146,sz300666",
+  "2025_annual": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225216877.PDF",
+  "2026_Q3": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225628305.PDF",
+  "2026_H1": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225503911.PDF",
+  "2023_restated": "https://static.cninfo.com.cn/finalpage/2024-04-27/1219853209.PDF",
+  "2022_annual": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216658638.PDF",
+  "segment_residual_support": "https://s.askci.com/stock/businessanalysis/002409/productconstitute/",
+  "yare_details": "https://static.cninfo.com.cn/finalpage/2026-10-15/1225604662.PDF",
+  "huafei_completed": "https://static.cninfo.com.cn/finalpage/2026-10-23/1225615090.PDF"
+}

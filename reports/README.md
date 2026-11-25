@@ -4,7 +4,7 @@
 > 新增报告先 `git add`，再运行 `python3 tools/reports_index.py`，将报告与索引一并提交。
 > 只收录成品报告；证据、审计、复算、底稿等中间产物不在此列，完整清单见 `index.json`。
 
-**2151 份报告** · **201 家公司** · **28 个专题** · 最近更新 2026-11-24
+**2155 份报告** · **201 家公司** · **28 个专题** · 最近更新 2026-11-25
 
 [最近更新](#最近更新) · [按公司](#按公司) · [专题研究](#专题研究) · [大师研究](#大师研究) · [筛选池](#筛选池)
 
@@ -14,10 +14,15 @@
 
 | 日期 | 报告 | 归属 | 类型 |
 |------|------|------|------|
+| 2026-11-25 | [雅克科技（002409.SZ）研究报告](雅克科技/雅克科技-research-20261125.md) | 雅克科技 | 研究 |
+| 2026-11-25 | [标的跟踪表](标的跟踪表.md) | 综合与横评 | 研究 |
+| 2026-11-25 | [北京君正（300223.SZ / 03223.HK）研究报告](北京君正/北京君正-research-20261125.md) | 北京君正 | 研究 |
+| 2026-11-25 | [云迹科技（02670.HK）研究报告](云迹科技/云迹科技-research-20261125.md) | 云迹科技 | 研究 |
+| 2026-11-25 | [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
+| 2026-11-25 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261125.md) | daily-monitor | 研究 |
 | 2026-11-24 | [迅策科技（03317.HK）研究报告](迅策/迅策科技-research-20261124.md) | 迅策 | 研究 |
 | 2026-11-24 | [蓝思科技（300433.SZ / 06613.HK）研究报告](蓝思科技/蓝思科技-research-20261124.md) | 蓝思科技 | 研究 |
 | 2026-11-24 | [海康威视（002415.SZ）研究报告](海康威视/海康威视-research-20261124.md) | 海康威视 | 研究 |
-| 2026-11-24 | [标的跟踪表](标的跟踪表.md) | 综合与横评 | 研究 |
 | 2026-11-24 | [思格新能（06656.HK）研究报告](思格新能/思格新能-research-20261124.md) | 思格新能 | 研究 |
 | 2026-11-24 | [小米集团（1810.HK）研究报告](小米/小米-research-20261124.md) | 小米 | 研究 |
 | 2026-11-24 | [闪迪 Sandisk（SNDK）研究报告](存储半导体/Sandisk-research-20261124.md) | 存储半导体 | 研究 |
@@ -26,7 +31,6 @@
 | 2026-11-24 | [京东集团（JD / 9618.HK）研究报告](京东集团/京东集团-research-20261124.md) | 京东集团 | 研究 |
 | 2026-11-24 | [亨通光电（600487.SH）研究报告](亨通光电/亨通光电-research-20261124.md) | 亨通光电 | 研究 |
 | 2026-11-24 | [东方电气（600875.SH / 01072.HK）研究报告](东方电气/东方电气-research-20261124.md) | 东方电气 | 研究 |
-| 2026-11-24 | [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
 | 2026-11-24 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261124.md) | daily-monitor | 研究 |
 | 2026-11-24 | [Uber关键数据与估值工具记录](Uber/Uber-validation-20261124.md) | Uber | 研究 |
 | 2026-11-24 | [Uber（NYSE:UBER）研究报告](Uber/Uber-research-20261124.md) | Uber | 研究 |
@@ -36,7 +40,6 @@
 | 2026-11-24 | [Mastercard（MA）研究报告](Mastercard/Mastercard-research-20261124.md) | Mastercard | 研究 |
 | 2026-11-24 | [基恩士（KEYENCE，6861.T）研究报告](Keyence/Keyence-research-20261124.md) | Keyence | 研究 |
 | 2026-11-24 | [Booking Holdings（BKNG）研究报告](Booking/Booking-research-20261124.md) | Booking | 研究 |
-| 2026-11-23 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261123.md) | daily-monitor | 研究 |
 | 2026-11-22 | [英伟达投资研究：利润在顶点，创始人离场，账本还没交](英伟达/英伟达-research-20261122.md) | 英伟达 | 研究 |
 | 2026-11-22 | [快手（1024.HK）投资研究：主业转弱、价格接近净现金，观望并等两个检验点](快手/快手-research-20261122.md) | 快手 | 研究 |
 | 2026-11-21 | [英伟达十年后最差情景：路径、利润与检验指标](英伟达/英伟达十年最差情景-20261121.md) | 英伟达 | 研究 |
@@ -51,9 +54,6 @@
 | 2026-11-19 | [澜起科技（688008.SH / 06809.HK）研究报告](澜起科技/澜起科技-research-20261119.md) | 澜起科技 | 研究 |
 | 2026-11-19 | [深科技（000021.SZ）研究报告](深科技/深科技-research-20261119.md) | 深科技 | 研究 |
 | 2026-11-19 | [泡泡玛特（09992.HK）研究报告](泡泡玛特/泡泡玛特-research-20261119.md) | 泡泡玛特 | 研究 |
-| 2026-11-19 | [沃尔玛（WMT）研究报告](沃尔玛/沃尔玛-research-20261119.md) | 沃尔玛 | 研究 |
-| 2026-11-19 | [PDD Holdings（NASDAQ:PDD）研究报告](拼多多/PDD-Holdings-research-20261119.md) | 拼多多 | 研究 |
-| 2026-11-19 | [快手2026Q3财报精读：广告和电商同步收缩，利润几乎归零，自由现金流仍为负](快手/快手-earnings-2026Q3.md) | 快手 | 财报 |
 
 ---
 
@@ -278,6 +278,79 @@
 </details>
 
 <details markdown="1">
+<summary><b>daily-monitor</b> · 67 份 · 最近 2026-11-25</summary>
+
+- `2026-11-25` [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) — 研究
+- `2026-11-25` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261125.md) — 研究
+- `2026-11-24` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261124.md) — 研究
+- `2026-11-23` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261123.md) — 研究
+- `2026-11-20` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261120.md) — 研究
+- `2026-11-19` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261119.md) — 研究
+- `2026-11-18` [每日监控](daily-monitor/daily-monitor-20261118.md) — 研究
+- `2026-11-17` [每日监控](daily-monitor/daily-monitor-20261117.md) — 研究
+- `2026-11-16` [每日监控](daily-monitor/daily-monitor-20261116.md) — 研究
+- `2026-11-13` [每日监控](daily-monitor/daily-monitor-20261113.md) — 研究
+- `2026-11-12` [每日监控](daily-monitor/daily-monitor-20261112.md) — 研究
+- `2026-11-11` [每日监控](daily-monitor/daily-monitor-20261111.md) — 研究
+- `2026-11-10` [每日监控](daily-monitor/daily-monitor-20261110.md) — 研究
+- `2026-11-09` [每日监控](daily-monitor/daily-monitor-20261109.md) — 研究
+- `2026-11-06` [每日监控](daily-monitor/daily-monitor-20261106.md) — 研究
+- `2026-11-05` [每日监控](daily-monitor/daily-monitor-20261105.md) — 研究
+- `2026-11-04` [每日监控](daily-monitor/daily-monitor-20261104.md) — 研究
+- `2026-11-03` [每日监控](daily-monitor/daily-monitor-20261103.md) — 研究
+- `2026-11-02` [每日监控](daily-monitor/daily-monitor-20261102.md) — 研究
+- `2026-10-30` [每日监控](daily-monitor/daily-monitor-20261030.md) — 研究
+- `2026-10-29` [每日监控](daily-monitor/daily-monitor-20261029.md) — 研究
+- `2026-10-28` [每日监控](daily-monitor/daily-monitor-20261028.md) — 研究
+- `2026-10-26` [每日监控](daily-monitor/daily-monitor-20261026.md) — 研究
+- `2026-10-23` [每日监控](daily-monitor/daily-monitor-20261023.md) — 研究
+- `2026-10-22` [每日监控](daily-monitor/daily-monitor-20261022.md) — 研究
+- `2026-10-21` [每日监控](daily-monitor/daily-monitor-20261021.md) — 研究
+- `2026-10-20` [每日监控](daily-monitor/daily-monitor-20261020.md) — 研究
+- `2026-10-19` [每日监控](daily-monitor/daily-monitor-20261019.md) — 研究
+- `2026-10-16` [每日监控](daily-monitor/daily-monitor-20261016.md) — 研究
+- `2026-10-15` [每日监控](daily-monitor/daily-monitor-20261015.md) — 研究
+- `2026-10-14` [每日监控](daily-monitor/daily-monitor-20261014.md) — 研究
+- `2026-10-13` [每日监控](daily-monitor/daily-monitor-20261013.md) — 研究
+- `2026-10-12` [每日监控](daily-monitor/daily-monitor-20261012.md) — 研究
+- `2026-10-09` [每日监控](daily-monitor/daily-monitor-20261009.md) — 研究
+- `2026-10-08` [每日监控](daily-monitor/daily-monitor-20261008.md) — 研究
+- `2026-10-08` [价格监控研究报告更新记录](daily-monitor/价格监控报告更新-20261008.md) — 研究
+- `2026-09-30` [每日监控](daily-monitor/daily-monitor-20260930.md) — 研究
+- `2026-09-28` [每日监控](daily-monitor/daily-monitor-20260928.md) — 研究
+- `2026-09-25` [每日监控](daily-monitor/daily-monitor-20260925.md) — 研究
+- `2026-09-24` [每日监控](daily-monitor/daily-monitor-20260924.md) — 研究
+- `2026-09-22` [每日监控](daily-monitor/daily-monitor-20260922.md) — 研究
+- `2026-09-21` [每日监控](daily-monitor/daily-monitor-20260921.md) — 研究
+- `2026-09-19` [每日监控](daily-monitor/daily-monitor-20260919.md) — 研究
+- `2026-09-18` [每日监控](daily-monitor/daily-monitor-20260918.md) — 研究
+- `2026-09-17` [每日监控](daily-monitor/daily-monitor-20260917.md) — 研究
+- `2026-09-16` [每日监控](daily-monitor/daily-monitor-20260916.md) — 研究
+- `2026-09-15` [每日监控](daily-monitor/daily-monitor-20260915.md) — 研究
+- `2026-09-14` [每日监控](daily-monitor/daily-monitor-20260914.md) — 研究
+- `2026-09-12` [每日监控](daily-monitor/daily-monitor-20260912.md) — 研究
+- `2026-09-11` [每日监控](daily-monitor/daily-monitor-20260911.md) — 研究
+- `2026-09-10` [每日监控](daily-monitor/daily-monitor-20260910.md) — 研究
+- `2026-09-09` [每日监控](daily-monitor/daily-monitor-20260909.md) — 研究
+- `2026-09-08` [每日监控](daily-monitor/daily-monitor-20260908.md) — 研究
+- `2026-09-07` [每日监控](daily-monitor/daily-monitor-20260907.md) — 研究
+- `2026-09-05` [每日监控](daily-monitor/daily-monitor-20260905.md) — 研究
+- `2026-09-04` [每日监控](daily-monitor/daily-monitor-20260904.md) — 研究
+- `2026-09-03` [每日监控](daily-monitor/daily-monitor-20260903.md) — 研究
+- `2026-09-02` [每日监控](daily-monitor/daily-monitor-20260902.md) — 研究
+- `2026-09-01` [每日监控](daily-monitor/daily-monitor-20260901.md) — 研究
+- `2026-08-31` [每日监控](daily-monitor/daily-monitor-20260831.md) — 研究
+- `2026-08-31` [P0 标的财报复检与最终决策（2026-08-31）](daily-monitor/P0-财报复检决策-20260831.md) — 财报
+- `2026-08-30` [每日监控](daily-monitor/daily-monitor-20260830.md) — 研究
+- `2026-08-29` [每日监控](daily-monitor/daily-monitor-20260829.md) — 研究
+- `2026-08-28` [每日监控](daily-monitor/daily-monitor-20260828.md) — 研究
+- `2026-08-27` [每日监控](daily-monitor/daily-monitor-20260827.md) — 研究
+- `2026-08-26` [每日监控](daily-monitor/daily-monitor-20260826.md) — 研究
+- `2026-08-25` [每日监控](daily-monitor/daily-monitor-20260825.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>美团</b> · 67 份 · 最近 2026-10-31</summary>
 
 - `2026-10-31` [美团（03690.HK）研究报告](美团/美团-research-20261031.md) — 研究
@@ -351,78 +424,6 @@
 - `2026-04-09` [美团(3690.HK) — 财务估值分析（巴菲特视角）](美团/02-财务估值分析-巴菲特视角.md) — 估值仓位
 - `2026-04-09` [美团(3690.HK) 2025年报精读](美团/美团-earnings-2025FY.md) — 财报
 - `2026-04-08` [美团（03690.HK）投资研究报告](美团/美团-research-20260408.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>daily-monitor</b> · 66 份 · 最近 2026-11-24</summary>
-
-- `2026-11-24` [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) — 研究
-- `2026-11-24` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261124.md) — 研究
-- `2026-11-23` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261123.md) — 研究
-- `2026-11-20` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261120.md) — 研究
-- `2026-11-19` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261119.md) — 研究
-- `2026-11-18` [每日监控](daily-monitor/daily-monitor-20261118.md) — 研究
-- `2026-11-17` [每日监控](daily-monitor/daily-monitor-20261117.md) — 研究
-- `2026-11-16` [每日监控](daily-monitor/daily-monitor-20261116.md) — 研究
-- `2026-11-13` [每日监控](daily-monitor/daily-monitor-20261113.md) — 研究
-- `2026-11-12` [每日监控](daily-monitor/daily-monitor-20261112.md) — 研究
-- `2026-11-11` [每日监控](daily-monitor/daily-monitor-20261111.md) — 研究
-- `2026-11-10` [每日监控](daily-monitor/daily-monitor-20261110.md) — 研究
-- `2026-11-09` [每日监控](daily-monitor/daily-monitor-20261109.md) — 研究
-- `2026-11-06` [每日监控](daily-monitor/daily-monitor-20261106.md) — 研究
-- `2026-11-05` [每日监控](daily-monitor/daily-monitor-20261105.md) — 研究
-- `2026-11-04` [每日监控](daily-monitor/daily-monitor-20261104.md) — 研究
-- `2026-11-03` [每日监控](daily-monitor/daily-monitor-20261103.md) — 研究
-- `2026-11-02` [每日监控](daily-monitor/daily-monitor-20261102.md) — 研究
-- `2026-10-30` [每日监控](daily-monitor/daily-monitor-20261030.md) — 研究
-- `2026-10-29` [每日监控](daily-monitor/daily-monitor-20261029.md) — 研究
-- `2026-10-28` [每日监控](daily-monitor/daily-monitor-20261028.md) — 研究
-- `2026-10-26` [每日监控](daily-monitor/daily-monitor-20261026.md) — 研究
-- `2026-10-23` [每日监控](daily-monitor/daily-monitor-20261023.md) — 研究
-- `2026-10-22` [每日监控](daily-monitor/daily-monitor-20261022.md) — 研究
-- `2026-10-21` [每日监控](daily-monitor/daily-monitor-20261021.md) — 研究
-- `2026-10-20` [每日监控](daily-monitor/daily-monitor-20261020.md) — 研究
-- `2026-10-19` [每日监控](daily-monitor/daily-monitor-20261019.md) — 研究
-- `2026-10-16` [每日监控](daily-monitor/daily-monitor-20261016.md) — 研究
-- `2026-10-15` [每日监控](daily-monitor/daily-monitor-20261015.md) — 研究
-- `2026-10-14` [每日监控](daily-monitor/daily-monitor-20261014.md) — 研究
-- `2026-10-13` [每日监控](daily-monitor/daily-monitor-20261013.md) — 研究
-- `2026-10-12` [每日监控](daily-monitor/daily-monitor-20261012.md) — 研究
-- `2026-10-09` [每日监控](daily-monitor/daily-monitor-20261009.md) — 研究
-- `2026-10-08` [每日监控](daily-monitor/daily-monitor-20261008.md) — 研究
-- `2026-10-08` [价格监控研究报告更新记录](daily-monitor/价格监控报告更新-20261008.md) — 研究
-- `2026-09-30` [每日监控](daily-monitor/daily-monitor-20260930.md) — 研究
-- `2026-09-28` [每日监控](daily-monitor/daily-monitor-20260928.md) — 研究
-- `2026-09-25` [每日监控](daily-monitor/daily-monitor-20260925.md) — 研究
-- `2026-09-24` [每日监控](daily-monitor/daily-monitor-20260924.md) — 研究
-- `2026-09-22` [每日监控](daily-monitor/daily-monitor-20260922.md) — 研究
-- `2026-09-21` [每日监控](daily-monitor/daily-monitor-20260921.md) — 研究
-- `2026-09-19` [每日监控](daily-monitor/daily-monitor-20260919.md) — 研究
-- `2026-09-18` [每日监控](daily-monitor/daily-monitor-20260918.md) — 研究
-- `2026-09-17` [每日监控](daily-monitor/daily-monitor-20260917.md) — 研究
-- `2026-09-16` [每日监控](daily-monitor/daily-monitor-20260916.md) — 研究
-- `2026-09-15` [每日监控](daily-monitor/daily-monitor-20260915.md) — 研究
-- `2026-09-14` [每日监控](daily-monitor/daily-monitor-20260914.md) — 研究
-- `2026-09-12` [每日监控](daily-monitor/daily-monitor-20260912.md) — 研究
-- `2026-09-11` [每日监控](daily-monitor/daily-monitor-20260911.md) — 研究
-- `2026-09-10` [每日监控](daily-monitor/daily-monitor-20260910.md) — 研究
-- `2026-09-09` [每日监控](daily-monitor/daily-monitor-20260909.md) — 研究
-- `2026-09-08` [每日监控](daily-monitor/daily-monitor-20260908.md) — 研究
-- `2026-09-07` [每日监控](daily-monitor/daily-monitor-20260907.md) — 研究
-- `2026-09-05` [每日监控](daily-monitor/daily-monitor-20260905.md) — 研究
-- `2026-09-04` [每日监控](daily-monitor/daily-monitor-20260904.md) — 研究
-- `2026-09-03` [每日监控](daily-monitor/daily-monitor-20260903.md) — 研究
-- `2026-09-02` [每日监控](daily-monitor/daily-monitor-20260902.md) — 研究
-- `2026-09-01` [每日监控](daily-monitor/daily-monitor-20260901.md) — 研究
-- `2026-08-31` [每日监控](daily-monitor/daily-monitor-20260831.md) — 研究
-- `2026-08-31` [P0 标的财报复检与最终决策（2026-08-31）](daily-monitor/P0-财报复检决策-20260831.md) — 财报
-- `2026-08-30` [每日监控](daily-monitor/daily-monitor-20260830.md) — 研究
-- `2026-08-29` [每日监控](daily-monitor/daily-monitor-20260829.md) — 研究
-- `2026-08-28` [每日监控](daily-monitor/daily-monitor-20260828.md) — 研究
-- `2026-08-27` [每日监控](daily-monitor/daily-monitor-20260827.md) — 研究
-- `2026-08-26` [每日监控](daily-monitor/daily-monitor-20260826.md) — 研究
-- `2026-08-25` [每日监控](daily-monitor/daily-monitor-20260825.md) — 研究
 
 </details>
 
@@ -1703,6 +1704,20 @@
 </details>
 
 <details markdown="1">
+<summary><b>雅克科技</b> · 8 份 · 最近 2026-11-25</summary>
+
+- `2026-11-25` [雅克科技（002409.SZ）研究报告](雅克科技/雅克科技-research-20261125.md) — 研究
+- `2026-10-08` [雅克科技（002409.SZ）2026H1财报复核](雅克科技/雅克科技-earnings-2026H1-20261008.md) — 财报
+- `2026-07-20` [雅克科技（002409.SZ）最终投资研究报告](雅克科技/最终报告.md) — 研究
+- `2026-07-20` [雅克科技（002409.SZ）— 巴菲特买入前 Checklist](雅克科技/雅克科技-checklist-20260720.md) — 研究
+- `2026-07-20` [04 · 风险与管理层评估（李录视角）](雅克科技/04-风险管理层评估-李录视角.md) — 组织管理
+- `2026-07-20` [03 · 行业与竞争分析（芒格视角）](雅克科技/03-行业竞争分析-芒格视角.md) — 研究
+- `2026-07-20` [02 · 财务与估值分析（巴菲特视角）](雅克科技/02-财务估值分析-巴菲特视角.md) — 估值仓位
+- `2026-07-20` [01 · 商业模式分析（段永平视角）](雅克科技/01-商业模式分析-段永平视角.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>DeepSeek</b> · 7 份 · 最近 2026-11-02</summary>
 
 - `2026-11-02` [DeepSeek Super-agent 深度技术研究](DeepSeek/DeepSeek-Super-agent-深度技术研究-20261102.md) — 研究
@@ -1843,19 +1858,6 @@
 - `2026-04-09` [长光辰芯（03277.HK）投资研究报告](长光辰芯/长光辰芯-team-20260409/最终报告.md) — 研究
 
 - `2026-04-09` [长光辰芯（03277.HK）四大师框架 IPO 综合分析](长光辰芯/长光辰芯-team-20260409.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>雅克科技</b> · 7 份 · 最近 2026-10-08</summary>
-
-- `2026-10-08` [雅克科技（002409.SZ）2026H1财报复核](雅克科技/雅克科技-earnings-2026H1-20261008.md) — 财报
-- `2026-07-20` [雅克科技（002409.SZ）最终投资研究报告](雅克科技/最终报告.md) — 研究
-- `2026-07-20` [雅克科技（002409.SZ）— 巴菲特买入前 Checklist](雅克科技/雅克科技-checklist-20260720.md) — 研究
-- `2026-07-20` [04 · 风险与管理层评估（李录视角）](雅克科技/04-风险管理层评估-李录视角.md) — 组织管理
-- `2026-07-20` [03 · 行业与竞争分析（芒格视角）](雅克科技/03-行业竞争分析-芒格视角.md) — 研究
-- `2026-07-20` [02 · 财务与估值分析（巴菲特视角）](雅克科技/02-财务估值分析-巴菲特视角.md) — 估值仓位
-- `2026-07-20` [01 · 商业模式分析（段永平视角）](雅克科技/01-商业模式分析-段永平视角.md) — 研究
 
 </details>
 
@@ -2126,6 +2128,16 @@
 </details>
 
 <details markdown="1">
+<summary><b>云迹科技</b> · 4 份 · 最近 2026-11-25</summary>
+
+- `2026-11-25` [云迹科技（02670.HK）研究报告](云迹科技/云迹科技-research-20261125.md) — 研究
+- `2026-10-08` [云迹科技（02670.HK）研究报告](云迹科技/云迹科技-earnings-refresh-20261008.md) — 财报
+- `2026-08-31` [云迹科技（02670.HK）2026H1 财报 Review](云迹科技/云迹科技-earnings-2026H1.md) — 财报
+- `2026-08-17` [云迹科技（02670.HK）研究报告](云迹科技/云迹科技-research-20260817.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>华虹宏力</b> · 4 份 · 最近 2026-11-13</summary>
 
 - `2026-11-13` [华虹半导体／华虹宏力（01347.HK / 688347.SH）研究报告](华虹宏力/华虹半导体-research-20261113.md) — 研究
@@ -2257,15 +2269,6 @@
 </details>
 
 <details markdown="1">
-<summary><b>云迹科技</b> · 3 份 · 最近 2026-10-08</summary>
-
-- `2026-10-08` [云迹科技（02670.HK）研究报告](云迹科技/云迹科技-earnings-refresh-20261008.md) — 财报
-- `2026-08-31` [云迹科技（02670.HK）2026H1 财报 Review](云迹科技/云迹科技-earnings-2026H1.md) — 财报
-- `2026-08-17` [云迹科技（02670.HK）研究报告](云迹科技/云迹科技-research-20260817.md) — 研究
-
-</details>
-
-<details markdown="1">
 <summary><b>亨通光电</b> · 3 份 · 最近 2026-11-24</summary>
 
 - `2026-11-24` [亨通光电（600487.SH）研究报告](亨通光电/亨通光电-research-20261124.md) — 研究
@@ -2289,6 +2292,15 @@
 - `2026-11-14` [剑桥科技（603083.SH / 06166.HK）研究报告](剑桥科技/剑桥科技-research-20261114.md) — 研究
 - `2026-08-17` [剑桥科技（603083.SH / 06166.HK）研究报告](剑桥科技/剑桥科技-research-20260817.md) — 研究
 - `2026-08-03` [剑桥科技（603083.SH）研究报告](剑桥科技/剑桥科技-research-20260803.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>北京君正</b> · 3 份 · 最近 2026-11-25</summary>
+
+- `2026-11-25` [北京君正（300223.SZ / 03223.HK）研究报告](北京君正/北京君正-research-20261125.md) — 研究
+- `2026-10-08` [北京君正（300223.SZ（证券简称君正股份）/ 03223.HK）2026H1财报复核](北京君正/北京君正-earnings-2026H1-20261008.md) — 财报
+- `2026-08-17` [北京君正（300223.SZ / 03223.HK）研究报告](北京君正/北京君正-research-20260817.md) — 研究
 
 </details>
 
@@ -2419,14 +2431,6 @@
 
 - `2026-10-31` [乐动机器人（01236.HK）研究报告](乐动机器人/乐动机器人-research-20261031.md) — 研究
 - `2026-09-28` [乐动机器人（01236.HK）研究报告](乐动机器人/乐动机器人-research-20260928.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>北京君正</b> · 2 份 · 最近 2026-10-08</summary>
-
-- `2026-10-08` [北京君正（300223.SZ（证券简称君正股份）/ 03223.HK）2026H1财报复核](北京君正/北京君正-earnings-2026H1-20261008.md) — 财报
-- `2026-08-17` [北京君正（300223.SZ / 03223.HK）研究报告](北京君正/北京君正-research-20260817.md) — 研究
 
 </details>
 
@@ -3072,9 +3076,9 @@
 ## 专题研究
 
 <details markdown="1">
-<summary><b>综合与横评</b> · 93 份 · 最近 2026-11-24</summary>
+<summary><b>综合与横评</b> · 93 份 · 最近 2026-11-25</summary>
 
-- `2026-11-24` [标的跟踪表](标的跟踪表.md) — 研究
+- `2026-11-25` [标的跟踪表](标的跟踪表.md) — 研究
 - `2026-11-19` [重点标的看板](重点标的看板.md) — 研究
 - `2026-10-31` [每日监控重点标的研究更新](每日监控重点标的研究更新-20261031.md) — 研究
 - `2026-10-31` [四只美股持仓复检与操作建议](四只美股持仓复检-20261031.md) — 研究

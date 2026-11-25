@@ -1,0 +1,67 @@
+[
+  {
+    "id": 16,
+    "label": "TTM · 扣非净利润",
+    "reported_value": 9.7438,
+    "unit": "",
+    "line_number": 60,
+    "raw_text": "| TTM | 88.6559 | 10.3807 | 9.7438 | 10.8960 | 10.8675 | 0.0285 |",
+    "fetched_value": 9.7438448283,
+    "fetched_source": "巨潮全年+本期累计-同期累计扣非",
+    "fetched_value2": 9.7438448283,
+    "fetched_source2": "东财同口径累计独立重算",
+    "audit_kind": "派生计算"
+  },
+  {
+    "id": 62,
+    "label": "PS · 11月25日口径",
+    "reported_value": 3.85,
+    "unit": "倍",
+    "line_number": 217,
+    "raw_text": "| PS | 3.85倍 |",
+    "fetched_value": 3.8479679487345497,
+    "fetched_source": "巨潮收入TTM+同日市值",
+    "fetched_value2": 3.84796795,
+    "fetched_source2": "东财历史估值PS_TTM",
+    "audit_kind": "派生计算"
+  },
+  {
+    "id": 67,
+    "label": "悲观 · 三年末股价",
+    "reported_value": 40.95,
+    "unit": "",
+    "line_number": 246,
+    "raw_text": "| 悲观 | 0% | 20倍 | 40.95元 | 32.50元 | 1.06元 | 33.56元 | -16.33% |",
+    "fetched_value": 40.946745813341835,
+    "fetched_source": "原始扣非EPS×悲观假设20倍",
+    "fetched_value2": 40.946745813341835,
+    "fetched_source2": "financial_rigor three-scenario及Decimal复算，非外部事实",
+    "audit_kind": "模型计算"
+  },
+  {
+    "id": 86,
+    "label": "悲观 · 2036利润",
+    "reported_value": 9.7438,
+    "unit": "亿元",
+    "line_number": 262,
+    "raw_text": "| 悲观 | 0% | 9.7438亿元 | 0% | 12.50倍 | -9.79% | -8.85% |",
+    "fetched_value": 9.7438448283,
+    "fetched_source": "TTM扣非×(1+0)^10",
+    "fetched_value2": 9.7438448283,
+    "fetched_source2": "Decimal十年悲观计算，非事实预测",
+    "audit_kind": "模型计算"
+  },
+  {
+    "id": 97,
+    "label": "乐观 · 2036利润",
+    "reported_value": 50.9977,
+    "unit": "亿元",
+    "line_number": 264,
+    "raw_text": "| 乐观 | +18% | 50.9977亿元 | +1% | 12.50倍 | +6.45% | +7.56% |",
+    "fetched_value": 50.997681493052845,
+    "fetched_source": "TTM扣非×(1+18%)^10",
+    "fetched_value2": 50.997681493052845,
+    "fetched_source2": "Decimal十年乐观计算，非事实预测",
+    "audit_kind": "模型计算"
+  }
+]

@@ -1,0 +1,668 @@
+{
+  "report": "云迹科技-research-20261125.md",
+  "research_date": "2026-11-25",
+  "market_cutoff": "2026-11-25 16:08:07 Asia/Hong_Kong",
+  "financial_period": "2026-06-30",
+  "price_hkd": "2.010",
+  "fx": "0.8512 CNY/HKD, Tencent 2026-11-25 20:42:36",
+  "report_sha256": "dcff93d9cdf1208ca2f2de40759ce7f1b8ea012064c326c3772436048efa32a7",
+  "audit": {
+    "ratio": 0.15,
+    "seed": 42,
+    "extracted_points": 143,
+    "selected_points": 22,
+    "original_sample_fact_count": 17,
+    "targeted_supplement_count": 5,
+    "verified_facts": 22,
+    "independently_cross_checked_facts": 16,
+    "issuer_only_facts": 6,
+    "verdict": {
+      "verdict": "PASS",
+      "pass_count": 22,
+      "warn_count": 0,
+      "fail_count": 0,
+      "total": 22,
+      "fail_items": [],
+      "warn_items": []
+    },
+    "facts": [
+      {
+        "id": 7,
+        "label": "毛利率 · 2023",
+        "reported_value": 26.98,
+        "unit": "%",
+        "raw_text": "| 毛利率 | 24.35% | 26.98% | 43.48% | 37.63% | **34.98%** |",
+        "line_number": 32,
+        "fetched_value": 26.976362872279594,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p6 gross profit39157/revenue145153",
+        "fetched_value2": 26.976362872279594,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final; same independently tabulated gross profit/revenue",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 9,
+        "label": "毛利率 · 2025",
+        "reported_value": 37.63,
+        "unit": "%",
+        "raw_text": "| 毛利率 | 24.35% | 26.98% | 43.48% | 37.63% | **34.98%** |",
+        "line_number": 32,
+        "fetched_value": 37.631870721878094,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p6 gross profit/revenue",
+        "fetched_value2": 37.631870721878094,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 8,
+        "label": "毛利率 · 2024",
+        "reported_value": 43.48,
+        "unit": "%",
+        "raw_text": "| 毛利率 | 24.35% | 26.98% | 43.48% | 37.63% | **34.98%** |",
+        "line_number": 32,
+        "fetched_value": 43.47584516392605,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p6 gross profit/revenue",
+        "fetched_value2": 43.47584516392605,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 23,
+        "label": "经营现金流CFO · 2024",
+        "reported_value": -41.482,
+        "unit": "",
+        "raw_text": "| 经营现金流CFO | -170.392 | -76.370 | -41.482 | -169.818 | **-179.980** |",
+        "line_number": 35,
+        "fetched_value": -41.482,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p159",
+        "fetched_value2": -41.482,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_cashflow.php?code=2670",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 24,
+        "label": "经营现金流CFO · 2025",
+        "reported_value": -169.818,
+        "unit": "",
+        "raw_text": "| 经营现金流CFO | -170.392 | -76.370 | -41.482 | -169.818 | **-179.980** |",
+        "line_number": 35,
+        "fetched_value": -169.818,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p159",
+        "fetched_value2": -169.818,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_cashflow.php?code=2670",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 29,
+        "label": "现金资本开支 · 2025",
+        "reported_value": 1.396,
+        "unit": "",
+        "raw_text": "| 现金资本开支 | 9.591 | 5.376 | 7.606 | 1.396 | **7.526** |",
+        "line_number": 36,
+        "fetched_value": 1.396,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p159 PPE1.178+intangibles0.218",
+        "fetched_value2": 1.4,
+        "fetched_source2": "https://www.stockopedia.com/share-prices/beijing-yunji-technology-HKG:2670/cashflow/ capital expenditures, CNY million, rounded",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 27,
+        "label": "现金资本开支 · 2023",
+        "reported_value": 5.376,
+        "unit": "",
+        "raw_text": "| 现金资本开支 | 9.591 | 5.376 | 7.606 | 1.396 | **7.526** |",
+        "line_number": 36,
+        "fetched_value": 5.376,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1008/2025100800003.pdf Appendix I-10 cash PPE purchases",
+        "fetched_value2": 5.38,
+        "fetched_source2": "https://www.stockopedia.com/share-prices/beijing-yunji-technology-HKG:2670/cashflow/ capital expenditures, CNY million, rounded",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 36,
+        "label": "现金等价物 · 2022",
+        "reported_value": 111.656,
+        "unit": "",
+        "raw_text": "| 现金等价物 | 111.656 | 174.133 | 105.481 | 233.414 | **255.412** |",
+        "line_number": 38,
+        "fetched_value": 111.656,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1008/2025100800003.pdf Appendix I-10",
+        "fetched_value2": 111.656,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_cashflow.php?code=2670",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 51,
+        "label": "HDOS付费客户 · 2026年6月底／H1",
+        "reported_value": 3173.0,
+        "unit": "",
+        "raw_text": "| HDOS付费客户 | 3,173家，同比+621% | 仅披露同比约+220% | 没有最新绝对数，不能反推付费率 |",
+        "line_number": 65,
+        "fetched_value": 3173.0,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p9 HDOS paying customers",
+        "fetched_value2": null,
+        "fetched_source2": "",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": false,
+        "selection": "seed42 original sample",
+        "limitation": "Issuer-only fact; numerical agreement is not independent two-source verification."
+      },
+      {
+        "id": 54,
+        "label": "机器人日均活跃数量同比 · 2026年9月底／前九个月",
+        "reported_value": 20.0,
+        "unit": "%",
+        "raw_text": "| 机器人日均活跃数量同比 | 约+30% | 约+20%至+25% | 累计增速放缓；不能直接换算Q3收入 |",
+        "line_number": 66,
+        "fetched_value": 20.0,
+        "fetched_source": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/1016/2026101600046_c.pdf p1 lower bound of approx20%-25% range",
+        "fetched_value2": null,
+        "fetched_source2": "",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": false,
+        "selection": "seed42 original sample",
+        "limitation": "Parser captures range lower bound20; original full range20%-25% was checked."
+      },
+      {
+        "id": 56,
+        "label": "任务量同比 · 2026年6月底／H1",
+        "reported_value": 46.0,
+        "unit": "%",
+        "raw_text": "| 任务量同比 | 约+46% | 约+25%至+30% | 利用率和收入仍需分别观察 |",
+        "line_number": 67,
+        "fetched_value": 46.0,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p7 tasks, year-over-year",
+        "fetched_value2": null,
+        "fetched_source2": "",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": false,
+        "selection": "seed42 original sample",
+        "limitation": "Issuer-only fact; numerical agreement is not independent two-source verification."
+      },
+      {
+        "id": 58,
+        "label": "公寓末端履约覆盖 · 2026年6月底／H1",
+        "reported_value": 100.0,
+        "unit": "",
+        "raw_text": "| 公寓末端履约覆盖 | 约100处 | 约400处 | 公告明确该生态业务尚未变现 |",
+        "line_number": 68,
+        "fetched_value": 100.0,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p10 approx100 apartment properties",
+        "fetched_value2": null,
+        "fetched_source2": "",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": false,
+        "selection": "seed42 original sample",
+        "limitation": "Issuer-only fact; numerical agreement is not independent two-source verification."
+      },
+      {
+        "id": 60,
+        "label": "现金及现金等价物 · 数值",
+        "reported_value": 255.412,
+        "unit": "",
+        "raw_text": "| 现金及现金等价物 | 255.412 | 不含受限现金 |",
+        "line_number": 78,
+        "fetched_value": 255.412,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p40",
+        "fetched_value2": 255.412,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_bs.php?code=2670",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 63,
+        "label": "租赁负债 · 数值",
+        "reported_value": 11.924,
+        "unit": "",
+        "raw_text": "| 租赁负债 | 11.924 | 流动与非流动合计 |",
+        "line_number": 81,
+        "fetched_value": 11.924,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf pp40-41 current+non-current leases",
+        "fetched_value2": 11.924,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_bs.php?code=2670; current borrowing+leases minus bank borrowing, plus noncurrent leases",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 70,
+        "label": "2026H1研发扩张 · 可核事实",
+        "reported_value": 71.051,
+        "unit": "",
+        "raw_text": "| 2026H1研发扩张 | 研发71.051百万元、CFO -179.980百万元 | 不能简单否定投入，但资本回报尚未通过检验 |",
+        "line_number": 166,
+        "fetched_value": 71.051,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p39",
+        "fetched_value2": null,
+        "fetched_source2": "",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": false,
+        "selection": "seed42 original sample",
+        "limitation": "Issuer-only fact; numerical agreement is not independent two-source verification."
+      },
+      {
+        "id": 71,
+        "label": "2026H1回购 · 可核事实",
+        "reported_value": 59.757,
+        "unit": "",
+        "raw_text": "| 2026H1回购 | 支付59.757百万元购库存股 | 与亏损、新增借款并存，需解释机会成本 |",
+        "line_number": 167,
+        "fetched_value": 59.757,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p44 cash paid to acquire treasury shares",
+        "fetched_value2": null,
+        "fetched_source2": "",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": false,
+        "selection": "seed42 original sample",
+        "limitation": "Issuer-only fact; numerical agreement is not independent two-source verification."
+      },
+      {
+        "id": 84,
+        "label": "PB，六月归母净资产 · 11月25日结果",
+        "reported_value": 1.71,
+        "unit": "倍",
+        "raw_text": "| PB，六月归母净资产 | 1.71倍 | 两边均人民币；净资产不是清算保底 |",
+        "line_number": 217,
+        "fetched_value": 1.7075676328993203,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p41 equity694.818m; price/share/fx checked separately",
+        "fetched_value2": 1.7075676328993203,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_bs.php?code=2670; independent equity total 694.818m, derived PB",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "seed42 original sample"
+      },
+      {
+        "id": 4,
+        "label": "收入 · 2025",
+        "reported_value": 301.242,
+        "unit": "",
+        "raw_text": "| 收入 | 161.280 | 145.153 | 244.775 | 301.242 | **187.978** |",
+        "line_number": 31,
+        "fetched_value": 301.242,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p6",
+        "fetched_value2": 301.242,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "targeted supplement"
+      },
+      {
+        "id": 5,
+        "label": "收入 · 2026H1",
+        "reported_value": 187.978,
+        "unit": "",
+        "raw_text": "| 收入 | 161.280 | 145.153 | 244.775 | 301.242 | **187.978** |",
+        "line_number": 31,
+        "fetched_value": 187.978,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p39",
+        "fetched_value2": 187.978,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=interim",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "targeted supplement"
+      },
+      {
+        "id": 19,
+        "label": "集团净损益 · 2025",
+        "reported_value": -295.232,
+        "unit": "",
+        "raw_text": "| 集团净损益 | -365.420 | -264.523 | -184.963 | -295.232 | **-113.812** |",
+        "line_number": 34,
+        "fetched_value": -295.232,
+        "fetched_source": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p155",
+        "fetched_value2": -295.232,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final; group loss not ordinary-share EPS numerator",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "targeted supplement"
+      },
+      {
+        "id": 20,
+        "label": "集团净损益 · 2026H1",
+        "reported_value": -113.812,
+        "unit": "",
+        "raw_text": "| 集团净损益 | -365.420 | -264.523 | -184.963 | -295.232 | **-113.812** |",
+        "line_number": 34,
+        "fetched_value": -113.812,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p39",
+        "fetched_value2": -113.812,
+        "fetched_source2": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=interim; before NCI attribution",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "targeted supplement"
+      },
+      {
+        "id": 25,
+        "label": "经营现金流CFO · 2026H1",
+        "reported_value": -179.98,
+        "unit": "",
+        "raw_text": "| 经营现金流CFO | -170.392 | -76.370 | -41.482 | -169.818 | **-179.980** |",
+        "line_number": 35,
+        "fetched_value": -179.98,
+        "fetched_source": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p44",
+        "fetched_value2": -179.98000000000002,
+        "fetched_source2": "https://stockanalysis.com/quote/hkg/2670/financials/cash-flow-statement/ TTM CFO -292.60; bridge TTM-FY2025+H1prior; indirect check only",
+        "verification_scope": "reported fact / source arithmetic",
+        "independent_second_source": true,
+        "selection": "targeted supplement"
+      }
+    ],
+    "excluded_nonfacts": [
+      {
+        "id": 142,
+        "label": "港元市值及特别说明外，金额均为人民币。汇率采用11月25日20",
+        "reported_value": 42.0,
+        "unit": "",
+        "raw_text": "除股价、港元市值及特别说明外，金额均为人民币。汇率采用11月25日20:42腾讯即期1港元＝0.8512元，Wise同日页面0.849758，时点差约0.17%，不影响价带取整。本文用于学习研究，不构成投资建议。",
+        "line_number": 10,
+        "exclusion_reason": "Parser false positive: timestamp/month/year or stock code inside URL, not financial fact."
+      },
+      {
+        "id": 92,
+        "label": "第三年现金流（百万元） · 乐观",
+        "reported_value": 150.0,
+        "unit": "",
+        "raw_text": "| 第三年现金流（百万元） | -60 | 30 | 150 |",
+        "line_number": 235,
+        "exclusion_reason": "Declared model assumption, not externally verifiable historical fact. Inputs retained in model section."
+      },
+      {
+        "id": 90,
+        "label": "第三年现金流（百万元） · 悲观",
+        "reported_value": -60.0,
+        "unit": "",
+        "raw_text": "| 第三年现金流（百万元） | -60 | 30 | 150 |",
+        "line_number": 235,
+        "exclusion_reason": "Declared model assumption, not externally verifiable historical fact. Inputs retained in model section."
+      },
+      {
+        "id": 109,
+        "label": "归属利润假设（百万元） · 悲观",
+        "reported_value": 15.0,
+        "unit": "",
+        "raw_text": "| 归属利润假设（百万元） | 15 | 128 | 420 |",
+        "line_number": 257,
+        "exclusion_reason": "Declared model assumption, not externally verifiable historical fact. Inputs retained in model section."
+      },
+      {
+        "id": 143,
+        "label": "es/beijing-yunji-technology-HKG",
+        "reported_value": 2670.0,
+        "unit": "",
+        "raw_text": "[stockopedia-cf]: https://www.stockopedia.com/share-prices/beijing-yunji-technology-HKG:2670/cashflow/",
+        "line_number": 385,
+        "exclusion_reason": "Parser false positive: timestamp/month/year or stock code inside URL, not financial fact."
+      }
+    ],
+    "scope_note": "PASS checks numeric agreement only. Single-source items remain explicitly limited; model assumptions are not certified as facts."
+  },
+  "model": {
+    "price_hkd": "2.010",
+    "shares_ex_treasury": "693459820",
+    "fx_cny_per_hkd": "0.8512",
+    "mcap_hkd": "1393854238.200",
+    "mcap_cny_million": "1186.4487275558400",
+    "netcash_june_cny_million": "571.024",
+    "ttm_revenue_cny_million": "379.677",
+    "ttm_parent_loss_cny_million": "-263.285",
+    "ttm_cfo_cny_million": "-292.600",
+    "ttm_fcf_cny_million": "-300.523",
+    "ps_ttm": "3.124889649770304759045188410",
+    "ev_sales_june_cash": "1.620916535781308849364064718",
+    "pb_june": "1.707567632899320397571738211",
+    "decline_from_oct8_pct": "-65.64102564102564102564102564",
+    "cash_bridge_days": "148",
+    "cash_proxy_cny_million": "417.7041767955801104972375690",
+    "cash_proxy_per_share_hkd": "0.7076457463852782324479281614",
+    "cash_june_per_share_hkd": "0.9673896674527647980215290119",
+    "gross_margin_h1_pct": "34.98281713817574397003904712",
+    "rd_over_grossprofit": "1.080459245742092457420924574",
+    "ecl_over_gross_receivables_pct": "30.02192920001139179221371002",
+    "annualised_h1_burn_months": "18.27218329013471568909794887",
+    "cash100m_sensitivity_hkd": "0.1694131363047375938702276983",
+    "fx_crosscheck_diff_pct": "0.1694078947368421052631578947",
+    "historical": {
+      "2022": {
+        "revenue": "161.280",
+        "gross_margin_pct": "24.34957837301587301587301587",
+        "operating_margin_pct": "-144.3644593253968253968253968",
+        "net_loss": "-365.420",
+        "cfo": "-170.392",
+        "fcf": "-179.983",
+        "cash_equivalents": "111.656"
+      },
+      "2023": {
+        "revenue": "145.153",
+        "gross_margin_pct": "26.97636287227959463462691091",
+        "operating_margin_pct": "-91.25405606497971106349851536",
+        "net_loss": "-264.523",
+        "cfo": "-76.370",
+        "fcf": "-81.746",
+        "cash_equivalents": "174.133"
+      },
+      "2024": {
+        "revenue": "244.775",
+        "gross_margin_pct": "43.47584516392605453988356654",
+        "operating_margin_pct": "-21.62271473802471657644775815",
+        "net_loss": "-184.963",
+        "cfo": "-41.482",
+        "fcf": "-49.088",
+        "cash_equivalents": "105.481"
+      },
+      "2025": {
+        "revenue": "301.242",
+        "gross_margin_pct": "37.63187072187809136840148452",
+        "operating_margin_pct": "-63.54260030141879286420884206",
+        "net_loss": "-295.232",
+        "cfo": "-169.818",
+        "fcf": "-171.214",
+        "cash_equivalents": "233.414"
+      },
+      "2026H1": {
+        "revenue": "187.978",
+        "gross_margin_pct": "34.98281713817574397003904712",
+        "operating_margin_pct": "-60.47888582706486929321516348",
+        "net_loss": "-113.812",
+        "cfo": "-179.980",
+        "fcf": "-187.506",
+        "cash_equivalents": "255.412"
+      }
+    },
+    "three_year": [
+      {
+        "name": "悲观",
+        "cashflows_cny_million": [
+          "-120",
+          "-90",
+          "-60"
+        ],
+        "profit2030_cny_million": "0",
+        "g": "0",
+        "pe": "12.5",
+        "terminal_cny_million": "0.0",
+        "present_equity_cny_million": "181.8026373960983241841755358",
+        "present_price_hkd": "0.3079975498974598954373430068",
+        "upside_pct": "-84.67673881107164699316701459"
+      },
+      {
+        "name": "基准",
+        "cashflows_cny_million": [
+          "-100",
+          "-30",
+          "30"
+        ],
+        "profit2030_cny_million": "68",
+        "g": "0.02",
+        "pe": "14.44444444444444444444444444",
+        "terminal_cny_million": "982.2222222222222222222222219",
+        "present_equity_cny_million": "1102.926054671016894636963333",
+        "present_price_hkd": "1.868501620340274525466584370",
+        "upside_pct": "-7.039720381080869379771921890"
+      },
+      {
+        "name": "乐观",
+        "cashflows_cny_million": [
+          "0",
+          "70",
+          "150"
+        ],
+        "profit2030_cny_million": "180",
+        "g": "0.03",
+        "pe": "16",
+        "terminal_cny_million": "2880",
+        "present_equity_cny_million": "2883.029584507819098456390137",
+        "present_price_hkd": "4.884230839708141486297848934",
+        "upside_pct": "142.9965591894597754377039271"
+      }
+    ],
+    "reverse_required_profit2030_million": "75.28408169035212733329026781",
+    "margin_on_850m_revenue_pct": "8.856950787100250274504737389",
+    "zone_margin_vs_base_pct": [
+      "30.42553531405256044444981372",
+      "19.72177151621449282051901583"
+    ],
+    "ten_year": [
+      {
+        "profit2036_cny_million": "15",
+        "g": "0",
+        "pe_r08": "12.5",
+        "irr_r08_pct": -17.84751554777303
+      },
+      {
+        "profit2036_cny_million": "128",
+        "g": ".02",
+        "pe_r08": "14.44444444444444444444444444",
+        "irr_r08_pct": 3.536073575541022
+      },
+      {
+        "profit2036_cny_million": "420",
+        "g": ".03",
+        "pe_r08": "16",
+        "irr_r08_pct": 17.935644364415772
+      }
+    ],
+    "flip": {
+      ".02": {
+        "rates": [
+          0.06,
+          0.08,
+          0.1
+        ],
+        "means": [
+          2.159010814919971,
+          -1.7882469992876864,
+          -4.5030042689952055
+        ],
+        "passes": [
+          false,
+          false,
+          false
+        ],
+        "in_band": [
+          true,
+          true,
+          false
+        ],
+        "flipped": false,
+        "labels": [
+          "r−2pp",
+          "基准 r",
+          "r+2pp"
+        ]
+      },
+      ".01": {
+        "rates": [
+          0.07,
+          0.08,
+          0.09
+        ],
+        "means": [
+          -0.03274945890550196,
+          -1.7882469992876864,
+          -3.2508822877813164
+        ],
+        "passes": [
+          false,
+          false,
+          false
+        ],
+        "in_band": [
+          true,
+          true,
+          true
+        ],
+        "flipped": false,
+        "labels": [
+          "r−1pp",
+          "基准 r",
+          "r+1pp"
+        ]
+      }
+    },
+    "tail_adjusted_mean_pct": "-11.60942229935891776",
+    "expected_terminal_annualised_pct": "4.3503930742848765859908276"
+  },
+  "terminal_flip_config": {
+    "云迹科技": {
+      "roic": 0.15,
+      "g": [
+        0,
+        0.02,
+        0.03
+      ],
+      "p": [
+        0.35,
+        0.5,
+        0.15
+      ],
+      "irr10": [
+        -19.68246066841086,
+        0.5716038354349093,
+        14.000366981540946
+      ],
+      "k": -0.01
+    }
+  },
+  "raw_tool_outputs": {
+    "financial_rigor": "============================================================\n市值验算 (Market Cap Verification)\n============================================================\n  股价 (Price):       2.010 HKD\n  总股本 (Shares):    693.46M\n  计算市值:           1.39B HKD\n  报告市值:           1.39B HKD\n  偏差:               0.00%\n\n  ✅ 验证通过, 偏差仅 0.00%\n============================================================\n交叉验证: FY2025收入 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 301.24 人民币百万元\n\n  ✅ 年报                  : 301.24 人民币百万元  (偏差 0.00%)\n  ✅ ETNet               : 301.24 人民币百万元  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 301.24 人民币百万元\n============================================================\n交叉验证: FY2025集团净亏损 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: -295.23 人民币百万元\n\n  ✅ 年报                  : -295.23 人民币百万元  (偏差 -0.00%)\n  ✅ ETNet               : -295.23 人民币百万元  (偏差 -0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): -295.23 人民币百万元\n============================================================\n交叉验证: 2026H1收入 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 187.98 人民币百万元\n\n  ✅ 中报                  : 187.98 人民币百万元  (偏差 0.00%)\n  ✅ ETNet               : 187.98 人民币百万元  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 187.98 人民币百万元\n============================================================\n交叉验证: 2026H1集团净亏损 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: -113.81 人民币百万元\n\n  ✅ 中报                  : -113.81 人民币百万元  (偏差 -0.00%)\n  ✅ ETNet               : -113.81 人民币百万元  (偏差 -0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): -113.81 人民币百万元\n============================================================\n交叉验证: 2026H1现金等价物 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 255.41 人民币百万元\n\n  ✅ 中报                  : 255.41 人民币百万元  (偏差 0.00%)\n  ✅ ETNet               : 255.41 人民币百万元  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 255.41 人民币百万元\n============================================================\n交叉验证: 2026H1借款及租赁 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 68.95 人民币百万元\n\n  ✅ 中报                  : 68.95 人民币百万元  (偏差 0.00%)\n  ✅ ETNet               : 68.95 人民币百万元  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 68.95 人民币百万元\n============================================================\n交叉验证: 扣库存股本 (Cross-Validation)\n============================================================\n  数据来源数: 3\n  参考中位数: 693.46M 股\n\n  ✅ 十月月报                : 693.46M 股  (偏差 0.00%)\n  ✅ 腾讯                  : 693.46M 股  (偏差 0.00%)\n  ✅ ETNet               : 693.46M 股  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 693.46M 股\n============================================================\n交叉验证: 11月25日收盘价 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 2.01 港元\n\n  ✅ 腾讯                  : 2.01 港元  (偏差 0.00%)\n  ✅ ETNet               : 2.01 港元  (偏差 0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 2.01 港元\n============================================================\n交叉验证: 港元人民币即期 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 0.85 CNY/HKD\n\n  ✅ 腾讯                  : 0.85 CNY/HKD  (偏差 0.08%)\n  ✅ Wise                : 0.85 CNY/HKD  (偏差 0.08%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 0.85 CNY/HKD\n============================================================\n估值指标验算 (Valuation Verification)\n============================================================\n  当前股价: 2.010\n\n  PE (TTM):  2.010 / -0.4460393759199283740212289954 = -4.51x\n  盈利收益率: -22.19%\n  PB:        2.010 / 1.177112965409851654977238689 = 1.71x\n  ROE:       -0.4460393759199283740212289954 / 1.177112965409851654977238689 = -37.89%\n  P/FCF:     2.010 / -0.5091254396170865592266243857 = -3.95x\n  FCF Yield: -25.33%\n  股息率:    0 / 2.010 = 0.00%\n  PS:        2.010 / 0.6432227135277385542786644180 = 3.12x\n\n  ✅ 以上指标均使用精确十进制计算, 无浮点误差\n============================================================\n三情景估值模型 (Three-Scenario Valuation)\n============================================================\n  当前股价: 2.010 HKD\n  当前EPS:  -0.4460393759199283740212289954\n  预测期:   3年\n\n  情景                年增速     目标PE      目标EPS       目标股价      涨跌幅\n  ------------ -------- -------- ---------- ---------- --------\n  乐观 (Bull)         30%      25x      -0.98     -24.5 -1318.8%\n  中性 (Base)         15%      20x      -0.68     -13.6  -775.0%\n  悲观 (Bear)          0%      15x      -0.45      -6.7  -432.9%\n\n  ✅ 所有计算使用精确十进制, 结果可审计复现\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 2.010*693459820\n  结果:   1.39B\n  精确值: 1393854238.1999998\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 2.010*693459820*.8512/1000000\n  结果:   1,186.45\n  精确值: 1186.4487275558397\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 255.412+384.558-57.022-11.924\n  结果:   571.02\n  精确值: 571.024\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 301.242-109.543+187.978\n  结果:   379.68\n  精确值: 379.677\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -169.818+57.198-179.980-1.396+.999-7.526\n  结果:   -300.52\n  精确值: -300.523\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 571.024-187.506/181*148\n  结果:   417.70\n  精确值: 417.7041767955801\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (2.010/5.85-1)*100\n  结果:   -65.64\n  精确值: -65.64102564102564\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 52.708/175.565*100\n  结果:   30.02\n  精确值: 30.021929200011392\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 65.760/187.978*100\n  结果:   34.98\n  精确值: 34.98281713817574\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 157.216/187.978*100\n  结果:   83.64\n  精确值: 83.63531902669462\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 30.762/187.978*100\n  结果:   16.36\n  精确值: 16.364680973305386\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (194433090/693459820)*100\n  结果:   28.04\n  精确值: 28.0381190650671\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (60161930/697531820)*100\n  结果:   8.62\n  精确值: 8.624972836364655\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (13787960/697531820)*100\n  结果:   1.98\n  精确值: 1.9766782825764135\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 187.506/6\n  结果:   31.25\n  精确值: 31.251\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 571.024/(187.506/6)\n  结果:   18.27\n  精确值: 18.272183290134716\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 161.280\n  结果:   161.28\n  精确值: 161.28\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 145.153\n  结果:   145.15\n  精确值: 145.153\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 244.775\n  结果:   244.78\n  精确值: 244.775\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 301.242\n  结果:   301.24\n  精确值: 301.242\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -170.392-9.591\n  结果:   -179.98\n  精确值: -179.983\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -76.370-5.376\n  结果:   -81.75\n  精确值: -81.74600000000001\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -41.482-7.606\n  结果:   -49.09\n  精确值: -49.088\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -169.818-1.396\n  结果:   -171.21\n  精确值: -171.214\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -179.980-7.526\n  结果:   -187.51\n  精确值: -187.506\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 39.271/161.280*100\n  结果:   24.35\n  精确值: 24.349578373015873\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 39.157/145.153*100\n  结果:   26.98\n  精确值: 26.97636287227959\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 106.418/244.775*100\n  结果:   43.48\n  精确值: 43.47584516392606\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 113.363/301.242*100\n  结果:   37.63\n  精确值: 37.631870721878094\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -232.831/161.280*100\n  结果:   -144.36\n  精确值: -144.3644593253968\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -132.458/145.153*100\n  结果:   -91.25\n  精确值: -91.25405606497972\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -52.927/244.775*100\n  结果:   -21.62\n  精确值: -21.622714738024715\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -191.417/301.242*100\n  结果:   -63.54\n  精确值: -63.542600301418794\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -113.687/187.978*100\n  结果:   -60.48\n  精确值: -60.478885827064865\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (417.7041767955801104972375690+(-120)/1.08+(-90)/(1.08**2)+((-60)+0.0)/(1.08**3))*1000000/693459820/.8512\n  结果:   0.31\n  精确值: 0.30799754989746\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (417.7041767955801104972375690+(-100)/1.08+(-30)/(1.08**2)+((30)+982.2222222222222222222222219)/(1.08**3))*1000000/693459820/.8512\n  结果:   1.87\n  精确值: 1.8685016203402744\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: (417.7041767955801104972375690+(0)/1.08+(70)/(1.08**2)+((150)+2880)/(1.08**3))*1000000/693459820/.8512\n  结果:   4.88\n  精确值: 4.884230839708142\n",
+    "additional_crosschecks": "============================================================\n交叉验证: 2025现金资本开支含无形 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 1.40 人民币百万元\n\n  ✅ 原文分项合计              : 1.40 人民币百万元  (偏差 0.14%)\n  ✅ Stockopedia取整       : 1.40 人民币百万元  (偏差 0.14%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 1.40 人民币百万元\n============================================================\n交叉验证: 2023现金资本开支 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 5.38 人民币百万元\n\n  ✅ 招股书                 : 5.38 人民币百万元  (偏差 0.04%)\n  ✅ Stockopedia取整       : 5.38 人民币百万元  (偏差 0.04%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 5.38 人民币百万元\n============================================================\n交叉验证: 2022现金资本开支含无形 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: 9.59 人民币百万元\n\n  ✅ 招股书合计               : 9.59 人民币百万元  (偏差 0.01%)\n  ✅ Stockopedia取整       : 9.59 人民币百万元  (偏差 0.01%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): 9.59 人民币百万元\n============================================================\n交叉验证: TTM经营现金流 (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: -292.60 人民币百万元\n\n  ✅ 原始报表桥接              : -292.60 人民币百万元  (偏差 -0.00%)\n  ✅ StockAnalysis       : -292.60 人民币百万元  (偏差 -0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): -292.60 人民币百万元\n============================================================\n交叉验证: TTM传统FCF (Cross-Validation)\n============================================================\n  数据来源数: 2\n  参考中位数: -300.52 人民币百万元\n\n  ✅ 原始报表桥接              : -300.52 人民币百万元  (偏差 -0.00%)\n  ✅ StockAnalysis       : -300.52 人民币百万元  (偏差 -0.00%)\n\n  ✅ 所有来源偏差 ≤ 1%, 数据一致\n\n  共识值 (加权中位数): -300.52 人民币百万元\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: -292.60+169.818-57.198\n  结果:   -179.98\n  精确值: -179.98000000000002\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 68/850*100\n  结果:   8.00\n  精确值: 8.0\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 180/1500*100\n  结果:   12.00\n  精确值: 12.0\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 15/600*100\n  结果:   2.50\n  精确值: 2.5\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 128/1600*100\n  结果:   8.00\n  精确值: 8.0\n============================================================\n精确计算 (Exact Calculator)\n============================================================\n  表达式: 420/3500*100\n  结果:   12.00\n  精确值: 12.0\n",
+    "report_audit": "======================================================================\n\u001b[1m报告数据抽检 — 准出/打回判决\u001b[0m\n报告：云迹科技-research-20261125.md\n======================================================================\n\n  \u001b[92m✅ 通过\u001b[0m [ 7] 毛利率 · 2023                           报告:        26.98 %\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p6 gross profit39157/revenue145153: 26.98 (偏差 0.01%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final; same independently tabulated gross profit/revenue: 26.98 (偏差 0.01%)\n  \u001b[92m✅ 通过\u001b[0m [ 9] 毛利率 · 2025                           报告:        37.63 %\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p6 gross profit/revenue: 37.63 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final: 37.63 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [ 8] 毛利率 · 2024                           报告:        43.48 %\n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p6 gross profit/revenue: 43.48 (偏差 0.01%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final: 43.48 (偏差 0.01%)\n  \u001b[92m✅ 通过\u001b[0m [23] 经营现金流CFO · 2024                      报告:       -41.48 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p159: -41.48 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_cashflow.php?code=2670: -41.48 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [24] 经营现金流CFO · 2025                      报告:      -169.82 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p159: -169.82 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_cashflow.php?code=2670: -169.82 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [29] 现金资本开支 · 2025                        报告:         1.40 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p159 PPE1.178+intangibles0.218: 1.40 (偏差 0.00%)  |  https://www.stockopedia.com/share-prices/beijing-yunji-technology-HKG:2670/cashflow/ capital expenditures, CNY million, rounded: 1.40 (偏差 0.29%)\n  \u001b[92m✅ 通过\u001b[0m [27] 现金资本开支 · 2023                        报告:         5.38 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1008/2025100800003.pdf Appendix I-10 cash PPE purchases: 5.38 (偏差 0.00%)  |  https://www.stockopedia.com/share-prices/beijing-yunji-technology-HKG:2670/cashflow/ capital expenditures, CNY million, rounded: 5.38 (偏差 0.07%)\n  \u001b[92m✅ 通过\u001b[0m [36] 现金等价物 · 2022                         报告:       111.66 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1008/2025100800003.pdf Appendix I-10: 111.66 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_cashflow.php?code=2670: 111.66 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [51] HDOS付费客户 · 2026年6月底／H1               报告:      3173.00 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p9 HDOS paying customers: 3173.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [54] 机器人日均活跃数量同比 · 2026年9月底／前九个月          报告:        20.00 %\n                                                    https://www.hkexnews.hk/listedco/listconews/sehk/2026/1016/2026101600046_c.pdf p1 lower bound of approx20%-25% range: 20.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [56] 任务量同比 · 2026年6月底／H1                  报告:        46.00 %\n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p7 tasks, year-over-year: 46.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [58] 公寓末端履约覆盖 · 2026年6月底／H1               报告:       100.00 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p10 approx100 apartment properties: 100.00 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [60] 现金及现金等价物 · 数值                        报告:       255.41 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p40: 255.41 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_bs.php?code=2670: 255.41 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [63] 租赁负债 · 数值                            报告:        11.92 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf pp40-41 current+non-current leases: 11.92 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_bs.php?code=2670; current borrowing+leases minus bank borrowing, plus noncurrent leases: 11.92 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [70] 2026H1研发扩张 · 可核事实                    报告:        71.05 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p39: 71.05 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [71] 2026H1回购 · 可核事实                      报告:        59.76 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p44 cash paid to acquire treasury shares: 59.76 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [84] PB，六月归母净资产 · 11月25日结果                报告:         1.71 倍\n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p41 equity694.818m; price/share/fx checked separately: 1.71 (偏差 0.14%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_bs.php?code=2670; independent equity total 694.818m, derived PB: 1.71 (偏差 0.14%)\n  \u001b[92m✅ 通过\u001b[0m [ 4] 收入 · 2025                            报告:       301.24 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p6: 301.24 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final: 301.24 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [ 5] 收入 · 2026H1                          报告:       187.98 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p39: 187.98 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=interim: 187.98 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [19] 集团净损益 · 2025                         报告:      -295.23 \n                                                    https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf p155: -295.23 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=final; group loss not ordinary-share EPS numerator: -295.23 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [20] 集团净损益 · 2026H1                       报告:      -113.81 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p39: -113.81 (偏差 0.00%)  |  https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2670&quarter=interim; before NCI attribution: -113.81 (偏差 0.00%)\n  \u001b[92m✅ 通过\u001b[0m [25] 经营现金流CFO · 2026H1                    报告:      -179.98 \n                                                    https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf p44: -179.98 (偏差 0.00%)  |  https://stockanalysis.com/quote/hkg/2670/financials/cash-flow-statement/ TTM CFO -292.60; bridge TTM-FY2025+H1prior; indirect check only: -179.98 (偏差 0.00%)\n\n----------------------------------------------------------------------\n  抽检总数: 22  |  通过: \u001b[92m22\u001b[0m  |  警告: \u001b[93m0\u001b[0m  |  不通过: \u001b[91m0\u001b[0m\n\n\u001b[1m\u001b[92m【准出】所有抽检数据通过，报告可发布。\u001b[0m\n======================================================================\n{\n  \"verdict\": \"PASS\",\n  \"pass_count\": 22,\n  \"warn_count\": 0,\n  \"fail_count\": 0,\n  \"total\": 22,\n  \"fail_items\": [],\n  \"warn_items\": []\n}\n",
+    "terminal_value": "\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 15.0%   g = 0.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0000 / 0.15 = 0.0000  (0.0%)\n  分子 1 - 留存率 = 1.0000                    （即派息率 100.0%）\n  分母 r - g      = 0.1000 - 0.0000 = 0.1000  (10.0pct)\n\n  退出 PE = 1.0000 / 0.1000 = 10.0x\n\n\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 15 x 10.0x = 150\n  今日市值 = 1,186\n  总倍数   = 0.1264\n  几何年化 = -18.68%\n  股息-稀释 = -1.00%\n\n  IRR = -19.68%\n\n\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 15.0%   g = 0.00%   r = 8.00%\n\n  留存率 g/ROIC   = 0.0000 / 0.15 = 0.0000  (0.0%)\n  分子 1 - 留存率 = 1.0000                    （即派息率 100.0%）\n  分母 r - g      = 0.0800 - 0.0000 = 0.0800  (8.0pct)\n\n  退出 PE = 1.0000 / 0.0800 = 12.5x\n\n\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 15 x 12.5x = 188\n  今日市值 = 1,186\n  总倍数   = 0.1580\n  几何年化 = -16.85%\n  股息-稀释 = -1.00%\n\n  IRR = -17.85%\n\n\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 15.0%   g = 2.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0200 / 0.15 = 0.1333  (13.3%)\n  分子 1 - 留存率 = 0.8667                    （即派息率 86.7%）\n  分母 r - g      = 0.1000 - 0.0200 = 0.0800  (8.0pct)\n\n  退出 PE = 0.8667 / 0.0800 = 10.8x\n\n\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 128 x 10.8x = 1,387\n  今日市值 = 1,186\n  总倍数   = 1.1688\n  几何年化 = +1.57%\n  股息-稀释 = -1.00%\n\n  IRR = +0.57%\n\n\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 15.0%   g = 2.00%   r = 8.00%\n\n  留存率 g/ROIC   = 0.0200 / 0.15 = 0.1333  (13.3%)\n  分子 1 - 留存率 = 0.8667                    （即派息率 86.7%）\n  分母 r - g      = 0.0800 - 0.0200 = 0.0600  (6.0pct)\n\n  退出 PE = 0.8667 / 0.0600 = 14.4x\n\n\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 128 x 14.4x = 1,849\n  今日市值 = 1,186\n  总倍数   = 1.5583\n  几何年化 = +4.54%\n  股息-稀释 = -1.00%\n\n  IRR = +3.54%\n\n\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 15.0%   g = 3.00%   r = 10.00%\n\n  留存率 g/ROIC   = 0.0300 / 0.15 = 0.2000  (20.0%)\n  分子 1 - 留存率 = 0.8000                    （即派息率 80.0%）\n  分母 r - g      = 0.1000 - 0.0300 = 0.0700  (7.0pct)\n\n  退出 PE = 0.8000 / 0.0700 = 11.4x\n\n\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 420 x 11.4x = 4,800\n  今日市值 = 1,186\n  总倍数   = 4.0457\n  几何年化 = +15.00%\n  股息-稀释 = -1.00%\n\n  IRR = +14.00%\n\n\nPE(终值) = (1 - g/ROIC) / (r - g)\n\n  ROIC = 15.0%   g = 3.00%   r = 8.00%\n\n  留存率 g/ROIC   = 0.0300 / 0.15 = 0.2000  (20.0%)\n  分子 1 - 留存率 = 0.8000                    （即派息率 80.0%）\n  分母 r - g      = 0.0800 - 0.0300 = 0.0500  (5.0pct)\n\n  退出 PE = 0.8000 / 0.0500 = 16.0x\n\n\nIRR = (2036市值 / 今日市值)^(1/10) - 1 + 股息率 - 稀释率\n\n  2036 市值 = 420 x 16.0x = 6,720\n  今日市值 = 1,186\n  总倍数   = 5.6640\n  几何年化 = +18.94%\n  股息-稀释 = -1.00%\n\n  IRR = +17.94%\n\n\n云迹科技  |  基准 r = 8.00%   Δr = ±2pp   币种 CNY   g平移 +0.0%   Rf = 1.70%   持有期 10 年\n币种合理区间：r ∈ [6.0%, 9.0%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。\n判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。\n角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。\n\n档位               r       期望IRR        相对 r      压力测试\n------------------------------------------------------\nr−2pp        6.00%      +2.16%     -3.84pp  未通过\n基准 r         8.00%      -1.79%     -9.79pp  未通过\nr+2pp       10.00%      -4.50%    -14.50pp  未通过（区间外，仅供参考）\n------------------------------------------------------\n\n【稳定】Δr±2pp 区间内压力测试始终未通过——相对折现率扰动更稳健。\n        未通过仍只约束仓位，不自动等于回避；须与其他五个维度并列决策。\n\n提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。\n\n\n云迹科技  |  基准 r = 8.00%   Δr = ±1pp   币种 CNY   g平移 +0.0%   Rf = 1.70%   持有期 10 年\n币种合理区间：r ∈ [6.0%, 9.0%]（同 audit C1）；区间外档位仅供参考，不参与翻转判定。\n判定规则：期望 IRR ≥ r → 通过仓位压力测试；否则未通过。\n角色：十年模型 = 仓位压力测试，不是买入/持有/回避的唯一否决票。\n\n档位               r       期望IRR        相对 r      压力测试\n------------------------------------------------------\nr−1pp        7.00%      -0.03%     -7.03pp  未通过\n基准 r         8.00%      -1.79%     -9.79pp  未通过\nr+1pp        9.00%      -3.25%    -12.25pp  未通过\n------------------------------------------------------\n\n【稳定】Δr±1pp 区间内压力测试始终未通过——相对折现率扰动更稳健。\n        未通过仍只约束仓位，不自动等于回避；须与其他五个维度并列决策。\n\n提醒：禁止为迎合买入结论而把 r 调出币种合理区间；敏感性是为了一致性审计，不是为了「调低 r 去买」。\n\n",
+    "terminal_audit": "\n========================================================================\n估值口径准出检查   币种=CNY   r=8.00%   ROIC=15%   g=0.0%/2.0%/3.0%\n========================================================================\n\n【C1】币种一致性 — r 与 g 必须用同一个币种\n     CNY 口径基准：中国10年期国债 1.70%（观测）/ 2.5-3.0%（合成）+ ERP 5.18%\n     r 合理区间 [6.0%, 9.0%]   g 上限 2.0%   Rf 1.70%\n     → ✓ 通过\n\n【C2】分母宽度 — r-g 至少 5 个百分点\n     悲观  g= 0.0%  r-g= 8.0pct  PE=     12.5x  g+0.5pct → 12.9x (+3%)  \n     基准  g= 2.0%  r-g= 6.0pct  PE=     14.4x  g+0.5pct → 15.2x (+5%)  \n     乐观  g= 3.0%  r-g= 5.0pct  PE=     16.0x  g+0.5pct → 17.0x (+6%)  \n     → ✓ 通过\n\n【C3】离散风险归属 — 退市/VIE/地缘/监管必须归情景，不得进 r 或 β\n     ✓ 软件化失败 → 情景\n     ✓ 融资稀释 → 情景\n     ✓ 流动性及退市损失 → 尾部档\n     ⚠ 重大合规或安全事故 → 未建模\n     β = 1.0（默认值，无需理由）\n     → ✓ 通过\n\n========================================================================\n⚠ C3: 「重大合规或安全事故」未建模，必须写进报告的「限制」章节\n\n【准出】三条硬约束全部通过，可以把估值写进报告。\n       但上述 1 条警告必须在报告里显式写出。\n\n"
+  },
+  "source_gaps": [
+    "H1 CFO secondary check is indirect using StockAnalysis TTM bridge, not an independently displayed H1 statement.",
+    "Combined net cash, management voting/economic holdings and operational/expense data do not all have independent same-definition second sources.",
+    "Some normalized StockAnalysis net-income/operating-income fields differ from primary statements; do not use for reported group loss.",
+    "2026H2 cash balance, retention, cohort ARPU, unit service cost and comprehensive peer multiples not independently established."
+  ],
+  "checks": {
+    "trigger_scanner": "PASS",
+    "daily_monitor_config": "PASS",
+    "isolated_live_monitor": "PASS; one target, temporary state/reports, zero notifications"
+  },
+  "sources": {
+    "annual": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042906272.pdf",
+    "interim": "https://ir.yunjichina.com.cn/media/fslldwfj/2026092400034_c.pdf",
+    "prospectus": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1008/2025100800003.pdf",
+    "business": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/1016/2026101600046_c.pdf",
+    "stockanalysis_cf": "https://stockanalysis.com/quote/hkg/2670/financials/cash-flow-statement/",
+    "stockopedia_cf": "https://www.stockopedia.com/share-prices/beijing-yunji-technology-HKG:2670/cashflow/"
+  }
+}
