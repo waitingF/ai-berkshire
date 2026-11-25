@@ -8,6 +8,7 @@ import html
 import shutil
 from pathlib import Path
 from urllib.parse import quote, urlsplit, urlunsplit
+from xml.etree.ElementTree import Element
 
 import markdown
 from markdown.extensions import Extension
@@ -109,9 +110,39 @@ class MarkdownLinkRewriteExtension(Extension):
         md.treeprocessors.register(MarkdownLinkRewriter(md), "md_link_rewrite", 0)
 
 
-def render_markdown(markdown_text: str) -> str:
+class MonitorTableEnhancer(Treeprocessor):
+    def run(self, root):
+        for table in root.iter("table"):
+            header = table.find("thead/tr")
+            if header is None:
+                continue
+            columns = ["".join(cell.itertext()).strip() for cell in header]
+            if not {"优先级", "标的", "监控区间"}.issubset(columns):
+                continue
+            table.set("data-monitor-table", "")
+            if "序号" in columns:
+                continue
+            number_header = Element("th", {"scope": "col"})
+            number_header.text = "序号"
+            header.insert(0, number_header)
+            for number, row in enumerate(table.findall("tbody/tr"), start=1):
+                cell = Element("td", {"class": "monitor-row-number"})
+                cell.text = str(number)
+                row.insert(0, cell)
+        return root
+
+
+class MonitorTableExtension(Extension):
+    def extendMarkdown(self, md):
+        md.treeprocessors.register(MonitorTableEnhancer(md), "monitor_table", 1)
+
+
+def render_markdown(markdown_text: str, *, monitor_tables: bool = False) -> str:
+    extensions = [*MARKDOWN_EXTENSIONS, MarkdownLinkRewriteExtension()]
+    if monitor_tables:
+        extensions.append(MonitorTableExtension())
     renderer = markdown.Markdown(
-        extensions=[*MARKDOWN_EXTENSIONS, MarkdownLinkRewriteExtension()],
+        extensions=extensions,
         extension_configs={"toc": {"slugify": slugify_unicode}},
         output_format="html5",
     )
@@ -275,7 +306,7 @@ def render_report(
     breadcrumb_html = render_breadcrumb(source_relative.parent, root_prefix, title)
     body_html = f"""    {breadcrumb_html}
     <article class="report-article">
-{render_markdown(markdown_text)}
+{render_markdown(markdown_text, monitor_tables=source_relative.parent == Path("daily-monitor"))}
     </article>"""
     current_nav = source_relative.as_posix()
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -862,7 +893,8 @@ input:focus-visible {
   font-weight: 720;
 }
 
-[data-report-filter] {
+[data-report-filter],
+[data-monitor-search] {
   width: 100%;
   min-height: 44px;
   border: 1px solid var(--line-strong);
@@ -871,6 +903,25 @@ input:focus-visible {
   padding: 10px 12px;
   color: var(--text);
   font: inherit;
+}
+
+.monitor-filter {
+  margin-bottom: 14px;
+}
+
+.monitor-filter .filter-status {
+  margin-top: 8px;
+}
+
+.monitor-row-number {
+  color: var(--muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-monitor-table] th,
+[data-monitor-table] td {
+  white-space: nowrap;
 }
 
 .filter-empty {
@@ -1082,6 +1133,50 @@ pre code {
   color: inherit;
 }
 
+.mermaid-figure {
+  min-width: 0;
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.mermaid-viewport {
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.mermaid-viewport > svg {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+
+.mermaid-viewport p {
+  margin: 0;
+  max-width: none;
+}
+
+.mermaid-figure figcaption,
+.mermaid-figure details {
+  padding: 8px 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.mermaid-figure summary {
+  cursor: pointer;
+}
+
+.mermaid-figure pre {
+  margin: 12px 0;
+}
+
+.mermaid-fallback {
+  color: var(--muted);
+  font-size: 14px;
+}
+
 blockquote {
   margin-left: 0;
   border-left: 4px solid var(--accent);
@@ -1251,6 +1346,81 @@ def write_scripts(output_dir: Path) -> None:
     assets_dir.mkdir(parents=True, exist_ok=True)
     (assets_dir / "site.js").write_text(
         """(() => {
+  const initMermaid = async () => {
+    const blocks = Array.from(document.querySelectorAll("pre > code.language-mermaid"));
+    if (!blocks.length) {
+      return;
+    }
+
+    const showFallback = (pre, message) => {
+      const note = document.createElement("p");
+      note.className = "mermaid-fallback";
+      note.setAttribute("role", "status");
+      note.textContent = message;
+      pre.before(note);
+    };
+
+    let mermaid;
+    try {
+      // Pinned version; render API: https://mermaid.js.org/config/usage.html#api-usage
+      ({ default: mermaid } = await import("https://cdn.jsdelivr.net/npm/mermaid@12.3.0/dist/mermaid.esm.min.mjs"));
+      await document.fonts.ready;
+      const colors = getComputedStyle(document.documentElement);
+      mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: "strict",
+        suppressErrorRendering: true,
+        theme: "base",
+        fontFamily: getComputedStyle(document.body).fontFamily,
+        themeVariables: {
+          fontSize: "16px",
+          primaryColor: colors.getPropertyValue("--surface-subtle").trim(),
+          primaryTextColor: colors.getPropertyValue("--text").trim(),
+          primaryBorderColor: colors.getPropertyValue("--accent").trim(),
+          lineColor: colors.getPropertyValue("--muted").trim(),
+        },
+      });
+    } catch {
+      blocks.forEach((code) => showFallback(code.parentElement, "图表加载失败，已保留源码。"));
+      return;
+    }
+
+    for (const [index, code] of blocks.entries()) {
+      const pre = code.parentElement;
+      const figure = document.createElement("figure");
+      figure.className = "mermaid-figure";
+      const viewport = document.createElement("div");
+      viewport.className = "mermaid-viewport";
+      viewport.tabIndex = 0;
+      viewport.setAttribute("role", "region");
+      viewport.setAttribute("aria-label", "报告图表，可横向滚动");
+      figure.appendChild(viewport);
+      pre.before(figure);
+
+      try {
+        const { svg } = await mermaid.render(`report-diagram-${index + 1}`, code.textContent || "", viewport);
+        viewport.innerHTML = svg;
+        const diagram = viewport.querySelector("svg");
+        const width = diagram.viewBox.baseVal.width;
+        if (width > 0) {
+          diagram.style.width = `${width}px`;
+          diagram.style.maxWidth = "none";
+        }
+        const caption = document.createElement("figcaption");
+        caption.textContent = "图表超出宽度时可横向滚动。";
+        const details = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = "查看图表源码";
+        details.appendChild(summary);
+        details.appendChild(pre);
+        figure.append(caption, details);
+      } catch {
+        figure.remove();
+        showFallback(pre, "此图表暂时无法渲染，已保留源码。");
+      }
+    }
+  };
+
   const initReportFilter = () => {
     const input = document.querySelector("[data-report-filter]");
     if (!input) {
@@ -1291,6 +1461,53 @@ def write_scripts(output_dir: Path) -> None:
   };
 
   const ACTION_ORDER = ["买入", "分批", "观望", "回避"];
+
+  const initMonitorTableSearch = () => {
+    document.querySelectorAll("[data-monitor-table]").forEach((table, index) => {
+      const normalize = (value) => value.trim().toLocaleLowerCase("zh-CN");
+      const rows = Array.from(table.querySelectorAll("tbody tr"), (row) => ({
+        row,
+        text: normalize(Array.from(row.cells, (cell) => cell.textContent || "").join(" ")),
+      }));
+      if (!rows.length) {
+        return;
+      }
+
+      const bar = document.createElement("div");
+      bar.className = "monitor-filter";
+      const inputId = `monitor-search-${index + 1}`;
+      const statusId = `${inputId}-status`;
+      bar.innerHTML = `
+        <label class="filter-label" for="${inputId}">搜索价格监控</label>
+        <input id="${inputId}" data-monitor-search type="search" autocomplete="off"
+          placeholder="输入标的、市场、优先级等关键词，空格分隔多个条件" aria-describedby="${statusId}">
+        <p id="${statusId}" class="filter-status" role="status" aria-live="polite"></p>`;
+      const input = bar.querySelector("input");
+      const status = bar.querySelector("[role='status']");
+      const empty = document.createElement("p");
+      empty.className = "filter-empty";
+      empty.hidden = true;
+      empty.textContent = "没有匹配的监控记录，请尝试其他关键词。";
+      table.before(bar, empty);
+
+      const update = () => {
+        const query = normalize(input.value);
+        const terms = query.split(/\\s+/).filter(Boolean);
+        let visible = 0;
+        for (const { row, text } of rows) {
+          const matched = terms.every((term) => text.includes(term));
+          row.hidden = !matched;
+          if (matched) {
+            visible += 1;
+          }
+        }
+        status.textContent = query === "" ? `共 ${rows.length} 条` : `显示 ${visible} / ${rows.length} 条`;
+        empty.hidden = visible !== 0;
+      };
+      input.addEventListener("input", update);
+      update();
+    });
+  };
 
   const initActionColumnFilter = () => {
     const tables = Array.from(document.querySelectorAll(".report-article table"));
@@ -1456,8 +1673,10 @@ def write_scripts(output_dir: Path) -> None:
   };
 
   initReportFilter();
+  initMonitorTableSearch();
   initActionColumnFilter();
   initBackToTop();
+  initMermaid();
 })();
 """,
         encoding="utf-8",
