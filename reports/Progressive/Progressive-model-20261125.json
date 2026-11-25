@@ -1,0 +1,358 @@
+{
+  "as_of": "2026-11-25 Asia/Shanghai",
+  "quote_date": "2026-11-24 regular close US/Eastern",
+  "currency": "USD",
+  "facts_and_exact_bridges": {
+    "price_USD": "235.68",
+    "shares_million": "577.7",
+    "market_cap_USD_million": "136152.336",
+    "ttm_net_income_USD_million": "11604",
+    "stitched_diluted_EPS_USD": "19.84",
+    "PE_market_cap_to_ttm_net_income": "11.73322440537745604963805584281282316443",
+    "PE_to_stitched_EPS": "11.87903225806451612903225806451612903226",
+    "PB_latest_october": "3.807431340872374798061389337641357027464",
+    "PS_latest_quarter_revenue": "1.484191813375483730310132446721534855835",
+    "TTM_NPE_USD_million": "85591",
+    "EPS_impact_per_CR_percentage_point": "1.170449887484853730309849402804223645491",
+    "static_CR93_net_income_USD_million": "8155.53861",
+    "static_CR93_EPS_USD": "14.11725568634239224510991864289423576251",
+    "PE_static_CR93": "16.69446280752755825651103134192629369453",
+    "FY2025_cash_plus_short_term_USD_million": "10130",
+    "Q32026_cash_plus_short_term_USD_million": "2266",
+    "Q32026_simple_net_cash_USD_million": "-6123",
+    "october_growth_NPW_percent": "1.099685804055984004570122822050842616400",
+    "10M_growth_NPW_percent": "4.853682005999886794588781343748231165400",
+    "10M_prior_reserve_benefit_CR_points": "2.338772772996535151447412540516374203644",
+    "Q32025_ex_FL_credit_CR": "84.9",
+    "Q3_comparable_CR_deterioration_points": "3.8",
+    "discount_rate_ERP_assumption": "0.0508",
+    "annual_regular_dividend_yield_pct": "0.1697216564833672776646300067888662593347",
+    "10M_NPW_share_pct": {
+      "Agency": "34.99959513077276039839131960376798294151",
+      "Direct": "48.15514588787821533644632783610893681341",
+      "Property": "3.631676968339226429863154201193014656266",
+      "Commercial": "13.19873680801101244298091716375610677751"
+    }
+  },
+  "assumptions": {
+    "normalized_EPS": "14",
+    "r": "0.10",
+    "rf_observed_20261123": "0.0492",
+    "beta_normative": 1,
+    "ERP_judgment": "0.0508",
+    "terminal_incremental_equity_return_proxy": "0.18",
+    "first_10_year_distributable_ratio_assumption": "0.6",
+    "shares_constant": true,
+    "separate_buyback_yield": 0,
+    "terminal_formula": "(1-g/ROE_proxy)/(r-g)",
+    "terminal_tool_warning": "irr/flip output is terminal-only geometric proxy with k=0, not dated-cash-flow IRR; full cash IRR independently computed using the same terminal PE."
+  },
+  "three_year": [
+    {
+      "name": "bear",
+      "growth": "-0.03",
+      "exit_pe": "10",
+      "probability": "0.25",
+      "eps_year3": "12.777422",
+      "target": "127.774220",
+      "target_return_pct": "-45.78486931432450780719619823489477257298",
+      "distributions": [
+        "8.148",
+        "7.90356",
+        "7.6664532"
+      ],
+      "present_value": "115.6977229151014274981217129977460555973",
+      "full_cash_IRR_pct": "-14.32896962785255401608810403945353426964"
+    },
+    {
+      "name": "base",
+      "growth": "0.05",
+      "exit_pe": "14",
+      "probability": "0.50",
+      "eps_year3": "16.206750",
+      "target": "226.894500",
+      "target_return_pct": "-3.727724032586558044806517311608961303460",
+      "distributions": [
+        "8.820",
+        "9.26100",
+        "9.7240500"
+      ],
+      "present_value": "193.4469196093163035311795642374154770849",
+      "full_cash_IRR_pct": "2.719785063709252516662826370106904648150"
+    },
+    {
+      "name": "bull",
+      "growth": "0.12",
+      "exit_pe": "16",
+      "probability": "0.25",
+      "eps_year3": "19.668992",
+      "target": "314.703872",
+      "target_return_pct": "33.53015614392396469789545145960624575700",
+      "distributions": [
+        "9.408",
+        "10.53696",
+        "11.8013952"
+      ],
+      "present_value": "262.5691984973703981968444778362133734034",
+      "full_cash_IRR_pct": "14.17716526120922041202074619381076770106"
+    }
+  ],
+  "three_year_probability_weighted_PV": "191.2901901577761081893313298271975957926",
+  "ten_year": [
+    {
+      "name": "bear",
+      "growth": "-0.02",
+      "g_terminal": "0.02",
+      "probability": "0.25",
+      "eps_year10": "11.43901929642565646336",
+      "profit_year10_USD_million": "6608.321447545101738883072",
+      "distributions": [
+        "8.232",
+        "8.06736",
+        "7.9060128",
+        "7.747892544",
+        "7.59293469312",
+        "7.4410759992576",
+        "7.292254479272448",
+        "7.14640938968699904",
+        "7.0034812018932590592",
+        "6.863411577855393878016"
+      ]
+    },
+    {
+      "name": "base",
+      "growth": "0.05",
+      "g_terminal": "0.03",
+      "probability": "0.50",
+      "eps_year10": "22.80452477488417968750",
+      "profit_year10_USD_million": "13174.173962450590605468750",
+      "distributions": [
+        "8.820",
+        "9.26100",
+        "9.7240500",
+        "10.210252500",
+        "10.72076512500",
+        "11.2568033812500",
+        "11.819643550312500",
+        "12.41062572782812500",
+        "13.0311570142195312500",
+        "13.682714864930507812500"
+      ]
+    },
+    {
+      "name": "bull",
+      "growth": "0.07",
+      "g_terminal": "0.04",
+      "probability": "0.25",
+      "eps_year10": "27.54011900205391451486",
+      "profit_year10_USD_million": "15909.926747486546415234622",
+      "distributions": [
+        "8.988",
+        "9.61716",
+        "10.2903612",
+        "11.010686484",
+        "11.78143453788",
+        "12.6061349555316",
+        "13.488564402418812",
+        "14.43276391058812884",
+        "15.4430573843292978588",
+        "16.524071401232348708916"
+      ]
+    }
+  ],
+  "ten_year_sensitivity": [
+    {
+      "r": "0.08",
+      "in_USD_band": false,
+      "scenarios": [
+        {
+          "name": "bear",
+          "exit_pe": "14.81481481481481481481481481481481481482",
+          "spread": "0.06",
+          "present_value": "129.6609308826222825846067867273082493012",
+          "terminal_proxy_IRR_pct": "-3.24437357611582200",
+          "full_cash_IRR_pct": "0.4431882062265655511970176431919102461500"
+        },
+        {
+          "name": "base",
+          "exit_pe": "16.66666666666666666666666666666666666667",
+          "spread": "0.05",
+          "present_value": "248.2274013767671016205277056706762906427",
+          "terminal_proxy_IRR_pct": "4.894980038449947600",
+          "full_cash_IRR_pct": "8.653158210347085609018003532159299819450"
+        },
+        {
+          "name": "bull",
+          "exit_pe": "19.44444444444444444444444444444444444444",
+          "spread": "0.04",
+          "present_value": "327.8800618085131970943364754896076703630",
+          "terminal_proxy_IRR_pct": "8.55350790273130500",
+          "full_cash_IRR_pct": "12.14452420510252084536360407224077342066"
+        }
+      ],
+      "expected_terminal_proxy_IRR_pct": "3.77477360087884455000",
+      "expected_full_cash_IRR_pct": "7.473507208005814403649157194937820826427",
+      "weighted_present_value": "238.4989488611674207299996683895671252374",
+      "full_cash_passes": false
+    },
+    {
+      "r": "0.09",
+      "in_USD_band": true,
+      "scenarios": [
+        {
+          "name": "bear",
+          "exit_pe": "12.69841269841269841269841269841269841270",
+          "spread": "0.07",
+          "present_value": "110.3656028065939684978519545204783791240",
+          "terminal_proxy_IRR_pct": "-4.72443123243078100",
+          "full_cash_IRR_pct": "-0.7833391917613716853177502896958147417250"
+        },
+        {
+          "name": "base",
+          "exit_pe": "13.88888888888888888888888888888888888889",
+          "spread": "0.06",
+          "present_value": "202.5721442600245946461454146666748770765",
+          "terminal_proxy_IRR_pct": "2.999847108416209300",
+          "full_cash_IRR_pct": "7.061787711422852379981938746038457583550"
+        },
+        {
+          "name": "bull",
+          "exit_pe": "15.55555555555555555555555555555555555556",
+          "spread": "0.05",
+          "present_value": "256.9344427588325028603971063075431941518",
+          "terminal_proxy_IRR_pct": "6.15803251836470900",
+          "full_cash_IRR_pct": "10.10133934836151640250975827709578698626"
+        }
+      ],
+      "expected_terminal_proxy_IRR_pct": "1.85832387569158665000",
+      "expected_full_cash_IRR_pct": "5.860393894861462369288971369869221852909",
+      "weighted_present_value": "193.1110835213689151626349725403428318572",
+      "full_cash_passes": false
+    },
+    {
+      "r": "0.10",
+      "in_USD_band": true,
+      "scenarios": [
+        {
+          "name": "bear",
+          "exit_pe": "11.11111111111111111111111111111111111111",
+          "spread": "0.08",
+          "present_value": "95.99247282457817816909768972924389207962",
+          "terminal_proxy_IRR_pct": "-5.98820273391698100",
+          "full_cash_IRR_pct": "-1.809862126757859796832723979079851537514"
+        },
+        {
+          "name": "base",
+          "exit_pe": "11.90476190476190476190476190476190476190",
+          "spread": "0.07",
+          "present_value": "170.2873752459258552554625698938720936120",
+          "terminal_proxy_IRR_pct": "1.424272457654085500",
+          "full_cash_IRR_pct": "5.767465226799589886550953970758451637950"
+        },
+        {
+          "name": "bull",
+          "exit_pe": "12.96296296296296296296296296296296296296",
+          "spread": "0.06",
+          "present_value": "210.0163163463121963640058524462811275295",
+          "terminal_proxy_IRR_pct": "4.24008007546037300",
+          "full_cash_IRR_pct": "8.504735478997328291754185960546615244050"
+        }
+      ],
+      "expected_terminal_proxy_IRR_pct": "0.27510556421289075000",
+      "expected_full_cash_IRR_pct": "4.557450951459662067005842480745916745608",
+      "weighted_present_value": "161.6458849156855212610071704908173017083",
+      "full_cash_passes": false
+    },
+    {
+      "r": "0.11",
+      "in_USD_band": true,
+      "scenarios": [
+        {
+          "name": "bear",
+          "exit_pe": "9.876543209876543209876543209876543209877",
+          "spread": "0.09",
+          "present_value": "84.89029237225392186598075091518601684874",
+          "terminal_proxy_IRR_pct": "-7.08900669323051500",
+          "full_cash_IRR_pct": "-2.686959475257090069180693794013632467806"
+        },
+        {
+          "name": "base",
+          "exit_pe": "10.41666666666666666666666666666666666667",
+          "spread": "0.08",
+          "present_value": "146.3307166940381659156309755905127010661",
+          "terminal_proxy_IRR_pct": "0.0789422040646137200",
+          "full_cash_IRR_pct": "4.685222193616006197102797012617674262250"
+        },
+        {
+          "name": "bull",
+          "exit_pe": "11.11111111111111111111111111111111111111",
+          "spread": "0.07",
+          "present_value": "176.7967167583596366234672904479553420982",
+          "terminal_proxy_IRR_pct": "2.645533749702888600",
+          "full_cash_IRR_pct": "7.207599514662336752437740145290366178450"
+        }
+      ],
+      "expected_terminal_proxy_IRR_pct": "-1.071397133849599740000",
+      "expected_full_cash_IRR_pct": "3.472771106659314769365660094128020558786",
+      "weighted_present_value": "138.5871106296724725801774981360416902698",
+      "full_cash_passes": false
+    },
+    {
+      "r": "0.12",
+      "in_USD_band": false,
+      "scenarios": [
+        {
+          "name": "bear",
+          "exit_pe": "8.888888888888888888888888888888888888889",
+          "spread": "0.10",
+          "present_value": "76.06945004417664474911159939236111111110",
+          "terminal_proxy_IRR_pct": "-8.06278282388290800",
+          "full_cash_IRR_pct": "-3.448558847879869373044174819113242635246"
+        },
+        {
+          "name": "base",
+          "exit_pe": "9.259259259259259259259259259259259259259",
+          "spread": "0.09",
+          "present_value": "127.9035972798064904054626822471618652344",
+          "terminal_proxy_IRR_pct": "-1.092903234761932700",
+          "full_cash_IRR_pct": "3.761343247860009210564677808798516320450"
+        },
+        {
+          "name": "bull",
+          "exit_pe": "9.722222222222222222222222222222222222222",
+          "spread": "0.08",
+          "present_value": "152.1140993435300453411252158141442518162",
+          "terminal_proxy_IRR_pct": "1.284004220299861400",
+          "full_cash_IRR_pct": "6.124142663471665537300084126808148518950"
+        }
+      ],
+      "expected_terminal_proxy_IRR_pct": "-2.24114626827672800000",
+      "expected_full_cash_IRR_pct": "2.549567577827953646346316231322984631152",
+      "weighted_present_value": "120.9976859868299177252905449252072733490",
+      "full_cash_passes": false
+    }
+  ],
+  "reverse_10y_first_decade_EPS_growth_pct": "9.201822840635079652142284219453283879450",
+  "action_band_diagnostics": {
+    "150": {
+      "base_full_cash_IRR_pct": "11.74756241529653241939679214045034610594",
+      "three_base_margin_of_safety_pct": "22.45934941588179332707648444322492206611"
+    },
+    "160": {
+      "base_full_cash_IRR_pct": "10.85114445287222411823540335081805749034",
+      "three_base_margin_of_safety_pct": "17.28997271027391288221491673943991687052"
+    },
+    "170": {
+      "base_full_cash_IRR_pct": "10.02288965963252128148978524102856934586",
+      "three_base_margin_of_safety_pct": "12.12059600466603243735334903565491167493"
+    },
+    "220": {
+      "base_full_cash_IRR_pct": "6.637173096962801252399444825264816309550",
+      "three_base_margin_of_safety_pct": "-13.72628752337336978695448948327011430300"
+    },
+    "235.68": {
+      "base_full_cash_IRR_pct": "5.767465226799589886550953970758451637950",
+      "three_base_margin_of_safety_pct": "-21.83187019776652632449742764280500244970"
+    }
+  }
+}

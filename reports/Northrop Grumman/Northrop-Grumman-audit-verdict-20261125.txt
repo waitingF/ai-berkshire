@@ -1,0 +1,50 @@
+======================================================================
+报告数据抽检 — 准出/打回判决
+报告：reports/Northrop Grumman/Northrop-Grumman-research-20261125.md
+======================================================================
+
+  ✅ 通过 [ 6] 航空系统 Aeronautics · 经营利润率             报告:         6.30 %
+                                                    https://www.sec.gov/Archives/edgar/data/1133421/000113342126000002/noc-12312025xearningsrelea.htm: 6.30 (偏差 0.00%)  |  https://www.trefis.com/data/companies/NOC ; 813 / 12992 * 100，未取整值: 6.26 (偏差 0.67%)
+  ✅ 通过 [ 4] 航空系统 Aeronautics · 收入                报告:     12992.00 
+                                                    https://www.sec.gov/Archives/edgar/data/1133421/000113342126000002/noc-12312025xearningsrelea.htm: 12992.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/noc/financials/: 12992.00 (偏差 0.00%)
+  ✅ 通过 [ 9] 防务系统 Defense · 经营利润                  报告:       871.00 
+                                                    https://www.sec.gov/Archives/edgar/data/1133421/000113342126000002/noc-12312025xearningsrelea.htm: 871.00 (偏差 0.00%)  |  https://www.trefis.com/data/companies/NOC: 871.00 (偏差 0.00%)
+  ✅ 通过 [11] 任务系统 Mission · 收入                    报告:     12506.00 
+                                                    https://www.sec.gov/Archives/edgar/data/1133421/000113342126000002/noc-12312025xearningsrelea.htm: 12506.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/noc/financials/: 12506.00 (偏差 0.00%)
+  ✅ 通过 [15] 太空系统 Space · 经营利润                    报告:      1183.00 
+                                                    https://www.sec.gov/Archives/edgar/data/1133421/000113342126000002/noc-12312025xearningsrelea.htm: 1183.00 (偏差 0.00%)  |  https://www.trefis.com/data/companies/NOC: 1183.00 (偏差 0.00%)
+  ✅ 通过 [16] 太空系统 Space · 经营利润率                   报告:        11.00 %
+                                                    https://www.sec.gov/Archives/edgar/data/1133421/000113342126000002/noc-12312025xearningsrelea.htm: 11.00 (偏差 0.00%)  |  https://www.trefis.com/data/companies/NOC ; 1183 / 10771 * 100，未取整值: 10.98 (偏差 0.15%)
+  ✅ 通过 [17] 内部销售抵销 · 收入                          报告:     -2317.00 
+                                                    https://www.sec.gov/Archives/edgar/data/1133421/000113342126000002/noc-12312025xearningsrelea.htm: -2317.00 (偏差 0.00%)  |  https://stockanalysis.com/stocks/noc/financials/: -2317.00 (偏差 0.00%)
+  ✅ 通过 [29] 2026 B-21 提速协议 · 已知结果                报告:        25.00 亿美元
+                                                    https://investor.northropgrumman.com/node/44426/html: 25.00 (偏差 0.00%)  |  https://breakingdefense.com/2026/04/northrop-to-invest-2-5b-to-hasten-b-21-production/: 25.00 (偏差 0.00%)
+  ✅ 通过 [44] 平台 PEG · 采用值                         报告:         2.96 倍
+                                                    https://stockanalysis.com/stocks/noc/statistics/: 2.96 (偏差 0.00%)
+  ✅ 通过 [46] 悲观 / 25% · 三年 PE                     报告:        14.00 倍
+                                                    Northrop-Grumman-model-20261125.json assumptions/three_year: 14.00 (偏差 0.00%)
+  ✅ 通过 [55] 中性 / 55% · 按 10% 折现的今日含息价值           报告:       445.30 
+                                                    financial_rigor.py calc：正常EPS26、增速6%、PE18、三年股息增长4%、折现10%: 445.30 (偏差 0.00%)  |  Northrop-Grumman-model-20261125.json，40位Decimal: 445.30 (偏差 0.00%)
+  ✅ 通过 [52] 中性 / 55% · 三年 PE                     报告:        18.00 倍
+                                                    Northrop-Grumman-model-20261125.json assumptions/three_year: 18.00 (偏差 0.00%)
+  ✅ 通过 [57] 乐观 / 20% · 三年 EPS                    报告:        34.61 
+                                                    Decimal独立复算26*(1.10)^3: 34.61 (偏差 0.01%)  |  financial_rigor.py three-scenario，EPS26、growth10%: 34.61 (偏差 0.01%)
+  ✅ 通过 [64] 永续 g · 本报告判断及理由                      报告:         1.00 %
+                                                    Northrop-Grumman-model-20261125.json assumptions/three_year: 1.00 (偏差 0.00%)
+  ✅ 通过 [78] 乐观 · r−g                             报告:         6.50 
+                                                    Decimal独立复算(0.10-0.035)*100: 6.50 (偏差 0.00%)  |  terminal_value.py audit，乐观r-g=6.5pct: 6.50 (偏差 0.00%)
+
+----------------------------------------------------------------------
+  抽检总数: 15  |  通过: 15  |  警告: 0  |  不通过: 0
+
+【准出】所有抽检数据通过，报告可发布。
+======================================================================
+{
+  "verdict": "PASS",
+  "pass_count": 15,
+  "warn_count": 0,
+  "fail_count": 0,
+  "total": 15,
+  "fail_items": [],
+  "warn_items": []
+}

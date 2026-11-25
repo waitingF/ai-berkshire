@@ -1,0 +1,407 @@
+{
+  "as_of": "2026-11-25",
+  "currency": "USD",
+  "quote_date": "2026-11-24",
+  "price": "550.84",
+  "shares_as_of": "2026-10-15",
+  "shares": "142064489",
+  "market_cap_usd": "78254803120.76",
+  "assumptions": {
+    "normal_eps": "26",
+    "r": "0.10",
+    "rf": "0.0491",
+    "erp": "0.0509",
+    "beta": "1",
+    "roic": "0.15",
+    "perpetual_g": [
+      "0.01",
+      "0.025",
+      "0.035"
+    ],
+    "probability": [
+      "0.25",
+      "0.55",
+      "0.20"
+    ],
+    "dividend_per_share": "9.88",
+    "no_net_buyback_credit": true,
+    "pension_bridge": {
+      "guidance_EPS_mid": "29.55",
+      "net_FAS_CAS_million": "700",
+      "analyst_illustrative_tax_rate": "0.25",
+      "diluted_shares_million": "142.5",
+      "rounded_research_EPS": "26",
+      "note": "25%为研究示意税率，非公司实际税率；起始EPS取整26，所有估值输出未变。"
+    }
+  },
+  "metrics": {
+    "PE_TTM": "17.37117628508356985178177231157363607695",
+    "PE_guidance": "18.64094754653130287648054145516074450085",
+    "PE_normal": "21.18615384615384615384615384615384615385",
+    "PS_TTM": "1.795205503905852125438737354040971760226",
+    "debt": "15197",
+    "cash": "3744",
+    "net_debt": "11453",
+    "ev": "89707.80312076",
+    "EV_sales": "2.057943224995067789222545938381776054690",
+    "FCF_TTM": "3829",
+    "FCF_TTM_yield": "0.04892990394584757691485654384385740215097",
+    "guidance_clean_FCF_mid": "2929",
+    "guidance_clean_FCF_yield": "0.03742901244643184977373069128196874664408",
+    "FCF_per_share": "26.95254828953067926777957861095041140084",
+    "bvps": "131.5106972299038079811767738804874735445",
+    "dividend_yield": "0.01793624282913368673298961585941471207610",
+    "normal_pension_bridge": "25.86578947368421052631578947",
+    "funded_backlog_pct": "0.4570836792977909979287754226849275071398",
+    "space_funded_pct": "0.3737665097920145741612266585699104296341"
+  },
+  "three_year": [
+    {
+      "name": "Bear",
+      "growth": "0",
+      "PE": "14",
+      "eps3": "26",
+      "price3": "364",
+      "dividend_growth": "0",
+      "dividends": [
+        "9.88",
+        "9.88",
+        "9.88"
+      ],
+      "PV10_incl_div": "298.0486851990984222389181066867017280240",
+      "total_return_incl_cash_div": "-0.2853823251760946917435189891801612083364",
+      "probability": "0.25"
+    },
+    {
+      "name": "Base",
+      "growth": "0.06",
+      "PE": "18",
+      "eps3": "30.966416",
+      "price3": "557.395488",
+      "dividend_growth": "0.04",
+      "dividends": [
+        "10.2752",
+        "10.686208",
+        "11.11365632"
+      ],
+      "PV10_incl_div": "445.3020023441021788129226145755071374906",
+      "total_return_incl_cash_div": "0.070130259821363735385955994481156052574",
+      "probability": "0.55"
+    },
+    {
+      "name": "Bull",
+      "growth": "0.10",
+      "PE": "22",
+      "eps3": "34.606000",
+      "price3": "761.332000",
+      "dividend_growth": "0.08",
+      "dividends": [
+        "10.6704",
+        "11.524032",
+        "12.44595456"
+      ],
+      "PV10_incl_div": "600.5751868970698722764838467317806160781",
+      "total_return_incl_cash_div": "0.445015588119962239488780771185825285019",
+      "probability": "0.20"
+    }
+  ],
+  "three_year_weighted_PV": "439.5433099684447783621337340345604808414",
+  "ten_year": [
+    {
+      "name": "Bear",
+      "growth": "0",
+      "g": "0.01",
+      "probability": "0.25",
+      "eps10": "26",
+      "profit10_million": "3693.676714",
+      "terminal_PE": "10.37037037037037037037037037037037037037",
+      "terminal_price": "269.6296296296296296296296296296296296296",
+      "terminal_proxy_IRR": "-0.05101116290153014",
+      "annual_distributable_cash_per_share": [
+        "26",
+        "26",
+        "26",
+        "26",
+        "26",
+        "26",
+        "26",
+        "26",
+        "26",
+        "26"
+      ],
+      "equity_cash_IRR": "-0.00501273719783527761807230178492360433485",
+      "equity_cash_PV10": "263.7126390833954909005461091690556735972"
+    },
+    {
+      "name": "Base",
+      "growth": "0.06",
+      "g": "0.025",
+      "probability": "0.55",
+      "eps10": "46.56204011011419416576",
+      "profit10_million": "6614.81243504087672580547569664",
+      "terminal_PE": "11.11111111111111111111111111111111111111",
+      "terminal_price": "517.3560012234910462862222222222222222222",
+      "terminal_proxy_IRR": "0.011684550691969543",
+      "annual_distributable_cash_per_share": [
+        "16.536",
+        "17.52816",
+        "18.5798496",
+        "19.694640576",
+        "20.87631901056",
+        "22.1288981511936",
+        "23.456632040265216",
+        "24.86402996268112896",
+        "26.3558717604419966976",
+        "27.937224066068516499456"
+      ],
+      "equity_cash_IRR": "0.03373183329567725102538069319414718900950",
+      "equity_cash_PV10": "327.4313890228223430279797277634974790234"
+    },
+    {
+      "name": "Bull",
+      "growth": "0.09",
+      "g": "0.035",
+      "probability": "0.20",
+      "eps10": "61.55145553939504808426",
+      "profit10_million": "8744.27607841037687522082584314",
+      "terminal_PE": "11.79487179487179487179487179487179487180",
+      "terminal_price": "725.9915268749159517630666666666666666670",
+      "terminal_proxy_IRR": "0.04593031001120877",
+      "annual_distributable_cash_per_share": [
+        "11.336",
+        "12.35624",
+        "13.4683016",
+        "14.680448744",
+        "16.00168913096",
+        "17.4418411527464",
+        "19.011606856493576",
+        "20.72265147357799784",
+        "22.5876901062000176456",
+        "24.620582215758019233704"
+      ],
+      "equity_cash_IRR": "0.0548248412870471896348314221262712996205",
+      "equity_cash_PV10": "378.8404335597636058027728420216359423999"
+    }
+  ],
+  "ten_year_expected_proxy_IRR": "0.00285977415744246765",
+  "ten_year_expected_equity_IRR": "0.02826429227057310658640759023580431279561",
+  "ten_year_weighted_equity_PV10": "321.7835104453538825510799459665147203422",
+  "sensitivities": [
+    {
+      "r": "0.08",
+      "currency_in_band": false,
+      "weighted_equity_PV": "460.0502097408500501079162260676637282291",
+      "expected_equity_IRR": "0.05374992032789398262675551175171630193150",
+      "stress_pass": false
+    },
+    {
+      "r": "0.09",
+      "currency_in_band": true,
+      "weighted_equity_PV": "379.5467546619882505754293160340489173345",
+      "expected_equity_IRR": "0.03977705115033483556128738628072729078344",
+      "stress_pass": false
+    },
+    {
+      "r": "0.10",
+      "currency_in_band": true,
+      "weighted_equity_PV": "321.7835104453538825510799459665147203422",
+      "expected_equity_IRR": "0.02826429227057310658640759023580431279561",
+      "stress_pass": false
+    },
+    {
+      "r": "0.11",
+      "currency_in_band": true,
+      "weighted_equity_PV": "278.4059807128540520561548617536348704451",
+      "expected_equity_IRR": "0.01853878840047365573059451561422369421784",
+      "stress_pass": false
+    },
+    {
+      "r": "0.12",
+      "currency_in_band": false,
+      "weighted_equity_PV": "244.7097144937747649684783315193437448391",
+      "expected_equity_IRR": "0.01016700109209721590986820749305246614466",
+      "stress_pass": false
+    }
+  ],
+  "reverse_growth_30ROIC": "0.1193451710292938971226066298697717011774",
+  "reverse_required_start_EPS_base": "43.73997264813774876112976895885797689106",
+  "ownership_Warden": {
+    "shares_20260320": 196681,
+    "total_shares_same_date": 142033159,
+    "percent": "0.1384754105201588876862198073057010581592",
+    "source": "https://www.sec.gov/Archives/edgar/data/1133421/000113342126000007/noc-20260401.htm",
+    "independent_second_source": null
+  },
+  "annual_financials_million_USD": [
+    {
+      "year": 2021,
+      "revenue": 35667,
+      "net_income": 7005,
+      "GAAP_operating_income": 5651,
+      "CFO": 3567,
+      "capex": 1415,
+      "simple_FCF": 2152,
+      "cash": 3530,
+      "derived_gross_profit": 7268,
+      "derived_gross_margin": "20.37737965065747049092999130849244399585",
+      "operating_margin": "15.84377716096111251296716853113522303530",
+      "FCF_net_income_pct": "30.72091363311920057102069950035688793719"
+    },
+    {
+      "year": 2022,
+      "revenue": 36602,
+      "net_income": 4896,
+      "GAAP_operating_income": 3601,
+      "CFO": 2901,
+      "capex": 1435,
+      "simple_FCF": 1466,
+      "cash": 2577,
+      "derived_gross_profit": 7474,
+      "derived_gross_margin": "20.41964919949729522976886508933938036173",
+      "operating_margin": "9.838260204360417463526583246817113818917",
+      "FCF_net_income_pct": "29.94281045751633986928104575163398692810"
+    },
+    {
+      "year": 2023,
+      "revenue": 39290,
+      "net_income": 2056,
+      "GAAP_operating_income": 2537,
+      "CFO": 3875,
+      "capex": 1775,
+      "simple_FCF": 2100,
+      "cash": 3109,
+      "derived_gross_profit": 6551,
+      "derived_gross_margin": "16.67345380503945024179180453041486383304",
+      "operating_margin": "6.457113769406973784678035123441079155001",
+      "FCF_net_income_pct": "102.1400778210116731517509727626459143969"
+    },
+    {
+      "year": 2024,
+      "revenue": 41033,
+      "net_income": 4174,
+      "GAAP_operating_income": 4370,
+      "CFO": 4388,
+      "capex": 1767,
+      "simple_FCF": 2621,
+      "cash": 4353,
+      "derived_gross_profit": 8362,
+      "derived_gross_margin": "20.37871956717763751127141568981064021641",
+      "operating_margin": "10.64996466258864816123607827845880145249",
+      "FCF_net_income_pct": "62.79348346909439386679444178246286535697"
+    },
+    {
+      "year": 2025,
+      "revenue": 41954,
+      "net_income": 4182,
+      "GAAP_operating_income": 4511,
+      "CFO": 4757,
+      "capex": 1450,
+      "simple_FCF": 3307,
+      "cash": 4403,
+      "derived_gross_profit": 8313,
+      "derived_gross_margin": "19.81455880249797397149258711922581875387",
+      "operating_margin": "10.75225246698765314391953091481146017066",
+      "FCF_net_income_pct": "79.07699665231946437111429937828790052606"
+    }
+  ],
+  "revenue_CAGR2021_2025": "0.041421880420175684928713849696761636063",
+  "sources": {
+    "annual2025": "https://www.sec.gov/Archives/edgar/data/1133421/000113342126000003/noc-20251231.htm",
+    "annual2023": "https://cdn.northropgrumman.com/-/media/Project/Northrop-Grumman/ngc/who-we-are/corporate-responsibility/2023-Annual-Report.pdf",
+    "q3_2026": "https://investor.northropgrumman.com/node/44426/html",
+    "secondary_financials": "https://stockanalysis.com/stocks/noc/financials/",
+    "secondary_cashflow": "https://stockanalysis.com/stocks/noc/financials/cash-flow-statement/",
+    "macrotrends_revenue_index": "https://www.macrotrends.net/stocks/charts/NOC/northrop-grumman/revenue",
+    "Trefis_segment_secondary": "https://www.trefis.com/data/companies/NOC"
+  },
+  "quarterly_segments": {
+    "unit": "million USD; margins and growth in percent, published rounded",
+    "columns": [
+      "period",
+      "AS_sales",
+      "AS_YoY",
+      "AS_OM",
+      "DS_sales",
+      "DS_YoY",
+      "DS_OM",
+      "MS_sales",
+      "MS_YoY",
+      "MS_OM",
+      "SS_sales",
+      "SS_YoY",
+      "SS_OM",
+      "eliminations",
+      "total_sales"
+    ],
+    "rows": [
+      [
+        "2025Q4",
+        3922,
+        18,
+        9.4,
+        2147,
+        7,
+        9.5,
+        3449,
+        10,
+        14.8,
+        2859,
+        5,
+        11.3,
+        -665,
+        11712
+      ],
+      [
+        "2026Q1",
+        3283,
+        17,
+        9.3,
+        1899,
+        5,
+        9.7,
+        2861,
+        2,
+        15.1,
+        2480,
+        -3,
+        9.5,
+        -642,
+        9881
+      ],
+      [
+        "2026Q2",
+        3519,
+        13,
+        10.3,
+        2093,
+        5,
+        7.5,
+        3250,
+        3,
+        15.4,
+        2753,
+        4,
+        8.6,
+        -739,
+        10876
+      ],
+      [
+        "2026Q3",
+        3575,
+        14,
+        10.5,
+        2307,
+        12,
+        10.8,
+        3155,
+        2,
+        15.8,
+        2749,
+        2,
+        11.3,
+        -664,
+        11122
+      ]
+    ]
+  }
+}

@@ -1,0 +1,396 @@
+======================================================================
+报告数据抽检清单
+文件：reports/Planet Labs/Planet Labs-research-20261125.md
+总提取数据点：188  |  抽样比例：15%  |  抽检数量：29
+随机种子：20261125（可用于复现同一批样本）
+======================================================================
+
+ ID     行号  数据标签                                          报告值  单位
+───  ─────  ───────────────────────────────────  ────────────  ──────
+  3     35  Q2 毛利／毛利率 · 数值                              65.63  
+  7     39  recurring ACV／NDR · 数值                      98.00  %
+ 10     41  FY2027 收入指引（US$m） · 数值                     430.00  
+ 12     42  Q3 收入／Capex 指引（US$m） · 数值                  101.00  
+ 14     43  FY2027 Capex 指引（US$m） · 数值                 100.00  
+ 22     54  FY2026 Q4，2026-01-31 · 国防情报                 52.31  
+ 32     55  FY2027 Q1，2026-04-30 · 公司 FCF               -2.52  
+ 47     69  FY2023 · 营业利润率                             -91.85  %
+ 46     69  FY2023 · 毛利率                                49.15  %
+ 62     71  FY2025 · 现金及短投                             222.07  
+ 63     72  FY2026 · 收入                                307.73  
+ 73     88  公司定义 FCF · 数值                               19.87  
+ 77    178  2026 ATM · 可核结果                              2.00  
+ 80    205  [11/9 Stoke 发射协议](https://investors       2027.00  
+ 81    214  BlackSky · 对 Planet 的约束                      3.00  
+102    259  EV，账面债务及租赁口径 · Planet Labs                3504.55  
+116    280  税后经营利润（US$m） · 基准                           97.25  
+123    282  期末净现金（US$m） · 乐观                           815.00  
+134    286  从10.64至终点的年化价格回报 · 基准                      -14.27  %
+144    309  终值税后经营利润率（NOPAT） · 乐观                       22.00  %
+145    310  第十年NOPAT（US$m） · 悲观                         47.01  
+157    314  现金留存补充模型终值净现金（US$m） · 悲观                   355.95  
+159    314  现金留存补充模型终值净现金（US$m） · 乐观                  3832.47  
+160    315  含现金留存后的十年IRR · 悲观                          -16.76  %
+163    357  估值（巴菲特＋段永平） · 综合判断                           5.04  
+164    363  空仓者 · 可执行的研究动作                              10.64  
+166    365  加仓／首次买入门槛 · 可执行的研究动作                       100.00  %
+172    398  总股数，股，8/27披露 · SEC／公司                363847989.00  
+186    404  FY2026营业亏损 · SEC／公司                        -95.07  
+
+↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：
+  美股：macrotrends.net（主）+ stockanalysis.com（副）
+  港股：aastocks.com（主）+ macrotrends ADR（副）
+  A股： eastmoney.com（主）+ cninfo.com.cn（副）
+
+抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：
+
+[
+  {
+    "id": 3,
+    "label": "Q2 毛利／毛利率 · 数值",
+    "reported_value": 65.632,
+    "unit": "",
+    "line_number": 35,
+    "raw_text": "| Q2 毛利／毛利率 | US$65.632m／56.55% | 高增长尚未带来更高集团毛利率 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 7,
+    "label": "recurring ACV／NDR · 数值",
+    "reported_value": 98.0,
+    "unit": "%",
+    "line_number": 39,
+    "raw_text": "| recurring ACV／NDR | 98%／109% | 指标排除 Satellite Services 等业务，非集团收入续费率 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 10,
+    "label": "FY2027 收入指引（US$m） · 数值",
+    "reported_value": 430.0,
+    "unit": "",
+    "line_number": 41,
+    "raw_text": "| FY2027 收入指引（US$m） | 430–441 | 仍为 9 月 3 日发布口径 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 12,
+    "label": "Q3 收入／Capex 指引（US$m） · 数值",
+    "reported_value": 101.0,
+    "unit": "",
+    "line_number": 42,
+    "raw_text": "| Q3 收入／Capex 指引（US$m） | 101–105／30–37 | 收入指引低于 Q2；不能外推单季 +58% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 14,
+    "label": "FY2027 Capex 指引（US$m） · 数值",
+    "reported_value": 100.0,
+    "unit": "",
+    "line_number": 43,
+    "raw_text": "| FY2027 Capex 指引（US$m） | 100–115 | 含资本化软件，投资需求真实存在 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 22,
+    "label": "FY2026 Q4，2026-01-31 · 国防情报",
+    "reported_value": 52.311,
+    "unit": "",
+    "line_number": 54,
+    "raw_text": "| FY2026 Q4，2026-01-31 | 86.822 | 52.311 | 14.135 | 20.376 | 54.17% | -2.336 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 32,
+    "label": "FY2027 Q1，2026-04-30 · 公司 FCF",
+    "reported_value": -2.517,
+    "unit": "",
+    "line_number": 55,
+    "raw_text": "| FY2027 Q1，2026-04-30 | 94.150 | 61.386 | 16.595 | 16.169 | 53.53% | -2.517 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 47,
+    "label": "FY2023 · 营业利润率",
+    "reported_value": -91.85,
+    "unit": "%",
+    "line_number": 69,
+    "raw_text": "| FY2023 | 191.256 | 49.15% | -91.85% | -161.966 | -86.693 | 408.760 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 46,
+    "label": "FY2023 · 毛利率",
+    "reported_value": 49.15,
+    "unit": "%",
+    "line_number": 69,
+    "raw_text": "| FY2023 | 191.256 | 49.15% | -91.85% | -161.966 | -86.693 | 408.760 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 62,
+    "label": "FY2025 · 现金及短投",
+    "reported_value": 222.075,
+    "unit": "",
+    "line_number": 71,
+    "raw_text": "| FY2025 | 244.352 | 57.18% | -47.52% | -123.196 | -63.993 | 222.075 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 63,
+    "label": "FY2026 · 收入",
+    "reported_value": 307.727,
+    "unit": "",
+    "line_number": 72,
+    "raw_text": "| **FY2026** | **307.727** | **56.05%** | **-30.90%** | **-246.860** | **52.865** | **640.090** |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 73,
+    "label": "公司定义 FCF · 数值",
+    "reported_value": 19.872,
+    "unit": "",
+    "line_number": 88,
+    "raw_text": "| **公司定义 FCF** | **19.872** |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 77,
+    "label": "2026 ATM · 可核结果",
+    "reported_value": 2.0,
+    "unit": "",
+    "line_number": 178,
+    "raw_text": "| 2026 ATM | Q2 出售 3,782,460 股；半年现金流列净流入 US$120.386m | 高价融资有利公司安全，但原股东份额下降 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 80,
+    "label": "[11/9 Stoke 发射协议](https://investors.planet.com/news/news-details/2026/Planet-and-Stoke-Space-Sign-Multi-Launch-Agreement-for-Nova-Launch-Capabilities/default.aspx) · 尚未证明什么",
+    "reported_value": 2027.0,
+    "unit": "",
+    "line_number": 205,
+    "raw_text": "| [11/9 Stoke 发射协议](https://investors.planet.com/news/news-details/2026/Planet-and-Stoke-Space-Sign-Multi-Launch-Agreeme",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 81,
+    "label": "BlackSky · 对 Planet 的约束",
+    "reported_value": 3.0,
+    "unit": "",
+    "line_number": 214,
+    "raw_text": "| BlackSky | 高分任务、AI 情报和主权能力 | 官方 Q3 已有实际服务收入与 Gen-3 运行，不能把高分市场视作 PL 独占 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 102,
+    "label": "EV，账面债务及租赁口径 · Planet Labs",
+    "reported_value": 3504.548,
+    "unit": "",
+    "line_number": 259,
+    "raw_text": "| EV，账面债务及租赁口径 | 3504.548 | 696.800 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 116,
+    "label": "税后经营利润（US$m） · 基准",
+    "reported_value": 97.249,
+    "unit": "",
+    "line_number": 280,
+    "raw_text": "| 税后经营利润（US$m） | 0 | 97.249 | 192.869 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 123,
+    "label": "期末净现金（US$m） · 乐观",
+    "reported_value": 815.0,
+    "unit": "",
+    "line_number": 282,
+    "raw_text": "| 期末净现金（US$m） | 100 | 250 | 815 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 134,
+    "label": "从10.64至终点的年化价格回报 · 基准",
+    "reported_value": -14.27,
+    "unit": "%",
+    "line_number": 286,
+    "raw_text": "| 从10.64至终点的年化价格回报 | -45.35% | -14.27% | +17.48% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 144,
+    "label": "终值税后经营利润率（NOPAT） · 乐观",
+    "reported_value": 22.0,
+    "unit": "%",
+    "line_number": 309,
+    "raw_text": "| 终值税后经营利润率（NOPAT） | 5% | 15% | 22% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 145,
+    "label": "第十年NOPAT（US$m） · 悲观",
+    "reported_value": 47.011,
+    "unit": "",
+    "line_number": 310,
+    "raw_text": "| 第十年NOPAT（US$m） | 47.011 | 404.475 | 1,320.822 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 157,
+    "label": "现金留存补充模型终值净现金（US$m） · 悲观",
+    "reported_value": 355.952,
+    "unit": "",
+    "line_number": 314,
+    "raw_text": "| 现金留存补充模型终值净现金（US$m） | 355.952 | 1,517.888 | 3,832.468 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 159,
+    "label": "现金留存补充模型终值净现金（US$m） · 乐观",
+    "reported_value": 3832.468,
+    "unit": "",
+    "line_number": 314,
+    "raw_text": "| 现金留存补充模型终值净现金（US$m） | 355.952 | 1,517.888 | 3,832.468 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 160,
+    "label": "含现金留存后的十年IRR · 悲观",
+    "reported_value": -16.76,
+    "unit": "%",
+    "line_number": 315,
+    "raw_text": "| 含现金留存后的十年IRR | -16.76% | +2.58% | +14.24% |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 163,
+    "label": "估值（巴菲特＋段永平） · 综合判断",
+    "reported_value": 5.04,
+    "unit": "",
+    "line_number": 357,
+    "raw_text": "| 估值（巴菲特＋段永平） | 三年基准今日值5.04美元、均值5.50低于现价；十年压力只限仓，合理r内不翻转 | 模型算术高，假设低至中 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 164,
+    "label": "空仓者 · 可执行的研究动作",
+    "reported_value": 10.64,
+    "unit": "",
+    "line_number": 363,
+    "raw_text": "| 空仓者 | 10.64美元不新增。4–5美元且下述经营、股数门槛通过才研究首笔总权益约0.25%–0.5%，参考总上限1%；非自动交易指令 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 166,
+    "label": "加仓／首次买入门槛 · 可执行的研究动作",
+    "reported_value": 100.0,
+    "unit": "%",
+    "line_number": 365,
+    "raw_text": "| 加仓／首次买入门槛 | 连续两次正式季度披露商业及D&I收入仍增长、NDR≥100%、无重大撤单；滚动完整FCF为正且剔递延收入变化的敏感性改善；项目回款／毛利可解释、库存及履约资金可核；最新AB总股数、潜在转股及ATM完整可核、每股价",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 172,
+    "label": "总股数，股，8/27披露 · SEC／公司",
+    "reported_value": 363847989.0,
+    "unit": "",
+    "line_number": 398,
+    "raw_text": "| 总股数，股，8/27披露 | 363847989 | StockAnalysis363850000（取整） | 一致；非11月实时登记 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  },
+  {
+    "id": 186,
+    "label": "FY2026营业亏损 · SEC／公司",
+    "reported_value": -95.073,
+    "unit": "",
+    "line_number": 404,
+    "raw_text": "| FY2026营业亏损 | -95.073 | StockAnalysis-83.400 | 差异超过1%，采用SEC；Macrotrends约-95支持原报表 |",
+    "fetched_value": null,
+    "fetched_source": "",
+    "fetched_value2": null,
+    "fetched_source2": ""
+  }
+]
