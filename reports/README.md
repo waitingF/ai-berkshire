@@ -4,7 +4,7 @@
 > 新增报告先 `git add`，再运行 `python3 tools/reports_index.py`，将报告与索引一并提交。
 > 只收录成品报告；证据、审计、复算、底稿等中间产物不在此列，完整清单见 `index.json`。
 
-**2170 份报告** · **203 家公司** · **28 个专题** · 最近更新 2026-11-25
+**2172 份报告** · **203 家公司** · **28 个专题** · 最近更新 2026-11-26
 
 [最近更新](#最近更新) · [按公司](#按公司) · [专题研究](#专题研究) · [大师研究](#大师研究) · [筛选池](#筛选池)
 
@@ -14,6 +14,8 @@
 
 | 日期 | 报告 | 归属 | 类型 |
 |------|------|------|------|
+| 2026-11-26 | [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
+| 2026-11-26 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261126.md) | daily-monitor | 研究 |
 | 2026-11-25 | [雅克科技（002409.SZ）研究报告](雅克科技/雅克科技-research-20261125.md) | 雅克科技 | 研究 |
 | 2026-11-25 | [群核科技计算与交叉验证记录](群核科技/群核科技-validation-20261125.md) | 群核科技 | 研究 |
 | 2026-11-25 | [群核科技（00068.HK）研究报告](群核科技/群核科技-research-20261125.md) | 群核科技 | 研究 |
@@ -21,6 +23,7 @@
 | 2026-11-25 | [标的跟踪表](标的跟踪表.md) | 综合与横评 | 研究 |
 | 2026-11-25 | [晶合集成（688249.SH／02249.HK）研究报告](晶合集成/晶合集成-research-20261125.md) | 晶合集成 | 研究 |
 | 2026-11-25 | [搜狐（SOHU）研究报告](搜狐/搜狐-research-20261125.md) | 搜狐 | 研究 |
+| 2026-11-25 | [建滔积层板（01888.HK）研究报告](建滔积层板/建滔积层板-research-20261125.md) | 建滔积层板 | 研究 |
 | 2026-11-25 | [富途（NASDAQ:FUTU）研究报告](富途/富途-research-20261125.md) | 富途 | 研究 |
 | 2026-11-25 | [国电南瑞（600406.SH）研究报告](国电南瑞/国电南瑞-research-20261125.md) | 国电南瑞 | 研究 |
 | 2026-11-25 | [北京君正（300223.SZ / 03223.HK）研究报告](北京君正/北京君正-research-20261125.md) | 北京君正 | 研究 |
@@ -28,7 +31,6 @@
 | 2026-11-25 | [中际旭创关键数据交叉验证记录](中际旭创/中际旭创-validation-20261125.md) | 中际旭创 | 研究 |
 | 2026-11-25 | [中际旭创（300308.SZ／03308.HK）研究报告](中际旭创/中际旭创-research-20261125.md) | 中际旭创 | 研究 |
 | 2026-11-25 | [中国广核（003816.SZ / 01816.HK）研究报告](中国广核/中国广核-research-20261125.md) | 中国广核 | 研究 |
-| 2026-11-25 | [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
 | 2026-11-25 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261125.md) | daily-monitor | 研究 |
 | 2026-11-25 | [Progressive 研究验证记录](Progressive/Progressive-validation-20261125.md) | Progressive | 研究 |
 | 2026-11-25 | [Progressive（PGR）研究报告](Progressive/Progressive-research-20261125.md) | Progressive | 研究 |
@@ -46,14 +48,12 @@
 | 2026-11-24 | [京东集团（JD / 9618.HK）研究报告](京东集团/京东集团-research-20261124.md) | 京东集团 | 研究 |
 | 2026-11-24 | [亨通光电（600487.SH）研究报告](亨通光电/亨通光电-research-20261124.md) | 亨通光电 | 研究 |
 | 2026-11-24 | [东方电气（600875.SH / 01072.HK）研究报告](东方电气/东方电气-research-20261124.md) | 东方电气 | 研究 |
-| 2026-11-24 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261124.md) | daily-monitor | 研究 |
 | 2026-11-24 | [Uber关键数据与估值工具记录](Uber/Uber-validation-20261124.md) | Uber | 研究 |
 | 2026-11-24 | [Uber（NYSE:UBER）研究报告](Uber/Uber-research-20261124.md) | Uber | 研究 |
 | 2026-11-24 | [SpaceX 2026-11-24 计算与交叉验证记录](SpaceX/SpaceX-validation-20261124.md) | SpaceX | 研究 |
 | 2026-11-24 | [SpaceX（SPCX）研究报告](SpaceX/SpaceX-research-20261124.md) | SpaceX | 研究 |
 | 2026-11-24 | [Meta Platforms（META）研究报告](Meta/Meta-research-20261124.md) | Meta | 研究 |
 | 2026-11-24 | [Mastercard（MA）研究报告](Mastercard/Mastercard-research-20261124.md) | Mastercard | 研究 |
-| 2026-11-24 | [基恩士（KEYENCE，6861.T）研究报告](Keyence/Keyence-research-20261124.md) | Keyence | 研究 |
 
 ---
 
@@ -278,9 +278,10 @@
 </details>
 
 <details markdown="1">
-<summary><b>daily-monitor</b> · 67 份 · 最近 2026-11-25</summary>
+<summary><b>daily-monitor</b> · 68 份 · 最近 2026-11-26</summary>
 
-- `2026-11-25` [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) — 研究
+- `2026-11-26` [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) — 研究
+- `2026-11-26` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261126.md) — 研究
 - `2026-11-25` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261125.md) — 研究
 - `2026-11-24` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261124.md) — 研究
 - `2026-11-23` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261123.md) — 研究
@@ -2501,6 +2502,14 @@
 </details>
 
 <details markdown="1">
+<summary><b>建滔积层板</b> · 2 份 · 最近 2026-11-25</summary>
+
+- `2026-11-25` [建滔积层板（01888.HK）研究报告](建滔积层板/建滔积层板-research-20261125.md) — 研究
+- `2026-07-16` [建滔积层板（01888.HK）研究报告](建滔积层板/建滔积层板-research-20260716.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>德明利</b> · 2 份 · 最近 2026-11-18</summary>
 
 - `2026-11-18` [德明利（001309.SZ）研究报告](德明利/德明利-research-20261118.md) — 研究
@@ -2920,13 +2929,6 @@
 <summary><b>康方生物</b> · 1 份 · 最近 2026-06-23</summary>
 
 - `2026-06-23` [康方生物（9926.HK）投资研究报告](康方生物/康方生物-投资研究报告-20260623.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>建滔积层板</b> · 1 份 · 最近 2026-07-16</summary>
-
-- `2026-07-16` [建滔积层板（01888.HK）研究报告](建滔积层板/建滔积层板-research-20260716.md) — 研究
 
 </details>
 
