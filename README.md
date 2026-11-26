@@ -20,7 +20,7 @@
 
 > 📖 **想读报告，用 [阅读站](https://xbtlin.github.io/ai-berkshire/)**：成品报告按公司、专题、时间整理，电脑和手机都好读，可搜索、记住阅读进度。
 >
-> 📊 全部 2176 份报告（含底稿）· 203 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-11-26。
+> 📊 全部 2184 份报告（含底稿）· 203 家公司 · 28 个专题，GitHub 上的完整目录见 [研究报告索引](reports/README.md)，更新至 2026-11-27。
 
 <!-- REPORTS-BANNER:END -->
 
@@ -672,18 +672,18 @@ bash scripts/install-git-hooks.sh
 
 <!-- REPORTS-INDEX:START 由 tools/reports_index.py 自动更新，勿手改 -->
 
-**📊 [全部研究索引 →](reports/README.md)** ｜ 2176 份报告 · 203 家公司 · 28 个专题 · 更新至 2026-11-26
+**📊 [全部研究索引 →](reports/README.md)** ｜ 2184 份报告 · 203 家公司 · 28 个专题 · 更新至 2026-11-27
 
 最近更新：
 
 | 日期 | 报告 | 归属 |
 |------|------|------|
+| 2026-11-27 | [每日监控 · 价格监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
+| 2026-11-27 | [每日监控 · 价格监控](reports/daily-monitor/daily-monitor-20261127.md) | daily-monitor |
 | 2026-11-26 | [长光辰芯（03277.HK）研究报告](reports/长光辰芯/长光辰芯-research-20261126.md) | 长光辰芯 |
 | 2026-11-26 | [汇川技术（300124.SZ）研究报告](reports/汇川技术/汇川技术-research-20261126.md) | 汇川技术 |
+| 2026-11-26 | [永新股份（002014.SZ）投资研究报告（2026 年度更新）](reports/永新股份-deepseek分析/永新股份-research-20261126.md) | 永新股份 |
 | 2026-11-26 | [标的跟踪表](reports/标的跟踪表.md) | 综合与横评 |
-| 2026-11-26 | [每日监控 · 价格监控](reports/daily-monitor/daily-monitor-latest.md) | daily-monitor |
-| 2026-11-26 | [每日监控 · 价格监控](reports/daily-monitor/daily-monitor-20261126.md) | daily-monitor |
-| 2026-11-26 | [Palantir（PLTR）研究报告](reports/Palantir/Palantir-research-20261126.md) | Palantir |
 
 <!-- REPORTS-INDEX:END -->
 

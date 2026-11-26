@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "timezone": "Asia/Shanghai",
   "status": "OK",
   "summary": "P0 1 · P1 0 · 新增价格 1 · 异常 0",
@@ -183,6 +183,36 @@
         "note": "连续两次后续正式披露核扣非与回款，滚动简化FCF为正且扣非转化约≥70%，毛利/应收库存及回购重售/股数可解释；只触价不买入，低于下沿先查论文；首笔0.5%–1%、总参考≤2%；港元，须另核汇率税费和流动性",
         "research_link": "../%E4%B8%89%E7%8E%AF%E9%9B%86%E5%9B%A2/%E4%B8%89%E7%8E%AF%E9%9B%86%E5%9B%A2-research-20261114.md",
         "research_date": "2026-11-14"
+      }
+    },
+    {
+      "fingerprint": "2afd4dc4b5ca33bce3137b0d338890400b44d0a586fb5ba9266b3c7ce108d2f6",
+      "section": "price",
+      "priority": "P0",
+      "target_id": "安克创新",
+      "name": "安克创新",
+      "title": "H股分批评估区（105港元=8%线、87港元=10%线）：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "TRIGGERED",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "TRIGGERED",
+        "price": 94.4,
+        "market": "H",
+        "zone_label": "H股分批评估区（105港元=8%线、87港元=10%线）",
+        "low": 80,
+        "high": 105,
+        "direction": "range",
+        "note": "H股2026-07-27已纳入港股通；折价成本：日均成交约3300万港元、2027-01-04基石解禁2327万股（占H股46.5%）、港股通股息红利税20%。以港元/美元10%门槛衡量，H股在105港元以上不通过。",
+        "research_link": "../%E5%AE%89%E5%85%8B%E5%88%9B%E6%96%B0/%E5%AE%89%E5%85%8B%E5%88%9B%E6%96%B0-research-20261126.md",
+        "research_date": "2026-11-26"
       }
     },
     {
@@ -456,36 +486,6 @@
       }
     },
     {
-      "fingerprint": "11434d5408a4006a6ed193fcafae4508d37f42b23a2be45f79a599d94050e257",
-      "section": "price",
-      "priority": "P1",
-      "target_id": "杭叉集团",
-      "name": "杭叉集团",
-      "title": "研究性分批评估带：NEAR",
-      "why_now": "现价 21.94，距上沿 21.50 5% 内",
-      "status": "NEAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "NEAR",
-        "current_status": "NEAR",
-        "price": 21.94,
-        "market": "A",
-        "zone_label": "研究性分批评估带",
-        "low": 20,
-        "high": 21.5,
-        "direction": "range",
-        "note": "价格单独达标不触发买入；须Q3应收增速向营收靠拢、CFO/归母改善，且关联交易与可转债条款不损每股回报",
-        "research_link": "../%E6%9D%AD%E5%8F%89%E9%9B%86%E5%9B%A2/%E6%9D%AD%E5%8F%89%E9%9B%86%E5%9B%A2-research-20260926.md",
-        "research_date": "2026-09-26"
-      }
-    },
-    {
       "fingerprint": "babe4f12caf37f9fe023415fd9e55a6a3ce83120cfd7e01f2358252bc8c29470",
       "section": "price",
       "priority": "P1",
@@ -516,13 +516,13 @@
       }
     },
     {
-      "fingerprint": "c2d091199bb9eec617dd394f14dc96c963b339603c99a5c2dd33868763123925",
+      "fingerprint": "ef0d4004f1edb43c88f9a0763236b1bf0b4d996fef00c11e9493aaecef25c53f",
       "section": "price",
       "priority": "P1",
       "target_id": "圣邦股份",
       "name": "圣邦股份",
-      "title": "确认带：NEAR",
-      "why_now": "现价 72.32，距上沿 70.00 5% 内",
+      "title": "主体建仓带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
       "status": "NEAR",
       "verified_facts": [],
       "source_urls": [],
@@ -532,17 +532,17 @@
       "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "NEAR",
+        "previous_status": null,
         "current_status": "NEAR",
         "price": 72.32,
         "market": "A",
-        "zone_label": "确认带",
+        "zone_label": "主体建仓带",
         "low": 55,
         "high": 70,
         "direction": "range",
-        "note": "",
-        "research_link": "../%E5%9C%A3%E9%82%A6%E8%82%A1%E4%BB%BD/%E5%9C%A3%E9%82%A6%E8%82%A1%E4%BB%BD-research-20260803.md",
-        "research_date": "2026-08-03"
+        "note": "CNY。对应2026E归母11.0亿的34.4—43.8倍PE、十年基准IRR 4.2%—6.8%。70—80元为研究性首笔带（≤3%，十年基准IRR 2.8%—4.1%），无需价格提醒；低于55元先核永久损失（扣非转负/存货跌价超5%收入/泛工业增速<30%），触价≠自动买。2026-08-03设定的“连续两季扣非、CFO、存货周转共同改善”闸门已于2026Q3满足，故70—80元允许首笔。",
+        "research_link": "../%E5%9C%A3%E9%82%A6%E8%82%A1%E4%BB%BD/%E5%9C%A3%E9%82%A6%E8%82%A1%E4%BB%BD-research-20261126.md",
+        "research_date": "2026-11-26"
       }
     },
     {
@@ -633,36 +633,6 @@
         "note": "替代旧45—55带；下一正式报告单季CFO为正、滚动CFO覆盖全部现金CapEx，应收同比增速≤收入同比+5个百分点、库存减值可解释，光通信利润稳定且定增最终条款/每股回报重算通过才研究首笔约0.5%、总参考≤1.5%；低于30先查永久损失，价到仅复检。",
         "research_link": "../%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5/%E4%BA%A8%E9%80%9A%E5%85%89%E7%94%B5-research-20261124.md",
         "research_date": "2026-11-24"
-      }
-    },
-    {
-      "fingerprint": "d1984d8bdcba856f8cbf8ab847309a4afe8afa3371280e91169448598a3422f0",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "安克创新",
-      "name": "安克创新",
-      "title": "评估带：FAR",
-      "why_now": "现价 111.50，区间 [87.00, 105.00]",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 111.5,
-        "market": "A",
-        "zone_label": "评估带",
-        "low": 87,
-        "high": 105,
-        "direction": "range",
-        "note": "最新2026H1精读明确要求价格进入其引用的原研究带，故A股87—105元沿用原研究；同时须CFO/净利明显高于80%、库存改善。 H1利润表强但CFO/归母仅42.5%、存货半年+34.8%；只有价格进入原带且现金转换明显改善才评估加仓",
-        "research_link": "../%E5%AE%89%E5%85%8B%E5%88%9B%E6%96%B0/%E5%AE%89%E5%85%8B%E5%88%9B%E6%96%B0-earnings-2026H1.md",
-        "research_date": "2026-08-31"
       }
     },
     {
@@ -783,36 +753,6 @@
         "note": "仅条件研究评估：新业务单季亏损≤100亿元且环比未反弹，零售经营利润率≥4.5%，库存周转不再高于41.2天；下一正式披露补足含土地全现金CapEx、少数分配与并购资金桥，滚动归属股东现金为正，欧洲无新增失控资金承诺后才研究首笔约0.5%、总参考≤2%。低于下沿先核永久损失；不因价格触发自动买入。",
         "research_link": "../%E4%BA%AC%E4%B8%9C%E9%9B%86%E5%9B%A2/%E4%BA%AC%E4%B8%9C%E9%9B%86%E5%9B%A2-research-20261124.md",
         "research_date": "2026-11-24"
-      }
-    },
-    {
-      "fingerprint": "b284793fd1f77e99b6a7735b92ab1ea4a26bea691c357febd5321df023a43d4d",
-      "section": "price",
-      "priority": "P2",
-      "target_id": "拓荆科技",
-      "name": "拓荆科技",
-      "title": "加仓带：FAR",
-      "why_now": "现价 456.14，触发线 420.00",
-      "status": "FAR",
-      "verified_facts": [],
-      "source_urls": [],
-      "next_workflow": null,
-      "needs_human_review": false,
-      "limitations": [],
-      "notify": false,
-      "resolved": false,
-      "metadata": {
-        "previous_status": "FAR",
-        "current_status": "FAR",
-        "price": 456.14,
-        "market": "A",
-        "zone_label": "加仓带",
-        "low": null,
-        "high": 420,
-        "direction": "below",
-        "note": "主题期权仓上限极严",
-        "research_link": "../%E6%8B%93%E8%8D%86%E7%A7%91%E6%8A%80/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md",
-        "research_date": "2026-07-20"
       }
     },
     {
@@ -963,6 +903,36 @@
         "note": "接续20260928旧28—32元带；首笔参考0.5%、总参考≤1%。须后续连续两次正式披露存货及同口径净债下降、单季CFO为正，滚动CFO覆盖全部现金CapEx，季度毛利约≥18%，并核应收账龄、减值及矿山预算，无新增供料或合规红线；低于25先核论文损坏，非自动买入",
         "research_link": "../%E5%8E%A6%E9%97%A8%E9%92%A8%E4%B8%9A/%E5%8E%A6%E9%97%A8%E9%92%A8%E4%B8%9A-research-20261124.md",
         "research_date": "2026-11-24"
+      }
+    },
+    {
+      "fingerprint": "f0a1e24550c508e15bebc08e0fb21e5cd0398314f9259106b1af8d3fc0197d51",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "杭叉集团",
+      "name": "杭叉集团",
+      "title": "研究性分批评估带：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 21.94,
+        "market": "A",
+        "zone_label": "研究性分批评估带",
+        "low": 18.5,
+        "high": 20.0,
+        "direction": "range",
+        "note": "价格单独达标不触发买入。须同时满足：①年报应收账款增速与营收增速差距收窄至5pp内；②存货增速降至营收增速附近、存货天数不再扩张；③全年CFO/归母≥70%且应付账款天数不再上升；④可转债最终转股价与募投回报可核、不造成明显低于内在价值的稀释；⑤中策橡胶季度归母同比降幅收窄",
+        "research_link": "../%E6%9D%AD%E5%8F%89%E9%9B%86%E5%9B%A2/%E6%9D%AD%E5%8F%89%E9%9B%86%E5%9B%A2-research-20261126.md",
+        "research_date": "2026-11-26"
       }
     },
     {
@@ -1176,6 +1146,36 @@
       }
     },
     {
+      "fingerprint": "580b656fd9c5e60347f196d80fbfe0017cbbb3ad91d027b63ebf7a90e2acb456",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "安克创新",
+      "name": "安克创新",
+      "title": "A股8%IRR加仓评估区（89元为8%线）：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 111.5,
+        "market": "A",
+        "zone_label": "A股8%IRR加仓评估区（89元为8%线）",
+        "low": 85,
+        "high": 98,
+        "direction": "range",
+        "note": "价格进入本区才评估分批。必须同时满足：滚动CFO/归母明显高于八成（2026前三季仅16.7%）、存货周转天数自134天回落、无新增召回。2026年约7亿元税后利润来自IEEPA一次性退款，2027年不重复，故不得据2026年增速外推。",
+        "research_link": "../%E5%AE%89%E5%85%8B%E5%88%9B%E6%96%B0/%E5%AE%89%E5%85%8B%E5%88%9B%E6%96%B0-research-20261126.md",
+        "research_date": "2026-11-26"
+      }
+    },
+    {
       "fingerprint": "ef2189885e958442520c97e7fbcb5cd8495325da4cff1cb5f049c84c598edb3a",
       "section": "price",
       "priority": "P2",
@@ -1236,13 +1236,13 @@
       }
     },
     {
-      "fingerprint": "f1f7697d0ca2d14e5b0d2d8d3f92a2e117194aa83ce8bbd763a3d6cb480529f6",
+      "fingerprint": "8333050da1418f91d73254e54fe6e3b95d781c79ccc66d6303b26d5171faa5d9",
       "section": "price",
       "priority": "P2",
       "target_id": "永新股份",
-      "name": "永新股份",
-      "title": "等待带：FAR",
-      "why_now": "现价 11.65，触发线 10.00",
+      "name": "永新股份（黄山永新股份有限公司）",
+      "title": "研究评估带（PE≤14x、股息率≥5.4%）：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
       "status": "FAR",
       "verified_facts": [],
       "source_urls": [],
@@ -1252,17 +1252,17 @@
       "notify": false,
       "resolved": false,
       "metadata": {
-        "previous_status": "FAR",
+        "previous_status": null,
         "current_status": "FAR",
         "price": 11.65,
         "market": "A",
-        "zone_label": "等待带",
+        "zone_label": "研究评估带（PE≤14x、股息率≥5.4%）",
         "low": null,
         "high": 10,
         "direction": "below",
-        "note": "PE<14x；更理想9–10元",
-        "research_link": "../%E6%B0%B8%E6%96%B0%E8%82%A1%E4%BB%BD-deepseek%E5%88%86%E6%9E%90/%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A.md",
-        "research_date": "2026-04-25"
+        "note": "现价11.65元（PE(TTM)16.18x、股息率4.64%）不买。10元对应PE 13.9x、股息率5.4%；9.0–9.5元（PE 12.5–13.2x、股息率5.7–6.0%）为较理想带，已在同一档内处理。须同时满足：单季毛利率≥23%、滚动OCF/归母≥80%、资本开支同比见顶、年度分红率维持70%+；总参考≤2%。触价不等于买入。",
+        "research_link": "../%E6%B0%B8%E6%96%B0%E8%82%A1%E4%BB%BD-deepseek%E5%88%86%E6%9E%90/%E6%B0%B8%E6%96%B0%E8%82%A1%E4%BB%BD-research-20261126.md",
+        "research_date": "2026-11-26"
       }
     },
     {
@@ -1473,6 +1473,36 @@
         "note": "连续两次后续正式季度披露核海外当地币增长约≥10%、营业利润率约≥50%、滚动FCF/归母约≥80%，应收库存可解释、并购现金与资本分配可核；入带后重估才研究首笔约0.5%、总参考≤2%；低于11000先查永久损坏；旧64200/55100等值12840/11020已被本次条件带接替，绝非自动买单",
         "research_link": "../Keyence/Keyence-research-20261124.md",
         "research_date": "2026-11-24"
+      }
+    },
+    {
+      "fingerprint": "318e06d3a79cee45d50b4d304019486a39efe7d52259faa1f9f83a34f517473c",
+      "section": "price",
+      "priority": "P2",
+      "target_id": "拓荆科技",
+      "name": "拓荆科技（拓荆科技股份有限公司；Piotech Inc.）",
+      "title": "分层研究带（上档330—380条件首笔／下档250—300分批）：初始基线",
+      "why_now": "当前价格状态已记录为初始基线，不能据此声称刚刚进入价格条件。",
+      "status": "FAR",
+      "verified_facts": [],
+      "source_urls": [],
+      "next_workflow": null,
+      "needs_human_review": false,
+      "limitations": [],
+      "notify": false,
+      "resolved": false,
+      "metadata": {
+        "previous_status": null,
+        "current_status": "FAR",
+        "price": 456.14,
+        "market": "A",
+        "zone_label": "分层研究带（上档330—380条件首笔／下档250—300分批）",
+        "low": 250,
+        "high": 380,
+        "direction": "range",
+        "note": "CNY。两层含义不同：①380—330元=条件式研究带，对应2027E扣非PE 44—50x、2026E扣非PE 59—68x，须同时满足2027中报收入增速≥25%、单季毛利率≥38%、合同负债环比连续两期回升、OCF回正且OCF/扣非≥60%，以及2027-01-04定增798.60万股解禁抛压消化；②300—250元=分批建仓带，对应2027E扣非PE 33—40x，须再叠加存储Capex未见顶（TrendForce 2026-11-25已判2027 NAND供过于求）、25亿并购无商誉减值且业绩承诺收入达标、2027年扣非≥22亿元。全带触价不自动买；低于250先查论文破坏。",
+        "research_link": "../%E6%8B%93%E8%8D%86%E7%A7%91%E6%8A%80/%E6%8B%93%E8%8D%86%E7%A7%91%E6%8A%80-research-20261126.md",
+        "research_date": "2026-11-26"
       }
     },
     {
