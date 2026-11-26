@@ -6,9 +6,10 @@ import json
 import math
 import os
 from dataclasses import asdict, replace
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Iterable
+from zoneinfo import ZoneInfo
 
 from .models import MonitorItem, ReportPaths, RunResult
 from .transitions import PRIORITY_RANK
@@ -181,7 +182,8 @@ def _render_price_table(items: Iterable[MonitorItem]) -> list[str]:
 
 def render_markdown(result: RunResult, *, run_date: date | None = None) -> str:
     result = price_result(result)
-    day = run_date or date.today()
+    now = datetime.now(ZoneInfo("Asia/Shanghai"))
+    day = run_date or now.date()
     health = "、".join(
         f"{row.source}={row.status}" + (f"（{row.safe_message}）" if row.safe_message else "")
         for row in result.source_health
@@ -189,7 +191,7 @@ def render_markdown(result: RunResult, *, run_date: date | None = None) -> str:
     lines = [
         "# 每日监控 · 价格监控",
         "",
-        f"**数据截止日**：{day.isoformat()}（Asia/Shanghai）",
+        f"**数据截止时间**：{day.isoformat()} {now:%H:%M:%S}（Asia/Shanghai）",
         f"**运行状态**：{result.status}",
         f"**摘要**：{_summary(result)}",
         f"**数据源状态**：{health}",
