@@ -85,6 +85,30 @@ def services(*, quote_price=90.0):
 
 
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_target_with_documented_quote_gap_keeps_research_entry_without_alert(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            report = root / "reports" / "swedish-research-20260824.md"
+            report.parent.mkdir()
+            report.write_text("# 瑞典上市公司研究\n", encoding="utf-8")
+            triggers = write_triggers(root, links=[str(report.relative_to(root))])
+            payload = json.loads(triggers.read_text())
+            target = payload["targets"][0]
+            target.update(codes={}, quote_unavailable_reason="瑞典市场（SEK）尚未接入行情")
+            triggers.write_text(json.dumps(payload))
+
+            run = run_monitor(options(root, triggers), services())
+
+            price = next(row for row in run.items if row.section == "price")
+            self.assertEqual((price.priority, price.status), ("-", "NO_QUOTE"))
+            self.assertEqual(run.status, "OK")
+            self.assertIsNone(price.metadata["price"])
+            self.assertFalse(run.notification_items)
+            self.assertEqual(run.next_state["price_states"], {})
+            markdown = run.report_paths.latest.read_text()
+            self.assertIn("瑞典市场（SEK）尚未接入行情", markdown)
+            self.assertIn("swedish-research-20260824.md", markdown)
+
     def test_target_without_price_zones_is_displayed_unrated_without_price_state(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

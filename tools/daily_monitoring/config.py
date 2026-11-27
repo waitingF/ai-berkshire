@@ -25,6 +25,9 @@ def validate_price_zones(target: dict[str, Any]) -> list[str]:
     codes = target.get("codes") or {}
     errors: list[str] = []
     by_market: dict[str, list[dict[str, Any]]] = {}
+    quote_gap = target.get("quote_unavailable_reason")
+    if not codes and not (isinstance(quote_gap, str) and quote_gap.strip()):
+        errors.append(f"{target_id}：缺少 codes；仅保留研究入口时必须注明 quote_unavailable_reason")
 
     for zone in target.get("zones") or []:
         if not isinstance(zone, dict):

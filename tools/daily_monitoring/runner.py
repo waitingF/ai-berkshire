@@ -170,6 +170,8 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
     for target in targets:
         zones = zones_by_target[target["id"]]
         if not zones:
+            quote_gap = target.get("quote_unavailable_reason") if not target.get("codes") else None
+            label = quote_gap or "未登记价格区间"
             for market, code in (target.get("codes") or {"-": None}).items():
                 items.append(MonitorItem(
                     fingerprint=hashlib.sha256(
@@ -177,10 +179,10 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
                     ).hexdigest(),
                     section="price", priority="-", target_id=target["id"],
                     name=str(target.get("name") or target["id"]),
-                    title="未登记价格区间", status="NO_ZONE",
-                    why_now="仅展示行情；未登记有效价格区间，无法判断价格优先级。",
+                    title=label, status="NO_QUOTE" if quote_gap else "NO_ZONE",
+                    why_now=quote_gap or "仅展示行情；未登记有效价格区间，无法判断价格优先级。",
                     metadata={"market": market, "price": _quote_price(quotes.get(str(code))),
-                              "zone_label": "未登记价格区间"},
+                              "zone_label": label},
                 ))
         for zone in zones:
             code = (target.get("codes") or {}).get(zone.get("market"))

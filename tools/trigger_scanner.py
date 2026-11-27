@@ -190,8 +190,6 @@ def cmd_check():
             warns.append(f"{tid}：group 非法（{t.get('group')}），应为 重点/台账")
 
         codes = t.get("codes", {})
-        if not codes:
-            errors.append(f"{tid}：缺少 codes（无法拉行情）")
         for mkt, code in codes.items():
             if code in seen_codes:
                 errors.append(f"{tid}：代码重复 {code}（{mkt}）")

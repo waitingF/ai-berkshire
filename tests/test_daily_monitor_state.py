@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
+from unittest.mock import patch
 
 from tools.daily_monitoring import config
 from tools.daily_monitoring import state as state_module
@@ -115,6 +116,22 @@ class TriggerConfigTest(unittest.TestCase):
         self.assertEqual(
             [zone["dir"] for zone in targets[0]["zones"]], ["range", "above"]
         )
+
+    def test_quote_gap_requires_reason_in_both_validators(self):
+        for reason, valid in ((None, False), ("   ", False), (True, False),
+                              ("瑞典市场尚未适配行情", True)):
+            with self.subTest(reason=reason):
+                target = {"id": "样例公司", "name": "Example", "group": "台账",
+                          "codes": {}, "zones": [], "quote_unavailable_reason": reason}
+                path = self._write_targets([target])
+                if valid:
+                    self.assertEqual(config.load_targets(path)[0]["codes"], {})
+                else:
+                    with self.assertRaisesRegex(config.ConfigError, "缺少 codes"):
+                        config.load_targets(path)
+                with patch.object(trigger_scanner, "TRIGGERS_FILE", str(path)):
+                    with redirect_stdout(io.StringIO()):
+                        self.assertEqual(trigger_scanner.cmd_check(), 0 if valid else 1)
 
     def test_rejects_below_and_range_for_same_target_market(self):
         path = self._write_targets(
