@@ -1,7 +1,9 @@
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
+from xml.etree import ElementTree
 
 
 SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "build-github-pages.py"
@@ -15,6 +17,76 @@ def load_builder_module():
 
 
 class BuildGitHubPagesTest(unittest.TestCase):
+    def test_monitor_names_use_market_code_and_preserve_research_links_and_aliases(self):
+        builder = load_builder_module()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            reports = root / "reports"
+            daily = reports / "daily-monitor"
+            daily.mkdir(parents=True)
+            data = root / "data"
+            data.mkdir()
+            targets = [
+                {"id": "京东", "name": "京东集团", "codes": {"H": "hk09618", "US": "usJD"}},
+                {"id": "中国核电", "name": "中国核能电力股份有限公司（中国核电）", "codes": {"A": "sh601985"}},
+            ]
+            (data / "triggers.json").write_text(json.dumps({"targets": targets}))
+            (data / "monitor-display-names.json").write_text(json.dumps({
+                "京东": {"en": "JD.com"}, "中国核电": {"zh": "中国核电"},
+            }))
+            source = (
+                "# 每日监控\n\n"
+                "| 优先级 | 标的 | 市场 | 监控区间 |\n"
+                "| --- | --- | --- | --- |\n"
+                "| P2 | [京东集团](../京东/研究.md) | H | 复核带 |\n"
+                "| P2 | [京东集团](../京东/研究.md) | US | 复核带 |\n"
+                "| P2 | 中国核能电力股份有限公司（中国核电） | A | 复核带 |\n"
+                "| P2 | 未登记公司 | US | 复核带 |\n"
+            )
+            (daily / "daily-monitor-latest.md").write_text(source)
+            (daily / "daily-monitor-20261126.md").write_text(source)
+            builder.build_site(reports, root / "site")
+
+            rendered = (root / "site/reports/daily-monitor/daily-monitor-latest.html").read_text()
+            table_html = rendered.split('<table data-monitor-table="">', 1)[1].split("</table>", 1)[0]
+            table = ElementTree.fromstring("<table>" + table_html + "</table>")
+            rows = table.findall("tbody/tr")
+            labels = ["".join(row[2].itertext()) for row in rows]
+            self.assertEqual(labels, ["京东集团 · 09618.HK", "JD.com · JD", "中国核电 · 601985.SH", "未登记公司"])
+            for row in rows[:2]:
+                self.assertEqual(row[2].find("a").get("href"), "../京东/研究.html")
+                self.assertIn("京东集团", row.get("data-monitor-aliases"))
+            self.assertIn("hk09618", rows[0].get("data-monitor-aliases"))
+            self.assertNotIn("hk09618", rows[1].get("data-monitor-aliases"))
+            self.assertEqual([row[0].text for row in rows], ["1", "2", "3", "4"])
+            self.assertEqual((daily / "daily-monitor-latest.md").read_text(), source)
+            archive = (root / "site/reports/daily-monitor/daily-monitor-20261126.html").read_text()
+            self.assertNotIn("JD.com · JD", archive)
+
+    def test_monitor_stock_codes_keep_leading_zeros_and_share_classes(self):
+        builder = load_builder_module()
+        for raw, expected in [
+            ("hk00700", "00700.HK"), ("sh600519", "600519.SH"),
+            ("sz000021", "000021.SZ"), ("bj920001", "920001.BJ"),
+            ("usBRK.B", "BRK.B"), ("kr000660", "000660"), ("jp6861", "6861"),
+        ]:
+            with self.subTest(raw=raw):
+                self.assertEqual(builder.monitor_stock_code(raw), expected)
+
+    def test_registered_monitor_names_use_chinese_for_ah_and_english_elsewhere(self):
+        builder = load_builder_module()
+        root = SCRIPT_PATH.parents[1]
+        labels = builder.load_monitor_labels(root / "reports")
+        targets = json.loads((root / "data/triggers.json").read_text())["targets"]
+        self.assertEqual(len(labels), sum(len(target["codes"]) for target in targets))
+        for (full_name, market), (label, _) in labels.items():
+            with self.subTest(name=full_name, market=market):
+                short_name, code = label.split(" · ")
+                has_chinese = any("\u4e00" <= char <= "\u9fff" for char in short_name)
+                self.assertEqual(has_chinese, market in {"A", "H"})
+                self.assertTrue(code)
+                self.assertNotIn("（", short_name)
+
     def test_build_site_renders_markdown_index_and_static_assets(self):
         builder = load_builder_module()
 

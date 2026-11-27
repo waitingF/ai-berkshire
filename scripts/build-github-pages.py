@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
 import shutil
 from pathlib import Path
 from urllib.parse import quote, urlsplit, urlunsplit
@@ -110,7 +111,43 @@ class MarkdownLinkRewriteExtension(Extension):
         md.treeprocessors.register(MarkdownLinkRewriter(md), "md_link_rewrite", 0)
 
 
+def monitor_stock_code(quote_code: str) -> str:
+    """Use familiar stock codes while preserving leading zeros and share classes."""
+    prefix = quote_code[:2].lower()
+    if prefix not in {"sh", "sz", "bj", "hk", "us", "kr", "jp"}:
+        return quote_code.upper()
+    code = quote_code[2:].upper()
+    suffix = {"sh": ".SH", "sz": ".SZ", "bj": ".BJ", "hk": ".HK"}.get(prefix, "")
+    return code + suffix
+
+
+def load_monitor_labels(reports_dir: Path) -> dict[tuple[str, str], tuple[str, str]]:
+    """Keep presentation names separate from human-authored price monitoring rules."""
+    data_dir = reports_dir.parent / "data"
+    triggers = data_dir / "triggers.json"
+    if not triggers.exists():
+        return {}
+    names_path = data_dir / "monitor-display-names.json"
+    names = json.loads(names_path.read_text(encoding="utf-8")) if names_path.exists() else {}
+    labels = {}
+    for target in json.loads(triggers.read_text(encoding="utf-8")).get("targets", []):
+        target_id = target["id"]
+        full_name = target.get("name") or target_id
+        short_names = names.get(target_id, {})
+        for market, quote_code in (target.get("codes") or {}).items():
+            language = "zh" if market in {"A", "H"} else "en"
+            short_name = short_names.get(language) or full_name.split("（", 1)[0].split("(", 1)[0].strip()
+            label = f"{short_name} · {monitor_stock_code(quote_code)}"
+            aliases = " ".join([target_id, full_name, *short_names.values(), quote_code])
+            labels[(full_name, market)] = (label, aliases)
+    return labels
+
+
 class MonitorTableEnhancer(Treeprocessor):
+    def __init__(self, md, labels):
+        super().__init__(md)
+        self.labels = labels
+
     def run(self, root):
         for table in root.iter("table"):
             header = table.find("thead/tr")
@@ -120,6 +157,28 @@ class MonitorTableEnhancer(Treeprocessor):
             if not {"优先级", "标的", "监控区间"}.issubset(columns):
                 continue
             table.set("data-monitor-table", "")
+            if "市场" in columns:
+                for row in table.findall("tbody/tr"):
+                    cells = list(row)
+                    if len(cells) != len(columns):
+                        continue
+                    cell = cells[columns.index("标的")]
+                    name = "".join(cell.itertext()).strip()
+                    market = "".join(cells[columns.index("市场")].itertext()).strip()
+                    display = self.labels.get((name, market))
+                    if display is None:
+                        continue
+                    label, aliases = display
+                    link = cell.find("a")
+                    href = link.get("href") if link is not None else None
+                    cell.clear()
+                    if href:
+                        link = Element("a", {"href": href})
+                        link.text = label
+                        cell.append(link)
+                    else:
+                        cell.text = label
+                    row.set("data-monitor-aliases", aliases)
             if "序号" in columns:
                 continue
             number_header = Element("th", {"scope": "col"})
@@ -133,14 +192,18 @@ class MonitorTableEnhancer(Treeprocessor):
 
 
 class MonitorTableExtension(Extension):
+    def __init__(self, labels):
+        super().__init__()
+        self.labels = labels
+
     def extendMarkdown(self, md):
-        md.treeprocessors.register(MonitorTableEnhancer(md), "monitor_table", 1)
+        md.treeprocessors.register(MonitorTableEnhancer(md, self.labels), "monitor_table", 1)
 
 
-def render_markdown(markdown_text: str, *, monitor_tables: bool = False) -> str:
+def render_markdown(markdown_text: str, *, monitor_tables: bool = False, monitor_labels=None) -> str:
     extensions = [*MARKDOWN_EXTENSIONS, MarkdownLinkRewriteExtension()]
     if monitor_tables:
-        extensions.append(MonitorTableExtension())
+        extensions.append(MonitorTableExtension(monitor_labels or {}))
     renderer = markdown.Markdown(
         extensions=extensions,
         extension_configs={"toc": {"slugify": slugify_unicode}},
@@ -298,15 +361,21 @@ def render_report(
     reports_dir: Path,
     output_dir: Path,
     available_pinned: set[str] | None = None,
+    monitor_labels=None,
 ) -> None:
     markdown_text = markdown_path.read_text(encoding="utf-8")
     title = title_from_markdown(markdown_text, markdown_path.stem)
     source_relative = markdown_path.relative_to(reports_dir)
     root_prefix = "../" * (len(output_path.relative_to(output_dir).parents) - 1)
     breadcrumb_html = render_breadcrumb(source_relative.parent, root_prefix, title)
+    content_html = render_markdown(
+        markdown_text,
+        monitor_tables=source_relative.parent == Path("daily-monitor"),
+        monitor_labels=monitor_labels if source_relative.as_posix() == "daily-monitor/daily-monitor-latest.md" else None,
+    )
     body_html = f"""    {breadcrumb_html}
     <article class="report-article">
-{render_markdown(markdown_text, monitor_tables=source_relative.parent == Path("daily-monitor"))}
+{content_html}
     </article>"""
     current_nav = source_relative.as_posix()
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -1467,7 +1536,10 @@ def write_scripts(output_dir: Path) -> None:
       const normalize = (value) => value.trim().toLocaleLowerCase("zh-CN");
       const rows = Array.from(table.querySelectorAll("tbody tr"), (row) => ({
         row,
-        text: normalize(Array.from(row.cells, (cell) => cell.textContent || "").join(" ")),
+        text: normalize([
+          ...Array.from(row.cells, (cell) => cell.textContent || ""),
+          row.dataset.monitorAliases || "",
+        ].join(" ")),
       }));
       if (!rows.length) {
         return;
@@ -1480,7 +1552,7 @@ def write_scripts(output_dir: Path) -> None:
       bar.innerHTML = `
         <label class="filter-label" for="${inputId}">搜索价格监控</label>
         <input id="${inputId}" data-monitor-search type="search" autocomplete="off"
-          placeholder="输入标的、市场、优先级等关键词，空格分隔多个条件" aria-describedby="${statusId}">
+          placeholder="输入简称、股票代码、市场或优先级，空格分隔多个条件" aria-describedby="${statusId}">
         <p id="${statusId}" class="filter-status" role="status" aria-live="polite"></p>`;
       const input = bar.querySelector("input");
       const status = bar.querySelector("[role='status']");
@@ -1704,6 +1776,7 @@ def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:
         report_links.append((source_relative, output_relative))
 
     available_pinned = available_pinned_filenames(report_links)
+    monitor_labels = load_monitor_labels(reports_dir)
     for markdown_path, (_, output_relative) in zip(markdown_paths, report_links):
         render_report(
             markdown_path,
@@ -1711,6 +1784,7 @@ def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:
             reports_dir,
             output_dir,
             available_pinned,
+            monitor_labels,
         )
 
     copy_static_assets(reports_dir, output_reports_dir)
