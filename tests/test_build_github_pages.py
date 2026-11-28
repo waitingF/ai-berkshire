@@ -189,6 +189,10 @@ class BuildGitHubPagesTest(unittest.TestCase):
             site_js = (output_dir / "assets" / "site.js").read_text(encoding="utf-8")
             site_css = (output_dir / "assets" / "site.css").read_text(encoding="utf-8")
 
+            self.assertIn('type="module" src="../../assets/monitor-table.mjs"', daily_monitor_html)
+            self.assertTrue((output_dir / "assets" / "monitor-table.mjs").is_file())
+            self.assertIn(".monitor-column-menu[popover]", site_css)
+
             self.assertEqual(builder.rewrite_markdown_href("腾讯/腾讯-thesis.md"), "腾讯/腾讯-thesis.html")
             self.assertEqual(
                 builder.rewrite_markdown_href("../标的跟踪表.md#命中率"),

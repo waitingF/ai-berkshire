@@ -35,3 +35,6 @@ jobs:
 
       - name: 运行完整离线校验
         run: bash scripts/validate-monitoring.sh --full
+
+      - name: 验证价格表排序与筛选
+        run: node --test tests/test_monitor_table.mjs
