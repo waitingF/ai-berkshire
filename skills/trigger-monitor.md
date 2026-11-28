@@ -43,7 +43,7 @@ description: Use when a research report contains an explicit price band, review 
 ```
 
 - `dir`：`below`（价格 ≤ high 触发）/ `range`（价格进入区间或低于 low，统一在价格 ≤ high 时触发）/ `above`（价格 ≥ low 触发 `WARN`）
-- `market`：必须对应 `codes` 里的键（A/H/US/KR/JP），否则 `--check` 报错
+- `market`：必须对应 `codes` 里的键（A/H/US/KR/JP/FR/UK/SE/NL/DE/AU/TW），否则 `--check` 报错。海外本地行情使用 `yahoo:` 代码，例如 `"UK": "yahoo:CHG.L"`；币种和后缀约束见 [每日监控](daily-monitor.md) 的“行情市场与计价”。
 - `action`：报告稳健结论（买入/分批/观望/回避）；`note`：触发附加条件（红线、前提）
 
 同一标的、同一市场的组合约束：
@@ -113,6 +113,6 @@ bash scripts/prepush-check.sh
 ## 边界
 
 - 触发只表示价位到达，**不代表买入信号**：是否建仓以对应 thesis/研究报告的红线与条件为准（`note` 字段带出）。
-- 行情为腾讯 API 快照，A股/港股当日最新，美股/韩股/日股为最近收盘。
+- 当前每日监控使用腾讯与 Yahoo Finance 本地市场行情快照，休市时展示最近交易时点；Yahoo 行情可能延迟。价格保留当地币种（GBp 为便士），不自动换汇或替换为 ADR。旧 `trigger_scanner.py` 扫描仅用于兼容预检，活动行情入口为 `daily_monitor.py`。
 
 *本监控用于学习研究跟踪，不构成投资建议。*

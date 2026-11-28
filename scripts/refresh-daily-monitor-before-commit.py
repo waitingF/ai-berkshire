@@ -14,7 +14,7 @@ from pathlib import Path
 
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
-    print("提交前刷新每日监控（腾讯行情，不发送通知）……", flush=True)
+    print("提交前刷新每日监控（腾讯 / Yahoo Finance 行情，不发送通知）……", flush=True)
     # A page refresh must not consume the scheduled monitor's notification baseline.
     with tempfile.TemporaryDirectory(prefix="daily-monitor-commit-") as runtime:
         state = Path(runtime) / "state.json"

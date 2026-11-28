@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .quotes import YAHOO_MARKETS, yahoo_symbol
 
 SUPPORTED_DISCLOSURE_SOURCES = frozenset({"cninfo", "hkex", "sec"})
 SUPPORTED_ZONE_DIRECTIONS = frozenset({"below", "range", "above"})
@@ -28,6 +29,12 @@ def validate_price_zones(target: dict[str, Any]) -> list[str]:
     quote_gap = target.get("quote_unavailable_reason")
     if not codes and not (isinstance(quote_gap, str) and quote_gap.strip()):
         errors.append(f"{target_id}：缺少 codes；仅保留研究入口时必须注明 quote_unavailable_reason")
+    for market, code in codes.items():
+        if isinstance(code, str) and code.startswith("yahoo:"):
+            symbol = yahoo_symbol(code)
+            spec = YAHOO_MARKETS.get(market)
+            if not symbol or not spec or not symbol.endswith(spec[0]):
+                errors.append(f"{target_id}：Yahoo 行情代码 {code} 与市场 {market} 不匹配或不受支持")
 
     for zone in target.get("zones") or []:
         if not isinstance(zone, dict):

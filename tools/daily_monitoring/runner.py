@@ -34,12 +34,9 @@ class MonitorServices:
 
 
 def _production_quotes(codes: list[str]) -> dict[str, dict[str, Any]]:
-    from tools.trigger_scanner import _curl_qq
+    from .quotes import fetch_quotes
 
-    result: dict[str, dict[str, Any]] = {}
-    for start in range(0, len(codes), 30):
-        result.update(_curl_qq(codes[start : start + 30]))
-    return result
+    return fetch_quotes(codes)
 
 
 def production_services() -> MonitorServices:
@@ -207,6 +204,17 @@ def run_monitor(options: MonitorOptions, services: MonitorServices) -> RunResult
                 "updated_at": options.today.isoformat(),
                 "price": price,
             }
+
+    codes_by_target = {target["id"]: target.get("codes") or {} for target in targets}
+    for index, item in enumerate(items):
+        if item.section != "price":
+            continue
+        code = codes_by_target[item.target_id].get(item.metadata.get("market"))
+        quote = quotes.get(str(code)) or {}
+        items[index] = replace(item, metadata={
+            **item.metadata, "currency": quote.get("currency"),
+            "quote_time": quote.get("time"), "quote_source": quote.get("source"),
+        })
 
     research_reports = {
         str(target.get("id") or ""): {

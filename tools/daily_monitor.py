@@ -32,7 +32,7 @@ DEFAULT_REPORT_DIR = ROOT / "reports" / "daily-monitor"
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="每日价格监控：读取已登记价格区间与腾讯行情快照。"
+        description="每日价格监控：读取已登记价格区间与腾讯 / Yahoo Finance 行情快照。"
     )
     parser.add_argument("--check", action="store_true", help="只读校验配置和状态")
     parser.add_argument(

@@ -194,8 +194,8 @@ def cmd_check():
             if code in seen_codes:
                 errors.append(f"{tid}：代码重复 {code}（{mkt}）")
             seen_codes.add(code)
-            if not (code.startswith(("sh", "sz", "bj", "hk", "us", "kr", "jp"))):
-                warns.append(f"{tid}：代码前缀异常 {code}（应 sh/sz/bj/hk/us/kr/jp）")
+            if not (code.startswith(("sh", "sz", "bj", "hk", "us", "kr", "jp", "yahoo:"))):
+                warns.append(f"{tid}：代码前缀异常 {code}（应 sh/sz/bj/hk/us/kr/jp/yahoo:）")
 
         errors.extend(validate_price_zones(t))
 

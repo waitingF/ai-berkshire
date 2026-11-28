@@ -85,6 +85,29 @@ def services(*, quote_price=90.0):
 
 
 class DailyMonitorRunnerTest(unittest.TestCase):
+    def test_overseas_quote_details_reach_report_without_creating_price_alert(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            triggers = write_triggers(root)
+            payload = json.loads(triggers.read_text())
+            payload["targets"][0]["codes"] = {"UK": "yahoo:CHG.L"}
+            triggers.write_text(json.dumps(payload))
+            quote = {"price": 568, "currency": "GBp", "source": "Yahoo Finance",
+                     "time": "2026-11-28 00:35:12"}
+
+            run = run_monitor(options(root, triggers), MonitorServices(
+                quote_provider=lambda codes: {"yahoo:CHG.L": quote}))
+
+            row = next(item for item in run.items if item.section == "price")
+            self.assertEqual(row.metadata["currency"], "GBp")
+            self.assertEqual(row.metadata["quote_time"], quote["time"])
+            self.assertEqual(row.metadata["quote_source"], "Yahoo Finance")
+            self.assertEqual(run.status, "OK")
+            self.assertFalse(run.notification_items)
+            self.assertIn("568.00", run.report_paths.latest.read_text())
+            self.assertIn("GBp", run.report_paths.latest.read_text())
+            self.assertIn("Yahoo Finance", run.report_paths.latest.read_text())
+
     def test_target_with_documented_quote_gap_keeps_research_entry_without_alert(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -7342,14 +7342,15 @@
       "id": "BNP Paribas",
       "name": "BNP Paribas",
       "group": "台账",
-      "codes": {},
-      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/BNP-Paribas-income-investment-20260715.md（2026-07-15）；仅回填原文，不视为今日重研或最新推荐。 按EUR计价的收入型研究，当前未接入巴黎市场；回报和分配条件保留原文。",
+      "codes": {
+        "FR": "yahoo:BNP.PA"
+      },
+      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/BNP-Paribas-income-investment-20260715.md（2026-07-15）；仅回填原文，不视为今日重研或最新推荐。 按EUR计价的收入型研究，使用巴黎本地市场EUR行情；回报和分配条件保留原文。",
       "links": [
         "reports/BNP-Paribas-income-investment-20260715.md"
       ],
       "zones": [],
-      "events": [],
-      "quote_unavailable_reason": "法国市场（EUR）尚未接入行情"
+      "events": []
     },
     {
       "id": "BYD",
@@ -7419,8 +7420,10 @@
       "id": "Chemring",
       "name": "Chemring",
       "group": "台账",
-      "codes": {},
-      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/chemring-group-deep-dive.md（2026-06-04）；仅回填原文，不视为今日重研或最新推荐。 原文理想介入450—480便士；未用英镑或美元行情混配，当前不自动扫描。",
+      "codes": {
+        "UK": "yahoo:CHG.L"
+      },
+      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/chemring-group-deep-dive.md（2026-06-04）；仅回填原文，不视为今日重研或最新推荐。 原文理想介入450—480便士；使用伦敦本地市场GBp便士行情，仅补充行情接入，未新增价格条件。",
       "links": [
         "reports/chemring-group-deep-dive.md"
       ],
@@ -7432,21 +7435,21 @@
           "label": "FY2026下半年业绩披露日历检查（原文预计12月）",
           "note": "补录原报告节点，仅供人工复核；历史日期不代表已经完成，不将未确认日期写成公司承诺。当前每日价格监控不扫描事件。"
         }
-      ],
-      "quote_unavailable_reason": "英国市场（GBp）尚未接入行情"
+      ]
     },
     {
       "id": "Elekta",
       "name": "Elekta",
       "group": "台账",
-      "codes": {},
-      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/Elekta/Elekta-investment-research-20260817.md（2026-08-17）；仅回填原文，不视为今日重研或最新推荐。 原文观察线SEK40、持仓复核SEK75—80；未换算ADR美元，当前不自动扫描。",
+      "codes": {
+        "SE": "yahoo:EKTA-B.ST"
+      },
+      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/Elekta/Elekta-investment-research-20260817.md（2026-08-17）；仅回填原文，不视为今日重研或最新推荐。 原文观察线SEK40、持仓复核SEK75—80；使用斯德哥尔摩本地市场SEK行情，未换算ADR美元，未新增价格条件。",
       "links": [
         "reports/Elekta/Elekta-investment-research-20260817.md"
       ],
       "zones": [],
-      "events": [],
-      "quote_unavailable_reason": "瑞典市场（SEK）尚未接入行情"
+      "events": []
     },
     {
       "id": "Equifax",
@@ -7765,14 +7768,15 @@
       "id": "Prosus",
       "name": "Prosus",
       "group": "台账",
-      "codes": {},
-      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/Prosus/Prosus-investment-research-20260817.md（2026-08-17）；仅回填原文，不视为今日重研或最新推荐。 原文主要按相对腾讯NAV折价复核，未提取静态价格条件。",
+      "codes": {
+        "NL": "yahoo:PRX.AS"
+      },
+      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/Prosus/Prosus-investment-research-20260817.md（2026-08-17）；仅回填原文，不视为今日重研或最新推荐。 原文主要按相对腾讯NAV折价复核，未提取静态价格条件；使用阿姆斯特丹本地市场EUR行情。",
       "links": [
         "reports/Prosus/Prosus-investment-research-20260817.md"
       ],
       "zones": [],
-      "events": [],
-      "quote_unavailable_reason": "荷兰市场（EUR）尚未接入行情"
+      "events": []
     },
     {
       "id": "RELX",
@@ -7792,14 +7796,15 @@
       "id": "Rheinmetall",
       "name": "Rheinmetall",
       "group": "台账",
-      "codes": {},
-      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/Rheinmetall/Rheinmetall-investment-research-20260817.md（2026-08-17）；仅回填原文，不视为今日重研或最新推荐。 原文目标买入研究带EUR850—950；未换算ADR美元，当前不自动扫描。",
+      "codes": {
+        "DE": "yahoo:RHM.DE"
+      },
+      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/Rheinmetall/Rheinmetall-investment-research-20260817.md（2026-08-17）；仅回填原文，不视为今日重研或最新推荐。 原文目标买入研究带EUR850—950；使用Xetra本地市场EUR行情，未换算ADR美元，未新增价格条件。",
       "links": [
         "reports/Rheinmetall/Rheinmetall-investment-research-20260817.md"
       ],
       "zones": [],
-      "events": [],
-      "quote_unavailable_reason": "德国市场（EUR）尚未接入行情"
+      "events": []
     },
     {
       "id": "SAP",
@@ -7956,8 +7961,10 @@
       "id": "WiseTech",
       "name": "WiseTech",
       "group": "台账",
-      "codes": {},
-      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/WiseTech/WiseTech-investment-research-20260817.md（2026-08-17）；仅回填原文，不视为今日重研或最新推荐。 原文AUD26—28且FY26 CargoWise增速≥14%或CVP收入提升量化验证；当前不自动扫描。",
+      "codes": {
+        "AU": "yahoo:WTC.AX"
+      },
+      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/WiseTech/WiseTech-investment-research-20260817.md（2026-08-17）；仅回填原文，不视为今日重研或最新推荐。 原文AUD26—28且FY26 CargoWise增速≥14%或CVP收入提升量化验证；使用澳大利亚本地市场AUD行情，原文经营条件仍须人工复核，未新增价格条件。",
       "links": [
         "reports/WiseTech/WiseTech-investment-research-20260817.md"
       ],
@@ -7969,8 +7976,7 @@
           "label": "原报告FY26业绩与CargoWise增速复核",
           "note": "补录原报告节点，仅供人工复核；历史日期不代表已经完成，不将未确认日期写成公司承诺。当前每日价格监控不扫描事件。"
         }
-      ],
-      "quote_unavailable_reason": "澳大利亚市场（AUD）尚未接入行情"
+      ]
     },
     {
       "id": "Zimmer_Biomet",
@@ -8458,27 +8464,29 @@
       "id": "华邦电子",
       "name": "华邦电子",
       "group": "台账",
-      "codes": {},
-      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/存储半导体/华邦电子_投资研究报告_20260512.md（2026-05-12）；仅回填原文，不视为今日重研或最新推荐。 原文TWSE2344，台币计价；当前行情适配不含台湾市场，原文估值条件待人工复核。",
+      "codes": {
+        "TW": "yahoo:2344.TW"
+      },
+      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/存储半导体/华邦电子_投资研究报告_20260512.md（2026-05-12）；仅回填原文，不视为今日重研或最新推荐。 原文TWSE2344，台币计价；已接入台湾本地市场TWD行情，原文估值条件待人工复核。",
       "links": [
         "reports/存储半导体/华邦电子_投资研究报告_20260512.md"
       ],
       "zones": [],
-      "events": [],
-      "quote_unavailable_reason": "台湾市场（TWD）尚未接入行情"
+      "events": []
     },
     {
       "id": "南亚科技",
       "name": "南亚科技",
       "group": "台账",
-      "codes": {},
-      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/存储半导体/南亚科技_投资研究报告_20260512.md（2026-05-12）；仅回填原文，不视为今日重研或最新推荐。 原文TWSE2408，台币计价；当前行情适配不含台湾市场，原文估值条件待人工复核。",
+      "codes": {
+        "TW": "yahoo:2408.TW"
+      },
+      "source": "2026-11-28本地报告覆盖补录；价格与经营判断依据 reports/存储半导体/南亚科技_投资研究报告_20260512.md（2026-05-12）；仅回填原文，不视为今日重研或最新推荐。 原文TWSE2408，台币计价；已接入台湾本地市场TWD行情，原文估值条件待人工复核。",
       "links": [
         "reports/存储半导体/南亚科技_投资研究报告_20260512.md"
       ],
       "zones": [],
-      "events": [],
-      "quote_unavailable_reason": "台湾市场（TWD）尚未接入行情"
+      "events": []
     },
     {
       "id": "唯品会",

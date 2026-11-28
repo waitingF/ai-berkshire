@@ -113,6 +113,8 @@ class MarkdownLinkRewriteExtension(Extension):
 
 def monitor_stock_code(quote_code: str) -> str:
     """Use familiar stock codes while preserving leading zeros and share classes."""
+    if quote_code.startswith("yahoo:"):
+        return quote_code.removeprefix("yahoo:")
     prefix = quote_code[:2].lower()
     if prefix not in {"sh", "sz", "bj", "hk", "us", "kr", "jp"}:
         return quote_code.upper()

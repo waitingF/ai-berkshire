@@ -15,14 +15,14 @@ This skill is generated from `skills/daily-monitor.md` so Claude Code and Codex 
 
 # 每日监控：价格监控
 
-对 `$ARGUMENTS` 执行价格监控。输入为 `data/triggers.json` 中的价格区间和腾讯行情快照；结果用于研究复核，不构成买卖或仓位结论。
+对 `$ARGUMENTS` 执行价格监控。输入为 `data/triggers.json` 中的价格区间和腾讯 / Yahoo Finance 行情快照；结果用于研究复核，不构成买卖或仓位结论。
 
 ## 执行契约
 
 1. 先运行 `date`，以 Asia/Shanghai 当日为数据截止日。
 2. 先只读校验：`python3 tools/daily_monitor.py --check`。
 3. 主动刷新：`python3 tools/daily_monitor.py`；该命令直接更新日期报告、latest Markdown/JSON 和价格机器状态，无需 AI 或公告源凭证。
-4. 读取 `reports/daily-monitor/daily-monitor-latest.md` 与同名 JSON；页面展示所有已登记标的的 `价格监控`，包含价格区间、现价、距边界、状态和已登记本地研究链接。同一标的多个价格区间分别展示；未登记有效价格区间的标的展示行情、标注未评级。
+4. 读取 `reports/daily-monitor/daily-monitor-latest.md` 与同名 JSON；页面展示所有已登记标的的 `价格监控`，包含价格区间、现价、距边界、状态、币种、行情时间、行情源和已登记本地研究链接。同一标的多个价格区间分别展示；未登记有效价格区间的标的展示行情、标注未评级。
 5. 解释 P0/P1/P2 和行情源健康度。达到区间只触发研究复核，不能自动改变 thesis、人工登记或组合。
 
 ## 范围与状态
@@ -34,6 +34,14 @@ This skill is generated from `skills/daily-monitor.md` so Claude Code and Codex 
 - Python 刷新命令本身不提交、不推送、不发送通知。GitHub Actions 与 `scripts/run-daily-monitor-local.sh` 使用现有发布流程提交机器产物后，由 Pages 展示 latest。
 - 自动运行时间以 `.github/workflows/daily-monitor.yml` 和本机 launchd 配置为准。
 - `reports/trigger-scan/` 为历史归档；过去的合并日报保留，Pages 活动入口仍钉 `reports/daily-monitor/daily-monitor-latest.md`。
+
+## 行情市场与计价
+
+- A/H/US/KR/JP 沿用腾讯代码；FR/UK/SE/NL/DE/AU/TW 使用 Yahoo Finance 本地证券代码，格式为 `"codes": {"UK": "yahoo:CHG.L"}`，无需 API Key。
+- Yahoo 后缀与币种：FR `.PA` / EUR，UK `.L` / GBp，SE `.ST` / SEK，NL `.AS` / EUR，DE `.DE` / EUR，AU `.AX` / AUD，TW `.TW` / TWD。代码须与市场匹配；不能使用美元 ADR 替代本地币种行情。GBp 为便士，100 GBp = 1 GBP，保留原币种，不自动换汇。
+- Yahoo 仅接受与登记代码和预期币种一致的 `regularMarketPrice`，并保留报价时间；可能延迟，休市时展示最近交易时点。页面行情时间统一转换为 Asia/Shanghai，不能把运行时间当成成交时间。
+- 两个 Yahoo 查询域名依次尝试；个别代码缺失、接口限流或不可用时保留其他有效报价并标记 `DEGRADED`，不使用历史缓存冒充新行情。
+- 接入行情不等于新增价格条件；`zones` 为空的标的仍为未评级。配置行情代码后移除过时的 `quote_unavailable_reason`，保留研究依据、事件和链接。
 
 ## 指定标的与离线验证
 
@@ -65,7 +73,7 @@ python3 tools/daily_monitor.py \
 
 ## 提交前自动刷新
 
-每个新 clone 执行一次 `bash scripts/install-git-hooks.sh`，启用版本化 `.githooks/pre-commit`。此后本地每次正常 `git commit` 都先联网刷新腾讯行情，并将 latest Markdown/JSON 和当日 Markdown 三个文件暂存进本次提交；推送到 main 后由现有 Pages workflow 发布。
+每个新 clone 执行一次 `bash scripts/install-git-hooks.sh`，启用版本化 `.githooks/pre-commit`。此后本地每次正常 `git commit` 都先联网刷新腾讯 / Yahoo Finance 行情，并将 latest Markdown/JSON 和当日 Markdown 三个文件暂存进本次提交；推送到 main 后由现有 Pages workflow 发布。
 
 提交前刷新使用正式状态的临时副本，不改正式 `data/monitoring-state.json`，不发送通知，以保留定时监控的通知基线。行情缺失时允许提交标注 `DEGRADED` 的报告；程序执行或暂存失败时阻止提交。监控配置和代码有未暂存改动时，先完整暂存相关文件再提交。该刷新只暂存本次生成的三个日报文件。
 

@@ -69,6 +69,8 @@ class BuildGitHubPagesTest(unittest.TestCase):
             ("hk00700", "00700.HK"), ("sh600519", "600519.SH"),
             ("sz000021", "000021.SZ"), ("bj920001", "920001.BJ"),
             ("usBRK.B", "BRK.B"), ("kr000660", "000660"), ("jp6861", "6861"),
+            ("yahoo:CHG.L", "CHG.L"), ("yahoo:EKTA-B.ST", "EKTA-B.ST"),
+            ("yahoo:2344.TW", "2344.TW"),
         ]:
             with self.subTest(raw=raw):
                 self.assertEqual(builder.monitor_stock_code(raw), expected)
