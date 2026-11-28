@@ -4,7 +4,7 @@
 > 新增报告先 `git add`，再运行 `python3 tools/reports_index.py`，将报告与索引一并提交。
 > 只收录成品报告；证据、审计、复算、底稿等中间产物不在此列，完整清单见 `index.json`。
 
-**2184 份报告** · **203 家公司** · **28 个专题** · 最近更新 2026-11-27
+**2190 份报告** · **203 家公司** · **28 个专题** · 最近更新 2026-11-28
 
 [最近更新](#最近更新) · [按公司](#按公司) · [专题研究](#专题研究) · [大师研究](#大师研究) · [筛选池](#筛选池)
 
@@ -14,12 +14,19 @@
 
 | 日期 | 报告 | 归属 | 类型 |
 |------|------|------|------|
-| 2026-11-27 | [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
+| 2026-11-28 | [百度投资研究：AI收入接棒，现金回报尚未接棒](百度-deepseek分析/百度-research-20261128.md) | 百度 | 研究 |
+| 2026-11-28 | [标的跟踪表](标的跟踪表.md) | 综合与横评 | 研究 |
+| 2026-11-28 | [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) | daily-monitor | 研究 |
+| 2026-11-28 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261128.md) | daily-monitor | 研究 |
+| 2026-11-28 | [Marvell Technology（MRVL）研究报告](Marvell/Marvell-research-20261128.md) | Marvell | 研究 |
+| 2026-11-28 | [盈透证券（IBKR）研究报告](IBKR/IBKR-research-20261128.md) | IBKR | 研究 |
+| 2026-11-27 | [重点标的看板](重点标的看板.md) | 综合与横评 | 研究 |
+| 2026-11-27 | [贵州茅台（600519.SH）研究报告](茅台/贵州茅台-research-20261127.md) | 茅台 | 研究 |
+| 2026-11-27 | [哔哩哔哩（BILI / 09626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20261127.md) | 哔哩哔哩 | 研究 |
 | 2026-11-27 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261127.md) | daily-monitor | 研究 |
 | 2026-11-26 | [长光辰芯（03277.HK）研究报告](长光辰芯/长光辰芯-research-20261126.md) | 长光辰芯 | 研究 |
 | 2026-11-26 | [汇川技术（300124.SZ）研究报告](汇川技术/汇川技术-research-20261126.md) | 汇川技术 | 研究 |
 | 2026-11-26 | [永新股份（002014.SZ）投资研究报告（2026 年度更新）](永新股份-deepseek分析/永新股份-research-20261126.md) | 永新股份 | 研究 |
-| 2026-11-26 | [标的跟踪表](标的跟踪表.md) | 综合与横评 | 研究 |
 | 2026-11-26 | [杭叉集团（603298.SH）研究报告：Q3 利润转负与“轮胎敞口”被看见](杭叉集团/杭叉集团-research-20261126.md) | 杭叉集团 | 研究 |
 | 2026-11-26 | [拓荆科技（688072.SH）管理层、股东结构、资本市场行为与市场情绪](拓荆科技/拓荆科技-治理与市场-20261126.md) | 拓荆科技 | 研究 |
 | 2026-11-26 | [拓荆科技（688072.SH）投资研究：四大师框架综合分析](拓荆科技/拓荆科技-research-20261126.md) | 拓荆科技 | 研究 |
@@ -27,7 +34,6 @@
 | 2026-11-26 | [圣邦股份（300661.SZ / 03661.HK）投资研究报告](圣邦股份/圣邦股份-research-20261126.md) | 圣邦股份 | 研究 |
 | 2026-11-26 | [标的触发监控日报](trigger-scan/trigger-scan-latest.md) | trigger-scan | 研究 |
 | 2026-11-26 | [标的触发监控日报](trigger-scan/trigger-scan-20261126.md) | trigger-scan | 研究 |
-| 2026-11-26 | [每日监控 · 价格监控](daily-monitor/daily-monitor-20261126.md) | daily-monitor | 研究 |
 | 2026-11-26 | [Palantir（PLTR）研究报告](Palantir/Palantir-research-20261126.md) | Palantir | 研究 |
 | 2026-11-26 | [ADP（NASDAQ:ADP）研究报告](ADP/ADP-research-20261126.md) | ADP | 研究 |
 | 2026-11-25 | [雅克科技（002409.SZ）研究报告](雅克科技/雅克科技-research-20261125.md) | 雅克科技 | 研究 |
@@ -48,12 +54,6 @@
 | 2026-11-25 | [Progressive（PGR）研究报告](Progressive/Progressive-research-20261125.md) | Progressive | 研究 |
 | 2026-11-25 | [Planet Labs PBC（PL）研究报告](Planet%20Labs/Planet%20Labs-research-20261125.md) | Planet Labs | 研究 |
 | 2026-11-25 | [Northrop Grumman 计算与验证底稿](Northrop%20Grumman/Northrop-Grumman-validation-20261125.md) | Northrop Grumman | 研究 |
-| 2026-11-25 | [诺斯罗普·格鲁曼（NOC）研究报告](Northrop%20Grumman/Northrop-Grumman-research-20261125.md) | Northrop Grumman | 研究 |
-| 2026-11-24 | [迅策科技（03317.HK）研究报告](迅策/迅策科技-research-20261124.md) | 迅策 | 研究 |
-| 2026-11-24 | [蓝思科技（300433.SZ / 06613.HK）研究报告](蓝思科技/蓝思科技-research-20261124.md) | 蓝思科技 | 研究 |
-| 2026-11-24 | [海康威视（002415.SZ）研究报告](海康威视/海康威视-research-20261124.md) | 海康威视 | 研究 |
-| 2026-11-24 | [思格新能（06656.HK）研究报告](思格新能/思格新能-research-20261124.md) | 思格新能 | 研究 |
-| 2026-11-24 | [小米集团（1810.HK）研究报告](小米/小米-research-20261124.md) | 小米 | 研究 |
 
 ---
 
@@ -278,9 +278,10 @@
 </details>
 
 <details markdown="1">
-<summary><b>daily-monitor</b> · 69 份 · 最近 2026-11-27</summary>
+<summary><b>daily-monitor</b> · 70 份 · 最近 2026-11-28</summary>
 
-- `2026-11-27` [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) — 研究
+- `2026-11-28` [每日监控 · 价格监控](daily-monitor/daily-monitor-latest.md) — 研究
+- `2026-11-28` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261128.md) — 研究
 - `2026-11-27` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261127.md) — 研究
 - `2026-11-26` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261126.md) — 研究
 - `2026-11-25` [每日监控 · 价格监控](daily-monitor/daily-monitor-20261125.md) — 研究
@@ -743,8 +744,9 @@
 </details>
 
 <details markdown="1">
-<summary><b>茅台</b> · 40 份 · 最近 2026-10-31</summary>
+<summary><b>茅台</b> · 41 份 · 最近 2026-11-27</summary>
 
+- `2026-11-27` [贵州茅台（600519.SH）研究报告](茅台/贵州茅台-research-20261127.md) — 研究
 - `2026-10-31` [贵州茅台（600519）2026年三季报研究报告](茅台/贵州茅台-earnings-2026Q3-20261031.md) — 财报
 - `2026-10-31` [茅台三季报：三个亮眼数字，三种不同含义](茅台/茅台-公众号-20261031.md) — 公众号
 - `2026-10-20` [贵州茅台（600519）研究报告](茅台/茅台研究报告-20261020.md) — 研究
@@ -1813,6 +1815,27 @@
 </details>
 
 <details markdown="1">
+<summary><b>Marvell</b> · 7 份 · 最近 2026-11-28</summary>
+
+- `2026-11-28` [Marvell Technology（MRVL）研究报告](Marvell/Marvell-research-20261128.md) — 研究
+
+*《看懂迈威尔》*
+
+- `2026-07-13` [数据中心"管道工"的四块业务](Marvell/《看懂迈威尔》/02-商业模式-数据中心管道工的四块业务.md) — 深度系列
+
+- `2026-06-24` [迈威尔科技（NASDAQ: MRVL）投资研究报告](Marvell/Marvell-investment-research-20260624.md) — 研究
+
+*《看懂迈威尔》*
+
+- `2026-05-22` [迈威尔——定制芯片赛道的关键玩家](Marvell/《看懂迈威尔》/01-开篇-定制芯片赛道的关键玩家.md) — 深度系列
+- `2026-05-22` [定制芯片的黄金时代与博通之战](Marvell/《看懂迈威尔》/03-AI机遇-定制芯片的黄金时代与博通之战.md) — 深度系列
+- `2026-05-22` [58 倍 PE 在赌什么](Marvell/《看懂迈威尔》/04-风险与估值-58倍PE在赌什么.md) — 深度系列
+
+- `2026-05-16` [Marvell Technology (MRVL) 投资研究报告](Marvell/Marvell-research-20260516.md) — 研究
+
+</details>
+
+<details markdown="1">
 <summary><b>众安在线</b> · 7 份 · 最近 2026-08-27</summary>
 
 - `2026-08-27` [众安在线（06060.HK）投资研究报告](众安在线/众安在线-research-20260827.md) — 研究
@@ -1903,22 +1926,19 @@
 </details>
 
 <details markdown="1">
-<summary><b>Marvell</b> · 6 份 · 最近 2026-07-13</summary>
+<summary><b>百度</b> · 7 份 · 最近 2026-11-28</summary>
 
+- `2026-11-28` [百度投资研究：AI收入接棒，现金回报尚未接棒](百度-deepseek分析/百度-research-20261128.md) — 研究
 
-*《看懂迈威尔》*
+*《看懂百度》*
 
-- `2026-07-13` [数据中心"管道工"的四块业务](Marvell/《看懂迈威尔》/02-商业模式-数据中心管道工的四块业务.md) — 深度系列
+- `2026-05-22` [竞争与风险：四面楚歌与管理层执行力](百度-deepseek分析/《看懂百度》/04-竞争与风险-四面楚歌与管理层执行力.md) — 深度系列
+- `2026-05-22` [搜索广告：正在熄火的旧引擎](百度-deepseek分析/《看懂百度》/02-核心业务-正在熄火的旧引擎.md) — 深度系列
+- `2026-05-22` [搜索巨头的 AI 转型赌注](百度-deepseek分析/《看懂百度》/01-开篇-搜索巨头的AI转型赌注.md) — 深度系列
+- `2026-05-22` [估值判断：期权还是陷阱？](百度-deepseek分析/《看懂百度》/05-估值判断-期权还是陷阱（终章）.md) — 深度系列
+- `2026-05-22` [AI 三条赛道：大模型、自动驾驶、AI 云](百度-deepseek分析/《看懂百度》/03-AI三条赛道-大模型-自动驾驶-AI云.md) — 深度系列
 
-- `2026-06-24` [迈威尔科技（NASDAQ: MRVL）投资研究报告](Marvell/Marvell-investment-research-20260624.md) — 研究
-
-*《看懂迈威尔》*
-
-- `2026-05-22` [迈威尔——定制芯片赛道的关键玩家](Marvell/《看懂迈威尔》/01-开篇-定制芯片赛道的关键玩家.md) — 深度系列
-- `2026-05-22` [定制芯片的黄金时代与博通之战](Marvell/《看懂迈威尔》/03-AI机遇-定制芯片的黄金时代与博通之战.md) — 深度系列
-- `2026-05-22` [58 倍 PE 在赌什么](Marvell/《看懂迈威尔》/04-风险与估值-58倍PE在赌什么.md) — 深度系列
-
-- `2026-05-16` [Marvell Technology (MRVL) 投资研究报告](Marvell/Marvell-research-20260516.md) — 研究
+- `2026-04-28` [百度（BIDU/9888.HK）投资研究报告](百度-deepseek分析/百度-research-20260428.md) — 研究
 
 </details>
 
@@ -1979,22 +1999,6 @@
 </details>
 
 <details markdown="1">
-<summary><b>百度</b> · 6 份 · 最近 2026-05-22</summary>
-
-
-*《看懂百度》*
-
-- `2026-05-22` [竞争与风险：四面楚歌与管理层执行力](百度-deepseek分析/《看懂百度》/04-竞争与风险-四面楚歌与管理层执行力.md) — 深度系列
-- `2026-05-22` [搜索广告：正在熄火的旧引擎](百度-deepseek分析/《看懂百度》/02-核心业务-正在熄火的旧引擎.md) — 深度系列
-- `2026-05-22` [搜索巨头的 AI 转型赌注](百度-deepseek分析/《看懂百度》/01-开篇-搜索巨头的AI转型赌注.md) — 深度系列
-- `2026-05-22` [估值判断：期权还是陷阱？](百度-deepseek分析/《看懂百度》/05-估值判断-期权还是陷阱（终章）.md) — 深度系列
-- `2026-05-22` [AI 三条赛道：大模型、自动驾驶、AI 云](百度-deepseek分析/《看懂百度》/03-AI三条赛道-大模型-自动驾驶-AI云.md) — 深度系列
-
-- `2026-04-28` [百度（BIDU/9888.HK）投资研究报告](百度-deepseek分析/百度-research-20260428.md) — 研究
-
-</details>
-
-<details markdown="1">
 <summary><b>AppLovin</b> · 5 份 · 最近 2026-10-31</summary>
 
 - `2026-10-31` [AppLovin（NASDAQ:APP）研究报告](AppLovin/AppLovin-research-20261031.md) — 研究
@@ -2002,6 +2006,17 @@
 - `2026-08-31` [AppLovin（NASDAQ: APP）2026Q2 财报精读](AppLovin/AppLovin-earnings-2026Q2.md) — 财报
 - `2026-08-07` [AppLovin（APP）买入前 Checklist](AppLovin/AppLovin-checklist-20260807.md) — 研究
 - `2026-08-06` [AppLovin（NASDAQ: APP）投资研究报告](AppLovin/AppLovin-research-20260806.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>哔哩哔哩</b> · 5 份 · 最近 2026-11-27</summary>
+
+- `2026-11-27` [哔哩哔哩（BILI / 09626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20261127.md) — 研究
+- `2026-10-31` [哔哩哔哩（BILI / 9626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20261031.md) — 研究
+- `2026-09-12` [哔哩哔哩（BILI / 9626.HK）投资论文](哔哩哔哩/哔哩哔哩-thesis.md) — 研究
+- `2026-09-12` [哔哩哔哩（BILI / 9626.HK）2026Q2 财报精读](哔哩哔哩/哔哩哔哩-earnings-2026Q2.md) — 财报
+- `2026-08-03` [哔哩哔哩（BILI / 9626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20260803.md) — 研究
 
 </details>
 
@@ -2161,16 +2176,6 @@
 - `2026-10-08` [华虹半导体（01347.HK / 688347.SH）研究报告](华虹宏力/华虹半导体-research-20261008.md) — 研究
 - `2026-08-31` [华虹半导体（01347.HK / 688347.SH）2026H1 财报 Review](华虹宏力/华虹半导体-earnings-2026H1.md) — 财报
 - `2026-08-14` [华虹宏力（688347.SH / 01347.HK）研究报告](华虹宏力/华虹宏力-research-20260814.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>哔哩哔哩</b> · 4 份 · 最近 2026-10-31</summary>
-
-- `2026-10-31` [哔哩哔哩（BILI / 9626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20261031.md) — 研究
-- `2026-09-12` [哔哩哔哩（BILI / 9626.HK）投资论文](哔哩哔哩/哔哩哔哩-thesis.md) — 研究
-- `2026-09-12` [哔哩哔哩（BILI / 9626.HK）2026Q2 财报精读](哔哩哔哩/哔哩哔哩-earnings-2026Q2.md) — 财报
-- `2026-08-03` [哔哩哔哩（BILI / 9626.HK）研究报告](哔哩哔哩/哔哩哔哩-research-20260803.md) — 研究
 
 </details>
 
@@ -2405,6 +2410,14 @@
 
 - `2026-11-12` [Credo Technology（CRDO）研究报告](Credo/Credo-research-20261112.md) — 研究
 - `2026-09-03` [Credo Technology（CRDO）研究报告](Credo/Credo-research-20260903.md) — 研究
+
+</details>
+
+<details markdown="1">
+<summary><b>IBKR</b> · 2 份 · 最近 2026-11-28</summary>
+
+- `2026-11-28` [盈透证券（IBKR）研究报告](IBKR/IBKR-research-20261128.md) — 研究
+- `2026-07-29` [Interactive Brokers（IBKR）投资研究](IBKR/IBKR-research-20260729.md) — 研究
 
 </details>
 
@@ -2647,13 +2660,6 @@
 <summary><b>GE Vernova</b> · 1 份 · 最近 2026-06-23</summary>
 
 - `2026-06-23` [GE Vernova（GEV）投资研究报告](GE%20Vernova/GEV-research-20260623.md) — 研究
-
-</details>
-
-<details markdown="1">
-<summary><b>IBKR</b> · 1 份 · 最近 2026-07-29</summary>
-
-- `2026-07-29` [Interactive Brokers（IBKR）投资研究](IBKR/IBKR-research-20260729.md) — 研究
 
 </details>
 
@@ -3117,10 +3123,10 @@
 ## 专题研究
 
 <details markdown="1">
-<summary><b>综合与横评</b> · 93 份 · 最近 2026-11-26</summary>
+<summary><b>综合与横评</b> · 93 份 · 最近 2026-11-28</summary>
 
-- `2026-11-26` [标的跟踪表](标的跟踪表.md) — 研究
-- `2026-11-19` [重点标的看板](重点标的看板.md) — 研究
+- `2026-11-28` [标的跟踪表](标的跟踪表.md) — 研究
+- `2026-11-27` [重点标的看板](重点标的看板.md) — 研究
 - `2026-10-31` [每日监控重点标的研究更新](每日监控重点标的研究更新-20261031.md) — 研究
 - `2026-10-31` [四只美股持仓复检与操作建议](四只美股持仓复检-20261031.md) — 研究
 - `2026-09-28` [除了你自己，没人关心你的成本价](公众号-除了你自己没人关心你的成本价-20260928.md) — 公众号
