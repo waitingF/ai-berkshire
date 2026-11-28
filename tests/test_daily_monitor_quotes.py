@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import unittest
 from types import SimpleNamespace
@@ -20,6 +21,26 @@ def response(payload):
 
 
 class InternationalQuotesTest(unittest.TestCase):
+    def test_tencent_works_when_network_requires_environment_proxy(self):
+        fields = ["0"] * 35
+        fields[1], fields[3], fields[4] = "Baidu", "63.49", "63.49"
+        fields[30] = "2026-11-27 13:00:01"
+        payload = ('v_usBIDU="' + "~".join(fields) + '";').encode()
+
+        def proxy_required(command, **kwargs):
+            # Model the cloud route: direct requests fail, inherited proxy works.
+            if "--noproxy" in command or not os.environ.get("HTTPS_PROXY"):
+                return SimpleNamespace(returncode=6, stdout=b"")
+            return SimpleNamespace(returncode=0, stdout=payload)
+
+        with patch.dict(os.environ, {"HTTPS_PROXY": "http://configured-proxy:8080"}), \
+                patch("tools.trigger_scanner.subprocess.run", side_effect=proxy_required):
+            quotes = production_services().quote_provider(["usBIDU"])
+
+        self.assertEqual(quotes["usBIDU"]["price"], 63.49)
+        self.assertEqual(quotes["usBIDU"]["time"], "2026-11-28 02:00:01")
+        self.assertEqual(quotes["usBIDU"]["source"], "腾讯")
+
     def test_tencent_quote_times_are_normalized_to_shanghai(self):
         raw = {"usAAPL": {"price": 358.54, "time": "2026-11-27 13:00:01"},
                "hk00700": {"price": 352, "time": "2026/11/27 16:09:04"},

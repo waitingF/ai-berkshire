@@ -36,7 +36,7 @@ _BATCH = 30  # 腾讯行情一次查询上限（实测 30 个安全）
 
 
 # ---------------------------------------------------------------------------
-# 行情获取（腾讯 API，复用 ashare_data.py 的 curl --noproxy 直连方式）
+# 行情获取（腾讯 API，沿用环境提供的代理与网络配置）
 # ---------------------------------------------------------------------------
 
 def _curl_qq(codes):
@@ -44,7 +44,7 @@ def _curl_qq(codes):
     url = "https://qt.gtimg.cn/q=" + ",".join(codes)
     try:
         result = subprocess.run(
-            ["/usr/bin/curl", "-s", "--noproxy", "*",
+            ["/usr/bin/curl", "-s",
              "-H", "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
              url],
             capture_output=True, timeout=_TIMEOUT,
