@@ -329,6 +329,7 @@ def render_page(
   <link rel="icon" href="{root_prefix}assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{root_prefix}assets/site.css">
   <script defer src="{root_prefix}assets/site.js"></script>
+  <script type="module" src="{root_prefix}assets/monitor-table.mjs"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到正文</a>
@@ -1402,6 +1403,8 @@ img {
 """,
         encoding="utf-8",
     )
+    with (assets_dir / "site.css").open("a", encoding="utf-8") as stylesheet:
+        stylesheet.write("\n" + (Path(__file__).parent / "pages/monitor-table.css").read_text(encoding="utf-8"))
     (assets_dir / "favicon.svg").write_text(
         """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#fffefa"/>
@@ -1532,56 +1535,6 @@ def write_scripts(output_dir: Path) -> None:
   };
 
   const ACTION_ORDER = ["买入", "分批", "观望", "回避"];
-
-  const initMonitorTableSearch = () => {
-    document.querySelectorAll("[data-monitor-table]").forEach((table, index) => {
-      const normalize = (value) => value.trim().toLocaleLowerCase("zh-CN");
-      const rows = Array.from(table.querySelectorAll("tbody tr"), (row) => ({
-        row,
-        text: normalize([
-          ...Array.from(row.cells, (cell) => cell.textContent || ""),
-          row.dataset.monitorAliases || "",
-        ].join(" ")),
-      }));
-      if (!rows.length) {
-        return;
-      }
-
-      const bar = document.createElement("div");
-      bar.className = "monitor-filter";
-      const inputId = `monitor-search-${index + 1}`;
-      const statusId = `${inputId}-status`;
-      bar.innerHTML = `
-        <label class="filter-label" for="${inputId}">搜索价格监控</label>
-        <input id="${inputId}" data-monitor-search type="search" autocomplete="off"
-          placeholder="输入简称、股票代码、市场或优先级，空格分隔多个条件" aria-describedby="${statusId}">
-        <p id="${statusId}" class="filter-status" role="status" aria-live="polite"></p>`;
-      const input = bar.querySelector("input");
-      const status = bar.querySelector("[role='status']");
-      const empty = document.createElement("p");
-      empty.className = "filter-empty";
-      empty.hidden = true;
-      empty.textContent = "没有匹配的监控记录，请尝试其他关键词。";
-      table.before(bar, empty);
-
-      const update = () => {
-        const query = normalize(input.value);
-        const terms = query.split(/\\s+/).filter(Boolean);
-        let visible = 0;
-        for (const { row, text } of rows) {
-          const matched = terms.every((term) => text.includes(term));
-          row.hidden = !matched;
-          if (matched) {
-            visible += 1;
-          }
-        }
-        status.textContent = query === "" ? `共 ${rows.length} 条` : `显示 ${visible} / ${rows.length} 条`;
-        empty.hidden = visible !== 0;
-      };
-      input.addEventListener("input", update);
-      update();
-    });
-  };
 
   const initActionColumnFilter = () => {
     const tables = Array.from(document.querySelectorAll(".report-article table"));
@@ -1747,7 +1700,6 @@ def write_scripts(output_dir: Path) -> None:
   };
 
   initReportFilter();
-  initMonitorTableSearch();
   initActionColumnFilter();
   initBackToTop();
   initMermaid();
@@ -1755,6 +1707,7 @@ def write_scripts(output_dir: Path) -> None:
 """,
         encoding="utf-8",
     )
+    shutil.copyfile(Path(__file__).parent / "pages/monitor-table.mjs", assets_dir / "monitor-table.mjs")
 
 
 def build_site(reports_dir: Path | str, output_dir: Path | str) -> None:

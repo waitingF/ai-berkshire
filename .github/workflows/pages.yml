@@ -10,6 +10,7 @@ on:
       - "data/monitor-display-names.json"
       - "README.md"
       - "scripts/build-github-pages.py"
+      - "scripts/pages/**"
       - "requirements-pages.txt"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
