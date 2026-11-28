@@ -137,7 +137,7 @@ python3 tools/financial_rigor.py three-scenario --price {股价} --eps {EPS} --s
 
 **对比**：与自身历史分位、与同行对比。
 
-**结论**：给出具体的价格区间。
+**结论**：给出具体的行动价位带，写明适用市场、币种、价格边界和对应动作（买入、观望或回避）。
 
 段永平式追问：如果股市关闭 5 年，愿意以这个价格持有吗？
 
@@ -235,3 +235,7 @@ python3 tools/report_audit.py verdict --results "$(cat /tmp/audit_items.json)" -
 - 有任何一点超过 1%，判【打回】：修正后重新抽检。
 
 如果报告含十年折现，定稿前用最终参数再跑一次 `terminal_value.py audit`，退出码为 0 才能发布。写作过程中经常会回头改 r 或 g，最后一次 audit 才算数。
+
+## 报告完成后的触发点登记（必须执行）
+
+报告若含明确买入/观望/回避价位带或复检、财报节点，按 `skills/trigger-monitor.md` 登记到 `data/triggers.json`。先用交易所及代码、中英文名称、既有报告链接查找同一公司；已有 target 时更新其 `links`、`zones`、`events` 与 `source`，保留既有 `id` 和有效历史记录，不得按中英文名重复建标的。完成后更新 `updated` 并运行 `python3 tools/trigger_scanner.py --check`。
